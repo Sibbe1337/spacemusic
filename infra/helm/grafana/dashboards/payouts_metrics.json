@@ -1,0 +1,174 @@
+{
+  "__inputs": [],
+  "__requires": [
+    {"type": "grafana", "id": "grafana", "name": "Grafana", "version": "10.0.0"},
+    {"type": "prometheus", "id": "prometheus", "name": "Prometheus", "version": "2.0.0"}
+  ],
+  "annotations": {
+    "list": [
+      {"builtIn": 1, "datasource": {"type": "grafana", "uid": "-- Grafana --"}, "enable": true, "hide": true, "iconColor": "rgba(0, 211, 255, 1)", "name": "Annotations & Alerts", "type": "dashboard"}
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "title": "Payouts API: HTTP Request Rate",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(starlette_requests_total{job=\"payouts-api\"}[5m])) by (method, path)",
+          "legendFormat": "{{method}} {{path}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 7, "w": 12, "x": 0, "y": 0}
+    },
+    {
+      "title": "Payouts API: HTTP Latency (p95)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(starlette_request_latency_seconds_bucket{job=\"payouts-api\"}[5m])) by (le, method, path))",
+          "legendFormat": "{{method}} {{path}} - p95",
+          "refId": "A"
+        }
+      ],
+      "unit": "s",
+      "gridPos": {"h": 7, "w": 12, "x": 12, "y": 0}
+    },
+    {
+      "title": "Payouts Worker: Celery Task Rate",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(payouts_celery_tasks_processed_total{job=\"payouts-worker\"}[5m])) by (task_name, status)",
+          "legendFormat": "{{task_name}} - {{status}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 7, "w": 12, "x": 0, "y": 7}
+    },
+    {
+      "title": "Payouts Worker: Celery Task Duration (p95)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(payouts_celery_task_duration_seconds_bucket{job=\"payouts-worker\"}[5m])) by (le, task_name))",
+          "legendFormat": "{{task_name}} - p95",
+          "refId": "A"
+        }
+      ],
+      "unit": "s",
+      "gridPos": {"h": 7, "w": 12, "x": 12, "y": 7}
+    },
+    {
+      "title": "Stripe Payout Attempts",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(payouts_stripe_payouts_total{job=\"payouts-worker\"}[5m])) by (outcome)",
+          "legendFormat": "Stripe - {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 7, "w": 8, "x": 0, "y": 14}
+    },
+    {
+      "title": "Stripe API Latency (p95)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(payouts_stripe_api_latency_seconds_bucket{job=\"payouts-worker\"}[5m])) by (le, api_call))",
+          "legendFormat": "{{api_call}} - p95",
+          "refId": "A"
+        }
+      ],
+      "unit": "s",
+      "gridPos": {"h": 7, "w": 8, "x": 8, "y": 14}
+    },
+    {
+      "title": "Stripe Circuit Breaker State",
+      "type": "stat",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "payouts_stripe_circuit_breaker_state{job=\"payouts-worker\"}",
+          "legendFormat": "CB State (0=Closed, 1=Open)",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 7, "w": 8, "x": 16, "y": 14},
+      "reduceOptions": {"calcs": ["lastNotNull"]}
+    },
+    {
+      "title": "Wise Transfer Attempts",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(payouts_wise_transfers_total{job=\"payouts-worker\"}[5m])) by (outcome)",
+          "legendFormat": "Wise - {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 7, "w": 8, "x": 0, "y": 21}
+    },
+    {
+      "title": "Ledger Entries Created",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(payouts_ledger_entries_created_total{job=\"payouts-worker\"}[5m])) by (transaction_type, payout_method)",
+          "legendFormat": "{{payout_method}} - {{transaction_type}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 7, "w": 8, "x": 8, "y": 21}
+    },
+    {
+      "title": "Redis Queue Length (Payouts)",
+      "type": "stat",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+           "expr": "redis_llen{queue=\"payouts\", job=\"redis-exporter\"} OR redis_list_length{queue=\"payouts\", job=\"redis-exporter\"}",
+           "legendFormat": "Payouts Queue Length",
+           "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 7, "w": 8, "x": 16, "y": 21},
+      "reduceOptions": {"calcs": ["lastNotNull"]}
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": ["payouts-service", "api", "worker"],
+  "templating": {
+    "list": [
+      {
+        "current": {"selected": true, "text": "Prometheus", "value": "Prometheus"},
+        "hide": 0, "includeAll": false, "label": "Datasource", "multi": false, 
+        "name": "datasource", "options": [], "query": "prometheus", "queryValue": "", 
+        "refresh": 1, "regex": "", "skipUrlSync": false, "type": "datasource"
+      }
+    ]
+  },
+  "time": {"from": "now-1h", "to": "now"},
+  "timepicker": {},
+  "timezone": "",
+  "title": "Payouts Service Metrics",
+  "uid": "payouts-service-dashboard",
+  "version": 2
+} 

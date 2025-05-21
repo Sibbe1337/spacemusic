@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Term Sheet - {{ offer.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h1 { font-size: 28px; }
+        h2 { font-size: 22px; margin-top: 30px; }
+        .section {
+            margin-bottom: 20px;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Term Sheet</h1>
+
+        <div class="section">
+            <h2>Offer Details</h2>
+            <p><span class="label">Offer Title:</span> {{ offer.title }}</p>
+            <p><span class="label">Offer ID:</span> {{ offer.id }}</p>
+            <p><span class="label">Description:</span> {{ offer.description if offer.description else 'N/A' }}</p>
+            <p><span class="label">Status:</span> <span class="highlight">{{ offer.status }}</span></p>
+        </div>
+
+        <div class="section">
+            <h2>Creator Information</h2>
+            <p><span class="label">Creator Name:</span> {{ offer.creator.display_name if offer.creator.display_name else offer.creator.username }}</p>
+            <p><span class="label">Platform:</span> {{ offer.creator.platform_name }}</p>
+            <p><span class="label">Platform ID:</span> {{ offer.creator.platform_id }}</p>
+        </div>
+
+        <div class="section">
+            <h2>Financial Terms</h2>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Valuation (Low)</td>
+                    <td>{{ "%.2f"|format(offer.price_low_eur / 100.0) if offer.price_low_eur is not none else 'N/A' }} EUR</td>
+                </tr>
+                <tr>
+                    <td>Valuation (Median)</td>
+                    <td>{{ "%.2f"|format(offer.price_median_eur / 100.0) if offer.price_median_eur is not none else 'N/A' }} EUR</td>
+                </tr>
+                <tr>
+                    <td>Valuation (High)</td>
+                    <td>{{ "%.2f"|format(offer.price_high_eur / 100.0) if offer.price_high_eur is not none else 'N/A' }} EUR</td>
+                </tr>
+                <tr>
+                    <td>Valuation Confidence</td>
+                    <td>{{ "%.2f"|format(offer.valuation_confidence * 100.0) if offer.valuation_confidence is not none else 'N/A' }}%</td>
+                </tr>
+                <tr>
+                    <td>Offer Amount</td>
+                    <td class="highlight">{{ "%.2f"|format(offer.amount_cents / 100.0) }} {{ offer.currency_code }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Signatures (Placeholder)</h2>
+            <p><span class="label">For Creator:</span> _________________________ Date: _______________</p>
+            <p><span class="label">For Space Platform:</span> _________________________ Date: _______________</p>
+        </div>
+
+        <div class="footer">
+            <p>Generated on: {{ generation_date }}</p>
+            <p>This is a non-binding term sheet and is subject to final contract.</p>
+            <p>PDF Hash (SHA256): {{ offer.pdf_hash if offer.pdf_hash else 'Pending' }}</p>
+        </div>
+    </div>
+</body>
+</html> 

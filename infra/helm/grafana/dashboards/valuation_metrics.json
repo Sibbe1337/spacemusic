@@ -1,0 +1,153 @@
+{
+  "__inputs": [],
+  "__requires": [
+    {"type": "grafana", "id": "grafana", "name": "Grafana", "version": "10.0.0"},
+    {"type": "prometheus", "id": "prometheus", "name": "Prometheus", "version": "2.0.0"}
+  ],
+  "annotations": {
+    "list": [
+      {"builtIn": 1, "datasource": {"type": "grafana", "uid": "-- Grafana --"}, "enable": true, "hide": true, "iconColor": "rgba(0, 211, 255, 1)", "name": "Annotations & Alerts", "type": "dashboard"}
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "title": "Celery Task Rate (Valuation)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(valuation_celery_tasks_processed_total{job=\"valuation-worker\"}[5m])) by (task_name, status)",
+          "legendFormat": "{{task_name}} - {{status}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}
+    },
+    {
+      "title": "Celery Task Duration (95th Quantile - Valuation)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(valuation_celery_task_duration_seconds_bucket{job=\"valuation-worker\"}[5m])) by (le, task_name))",
+          "legendFormat": "{{task_name}} - p95",
+          "refId": "A"
+        }
+      ],
+      "unit": "s",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}
+    },
+    {
+      "title": "Spotify API Call Rate (Valuation)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(valuation_spotify_api_calls_total{job=\"valuation-worker\"}[5m])) by (endpoint, status_code)",
+          "legendFormat": "{{endpoint}} - {{status_code}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 8}
+    },
+    {
+      "title": "Spotify API Latency (95th Quantile - Valuation)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(valuation_spotify_api_latency_seconds_bucket{job=\"valuation-worker\"}[5m])) by (le, endpoint))",
+          "legendFormat": "{{endpoint}} - p95",
+          "refId": "A"
+        }
+      ],
+      "unit": "s",
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 8}
+    },
+    {
+      "title": "Cache Hit/Miss Rate (Valuation)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(valuation_cache_hits_total{job=\"valuation-worker\"}[5m])) by (cache_name)",
+          "legendFormat": "{{cache_name}} - hits",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(rate(valuation_cache_misses_total{job=\"valuation-worker\"}[5m])) by (cache_name)",
+          "legendFormat": "{{cache_name}} - misses",
+          "refId": "B"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 8}
+    },
+    {
+      "title": "Model Prediction Rate (Valuation)",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(valuation_model_predictions_total{job=\"valuation-worker\"}[5m])) by (outcome)",
+          "legendFormat": "{{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16}
+    },
+    {
+      "title": "Valuation Worker App Error Rate",
+      "type": "timeseries",
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+          "expr": "sum(rate(valuation_app_errors_total{job=\"valuation-worker\"}[5m])) by (error_type, component)",
+          "legendFormat": "{{error_type}} - {{component}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16}
+    },
+    {
+      "title": "Redis Queue Length (Valuation)",
+      "type": "stat", 
+      "datasource": {"type": "prometheus", "uid": "$datasource"},
+      "targets": [
+        {
+           "expr": "redis_llen{queue=\"valuation\", job=\"redis-exporter\"} OR redis_list_length{queue=\"valuation\", job=\"redis-exporter\"}",
+           "legendFormat": "Valuation Queue Length",
+           "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 4, "w": 6, "x": 0, "y": 24},
+      "reduceOptions": {"calcs": ["lastNotNull"]},
+      "orientation": "auto",
+      "description": "Length of the 'valuation' Celery queue in Redis. Assumes a Redis exporter provides 'redis_llen' or 'redis_list_length' metric."
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": ["valuation-service", "worker"],
+  "templating": {
+    "list": [
+      {
+        "current": {"selected": true, "text": "Prometheus", "value": "Prometheus"},
+        "hide": 0, "includeAll": false, "label": "Datasource", "multi": false, 
+        "name": "datasource", "options": [], "query": "prometheus", "queryValue": "", 
+        "refresh": 1, "regex": "", "skipUrlSync": false, "type": "datasource"
+      }
+    ]
+  },
+  "time": {"from": "now-1h", "to": "now"},
+  "timepicker": {},
+  "timezone": "",
+  "title": "Valuation Service Worker Metrics",
+  "uid": "valuation-service-dashboard",
+  "version": 2
+} 

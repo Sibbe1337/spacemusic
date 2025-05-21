@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "PayoutSucceededEvent",
+  "namespace": "com.space.events.payouts",
+  "doc": "Event produced when a payout has successfully processed.",
+  "fields": [
+    {"name": "offer_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID of the offer that was paid out"},
+    {"name": "payout_method", "type": "string", "doc": "Method used for payout (e.g., stripe, wise)"},
+    {"name": "reference_id", "type": "string", "doc": "Transaction/reference ID from the payment provider"},
+    {"name": "amount_cents", "type": "long", "doc": "Amount paid in cents"},
+    {"name": "currency_code", "type": "string", "doc": "Currency of the payout"},
+    {
+      "name": "timestamp", 
+      "type": {"type": "long", "logicalType": "timestamp-micros"}, 
+      "doc": "UTC timestamp of when the payout succeeded (microseconds)"
+    }
+  ]
+} 

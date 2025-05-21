@@ -1,0 +1,14 @@
+{
+  "codeStyle": "pep8",
+  "unitTest": true,
+  "docker": true,
+  "defaultLanguage": "python",
+  "ignoredFolders": ["node_modules", ".venv", "web"],
+  "indexableFileTypes": [".py", ".ts", ".sql", ".tf", ".md"],
+  "rules": {
+    "maxFolders": 7,
+    "allowedTop": ["infra", "services", "libs", "web", "tests", "docs"],
+    "fileNaming": "snake_case",
+    "classNaming": "PascalCase"
+  }
+} 

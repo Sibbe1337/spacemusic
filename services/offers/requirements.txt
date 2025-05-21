@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlmodel
+psycopg2-binary # For PostgreSQL
+alembic
+structlog # Assuming basic logging might be added
+tenacity # For retries, good practice
+python-dotenv # For alembic.ini to pick up .env file if used locally
+asyncpg # For async SQLAlchemy with PostgreSQL 
+prometheus-client
+starlette-prometheus 
+confluent-kafka[avro] # Added for Kafka
+avro-python3 # Avro schema support, often a dep of confluent_kafka[avro] but good to be explicit 

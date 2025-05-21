@@ -1,0 +1,46 @@
+apiVersion: linkerd.io/v1alpha2
+kind: ServiceProfile
+metadata:
+  # Adjust service name and namespace if valuation worker has a K8s service object
+  # This is less common for a pure Celery worker without an API.
+  name: valuation-worker.default.svc.cluster.local 
+  namespace: linkerd
+spec:
+  # routes: [] # No specific routes defined if it's only a background worker
+  # If it had a health check or control API, define routes here:
+  # - name: "GET /health"
+  #   condition:
+  #     method: GET
+  #     pathRegex: "/health/?"
+  #   timeout: 5s
+  
+  # For a worker that primarily makes OUTGOING calls, ServiceProfiles are applied
+  # to the DESTINATION services it calls, not usually to the worker itself unless
+  # it also serves traffic.
+  
+  # Default retry/timeout for any (unlikely) incoming traffic if it were to serve:
+  # This section will only apply if traffic is routed to this service via Linkerd.
+  routes:
+    - name: "Default route for any incoming to valuation-worker"
+      condition:
+        pathRegex: "/.*" # Catch-all for any path
+      timeout: 15s      # Default timeout
+      isRetryable: false  # Generally false for a generic worker endpoint
+
+  retryBudget:
+    retryRatio: 0.2
+    minRetriesPerSecond: 10
+    ttl: "10s"
+  responseClasses:
+    - condition:
+        isFailure: true
+        status:
+          min: 500
+          max: 599
+      isRetryable: true
+    - condition:
+        isFailure: false
+        status:
+          min: 200
+          max: 299
+      isRetryable: false 

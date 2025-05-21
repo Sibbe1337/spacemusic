@@ -1,0 +1,164 @@
+{
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.0.0"
+    },
+    {
+      "type": "prometheus",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "2.0.0"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "title": "HTTP Request Rate (Offers API)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource" 
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(starlette_requests_total{job=\"offers-api\"}[5m])) by (method, path)",
+          "legendFormat": "{{method}} {{path}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "description": "Rate of HTTP requests to the offers API."
+    },
+    {
+      "title": "HTTP Request Latency (95th Quantile - Offers API)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(starlette_request_latency_seconds_bucket{job=\"offers-api\"}[5m])) by (le, method, path))",
+          "legendFormat": "{{method}} {{path}} - p95",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "unit": "s",
+      "description": "95th percentile of HTTP request latency."
+    },
+    {
+      "title": "HTTP Error Rate (5xx - Offers API)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(starlette_requests_total{job=\"offers-api\", status_code=~\"5..\"}[5m])) by (method, path)",
+          "legendFormat": "{{method}} {{path}} - 5xx errors",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+      "description": "Rate of HTTP 5xx errors from the offers API."
+    },
+    {
+      "title": "Offers Created Total",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
+      "targets": [
+        {
+          "expr": "sum(offers_created_total{job=\"offers-api\"}) by (platform_name)",
+          "legendFormat": "{{platform_name}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 6, "x": 12, "y": 8},
+      "reduceOptions": {"calcs": ["lastNotNull"]},
+      "orientation": "auto"
+    },
+    {
+      "title": "Offer Status Updates",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(offer_status_updates_total{job=\"offers-api\"}[5m])) by (new_status)",
+          "legendFormat": "Updated to {{new_status}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 6, "x": 18, "y": 8},
+      "description": "Rate of offer status updates."
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": ["offers-service", "api"],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": "Prometheus",
+          "value": "Prometheus"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Datasource",
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Offers Service Metrics",
+  "uid": "offers-service-dashboard",
+  "version": 1,
+  "weekStart": ""
+} 

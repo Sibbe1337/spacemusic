@@ -1,0 +1,15 @@
+groups:
+- name: CostAlerts
+  rules:
+  - alert: CostPerOfferTooHigh
+    expr: (sum(rate(aws_ce_daily_cost_usd_sum{service_name=\"offers_related_service\"}[1d])) * on() group_left() avg_over_time(exchange_rate_usd_to_eur[1d])) / sum(increase(offers_created_total[1d])) > 1
+    for: 1h
+    labels:
+      severity: warning
+      team: finance # Or your relevant team label
+    annotations:
+      summary: "Cost per offer is too high ({{ $labels.job }})"
+      description: "The average cost per offer over the last day has exceeded €1.00 for the past hour. Current value: €{{ $value | printf \"%.2f\" }}."
+      # Replace with your actual Slack webhook URL and channel
+      slack_webhook_url: "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+      slack_channel: "#alerts-cost" 

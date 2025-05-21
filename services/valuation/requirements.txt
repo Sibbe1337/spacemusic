@@ -1,0 +1,17 @@
+celery[redis] # For Celery and Redis broker/backend
+sqlmodel
+psycopg2-binary # Or other DB driver for Offer DB, if worker accesses it directly
+spotipy # Spotify API client
+redis # Python Redis client for caching
+pandas # For DataFrame manipulation
+joblib # For loading .pkl model
+scikit-learn # Often a dependency for models saved with joblib, ensure version compatibility
+PyYAML # For rules.yaml
+tenacity # For retries
+structlog # For structured logging
+# confluent-kafka # If using Confluent Kafka client, add here
+uuid # Standard library, but good to note if used explicitly for Offer IDs
+asyncpg # If accessing offers DB asynchronously elsewhere, ensure it's here if worker uses its models
+prometheus-client # Added for metrics
+confluent-kafka[avro] # Added for Kafka
+avro-python3 # Added for Avro schema support 

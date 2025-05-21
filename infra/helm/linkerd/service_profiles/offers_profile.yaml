@@ -1,0 +1,49 @@
+apiVersion: linkerd.io/v1alpha2
+kind: ServiceProfile
+metadata:
+  # Adjust service name and namespace to match your Kubernetes service for Offers API
+  name: offers-api.default.svc.cluster.local 
+  namespace: linkerd 
+spec:
+  routes:
+    - name: "POST /offers/"
+      condition:
+        method: POST
+        pathRegex: "/offers/?"
+      isRetryable: true # Creating an offer might be retryable if designed to be idempotent
+      timeout: 15s
+    - name: "GET /offers/{id}"
+      condition:
+        method: GET
+        pathRegex: "/offers/[^/]+/?"
+      timeout: 10s
+    - name: "POST /offers/creators/"
+      condition:
+        method: POST
+        pathRegex: "/offers/creators/?"
+      isRetryable: true
+      timeout: 15s
+    # Add other specific routes for offers service if known, otherwise a fallback:
+    - name: "Fallback /offers/*"
+      condition:
+        method: ANY # Catches any method
+        pathRegex: "/offers/.*"
+      isRetryable: false # General fallback, safer not to retry by default
+      timeout: 15s
+  retryBudget:
+    retryRatio: 0.2
+    minRetriesPerSecond: 10
+    ttl: "10s"
+  responseClasses:
+    - condition:
+        isFailure: true
+        status:
+          min: 500
+          max: 599
+      isRetryable: true
+    - condition:
+        isFailure: false
+        status:
+          min: 200
+          max: 299
+      isRetryable: false 

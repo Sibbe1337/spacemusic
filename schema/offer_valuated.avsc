@@ -1,0 +1,20 @@
+{
+  "type": "record",
+  "name": "OfferValuatedEvent",
+  "namespace": "com.space.events.offers",
+  "doc": "Event produced when an offer has been valuated.",
+  "fields": [
+    {"name": "offer_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID of the offer"},
+    {"name": "creator_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID of the creator (if UUID, else string/int)"},
+    {"name": "price_low_eur", "type": ["null", "long"], "default": null, "doc": "Low valuation in EUR cents"},
+    {"name": "price_median_eur", "type": ["null", "long"], "default": null, "doc": "Median valuation in EUR cents"},
+    {"name": "price_high_eur", "type": ["null", "long"], "default": null, "doc": "High valuation in EUR cents"},
+    {"name": "valuation_confidence", "type": ["null", "double"], "default": null, "doc": "Confidence score of the valuation (0.0 to 1.0)"},
+    {"name": "status", "type": "string", "doc": "New status of the offer (e.g., OFFER_READY)"},
+    {
+      "name": "timestamp", 
+      "type": {"type": "long", "logicalType": "timestamp-micros"}, 
+      "doc": "UTC timestamp of when the valuation was completed (microseconds)"
+    }
+  ]
+} 

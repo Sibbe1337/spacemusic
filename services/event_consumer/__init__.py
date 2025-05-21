@@ -1,0 +1,1 @@
+# services/event_consumer/__init__.py 

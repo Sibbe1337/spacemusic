@@ -1,0 +1,13 @@
+celery[redis]
+sqlmodel # For LedgerEntry and Offer models
+psycopg2-binary # For DB access (both offers and payouts DBs)
+stripe # Stripe Python client
+pybreaker # Circuit breaker
+structlog
+python-dotenv # For local .env loading
+fastapi # For the internal API endpoint
+uvicorn[standard] # To run the FastAPI app for the internal endpoint
+uuid # Standard library
+# confluent-kafka-python # If using Kafka
+prometheus-client # Added
+starlette-prometheus # Added 

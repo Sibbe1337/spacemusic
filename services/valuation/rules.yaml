@@ -1,0 +1,20 @@
+STREAM_DECLINE:
+  description: "Rule to apply if a significant decline in streams is detected."
+  # Example parameters for this rule, actual structure depends on your logic
+  threshold_percentage: 0.3 # e.g., 30% decline
+  min_streams_for_eval: 1000 # e.g., only apply if streams were above this
+  # How to adjust valuation if triggered, e.g., multiplier or fixed adjustment
+  valuation_multiplier: 0.8 # Reduce valuation by 20%
+  # Flag to enable/disable this rule, could be checked via feature flag system
+  enabled_flag_name: "fallback_rule_stream_decline"
+
+GEO_CONCENTRATION:
+  description: "Rule to apply if listener geo-concentration is too high (e.g., indicating non-organic audience)."
+  # Example parameters
+  max_single_country_percentage: 0.7 # e.g., if >70% listeners from one country
+  min_total_listeners_for_eval: 500
+  # Adjustment if triggered
+  confidence_reduction_factor: 0.5 # Reduce confidence by 50%
+  enabled_flag_name: "fallback_rule_geo_concentration"
+
+# Add other rules as needed 

@@ -1,0 +1,6 @@
+confluent-kafka[avro]
+avro-python3
+structlog
+python-dotenv # For environment variable loading
+prometheus-client # For metrics
+# Add any other dependencies this consumer might need 

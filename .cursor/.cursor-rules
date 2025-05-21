@@ -1,0 +1,102 @@
+# Cursor Ruleset for SPACE Backend (v1.1)
+
+> **Purpose:** Guarantee a deterministic, minimal repo that co‑exists with the **Lovable‑generated public UI**. Cursor must never touch the `web/` folder.
+
+---
+
+## 1 Allowed top‑level folders
+
+*(Cursor may not create others without explicit human prompt.)*
+
+| Folder        | Purpose                                          |
+| ------------- | ------------------------------------------------ |
+| **infra/**    | Terraform, Helm, K8s manifests                   |
+| **services/** | Containerised micro‑services (`service_name/`)   |
+| **libs/**     | Shared Python / TypeScript packages              |
+| **web/**      | ✨ **Lovable Next.js app – read‑only for Cursor** |
+| **tests/**    | Pytest suites mirroring `services/` & `libs/`    |
+| **docs/**     | Architecture, ADR, runbooks, prompts             |
+
+> **Forbidden folders:** `src/`, `pkg/`, `components/`, `utils/`, `app/`.
+
+> **Special rule for `web/`:** Cursor **may read** type definitions (e.g. DTO TS interfaces) but must **never generate, modify or delete** files in this folder. Public UI is maintained outside Cursor flows.
+
+---
+
+## 2 Service folder template (immutable)
+
+```
+services/<service_name>/
+ ├ main.py            # FastAPI entry‑point or worker bootstrap
+ ├ routes.py          # HTTP routes (if HTTP service)
+ ├ models.py          # SQLModel / Pydantic models
+ ├ tasks.py           # Celery tasks (optional)
+ ├ requirements.txt   # runtime deps only
+ └ Dockerfile         # multi‑stage, final python:3.12‑slim
+```
+
+*No nested `src/` allowed; keep files at root of service folder.*
+
+---
+
+## 3 Naming conventions
+
+| Entity           | Convention   | Example                        |
+| ---------------- | ------------ | ------------------------------ |
+| Python file      | snake\_case  | `valuation_worker.py`          |
+| Class            | PascalCase   | `OfferRequest`                 |
+| Var / func       | snake\_case  | `price_low`, `run_inference()` |
+| ENV var          | UPPER\_SNAKE | `DATABASE_URL`                 |
+| Docker image tag | kebab-case   | `space-valuation:v1.0.0`       |
+
+Type‑hints mandatory on all defs. No camelCase in Python.
+
+---
+
+## 4 Generation rules
+
+1. **Strict folder whitelist** from Section 1.
+2. Each generated PR must include unit tests in `tests/`.
+3. Use **SQLModel** + **Alembic**; no raw SQL.
+4. Python baseline 3.12; no compatibility shims.
+5. External calls wrapped with `tenacity` (retries).
+6. Logging via `structlog` JSON: at least `event`, `service`, `request_id`.
+7. Multi‑stage Docker, final `python:3.12‑slim`, prod deps only.
+8. No hard‑coded secrets; raise `RuntimeError` if ENV missing.
+9. Public FastAPI routes must return Pydantic models, not dict.
+10. Cursor must respect Feature‑Flag helper `libs.py_common.flags`.
+
+---
+
+## 5 .cursor.json baseline
+
+```json
+{
+  "codeStyle": "pep8",
+  "unitTest": true,
+  "docker": true,
+  "defaultLanguage": "python",
+  "ignoredFolders": ["node_modules", ".venv", "web"],
+  "indexableFileTypes": [".py", ".ts", ".sql", ".tf", ".md"],
+  "rules": {
+    "maxFolders": 7,
+    "allowedTop": ["infra", "services", "libs", "web", "tests", "docs"],
+    "fileNaming": "snake_case",
+    "classNaming": "PascalCase"
+  }
+}
+```
+
+---
+
+## 6 First‑prompt template
+
+```
+Generate a new micro‑service named <service_name> inside services/<service_name>.
+Follow template from Section 2. Use SQLModel, Alembic, JWT auth, include unit
+tests in tests/<service_name>/. No folders outside whitelist. Do NOT touch web/.
+```
+
+---
+
+*End of .cursor-rules v1.1*

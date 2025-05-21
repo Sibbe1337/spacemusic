@@ -1,0 +1,275 @@
+version: '3.8'
+
+services:
+  offers-db:
+    image: postgres:16
+    container_name: offers_postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: offers_db
+    ports:
+      - "5433:5432" # Avoid conflict if local 5432 is used
+    volumes:
+      - offers_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d offers_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  offers-cache:
+    image: redis:6-alpine
+    container_name: offers_redis_cache
+    ports:
+      - "6380:6379" # Avoid conflict if local 6379 is used
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  offers-api: # Assuming the service will be an API
+    build:
+      context: ./services/offers
+      dockerfile: Dockerfile # This Dockerfile needs to be created in services/offers/
+    container_name: offers_api_service
+    ports:
+      - "8001:8000" # Example port mapping
+    depends_on:
+      offers-db:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      schema-registry:
+        condition: service_started
+    environment:
+      DB_CONNECTION_STRING: "postgresql+asyncpg://user:password@offers-db:5432/offers_db"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:9093"
+      SCHEMA_REGISTRY_URL: "http://schema-registry:8081"
+      OFFERS_API_METRICS_PORT: "8000" # if metrics exposed, consistent with offers/main.py
+      LAUNCHDARKLY_SDK_KEY: "${LAUNCHDARKLY_SDK_KEY_FROM_HOST_ENV}" # Or a default dev key
+      # Add other necessary environment variables for the service
+    volumes:
+      - ./services/offers:/app # Mount code for hot-reloading in dev
+      # The prompt asks for mounting a volume for migrations and running alembic upgrade head.
+      # This is typically done *within* the service's Dockerfile or as an entrypoint/command script.
+      # If the goal is to run migrations *before* the main app starts, the command for the service needs to be adjusted.
+      # For simplicity, here's how you might ensure migrations are run.
+      # A common pattern is to have an entrypoint script that runs migrations then starts the app.
+    command: >
+      sh -c "cd /app && 
+             echo 'Waiting for DB to be ready...' && sleep 5 && 
+             echo 'Attempting to run Alembic migrations...' && 
+             alembic upgrade head && 
+             echo 'Starting FastAPI application...' && 
+             uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    # Note: The above command assumes alembic is installed in the service's Docker image
+    # and that alembic.ini is configured to find DB_CONNECTION_STRING from env.
+    # Also, this mounts the entire services/offers directory. The prompt mentioned
+    # mounting a volume *migrations*. If only migrations dir needs to be a named volume,
+    # that's a different setup, typically for persistent storage of migration state if not in code.
+    # However, Alembic scripts are usually part of the codebase.
+
+  valuation-worker:
+    build:
+      context: ./services/valuation
+      dockerfile: Dockerfile
+    container_name: valuation_celery_worker
+    depends_on:
+      offers-db: # If it needs to read from offers_db
+        condition: service_healthy
+      offers-cache: # For Spotify caching and Celery broker/backend
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      schema-registry:
+        condition: service_started
+    environment:
+      DB_CONNECTION_STRING: "postgresql://user:password@offers-db:5432/offers_db"
+      CELERY_BROKER_URL: "redis://offers-cache:6379/0"
+      CELERY_RESULT_BACKEND_URL: "redis://offers-cache:6379/0"
+      SPOTIPY_CLIENT_ID: "${SPOTIPY_CLIENT_ID}"
+      SPOTIPY_CLIENT_SECRET: "${SPOTIPY_CLIENT_SECRET}"
+      REDIS_HOST: "offers-cache"
+      REDIS_PORT: "6379"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:9093"
+      SCHEMA_REGISTRY_URL: "http://schema-registry:8081"
+      VALUATION_METRICS_PORT: "8001"
+      PYTHONPATH: "."
+    volumes:
+      - ./services/valuation:/app
+      - ./libs:/app/libs # Mount libs so worker can find py_common, analytics
+      - ./services/offers:/app/services/offers # Mount offers service for model imports
+    # The CMD in services/valuation/Dockerfile runs the celery worker.
+
+  docgen-worker:
+    build:
+      context: ./services/docgen
+      dockerfile: Dockerfile
+    container_name: docgen_celery_worker
+    depends_on:
+      offers-db:
+        condition: service_healthy
+      offers-cache: # For Celery broker/backend if docgen uses same redis
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      schema-registry:
+        condition: service_started
+    environment:
+      DB_CONNECTION_STRING: "postgresql://user:password@offers-db:5432/offers_db" # Sync URL for Celery
+      CELERY_BROKER_URL: "redis://offers-cache:6379/0" # Assuming same broker as valuation
+      CELERY_RESULT_BACKEND_URL: "redis://offers-cache:6379/0"
+      AWS_REGION: "${AWS_REGION}" # e.g., eu-north-1, from host .env or CI
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}" # For S3 upload
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      TERM_SHEETS_S3_BUCKET: "${TERM_SHEETS_S3_BUCKET}"
+      PYTHONPATH: "."
+    volumes:
+      - ./services/docgen:/app
+      - ./libs:/app/libs # Mount libs for py_common if needed
+      - ./services/offers:/app/services/offers # Mount offers service for model imports
+    # The CMD in services/docgen/Dockerfile runs the celery worker.
+
+  payouts-db: # Separate DB for ledger entries, if desired
+    image: postgres:16
+    container_name: payouts_postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: payouts_db
+    ports:
+      - "5434:5432" # Different host port for payouts DB
+    volumes:
+      - payouts_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d payouts_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  payouts-worker:
+    build:
+      context: ./services/payouts
+      dockerfile: Dockerfile
+    container_name: payouts_celery_worker
+    command: ["celery", "-A", "services.payouts.worker.celery_app", "worker", "-l", "INFO", "-Q", "payouts"]
+    depends_on:
+      offers-db:
+        condition: service_healthy
+      payouts-db: # Depends on its own ledger DB
+        condition: service_healthy
+      offers-cache: # For Celery broker/backend
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      schema-registry:
+        condition: service_started
+    environment:
+      # For Offers DB (read-only by worker usually, except status update)
+      OFFERS_DB_CONNECTION_STRING: "postgresql://user:password@offers-db:5432/offers_db"
+      # For Payouts Ledger DB (read-write by worker)
+      PAYOUTS_DB_CONNECTION_STRING: "postgresql://user:password@payouts-db:5432/payouts_db"
+      CELERY_BROKER_URL: "redis://offers-cache:6379/0"
+      CELERY_RESULT_BACKEND_URL: "redis://offers-cache:6379/0"
+      STRIPE_API_KEY: "${STRIPE_API_KEY}"
+      STRIPE_CONNECT_ID: "${STRIPE_CONNECT_ID}"
+      WISE_TOKEN: "${WISE_TOKEN}"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:9093" # Corrected to internal listener
+      SCHEMA_REGISTRY_URL: "http://schema-registry:8081" # Added for consistency if it produces Avro
+      PAYOUTS_WORKER_METRICS_PORT: "8003"
+      PYTHONPATH: "."
+    volumes:
+      - ./services/payouts:/app
+      - ./libs:/app/libs
+
+  payouts-api: # For the internal /retry_payout endpoint
+    build:
+      context: ./services/payouts
+      dockerfile: Dockerfile
+    container_name: payouts_internal_api
+    command: ["uvicorn", "services.payouts.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    ports:
+      - "8003:8000" # Example: Payouts API on host port 8003
+    depends_on:
+      offers-cache: # For Celery task dispatch
+        condition: service_healthy
+    environment:
+      CELERY_BROKER_URL: "redis://offers-cache:6379/0"
+      CELERY_RESULT_BACKEND_URL: "redis://offers-cache:6379/0"
+      PYTHONPATH: "."
+    volumes:
+      - ./services/payouts:/app
+      - ./libs:/app/libs
+
+# Kafka and Schema Registry services for local development
+zookeeper:
+  image: bitnami/zookeeper:latest
+  container_name: zookeeper_space
+  ports:
+    - "2181:2181"
+  environment:
+    ALLOW_ANONYMOUS_LOGIN: "yes"
+
+kafka:
+  image: bitnami/kafka:latest
+  container_name: kafka_space
+  ports:
+    - "9092:9092" # For clients outside Docker network (e.g. local dev)
+    - "9093:9093" # For clients inside Docker network (inter-service communication)
+  environment:
+    KAFKA_BROKER_ID: 1
+    KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
+    ALLOW_PLAINTEXT_LISTENER: "yes"
+    KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+    KAFKA_CFG_LISTENERS: CLIENT://:9093,EXTERNAL://:9092
+    KAFKA_CFG_ADVERTISED_LISTENERS: CLIENT://kafka:9093,EXTERNAL://localhost:9092
+    KAFKA_CFG_INTER_BROKER_LISTENER_NAME: CLIENT
+    KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "true"
+    KAFKA_CFG_MESSAGE_MAX_BYTES: "10485880" # 10MB example
+    KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR: 1 # For single node cluster
+    KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR: 1
+  depends_on:
+    - zookeeper
+
+schema-registry:
+  image: confluentinc/cp-schema-registry:7.5.0 # Use a version compatible with your confluent-kafka client
+  container_name: schema_registry_space
+  ports:
+    - "8081:8081"
+  environment:
+    SCHEMA_REGISTRY_HOST_NAME: schema-registry
+    SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: kafka:9093 # Internal listener
+    SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+    SCHEMA_REGISTRY_KAFKASTORE_TOPIC_REPLICATION_FACTOR: 1 # For single node Kafka cluster
+  depends_on:
+    - kafka
+
+event-consumer:
+  build:
+    context: ./services/event_consumer
+    dockerfile: Dockerfile
+  container_name: event_consumer_service
+  depends_on:
+    kafka:
+      condition: service_started # Basic check, Kafka might take a moment to be fully ready
+    schema-registry:
+      condition: service_started 
+  environment:
+    KAFKA_BOOTSTRAP_SERVERS: "kafka:9093" # Internal listener for Kafka
+    SCHEMA_REGISTRY_URL: "http://schema-registry:8081"
+    PYTHONPATH: "."
+    EVENT_CONSUMER_METRICS_PORT: "8004" # Consistent with metrics.py
+  ports:
+    - "8004:8004" # Expose metrics port
+  volumes:
+    - ./services/event_consumer:/app
+    - ./libs:/app/libs # If it uses common libs
+    - ./schema:/app/schema # To load Avro schemas
+
+volumes:
+  offers_db_data:
+  payouts_db_data: # Volume for payouts DB
+  # ... potentially other volumes ... 

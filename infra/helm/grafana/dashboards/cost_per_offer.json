@@ -1,0 +1,140 @@
+{
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.0.0"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "title": "AWS Daily Cost (EUR)",
+      "type": "graph",
+      "datasource": "Prometheus",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 2,
+      "targets": [
+        {
+          "expr": "aws_ce_daily_cost_usd_sum{service_name=\"offers_related_service\"} * on() group_left() exchange_rate_usd_to_eur",
+          "legendFormat": "AWS Cost (EUR)",
+          "refId": "A"
+        }
+      ],
+      "tooltip": { "shared": true, "sort": 0, "value_type": "individual" },
+      "yaxes": [
+        { "format": "currencyEUR", "label": "Cost EUR", "show": true },
+        { "show": true }
+      ]
+    },
+    {
+      "title": "Offers Created (Total)",
+      "type": "stat",
+      "datasource": "Prometheus",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 4,
+      "pluginVersion": "7.5.2",
+      "targets": [
+        {
+          "expr": "sum(offers_created_total)",
+          "legendFormat": "Total Offers",
+          "refId": "A"
+        }
+      ],
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "" },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "mappings": [],
+          "color": { "mode": "thresholds" }
+        }
+      }
+    },
+    {
+      "title": "€ per Offer (Daily Average)",
+      "type": "stat",
+      "datasource": "Prometheus",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "id": 6,
+      "pluginVersion": "7.5.2",
+      "targets": [
+        {
+          "expr": "(sum(rate(aws_ce_daily_cost_usd_sum{service_name=\"offers_related_service\"}[1d])) * on() group_left() avg_over_time(exchange_rate_usd_to_eur[1d])) / sum(increase(offers_created_total[1d]))",
+          "legendFormat": "€ per Offer",
+          "refId": "A"
+        }
+      ],
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "" },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "currencyEUR",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 0.8 },
+              { "color": "red", "value": 1 }
+            ]
+          },
+          "mappings": [],
+          "color": { "mode": "thresholds" }
+        }
+      }
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": ["cost", "offers"],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Cost Per Offer Dashboard",
+  "uid": "cost-per-offer-dashboard",
+  "version": 1
+} 

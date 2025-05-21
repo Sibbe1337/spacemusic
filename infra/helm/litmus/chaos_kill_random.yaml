@@ -1,0 +1,67 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: random-pod-kill-engine
+  namespace: litmus # Or your Litmus control plane namespace
+spec:
+  engineState: 'active'
+  # Service account used by the chaos experiment
+  chaosServiceAccount: litmus-admin # Ensure this service account exists and has permissions
+  # Define the application info (optional, but good practice)
+  appinfo:
+    appns: 'your-apps-namespace' # IMPORTANT: Change to the namespace of your target apps
+    applabel: 'app in (valuation, payouts, offers)' # Informational, actual targeting is in experiment
+    appkind: 'deployment' # Or statefulset, daemonset, etc.
+  # Experiments to be executed
+  experiments:
+  - name: pod-delete-random-apps
+    spec:
+      # Defines the chaos experiment (name should match a ChaosExperiment CR)
+      # This assumes 'pod-delete' experiment from the hub is installed
+      components:
+        # Environment variables for the pod-delete experiment
+        env:
+        - name: TOTAL_CHAOS_DURATION
+          value: '300' # Total duration of chaos in seconds (e.g., 5 minutes)
+        - name: CHAOS_INTERVAL
+          value: '60'  # Interval between two chaos injections in seconds
+        - name: PODS_AFFECTED_PERC
+          value: '50' # Percentage of pods to target in each iteration (can be tuned)
+        # Target application details
+        - name: APP_NAMESPACE
+          value: 'your-apps-namespace' # IMPORTANT: Change to your target app namespace
+        - name: LABEL_SELECTOR # Selects pods where 'app' is 'valuation' OR 'payouts' OR 'offers'
+          value: "app in (valuation,payouts,offers)"
+        - name: RAMP_TIME
+          value: '' # Optional: Time to wait before starting the chaos
+        - name: SEQUENCE
+          value: 'parallel' # 'serial' or 'parallel' for multiple pods
+        - name: INSTANCE_ID
+          value: '' # Optional: A unique ID for the chaos run
+
+        # Probes to check application health/SLOs
+        probe:
+        - name: "check-slo-alert-status"
+          type: "promProbe"
+          promProbe/inputs:
+            endpoint: "http://prometheus-k8s.monitoring.svc:9090" # IMPORTANT: Adjust your Prometheus endpoint
+            query: "sum(ALERTS{alertname='MySLOBreachAlert', alertstate='firing'}) > 0"
+            # This query checks if any alert with name 'MySLOBreachAlert' is currently firing.
+            # The 'sum(...) > 0' results in '1' if firing, '0' otherwise.
+            # You might need to refine this query based on your specific alert labels (e.g., to target alerts for 'valuation', 'payouts', 'offers').
+            # Example for specific apps if alert has an 'app' label:
+            # query: "sum(ALERTS{alertname='MySLOBreachAlert', alertstate='firing', app=~'valuation|payouts|offers'}) > 0"
+            comparator:
+              type: "==" # Check if the query result is equal to the value
+              value: "1" # Probe succeeds if alert is firing (query result is 1)
+          mode: "EOT" # Check at the End Of Test
+          runProperties:
+            probeTimeout: 60 # Seconds
+            interval: 20     # Seconds
+            retry: 3
+            initialDelaySeconds: 30 # Wait before first probe check after chaos completion
+
+  # Default is "delete", which cleans up chaos resources after execution
+  jobCleanUpPolicy: 'delete'
+  # Monitoring (optional) - Ensure your ChaosExporter is set up if you use this
+  # monitoring: false 

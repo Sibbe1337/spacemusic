@@ -1,0 +1,49 @@
+apiVersion: linkerd.io/v1alpha2
+kind: ServiceProfile
+metadata:
+  name: api-gateway.default.svc.cluster.local # Adjust namespace if not 'default'
+  namespace: linkerd # Or the namespace where Linkerd is installed or where you keep profiles
+spec:
+  routes:
+    - name: "POST /*"
+      condition:
+        method: POST
+        pathRegex: "/.*"
+      isRetryable: true
+      timeout: 15s
+    - name: "PUT /*"
+      condition:
+        method: PUT
+        pathRegex: "/.*"
+      isRetryable: true
+      timeout: 15s
+    - name: "DELETE /*"
+      condition:
+        method: DELETE
+        pathRegex: "/.*"
+      isRetryable: true
+      timeout: 15s
+    - name: "GET /* (read-only)"
+      condition:
+        method: GET
+        pathRegex: "/.*"
+      # GETs are typically not retryable by default unless specified otherwise
+      # isRetryable: false 
+      timeout: 10s # Potentially shorter timeout for GETs
+  retryBudget:
+    retryRatio: 0.2
+    minRetriesPerSecond: 10
+    ttl: "10s"
+  responseClasses:
+    - condition:
+        isFailure: true
+        status:
+          min: 500
+          max: 599
+      isRetryable: true
+    - condition:
+        isFailure: false
+        status:
+          min: 200
+          max: 299
+      isRetryable: false 

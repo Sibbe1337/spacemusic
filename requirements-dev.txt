@@ -1,0 +1,9 @@
+ruff
+pytest
+pytest-cov # For coverage reporting
+mypy
+alembic
+sqlmodel
+
+# Add other shared Python development dependencies here
+# e.g., for specific pytest plugins or testing utilities 

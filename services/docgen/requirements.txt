@@ -1,0 +1,10 @@
+celery[redis]
+sqlmodel
+psycopg2-binary # For Offer DB access
+weasyprint # For PDF generation
+jinja2 # For HTML templating
+boto3 # AWS SDK for S3
+structlog # For logging
+python-dotenv # For local .env loading if needed
+uuid # Standard library
+prometheus-client # Added for metrics 
