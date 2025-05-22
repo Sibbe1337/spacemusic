@@ -3,6 +3,7 @@ import structlog # Assuming structlog is in requirements.txt
 from sqlmodel import SQLModel # For potential route response models
 from typing import List # For list responses
 from libs.py_common.flags import LaunchDarklyClient, close_ld_client
+from libs.py_common.logging import setup_logging # Import setup_logging
 
 # Prometheus metrics
 from starlette_prometheus import PrometheusMiddleware, metrics as starlette_metrics # Corrected import
@@ -12,6 +13,11 @@ from starlette_prometheus import PrometheusMiddleware, metrics as starlette_metr
 from .db import get_session, init_db # init_db might be called on startup
 from .models import OfferRead, OfferCreate, CreatorRead, CreatorCreate # Example models
 # Import other specific models as needed for routes
+
+import time # Added for middleware
+from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint # Added for middleware
+from starlette.requests import Request # Added for middleware
+from starlette.responses import Response # Added for middleware
 
 app = FastAPI(
     title="Offers Service",
@@ -26,8 +32,63 @@ app.add_middleware(PrometheusMiddleware)
 
 logger = structlog.get_logger(__name__)
 
+# Add Structlog Request Logging Middleware
+class StructlogRequestLoggingMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
+        structlog.contextvars.clear_contextvars()
+        # Optional: Bind initial request info to be available on all logs within this request context
+        # structlog.contextvars.bind_contextvars(
+        #     path=request.url.path,
+        #     method=request.method,
+        #     client_host=request.client.host,
+        # )
+
+        start_time = time.time()
+        status_code = 500 # Default status code for unhandled exceptions
+
+        try:
+            response = await call_next(request)
+            status_code = response.status_code
+        except Exception as exc:
+            # Log unhandled exceptions before they are re-raised or handled by FastAPI's default.
+            logger.error(
+                "unhandled_exception_during_request", 
+                exc_info=True, 
+                path=str(request.url.path),
+                method=request.method,
+                client_host=request.client.host
+            )
+            raise # Re-raise the exception to be handled by FastAPI or other exception handlers
+        finally:
+            process_time = time.time() - start_time
+            
+            # Prepare log event common to success and handled exceptions that might set a status code
+            log_event = {
+                "http": {
+                    "request": {
+                        "method": request.method,
+                        "url": str(request.url),
+                        "headers": {k:v for k,v in request.headers.items() if k.lower() not in ['authorization', 'cookie', 'x-api-key']} # Exclude sensitive headers
+                    },
+                    "response": {
+                        "status_code": status_code,
+                    }
+                },
+                "network": {"client": {"ip": request.client.host, "port": request.client.port}},
+                "duration_ms": round(process_time * 1000, 2),
+                "service": "offers", # Or use an environment variable/config for service name
+                "path": str(request.url.path), # Explicitly log path for easier filtering
+                "method": request.method      # Explicitly log method for easier filtering
+            }
+            logger.info("http_request_completed", **log_event)
+        
+        return response
+
+app.add_middleware(StructlogRequestLoggingMiddleware)
+
 @app.on_event("startup")
 async def on_startup():
+    setup_logging() # Call setup_logging early
     logger.info("offers_service_startup", service="offers", event="service_starting")
     # Initialize the database and tables if needed (idempotent)
     # Consider if this should be manual or handled by migrations more explicitly outside app startup.

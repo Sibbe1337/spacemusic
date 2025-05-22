@@ -53,4 +53,10 @@ jobs:
       - name: Test admin_ui (using pnpm)
         run: |
           cd services/admin_ui
-          pnpm test 
+          pnpm test
+
+      - name: Build admin_ui (using pnpm)
+        if: success()
+        run: |
+          cd services/admin_ui
+          pnpm build 

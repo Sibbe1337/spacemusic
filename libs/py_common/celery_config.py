@@ -24,7 +24,8 @@ def create_celery_app(app_name: str) -> Celery:
         timezone='UTC',
         enable_utc=True,
         # Add other common Celery settings here
-        # task_acks_late = True, # Example: for tasks that must complete
+        task_acks_late = True, # For tasks that must complete, ensures message is acked after task completion/failure
+        broker_connection_retry_on_startup = True, # Allows Celery worker to retry connecting to the broker on startup
         # worker_prefetch_multiplier = 1, # Example: for long running tasks
     )
     return app

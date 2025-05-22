@@ -1,5 +1,6 @@
 celery[redis]
 sqlmodel
+pydantic<2.0.0 # Explicitly lock pydantic to v1 for now
 psycopg2-binary # For Offer DB access
 weasyprint # For PDF generation
 jinja2 # For HTML templating

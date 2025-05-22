@@ -4,6 +4,8 @@ pytest-cov # For coverage reporting
 mypy
 alembic
 sqlmodel
+httpx # For making HTTP requests in tests and application code
+respx # For mocking HTTPX requests
 
 # Add other shared Python development dependencies here
 # e.g., for specific pytest plugins or testing utilities 

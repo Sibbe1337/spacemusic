@@ -1,39 +1,58 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Auth0Context, User } from '@auth0/auth0-react';
+import { Auth0Context, User, type Auth0ContextInterface, type IdToken } from '@auth0/auth0-react';
 import { vi, describe, it, expect } from 'vitest';
 
 import DealsPage from './DealsPage';
 // import { server } from '../mocks/server'; // MSW server, already handled by setupTests.ts
 
-// Mock Auth0 context provider values
 const mockAuth0ContextValue = {
+  // Properties confirmed or very likely to be in Auth0ContextInterface
   isAuthenticated: true,
   user: { 
     name: 'Test User', 
     email: 'test@example.com', 
     picture: 'https://example.com/avatar.jpg' 
-    // Add other user properties if your app uses them
   } as User,
   isLoading: false,
+  error: undefined, // Assuming error is an optional property, common in context APIs
+
+  // Mocked functions - ensuring their signatures are at least compatible approximations
   getAccessTokenSilently: vi.fn().mockResolvedValue('mocked-access-token'),
-  loginWithRedirect: vi.fn(),
-  logout: vi.fn(),
-  loginWithPopup: vi.fn(),
-  getAccessTokenWithPopup: vi.fn(),
-  getIdTokenClaims: vi.fn(),
-  handleRedirectCallback: vi.fn(),
-  buildAuthorizeUrl: vi.fn(),
-  buildLogoutUrl: vi.fn(),
-  isAuthenticatedPromise: Promise.resolve(true),
-};
+  loginWithRedirect: vi.fn().mockResolvedValue(undefined),
+  logout: vi.fn().mockResolvedValue(undefined),
+  loginWithPopup: vi.fn().mockResolvedValue(undefined),
+  getAccessTokenWithPopup: vi.fn().mockResolvedValue(undefined as string | undefined),
+  getIdTokenClaims: vi.fn().mockResolvedValue(undefined as IdToken | undefined),
+  handleRedirectCallback: vi.fn().mockResolvedValue(undefined as unknown), // Use unknown for unspecified Promise results
+
+  // Functions like buildAuthorizeUrl, buildLogoutUrl might not be direct members or are part of options objects.
+  // Omitting them unless TypeScript explicitly demands them as non-optional.
+  // If the type Auth0ContextInterface demands more non-optional properties, they need to be added.
+  // For example, if `getIdentityClaims` was non-optional and different from `getIdTokenClaims`:
+  // getIdentityClaims: vi.fn(), 
+
+  // Adding properties based on the linter error
+  buildAuthorizeUrl: vi.fn().mockResolvedValue('http://authorize.url'), // Added back
+  buildLogoutUrl: vi.fn().mockReturnValue('http://logout.url'), // Added back
+  getAccessTokenSilentlyVerbose: vi.fn().mockResolvedValue({ accessToken: 'mock_token_verbose', id_token: 'mock_id_token', scope: 'openid profile', expires_in: 3600 }), // Placeholder for GetTokenSilentlyVerboseResponse
+  getAccessTokenWithPopupVerbose: vi.fn().mockResolvedValue({ accessToken: 'mock_token_verbose_popup', id_token: 'mock_id_token_popup', scope: 'openid profile', expires_in: 3600 }), // Placeholder
+  handleRedirectCallbackVerbose: vi.fn().mockResolvedValue({ appState: { targetUrl: '/' } }), // Placeholder for RedirectLoginResult
+
+  // Guessing the "and 2 more" might be related to checkSession or similar
+  checkSession: vi.fn().mockResolvedValue(undefined), // Common Auth0 function
+  // isAuthenticatedPromise: Promise.resolve(true), // This was in your original mock, let's see if it's one of them or if `isAuthenticated` is enough
+  // One more missing? The linter will tell us if these are not the correct "2 more".
+  // The error message from the linter is the source of truth for missing non-optional properties.
+
+} as Auth0ContextInterface<User>; // Single cast of the whole object at the end.
 
 // Helper to render with necessary providers
 const renderDealsPage = () => {
   return render(
     <Router> {/* DealsPage might contain Link components or routing logic indirectly */}
-      <Auth0Context.Provider value={mockAuth0ContextValue as any}> {/* Cast as any to simplify mock type */}
+      <Auth0Context.Provider value={mockAuth0ContextValue}>
         <DealsPage />
       </Auth0Context.Provider>
     </Router>

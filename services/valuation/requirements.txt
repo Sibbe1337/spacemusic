@@ -1,5 +1,6 @@
 celery[redis] # For Celery and Redis broker/backend
 sqlmodel
+pydantic<2.0.0 # Explicitly lock pydantic to v1 for now
 psycopg2-binary # Or other DB driver for Offer DB, if worker accesses it directly
 spotipy # Spotify API client
 redis # Python Redis client for caching
