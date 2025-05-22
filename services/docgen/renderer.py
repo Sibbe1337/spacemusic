@@ -35,7 +35,9 @@ jinja_env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=True)
 
 # S3 Configuration
 S3_BUCKET_NAME = os.getenv("TERM_SHEETS_S3_BUCKET")
-S3_REGION = os.getenv("AWS_REGION", "eu-north-1") # Ensure your worker env has AWS_REGION
+S3_RECEIPTS_PREFIX = "receipts" # New prefix for receipts
+S3_TERMSHEETS_PREFIX = "termsheets" # Existing prefix for termsheets
+S3_REGION = os.getenv("AWS_REGION", "eu-north-1")
 s3_client = boto3.client("s3", region_name=S3_REGION) if S3_BUCKET_NAME else None
 if not S3_BUCKET_NAME:
     logger.warning("TERM_SHEETS_S3_BUCKET environment variable not set. S3 upload will be disabled.")
@@ -163,6 +165,108 @@ def render_termsheet_pdf(offer: Offer) -> tuple[str | None, str | None]:
     except Exception as e:
         logger.error("Error in render_termsheet_pdf process", error=str(e), offer_id=str(offer.id), exc_info=True)
         APP_ERRORS_TOTAL.labels(error_type="orchestration_error", component="render_termsheet_pdf").inc()
+        return None, None
+
+def _render_html_for_receipt(event_data: dict) -> str:
+    """Renders the receipt HTML using Jinja2 and receipt_template.html."""
+    template = jinja_env.get_template("receipt_template.html")
+    
+    # Format timestamps from event_data (which are in micros)
+    completed_at_micros = event_data.get("completed_at_micros", int(time.time() * 1_000_000))
+    completed_at_dt = datetime.utcfromtimestamp(completed_at_micros / 1_000_000)
+    completed_at_formatted = completed_at_dt.strftime("%Y-%m-%d %H:%M:%S UTC")
+    
+    generation_timestamp_formatted = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    
+    context = {
+        "event_data": event_data,
+        "offer_id": event_data.get("offer_id"), # Pass separately if template uses it directly
+        "completed_at_formatted": completed_at_formatted,
+        "generation_timestamp_formatted": generation_timestamp_formatted
+    }
+    html_content = template.render(context)
+    return html_content
+
+# Re-using existing generate_pdf_from_html, calculate_sha256
+# Modified upload_to_s3 to accept a prefix
+def upload_to_s3_v2(pdf_bytes: bytes, object_id: str, s3_prefix: str, filename_prefix: str) -> str | None:
+    """Uploads the PDF to S3 under a specific prefix and returns a presigned URL."""
+    if not s3_client or not S3_BUCKET_NAME:
+        logger.error("S3 client or bucket name not configured. Cannot upload.")
+        S3_UPLOADS_TOTAL.labels(outcome="failure_config").inc() # Consider adding prefix to metric label
+        return None
+
+    s3_key = f"{s3_prefix}/{str(object_id)}/{filename_prefix}_{datetime.utcnow().strftime("%Y%m%d%H%M%S")}.pdf"
+    logger.info("Uploading PDF to S3", bucket=S3_BUCKET_NAME, key=s3_key, object_id=str(object_id))
+    
+    start_time = time.monotonic()
+    outcome = "failure_unknown"
+    try:
+        s3_client.put_object(Bucket=S3_BUCKET_NAME, Key=s3_key, Body=pdf_bytes, ContentType='application/pdf')
+        presigned_url = s3_client.generate_presigned_url(
+            'get_object',
+            Params={'Bucket': S3_BUCKET_NAME, 'Key': s3_key},
+            ExpiresIn=24 * 3600  # 24 hours
+        )
+        logger.info("PDF uploaded to S3 successfully", s3_key=s3_key)
+        outcome = "success"
+        return presigned_url
+    except (NoCredentialsError, PartialCredentialsError) as e:
+        logger.error("S3 credentials not found or incomplete.", error=str(e), object_id=str(object_id))
+        APP_ERRORS_TOTAL.labels(error_type="s3_credentials", component="upload_to_s3_v2").inc()
+        outcome = "failure_credentials"
+    except ClientError as e:
+        logger.error("S3 ClientError during upload.", error=str(e.response.get('Error',{}).get('Code')), object_id=str(object_id))
+        APP_ERRORS_TOTAL.labels(error_type="s3_client_error", component="upload_to_s3_v2").inc()
+        outcome = "failure_client_error"
+    except Exception as e:
+        logger.error("Unexpected error during S3 upload.", error=str(e), object_id=str(object_id), exc_info=True)
+        APP_ERRORS_TOTAL.labels(error_type="s3_unknown_error", component="upload_to_s3_v2").inc()
+    finally:
+        S3_UPLOAD_DURATION_SECONDS.observe(time.monotonic() - start_time)
+        S3_UPLOADS_TOTAL.labels(outcome=outcome).inc() # Consider adding prefix
+    return None
+
+# --- New function for rendering and uploading receipt PDF ---
+def render_receipt_pdf_and_upload(event_data: dict) -> tuple[str | None, str | None]:
+    """
+    Renders a Payout Receipt PDF based on event_data, uploads to S3,
+    and returns the S3 presigned URL and SHA256 hash.
+    `event_data` is expected to be the payload from `offer.payout.completed` event.
+    Returns (None, None) if any critical step fails.
+    """
+    offer_id_str = event_data.get("offer_id")
+    if not offer_id_str:
+        logger.error("offer_id missing from event_data for receipt generation.")
+        APP_ERRORS_TOTAL.labels(error_type="missing_offer_id", component="render_receipt_pdf_and_upload").inc()
+        return None, None
+    
+    # Convert string UUID back to UUID object if needed by generate_pdf_from_html, though it takes string now
+    try:
+        offer_id_uuid = uuid.UUID(offer_id_str)
+    except ValueError:
+        logger.error("Invalid offer_id format in event_data", offer_id_str=offer_id_str)
+        APP_ERRORS_TOTAL.labels(error_type="invalid_offer_id_format", component="render_receipt_pdf_and_upload").inc()
+        return None, None
+
+    logger.info("Starting receipt generation process for offer", offer_id=offer_id_str)
+    try:
+        html_content = _render_html_for_receipt(event_data)
+        
+        _local_pdf_path, pdf_bytes = generate_pdf_from_html(html_content, offer_id_uuid) # Pass UUID
+        if not pdf_bytes:
+            logger.error("Receipt PDF generation failed, no bytes produced.", offer_id=offer_id_str)
+            return None, None
+
+        pdf_hash = calculate_sha256(pdf_bytes)
+        s3_presigned_url = upload_to_s3_v2(pdf_bytes, offer_id_str, S3_RECEIPTS_PREFIX, "receipt")
+
+        logger.info("Receipt PDF processed", offer_id=offer_id_str, s3_url=s3_presigned_url, pdf_hash=pdf_hash)
+        return s3_presigned_url, pdf_hash
+
+    except Exception as e:
+        logger.error("Error in render_receipt_pdf_and_upload process", error=str(e), offer_id=offer_id_str, exc_info=True)
+        APP_ERRORS_TOTAL.labels(error_type="receipt_orchestration_error", component="render_receipt_pdf_and_upload").inc()
         return None, None
 
 # Example usage (for local testing, not part of Celery task directly):

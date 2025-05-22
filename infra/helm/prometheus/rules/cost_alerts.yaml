@@ -2,7 +2,7 @@ groups:
 - name: CostAlerts
   rules:
   - alert: CostPerOfferTooHigh
-    expr: (sum(rate(aws_ce_daily_cost_usd_sum{service_name=\"offers_related_service\"}[1d])) * on() group_left() avg_over_time(exchange_rate_usd_to_eur[1d])) / sum(increase(offers_created_total[1d])) > 1
+    expr: (increase(aws_ce_daily_cost_usd_sum{service_name=\"offers_related_service\"}[1d]) * avg_over_time(exchange_rate_usd_to_eur[1d])) / increase(offers_created_total[1d]) > 1
     for: 1h
     labels:
       severity: warning

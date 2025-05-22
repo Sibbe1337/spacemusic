@@ -35,8 +35,18 @@ jobs:
       - name: Lint Python with Ruff
         run: ruff check .
 
-      - name: Run Python tests with Pytest
-        run: pytest -q tests/
+      - name: Run Python tests with Pytest and Generate Coverage Report
+        run: |
+          pip install coverage # Ensure coverage is explicitly available if not pulled by pytest-cov directly in all contexts
+          pytest --cov=. --cov-report=xml --cov-report=html -q tests/
+
+      - name: Upload Python Coverage HTML Report
+        uses: actions/upload-artifact@v4
+        if: success() || failure() # Upload report even if tests fail to see coverage
+        with:
+          name: python-coverage-report
+          path: htmlcov/ # Default output directory for pytest-cov html report
+          retention-days: 7
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -59,4 +69,22 @@ jobs:
         if: success()
         run: |
           cd services/admin_ui
-          pnpm build 
+          pnpm build
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v4 # Using a popular action to install Helm
+        with:
+          version: 'v3.18.0' # Specify a Helm version consistent with your local
+
+      - name: Lint Helm Charts
+        run: |
+          echo "Linting Helm charts..."
+          cd infra/helm
+          for chart_dir in offers payouts docgen event-consumer valuation api-gateway; do
+            if [ -d "$chart_dir" ]; then
+              echo "Linting chart in $chart_dir..."
+              helm lint "$chart_dir"
+            else
+              echo "Skipping lint for $chart_dir: directory not found or not a chart."
+            fi
+          done 

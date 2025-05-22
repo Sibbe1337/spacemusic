@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "OfferPayoutRequested",
+  "namespace": "com.spacemusic.events",
+  "doc": "Event indicating that a payout has been requested for an offer.",
+  "fields": [
+    {"name": "event_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID for this event."},
+    {"name": "offer_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "The unique identifier for the offer."},
+    {"name": "amount_cents", "type": "int", "doc": "The amount to be paid out, in cents."},
+    {"name": "currency_code", "type": "string", "doc": "ISO 4217 currency code, e.g., EUR, USD."},
+    {
+      "name": "recipient_details", 
+      "type": "string", 
+      "doc": "Details of the recipient for the payout (e.g., bank account info, Wise recipient ID, Stripe Connect ID). This might be a stringified JSON or a specific ID."
+    },
+    {"name": "requested_at_micros", "type": {"type": "long", "logicalType": "timestamp-micros"}, "doc": "UTC timestamp in microseconds when the payout was requested."}
+  ]
+} 

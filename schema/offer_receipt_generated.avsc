@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "OfferReceiptGenerated",
+  "namespace": "com.spacemusic.events",
+  "doc": "Event indicating that a payout receipt PDF has been generated and stored.",
+  "fields": [
+    {"name": "event_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID for this event."},
+    {"name": "offer_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "The unique identifier for the offer this receipt pertains to."},
+    {"name": "receipt_url", "type": "string", "doc": "The S3 presigned URL (or permanent URL if preferred) to the generated PDF receipt."},
+    {"name": "receipt_hash_sha256", "type": ["null", "string"], "default": null, "doc": "Optional SHA256 hash of the PDF content for integrity checking."},
+    {"name": "generated_at_micros", "type": {"type": "long", "logicalType": "timestamp-micros"}, "doc": "UTC timestamp in microseconds when the receipt was generated and event was produced."}
+  ]
+} 

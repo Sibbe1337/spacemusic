@@ -98,13 +98,24 @@ def create_consumer(group_id: str, topics: list[str], config_overrides: dict = N
     consumer.subscribe(topics)
     return consumer
 
-def create_avro_consumer(group_id: str, topics: list[str], value_schema_str: str, key_schema_str: str = None, config_overrides: dict = None, auto_offset_reset='earliest') -> Consumer:
+def create_avro_consumer(
+    group_id: str, 
+    topics: list[str], 
+    value_schema_str: str = None, # Made optional
+    key_schema_str: str = None, 
+    config_overrides: dict = None, 
+    auto_offset_reset='earliest'
+) -> Consumer:
     sr_client = get_schema_registry_client()
     
-    value_avro_deserializer = AvroDeserializer(sr_client, value_schema_str)
-    key_deserializer = StringDeserializer('utf_8')
+    # If value_schema_str is None, AvroDeserializer will attempt to resolve schema using embedded schema ID
+    # from the consumed message, fetching it from Schema Registry.
+    value_avro_deserializer = AvroDeserializer(schema_registry_client=sr_client, schema_str=value_schema_str if value_schema_str else None)
+    
+    key_deserializer = StringDeserializer('utf_8') # Default key deserializer
     if key_schema_str:
-        key_avro_deserializer = AvroDeserializer(sr_client, key_schema_str)
+        # If a key schema is provided, use Avro for the key as well
+        key_avro_deserializer = AvroDeserializer(schema_registry_client=sr_client, schema_str=key_schema_str)
         key_deserializer = key_avro_deserializer
 
     consumer_config = kafka_config.copy()
@@ -118,8 +129,7 @@ def create_avro_consumer(group_id: str, topics: list[str], value_schema_str: str
     if config_overrides:
         consumer_config.update(config_overrides)
 
-    logger.info("Creating Avro Kafka Consumer", config=consumer_config, topics=topics)
-    # Note: confluent_kafka.avro.AvroConsumer is deprecated. Use Consumer with AvroDeserializer.
+    logger.info("Creating Avro Kafka Consumer", group_id=group_id, topics=topics, has_value_schema_str=bool(value_schema_str))
     consumer = Consumer(consumer_config)
     consumer.subscribe(topics)
     return consumer

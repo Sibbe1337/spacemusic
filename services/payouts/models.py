@@ -6,7 +6,7 @@ from sqlmodel import Field, SQLModel, Column
 import sqlalchemy as sa
 
 class LedgerEntryBase(SQLModel):
-    offer_id: uuid.UUID = Field(index=True, nullable=False, sa_column=Column(sa.Uuid, nullable=False))
+    offer_id: uuid.UUID = Field(sa_column=Column(sa.Uuid, nullable=False, index=True))
     debit_account: str = Field(nullable=False) # e.g., "cash_on_hand", "stripe_payable"
     credit_account: str = Field(nullable=False) # e.g., "payouts_clearing", "revenue"
     amount_cents: int = Field(nullable=False)

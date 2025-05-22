@@ -16,6 +16,7 @@ import structlog
 
 # Assuming libs is in PYTHONPATH
 from libs.py_common.celery_config import create_celery_app
+from libs.py_common.kafka import create_avro_producer, delivery_report, KafkaException # Added KafkaException
 # Assuming services/offers/models.py contains the Offer model definition
 # This creates a dependency. Ideally, models could be in libs if shared, or use an API.
 # For now, direct import path relative to a common root for services.
@@ -99,14 +100,12 @@ except FileNotFoundError:
     logger.error("Fallback rules rules.yaml not found!", rules_path=str(RULES_PATH))
     rules_config = {}
 
-# Kafka Producer (Placeholder)
+# Kafka Configuration
 KAFKA_BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
-# kafka_producer_config = {'bootstrap.servers': KAFKA_BOOTSTRAP_SERVERS}
-# kafka_producer = Producer(kafka_producer_config)
 OFFER_VALUATED_TOPIC = "offer.valuated"
 
 # --- Kafka Producer for offer.valuated ---
-OFFER_VALUATED_SCHEMA_PATH = Path(__file__).parent.parent.parent / "schema" / "offer_valuated.avsc"
+OFFER_VALUATED_SCHEMA_PATH = Path(__file__).resolve().parent.parent.parent / "schema" / "offer_valuated.avsc"
 _offer_valuated_producer = None
 _offer_valuated_schema_str = None
 
@@ -116,13 +115,16 @@ def get_offer_valuated_producer():
         try:
             with open(OFFER_VALUATED_SCHEMA_PATH, 'r') as f:
                 _offer_valuated_schema_str = f.read()
+            # Pass delivery_report callback to create_avro_producer if it accepts it, or handle separately
             _offer_valuated_producer = create_avro_producer(value_schema_str=_offer_valuated_schema_str)
             logger.info("Offer.valuated Kafka producer initialized.", topic=OFFER_VALUATED_TOPIC)
         except FileNotFoundError:
             logger.error("offer_valuated.avsc not found. Kafka producer will not work.", path=str(OFFER_VALUATED_SCHEMA_PATH))
+            _offer_valuated_producer = None # Ensure it's None if schema fails to load
         except Exception as e:
             logger.error("Failed to initialize Kafka producer for offer.valuated", error=str(e), exc_info=True)
             APP_ERRORS_TOTAL.labels(service_name="valuation", error_type="kafka_producer_init", component="get_offer_valuated_producer").inc()
+            _offer_valuated_producer = None # Ensure it's None on other init errors
     return _offer_valuated_producer
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
@@ -254,20 +256,22 @@ def run_valuation(self, offer_id_str: str):
             session.add(offer)
             session.commit()
             session.refresh(offer)
-            logger.info("Offer updated with valuation", offer_id=str(offer_id), status=offer.status)
+            logger.info("Offer updated with valuation", offer_id=str(offer.id), status=offer.status)
 
             # 7. Produce Kafka event
             producer = get_offer_valuated_producer()
             if producer and _offer_valuated_schema_str: # Check schema loaded too
                 # Ensure creator_id is UUID string for Avro schema
-                creator_id_for_event = str(offer.creator.id) if offer.creator and isinstance(offer.creator.id, uuid.UUID) else str(offer.creator_id)
-                # This assumes offer.creator.id or offer.creator_id can be stringified to a UUID if needed by schema.
-                # If Creator.id is int, Avro schema for creator_id should be int/long or union ["null", "int"].
-                # The current offer_valuated.avsc expects creator_id as UUID string.
+                # Assuming offer.creator_id is always a valid UUID if offer.creator is not loaded or None
+                # The Avro schema expects a string for creator_id.
+                creator_id_for_event = str(offer.creator_id)
+                if offer.creator and hasattr(offer.creator, 'id') and offer.creator.id is not None:
+                     creator_id_for_event = str(offer.creator.id) # Prefer ID from loaded creator if available
 
                 event_payload = {
+                    "event_id": str(uuid.uuid4()), # Add a unique event_id
                     "offer_id": str(offer.id),
-                    "creator_id": creator_id_for_event, 
+                    "creator_id": creator_id_for_event,
                     "price_low_eur": offer.price_low_eur,
                     "price_median_eur": offer.price_median_eur,
                     "price_high_eur": offer.price_high_eur,
@@ -283,17 +287,17 @@ def run_valuation(self, offer_id_str: str):
                         on_delivery=delivery_report
                     )
                     producer.poll(0) # Trigger delivery report callbacks non-blockingly
-                    logger.info("offer.valuated event produced to Kafka", offer_id=str(offer.id))
-                except KafkaException as e:
+                    logger.info("offer.valuated event produced to Kafka", offer_id=str(offer.id), payload_keys=list(event_payload.keys()))
+                except KafkaException as e: # Catch specific Kafka errors
                     logger.error("Kafka producer error for offer.valuated", error=str(e), offer_id=str(offer.id))
                     APP_ERRORS_TOTAL.labels(service_name="valuation", error_type="kafka_produce_error", component="run_valuation").inc()
-                except Exception as e:
+                except Exception as e: # Catch other unexpected errors during Kafka produce
                     logger.error("Unexpected error during Kafka produce for offer.valuated", error=str(e), offer_id=str(offer.id), exc_info=True)
                     APP_ERRORS_TOTAL.labels(service_name="valuation", error_type="kafka_produce_unexpected", component="run_valuation").inc()
             else:
                 logger.warning("Kafka producer for offer.valuated not available or schema not loaded.", offer_id=str(offer.id))
             status = "success"
-            return {"status": "success", "offer_id": str(offer_id), "valuation": event_payload}
+            return {"status": "success", "offer_id": str(offer.id), "valuation": event_payload}
 
     except Exception as e:
         logger.error("Unhandled exception in run_valuation task", error=str(e), offer_id=str(offer_id), exc_info=True)

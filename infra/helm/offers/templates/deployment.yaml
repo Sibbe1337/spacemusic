@@ -50,6 +50,12 @@ spec:
           {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: LAUNCHDARKLY_SDK_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.launchdarkly.secretName | default "launchdarkly-sdk-key" }}
+                  key: {{ .Values.launchdarkly.secretKey | default "sdk-key" }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

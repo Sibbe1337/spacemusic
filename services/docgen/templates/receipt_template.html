@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payout Receipt - Offer {{ offer_id }}</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .details-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .details-table th, .details-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .details-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payout Receipt</h1>
+        
+        <table class="details-table">
+            <tr>
+                <th>Offer ID</th>
+                <td>{{ event_data.offer_id }}</td>
+            </tr>
+            <tr>
+                <th>Payout Completion Date</th>
+                <td>{{ completed_at_formatted }}</td> <!-- We will format this in Python -->
+            </tr>
+            <tr>
+                <th>Payout Method</th>
+                <td>{{ event_data.payout_method | capitalize }}</td>
+            </tr>
+            <tr>
+                <th>Provider Reference ID</th>
+                <td>{{ event_data.reference_id }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ "%.2f"|format(event_data.amount_cents / 100.0) }} {{ event_data.currency_code }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ event_data.status }}</td>
+            </tr>
+            {% if event_data.status == "FAILURE" and event_data.failure_reason %}
+            <tr>
+                <th>Failure Reason</th>
+                <td>{{ event_data.failure_reason }}</td>
+            </tr>
+            {% endif %}
+        </table>
+
+        <div class="footer">
+            <p>SpaceMusic Inc. - Thank you for your collaboration!</p>
+            <p>Generated: {{ generation_timestamp_formatted }}</p>
+        </div>
+    </div>
+</body>
+</html> 

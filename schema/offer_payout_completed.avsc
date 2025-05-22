@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "OfferPayoutCompleted",
+  "namespace": "com.spacemusic.events",
+  "doc": "Event indicating that a payout for an offer has been completed (successfully or not).",
+  "fields": [
+    {"name": "event_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID for this event."},
+    {"name": "offer_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "The unique identifier for the offer.", "default": ""},
+    {"name": "payout_method", "type": "string", "doc": "The method used for the payout (e.g., \"stripe\", \"wise\")."},
+    {"name": "reference_id", "type": "string", "doc": "The transaction or reference ID from the payment provider."},
+    {"name": "amount_cents", "type": "int", "doc": "The amount that was paid out, in cents."},
+    {"name": "currency_code", "type": "string", "doc": "ISO 4217 currency code for the amount."},
+    {"name": "status", "type": {"type": "enum", "name": "PayoutStatus", "symbols": ["SUCCESS", "FAILURE"]}, "doc": "Status of the payout attempt."},
+    {"name": "failure_reason", "type": ["null", "string"], "default": null, "doc": "Reason for failure, if status is FAILURE."},
+    {"name": "completed_at_micros", "type": {"type": "long", "logicalType": "timestamp-micros"}, "doc": "UTC timestamp in microseconds when the payout attempt was completed."}
+  ]
+} 
