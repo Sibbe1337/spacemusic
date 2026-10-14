@@ -1,0 +1,9 @@
+{
+  "requestedUrl": "https://spacemusic.io/brand-facts/",
+  "finalUrl": "https://spacemusic.io/brand-facts/",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "retrievedAt": "2026-09-07T06:43:53.363Z",
+  "sha256": "eafaddc380a3902d570891e862c9f9ca32fabd66c0c5edbc2ab3fa6474745743",
+  "file": "competitor-profiles/raw/space/2026-09-07/scrapes/brand-facts.html"
+}

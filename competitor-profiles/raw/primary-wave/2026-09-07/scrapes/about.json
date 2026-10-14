@@ -1,0 +1,9 @@
+{
+  "requestedUrl": "https://primarywave.com/about/",
+  "finalUrl": "https://primarywave.com/about/",
+  "status": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "retrievedAt": "2026-09-07T06:43:53.013Z",
+  "sha256": "950e718962a4a7cacba2d98ecae032e24240830631ddb0b334ef44b4a4d5c9f4",
+  "file": "competitor-profiles/raw/primary-wave/2026-09-07/scrapes/about.html"
+}

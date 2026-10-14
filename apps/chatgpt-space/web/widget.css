@@ -1,0 +1,77 @@
+@font-face { font-family: Inter; src: url(data:font/woff2;base64,SPACE_FONT_DATA) format('woff2'); font-weight: 100 900; font-display: swap; }
+:root { color-scheme: light; --ink: #292929; --muted: #626971; --blue: #215b91; --paper: #fff; --soft: #f6f7f8; --line: #dedfe2; --warm: #f9f3e9; --warm-ink: #725314; font-family: Inter, sans-serif; color: var(--ink); background: var(--paper); font-synthesis: none; }
+:root[data-theme="dark"] { color-scheme: dark; --ink: #f3f3f2; --muted: #afb4bc; --blue: #9bc7ed; --paper: #202124; --soft: #292b2f; --line: #45484e; --warm: #393228; --warm-ink: #edd4a6; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 14px; line-height: 1.6; }
+button { font: inherit; cursor: pointer; }
+button:disabled { cursor: wait; opacity: .58; }
+button:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.desk { max-width: 920px; padding: 28px 32px 20px; margin: auto; }
+.masthead, .identity, footer, .section-head, .row-top, .review-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.masthead { padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.identity { justify-content: flex-start; gap: 18px; }
+.identity svg { width: 94px; height: auto; }
+.identity span { border-left: 1px solid var(--line); padding-left: 18px; font-size: 12px; color: var(--muted); }
+.demo-label { color: var(--muted); font-size: 11px; letter-spacing: .025em; white-space: nowrap; }
+.intro { padding: 32px 0 24px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .1em; font-size: 10px; font-weight: 650; color: var(--muted); margin: 0 0 10px; }
+h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -.045em; font-weight: 550; line-height: 1.12; margin: 0 0 14px; }
+h2 { font-size: 18px; line-height: 1.35; font-weight: 550; letter-spacing: -.02em; margin: 0; }
+h3 { font-size: 15px; font-weight: 600; margin: 0 0 6px; }
+p { margin: 0 0 12px; }
+.lede { max-width: 590px; font-size: 15px; color: var(--muted); }
+.section-head { margin: 4px 0 12px; }
+.section-head span, .small { font-size: 12px; color: var(--muted); }
+.catalog-list { border-top: 1px solid var(--line); }
+.catalog-row { display: grid; grid-template-columns: 28px 1fr auto; gap: 16px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.catalog-row .number { color: var(--muted); font-size: 11px; align-self: start; padding-top: 4px; }
+.catalog-row h3 { font-size: 19px; letter-spacing: -.025em; font-weight: 550; }
+.catalog-row p { color: var(--muted); font-size: 12px; margin: 4px 0 6px; }
+.catalog-row .next-step { color: var(--ink); font-size: 13px; margin: 0; }
+.text-button { border: 0; color: var(--blue); padding: 8px 0; min-height: 44px; background: transparent; text-align: left; }
+.text-button:hover { text-decoration: underline; text-underline-offset: 5px; }
+.row-button { min-height: 44px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 9px 16px; border-radius: 24px; white-space: nowrap; }
+.row-button:hover { border-color: var(--blue); color: var(--blue); }
+.note { font-size: 12px; color: var(--muted); margin-top: 20px; }
+.back { margin: 16px 0 8px; }
+.review-top { align-items: flex-start; margin: 4px 0 16px; }
+.review-top h1 { font-size: clamp(28px, 4vw, 36px); }
+.count { flex: 0 0 auto; text-align: right; color: var(--muted); font-size: 11px; }
+.count strong { font-size: 26px; font-weight: 500; color: var(--ink); display: block; line-height: 1.2; letter-spacing: -.04em; }
+.scope { font-size: 13px; max-width: 660px; }
+.financial { background: var(--soft); border-left: 2px solid var(--line); padding: 14px 16px; font-size: 12px; color: var(--muted); }
+.view-nav { display: flex; gap: 24px; border-bottom: 1px solid var(--line); margin: 20px 0; }
+.view-nav button { border: 0; background: transparent; color: var(--muted); padding: 12px 0; min-height: 44px; border-bottom: 2px solid transparent; }
+.view-nav [aria-pressed="true"] { border-bottom-color: var(--ink); color: var(--ink); }
+.check { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.row-top { margin-bottom: 6px; align-items: baseline; }
+.row-top h2 { margin: 0; font-size: 15px; font-weight: 600; }
+.status { font-size: 10px; color: var(--muted); white-space: nowrap; }
+.status[data-status="missing"], .status[data-status="clarify"], .status[data-status="blocked"] { color: var(--warm-ink); background: var(--warm); padding: 2px 8px; border-radius: 3px; }
+.check p, .buyer p { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.check .action { color: var(--ink); }
+.source-ref { font-size: 10px; color: var(--muted); }
+.next-panel { background: var(--soft); padding: 18px 20px; margin: 20px 0; border-radius: 4px; }
+.next-panel p:last-child { margin: 0; }
+.buyer { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.buyer ul { padding-left: 18px; font-size: 12px; margin: 8px 0; }
+.buyer li { margin: 5px 0; }
+details { margin: 22px 0; font-size: 12px; }
+summary { cursor: pointer; padding: 8px 0; min-height: 44px; }
+.sources { list-style: none; padding: 0; color: var(--muted); }
+.sources li { margin: 12px 0; }
+.sources strong { color: var(--ink); display: block; font-weight: 550; }
+#feedback { color: var(--warm-ink); font-size: 13px; }
+#feedback:not(:empty) { padding: 16px; margin-top: 12px; background: var(--warm); }
+#feedback button { display: block; margin-top: 8px; }
+footer { font-size: 10px; color: var(--muted); padding-top: 20px; margin-top: 24px; border-top: 1px solid var(--line); }
+@media (max-width: 520px) {
+  .desk { padding: 20px 18px 16px; }
+  .identity { gap: 10px; } .identity span { padding-left: 10px; } .identity svg { width: 76px; }
+  .demo-label { font-size: 9px; } .masthead { gap: 8px; }
+  .catalog-row { grid-template-columns: 22px 1fr; gap: 10px; }
+  .catalog-row button { grid-column: 2; justify-self: start; }
+  .catalog-row h3 { font-size: 18px; } .intro { padding-top: 26px; }
+  .section-head, footer { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .review-top { gap: 10px; } .count { max-width: 78px; }
+}

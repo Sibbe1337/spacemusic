@@ -1,0 +1,7 @@
+**
+!services/__init__.py
+!services/catalog_review/__init__.py
+!services/catalog_review/document_validation.py
+!services/catalog_review/parser_ipc.py
+!services/catalog_review/parser_process.py
+!services/catalog_review/deployment/requirements-parser.lock

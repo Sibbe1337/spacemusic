@@ -1,0 +1,28 @@
+{
+  "status": "requirements_not_provisioned",
+  "platform": "linux/amd64",
+  "api": {
+    "uid": 10001, "gid": 10001, "read_only": true,
+    "cap_drop": ["ALL"], "no_new_privileges": true,
+    "memory_bytes": 2147483648, "pids_limit": 128, "workers": 1,
+    "listen": "127.0.0.1:8080", "trusted_proxy": "127.0.0.1",
+    "network": "host_on_dedicated_API_VM",
+    "secret_mount": "/run/secrets", "tmpfs_tmp_bytes": 67108864
+  },
+  "scanner": {
+    "uid": 1000, "gid": 1000, "read_only": true,
+    "cap_drop": ["ALL"], "no_new_privileges": true,
+    "memory_bytes": 4294967296, "pids_limit": 64, "network": "none",
+    "socket": "/run/clamav/clamd.sock", "socket_mode": "0660",
+    "signature_volume": "/var/lib/clamav", "tmpfs_tmp_bytes": 134217728,
+    "maximum_signature_age_hours": 24
+  },
+  "parser": {
+    "uid": 10001, "gid": 10001, "read_only": true,
+    "cap_drop": ["ALL"], "no_new_privileges": true,
+    "memory_bytes": 805306368, "cpus": 1, "pids_limit": 16,
+    "network": "none", "secrets": [], "host_sockets": [],
+    "tmpfs_tmp_bytes": 33554432, "concurrency": 1,
+    "seccomp": "reviewed_default_or_stricter"
+  }
+}

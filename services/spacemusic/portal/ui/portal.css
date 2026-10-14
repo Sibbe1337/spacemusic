@@ -1,0 +1,135 @@
+.portal-login {
+  max-width: 640px;
+  margin: 60px auto;
+}
+.portal-login .card {
+  margin-top: 25px;
+}
+.portal-main {
+  padding-top: 38px;
+}
+.portal-main .workspace {
+  margin-top: 35px;
+}
+.portal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 26px 0;
+}
+.portal-tabs {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+.portal-tabs [aria-current="step"] {
+  color: var(--ink);
+  border-bottom: 2px solid var(--blue);
+}
+.portal-info {
+  padding: 15px 18px;
+  background: var(--blue-soft);
+  color: #28436d;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.portal-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.upload-label {
+  display: block;
+  margin: 16px 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.upload-label input {
+  margin-top: 8px;
+  padding: 8px;
+  font-size: 12px;
+}
+.mail-preview {
+  padding: 20px;
+  border: 1px solid var(--line);
+  margin-top: 20px;
+  border-radius: 8px;
+  background: white;
+}
+.mail-preview p {
+  overflow-wrap: anywhere;
+}
+.doc-status {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.portal-list {
+  list-style: none;
+  padding: 0;
+}
+.portal-list li {
+  border-top: 1px solid var(--line);
+  padding: 15px 0;
+}
+.message-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.saved-notice {
+  color: var(--green);
+  font-size: 12px;
+}
+.catalog-picker {
+  max-width: 400px;
+}
+.portal-main h1 {
+  overflow-wrap: anywhere;
+}
+#error {
+  scroll-margin-top: 20px;
+}
+.portal-main button[disabled] {
+  cursor: not-allowed;
+}
+.review-table a {
+  overflow-wrap: anywhere;
+}
+.stage-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+@media (max-width: 700px) {
+  .portal-login {
+    margin: 35px auto;
+  }
+  .portal-main {
+    padding-top: 22px;
+  }
+  .portal-toolbar {
+    align-items: start;
+    flex-direction: column;
+  }
+  .portal-tabs {
+    gap: 18px;
+  }
+  .portal-tabs button {
+    font-size: 12px;
+  }
+  .portal-login h1 {
+    font-size: 38px;
+  }
+  .portal-controls .secondary {
+    width: 100%;
+  }
+  .stage-buttons .primary {
+    width: 100%;
+  }
+}

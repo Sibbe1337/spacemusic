@@ -1,0 +1,12 @@
+FROM python:3.13.13-slim-bookworm@sha256:355bfa66770995d7e9a0da4b3473b44d0cb451f6b56f5615ad9c39e3c4eca03f
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 OPENPYXL_LXML=False OPENPYXL_DEFUSEDXML=True OPENPYXL_NUMPY=False
+WORKDIR /app
+COPY services/catalog_review/deployment/requirements-parser.lock /app/requirements.lock
+RUN --mount=type=bind,from=wheels,target=/wheels python -m pip install --no-index --find-links=/wheels --no-cache-dir --require-hashes --only-binary=:all: -r /app/requirements.lock
+RUN install -d -m 0770 -o 10001 -g 10001 /run/parser
+COPY services/__init__.py /app/services/__init__.py
+COPY services/catalog_review/__init__.py services/catalog_review/document_validation.py services/catalog_review/parser_ipc.py services/catalog_review/parser_process.py /app/services/catalog_review/
+USER 10001:10001
+# Runtime verifies loopback-only interfaces, zero capabilities and NoNewPrivs.
+ENTRYPOINT ["python", "-B", "-m", "services.catalog_review.parser_ipc"]
+CMD ["--socket-path", "/run/parser/validate.sock"]

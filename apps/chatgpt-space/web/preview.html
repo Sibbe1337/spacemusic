@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>SPACE / ChatGPT app preview</title>
+  <style>
+    * { box-sizing: border-box; } body { background: #eeeff1; margin: 0; color: #292929; font: 14px/1.6 sans-serif; }
+    .preview-bar { max-width: 970px; margin: 24px auto 16px; padding: 0 20px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    .preview-bar p { margin: 0; } .preview-bar small { color: #626971; } select, button { font: inherit; padding: 8px; }
+    .canvas { max-width: 930px; margin: 0 auto 40px; background: white; border: 1px solid #d4d7dc; border-radius: 8px; overflow: hidden; }
+    iframe { display: block; border: 0; width: 100%; min-height: 300px; } #preview-error { margin: 16px; color: #713c18; }
+    button:focus-visible, select:focus-visible { outline: 3px solid #215b91; outline-offset: 3px; }
+    @media(max-width: 600px) { .preview-bar { margin: 16px auto; align-items: flex-start; } .canvas { margin: 0 8px 24px; } }
+  </style>
+</head>
+<body>
+  <div class="preview-bar"><div><p>SPACE / ChatGPT app preview</p><small>Local host simulation. Not connected to ChatGPT.</small></div>
+    <label>Theme <select id="theme"><option value="light">Light</option><option value="dark">Dark</option></select></label>
+  </div>
+  <div id="preview-error" role="alert"></div>
+  <div class="canvas"><iframe id="widget" title="SPACE fictional catalog review demo" sandbox="allow-scripts"></iframe></div>
+  <script type="module" src="/preview.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "environment": "production",
+  "generation": "REQUIRED_EXTERNAL_GENERATION_UUID",
+  "config_sha256": "REQUIRED_CONFIG_FINGERPRINT",
+  "release_sha256": "REQUIRED_RELEASE_SHA256",
+  "legal_name": "",
+  "organization_number": "",
+  "operator": "",
+  "approved_monthly_sek": 0,
+  "invitations_approved": false,
+  "evidence": {}
+}

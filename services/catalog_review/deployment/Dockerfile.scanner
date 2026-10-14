@@ -1,0 +1,10 @@
+FROM clamav/clamav:1.4.6-debian@sha256:2463487b937071421c0ddadac6616111bedba45b9bd9312bbb4591b57450f8f4
+USER root
+RUN install -d -m 0770 -o 1000 -g 1000 /run/clamav /var/lib/clamav
+COPY services/catalog_review/deployment/clamd.conf /etc/clamav/clamd.conf
+COPY services/catalog_review/deployment/freshclam.conf /etc/clamav/freshclam.conf
+USER 1000:1000
+# Override upstream startup: no automatic download, milter, TCP listener or root.
+ENTRYPOINT ["clamd"]
+CMD ["--foreground=true", "--config-file=/etc/clamav/clamd.conf"]
+HEALTHCHECK --interval=30s --timeout=5s --start-period=180s --retries=3 CMD clamdscan --config-file=/etc/clamav/clamd.conf --ping 1

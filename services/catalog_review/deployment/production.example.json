@@ -1,0 +1,23 @@
+{
+  "environment": "production",
+  "origin": "https://review.spacemusic.io",
+  "generation": "REQUIRED_EXTERNAL_GENERATION_UUID",
+  "release_sha256": "REQUIRED_RELEASE_SHA256",
+  "database": {
+    "host": "REQUIRED_VERIFIED_PARIS_PRIVATE_ADDRESS",
+    "dbname": "review_prod",
+    "user": "review_runtime",
+    "sslrootcert": "/run/secrets/postgres-ca",
+    "passfile": "/run/secrets/runtime-pgpass",
+    "max_connections": 4,
+    "checkout_timeout_seconds": 1
+  },
+  "r2_account_id": "REQUIRED_R2_ACCOUNT_ID",
+  "document_bucket": "review-prod-documents",
+  "export_bucket": "review-prod-exports",
+  "journal_bucket": "review-prod-journal",
+  "independent_backup_bucket": "review-prod-backup",
+  "independent_journal_bucket": "review-prod-journal-mirror",
+  "google_client_id": "REQUIRED_WORKSPACE_CLIENT_ID",
+  "workspace_domain": "spacemusic.io"
+}

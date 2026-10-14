@@ -1,0 +1,24 @@
+{
+  "environment": "staging",
+  "origin": "https://review-staging.spacemusic.io",
+  "generation": "REQUIRED_DISTINCT_STAGING_GENERATION_UUID",
+  "release_sha256": "REQUIRED_RELEASE_SHA256",
+  "database": {
+    "host": "REQUIRED_VERIFIED_PARIS_PRIVATE_ADDRESS",
+    "dbname": "review_staging",
+    "user": "review_runtime",
+    "sslrootcert": "/run/secrets/postgres-ca",
+    "passfile": "/run/secrets/runtime-pgpass",
+    "max_connections": 2,
+    "checkout_timeout_seconds": 1
+  },
+  "r2_account_id": "REQUIRED_R2_ACCOUNT_ID",
+  "document_bucket": "review-staging-documents",
+  "export_bucket": "review-staging-exports",
+  "journal_bucket": "review-staging-journal",
+  "independent_backup_bucket": "review-staging-backup",
+  "independent_journal_bucket": "review-staging-journal-mirror",
+  "google_client_id": "REQUIRED_DISTINCT_STAGING_CLIENT_ID",
+  "workspace_domain": "spacemusic.io",
+  "synthetic_staging": true
+}

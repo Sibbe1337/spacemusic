@@ -1,0 +1,9 @@
+{
+  "requestedUrl": "https://www.beatbread.com/faq",
+  "finalUrl": "https://www.beatbread.com/faq",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "retrievedAt": "2026-09-07T06:43:51.158Z",
+  "sha256": "bcc0b12237d56e97c8ac5f1f81621d058e412f5734c1fb3dd905609bd11bfbde",
+  "file": "competitor-profiles/raw/beatbread/2026-09-07/scrapes/faq.html"
+}

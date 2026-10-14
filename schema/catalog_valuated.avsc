@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "CatalogValuatedEvent",
+  "namespace": "com.spacemusic.events.catalog",
+  "doc": "Versioned valuation result based on supplied royalty and rights evidence.",
+  "fields": [
+    {"name": "event_id", "type": "string", "doc": "Unique event identifier"},
+    {"name": "application_id", "type": "string", "doc": "Seller application identifier"},
+    {"name": "valuation_version", "type": "string", "doc": "Valuation engine version"},
+    {"name": "benchmark_version", "type": "string", "doc": "Operator-supplied benchmark version"},
+    {"name": "low_cents", "type": "long", "doc": "Low estimate in minor currency units"},
+    {"name": "median_cents", "type": "long", "doc": "Median estimate in minor currency units"},
+    {"name": "high_cents", "type": "long", "doc": "High estimate in minor currency units"},
+    {"name": "confidence_score", "type": "double", "doc": "Confidence score from 0.0 to 1.0"},
+    {"name": "risk_flags", "type": {"type": "array", "items": "string"}, "doc": "Machine-detected review flags"},
+    {"name": "evaluated_at_micros", "type": "long", "doc": "UTC evaluation timestamp in microseconds"}
+  ]
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Local SPACE catalog review design preview. Synthetic data only; no live connection or submission.">
+    <title>Catalog review preview | SPACE</title>
+    <link rel="icon" type="image/svg+xml" href="/space-wordmark.svg">
+    <link rel="preload" href="/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/review.css">
+    <script type="module" src="/app.mjs"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to review</a>
+    <div class="preview-notice"><strong>Design preview</strong><span>Synthetic data only. Nothing is sent to SPACE or Too Lost.</span></div>
+    <header class="masthead">
+      <a href="#invitation" aria-label="SPACE review overview" class="wordmark"><img src="/space-wordmark.svg" width="140" height="30" alt="SPACE"></a>
+      <span class="product-label">Catalog review</span>
+      <nav aria-label="Workspace"><a href="#settings" aria-label="Connection &amp; privacy">Settings</a><a href="#help">Help</a></nav>
+    </header>
+    <div class="workspace">
+      <aside id="progress" aria-label="Review progress"></aside>
+      <main id="content" tabindex="-1">
+        <noscript><h1>This preview needs JavaScript.</h1><p>It demonstrates the private review journey using synthetic data. No live application has been changed or submitted.</p></noscript>
+      </main>
+    </div>
+    <div class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></div>
+    <footer class="footer">
+      <div><span>SPACE Catalog Review</span><span id="save-state"></span></div>
+      <details id="help"><summary>About this preview</summary><p>This is a local design prototype, not a secure customer portal. Use only the supplied fictional examples. No real sign-in, files, API connection, email, review or payment is performed. Reload resumes this demo in the same tab when browser storage is available. Closing the tab may clear it.</p></details>
+      <details id="preview-controls"><summary>Preview scenarios</summary><div class="preview-controls"><label for="scenario">Journey to test</label><select id="scenario"></select><button id="restart" type="button" class="secondary">Restart selected demo</button><button id="expire-session" type="button" class="text-button">Simulate session expiry</button><p>Restart clears the current demo choices. It does not affect any real application.</p></div></details>
+    </footer>
+  </body>
+</html>

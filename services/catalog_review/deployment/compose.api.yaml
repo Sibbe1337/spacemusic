@@ -1,0 +1,47 @@
+name: catalog-review-api
+services:
+  api:
+    profiles: [approved-api]
+    image: catalog-review-api:local-review
+    platform: linux/amd64
+    pull_policy: never
+    build:
+      context: ../../..
+      dockerfile: services/catalog_review/deployment/Dockerfile.api
+      network: none
+      additional_contexts:
+        wheels: ${REVIEW_API_WHEELHOUSE:?verified offline API wheelhouse required}
+    # Linux-only host networking: API binds 127.0.0.1; the reviewed TLS proxy
+    # runs on this dedicated VM. No public container port is published.
+    network_mode: host
+    user: "10001:10001"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 2g
+    cpus: 1
+    pids_limit: 128
+    tmpfs: ["/tmp:size=67108864,mode=0700,uid=10001,gid=10001"]
+    environment:
+      REVIEW_OPERATIONS_CONFIG: /run/config/operations.json
+      REVIEW_LAUNCH_MANIFEST: /run/config/launch.json
+      REVIEW_RUNTIME_FACTORY: ${REVIEW_RUNTIME_FACTORY:-}
+    volumes:
+      - type: bind
+        source: ${REVIEW_CONFIG_FILE:?approved configuration file required}
+        target: /run/config/operations.json
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${REVIEW_MANIFEST_FILE:?launch evidence file required}
+        target: /run/config/launch.json
+        read_only: true
+        bind: {create_host_path: false}
+    secrets: [runtime-pgpass, postgres-ca, api-credentials]
+secrets:
+  runtime-pgpass:
+    file: ${REVIEW_PGPASS_FILE:?mounted runtime passfile required}
+  postgres-ca:
+    file: ${REVIEW_POSTGRES_CA_FILE:?verified PostgreSQL CA required}
+  api-credentials:
+    file: ${REVIEW_API_CREDENTIALS_FILE:?scoped API credentials required}

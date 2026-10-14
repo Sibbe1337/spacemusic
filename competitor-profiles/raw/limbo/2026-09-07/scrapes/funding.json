@@ -1,0 +1,9 @@
+{
+  "requestedUrl": "https://www.limbomusic.com/funding",
+  "finalUrl": "https://www.limbomusic.com/funding",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "retrievedAt": "2026-09-07T06:43:50.187Z",
+  "sha256": "07e643d3d868a502492ed59492a6c6a7ccf6884ca1041033ccf8ac0350186dc3",
+  "file": "competitor-profiles/raw/limbo/2026-09-07/scrapes/funding.html"
+}

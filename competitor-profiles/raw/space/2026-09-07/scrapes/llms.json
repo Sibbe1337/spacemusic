@@ -1,0 +1,9 @@
+{
+  "requestedUrl": "https://spacemusic.io/llms.txt",
+  "finalUrl": "https://spacemusic.io/llms.txt",
+  "status": 200,
+  "contentType": "text/plain; charset=utf-8",
+  "retrievedAt": "2026-09-07T06:43:53.237Z",
+  "sha256": "83f0d50440cfc680f6b83f552988d577e8f2a78fa4957fa6d82c42d22ef69d0b",
+  "file": "competitor-profiles/raw/space/2026-09-07/scrapes/llms.txt"
+}

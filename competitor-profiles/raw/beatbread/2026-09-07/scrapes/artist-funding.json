@@ -1,0 +1,9 @@
+{
+  "requestedUrl": "https://www.beatbread.com/artist-funding",
+  "finalUrl": "https://www.beatbread.com/artist-funding",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "retrievedAt": "2026-09-07T06:43:51.527Z",
+  "sha256": "be98eed945b0e36a40f89bfee8d810f317bfc71a1771f1a0038f25441ef49130",
+  "file": "competitor-profiles/raw/beatbread/2026-09-07/scrapes/artist-funding.html"
+}

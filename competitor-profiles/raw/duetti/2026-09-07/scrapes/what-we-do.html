@@ -1,0 +1,894 @@
+<!DOCTYPE html><!-- Last Published: Tue Sep 01 2026 18:30:09 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.duetti.co" data-wf-page="67b590ee75d6e7a4a62ed11f" data-wf-site="67af989e5cd8af2a77713c77"><head><meta charset="utf-8"/><link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"/><title>What We Do | Duetti | Get cash for your catalog, on your terms</title><meta content="Duetti purchases catalog tracks, publishing rights, masters, and royalties from artists with simple, cash deals. Get paid quickly for your music." name="description"/><meta content="What We Do | Duetti | Get cash for your catalog, on your terms" property="og:title"/><meta content="Duetti purchases catalog tracks, publishing rights, masters, and royalties from artists with simple, cash deals. Get paid quickly for your music." property="og:description"/><meta content="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67c207019c0e2cfe6f7e6088_MacBook%20Pro%2016_%20-%2012%20(2).png" property="og:image"/><meta content="What We Do | Duetti | Get cash for your catalog, on your terms" name="twitter:title"/><meta content="Duetti purchases catalog tracks, publishing rights, masters, and royalties from artists with simple, cash deals. Get paid quickly for your music." name="twitter:description"/><meta content="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67c207019c0e2cfe6f7e6088_MacBook%20Pro%2016_%20-%2012%20(2).png" name="twitter:image"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/css/finetooth-lt-gt-duetti.webflow.shared.c33d50dc9.css" rel="stylesheet" type="text/css" integrity="sha384-wz1Q3JVQxg+QtL/wef90BFPInAD3Jp0mop/ng3//sK6IwNbRXMUSag1jJ+jzjU3L" crossorigin="anonymous"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Nunito:200,300,400,500,600,700,800,900","Nunito Sans:300,400,500,600,700"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67c204494a0e25aea1592c5f_Frame%20235.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67c204503c2848098a9efbe6_Frame%20236.png" rel="apple-touch-icon"/><script>
+    // -------------------------------
+    // 0) DataLayer + gtag + Google Consent Mode v2 defaults
+    // Must run before GTM loads so tags respect the denied state from the start.
+    // -------------------------------
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    // Set consent defaults — all denied until the user makes a choice
+    gtag("consent", "default", {
+        ad_storage:             "denied",
+        analytics_storage:      "denied",
+        ad_user_data:           "denied",
+        ad_personalization:     "denied",
+        functionality_storage:  "denied",
+        personalization_storage:"denied",
+        security_storage:       "granted", // Always granted — necessary for site security
+    });
+
+    // Returning visitor: update to their stored preference before GTM loads
+    const consentString = localStorage.getItem("consentMode");
+    if (consentString) {
+        const storedConsent = JSON.parse(consentString);
+        storedConsent.security_storage = "granted"; // enforce regardless of stored value
+        gtag("consent", "update", storedConsent);
+    }
+</script>
+
+<!-- 1) Meta Pixel stub only — fbevents.js is loaded only after consent is confirmed -->
+<script>
+    !(function (f, b, e, n) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod
+                ? n.callMethod.apply(n, arguments)
+                : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        // fbevents.js is NOT loaded here — see bootMetaIfAllowed below
+    })(window, document, "script");
+</script>
+
+<script>
+    // -------------------------------
+    // 2) Meta boot logic, synced with consent state
+    // -------------------------------
+    (function () {
+        var PIXEL_ID = 1269086313981473;
+        var scriptLoaded = false;
+
+        function metaGrantedFromConsentMode(mode) {
+            if (!mode) return false;
+            return (
+                mode.analytics_storage === "granted" ||
+                mode.ad_storage === "granted" ||
+                mode.ad_user_data === "granted" ||
+                mode.ad_personalization === "granted"
+            );
+        }
+
+        // Injects fbevents.js only when consent is confirmed, then runs callback
+        function loadFbEventsAndRun(callback) {
+            if (scriptLoaded) {
+                callback();
+                return;
+            }
+            var t = document.createElement("script");
+            t.async = true;
+            t.src = "https://connect.facebook.net/en_US/fbevents.js";
+            t.onload = function () {
+                scriptLoaded = true;
+                callback();
+            };
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(t, s);
+        }
+
+        // Initialize pixel and fire PageView; granted is passed explicitly
+        function initAndTrack(granted) {
+            if (typeof fbq !== "function") return;
+
+            fbq("consent", granted ? "grant" : "revoke");
+
+            var state =
+                typeof fbq.getState === "function" ? fbq.getState() : null;
+            var hasPixel = !!(state && state.pixels && state.pixels.length > 0);
+
+            if (!hasPixel) {
+                fbq("init", PIXEL_ID);
+            }
+
+            if (granted) {
+                fbq("track", "PageView");
+            }
+        }
+
+        // Public hook called by footer after the user updates preferences
+        window.bootMetaIfAllowed = function () {
+            // Read live consent from localStorage — never rely on stale page-load closure
+            var stored = localStorage.getItem("consentMode");
+            var currentConsent = stored ? JSON.parse(stored) : null;
+            var granted = metaGrantedFromConsentMode(currentConsent);
+
+            if (!granted) {
+                if (typeof fbq === "function") fbq("consent", "revoke");
+                return;
+            }
+
+            // Only fetch fbevents.js when consent is confirmed
+            loadFbEventsAndRun(function () {
+                initAndTrack(true);
+            });
+        };
+
+        // On page load: boot Meta only if returning visitor already granted consent
+        document.addEventListener("DOMContentLoaded", window.bootMetaIfAllowed);
+    })();
+</script>
+
+<!-- 3) Google Tag Manager — blocked on first visit until consent is given -->
+<script>
+    // GTM only loads after the user has made a consent choice.
+    // First-time visitors see the banner; no GTM requests are made at all.
+    // After accept/reject the page reloads, consentMode is in localStorage,
+    // and GTM loads here with the correct consent state already applied above.
+    if (localStorage.getItem("consentMode") !== null) {
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-MTGVWRR");
+    }
+</script>
+<!-- End Google Tag Manager -->
+
+
+<style>
+
+  .menu-section {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+
+
+  .faq-item-content{display: none;}
+
+
+  .faq-item-title:after{position: absolute; top: 50%; right: 1em; content: '+'; transform: translateY(-50%);}
+
+  .faq-item.active .faq-item-title:after{content: '-';}
+
+
+
+
+  /*  animation */
+
+  .word-line {
+    will-change: transform;
+  }
+
+  .revel-text-anim {
+    opacity: 0;
+  }
+  .anim-el{transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform;}
+  .anim-el.fade-in-zoom{opacity: 0; transform: scale(0.98);}
+  .anim-el.in_view.fade-in-zoom{opacity: 1; transform: scale(1);}
+  .anim-el.fade-in-zoom.delay-3{transition-delay: 1s;}
+
+  .anim-el.fade-in {opacity: 0;}
+  .anim-el.fade-in.delay-05{transition-delay: 0.3s;}
+  .anim-el.fade-in.in_view {opacity: 1;}
+
+
+  .highlight-overlay {
+    position: absolute;
+    width: calc(100% + 6px);
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #164B1F;
+    z-index: -1;
+    padding: 0;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  span.text-highlight {
+
+background: transparent !important;
+  }
+  .delay-1 .highlight-overlay {
+    transition-delay: 0.3s;
+  }
+
+  .delay-1.in_view .highlight-overlay {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .anim-el.fade-in-bottom {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  .anim-el.fade-in-bottom.delay-3{transition-delay: 1.6s;}
+  .anim-el.fade-in-bottom.in_view{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+
+  .anim-el.fade-delay-1{opacity: 0; transform: translateY(10px); transition-delay: 0.2s;}
+  .anim-el.fade-delay-2{opacity: 0; transform: translateY(10px); transition-delay: 0.4s;}
+  .anim-el.fade-delay-3{opacity: 0; transform: translateY(10px); transition-delay: 0.6s;}
+
+  .anim-el.fade-delay-1.in_view{opacity: 1; transform: translateY(0px);}
+  .anim-el.fade-delay-2.in_view{opacity: 1; transform: translateY(0px);}
+  .anim-el.fade-delay-3.in_view{opacity: 1; transform: translateY(0px);}
+
+  .anim-el.clip-in {
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  }
+  .anim-el.clip-in.delay-05 {
+    transition-delay: 0.5s;
+  }
+
+  .anim-el.clip-in.in_view {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .anim-el.clip-in-top.delay-1 {
+    transition-delay: 1s;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .anim-el.clip-in-top.delay-1.in_view {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+
+  @media only screen and (min-width: 1730px) {
+
+    body{font-size: 16px !important;}
+
+    .wrapper{max-width: 1728px;}
+
+  }
+
+
+
+  @media only screen and (max-width: 767px) {
+  
+  .green-highlight {
+  background: #164B1F !important;
+  }
+  
+  span.text-highlight {
+  background: #164B1F !important;
+  }
+  
+  span.text-highlight.black-highlight {
+  background: #211d1d !important;
+  }
+
+    .text-highlight.mobi-none .highlight-overlay {
+    background: #164B1F !important;
+      display: none !important;
+      opacity: 0;
+    }
+
+
+  }
+
+
+</style></head><body class="body"><div class="banner"><div class="div-block-105"><div class="badge-2"><div class="_20-2">NEW</div></div><a data-w-id="24da2397-566d-5efa-4d01-36dd1c94c1f2" href="#" target="_blank" class="button-style-7 mobile"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a287963393d05fb7b9b5d22_close.svg" loading="lazy" width="20" height="20" alt="" class="close"/></a></div><div class="text-24">Join our live webinar <strong>&quot;Beyond Virality: How to Build Sustainable Growth as an Artist&quot; </strong>on Sept 9</div><a href="https://duetti.wistia.com/live/events/trqskqqort" target="_blank" class="button-style-6"><div class="label-style-3">Register here</div><img width="20" height="20" alt="" src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a2870821b72841e8478ef9f_arrow_forward.svg" loading="lazy" class="arrow_forward-2"/></a><a data-w-id="b847a213-9606-77a3-11ad-9e11235613d4" href="#" target="_blank" class="button-style-7 desktop"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a287963393d05fb7b9b5d22_close.svg" loading="lazy" width="20" height="20" alt="" class="close"/></a></div><div data-wf--header--variant="base" class="section header-wrap"><div class="d-none w-embed w-script"><style>
+  .burger-line-color-green .burger-line {
+    background-color: var(--lime) !important;
+  }
+  .burger-line-color-lime .burger-line {
+    background-color: var(--green) !important;
+  }
+  .burger-line-color-black .burger-line {
+    background-color: var(--white) !important;
+  }
+  .burger-line-color-white .burger-line {
+    background-color: var(--black) !important;
+  }
+  
+  .background-green {
+      background-color: var(--green) !important;
+  }
+  
+  .background-lime {
+        background-color: var(--lime) !important;
+  }
+  
+   .background-black {
+        background-color: var(--black) !important;
+  }
+  
+   .background-white {
+        background-color: var(--white) !important;
+  }
+  
+  .icon-nav-link-green {
+  	color: var(--lime) !important;
+  }
+  
+  .icon-nav-link-lime {
+color: var(--green) !important;
+  }
+  
+  .icon-nav-link-white {
+color: var(--black) !important;
+  }
+  .icon-nav-link-black {
+color: var(--white) !important;
+  }
+
+  .header-wrap .btn{font-weight: 700;}
+
+  .nav-link {
+    border-bottom: 2px solid transparent; /* Initialize border */
+  }
+
+  .nav-link:hover {
+    border-bottom: 2px solid currentColor; /* Use the color of the text for the border */
+  }
+
+  .get-started-marque .js-marquee {
+    display: flex;
+  }
+
+  .nav-link::first-child{display: none}
+
+  @media only screen and (max-width: 1200px) {
+    .nav-link::first-child{display: block}
+
+  }
+
+  /* .get-started-marque .js-marquee-wrapper{display: flex;}
+  .get-started-marque .js-marquee {
+  width: 100%;
+  display: flex
+  ;
+  }
+  */
+
+  .w-nav-overlay {
+    width: 100% !important;
+    }
+
+  #TEST-NAV-WRAP {
+    position: relative !important;
+  }
+</style>
+
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=674ecd489ac3e900ff4fffec" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
+
+
+<script>
+  (function ($) {
+    $(function () {
+
+
+
+      if ($('.marquee-wrap').length) {
+        $('.marquee-wrap').each(function () {
+          var $this = $(this);
+
+          // Clone and append marquee list inside each .marquee-wrap
+          $this.find('.marquee-list').each(function () {
+            var clone = $(this).clone();
+            $(this).parent().append(clone);
+          });
+
+          // Delay marquee initialization by 1 second
+          setTimeout(function () {
+
+            $('.marquee-wrap.get-started-marque').css('display', 'block')
+
+            $this.marquee({
+              direction: 'left',
+              duration: 25000,
+              delayBeforeStart: 0,
+              duplicated: true,
+              startVisible: true
+            });
+
+
+          }, 500);
+        });
+      }
+
+
+
+
+      let lastColor = "";
+      let lastBgColor = "";
+      let metaThemeColor = document.querySelector("meta[name=theme-color]");
+
+      // Create <meta name="theme-color"> if missing
+      if (!metaThemeColor) {
+        metaThemeColor = document.createElement("meta");
+        metaThemeColor.setAttribute("name", "theme-color");
+        document.head.appendChild(metaThemeColor);
+      }
+
+      function updateColors() {
+        let currentColor = lastColor;
+        let currentBgColor = "";
+
+        $("section[header-color]").each(function () {
+          let rect = this.getBoundingClientRect();
+          if (rect.top <= 50 && rect.bottom >= 50) { // Check if section is in viewport
+            currentColor = $(this).attr("header-color");
+            currentBgColor = window.getComputedStyle(this).backgroundColor; // Get actual bg color
+          }
+        });
+
+        // **Header Color Update** (only if changed)
+        if (currentColor && currentColor !== lastColor) {
+          lastColor = currentColor;
+
+          $(".header-wrap").attr("class", `section header-wrap header-color-${currentColor}`);
+          $(".nav-link").attr("class", `nav-link w-nav-link nav-color-${currentColor}`);
+          $(".logo").attr("class", `logo logo-color-${currentColor}`);
+                    $(".dropdown-list").attr("class", `dropdown-list w-dropdown-list background-${currentColor}`);
+
+         
+					$(".nav-icon-link").attr("class", `icon nav-icon-link w-icon-dropdown-toggle icon-nav-link-${currentColor}`);
+          $(".header-button-anim").attr("class", `header-button-anim btn-color-${currentColor}`);
+          $(".dropdown-link").attr("class", `dropdown-link w-dropdown-link icon-nav-link-${currentColor}`);
+          $(".nav-wrap").attr("class", `nav-wrap w-nav-menu nav-wrap-color-${currentColor}`);
+          $(".burger-box").attr("class", `burger-box burger-line-color-${currentColor}`);
+
+          // If the current color is black, change button to lime
+          if (currentColor === "black") {
+            $(".header-button-anim .btn").attr("class", "btn btn-lime");
+          } else {
+            $(".header-button-anim .btn").attr("class", "btn"); // Reset default
+          }
+        }
+
+        // **Status Bar Color Update** (only if changed)
+        if (currentBgColor && currentBgColor !== lastBgColor) {
+          lastBgColor = currentBgColor;
+          console.log("🌈 Changing status bar color to:", currentBgColor);
+
+          // Update <meta name="theme-color"> for iPhones & Android
+          metaThemeColor.setAttribute("content", currentBgColor);
+
+          // Force update for Android Chrome & Samsung Browser
+          document.documentElement.style.setProperty("--theme-color", currentBgColor);
+        }
+      }
+
+      $(window).on("scroll resize", updateColors);
+      updateColors(); // Initial check on page load
+    }) // End ready function.
+
+    function toggleNavLink() {
+      if ($(window).width() > 1200) {
+        $('.nav-link').eq(0).hide();
+      } else {
+        $('.nav-link').eq(0).show();
+      }
+    }
+
+    $(document).ready(toggleNavLink);
+    $(window).resize(toggleNavLink);
+
+
+
+
+
+  })(jQuery)
+
+</script></div><div data-animation="over-right" data-collapse="small" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav-transparent w-nav"><div class="wrapper"><div class="header-inner w-container"><div class="logo-wrap"><a href="/" class="logo w-nav-brand"><div class="code-embed nav-logo w-embed"><svg class="logo-svg" width="901" height="134" viewBox="0 0 901 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M46.138 7.98877C28.5879 7.98877 12.5619 13.9939 -0.000244141 23.9718C0.96963 30.0693 2.17042 35.9821 3.60214 41.7563C14.2708 35.5664 26.6944 32.0095 39.9031 32.0095C79.8989 32.0095 112.32 64.3912 112.32 104.441C112.32 104.672 112.32 104.857 112.32 105.088C105.901 75.6625 79.668 53.6281 48.3087 53.6281C34.4995 53.6281 21.7065 57.8779 11.1302 65.1765C21.7526 91.0912 38.9333 111.37 65.0737 122.78C74.0335 126.429 84.0093 129.247 95.0936 131.049C98.2341 131.557 101.513 131.973 104.838 132.342C105.439 132.388 106.039 132.434 106.64 132.481C106.871 132.481 107.148 132.527 107.379 132.573C109.041 132.665 110.704 132.804 112.367 132.85C114.583 132.943 116.846 132.989 119.156 133.035V90.3982C119.156 31.9633 85.949 7.98877 46.138 7.98877Z" fill="#073E1B"/>
+<path d="M205.824 31.9631C219.032 31.9631 231.456 35.52 242.125 41.7099C243.556 35.9357 244.711 30.0229 245.727 23.9254C233.165 13.9476 217.093 7.94238 199.589 7.94238C159.824 7.94238 126.617 31.9169 126.617 90.3519V132.989C128.926 132.989 131.189 132.896 133.406 132.804C135.115 132.711 136.732 132.619 138.394 132.527C138.625 132.527 138.902 132.48 139.133 132.434C139.734 132.388 140.334 132.342 140.934 132.296C144.26 131.926 147.539 131.51 150.679 131.002C161.764 129.201 171.739 126.383 180.699 122.734C206.84 111.324 224.066 91.0448 234.643 65.1301C224.113 57.8315 211.273 53.5817 197.464 53.5817C166.105 53.5817 139.918 75.6161 133.452 105.041C133.452 104.81 133.452 104.626 133.452 104.395C133.452 64.391 165.874 31.9631 205.87 31.9631H205.824Z" fill="#073E1B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M331.938 9.69422H288.567V131.288H331.938C369.558 131.288 402.087 115.678 402.087 69.5875C402.087 23.4968 369.066 9.61206 331.938 9.61206V9.69422ZM329.309 106.969H315.181V33.9309H329.309C354.527 33.9309 375.062 41.7359 375.062 69.5053C375.062 99.2466 355.102 106.887 329.309 106.887V106.969Z" fill="#073E1B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M492.935 80.104C492.935 94.153 481.106 108.941 462.871 108.941C448.743 108.941 436.093 99.7398 436.093 81.8293V9.77661H409.643V85.5264C409.643 112.803 427.55 134 455.56 134C466.157 134 473.632 132.603 480.449 129.481L489.321 112.967H494.906V131.371H519.385V9.77661H492.935V80.104V80.104Z" fill="#073E1B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M588.795 7.14746C549.86 7.14746 527.188 36.7244 527.188 70.5736C527.188 108.613 551.913 134 589.781 134C616.887 134 634.876 122.169 646.294 108.12L628.387 89.8807C620.337 101.054 609.084 109.352 591.998 109.352C572.695 109.352 557.17 99.3289 554.131 79.2823H646.294C646.458 77.7213 646.787 74.5993 646.787 67.1229C646.787 36.3958 627.648 7.14746 588.713 7.14746H588.795ZM555.363 57.5926C559.717 41.0788 572.038 31.5484 588.795 31.5484C607.359 31.5484 618.366 43.7078 619.269 57.5926H555.445H555.363Z" fill="#073E1B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M839.163 83.062V90.5384C839.163 104.094 830.539 110.01 821.257 110.01C811.975 110.01 803.35 104.094 803.35 90.5384V52.2527H865.12V28.2626H803.35V9.69482H776.9V28.2626H703.794V9.69482H677.344V28.2626H654.591V52.2527H677.344V93.0032C677.344 119.294 694.019 134 720.715 134C747.411 134 765.811 117.651 765.811 91.9351V83.062H739.69V90.5384C739.69 104.094 731.065 110.01 721.783 110.01C712.501 110.01 703.876 104.094 703.876 90.5384V52.2527H776.982V93.0032C776.982 119.294 793.657 134 820.353 134C847.049 134 865.449 117.651 865.449 91.9351V83.062H839.163Z" fill="#073E1B"/>
+<path d="M898.634 39.0251H872.924V131.371H898.634V39.0251Z" fill="#073E1B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M885.738 0C877.688 0 871.117 6.32617 871.117 14.1312C871.117 21.9362 877.688 28.3445 885.738 28.3445C893.788 28.3445 900.359 22.0184 900.359 14.1312C900.359 6.24401 893.788 0 885.738 0Z" fill="#073E1B"/>
+</svg>
+
+
+<style>
+.logo-svg{width: 100%; height: 100%;}
+.logo-color-lime svg path{fill:#073E1B;}
+.logo-color-green svg path {
+    fill: #D1F24B;
+}
+.logo-color-black svg path{fill:#FCFAF6}
+.logo-color-white svg path {fill: #211d1d;}
+</style></div></a></div><div data-w-id="6ab4f8ad-6c6d-0cc4-5499-0059ac14cf57" class="burger w-nav-button"><div class="burger-box"><div class="burger-line burger-line-top"></div><div class="burger-line burger-line-center"></div><div class="burger-line burger-line-bottom"></div></div></div></div><nav role="navigation" id="TEST-NAV-WRAP" class="nav-wrap w-nav-menu"><div class="main-nav"><a href="/" class="nav-link only-mobile green w-nav-link">Home</a><a href="/what-we-do" aria-current="page" class="nav-link w-nav-link w--current">What We Do</a><a href="/artist-partners" class="nav-link w-nav-link">Artist Partners</a><div class="div-block-99"><a href="/remix-program" class="nav-link w-nav-link">Remixes</a><div class="div-block-100"><div class="text-block-49">New</div></div></div><div data-hover="true" data-delay="0" class="dropdown w-dropdown"><div class="dropdown-toggle w-dropdown-toggle"><div class="nav-link">Insights</div><div class="icon nav-icon-link w-icon-dropdown-toggle"></div></div><nav class="dropdown-list w-dropdown-list"><a href="https://report.duetti.co/#1" class="dropdown-link w-dropdown-link">Economics Report 2024</a><a href="/2025-music-economics-report" class="dropdown-link w-dropdown-link">Economics Report 2025</a><a href="/music-finance-index" class="dropdown-link w-dropdown-link">Music Finance Index</a><a href="/music-finance-index-h2-2026" class="dropdown-link w-dropdown-link">Music Finance Index H2</a><a href="/corridos" class="dropdown-link w-dropdown-link">Corridos</a></nav></div><a href="/about-us" class="nav-link w-nav-link">About Us</a></div><div class="header-btn"><a href="/request-a-meeting" class="header-button-anim w-inline-block"><div class="btn"><div class="text-block-39">Request a meeting</div><div class="btn-icon w-embed"><svg class="header-button-svg" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.5 17L17.5 7" stroke="#fcfaf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.5 7H17.5V17" stroke="#fcfaf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+<style>
+.btn-color-green .header-button-svg, .btn-color-black .header-button-svg path{stroke: #164B1F}
+
+</style></div></div></a></div></nav></div></div></div><div class="cw-cookies"><div id="cw-cookie-banner" class="cw-cookie_banner"><div class="cw-cookie_content"><h3 class="heading-15">Cookie Settings</h3><p class="paragraph-4">We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior in order to constantly improve the website for you.</p><a href="/privacy-policy">See our Privacy Policy</a><div class="cw-cookie_buttons"><button id="cw-btn-reject-all" class="cw-button_secondary"><div>Reject all</div></button><button data-w-id="0b9dfc36-f328-7493-1349-d0b515f76d76" class="cw-button_secondary"><div>I want to choose</div></button><button id="cw-btn-accept-all" class="cw-button_primary"><div>Accept All</div></button></div><div id="cw-cookie-options" class="cw-cookie_selection"><div class="w-form"><form id="email-form" name="email-form" data-name="Email Form" method="get" class="cw-cookie_options" data-wf-page-id="67b590ee75d6e7a4a62ed11f" data-wf-element-id="0b9dfc36-f328-7493-1349-d0b515f76d7e"><label class="w-checkbox cw-cookie_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom cw-cookie_checkbox-check w--redirected-checked"></div><input type="checkbox" name="Necessary" id="consent-necessary" data-name="Necessary" style="opacity:0;position:absolute;z-index:-1" checked=""/><span class="w-form-label" for="Necessary">Functionality</span></label><label class="w-checkbox cw-cookie_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom cw-cookie_checkbox-check w--redirected-checked"></div><input type="checkbox" name="Analytics" id="consent-analytics" data-name="Analytics" style="opacity:0;position:absolute;z-index:-1" checked=""/><span class="w-form-label" for="Analytics">Analytics Storage</span></label><label class="w-checkbox cw-cookie_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom cw-cookie_checkbox-check w--redirected-checked"></div><input type="checkbox" name="Marketing" id="consent-ad-marketing" data-name="Marketing" style="opacity:0;position:absolute;z-index:-1" checked=""/><span class="w-form-label" for="Marketing">Ad Storage</span></label><label class="w-checkbox cw-cookie_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom cw-cookie_checkbox-check w--redirected-checked"></div><input type="checkbox" name="Preferences" id="consent-ad-user" data-name="Preferences" style="opacity:0;position:absolute;z-index:-1" checked=""/><span class="w-form-label" for="Preferences">Ad User Data</span></label><label class="w-checkbox cw-cookie_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom cw-cookie_checkbox-check w--redirected-checked"></div><input type="checkbox" name="Preferences" id="consent-ad-personalization" data-name="Preferences" style="opacity:0;position:absolute;z-index:-1" checked=""/><span class="w-form-label" for="Preferences">Ad Personalisation</span></label><label class="w-checkbox cw-cookie_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom cw-cookie_checkbox-check w--redirected-checked"></div><input type="checkbox" name="Preferences" id="consent-personalization" data-name="Preferences" style="opacity:0;position:absolute;z-index:-1" checked=""/><span class="w-form-label" for="Preferences">Personalization Storage</span></label><label class="w-checkbox cw-cookie_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom cw-cookie_checkbox-check w--redirected-checked"></div><input type="checkbox" name="Preferences" id="consent-security" data-name="Preferences" style="opacity:0;position:absolute;z-index:-1" checked=""/><span class="w-form-label" for="Preferences">Security Storage</span></label></form><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><button id="cw-btn-accept-some" class="cw-button_secondary"><div>Accept selection</div></button></div></div></div><div id="cw-cookie-icon" class="cw-cookie_icon"><div class="cw-cookie_icon-img w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22.0001C10.6167 22.0001 9.31667 21.7374 8.1 21.2121C6.88333 20.6868 5.825 19.9744 4.925 19.0751C4.025 18.1751 3.31267 17.1168 2.788 15.9001C2.26333 14.6834 2.00067 13.3834 2 12.0001C2 10.7501 2.24167 9.5251 2.725 8.3251C3.20833 7.1251 3.88333 6.0541 4.75 5.1121C5.61667 4.17077 6.65833 3.41243 7.875 2.8371C9.09167 2.26177 10.425 1.97443 11.875 1.9751C12.225 1.9751 12.5833 1.99177 12.95 2.0251C13.3167 2.05843 13.6917 2.11677 14.075 2.2001C13.925 2.9501 13.975 3.65843 14.225 4.3251C14.475 4.99177 14.85 5.54577 15.35 5.9871C15.85 6.4291 16.446 6.73343 17.138 6.9001C17.83 7.06677 18.5423 7.0251 19.275 6.7751C18.8417 7.75843 18.9043 8.7001 19.463 9.6001C20.0217 10.5001 20.8507 10.9668 21.95 11.0001C21.9667 11.1834 21.9793 11.3541 21.988 11.5121C21.9967 11.6701 22.0007 11.8411 22 12.0251C22 13.3918 21.7373 14.6791 21.212 15.8871C20.6867 17.0951 19.9743 18.1534 19.075 19.0621C18.175 19.9708 17.1167 20.6874 15.9 21.2121C14.6833 21.7368 13.3833 21.9994 12 22.0001ZM10.5 10.0001C10.9167 10.0001 11.271 9.8541 11.563 9.5621C11.855 9.2701 12.0007 8.9161 12 8.5001C12 8.08343 11.854 7.7291 11.562 7.4371C11.27 7.1451 10.916 6.99943 10.5 7.0001C10.0833 7.0001 9.729 7.1461 9.437 7.4381C9.145 7.7301 8.99933 8.0841 9 8.5001C9 8.91677 9.146 9.2711 9.438 9.5631C9.73 9.8551 10.084 10.0008 10.5 10.0001ZM8.5 15.0001C8.91667 15.0001 9.271 14.8541 9.563 14.5621C9.855 14.2701 10.0007 13.9161 10 13.5001C10 13.0834 9.854 12.7291 9.562 12.4371C9.27 12.1451 8.916 11.9994 8.5 12.0001C8.08333 12.0001 7.729 12.1461 7.437 12.4381C7.145 12.7301 6.99933 13.0841 7 13.5001C7 13.9168 7.146 14.2711 7.438 14.5631C7.73 14.8551 8.084 15.0008 8.5 15.0001ZM15 16.0001C15.2833 16.0001 15.521 15.9041 15.713 15.7121C15.905 15.5201 16.0007 15.2828 16 15.0001C16 14.7168 15.904 14.4791 15.712 14.2871C15.52 14.0951 15.2827 13.9994 15 14.0001C14.7167 14.0001 14.479 14.0961 14.287 14.2881C14.095 14.4801 13.9993 14.7174 14 15.0001C14 15.2834 14.096 15.5211 14.288 15.7131C14.48 15.9051 14.7173 16.0008 15 16.0001ZM12 20.0001C14.0333 20.0001 15.8377 19.3001 17.413 17.9001C18.9883 16.5001 19.8507 14.7168 20 12.5501C19.1667 12.1834 18.5123 11.6834 18.037 11.0501C17.5617 10.4168 17.241 9.70843 17.075 8.9251C15.7917 8.74177 14.6917 8.19177 13.775 7.2751C12.8583 6.35843 12.2917 5.25843 12.075 3.9751C10.7417 3.94177 9.57067 4.18343 8.562 4.7001C7.55333 5.21677 6.712 5.87943 6.038 6.6881C5.362 7.4961 4.853 8.3751 4.511 9.3251C4.169 10.2751 3.99867 11.1668 4 12.0001C4 14.2168 4.779 16.1044 6.337 17.6631C7.895 19.2218 9.78267 20.0008 12 20.0001Z" fill="black"/>
+</svg></div></div><div class="cw-cookie_script w-embed"></div></div><section class="main-section"><section header-color="lime" class="section what-we-do-hero"><div class="wrapper wwd-wrappar"><div class="what-we-do-hero-inner"><div data-w-id="7e5080bf-ee25-cc9f-9fcb-07cc506612ad" style="opacity:0;-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="what-we-do-hero-bg"><div class="div-block-7"></div><div data-poster-url="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77%2F67c66b0899aff95acb7e81eb_sizzle_recut-poster-00001.jpg" data-video-urls="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77%2F67c66b0899aff95acb7e81eb_sizzle_recut-transcode.mp4,https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77%2F67c66b0899aff95acb7e81eb_sizzle_recut-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video w-background-video w-background-video-atom"><video id="13d6a518-8f08-9446-18df-2e80eeeeff8e-video" autoplay="" loop="" style="background-image:url(&quot;https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77%2F67c66b0899aff95acb7e81eb_sizzle_recut-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover"><source src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77%2F67c66b0899aff95acb7e81eb_sizzle_recut-transcode.mp4" data-wf-ignore="true"/><source src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77%2F67c66b0899aff95acb7e81eb_sizzle_recut-transcode.webm" data-wf-ignore="true"/></video></div></div><div data-w-id="61afc0d2-321d-ff14-7af5-a7ef4d931105" style="opacity:0;-webkit-transform:translate3d(0, -60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="what-we-do-hero-content-wrap"><h1 class="hero-h1 desk">make your catalog work for you.</h1><h1 class="hero-h1 mobi">Meet your new catalog partner.</h1><div class="text-block-4">Flexible deals across all music rights, with no hidden terms.</div><div class="wwd-hero-btn"><a href="/request-a-meeting" class="btn mobi-order-2 w-inline-block"><div>Request a meeting</div><div class="btn-icon w-embed"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.5 17L17.5 7" stroke="#fcfaf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.5 7H17.5V17" stroke="#fcfaf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><a href="#next" class="btn transparent bg-lime _w-auto w-inline-block"><div>Learn more</div><div class="btn-icon _w-14 w-embed"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.49978 1.07886V15.221M8.49978 15.221L15.5708 8.14993M8.49978 15.221L1.42871 8.14993" stroke="#164B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div></section><section id="next" header-color="lime" class="section our-offer-section"><div class="wrapper secondary-wrapper"><div class="inner our-offer-inner"><div class="our-offer-content"><h6 data-w-id="abc0bdd8-15b7-9176-102b-4b7056e5256d" style="opacity:0" class="subtitle">Our offer</h6><h3 data-w-id="62699e94-ac78-02f5-a03e-e842de2b668d" style="opacity:0" class="nunito-title our-offer-h3 anim-el delay-1">We provide independent music creators with <span class="text-highlight green-highlight mobi-none">fast, straightforward deals</span> for music rights—along with catalog management and marketing to further grow their careers.</h3></div><div class="our-offer-thumb-wrap"><div data-w-id="802585f7-f3ba-fbf5-7f97-6301aba223de" style="opacity:0" class="our-offer-thumb-main"><div class="our-offer-thumb"><div class="why-partner-component-second-card-bg h-414"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/696bdf6440a2517c51b631a5_3d8c8ea9fad583033eb8b9c2e31e73fc_IMG_0087%201.webp" loading="lazy" sizes="(max-width: 928px) 100vw, 928px" srcset="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/696bdf6440a2517c51b631a5_3d8c8ea9fad583033eb8b9c2e31e73fc_IMG_0087%201-p-500.webp 500w, https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/696bdf6440a2517c51b631a5_3d8c8ea9fad583033eb8b9c2e31e73fc_IMG_0087%201-p-800.webp 800w, https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/696bdf6440a2517c51b631a5_3d8c8ea9fad583033eb8b9c2e31e73fc_IMG_0087%201.webp 928w" alt="" class="radius-13 _w-100 obj-cover"/></div><div class="why-partner-component-second-card-content our-offer"><div class="quote-symble font-size-3">“</div><p class="p-2 text-white font-size-2">Working with Duetti felt right from the beginning. It didn’t feel like I was just selling a catalog — it felt like partnering with a team that actually understands the long-term value of my work.</p><h5 class="f-size-20 text-white mt-38 font-size-2">Naldi</h5></div></div><a href="/artist-partners" class="link-btn font-18 desk w-inline-block"><div>Hear from our artist partners</div><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b43fc330ee5e8f74421947_arrow-down-circle.svg" loading="lazy" alt="" class="link-btn-icon"/></a></div></div></div></div></section><section header-color="white" class="section what-we-buy-section"><div class="wrapper"><div class="inner justify-content-center"><div class="what-we-buy-main"><h5 class="text-center what-we-buy-section">What we buy</h5><div class="what-we-buy-component-wrap"><div data-w-id="6a165e13-da7e-4d87-5a89-92385af6ab80" style="opacity:0" class="what-we-buy-component"><div class="what-we-buy-component-content"><div class="what-we-buy-component-num">1/3</div><div class="wwb-item-title-row"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67c135b3a9d3aa1c27de09dd_disc.svg" loading="lazy" alt="" class="image-6"/><h4 class="what-we-buy-component-heading">masters</h4></div><p class="what-we-buy-component-p">Maintain up to 50% of the income stream in each master after sale.</p></div></div><div data-w-id="b83bfe99-64b3-5bee-cff3-e7cb2cd03fb3" style="opacity:0" class="what-we-buy-component"><div class="what-we-buy-component-content"><div class="what-we-buy-component-num">2/3</div><div class="wwb-item-title-row"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67c13610c8887e9dd3a9655f_file-signature.svg" loading="lazy" alt="" class="image-6"/><h4 class="what-we-buy-component-heading">Publishing</h4></div><p class="what-we-buy-component-p">Publishing share or writer share, in full or in part.</p></div></div><div data-w-id="d3297a0f-ba05-48a0-af44-6a3e7490ee38" style="opacity:0" class="what-we-buy-component border-right-none"><div class="what-we-buy-component-content"><div class="what-we-buy-component-num">3/3</div><div class="wwb-item-title-row"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67c13610cfcad2ed76a8fbbb_crown.svg" loading="lazy" alt="" class="image-6"/><h4 class="what-we-buy-component-heading">Royalties</h4></div><p class="what-we-buy-component-p">Share of earnings from tracks you’re a part of, even if you don’t control the master rights.</p></div></div></div><div class="div-block-8"><p data-w-id="afa2f68e-7f3a-8d08-b7bf-16bf4b950758" style="opacity:0" class="what-we-buy-main-p anim-el delay-1">If you make at least <span class="text-highlight black-highlight mobi-none">$2,000 annually from your music rights </span> on a track as young as 6 months old, we can work with you.</p><div data-w-id="236f3159-7f97-0734-0c1e-1c7714c6fc54" style="opacity:0" class="anim-bottom"><a href="/request-a-meeting" class="btn mobi-order-2 if-you-make w-inline-block"><div>Request a meeting</div><div class="btn-icon w-embed"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.5 17L17.5 7" stroke="#fcfaf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.5 7H17.5V17" stroke="#fcfaf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div></div></section><section id="service" header-color="white" class="section services-section"><div class="services-wrap"><div class="services-title"><h6 class="subtitle text-black">Services</h6></div><div class="frame-5"><div class="frame-1"><h2 class="services-chart-title">Marketing, <br/>on us.</h2><div class="text-21">Duetti offers easy access to high-impact marketing services - with no recoupment or hidden fees.</div></div><div class="marketing-pillars-accordion"><div class="marketing-pillar-2"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a2763c725981faeebf6183f_icon.png" loading="lazy" id="w-node-_32c5b5c5-f98a-1c69-bfa7-0ca7bd556db7-a62ed11f" alt="" class="image-61"/><div class="text-container-6"><div class="frame-4383"><div class="text-22">Catalog Monitoring &amp; Trend Activation</div></div><div class="text-23">We actively monitor your catalog for emerging trends - we move fast and amplify</div></div></div><div class="marketing-pillar-2"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a26e6831ec069880f899389_icon.png" loading="lazy" id="w-node-_4439499f-e6b4-51ae-4a28-125dea0263f6-a62ed11f" alt="" class="image-61"/><div class="text-container-6"><div class="frame-4383"><div class="text-22">Spotify Playlist Network</div></div><div class="text-23">Maximize streaming with access to 1000+ Duetti-owned playlists</div></div></div><div class="marketing-pillar-2"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a26e68310df4f53283868f6_icon-1.png" loading="lazy" alt="" class="image-61"/><div class="text-container-6"><div class="frame-4383"><div class="text-22">Sync Opportunities</div></div><div class="text-23">Reach wider audiences with Duetti’s network</div></div></div><div class="marketing-pillar-2"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a26e6832d7926c99a05cb8e_icon-2.png" loading="lazy" alt="" class="image-61"/><div class="text-container-6"><div class="frame-4383"><div class="text-22">Digital and Physical Paid Advertising</div></div><div class="text-23">Spark excitement with high-impact, buzz-worthy moments</div></div></div><div class="marketing-pillar-2"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a26e683aea842b5b6a052b6_icon-4.png" loading="lazy" alt="" class="image-61"/><div class="text-container-6"><div class="frame-4383"><div class="text-22">UGC Campaigns</div></div><div class="text-23">Access influencer support and spotlight opportunities</div></div></div><div class="marketing-pillar-2 no-b"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a26e683413ae39db2eeaec0_icon-5.png" loading="lazy" alt="" class="image-61"/><div class="text-container-6"><div class="frame-4383"><div class="text-22">Remixes</div><div class="badge"><div class="_20">NEW</div></div></div><div class="text-23">Attract and engage new audiences with high-quality remixes created by Duetti</div></div></div></div></div><div class="services-chart-wrap"><div class="services-chart-copy"><div class="services-chart-title-wrap"><h2 class="services-chart-title">We manage, you create.</h2><h6 data-w-id="38a6a94d-19c5-f6d1-c249-6c9eeb130934" style="opacity:0" class="services-chart-container-title-h6">Top-tier distribution and active catalog management, even for tracks we don’t buy.</h6></div><div class="services-chart-container"><div class="services-chart-list-wrap"><div data-w-id="86c8f658-5f6a-7785-18ad-2050f0630639" style="opacity:0" class="services-chart-list"><h5 class="services-chart-list-h5">Strategic catalog management</h5><div class="services-chart-list-tex">Future-proofing your music by optimizing exposure and revenue opportunities.</div></div><div data-w-id="1865d4a1-f587-b9fc-0765-44620f27c6ee" style="opacity:0" class="services-chart-list services-chart-list-small"><h5 class="services-chart-list-h5">expert royalty navigation</h5><div class="services-chart-list-tex">Manage complex royalty structures, ensuring you never miss a dollar.</div></div><div data-w-id="080963d4-001f-8ad7-f937-584aee7a440c" style="opacity:0" class="services-chart-list services-chart-list-small"><h5 class="services-chart-list-h5">Major label rates, with indie flexibility</h5><div class="services-chart-list-tex">Top-tier distribution without hidden costs.</div></div><div data-w-id="b6b59cae-40a8-b4f3-ff62-5dd5f6f9dbc2" style="opacity:0" class="services-chart-list"><h5 class="services-chart-list-h5">Full service rights management</h5><div class="services-chart-list-tex">Tracking, claiming, and protecting your music so you can focus on creating.</div></div></div></div></div></div></div></section><section header-color="lime" class="section how-it-works-section header-lime"><div class="wrapper m-wrapper"><div class="inner justify-content-center"><h3 data-w-id="9cda6d56-3d8a-0f4a-d921-687352a480a3" style="-webkit-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-center text-green how-works-fadein">How it works</h3><div class="how-it-works-component-wrap"><a href="/request-a-meeting" class="link-block w-inline-block"><div data-w-id="9cda6d56-3d8a-0f4a-d921-687352a480a7" style="opacity:0;-webkit-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="how-it-works-component hiw-link-card"><img loading="lazy" src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b43dc64da284a375131b7d_heart-handshake.svg" alt="" class="how-it-work-icon"/><h4 class="how-it-works-component-title">Meet the team</h4><div class="how-it-works-component-text">Connect with our team of A&amp;Rs.</div><div class="how-it-work-arrow"><img loading="lazy" src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b49e3bf9f64d41fdfbcb7c_arrow-up-right.svg" alt="" class="_w-100"/></div></div></a><div data-w-id="9cda6d56-3d8a-0f4a-d921-687352a480af" style="opacity:0;-webkit-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="how-it-works-component"><img loading="lazy" src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b43ef72b1902e6f68fd338_settings.svg" alt="" class="how-it-work-icon"/><h4 class="how-it-works-component-title">Customize your deal</h4><div class="how-it-works-component-text">Sell as much (or as little) as you want.</div></div><div data-w-id="9cda6d56-3d8a-0f4a-d921-687352a480b5" style="opacity:0;-webkit-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="how-it-works-component"><img loading="lazy" src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b43f2c69a51c5f62011b67_banknote.svg" alt="" class="how-it-work-icon"/><h4 class="how-it-works-component-title mobi-large">Get paid.</h4><div class="how-it-works-component-text desk">Get paid in as little as 30 days.</div><div class="how-it-works-component-text mobi">Get paid within 30 days so you can reinvest in your career.</div></div></div><div class="how-it-works-btn"></div><div class="how-it-works-container-cta mobile-only"></div></div></div></section><section class="section-6"><div class="wrapper flex"><div class="text-block-50">Collaborator Programs</div></div><div class="div-block-101"></div><div class="wrapper"><div class="div-block-85"><div class="div-block-87"><div><h1 class="heading-17">get paid to remix.</h1><div class="text-block-42">Upfront cash, marketing support, and no distribution fees.</div></div><a href="/remix-program" class="div-block-86 link w-inline-block"><div class="text-block-41">Learn more</div><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/6a1712568323d7e8cff7632f_arrow_forward%20(1).svg" loading="lazy" alt="" class="image-56"/></a></div></div></div></section><section header-color="lime" class="section get-started-section"><div class="wrapper"><div class="inner get-started-inner"><div class="get-started-content"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b477c57b1c0e2f9304dd1e_Group%2014.svg" loading="lazy" alt="" class="get-started-icon"/><h2 class="meet-catalog">Meet your new catalog partner.</h2><div class="lead-text why-partner-p text-green">Flexible deals across all music rights with no hidden terms or long-term obligations.</div></div><div class="get-started-btn"><a href="/request-a-meeting" class="btn btn-green m-order-2 w-inline-block"><div>Request a meeting</div><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b479da4a530ec6ba48aa02_arrow-up-right.svg" loading="lazy" alt="" class="btn-icon"/></a><a href="/about-us" class="btn green-transparent w-inline-block"><div>About us</div><div class="btn-icon w-embed"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.5 17L17.5 7" stroke="#164B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.5 7H17.5V17" stroke="#164B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></section></section><section class="section footer-wrap"><div class="wrapper"><div class="inner"><div class="footer-main"><div class="footer-logo-wrap"><a href="/" class="footer-logo w-inline-block"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b3708eccafbbb17baea776_Logo%20Lockup%20with%20Symbol%20-%20Black%201.svg" loading="lazy" alt="" class="_w-100"/></a></div><div class="footer-widget-wrap"><div class="footer-widget"><h6 class="footer-widget-h6">Explore</h6><div class="footer-widget-link-wrap"><a href="/artist-partners" class="footer-widget-link">Artist Partners</a><a href="/what-we-do/#service" class="footer-widget-link">What We Do</a><a href="https://report.duetti.co/#1" class="footer-widget-link">2024 Economics Report</a><a href="/2025-music-economics-report" class="footer-widget-link">2025 Economics Report</a><a href="/music-finance-index" class="footer-widget-link">Music Finance Index</a></div></div><div class="footer-widget"><h6 class="footer-widget-h6">company</h6><div class="footer-widget-link-wrap"><a href="/about-us" class="footer-widget-link">About Us</a><a href="/about-us/#newsroom" class="footer-widget-link">Newsroom</a><a href="https://jobs.lever.co/duetti" class="footer-widget-link">Join the Team</a><a href="mailto:sync@duetti.co" class="footer-widget-link">Sync</a><a href="/request-a-meeting" class="footer-widget-link">Contact</a><a href="mailto:press@duetti.co" class="footer-widget-link mailto">Press Inquiries</a></div></div><div class="footer-widget"><h6 class="footer-widget-h6">Connect</h6><div class="footer-widget-link-wrap"><a href="https://www.instagram.com/duetti.co/" target="_blank" class="footer-widget-link w-inline-block"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b41bfbfeff82eb4278fb8f_instagram.svg" loading="lazy" alt="" class="footer-widget-link-icon"/><div>Instagram</div></a><a href="https://www.linkedin.com/company/duetti" target="_blank" class="footer-widget-link w-inline-block"><img src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/67b41ca70e6191ab38a40bcf_linkedin.svg" loading="lazy" alt="" class="footer-widget-link-icon"/><div>Linkedin</div></a></div></div></div></div><div class="footer-bottom"><h6 class="footer-bottom-h6">© Duetti 2025</h6><div class="footer-bottom-link-wrap"><a href="/terms-of-service" class="footer-bottom-link">Terms of Service</a><div class="footer-bottom-link-line">|</div><a href="/privacy-policy" class="footer-bottom-link">Privacy Policy</a></div></div></div></div><div class="w-embed"><style>
+
+.footer-widget-link{position: relative;}
+.footer-widget-link:after{position: absolute; content: ''; bottom: -2px; left: 0; width: 0; height: 2px; background-color: #d1f24b; transition: .35s ease-in-out;}
+.footer-widget-link:hover:after{width: 100%;}
+
+</style>
+
+<style>
+
+.btn{transition: .35s ease-in-out;}
+.btn:hover{background-color: #fcfaf6; color: #211d1d;}
+.btn-icon svg{width: 100%; height: 100%;}
+.btn .btn-icon svg path{transition: .35s ease-in-out;}
+.btn:hover .btn-icon svg path{stroke:#211d1d;}
+
+.btn.transparent:hover{background-color: #164b1f; color: #D1F24B;}
+.btn.transparent:hover .btn-icon svg path{stroke:#D1F24B;}
+
+.btn.btn-green:hover{background-color: #24622F; color: #CAEC41;}
+.btn.btn-green:hover .btn-icon svg path{stroke:#D1F24B;}
+
+.btn.transparent.white-btn:hover { color: #211d1d; background-color: #fcfaf6; }
+.btn.transparent.white-btn:hover .btn-icon svg path{stroke:#211d1d;}
+
+.btn.btn-white:hover{border-color: #fcfaf6; background-color: transparent; color: #fcfaf6;}
+.btn.btn-white:hover .btn-icon svg path{stroke:#fcfaf6;}
+.btn.btn-lime:hover{background-color: #CAEC41; color: #164b1f;}
+
+.link-block-btn{transition: .35s ease-in-out; border: 1px solid transparent;}
+.link-block-btn:hover{background-color: transparent; border-color: #CAEC41; color: #CAEC41;}
+.link-block-btn:hover .link-block-btn-icon.desk{display: none;}
+.link-block-btn:hover .link-block-btn-icon.mobi{display: block;}
+.btn.green-transparent:hover .btn-icon svg path{stroke:#D1F24B;}
+
+
+.btn.transparent.lime-transparent:hover { color: #164b1f; background-color: #D1F24B; }
+.btn.transparent.lime-transparent:hover .btn-icon svg path{stroke: #164b1f;}
+
+</style></div></section><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67af989e5cd8af2a77713c77" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript" integrity="sha384-4abIlA5/v7XaW1HMXKBgnUuhnjBYJ/Z9C1OSg4OhmVw9O3QeHJ/qJqFBERCDPv7G" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/js/webflow.schunk.227382f64ee7faa0.js" type="text/javascript" integrity="sha384-nd4hgCD/b3QMDloAQRS8l/NcR+ougrXTBfV4itgJ/QgqLEn/BOapGGmu2KlmBe6s" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/67af989e5cd8af2a77713c77/js/webflow.9c7f4163.f3dcce2a645443d2.js" type="text/javascript" integrity="sha384-JlGkWqg6fFFCIcbw3EUE4n/1EzN3KQllDJIEx+/XkNloX7fWiYa1MIMLwXRKGt/q" crossorigin="anonymous"></script><script>
+    // Check selection
+    document
+        .getElementById("cw-cookie-icon")
+        .addEventListener("click", function () {
+            setConsentCheckboxes();
+            hideOptions();
+            document.getElementById("cw-cookie-banner").style.display = "block";
+        });
+
+    // Hide Cookie Banner
+    function hideBanner() {
+        document.getElementById("cw-cookie-banner").style.display = "none";
+        document.getElementById("cw-cookie-icon").style.display = "none";
+    }
+
+    // Hide more options
+    function hideOptions() {
+        document.getElementById("cw-cookie-options").style.height = "0px";
+    }
+
+    // If consentMode has not been set, show Cookie Banner
+    if (localStorage.getItem("consentMode") === null) {
+        document.getElementById("cw-cookie-banner").style.display = "block";
+    } else {
+        hideBanner();
+    }
+
+    // Populate preferences UI
+    function setConsentCheckboxes() {
+        uncheckAllConsentCheckboxes();
+
+        const consentModeString = localStorage.getItem("consentMode");
+        if (consentModeString) {
+            const consentMode = JSON.parse(consentModeString);
+            const consentMapping = {
+                functionality_storage: "consent-necessary",
+                ad_storage: "consent-ad-marketing",
+                analytics_storage: "consent-analytics",
+                ad_user_data: "consent-ad-user",
+                ad_personalization: "consent-ad-personalization",
+                personalization_storage: "consent-personalization",
+            };
+
+            Object.entries(consentMapping).forEach(
+                ([storageKey, checkboxId]) => {
+                    const checkbox = document.getElementById(checkboxId);
+                    if (checkbox) {
+                        const isChecked = consentMode[storageKey] === "granted";
+                        checkbox.checked = isChecked;
+
+                        const checkboxDiv = checkbox.previousElementSibling;
+                        if (checkboxDiv) {
+                            if (isChecked) {
+                                checkboxDiv.classList.add(
+                                    "w--redirected-checked"
+                                );
+                            } else {
+                                checkboxDiv.classList.remove(
+                                    "w--redirected-checked"
+                                );
+                            }
+                        }
+                    }
+                }
+            );
+        }
+    }
+
+    function uncheckAllConsentCheckboxes() {
+        [
+            "consent-analytics",
+            "consent-ad-personalization",
+            "consent-ad-marketing",
+            "consent-ad-user",
+            "consent-personalization",
+            // consent-security is omitted — security_storage is always granted
+        ].forEach((checkboxId) => {
+            const checkbox = document.getElementById(checkboxId);
+            if (checkbox) {
+                checkbox.checked = false;
+                const checkboxDiv = checkbox.previousElementSibling;
+                if (
+                    checkboxDiv &&
+                    checkboxDiv.classList.contains("w--redirected-checked")
+                ) {
+                    checkboxDiv.classList.remove("w--redirected-checked");
+                }
+            }
+        });
+    }
+
+    // Buttons
+    document
+        .getElementById("cw-btn-accept-all")
+        .addEventListener("click", function () {
+            setConsent({
+                necessary: true,
+                analytics: true,
+                adpersonalized: true,
+                admarketing: true,
+                aduser: true,
+                personalized: true,
+            });
+            hideBanner();
+            window.location.reload();
+        });
+
+    document
+        .getElementById("cw-btn-accept-some")
+        .addEventListener("click", function () {
+            setConsent({
+                necessary: true,
+                analytics: document.getElementById("consent-analytics").checked,
+                adpersonalized: document.getElementById(
+                    "consent-ad-personalization"
+                ).checked,
+                admarketing: document.getElementById("consent-ad-marketing")
+                    .checked,
+                aduser: document.getElementById("consent-ad-user").checked,
+                personalized: document.getElementById("consent-personalization")
+                    .checked,
+            });
+            hideBanner();
+            window.location.reload();
+        });
+
+    document
+        .getElementById("cw-btn-reject-all")
+        .addEventListener("click", function () {
+            setConsent({
+                necessary: true,
+                analytics: false,
+                adpersonalized: false,
+                admarketing: false,
+                aduser: false,
+                personalized: false,
+            });
+            hideBanner();
+            window.location.reload();
+        });
+
+    // Helper functions for Meta Pixel
+    function metaGrantFromConsent(consent) {
+        return !!(
+            consent.analytics ||
+            consent.adpersonalized ||
+            consent.admarketing ||
+            consent.aduser
+        );
+    }
+
+    function setMetaConsent(granted) {
+        if (typeof fbq === "function") {
+            fbq("consent", granted ? "grant" : "revoke");
+        }
+        // Single source of truth for consent is consentMode in localStorage
+    }
+
+    // Map preferences to Google Consent Mode (+ persist) and nudge Meta init
+    function setConsent(consent) {
+        const consentMode = {
+            functionality_storage: consent.necessary ? "granted" : "denied",
+            ad_user_data: consent.aduser ? "granted" : "denied",
+            ad_storage: consent.admarketing ? "granted" : "denied",
+            analytics_storage: consent.analytics ? "granted" : "denied",
+            ad_personalization: consent.adpersonalized ? "granted" : "denied",
+            personalization_storage: consent.personalized
+                ? "granted"
+                : "denied",
+            security_storage: "granted", // Always granted — necessary for site security
+        };
+
+        // Update Google Consent Mode (via gtag if available; safe to no-op if absent)
+        if (typeof gtag === "function") {
+            gtag("consent", "update", consentMode);
+        }
+        localStorage.setItem("consentMode", JSON.stringify(consentMode));
+
+        // Update Meta's consent immediately
+        const metaGranted = metaGrantFromConsent(consent);
+        setMetaConsent(metaGranted);
+
+        // Ask header to (re)boot Meta if allowed (init + PageView if needed)
+        if (typeof window.bootMetaIfAllowed === "function") {
+            window.bootMetaIfAllowed();
+        }
+    }
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+<script>
+  (function($) {
+    $(function() {
+
+
+      let addAnimation = function() {
+        $(".revel-text-anim").each(function() {
+          const text = new SplitType($(this), {
+            types: "lines",
+            lineClass: "word-line"
+          });
+
+          let textInstance = $(this);
+          let lines = textInstance.find(".word-line");
+
+          // Wrap each line inside a div with class "line-wrap"
+          lines.each(function() {
+            $(this).wrap('<div class="line-wrap" style="overflow: hidden"></div>');
+          });
+
+          // Get delay from class (default 0s if no delay class found)
+          let delayClass = textInstance.attr("class").match(/delay-(\d+)/);
+          let delayTime = delayClass ? parseFloat(delayClass[1]) * 0.4 : 0;
+
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: textInstance,
+              start: "top 85%",
+              end: "top 85%",
+              onComplete: function() {
+                textInstance.removeClass("skew-up");
+              }
+            }
+          });
+
+          tl.set(textInstance, { opacity: 1 })
+            .from(lines, { 
+            y: "100%",
+            skewX: "-6",
+            duration: 2,
+            stagger: 0.1,
+            ease: "expo.out",
+            delay: delayTime // Apply delay based on class
+          });
+        });
+      };
+
+      addAnimation();
+
+      //    window.addEventListener("resize", function() {
+      //        if ($(window).width() >= 992) {
+      //            addAnimation();
+      //        }
+      //    });
+
+
+      $('.text-highlight').each(function(index) {
+    // Create a new div with the highlight-overlay class
+    var overlay = $('<div class="highlight-overlay"></div>');
+
+    // Set background color based on index
+    var bgColor = index % 2 === 0 ? '#164B1F' : '#211d1d';
+    overlay.css('background-color', bgColor);
+
+    // Append the overlay inside the span
+    $(this).append(overlay);
+});
+
+      // Start InView
+  
+
+        var $animation_elements = $('.anim-el');
+        var $window = $(window);
+
+        function check_if_in_view() {
+          var window_height = $window.height();
+          var window_top_position = $window.scrollTop();
+          var window_bottom_position = (window_top_position + window_height);
+
+          $.each($animation_elements, function () {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = (element_top_position + element_height);
+
+            //check to see if this current container is within viewport
+            if (element_top_position <= window_bottom_position) {
+              $element.addClass('in_view');
+            } else {
+
+            }
+          });
+        }
+
+        $window.on('scroll resize', check_if_in_view);
+        $window.trigger('scroll');
+  
+
+      $('.hamburger').click(function () {
+        $("body").toggleClass("navShown");
+        $(".menu-section").fadeToggle()
+      });
+      $('.menu-close').click(function () {
+        $("body").removeClass("navShown");
+        $(".menu-section").fadeOut()
+      });
+
+
+      $(".faq-item").each(function () {
+        var $this = $(this);
+        $this.find(".faq-item-title").on("click touch", function () {
+          $(".faq-item").removeClass("active")
+          $(".faq-item-content").slideUp();
+          if ($this.find(".faq-item-content:visible").length) {
+            $(".faq-item").removeClass("active")
+            $(".faq-item-content").slideUp();
+          } else {
+            $this.addClass("active")
+            $(".faq-item-content").slideUp();
+            $this.find(".faq-item-content").slideDown();
+          }
+        })
+      })
+
+
+
+    }); // End ready function.
+
+  })(jQuery);
+
+</script><script src="https://hubspotonwebflow.com/assets/js/form-124.js" type="text/javascript" integrity="sha384-bjyNIOqAKScdeQ3THsDZLGagNN56B4X2Auu9YZIGu+tA/PlggMk4jbWruG/P6zYj" crossorigin="anonymous"></script><script src="https://hubspotonwebflow.com/assets/js/form-124.js" type="text/javascript" integrity="sha384-bjyNIOqAKScdeQ3THsDZLGagNN56B4X2Auu9YZIGu+tA/PlggMk4jbWruG/P6zYj" crossorigin="anonymous"></script></body></html>

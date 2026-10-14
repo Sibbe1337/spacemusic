@@ -1,0 +1,3 @@
+**
+!services/catalog_review/deployment/clamd.conf
+!services/catalog_review/deployment/freshclam.conf

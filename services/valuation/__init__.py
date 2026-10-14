@@ -1,0 +1,1 @@
+"""Royalty-backed valuation worker."""

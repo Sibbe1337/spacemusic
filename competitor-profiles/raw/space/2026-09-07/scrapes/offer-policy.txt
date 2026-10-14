@@ -1,0 +1,46 @@
+# SPACE Pricing and Offer Policy
+
+Last updated: 2026-09-04
+
+SPACE buys music catalogs directly from independent artists, producers, labels, and catalog owners. Catalogs are reviewed individually because the value depends on the revenue history, rights, and assets included in the transaction.
+
+## Seller costs
+
+- Application: Free
+- Initial catalog review: Free
+- Listing fee: $0 / EUR 0
+- Auction commission: 0%
+- Obligation to accept an offer: None
+
+SPACE is a direct buyer. Sellers do not need to list a catalog in an auction or pay a listing commission to request a review.
+
+## How an offer is determined
+
+SPACE considers:
+
+- Annualized royalty and label revenue
+- Revenue consistency and growth trend
+- Streaming and platform mix
+- Genre demand and licensing utility
+- Master and publishing rights ownership
+- Metadata and documentation quality
+- Concentration in top tracks
+
+Reference ranges on the site are indicative only and are not guaranteed offers. The actual offer depends on the catalog reviewed, the rights included, and the supporting documentation.
+
+## Partial catalog sales
+
+Sellers can review different transaction sizes, including 50%, 75%, or 100% of defined catalog rights. The amount and rights transferred change with the selected share.
+
+## Timing and payment
+
+- Initial offer timeline: Typically 5-7 business days after the relevant catalog information is received
+- Payment method: Bank transfer
+- Payment timing: After the agreement is complete and the rights transfer requirements are satisfied
+
+## Start a review
+
+- [Apply to sell your catalog](https://spacemusic.io/apply/)
+- [How the process works](https://spacemusic.io/how-it-works/)
+- [Estimate your catalog value](https://spacemusic.io/calculator/)
+- [Contact SPACE](mailto:hello@spacemusic.io)

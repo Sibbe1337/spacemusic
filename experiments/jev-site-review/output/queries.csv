@@ -1,0 +1,428 @@
+query,impressions,clicks,position,intent,intent_conf,page,page_conf,p_none
+"how much is a music catalog worth",333,3,8.1,seller,1,/guides/music-catalog-valuation-2026/,0.73,0.01
+"annual music cost calculation",194,0,9.25,off_topic,0.77,none,0.82,0.83
+"music catalog valuation multiples 2025 2026",104,0,3.55,industry_research,0.61,/guides/music-catalog-valuation-2026/,0.77,0.01
+"music catalog valuation",68,6,15.74,seller,0.96,/guides/music-catalog-valuation-2026/,0.97,0
+"music catalog valuation multiples 2026",63,0,3.33,industry_research,0.45,/guides/music-catalog-valuation-2026/,0.91,0
+"what's the average acquisition multiple for jazz catalogs",40,0,10.85,industry_research,0.74,/data/music-catalog-market-2026/,0.38,0.28
+"cooltoad website value",39,0,48.44,off_topic,0.84,none,0.91,0.92
+"music catalogs for sale 2026",38,0,9.24,buyer_investor,0.64,none,0.29,0.31
+"music catalog valuation multiples 2025 or 2026",36,0,4.75,industry_research,0.58,/guides/music-catalog-valuation-2026/,0.6,0.01
+"catalog value",35,0,11.14,seller,0.98,/guides/music-catalog-valuation-2026/,0.54,0.01
+"independent artist",34,0,41.88,seller,0.56,/glossary/independent-artist/,0.49,0.03
+"deezer payout per stream 2026",33,0,3.64,artist_earnings,0.99,/streaming-rates/deezer-2026/,1,0
+"music catalog acquisition multiples 2025 2026",32,0,3.25,industry_research,0.81,/data/music-catalog-market-2026/,0.69,0.01
+"music publishing catalog valuation multiples 2025 2026",31,0,3.71,industry_research,0.6,/guides/music-catalog-valuation-2026/,0.54,0.06
+"music catalog analysis",29,0,17.62,industry_research,0.65,/data/music-catalog-market-2026/,0.4,0.05
+"major vs indie label for jazz artists",24,0,68.5,industry_research,0.39,/compare/major-label-vs-independent/,0.87,0.11
+"mechanical royalties",24,0,80,artist_earnings,0.97,/glossary/mechanical-royalties/,1,0
+"music marketplace",20,0,56.75,seller,0.68,none,0.27,0.29
+"how much is my music catalog worth",19,7,1.74,seller,1,/calculator/,0.42,0.01
+"space music inc",18,0,39.44,brand,0.95,none,0.36,0.37
+"non-exclusive license",18,0,49.06,seller,0.68,/glossary/exclusive-vs-non-exclusive-license/,0.7,0
+"independent labels vs major labels",17,0,34.88,industry_research,0.51,/compare/major-label-vs-independent/,0.95,0.01
+"digital aggregator meaning",16,0,6.44,artist_earnings,0.59,/glossary/digital-aggregator/,0.99,0
+"deezer music catalog size 2026",16,0,8.06,industry_research,0.98,none,0.44,0.46
+"how to value a music catalog",16,0,12.62,seller,1,/guides/music-catalog-valuation-2026/,0.99,0
+"deezer pay per listen",15,0,21.07,artist_earnings,1,/streaming-rates/deezer-2026/,0.99,0
+"blanket license",15,0,59,artist_earnings,0.56,/glossary/blanket-license/,0.79,0
+"iswc",15,0,75.27,artist_earnings,0.63,/glossary/iswc/,1,0
+"deezer pricing 2026",14,0,7.93,artist_earnings,0.98,/streaming-rates/deezer-2026/,0.97,0.02
+"music books spending calculation",14,0,8.57,off_topic,0.88,none,0.95,0.96
+"underlying composition",14,0,89.86,artist_earnings,0.48,/glossary/publishing-rights/,0.77,0.04
+"music catalog acquisitions 2026 news",12,0,10.33,industry_research,0.99,/data/music-catalog-market-2026/,0.98,0.01
+"music publishing catalogs acquisition opportunities 2026",11,0,3.64,buyer_investor,0.71,/data/music-catalog-market-2026/,0.23,0.12
+"music catalog acquisitions 2026",11,0,4.82,seller,0.25,/data/music-catalog-market-2026/,0.51,0.03
+"label independent",11,0,43,industry_research,0.4,/compare/major-label-vs-independent/,0.65,0.1
+"blanket license music",11,0,48.27,artist_earnings,0.57,/blog/what-is-a-blanket-license/,0.66,0
+"how much does deezer pay per stream",11,0,51.09,artist_earnings,0.99,/streaming-rates/deezer-2026/,0.99,0
+"independent label",11,0,51.36,industry_research,0.41,/compare/major-label-vs-independent/,0.35,0.22
+"exclusive license",11,0,60.18,seller,0.85,/glossary/exclusive-vs-non-exclusive-license/,0.62,0.01
+"deezer price 2026",10,0,5.1,artist_earnings,0.86,/streaming-rates/deezer-2026/,0.87,0.09
+"most valuable music catalogs 2026",10,0,8.6,industry_research,0.72,/data/music-catalog-market-2026/,0.87,0.08
+"music catalog valuation multiples 2024 2025",10,0,11.3,industry_research,0.69,/guides/music-catalog-valuation-2026/,0.56,0.02
+"licensing music through major label vs royalty-free platforms pros cons",10,0,16.2,seller,0.6,/compare/major-label-vs-independent/,0.64,0.16
+"ascap blanket license",10,0,47.8,artist_earnings,0.77,/blog/what-is-a-blanket-license/,0.75,0
+"blanket music license cost",10,0,51.6,artist_earnings,0.68,/blog/what-is-a-blanket-license/,0.61,0.16
+"what is a record label",10,0,68.2,industry_research,0.49,/glossary/record-label/,0.99,0
+"isrc",10,0,75.5,artist_earnings,0.81,/glossary/isrc/,0.99,0
+"music aggregator",10,0,80.4,artist_earnings,0.64,/glossary/digital-aggregator/,0.99,0
+"blanket sync license",9,0,43.56,seller,0.62,/glossary/blanket-license/,0.49,0.02
+"independent musician",9,0,50.56,artist_earnings,0.57,/glossary/independent-artist/,0.44,0.04
+"non exclusive license",9,0,53.33,seller,0.88,/glossary/exclusive-vs-non-exclusive-license/,0.6,0.02
+"non exclusive rights",9,0,58.78,seller,0.84,/glossary/exclusive-vs-non-exclusive-license/,0.49,0.05
+"cue sheet",9,0,85.67,artist_earnings,0.58,/glossary/cue-sheet/,1,0
+"deezer features pricing 2026",8,0,3.75,artist_earnings,0.93,/streaming-rates/deezer-2026/,0.91,0.06
+"music catalog valuation multiples streaming revenue",8,0,8,seller,0.7,/guides/music-catalog-valuation-2026/,0.7,0
+"recent music catalog sales deals 2025 2026",8,0,8.5,industry_research,0.87,/data/music-catalog-market-2026/,0.92,0.02
+"indie label vs major label",8,0,33.25,industry_research,0.25,/compare/major-label-vs-independent/,0.98,0
+"independent music artist",8,0,44.25,seller,0.44,/glossary/independent-artist/,0.49,0.03
+"how much can you sell a song for",8,0,52,seller,0.99,/guides/music-catalog-valuation-2026/,0.33,0.06
+"ambient music ai",8,0,65.62,industry_research,0.22,/blog/future-of-ai-in-ambient-music/,0.99,0
+"ascap bmi sesac blanket license",8,0,66.38,artist_earnings,0.88,/blog/what-is-a-blanket-license/,0.94,0
+"apple music content library size catalog evaluation 2025 2026",7,0,2.14,industry_research,0.85,none,0.35,0.37
+"deezer subscription price 2026",7,0,3.86,off_topic,0.73,none,0.82,0.83
+"music publishing catalog valuation multiples 2026",7,0,3.86,industry_research,0.48,/guides/music-catalog-valuation-2026/,0.74,0
+"youtube music catalog size number of tracks 2026",7,0,4.57,industry_research,0.9,none,0.73,0.74
+"music catalog sales 2026 trends",7,0,6.43,industry_research,0.99,/data/music-catalog-market-2026/,1,0
+"music catalog valuation multiples 2025",7,0,9.14,industry_research,0.65,/guides/music-catalog-valuation-2026/,0.58,0.04
+"drake music catalog valuation 2026",7,0,13.57,industry_research,0.8,none,0.66,0.67
+"drake music catalog valuation 2025 2026",7,0,15.29,industry_research,0.69,none,0.54,0.55
+"digital aggregator",7,0,18,industry_research,0.36,/glossary/digital-aggregator/,0.99,0
+"music estimate",7,0,22.29,artist_earnings,0.53,/tools/streaming-calculator/,0.34,0.14
+"blanket license cost",7,0,41.29,artist_earnings,0.6,/blog/what-is-a-blanket-license/,0.55,0.1
+"music value",7,0,55.71,seller,0.96,/guides/music-catalog-valuation-2026/,0.52,0.04
+"music aggregators",7,0,60.71,artist_earnings,0.57,/glossary/digital-aggregator/,0.68,0.08
+"can a cpa perform a valuation on a music catalog",7,0,73.43,seller,0.65,none,0.48,0.49
+"content id",7,0,83.43,artist_earnings,0.73,/glossary/content-id/,0.99,0
+"music catalog valuation trends 2026",6,0,2,industry_research,0.97,/data/music-catalog-market-2026/,0.95,0
+"deezer pricing plans 2026",6,0,3,artist_earnings,0.45,none,0.6,0.61
+"how much is it catalog worth",6,0,8,seller,1,/calculator/,0.46,0.01
+"music catalog acquisition 2026",6,0,8.83,industry_research,0.53,/data/music-catalog-market-2026/,0.64,0.01
+"number of tracks in music streaming catalogs 2026",6,0,9.67,industry_research,0.98,/data/music-catalog-market-2026/,0.57,0.4
+"music catalog acquisitions news 2026",6,0,10.33,industry_research,0.96,/data/music-catalog-market-2026/,0.92,0.06
+"music catalog acquisition deal million 2026",6,0,12,industry_research,0.87,/data/music-catalog-market-2026/,0.88,0.05
+"blanket license price",6,0,30,seller,0.58,/blog/what-is-a-blanket-license/,0.52,0.12
+"how much can i sell a song for",6,0,52.17,seller,0.99,/guides/music-catalog-valuation-2026/,0.23,0.07
+"value of music",6,0,62.33,seller,0.95,/guides/music-catalog-valuation-2026/,0.42,0.08
+"exclusive and non exclusive license",6,0,63,seller,0.85,/glossary/exclusive-vs-non-exclusive-license/,0.68,0
+"blanket license for internet radio",6,0,63.33,seller,0.67,/blog/what-is-a-blanket-license/,0.49,0.03
+"isrc music",6,0,64.5,artist_earnings,0.78,/glossary/isrc/,0.99,0
+"how to create a music catalog",6,0,72,artist_earnings,0.51,none,0.55,0.56
+"neighbouring rights",6,0,92.83,artist_earnings,0.79,/glossary/neighboring-rights/,0.99,0
+"deezer subscription plans 2026",5,0,8.6,off_topic,0.76,none,0.78,0.79
+"music catalog valuation methods",5,0,10,seller,0.69,/guides/music-catalog-valuation-2026/,0.99,0
+"tidal music catalog size 2026",5,0,13.4,industry_research,0.95,/data/music-catalog-market-2026/,0.5,0.29
+"spacemusic",5,0,27.4,brand,0.9,/,0.38,0.11
+"music catalog index",5,0,32.6,industry_research,0.87,/data/space-market-index/,0.76,0.06
+"digital aggregator music",5,0,41,artist_earnings,0.55,/glossary/digital-aggregator/,0.99,0
+"non exclusive license music",5,0,43.2,seller,0.75,/glossary/exclusive-vs-non-exclusive-license/,0.77,0
+"performing rights organization",5,0,59.4,artist_earnings,0.91,/glossary/pro/,0.98,0
+"major label distribution",5,0,63.4,industry_research,0.29,/compare/major-label-vs-independent/,0.53,0.14
+"non exclusive licensing",5,0,66.4,seller,0.82,/glossary/exclusive-vs-non-exclusive-license/,0.6,0
+"what is a music label",5,0,68,industry_research,0.64,/glossary/record-label/,0.94,0.02
+"mechanical rights",5,0,70,artist_earnings,0.87,/glossary/mechanical-royalties/,0.98,0.01
+"how much was musically sold for",5,0,73,industry_research,0.75,/blog/case-study-ambient-producer-catalog-sale/,0.33,0.24
+"what are mechanical royalties",5,0,74.2,artist_earnings,0.96,/glossary/mechanical-royalties/,1,0
+"non exclusive licence",5,0,75.4,seller,0.7,/glossary/exclusive-vs-non-exclusive-license/,0.8,0
+"isrc code",5,0,83.8,artist_earnings,0.91,/glossary/isrc/,1,0
+"deezer catalog size 2026",4,0,3.5,industry_research,0.93,none,0.51,0.53
+"music catalog valuation multiples",4,0,7.5,seller,0.45,/guides/music-catalog-valuation-2026/,0.52,0.01
+"music platform ""genre-neutral space"" independent artistry",4,0,8.5,seller,0.33,none,0.33,0.35
+"drake catalog valuation 2025 or 2026",4,0,8.75,industry_research,0.9,none,0.67,0.68
+"deezer pay per stream",4,0,9.75,artist_earnings,0.99,/streaming-rates/deezer-2026/,1,0
+"blanket license meaning",4,0,21.25,seller,0.39,/glossary/blanket-license/,0.92,0
+"independent label vs major label",4,0,29.5,industry_research,0.33,/compare/major-label-vs-independent/,0.98,0
+"music catalogue valuation",4,0,33.75,seller,0.99,/guides/music-catalog-valuation-2026/,0.97,0
+"music catalog for sale",4,0,34,seller,0.83,/,0.42,0.12
+"exclusive vs nonexclusive rights",4,0,50,seller,0.95,/glossary/exclusive-vs-non-exclusive-license/,0.6,0.01
+"exclusive and non exclusive",4,0,52.25,seller,0.92,/glossary/exclusive-vs-non-exclusive-license/,0.57,0.02
+"blanket music license",4,0,52.5,artist_earnings,0.52,/glossary/blanket-license/,0.48,0.01
+"music blanket license",4,0,58.5,artist_earnings,0.41,/glossary/blanket-license/,0.58,0
+"blanket licensing",4,0,61,artist_earnings,0.62,/blog/what-is-a-blanket-license/,0.55,0
+"compulsory license music",4,0,61,artist_earnings,0.7,/glossary/compulsory-license/,0.99,0
+"iswc code",4,0,61.75,artist_earnings,0.77,/glossary/iswc/,1,0
+"what is a recording label",4,0,67,industry_research,0.48,/glossary/record-label/,0.94,0.02
+"whose music catalog is worth the most",4,0,67.75,industry_research,0.89,/data/music-catalog-market-2026/,0.73,0.21
+"what is record label",4,0,68,industry_research,0.52,/glossary/record-label/,0.97,0.01
+"what is a major label",4,0,68.75,industry_research,0.83,/compare/major-label-vs-independent/,0.65,0.14
+"aggregator music distribution",4,0,69.75,artist_earnings,0.48,/glossary/digital-aggregator/,0.96,0
+"music cue sheets",4,0,70.25,artist_earnings,0.74,/glossary/cue-sheet/,0.99,0
+"cue sheet music",4,0,70.75,artist_earnings,0.69,/glossary/cue-sheet/,0.99,0
+"sample clearance",4,0,73.75,artist_earnings,0.64,/glossary/sample-clearance/,0.99,0
+"pro affiliation",4,0,79.5,artist_earnings,0.95,/blog/how-to-register-your-ambient-music-with-pros/,0.48,0.04
+"isrc codes",4,0,85,artist_earnings,0.79,/glossary/isrc/,0.99,0
+"alternatives to hipgnosis for selling a music catalog",3,0,2,seller,1,/compare/space-vs-hipgnosis/,0.58,0.02
+"tidal total songs tracks catalog size 2026",3,0,6.67,industry_research,0.9,none,0.64,0.65
+"size of spotify music catalog 2026",3,0,8,industry_research,0.96,none,0.61,0.63
+"what does under exclusive license mean in music",3,0,9.33,seller,0.77,/glossary/exclusive-vs-non-exclusive-license/,0.88,0
+"music catalog acquisition august 2026",3,0,10.33,industry_research,0.96,/data/music-catalog-market-2026/,0.77,0.12
+"music catalog value",3,0,10.33,seller,0.99,/guides/music-catalog-valuation-2026/,0.79,0
+"what is an independent artist in music",3,0,10.33,industry_research,0.5,/glossary/independent-artist/,0.99,0
+"catalog calculator",3,0,11,seller,0.99,/calculator/,0.92,0
+"artists in active negotiations to sell music catalog rights 2025 2026",3,0,15.67,industry_research,0.63,none,0.7,0.71
+"difference between major record label and independent distributor music 
+industry",3,0,18,industry_research,0.83,/compare/major-label-vs-independent/,0.86,0.08
+"drake music catalog valuation worth",3,0,18.33,industry_research,0.62,none,0.69,0.7
+"independent singer",3,0,31.33,seller,0.45,/for/independent-artist-catalog-owner/,0.77,0.04
+"apple music royalties vs spotify",3,0,33,artist_earnings,1,/compare/spotify-vs-apple-music-royalties/,0.97,0
+"pro blanket license",3,0,37.33,artist_earnings,0.86,/blog/what-is-a-blanket-license/,0.73,0
+"under exclusive license",3,0,44.33,seller,0.68,/glossary/exclusive-vs-non-exclusive-license/,0.58,0.05
+"music cd value calculator",3,0,45.33,seller,0.96,/calculator/,0.51,0.31
+"music content marketplace",3,0,47.67,seller,0.74,none,0.41,0.42
+"non exclusive",3,0,49.67,seller,0.66,/compare/exclusive-vs-non-exclusive-license/,0.48,0.04
+"mechanical royalties streaming",3,0,50.33,artist_earnings,0.98,/glossary/mechanical-royalties/,0.97,0
+"what happens when you sell your music catalog",3,0,57.67,seller,1,/how-it-works/,0.86,0
+"recoupable",3,0,63,seller,0.55,/glossary/recoupment/,0.98,0
+"what is a label in music",3,0,63,industry_research,0.32,/glossary/record-label/,0.94,0.02
+"blanket licence",3,0,63.33,artist_earnings,0.61,/glossary/blanket-license/,0.82,0
+"what is a record label in music",3,0,65,industry_research,0.39,/glossary/record-label/,0.99,0
+"mechanical royalty payments",3,0,65.67,artist_earnings,0.97,/glossary/mechanical-royalties/,0.99,0
+"what is a catalog number in music",3,0,67,off_topic,0.43,none,0.53,0.54
+"mechanical royalties music",3,0,68.67,artist_earnings,0.97,/glossary/mechanical-royalties/,0.99,0
+"recoupment meaning",3,0,69.33,seller,0.45,/glossary/recoupment/,1,0
+"music rights",3,0,69.67,artist_earnings,0.39,/guides/music-rights-101/,0.97,0
+"need for digital aggregators in music distribution",3,0,69.67,artist_earnings,0.77,/glossary/digital-aggregator/,0.96,0.01
+"non exclusive copyright license",3,0,70,seller,0.77,/glossary/exclusive-vs-non-exclusive-license/,0.76,0.01
+"compulsory license copyright",3,0,71.67,artist_earnings,0.5,/glossary/compulsory-license/,0.99,0
+"music cue sheet",3,0,74.33,artist_earnings,0.52,/glossary/cue-sheet/,1,0
+"label music",3,0,74.67,industry_research,0.17,/glossary/record-label/,0.77,0.08
+"record label meaning",3,0,74.67,industry_research,0.48,/glossary/record-label/,0.99,0
+"record label",3,0,75.33,industry_research,0.48,/glossary/record-label/,0.99,0
+"non exclusive license meaning",3,0,76.33,seller,0.68,/glossary/exclusive-vs-non-exclusive-license/,0.84,0
+"what are music labels",3,0,76.67,industry_research,0.65,/glossary/record-label/,0.92,0.01
+"record label record label",3,0,77.67,industry_research,0.38,/glossary/record-label/,0.91,0.06
+"what is an isrc",3,0,80.67,artist_earnings,0.7,/glossary/isrc/,1,0
+"neighboring rights",3,0,81,artist_earnings,0.74,/glossary/neighboring-rights/,1,0
+"cue sheets",3,0,82.67,artist_earnings,0.7,/glossary/cue-sheet/,1,0
+"compulsory licensing in copyright",3,0,83,artist_earnings,0.62,/glossary/compulsory-license/,0.99,0
+"royalty advance",3,0,89,seller,0.94,/glossary/advance/,0.64,0.02
+"isrc number",3,0,93.33,artist_earnings,0.9,/glossary/isrc/,0.99,0
+"deezer hifi price us 2026",2,0,1,off_topic,0.62,none,0.78,0.79
+"music catalog valuation multiples annual revenue",2,0,2,seller,0.61,/guides/music-catalog-valuation-2026/,0.6,0.01
+"music catalog sales acquisitions 2026",2,0,2.5,industry_research,0.97,/data/music-catalog-market-2026/,0.99,0
+"spotify music catalog size number of tracks 2026",2,0,3,industry_research,0.96,none,0.53,0.54
+"deezer monthly active users 2026",2,0,4,industry_research,0.95,none,0.55,0.57
+"iswc number registration",2,0,4,artist_earnings,0.93,/glossary/iswc/,0.78,0.13
+"music catalog sales trends 2026",2,0,4,industry_research,0.99,/data/music-catalog-market-2026/,1,0
+"music publishing catalog valuation multiples",2,0,5,industry_research,0.6,/guides/music-catalog-valuation-2026/,0.63,0.01
+"music catalog worth",2,0,6,seller,1,/guides/music-catalog-valuation-2026/,0.65,0
+"yes",2,0,6,off_topic,0.87,none,0.9,0.91
+"full sell",2,0,6.5,seller,0.98,/compare/partial-sale-vs-full-sale/,0.7,0.02
+"percentage of instrumental tracks in music catalogs",2,0,6.5,industry_research,0.92,none,0.51,0.53
+"size of music catalogs on streaming platforms 2026",2,0,8,industry_research,0.97,none,0.52,0.53
+"apple music catalog size number of tracks 2026",2,0,9.5,industry_research,0.97,none,0.72,0.73
+"deezer average payout per stream 2026",2,0,10,artist_earnings,0.99,/streaming-rates/deezer-2026/,0.99,0
+"deezer payout per stream",2,0,10,artist_earnings,1,/streaming-rates/deezer-2026/,0.98,0
+"deezer artist payout",2,0,10.5,artist_earnings,0.99,/streaming-rates/deezer-2026/,0.73,0.09
+"music catalog acquisitions 2025 2026",2,0,11,industry_research,0.98,/data/music-catalog-market-2026/,0.99,0
+"performance rights organization uk",2,0,11,artist_earnings,0.91,/blog/how-to-register-your-ambient-music-with-pros/,0.32,0.24
+"value your music publishing catalog",2,0,17.5,seller,1,/guides/music-catalog-valuation-2026/,0.66,0.01
+"how much worth music catalog",2,0,19,seller,1,/guides/music-catalog-valuation-2026/,0.8,0
+"mechanical royalties for songwriters",2,0,20.5,artist_earnings,0.98,/glossary/mechanical-royalties/,0.99,0
+"sell my music catalog",2,0,21.5,seller,1,/,0.92,0
+"sell royalty",2,0,26.5,seller,0.98,/,0.47,0.04
+"sell meditation music",2,0,31.5,seller,1,/sell/sell-meditation-music-rights/,0.85,0
+"independent record labels vs major",2,0,32,industry_research,0.48,/compare/major-label-vs-independent/,0.95,0
+"exclusive and non exclusive rights",2,0,38.5,seller,0.88,/compare/exclusive-vs-non-exclusive-license/,0.61,0
+"indie vs major label",2,0,38.5,industry_research,0.23,/compare/major-label-vs-independent/,0.97,0.01
+"blanket public performance license",2,0,41,artist_earnings,0.72,/blog/what-is-a-blanket-license/,0.62,0.01
+"how much does deezer pay artists",2,0,41.5,artist_earnings,1,/streaming-rates/deezer-2026/,0.99,0
+"aggregator music",2,0,42.5,artist_earnings,0.7,/glossary/digital-aggregator/,0.97,0
+"mechanical royalties in music",2,0,43.5,artist_earnings,0.96,/glossary/mechanical-royalties/,1,0
+"exclusive vs non exclusive license agreement",2,0,44.5,seller,0.77,/glossary/exclusive-vs-non-exclusive-license/,0.54,0
+"music independent artists",2,0,49,artist_earnings,0.53,/glossary/independent-artist/,0.45,0.05
+"partial sales",2,0,50,seller,0.99,/compare/partial-sale-vs-full-sale/,0.67,0
+"blanket licenses",2,0,54,artist_earnings,0.74,/blog/what-is-a-blanket-license/,0.59,0
+"non-exclusive rights",2,0,54,seller,0.81,/glossary/exclusive-vs-non-exclusive-license/,0.59,0.03
+"exclusive vs nonexclusive license",2,0,57.5,seller,0.79,/glossary/exclusive-vs-non-exclusive-license/,0.52,0.01
+"non-exclusive",2,0,57.5,seller,0.78,/glossary/exclusive-vs-non-exclusive-license/,0.82,0
+"isrcs",2,0,58.5,artist_earnings,0.7,/glossary/isrc/,0.99,0
+"what are record labels",2,0,59,industry_research,0.46,/glossary/record-label/,0.98,0
+"what is a blanket license",2,0,60,artist_earnings,0.48,/glossary/blanket-license/,0.64,0
+"content id music",2,0,63.5,artist_earnings,0.67,/glossary/content-id/,0.98,0
+"what is non exclusive license",2,0,63.5,seller,0.76,/glossary/exclusive-vs-non-exclusive-license/,0.79,0
+"compulsory mechanical license",2,0,64.5,artist_earnings,0.74,/glossary/compulsory-license/,0.97,0.01
+"what is label in music",2,0,67,industry_research,0.38,/glossary/record-label/,0.99,0
+"digital music aggregator",2,0,67.5,artist_earnings,0.52,/glossary/digital-aggregator/,0.99,0
+"whats a record label",2,0,67.5,industry_research,0.42,/glossary/record-label/,0.99,0
+"what a label in music",2,0,68,industry_research,0.34,/glossary/record-label/,0.96,0.01
+"non-exclusive licence",2,0,68.5,seller,0.74,/glossary/exclusive-vs-non-exclusive-license/,0.85,0
+"what is a non exclusive license",2,0,70,seller,0.65,/glossary/exclusive-vs-non-exclusive-license/,0.78,0.01
+"cue sheets music",2,0,70.5,artist_earnings,0.78,/glossary/cue-sheet/,1,0
+"record label definition",2,0,71,industry_research,0.31,/glossary/record-label/,0.97,0
+"youtube content id how it works audio fingerprinting video matching",2,0,71.5,artist_earnings,0.55,/glossary/content-id/,0.94,0.03
+"sample clearances",2,0,72,artist_earnings,0.62,/glossary/sample-clearance/,0.99,0
+"what does content id mean",2,0,72.5,artist_earnings,0.55,/glossary/content-id/,0.99,0
+"music recording labels",2,0,74,industry_research,0.63,/glossary/record-label/,0.94,0.02
+"music label definition",2,0,74.5,industry_research,0.55,/glossary/record-label/,0.95,0
+"record label description",2,0,74.5,industry_research,0.48,/glossary/record-label/,0.95,0.02
+"what is a non-exclusive license",2,0,74.5,seller,0.8,/glossary/exclusive-vs-non-exclusive-license/,0.89,0
+"what is record labels",2,0,74.5,industry_research,0.46,/glossary/record-label/,0.94,0.02
+"record labels meaning",2,0,75,industry_research,0.39,/glossary/record-label/,0.98,0
+"how are album sales calculated",2,0,75.5,artist_earnings,0.71,none,0.85,0.87
+"compulsory license",2,0,76,artist_earnings,0.71,/glossary/compulsory-license/,1,0
+"label for music",2,0,76.5,artist_earnings,0.2,/glossary/record-label/,0.82,0.1
+"record labels definition",2,0,77,industry_research,0.32,/glossary/record-label/,0.97,0.02
+"recording labels",2,0,77,industry_research,0.45,/glossary/record-label/,0.96,0.01
+"what is a cue sheet",2,0,78,artist_earnings,0.76,/glossary/cue-sheet/,1,0
+"what are cue sheets",2,0,78.5,artist_earnings,0.75,/glossary/cue-sheet/,0.98,0
+"neighboring rights royalties",2,0,80,artist_earnings,0.94,/glossary/neighboring-rights/,0.98,0.01
+"naics code for record label",2,0,80.5,industry_research,0.61,none,0.81,0.83
+"mechanical royalties rate",2,0,83.5,artist_earnings,0.93,/glossary/mechanical-royalties/,0.97,0.01
+"music business terms",2,0,95.5,artist_earnings,0.45,/glossary/,0.95,0
+"deezer hifi price 2026",1,0,1,off_topic,0.49,none,0.81,0.82
+"deezer payout per stream 2025",1,0,1,artist_earnings,0.98,/streaming-rates/deezer-2026/,0.88,0.08
+"yup",1,0,2,off_topic,0.85,none,0.84,0.85
+"deezer free tier 2026",1,0,3,artist_earnings,0.61,none,0.6,0.61
+"how much is it worth now?",1,0,3,seller,0.97,/calculator/,0.27,0.06
+"ja",1,0,4,off_topic,0.76,none,0.8,0.81
+"music catalog valuation chart",1,0,4,seller,0.4,/guides/music-catalog-valuation-2026/,0.56,0.09
+"interactive streaming mechanical royalty",1,0,5,artist_earnings,0.95,/glossary/mechanical-royalties/,0.69,0.07
+"music catalog multiple",1,0,5,seller,0.4,/glossary/revenue-multiple/,0.62,0.01
+"what is iswc in music",1,0,5,artist_earnings,0.67,/glossary/iswc/,1,0
+"deezer audio quality 2026",1,0,6,off_topic,0.6,none,0.67,0.68
+"bands that sold their catalogs",1,0,7,industry_research,0.63,none,0.66,0.67
+"deezer premium price 2026",1,0,8,off_topic,0.77,none,0.84,0.85
+"distrokid payments",1,0,8,artist_earnings,0.98,/compare/distrokid-vs-tunecore/,0.52,0.42
+"who are independent artists",1,0,8,industry_research,0.26,/glossary/independent-artist/,0.99,0
+"music catalog sales 2026 news",1,0,9,industry_research,0.95,/data/music-catalog-market-2026/,0.92,0.06
+"music publishing catalog valuation multiples 2024 2025",1,0,9,industry_research,0.84,/guides/music-catalog-valuation-2026/,0.36,0.06
+"performing rights organization uk",1,0,9,artist_earnings,0.93,/glossary/pro/,0.46,0.26
+"tidal number of songs tracks catalog size 2026",1,0,9,industry_research,0.93,none,0.52,0.53
+"value your music",1,0,9,seller,0.99,/guides/music-catalog-valuation-2026/,0.37,0.02
+"youtube music royalties per stream estimate 2026",1,0,9,artist_earnings,0.99,/streaming-rates/youtube-music-2026/,0.97,0
+"apple music catalog size 2026",1,0,10,industry_research,0.92,none,0.59,0.6
+"indie music rights management guide",1,0,10,artist_earnings,0.7,/guides/music-rights-101/,0.85,0.06
+"deezer family plan price 2026",1,0,11,off_topic,0.96,none,0.95,0.96
+"music catalog acquisition april 2026",1,0,11,industry_research,0.74,/data/music-catalog-market-2026/,0.59,0.16
+"music catalog acquisition news 2026",1,0,11,industry_research,0.9,/data/music-catalog-market-2026/,0.8,0.15
+"what does exclusive license mean in music",1,0,12,seller,0.66,/glossary/exclusive-vs-non-exclusive-license/,0.87,0
+"is universal ambients ai",1,0,17,off_topic,0.61,none,0.45,0.47
+"how to buy music catalogs",1,0,18,buyer_investor,0.99,none,0.28,0.3
+"music publishing catalog appraisal",1,0,19,seller,0.99,/guides/music-catalog-valuation-2026/,0.76,0.01
+"nonprofit performing rights society",1,0,19,artist_earnings,0.7,/glossary/pro/,0.77,0.09
+"value of music publishing catalog",1,0,22,seller,1,/guides/music-catalog-valuation-2026/,0.88,0
+"digital aggregators",1,0,23,artist_earnings,0.34,/glossary/digital-aggregator/,0.99,0
+"music licensing calculator",1,0,23,artist_earnings,0.85,/tools/streaming-calculator/,0.48,0.27
+"label major",1,0,25,industry_research,0.81,/compare/major-label-vs-independent/,0.72,0.05
+"royalty marketplace",1,0,25,seller,0.65,/compare/space-vs-royalty-exchange/,0.56,0.09
+"independent music ecosystem",1,0,26,industry_research,0.87,none,0.31,0.32
+"tv cue sheet",1,0,26,artist_earnings,0.68,/glossary/cue-sheet/,0.99,0.01
+"music valuation",1,0,27,seller,0.96,/guides/music-catalog-valuation-2026/,0.93,0
+"independent recording",1,0,28,artist_earnings,0.54,/glossary/independent-artist/,0.35,0.17
+"major vs independent music publishing",1,0,28,industry_research,0.46,/compare/major-label-vs-independent/,0.59,0.05
+"tv show cue sheet submission",1,0,28,artist_earnings,0.75,/glossary/cue-sheet/,0.83,0.14
+"performance royalties vs mechanical royalties",1,0,29,artist_earnings,0.93,/glossary/mechanical-royalties/,0.26,0.05
+"how much deezer pays per stream",1,0,30,artist_earnings,0.99,/streaming-rates/deezer-2026/,0.99,0
+"musi economics valuations nls multiple avg for vault tapes",1,0,30,industry_research,0.69,/guides/music-catalog-valuation-2026/,0.32,0.19
+"sheet music buying guide 2026",1,0,30,off_topic,0.75,none,0.94,0.95
+"music catalogues for sale",1,0,32,buyer_investor,0.73,none,0.27,0.29
+"an independent artist",1,0,35,seller,0.49,/glossary/independent-artist/,0.44,0.05
+"indepent artist",1,0,35,artist_earnings,0.44,/glossary/independent-artist/,0.41,0.09
+"exclusive vs non exclusive",1,0,37,seller,0.85,/glossary/exclusive-vs-non-exclusive-license/,0.53,0.03
+"exclusive vs non exclusive license",1,0,37,seller,0.88,/glossary/exclusive-vs-non-exclusive-license/,0.49,0.01
+"non exclusive vs exclusive license",1,0,39,seller,0.79,/compare/exclusive-vs-non-exclusive-license/,0.57,0.03
+"independent artist music",1,0,40,seller,0.39,/glossary/independent-artist/,0.52,0.06
+"isrc code example",1,0,40,artist_earnings,0.79,/glossary/isrc/,0.99,0
+"what is an exclusive license",1,0,41,seller,0.79,/glossary/exclusive-vs-non-exclusive-license/,0.87,0
+"what is an independent artist",1,0,41,industry_research,0.27,/glossary/independent-artist/,0.99,0
+"indipendet artist",1,0,42,artist_earnings,0.34,/glossary/independent-artist/,0.87,0.03
+"record label independent",1,0,42,industry_research,0.33,/compare/major-label-vs-independent/,0.37,0.08
+"what is the most valuable music catalog",1,0,42,industry_research,0.68,/data/music-catalog-market-2026/,0.5,0.29
+"ai generated ambient music",1,0,43,artist_earnings,0.27,/blog/future-of-ai-in-ambient-music/,0.96,0.02
+"sell music catalog",1,0,43,seller,1,/,0.84,0
+"independent recording artist",1,0,44,seller,0.43,/for/independent-artist-catalog-owner/,0.52,0.03
+"isrc format",1,0,44,artist_earnings,0.75,/glossary/isrc/,0.99,0
+"independent artist meaning",1,0,46,artist_earnings,0.31,/glossary/independent-artist/,0.99,0
+"independentartist",1,0,46,artist_earnings,0.3,/glossary/independent-artist/,0.87,0.03
+"space music records",1,0,46,brand,0.81,none,0.51,0.52
+"deezer royalties calculator",1,0,47,artist_earnings,0.99,/streaming-rates/deezer-2026/,0.75,0.01
+"national isrc agency",1,0,48,artist_earnings,0.72,none,0.58,0.6
+"exclusive vs non-exclusive license",1,0,49,seller,0.77,/glossary/exclusive-vs-non-exclusive-license/,0.51,0
+"royalties do deezer",1,0,49,artist_earnings,1,/streaming-rates/deezer-2026/,0.99,0
+"sell electronic music",1,0,50,seller,1,/sell/sell-electronic-music-catalog/,0.96,0
+"us isrc agency",1,0,52,artist_earnings,0.9,/glossary/isrc/,0.51,0.39
+"valuemymusic",1,0,53,seller,0.95,/calculator/,0.37,0.11
+"music cue sheet template",1,0,54,artist_earnings,0.57,none,0.52,0.53
+"spaceymusic",1,0,54,brand,0.94,/,0.38,0.32
+"non exclusive vs exclusive",1,0,55,seller,0.78,/compare/exclusive-vs-non-exclusive-license/,0.61,0
+"best websites to sell your music",1,0,58,seller,1,/guides/best-music-rights-buyers-2026/,0.93,0.01
+"blanket performance license",1,0,58,artist_earnings,0.83,/glossary/blanket-license/,0.56,0
+"independent musicians",1,0,58,artist_earnings,0.42,/for/independent-artist-catalog-owner/,0.36,0.1
+"blanket license for music",1,0,59,artist_earnings,0.56,/glossary/blanket-license/,0.53,0
+"websites to sell your music",1,0,60,seller,1,/guides/best-music-rights-buyers-2026/,0.85,0.02
+"what does isrc mean",1,0,61,artist_earnings,0.74,/glossary/isrc/,1,0
+"who sold their music catalog for the most money",1,0,61,industry_research,0.75,none,0.43,0.44
+"independent recording artists",1,0,62,seller,0.69,/glossary/independent-artist/,0.35,0.07
+"licence non exclusive",1,0,62,seller,0.83,/compare/exclusive-vs-non-exclusive-license/,0.6,0
+"non exclusive license vs exclusive license",1,0,62,seller,0.92,/compare/exclusive-vs-non-exclusive-license/,0.67,0
+"music library vs sync licensing platform",1,0,63,seller,0.82,none,0.56,0.57
+"what is exclusive license",1,0,63,seller,0.84,/glossary/exclusive-vs-non-exclusive-license/,0.8,0.01
+"isrc code format",1,0,65,artist_earnings,0.73,/glossary/isrc/,1,0
+"nonexclusive rights",1,0,65,seller,0.8,/glossary/exclusive-vs-non-exclusive-license/,0.8,0.02
+"video isrc",1,0,65,artist_earnings,0.81,/glossary/isrc/,0.71,0.26
+"international standard recording code",1,0,66,artist_earnings,0.78,/glossary/isrc/,0.97,0
+"non exclusive use",1,0,66,seller,0.76,/glossary/exclusive-vs-non-exclusive-license/,0.45,0.13
+"under exclusive license to record label meaning",1,0,66,artist_earnings,0.69,/glossary/exclusive-vs-non-exclusive-license/,0.71,0.06
+"ascap blanket license cost",1,0,67,artist_earnings,0.92,/blog/what-is-a-blanket-license/,0.76,0.09
+"music mechanical rights",1,0,67,artist_earnings,0.92,/glossary/mechanical-royalties/,1,0
+"performing rights society",1,0,67,artist_earnings,0.96,/glossary/pro/,0.95,0
+"record labels major",1,0,67,industry_research,0.84,/compare/major-label-vs-independent/,0.42,0.1
+"what is an indie music artist",1,0,67,artist_earnings,0.26,/glossary/independent-artist/,0.99,0
+"what is non-exclusive license",1,0,67,seller,0.48,/glossary/exclusive-vs-non-exclusive-license/,0.68,0.01
+"what's a music label",1,0,67,industry_research,0.4,/glossary/record-label/,0.98,0.01
+"bmi cue sheets",1,0,69,artist_earnings,0.89,/glossary/cue-sheet/,0.87,0.03
+"independent music",1,0,69,seller,0.42,/glossary/independent-artist/,0.28,0.11
+"spotify pay per stream calculator",1,0,69,artist_earnings,0.99,/streaming-rates/spotify-2026/,0.62,0
+"define record label",1,0,71,artist_earnings,0.34,/glossary/record-label/,0.99,0
+"isrc registrant code",1,0,72,artist_earnings,0.95,/glossary/isrc/,0.93,0.04
+"mechanical royalties for streaming",1,0,72,artist_earnings,0.98,/glossary/mechanical-royalties/,0.98,0.01
+"music price guide",1,0,72,seller,0.59,none,0.4,0.41
+"non exclusive rights meaning",1,0,72,seller,0.47,/glossary/exclusive-vs-non-exclusive-license/,0.82,0
+"record label def",1,0,72,industry_research,0.38,/glossary/record-label/,0.99,0
+"sole license vs exclusive license",1,0,72,seller,0.94,/glossary/exclusive-vs-non-exclusive-license/,0.66,0.01
+"what is isrc",1,0,72,artist_earnings,0.71,/glossary/isrc/,1,0
+"cue sheets + cue sheet",1,0,73,artist_earnings,0.56,/glossary/cue-sheet/,1,0
+"definition of a record label",1,0,73,industry_research,0.37,/glossary/record-label/,0.99,0
+"exclusive licensing",1,0,73,seller,0.91,/glossary/exclusive-vs-non-exclusive-license/,0.66,0.01
+"music advance",1,0,73,seller,0.6,/glossary/advance/,0.97,0.01
+"non exclusive license definition",1,0,73,seller,0.85,/glossary/exclusive-vs-non-exclusive-license/,0.69,0.01
+"recording+label",1,0,73,industry_research,0.53,/glossary/record-label/,0.96,0.02
+"recoupable meaning",1,0,73,artist_earnings,0.58,/glossary/recoupment/,0.99,0
+"youtube music payout per stream 2026",1,0,73,artist_earnings,0.99,/streaming-rates/youtube-music-2026/,0.98,0
+"labels in music",1,0,74,industry_research,0.64,/glossary/record-label/,0.83,0.06
+"mechanical publishing royalties",1,0,75,artist_earnings,0.97,/glossary/mechanical-royalties/,0.99,0
+"what is a major record label",1,0,75,industry_research,0.71,/glossary/record-label/,0.82,0.03
+"copyright record label",1,0,76,artist_earnings,0.39,/glossary/record-label/,0.74,0.13
+"isrc india",1,0,76,artist_earnings,0.87,/glossary/isrc/,0.89,0.09
+"isrc numbers",1,0,76,artist_earnings,0.68,/glossary/isrc/,1,0
+"label records",1,0,76,seller,0.52,none,0.43,0.45
+"music record lebel",1,0,76,artist_earnings,0.19,/glossary/record-label/,0.92,0.04
+"music sample clearance",1,0,76,artist_earnings,0.7,/glossary/sample-clearance/,0.99,0
+"non-exclusive rights meaning",1,0,76,seller,0.7,/glossary/exclusive-vs-non-exclusive-license/,0.83,0
+"performing rights organizations",1,0,76,artist_earnings,0.92,/glossary/pro/,0.86,0
+"record label music",1,0,76,seller,0.25,/glossary/record-label/,0.93,0.03
+"sample clearance music",1,0,76,artist_earnings,0.67,/glossary/sample-clearance/,0.98,0
+"what are mechanical rights in music",1,0,76,artist_earnings,0.87,/glossary/mechanical-royalties/,0.99,0
+"music mechanical royalties",1,0,77,artist_earnings,0.94,/glossary/mechanical-royalties/,1,0
+"music recording label",1,0,77,industry_research,0.38,/glossary/record-label/,0.97,0.01
+"neighboring rights in copyright",1,0,77,artist_earnings,0.89,/glossary/neighboring-rights/,0.99,0
+"pro music licensing",1,0,77,artist_earnings,0.78,/glossary/pro/,0.52,0.04
+"pro royalties",1,0,77,artist_earnings,0.94,/glossary/performance-royalties/,0.47,0.02
+"neighbouring rights royalties",1,0,78,artist_earnings,0.92,/glossary/neighboring-rights/,0.98,0.01
+"non-exclusive license meaning",1,0,78,seller,0.48,/glossary/exclusive-vs-non-exclusive-license/,0.74,0
+"record music labels",1,0,78,industry_research,0.51,/glossary/record-label/,0.85,0.08
+"cue sheets production music",1,0,79,artist_earnings,0.75,/glossary/cue-sheet/,0.99,0
+"how are mechanical royalties paid",1,0,79,artist_earnings,0.99,/glossary/mechanical-royalties/,0.99,0
+"what does non exclusive rights mean",1,0,79,seller,0.41,/glossary/exclusive-vs-non-exclusive-license/,0.8,0
+"advance royalty",1,0,80,artist_earnings,0.72,/glossary/advance/,0.97,0
+"what is content id",1,0,80,artist_earnings,0.87,/glossary/content-id/,0.99,0
+"music label",1,0,81,industry_research,0.29,/glossary/record-label/,0.91,0.05
+"what are mechanical royalties in music",1,0,81,artist_earnings,0.99,/glossary/mechanical-royalties/,0.99,0
+"exclusive license meaning",1,0,82,seller,0.53,/glossary/exclusive-vs-non-exclusive-license/,0.9,0
+"spotify pay calculator",1,0,82,artist_earnings,0.99,/streaming-rates/spotify-2026/,0.55,0
+"what is a isrc code",1,0,82,artist_earnings,0.87,/glossary/isrc/,1,0
+"mechanical royalties explained",1,0,83,artist_earnings,0.94,/glossary/mechanical-royalties/,1,0
+"what is a compulsory license",1,0,83,artist_earnings,0.74,/glossary/compulsory-license/,0.99,0
+"mechanical performance royalties",1,0,84,artist_earnings,0.95,/glossary/mechanical-royalties/,0.63,0.11
+"records label",1,0,84,industry_research,0.18,/glossary/record-label/,0.97,0.02
+"what does it mean to sell your music catalog",1,0,84,seller,1,/guides/how-to-sell-music-rights/,0.57,0
+"what is isrc number",1,0,85,artist_earnings,0.89,/glossary/isrc/,1,0
+"mechanical copyright",1,0,86,artist_earnings,0.92,/glossary/mechanical-royalties/,0.96,0.01
+"codice isrc",1,0,87,artist_earnings,0.94,/glossary/isrc/,0.96,0.02
+"isrc kod",1,0,87,artist_earnings,0.93,/glossary/isrc/,0.98,0.01
+"what is mechanical royalties",1,0,87,artist_earnings,0.95,/glossary/mechanical-royalties/,1,0
+"isrc first registrant code",1,0,88,artist_earnings,0.92,/glossary/isrc/,0.78,0.2
+"space music store",1,0,88,brand,0.5,none,0.79,0.81
+"neighbouring right",1,0,89,artist_earnings,0.94,/glossary/neighboring-rights/,1,0
+"neighbouring rights music",1,0,89,artist_earnings,0.77,/glossary/neighboring-rights/,1,0
+"cuesheet",1,0,90,artist_earnings,0.79,/glossary/cue-sheet/,1,0
+"iswc number",1,0,91,artist_earnings,0.83,/glossary/iswc/,0.98,0.01
+"what does it mean to sell your music catalogue",1,0,91,seller,0.99,/guides/how-to-sell-music-rights/,0.57,0
+"who has sold their music catalog",1,0,93,seller,0.38,/blog/case-study-ambient-producer-catalog-sale/,0.45,0.33
+"why would an artist sell their music catalog",1,0,93,seller,0.88,/blog/why-selling-partial-rights-makes-sense/,0.53,0.04
+"isrc code india",1,0,94,artist_earnings,0.89,/glossary/isrc/,0.77,0.2
+"phonographic rights",1,0,95,artist_earnings,0.71,/glossary/neighboring-rights/,0.96,0.01
+"neighbouring rights meaning",1,0,99,artist_earnings,0.85,/glossary/neighboring-rights/,1,0
+"what is an isrc code",1,0,100,artist_earnings,0.88,/glossary/isrc/,1,0

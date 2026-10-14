@@ -1,0 +1,169 @@
+{
+  "checkedAt": "2026-09-11T07:24:14.165Z",
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "screens": [
+    "sign-in",
+    "confirm-sign-in",
+    "catalog",
+    "documents",
+    "review",
+    "under-review",
+    "clarification",
+    "owner-email-test"
+  ],
+  "accessibility": [
+    {
+      "screen": "sign-in",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "sign-in",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "confirm-sign-in",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "confirm-sign-in",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "catalog",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "catalog",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "documents",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "documents",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "review",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "review",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "under-review",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "under-review",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "clarification",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "clarification",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "owner-email-test",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "owner-email-test",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    }
+  ],
+  "errors": [],
+  "remoteRequests": [],
+  "checks": [
+    "actual local API round trips",
+    "local mailbox and explicit one-time link confirmation",
+    "cross-site mail link click opens the shell; cross-site API navigation remains denied",
+    "fragment removed before authentication",
+    "HttpOnly SameSite cookie and no browser storage",
+    "keyboard and responsive reflow",
+    "server validation and connection-failure retry",
+    "unknown files quarantined",
+    "fixture upload, remove, download link and persistence",
+    "submit and human-review clarification",
+    "escaped user text",
+    "reload and sign-out revocation",
+    "consumed link rejection",
+    "no-JavaScript explanation",
+    "no external requests",
+    "owner email UI opt-in, simulated timeout/reload/retry and double-click prevention"
+  ]
+}

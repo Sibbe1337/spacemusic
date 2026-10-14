@@ -1,0 +1,9 @@
+{
+  "requestedUrl": "https://spacemusic.io/compare/space-vs-duetti/",
+  "finalUrl": "https://spacemusic.io/compare/space-vs-duetti/",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "retrievedAt": "2026-09-07T06:43:53.304Z",
+  "sha256": "9e5b4a1c3a0e28aa117a49432ef42ee7485b2508e149bef119a8a49baa9716d8",
+  "file": "competitor-profiles/raw/space/2026-09-07/scrapes/legacy-duetti.html"
+}

@@ -1,0 +1,30 @@
+# Build context: repository root. Pins verified against official Docker Hub/PyPI.
+FROM python:3.13.13-slim-bookworm@sha256:355bfa66770995d7e9a0da4b3473b44d0cb451f6b56f5615ad9c39e3c4eca03f
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_DISABLE_PIP_VERSION_CHECK=1
+WORKDIR /app
+COPY services/catalog_review/deployment/requirements-api.lock /app/requirements.lock
+RUN --mount=type=bind,from=wheels,target=/wheels python -m pip install --no-index --find-links=/wheels --no-cache-dir --require-hashes --only-binary=:all: -r /app/requirements.lock
+COPY services/__init__.py /app/services/__init__.py
+COPY services/catalog_review/__init__.py services/catalog_review/access.py services/catalog_review/contracts.py services/catalog_review/database.py services/catalog_review/http.py services/catalog_review/review.py services/catalog_review/security.py services/catalog_review/service.py services/catalog_review/workers.py services/catalog_review/storage.py services/catalog_review/scanner.py services/catalog_review/intake.py services/catalog_review/mail.py services/catalog_review/lifecycle.py services/catalog_review/erasure.py /app/services/catalog_review/
+COPY services/catalog_review/operations/*.py /app/services/catalog_review/operations/
+COPY services/catalog_review/jobs.py /app/services/catalog_review/
+COPY services/catalog_review/dealflow.py services/catalog_review/dealflow_contracts.py services/catalog_review/dealflow_policy.py /app/services/catalog_review/
+COPY services/catalog_review/encryption.py /app/services/catalog_review/
+COPY services/catalog_review/runtime.py services/catalog_review/intake_http.py services/catalog_review/document_validation.py services/catalog_review/parser_ipc.py services/catalog_review/parser_process.py /app/services/catalog_review/
+COPY services/catalog_review/staff/*.py /app/services/catalog_review/staff/
+COPY services/catalog_review/schema.sql services/catalog_review/grants.sql /app/services/catalog_review/
+COPY services/catalog_review/intake-schema.sql services/catalog_review/erasure-grants.sql /app/services/catalog_review/
+COPY services/catalog_review/staff/schema.sql services/catalog_review/staff/grants.sql services/catalog_review/staff/erasure-grants.sql /app/services/catalog_review/staff/
+COPY services/catalog_review/migrations/*.sql /app/services/catalog_review/migrations/
+COPY services/catalog_review_ui/index.html services/catalog_review_ui/app.mjs services/catalog_review_ui/client.mjs services/catalog_review_ui/portal.css /app/services/catalog_review_ui/
+COPY services/catalog_review_ui/index.production.html services/catalog_review_ui/staff.html services/catalog_review_ui/staff.mjs /app/services/catalog_review_ui/
+COPY services/catalog_review_ui/dealflow.html services/catalog_review_ui/dealflow.mjs services/catalog_review_ui/dealflow.css /app/services/catalog_review_ui/
+# Only the approved stylesheet is copied from preview, never preview app/fixtures.
+COPY services/catalog_review_preview/ui/review.css /app/services/catalog_review_preview/ui/review.css
+COPY marketing/identity-20260916/space-wordmark.svg /app/marketing/identity-20260916/space-wordmark.svg
+COPY marketing/design/fonts/inter-latin-c940764593d0.woff2 /app/marketing/design/fonts/inter-latin-c940764593d0.woff2
+USER 10001:10001
+EXPOSE 8080
+# Default is operations-only and remains unready. The coordinator must supply
+# and explicitly select a reviewed real factory, never create_test_app.
+CMD ["uvicorn", "services.catalog_review.operations.bootstrap:create_app", "--factory", "--host", "127.0.0.1", "--port", "8080", "--workers", "1", "--limit-concurrency", "32", "--timeout-keep-alive", "5", "--no-access-log", "--proxy-headers", "--forwarded-allow-ips", "127.0.0.1"]

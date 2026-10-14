@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-11",
+  "environment": "loopback-local-only",
+  "origin": "http://127.0.0.1:4194",
+  "requestId": "a41deadc-40b6-41ce-b8e4-38165e2b54a9",
+  "providerId": "54473419-556c-4380-9e58-a64ff32168cd",
+  "recipient": "hello@spacemusic.io",
+  "subject": "[TEST] Your SPACE portal sign-in link",
+  "status": "accepted_by_provider",
+  "httpStatus": 200,
+  "providerSubmissions": 1,
+  "inboxDeliveryVerified": false,
+  "receivedAuthenticationVerified": false,
+  "realEmailedLinkTested": false,
+  "apiTestsPassed": 51,
+  "browserScreens": 8,
+  "productionPublicFilesUnchanged": 333,
+  "productionApplyChecksPassed": 33,
+  "productionFormSubmissions": 0,
+  "productionDeployed": false
+}

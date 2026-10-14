@@ -1,0 +1,2 @@
+# Isolated dependency, not installed automatically. Test with a supported Python.
+cryptography>=46.0.2,<51

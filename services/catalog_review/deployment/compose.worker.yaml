@@ -1,0 +1,122 @@
+# Render/validate only until provisioning and integration are explicitly approved.
+name: catalog-review-worker
+services:
+  worker:
+    profiles: [approved-worker]
+    image: catalog-review-api:local-review
+    platform: linux/amd64
+    pull_policy: never
+    build:
+      context: ../../..
+      dockerfile: services/catalog_review/deployment/Dockerfile.api
+      network: none
+      additional_contexts:
+        wheels: ${REVIEW_API_WHEELHOUSE:?verified offline API wheelhouse required}
+    # Deliberately not a simulated worker. Coordinator must select its reviewed
+    # job entrypoint, using build_runtime bindings and the guarded mail dispatcher.
+    command: [python, -c, "raise SystemExit('Blocked: reviewed worker integration required')"]
+    user: "10001:10001"
+    group_add: ["1000"]
+    depends_on:
+      parser: {condition: service_started}
+      clamav: {condition: service_healthy}
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 1536m
+    cpus: 1
+    pids_limit: 96
+    tmpfs: ["/tmp:size=67108864,mode=0700,uid=10001,gid=10001"]
+    networks: [worker_egress]
+    environment:
+      REVIEW_OPERATIONS_CONFIG: /run/config/operations.json
+      REVIEW_LAUNCH_MANIFEST: /run/config/launch.json
+    volumes:
+      - type: bind
+        source: ${REVIEW_CONFIG_FILE:?approved configuration file required}
+        target: /run/config/operations.json
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: ${REVIEW_MANIFEST_FILE:?launch evidence file required}
+        target: /run/config/launch.json
+        read_only: true
+        bind: {create_host_path: false}
+      - parser_socket:/run/parser:ro
+      - clamav_socket:/run/clamav:ro
+    secrets: [runtime-pgpass, postgres-ca, worker-credentials]
+  parser:
+    profiles: [approved-worker]
+    image: catalog-review-parser:local-review
+    platform: linux/amd64
+    pull_policy: never
+    build:
+      context: ../../..
+      dockerfile: services/catalog_review/deployment/Dockerfile.parser
+      network: none
+      additional_contexts:
+        wheels: ${REVIEW_PARSER_WHEELHOUSE:?verified offline parser wheelhouse required}
+    network_mode: none
+    user: "10001:10001"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 768m
+    cpus: 1
+    pids_limit: 16
+    tmpfs: ["/tmp:size=33554432,mode=0700,uid=10001,gid=10001"]
+    volumes: [parser_socket:/run/parser]
+    restart: "no"
+  clamav:
+    profiles: [approved-worker]
+    image: catalog-review-scanner:local-review
+    platform: linux/amd64
+    pull_policy: never
+    build:
+      context: ../../..
+      dockerfile: services/catalog_review/deployment/Dockerfile.scanner
+      network: none
+    network_mode: none
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 4g
+    cpus: 1
+    pids_limit: 64
+    tmpfs: ["/tmp:size=134217728,mode=0700,uid=1000,gid=1000"]
+    volumes:
+      - clamav_socket:/run/clamav
+      - signatures:/var/lib/clamav:ro
+  signature-updater:
+    profiles: [approved-signature-updates]
+    image: catalog-review-scanner:local-review
+    platform: linux/amd64
+    pull_policy: never
+    entrypoint: [freshclam]
+    command: [--daemon, --foreground=true, --config-file=/etc/clamav/freshclam.conf]
+    networks: [signature_egress]
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 32
+    tmpfs: ["/tmp:size=33554432,mode=0700,uid=1000,gid=1000"]
+    volumes: [signatures:/var/lib/clamav]
+    healthcheck: {disable: true}
+networks:
+  worker_egress: {}
+  signature_egress: {}
+volumes:
+  parser_socket: {}
+  clamav_socket: {}
+  signatures: {}
+secrets:
+  runtime-pgpass:
+    file: ${REVIEW_PGPASS_FILE:?mounted runtime passfile required}
+  postgres-ca:
+    file: ${REVIEW_POSTGRES_CA_FILE:?verified PostgreSQL CA required}
+  worker-credentials:
+    file: ${REVIEW_WORKER_CREDENTIALS_FILE:?scoped worker credentials required}
