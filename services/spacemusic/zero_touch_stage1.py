@@ -595,7 +595,7 @@ def execute_zero_touch_stage1(
         decision = ZeroTouchActionDecision.AUTO_DECLINE_AI_OR_FAKE_PROFILE
         valuation.pipeline_status = "DECLINED_AI_OR_FAKE_PROFILE"
         first_name = (app_row.contact_name or "there").split()[0]
-        subject = f"Your SPACE catalog review — {app_row.artist_or_label_name or 'Catalog Submission'}"
+        subject = f"Your SPACE catalog review: {app_row.artist_or_label_name or 'Catalog Submission'}"
         body = (
             f"Hi {first_name},\n\n"
             f"Thank you for submitting **{app_row.artist_or_label_name or 'your catalog'}** to SPACE.\n\n"

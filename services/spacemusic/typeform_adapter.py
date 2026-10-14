@@ -375,7 +375,7 @@ def generate_reply_draft(
     dist_name = app_row.distributor_or_admin or "your distributor"
 
     if app_row.inquiry_route == "partnership":
-        subject = f"SPACE Partnership Inquiry — {app_row.organization_name or first_name}"
+        subject = f"SPACE Partnership Inquiry: {app_row.organization_name or first_name}"
         body = (
             f"Hi {first_name},\n\n"
             "Thank you for reaching out to SPACE regarding a potential partnership.\n\n"
@@ -434,7 +434,7 @@ def generate_reply_draft(
         )
 
     if valuation.pipeline_status == "DECLINED_BELOW_THRESHOLD":
-        subject = f"Your SPACE catalog review — {app_row.artist_or_label_name}"
+        subject = f"Your SPACE catalog review: {app_row.artist_or_label_name}"
         body = (
             f"Hi {first_name},\n\n"
             f"Thank you for sharing the **{app_row.artist_or_label_name}** catalog with SPACE.\n\n"
@@ -455,7 +455,7 @@ def generate_reply_draft(
         )
 
     if valuation.pipeline_status == "AWAITING_STATEMENTS":
-        subject = f"Your SPACE catalog review — {app_row.artist_or_label_name}"
+        subject = f"Your SPACE catalog review: {app_row.artist_or_label_name}"
         body = (
             f"Hi {first_name},\n\n"
             f"Thank you for submitting the **{app_row.artist_or_label_name}** catalog to SPACE.\n\n"
@@ -479,7 +479,7 @@ def generate_reply_draft(
         )
 
     # VALUATION_READY (Stage 2 verified)
-    subject = f"SPACE Verified Catalog Offer — {app_row.artist_or_label_name}"
+    subject = f"SPACE Verified Catalog Offer: {app_row.artist_or_label_name}"
     body = (
         f"Hi {first_name},\n\n"
         f"We have completed our due diligence and track-level DCF analysis on your {dist_name} statements "

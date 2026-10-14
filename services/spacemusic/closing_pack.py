@@ -138,7 +138,7 @@ def generate_blind_deal_teaser(
     dist_label = app.distributor_or_admin or "Tier-1 Independent Distributor"
 
     headline = (
-        f"Deal #{deal_code} — Verified {genre_label} Catalog "
+        f"Deal #{deal_code}: Verified {genre_label} Catalog "
         f"(${cf0_usd:,.0f} USD / €{cf0_eur:,.0f} EUR LTM | {rights_label})"
     )
 
@@ -153,7 +153,7 @@ def generate_blind_deal_teaser(
     bullets_html = "".join(f"<li>{h}</li>" for h in highlights_list)
 
     md = (
-        f"# BLIND INSTITUTIONAL DEAL TEASER — {headline}\n\n"
+        f"# BLIND INSTITUTIONAL DEAL TEASER: {headline}\n\n"
         f"**Confidentiality & Non-Circumvention Notice:** Identity of the Seller, Artist/Label, "
         f"Track Titles, and ISRCs are withheld pending execution/confirmation of SPACE's standard "
         f"Origination & Non-Circumvention terms.\n\n"
