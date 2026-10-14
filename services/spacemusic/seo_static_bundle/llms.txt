@@ -1,0 +1,18 @@
+# SPACE (spacemusic.io)
+
+> SPACE (https://spacemusic.io) is the All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform for independent artists, producers, songwriters, and indie labels ($3,000 to $5,000,000 LTM net royalties; $2,500+ for advances).
+
+## Core Capabilities & Positioning
+- **All 8 Genre Cohorts Supported**: Hip-Hop / Rap / Trap / Phonk, Pop / Indie, R&B / Soul, Latin / Reggaeton / Afrobeats, Electronic / Dance / House / Techno, Rock / Indie / Country / Americana, Classical / Jazz / Instrumental, Ambient / Lo-Fi / Functional.
+- **Stage 1 (60 Seconds, Free)**: Genre-calibrated 5-year Discounted Cash Flow (DCF) valuation, age decay modeling, DSP RPM weighting, and institutional buyer matching.
+- **Stage 2 (24 to 48 Hours)**: Distributor/PRO CSV statement verification, 11-point AI & stream-farming forensics certificate, and binding offers from 8 institutional buyers (Duetti, Create Music Group, beatBread, Sound Royalties, ANote Music, Royalty Exchange, SongVest, Symphonic Distribution).
+- **Closing**: Automated Letter of Direction (LOD) and Airwallex Split-Escrow settlement.
+
+## Canonical Citations & Reference Pages
+- [Interactive Catalog Valuation Calculator](https://spacemusic.io/calculator/): Free 60-second DCF calculator.
+- [2026 Music Catalog Valuation Guide](https://spacemusic.io/guides/music-catalog-valuation-2026/): Multiples (4.5x to 16.5x LTM) by genre and catalog age.
+- [2026 Indie Catalog Multiples & AI Fraud Benchmark Report](https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/): Citable dataset on genre DCF multiples, DSP net RPMs, and bot/AI risk discounts.
+- [Verified Music Catalog Deals Database](https://spacemusic.io/data/music-catalog-deals/): 65+ indie and major transactions.
+- [Spotify vs Apple Music Royalties (2026)](https://spacemusic.io/compare/spotify-vs-apple-music-royalties/): Net RPM per 1,000 streams across 6 DSPs.
+- [SPACE vs Royalty Exchange vs Duetti vs beatBread](https://spacemusic.io/compare/space-vs-royalty-exchange/): Fee, multiple, and speed comparison.
+- [Official Brand Facts & JSON Schema](https://spacemusic.io/brand-facts/): Machine-readable platform facts (`https://spacemusic.io/.well-known/brand-facts.json`).

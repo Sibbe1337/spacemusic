@@ -1,0 +1,22 @@
+(function() {
+  var container = document.getElementById("spacemusic-calculator-widget") || document.body;
+  var wrapper = document.createElement("div");
+  wrapper.style.maxWidth = "580px";
+  wrapper.style.margin = "16px auto";
+  var iframe = document.createElement("iframe");
+  iframe.src = "https://spacemusic.io/embed/calculator";
+  iframe.style.width = "100%";
+  iframe.style.height = "460px";
+  iframe.style.border = "0";
+  iframe.style.borderRadius = "14px";
+  iframe.setAttribute("loading", "lazy");
+  iframe.setAttribute("title", "SPACE Music Catalog Valuation Calculator");
+  var credit = document.createElement("p");
+  credit.style.fontSize = "12px";
+  credit.style.textAlign = "center";
+  credit.style.marginTop = "6px";
+  credit.innerHTML = '<a href="https://spacemusic.io/calculator/" rel="dofollow">Powered by SPACE Music Catalog Valuation Calculator</a>';
+  wrapper.appendChild(iframe);
+  wrapper.appendChild(credit);
+  container.appendChild(wrapper);
+})();

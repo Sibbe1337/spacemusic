@@ -28,9 +28,9 @@ import hmac
 import json
 import os
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import Enum
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 import httpx
 from pydantic import BaseModel, Field
@@ -56,12 +56,12 @@ class ScriveSignatory(BaseModel):
     role: SignatoryRole
     name: str
     email: str
-    company: Optional[str] = None
+    company: str | None = None
     signing_order: int = 1
     signed: bool = False
-    signed_at: Optional[str] = None
-    signature_ip: Optional[str] = None
-    signature_hash: Optional[str] = None
+    signed_at: str | None = None
+    signature_ip: str | None = None
+    signature_hash: str | None = None
     signing_url: str = ""
 
 
@@ -84,11 +84,11 @@ class ScriveSignatureEnvelope(BaseModel):
     status: ScriveEnvelopeStatus = ScriveEnvelopeStatus.DRAFT
     document_sha256: str
     document_markdown: str
-    signatories: List[ScriveSignatory] = Field(default_factory=list)
-    audit_trail: List[ScriveAuditEvent] = Field(default_factory=list)
+    signatories: list[ScriveSignatory] = Field(default_factory=list)
+    audit_trail: list[ScriveAuditEvent] = Field(default_factory=list)
     created_at: str
     updated_at: str
-    completed_at: Optional[str] = None
+    completed_at: str | None = None
     live_scrive_synced: bool = False
 
 
@@ -100,8 +100,8 @@ def compute_document_sha256(content: str) -> str:
 
 def verify_scrive_webhook_signature(
     raw_body: bytes | str,
-    signature_header: Optional[str],
-    webhook_secret: Optional[str] = None,
+    signature_header: str | None,
+    webhook_secret: str | None = None,
 ) -> bool:
     """
     Verifies a Scrive webhook callback HMAC-SHA256 signature.
@@ -119,7 +119,7 @@ def verify_scrive_webhook_signature(
 
 def compute_scrive_webhook_signature(
     raw_body: bytes | str,
-    webhook_secret: Optional[str] = None,
+    webhook_secret: str | None = None,
 ) -> str:
     """Helper to generate valid HMAC-SHA256 signatures for Scrive webhook tests and internal callbacks."""
     secret = webhook_secret or os.environ.get("SCRIVE_WEBHOOK_SECRET", "space-scrive-webhook-secret")
@@ -136,7 +136,7 @@ class ScriveExecutionEngine:
 
     def __init__(self, api_base_url: str = "https://scrive.com/api/v2") -> None:
         self.api_base_url = api_base_url.rstrip("/")
-        self._envelopes: Dict[str, ScriveSignatureEnvelope] = {}
+        self._envelopes: dict[str, ScriveSignatureEnvelope] = {}
 
     def create_and_send_closing_envelope(
         self,
@@ -158,7 +158,7 @@ class ScriveExecutionEngine:
         Creates a multi-party Scrive e-signature envelope for a catalog closing pack
         (or Stage 1 NDA / Exclusivity Term Sheet) and transitions it to `SENT_FOR_SIGNATURE`.
         """
-        now_iso = datetime.now(timezone.utc).isoformat()
+        now_iso = datetime.now(UTC).isoformat()
         envelope_id = f"env_{uuid.uuid4().hex[:16]}"
         doc_sha256 = compute_document_sha256(document_markdown)
         scrive_doc_id = f"scrive_{hashlib.sha256(f'{envelope_id}:{doc_sha256}'.encode()).hexdigest()[:18]}"
@@ -190,7 +190,7 @@ class ScriveExecutionEngine:
                 signed_at=now_iso,
                 signature_ip="10.0.0.1",
                 signature_hash=hashlib.sha256(
-                    f"ARRANGER:{arranger_email}:{doc_sha256}:{now_iso}".encode("utf-8")
+                    f"ARRANGER:{arranger_email}:{doc_sha256}:{now_iso}".encode()
                 ).hexdigest(),
                 signing_url=f"https://scrive.com/s/{scrive_doc_id}/party/3?role=arranger",
             ),
@@ -258,19 +258,19 @@ class ScriveExecutionEngine:
                     data={"title": f"{title} ({deal_code})"},
                 )
                 return resp.status_code in {200, 201}
-        except Exception:
+        except httpx.HTTPError:
             return False
 
-    def get_envelope(self, envelope_id: str) -> Optional[ScriveSignatureEnvelope]:
+    def get_envelope(self, envelope_id: str) -> ScriveSignatureEnvelope | None:
         return self._envelopes.get(envelope_id)
 
-    def find_by_scrive_document_id(self, scrive_document_id: str) -> Optional[ScriveSignatureEnvelope]:
+    def find_by_scrive_document_id(self, scrive_document_id: str) -> ScriveSignatureEnvelope | None:
         for env in self._envelopes.values():
             if env.scrive_document_id == scrive_document_id:
                 return env
         return None
 
-    def list_envelopes_for_application(self, application_id: str) -> List[ScriveSignatureEnvelope]:
+    def list_envelopes_for_application(self, application_id: str) -> list[ScriveSignatureEnvelope]:
         return [
             env
             for env in self._envelopes.values()
@@ -282,9 +282,9 @@ class ScriveExecutionEngine:
         envelope_id: str,
         *,
         signer_role: SignatoryRole,
-        signer_email: Optional[str] = None,
+        signer_email: str | None = None,
         ip_address: str = "127.0.0.1",
-        expected_document_sha256: Optional[str] = None,
+        expected_document_sha256: str | None = None,
     ) -> ScriveSignatureEnvelope:
         """
         Records a party's cryptographic e-signature on an envelope and advances the state machine:
@@ -311,7 +311,7 @@ class ScriveExecutionEngine:
         if current_hash != env.document_sha256:
             raise ValueError("CRITICAL: Envelope document content failed SHA-256 integrity check.")
 
-        target_party: Optional[ScriveSignatory] = None
+        target_party: ScriveSignatory | None = None
         for p in env.signatories:
             if p.role == signer_role:
                 target_party = p
@@ -326,12 +326,10 @@ class ScriveExecutionEngine:
             if seller_party and not seller_party.signed:
                 raise ValueError("Signing order violation: SELLER must sign before BUYER countersigns.")
 
-        now_iso = datetime.now(timezone.utc).isoformat()
+        now_iso = datetime.now(UTC).isoformat()
         effective_email = signer_email or target_party.email
         sig_hash = hashlib.sha256(
-            f"{env.envelope_id}:{signer_role.value}:{effective_email}:{env.document_sha256}:{now_iso}".encode(
-                "utf-8"
-            )
+            f"{env.envelope_id}:{signer_role.value}:{effective_email}:{env.document_sha256}:{now_iso}".encode()
         ).hexdigest()
 
         target_party.signed = True
@@ -380,11 +378,11 @@ class ScriveExecutionEngine:
 
     def process_webhook_callback(
         self,
-        payload: Dict[str, Any],
+        payload: dict[str, Any],
         *,
-        signature_header: Optional[str] = None,
+        signature_header: str | None = None,
         require_hmac: bool = True,
-        webhook_secret: Optional[str] = None,
+        webhook_secret: str | None = None,
     ) -> ScriveSignatureEnvelope:
         """
         Processes an incoming Scrive webhook payload (`document_signed`, `party_signed`, `document_closed`).

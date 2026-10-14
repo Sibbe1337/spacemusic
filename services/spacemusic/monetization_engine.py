@@ -26,9 +26,8 @@ catalog is declined for direct institutional M&A buyout (`< €3,000/yr` LTM or 
 from __future__ import annotations
 
 import hashlib
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import Enum
-from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
@@ -63,7 +62,7 @@ class DownFunnelMonetizationPlan(BaseModel):
     deal_code: str
     artist_or_label_name: str
     primary_track: MonetizationTrackType
-    options: List[MonetizationOfferOption] = Field(default_factory=list)
+    options: list[MonetizationOfferOption] = Field(default_factory=list)
     total_expected_space_10y_value_eur: float
     seller_pitch_markdown: str
 
@@ -92,7 +91,7 @@ class ForensicAuditCertificate(BaseModel):
 
 
 def _make_monetization_code(app: CatalogApplication) -> str:
-    digest = hashlib.sha1(f"{app.id}:{app.contact_email}".encode("utf-8")).hexdigest()[:6].upper()
+    digest = hashlib.sha1(f"{app.id}:{app.contact_email}".encode()).hexdigest()[:6].upper()
     return f"SPC-{digest}"
 
 
@@ -132,7 +131,7 @@ def build_down_funnel_monetization_plan(
             seller_pitch_markdown="Catalog rejected due to AI/Bot streaming fraud screening.",
         )
 
-    options: List[MonetizationOfferOption] = []
+    options: list[MonetizationOfferOption] = []
 
     # 1. Institutional M&A Syndication + Carried Tail (when eligible >= €3,000/yr)
     if cf0 >= 3_000.0 and price_med > 0:
@@ -264,7 +263,7 @@ def generate_forensic_audit_certificate(
     app: CatalogApplication,
     valuation: CatalogValuationOutput,
     *,
-    issued_at: Optional[datetime] = None,
+    issued_at: datetime | None = None,
 ) -> ForensicAuditCertificate:
     """
     Generates a verifiable, SHA-256-sealed SPACE 11-Point Forensic Valuation & Chain-of-Title
@@ -272,7 +271,7 @@ def generate_forensic_audit_certificate(
     """
     deal_code = _make_monetization_code(app)
     cert_id = f"CERT-{deal_code}"
-    ts = (issued_at or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    ts = (issued_at or datetime.now(UTC)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     cf0 = round(float(valuation.baseline.effective_cf0_eur or 0.0), 2)
     p_low = round(float(valuation.price_low_eur or 0.0), 2)

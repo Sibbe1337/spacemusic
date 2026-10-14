@@ -9,7 +9,7 @@ import csv
 import io
 import re
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from services.valuation.engine import (
     CatalogValuationInput,
@@ -45,7 +45,7 @@ TYPEFORM_FIELD_IDS = {
 }
 
 
-def extract_spotify_artist_id(url: Optional[str]) -> Optional[str]:
+def extract_spotify_artist_id(url: str | None) -> str | None:
     if not url:
         return None
     m = re.search(r"open\.spotify\.com/(?:intl-[a-z]{2}/)?artist/([A-Za-z0-9]{22})", url)
@@ -57,7 +57,7 @@ def extract_spotify_artist_id(url: Optional[str]) -> Optional[str]:
     return None
 
 
-def _extract_answer_value(ans: Dict[str, Any]) -> Any:
+def _extract_answer_value(ans: dict[str, Any]) -> Any:
     ans_type = ans.get("type", "")
     if ans_type == "choice":
         return ans.get("choice", {}).get("label") or ans.get("choice", {}).get("other")
@@ -168,7 +168,7 @@ def infer_genre_from_application(app_row: CatalogApplication) -> str:
     return "pop"
 
 
-def _map_inquiry_route(label: Optional[str]) -> str:
+def _map_inquiry_route(label: str | None) -> str:
     if not label:
         return "own_catalog"
     s = label.lower()
@@ -179,7 +179,7 @@ def _map_inquiry_route(label: Optional[str]) -> str:
     return "own_catalog"
 
 
-def _map_rights_scope(label: Optional[str]) -> RightsScope:
+def _map_rights_scope(label: str | None) -> RightsScope:
     if not label:
         return RightsScope.MASTERS
     s = label.lower()
@@ -192,7 +192,7 @@ def _map_rights_scope(label: Optional[str]) -> RightsScope:
     return RightsScope.UNKNOWN
 
 
-def _map_royalty_basis(label: Optional[str]) -> RoyaltyBasis:
+def _map_royalty_basis(label: str | None) -> RoyaltyBasis:
     if not label:
         return RoyaltyBasis.NET_PAYABLE
     s = label.lower()
@@ -203,7 +203,7 @@ def _map_royalty_basis(label: Optional[str]) -> RoyaltyBasis:
     return RoyaltyBasis.NET_PAYABLE
 
 
-def parse_typeform_webhook_payload(payload: Dict[str, Any]) -> CatalogApplication:
+def parse_typeform_webhook_payload(payload: dict[str, Any]) -> CatalogApplication:
     """
     Parses a Typeform `form_response` webhook payload for form `xzx5SBJb`
     (or a flat JSON dict in the same schema) into a `CatalogApplication` instance.
@@ -212,7 +212,7 @@ def parse_typeform_webhook_payload(payload: Dict[str, Any]) -> CatalogApplicatio
     response_id = form_response.get("token") or payload.get("event_id")
     form_id = form_response.get("form_id", "xzx5SBJb")
 
-    extracted: Dict[str, Any] = {}
+    extracted: dict[str, Any] = {}
     answers = form_response.get("answers", [])
     for ans in answers:
         field_id = ans.get("field", {}).get("id") or ans.get("field", {}).get("ref")
@@ -271,14 +271,14 @@ def parse_typeform_webhook_payload(payload: Dict[str, Any]) -> CatalogApplicatio
 def parse_typeform_csv_export(
     csv_content: str,
     skip_test_rows: bool = True,
-) -> List[CatalogApplication]:
+) -> list[CatalogApplication]:
     """
     Parses a Typeform CSV export (`responses-xzx5SBJb-*.csv`) into `CatalogApplication` objects.
     Automatically skips synthetic Typeform test rows (e.g. `@example.com` or `AI Generated` tag)
     when `skip_test_rows=True`.
     """
     reader = csv.DictReader(io.StringIO(csv_content.lstrip("\ufeff")))
-    applications: List[CatalogApplication] = []
+    applications: list[CatalogApplication] = []
 
     for row in reader:
         response_id = (row.get("#") or "").strip()

@@ -28,8 +28,9 @@ from __future__ import annotations
 import base64
 import io
 import zipfile
-from datetime import date, datetime
-from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+from collections.abc import Iterable, Sequence
+from datetime import UTC, date, datetime
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -63,19 +64,19 @@ from .typeform_adapter import (
 
 class InboundAttachmentPayload(BaseModel):
     filename: str
-    content_text: Optional[str] = None
-    content_base64: Optional[str] = None
-    content_type: Optional[str] = None
+    content_text: str | None = None
+    content_base64: str | None = None
+    content_type: str | None = None
 
 
 class InboundEmailStatementWebhook(BaseModel):
     sender_email: str
-    sender_name: Optional[str] = None
-    subject: Optional[str] = None
-    body_text: Optional[str] = None
-    application_id: Optional[str] = None
+    sender_name: str | None = None
+    subject: str | None = None
+    body_text: str | None = None
+    application_id: str | None = None
     default_currency: str = "USD"
-    attachments: List[InboundAttachmentPayload] = Field(default_factory=list)
+    attachments: list[InboundAttachmentPayload] = Field(default_factory=list)
 
 
 class AutonomousStage2UnderwritingResult(BaseModel):
@@ -83,33 +84,33 @@ class AutonomousStage2UnderwritingResult(BaseModel):
     matched_existing_application: bool
     artist_or_label_name: str
     contact_email: str
-    files_processed: List[str]
+    files_processed: list[str]
     detected_distributor: str
     statement_summary: ParsedStatementSummary
     valuation: CatalogValuationOutput
     seller_offer_draft: ReplyDraft
     institutional_routing: InstitutionalRoutingReport
-    blind_deal_teaser: Optional[BlindDealTeaser] = None
-    isrc_collision_alerts: List[IsrcCollisionAlert] = Field(default_factory=list)
+    blind_deal_teaser: BlindDealTeaser | None = None
+    isrc_collision_alerts: list[IsrcCollisionAlert] = Field(default_factory=list)
     slack_deal_card_markdown: str
 
 
 def _extract_csv_texts_from_attachments(
     attachments: Sequence[InboundAttachmentPayload],
-) -> List[Tuple[str, str]]:
+) -> list[tuple[str, str]]:
     """
     Extracts `(filename, decoded_csv_text)` pairs from raw text, base64, `.xlsx` Excel
     workbooks, or `.zip` archives (containing `.csv`, `.tsv`, `.txt`, or `.xlsx` files).
     """
-    extracted: List[Tuple[str, str]] = []
+    extracted: list[tuple[str, str]] = []
     for att in attachments:
         fname = (att.filename or "statement.csv").strip()
-        raw_bytes: Optional[bytes] = None
+        raw_bytes: bytes | None = None
 
         if att.content_base64:
             try:
                 raw_bytes = base64.b64decode(att.content_base64)
-            except Exception:
+            except (ValueError, TypeError):
                 raw_bytes = att.content_base64.encode("utf-8", errors="replace")
         elif att.content_text is not None:
             raw_bytes = att.content_text.encode("utf-8")
@@ -124,8 +125,8 @@ def _extract_csv_texts_from_attachments(
                 if csv_text.strip():
                     extracted.append((fname, csv_text))
                 continue
-            except Exception:
-                pass
+            except (ValueError, KeyError, zipfile.BadZipFile, OSError):
+                is_xlsx = False
 
         if fname.lower().endswith(".zip") or (raw_bytes[:4] == b"PK\x03\x04"):
             try:
@@ -159,7 +160,7 @@ def _extract_csv_texts_from_attachments(
     return extracted
 
 
-def combine_csv_statement_texts(file_pairs: Sequence[Tuple[str, str]]) -> str:
+def combine_csv_statement_texts(file_pairs: Sequence[tuple[str, str]]) -> str:
     """
     Combines multiple CSV/TSV files from the same distributor (e.g. 12 monthly CSVs)
     by keeping the header of the first non-empty file and appending data rows from
@@ -170,8 +171,8 @@ def combine_csv_statement_texts(file_pairs: Sequence[Tuple[str, str]]) -> str:
     if len(file_pairs) == 1:
         return file_pairs[0][1]
 
-    combined_lines: List[str] = []
-    primary_header: Optional[str] = None
+    combined_lines: list[str] = []
+    primary_header: str | None = None
 
     for _, text in file_pairs:
         lines = [ln for ln in text.lstrip("\ufeff").splitlines() if ln.strip()]
@@ -192,7 +193,7 @@ def combine_csv_statement_texts(file_pairs: Sequence[Tuple[str, str]]) -> str:
 
 
 def parse_multi_attachment_statements(
-    file_pairs: Sequence[Tuple[str, str]],
+    file_pairs: Sequence[tuple[str, str]],
     *,
     default_currency: str = "USD",
 ) -> ParsedStatementSummary:
@@ -209,8 +210,8 @@ def parse_multi_attachment_statements(
         return parse_statement_csv(file_pairs[0][1], default_currency=default_currency)
 
     # Group by header line unless the file is a YouTube Studio workbook (which should be parsed individually first so Last 365 vs Lifetime deduplication works cleanly)
-    header_groups: Dict[str, List[Tuple[str, str]]] = {}
-    individual_summaries: List[ParsedStatementSummary] = []
+    header_groups: dict[str, list[tuple[str, str]]] = {}
+    individual_summaries: list[ParsedStatementSummary] = []
 
     for fname, text in file_pairs:
         lines = [ln for ln in text.lstrip("\ufeff").splitlines() if ln.strip()]
@@ -224,7 +225,7 @@ def parse_multi_attachment_statements(
         else:
             header_groups.setdefault(hdr_key, []).append((fname, text))
 
-    for _, grp in header_groups.items():
+    for grp in header_groups.values():
         combined_txt = combine_csv_statement_texts(grp)
         individual_summaries.append(
             parse_statement_csv(combined_txt, default_currency=default_currency)
@@ -238,9 +239,9 @@ def match_application_by_email_or_subject(
     applications: Iterable[CatalogApplication],
     *,
     sender_email: str,
-    subject: Optional[str] = None,
-    application_id: Optional[str] = None,
-) -> Optional[CatalogApplication]:
+    subject: str | None = None,
+    application_id: str | None = None,
+) -> CatalogApplication | None:
     app_list = list(applications)
     if application_id:
         for app in app_list:
@@ -296,9 +297,9 @@ def _build_slack_deal_card(
 def ingest_inbound_email_statements(
     webhook: InboundEmailStatementWebhook,
     *,
-    applications_store: Dict[Any, CatalogApplication],
-    engine: Optional[SpaceValuationEngine] = None,
-    reference_date: Optional[date] = None,
+    applications_store: dict[Any, CatalogApplication],
+    engine: SpaceValuationEngine | None = None,
+    reference_date: date | None = None,
 ) -> AutonomousStage2UnderwritingResult:
     """
     End-to-end Inbox-to-Underwriting pipeline:
@@ -382,7 +383,7 @@ def ingest_inbound_email_statements(
     )
     matched_app.draft_reply_subject = seller_offer_draft.subject
     matched_app.draft_reply_body = seller_offer_draft.body
-    matched_app.updated_at = datetime.utcnow()
+    matched_app.updated_at = datetime.now(UTC).replace(tzinfo=None)
 
     slack_card = _build_slack_deal_card(matched_app, stmt_summary, valuation, routing_report)
 

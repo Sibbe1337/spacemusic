@@ -25,17 +25,16 @@ virtual lockbox royalty distribution for SPACE's Autonomous Deal Desk:
 from __future__ import annotations
 
 import hashlib
-from datetime import datetime, timezone
-from decimal import Decimal, ROUND_HALF_UP
+from datetime import UTC, datetime
+from decimal import ROUND_HALF_UP, Decimal
 from enum import Enum
-from typing import Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
 TWO_PLACES = Decimal("0.01")
 
 
-def _to_dec(val: float | int | str | Decimal) -> Decimal:
+def _to_dec(val: float | str | Decimal) -> Decimal:
     if isinstance(val, Decimal):
         return val.quantize(TWO_PLACES, rounding=ROUND_HALF_UP)
     return Decimal(str(val)).quantize(TWO_PLACES, rounding=ROUND_HALF_UP)
@@ -77,7 +76,7 @@ class SplitEscrowSettlementInstruction(BaseModel):
     space_total_closing_wire: str
     carried_tail_pct: str
     invariant_balanced_to_exact_cent: bool
-    wire_legs: List[SplitWireLeg] = Field(default_factory=list)
+    wire_legs: list[SplitWireLeg] = Field(default_factory=list)
     created_at_utc: str
 
 
@@ -98,7 +97,7 @@ class MonthlyLockboxDistribution(BaseModel):
     invariant_balanced_to_exact_cent: bool
 
 
-SUPPORTED_FX_FROM_EUR: Dict[str, Decimal] = {
+SUPPORTED_FX_FROM_EUR: dict[str, Decimal] = {
     "EUR": Decimal("1.0000"),
     "USD": Decimal("1.0870"),
     "GBP": Decimal("0.8550"),
@@ -114,10 +113,10 @@ class FintechEscrowLedger:
     """
 
     def __init__(self) -> None:
-        self._closing_instructions: Dict[str, SplitEscrowSettlementInstruction] = {}
-        self._closing_payload_fingerprints: Dict[str, str] = {}
-        self._lockbox_distributions: Dict[str, MonthlyLockboxDistribution] = {}
-        self._cumulative_inflows_by_deal: Dict[str, Decimal] = {}
+        self._closing_instructions: dict[str, SplitEscrowSettlementInstruction] = {}
+        self._closing_payload_fingerprints: dict[str, str] = {}
+        self._lockbox_distributions: dict[str, MonthlyLockboxDistribution] = {}
+        self._cumulative_inflows_by_deal: dict[str, Decimal] = {}
 
     def compute_split_escrow_instruction(
         self,
@@ -128,14 +127,14 @@ class FintechEscrowLedger:
         seller_iban: str,
         buyer_entity_name: str,
         seller_agreed_price_eur: float | Decimal,
-        buyer_gross_funding_eur: Optional[float | Decimal] = None,
+        buyer_gross_funding_eur: float | Decimal | None = None,
         origination_fee_pct: float | Decimal = Decimal("0.06"),
         holdback_pct: float | Decimal = Decimal("0.20"),
         carried_tail_pct: float | Decimal = Decimal("0.075"),
         settlement_currency: str = "EUR",
         provider_rail: EscrowProviderRail = EscrowProviderRail.AIRWALLEX_VIRTUAL_LOCKBOX,
         space_treasury_iban: str = "SE00 0000 0000 0000 0000 0000 (SPACE Corporate Treasury)",
-        idempotency_key: Optional[str] = None,
+        idempotency_key: str | None = None,
     ) -> SplitEscrowSettlementInstruction:
         """
         Computes a cent-exact closing Split-Escrow Settlement Instruction.
@@ -195,8 +194,8 @@ class FintechEscrowLedger:
             return self._closing_instructions[idem_key]
 
         lockbox_iban = f"SE88SPACE{hashlib.sha1(deal_code.encode('utf-8')).hexdigest()[:14].upper()}"
-        now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-        inst_id = f"esc_{hashlib.sha256(f'{idem_key}:{now_iso}'.encode('utf-8')).hexdigest()[:16]}"
+        now_iso = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+        inst_id = f"esc_{hashlib.sha256(f'{idem_key}:{now_iso}'.encode()).hexdigest()[:16]}"
 
         legs = [
             SplitWireLeg(
@@ -270,7 +269,7 @@ class FintechEscrowLedger:
         carried_tail_pct: float | Decimal = Decimal("0.075"),
         is_month_12_holdback_check: bool = False,
         currency: str = "EUR",
-        idempotency_key: Optional[str] = None,
+        idempotency_key: str | None = None,
     ) -> MonthlyLockboxDistribution:
         """
         Executes a cent-exact monthly Virtual Lockbox royalty distribution:
@@ -290,7 +289,7 @@ class FintechEscrowLedger:
         tail_rate = Decimal(str(carried_tail_pct))
 
         idem_key = idempotency_key or (
-            f"idem_lockbox_{hashlib.sha256(f'{deal_code}|{period_month}|{inflow}|{ccy}'.encode('utf-8')).hexdigest()[:20]}"
+            f"idem_lockbox_{hashlib.sha256(f'{deal_code}|{period_month}|{inflow}|{ccy}'.encode()).hexdigest()[:20]}"
         )
         if idem_key in self._lockbox_distributions:
             return self._lockbox_distributions[idem_key]

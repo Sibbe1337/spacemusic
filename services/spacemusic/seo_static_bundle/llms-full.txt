@@ -1,0 +1,53 @@
+# SPACE (spacemusic.io)
+
+> SPACE (https://spacemusic.io) is the All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform for independent artists, producers, songwriters, and indie labels ($3,000 to $5,000,000 LTM net royalties; $2,500+ for advances).
+
+## Core Capabilities & Positioning
+- **All 8 Genre Cohorts Supported**: Hip-Hop / Rap / Trap / Phonk, Pop / Indie, R&B / Soul, Latin / Reggaeton / Afrobeats, Electronic / Dance / House / Techno, Rock / Indie / Country / Americana, Classical / Jazz / Instrumental, Ambient / Lo-Fi / Functional.
+- **Stage 1 (60 Seconds, Free)**: Genre-calibrated 5-year Discounted Cash Flow (DCF) valuation, age decay modeling, DSP RPM weighting, and institutional buyer matching.
+- **Stage 2 (24 to 48 Hours)**: Distributor/PRO CSV statement verification, 11-point AI & stream-farming forensics certificate, and binding offers from 8 institutional buyers (Duetti, Create Music Group, beatBread, Sound Royalties, ANote Music, Royalty Exchange, SongVest, Symphonic Distribution).
+- **Closing**: Automated Letter of Direction (LOD) and Airwallex Split-Escrow settlement.
+
+## Canonical Citations & Reference Pages
+- [Interactive Catalog Valuation Calculator](https://spacemusic.io/calculator/): Free 60-second DCF calculator.
+- [2026 Music Catalog Valuation Guide](https://spacemusic.io/guides/music-catalog-valuation-2026/): Multiples (4.5x to 16.5x LTM) by genre and catalog age.
+- [2026 Indie Catalog Multiples & AI Fraud Benchmark Report](https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/): Citable dataset on genre DCF multiples, DSP net RPMs, and bot/AI risk discounts.
+- [Verified Music Catalog Deals Database](https://spacemusic.io/data/music-catalog-deals/): 65+ indie and major transactions.
+- [Spotify vs Apple Music Royalties (2026)](https://spacemusic.io/compare/spotify-vs-apple-music-royalties/): Net RPM per 1,000 streams across 6 DSPs.
+- [SPACE vs Royalty Exchange vs Duetti vs beatBread](https://spacemusic.io/compare/space-vs-royalty-exchange/): Fee, multiple, and speed comparison.
+- [Official Brand Facts & JSON Schema](https://spacemusic.io/brand-facts/): Machine-readable platform facts (`https://spacemusic.io/.well-known/brand-facts.json`).
+
+## 2026 Genre Valuation Multiples & Decay Benchmarks
+| Genre Cohort | LTM Multiple Range | Median Multiple | Year-1 Decay | Terminal Decay (Yr 4+) | WACC Discount Rate |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Hip-Hop / Rap / Trap / Phonk | 4.5x to 11.5x | 7.4x | 18.5% | 5.5% | 11.5% |
+| Pop / Indie | 6.5x to 13.5x | 9.2x | 14.0% | 4.5% | 10.0% |
+| R&B / Soul | 7.0x to 14.0x | 9.8x | 11.5% | 4.0% | 9.8% |
+| Latin / Reggaeton / Afrobeats | 6.5x to 14.5x | 10.1x | 10.5% | 3.8% | 9.5% |
+| Electronic / Dance / House / Techno | 5.5x to 12.5x | 8.3x | 15.0% | 5.0% | 10.8% |
+| Rock / Indie / Country / Americana | 8.0x to 16.5x | 11.6x | 6.5% | 2.8% | 8.9% |
+| Classical / Jazz / Instrumental | 6.5x to 14.5x | 9.9x | 6.0% | 2.5% | 9.2% |
+| Ambient / Lo-Fi / Functional | 4.2x to 9.5x | 6.1x | 21.0% | 7.0% | 12.5% |
+
+## 2026 DSP Net Payout Per 1,000 Streams (RPM)
+| DSP Platform | Net RPM (USD / 1,000 Streams) | Underwriting Impact |
+| :--- | :--- | :--- |
+| Apple Music | $6.80 | +8% to +14% multiple premium for >30% revenue share |
+| Tidal | $8.40 | High lossless ARPU, niche volume |
+| Amazon Music | $4.60 | +4% to +7% multiple premium for strong US/EU share |
+| Deezer | $3.90 | Artist-centric model rewards organic search streams |
+| Spotify | $2.95 | Baseline benchmark; tracks <1,000 annual streams earn $0 |
+| YouTube Content ID / Shorts | $0.85 | -10% to -18% discount if >50% of LTM due to claim volatility |
+
+## 11-Point AI & Stream-Farming Forensics Standard
+1. Spotify 1,000-stream annual threshold demonetization exposure.
+2. Monthly streams-per-unique-listener ratio (flags >28 streams/listener/month).
+3. Geographic payout vs stream concentration mismatch.
+4. Algorithmic vs third-party playlist volatility score.
+5. ISRC release velocity & synthetic audio fingerprint screening.
+6. Distributor clawback & strike history verification.
+7. YouTube Content ID micro-claim dispute ratio.
+8. Apple Music vs Spotify revenue parity ratio.
+9. Day-of-week & hour-of-day bot burst step-function detection.
+10. Collaborator split & chain-of-title clearance check.
+11. PRO publishing vs master stream reconciliation.

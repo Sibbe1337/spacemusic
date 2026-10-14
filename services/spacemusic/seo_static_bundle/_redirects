@@ -1,0 +1,8 @@
+# Cloudflare Pages / Workers canonical 301 redirects for SPACE (spacemusic.io)
+/calculator /calculator/ 301
+/brand-facts /brand-facts/ 301
+/guides/:slug /guides/:slug/ 301
+/compare/:slug /compare/:slug/ 301
+/sell/:slug /sell/:slug/ 301
+/data/:slug /data/:slug/ 301
+/advance/:slug /advance/:slug/ 301

@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import datetime
-from typing import Any, Dict, Optional
+from typing import Any
 
 from pydantic import BaseModel
 from sqlmodel import JSON, Column, Field, SQLModel
@@ -20,7 +20,7 @@ class CatalogApplication(SQLModel, table=True):
     __tablename__ = "catalog_applications"
 
     id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True, index=True)
-    typeform_response_id: Optional[str] = Field(default=None, index=True, unique=True)
+    typeform_response_id: str | None = Field(default=None, index=True, unique=True)
     typeform_form_id: str = Field(default="xzx5SBJb", index=True)
 
     # Typeform core fields (1..19)
@@ -28,24 +28,24 @@ class CatalogApplication(SQLModel, table=True):
     contact_name: str = Field(default="")
     contact_email: str = Field(default="", index=True)
     artist_or_label_name: str = Field(default="", index=True)
-    listen_url: Optional[str] = Field(default=None)
-    spotify_artist_id: Optional[str] = Field(default=None, index=True)
+    listen_url: str | None = Field(default=None)
+    spotify_artist_id: str | None = Field(default=None, index=True)
     rights_scope: str = Field(default="masters")
     owner_authorized: bool = Field(default=True)
     knows_ltm_royalties: bool = Field(default=True)
     declared_ltm_amount: float = Field(default=0.0)
     declared_currency: str = Field(default="USD")
     royalty_basis: str = Field(default="net_payable")
-    distributor_or_admin: Optional[str] = Field(default=None)
-    rights_notes: Optional[str] = Field(default=None)
+    distributor_or_admin: str | None = Field(default=None)
+    rights_notes: str | None = Field(default=None)
 
     # Partnership branch fields (14..16)
-    organization_name: Optional[str] = Field(default=None)
-    organization_website: Optional[str] = Field(default=None)
-    partnership_topic: Optional[str] = Field(default=None)
+    organization_name: str | None = Field(default=None)
+    organization_website: str | None = Field(default=None)
+    partnership_topic: str | None = Field(default=None)
 
     # Attribution & opt-in (17..18)
-    referral_source: Optional[str] = Field(default=None)
+    referral_source: str | None = Field(default=None)
     newsletter_opt_in: bool = Field(default=False)
 
     # Pipeline & Valuation State
@@ -63,9 +63,9 @@ class CatalogApplication(SQLModel, table=True):
     valuation_confidence: float = Field(default=0.5)
 
     # Rich JSON artifacts stored for auditability and UI inspection
-    valuation_report_json: Dict[str, Any] = Field(default_factory=dict, sa_column=Column(JSON))
-    draft_reply_subject: Optional[str] = Field(default=None)
-    draft_reply_body: Optional[str] = Field(default=None)
+    valuation_report_json: dict[str, Any] = Field(default_factory=dict, sa_column=Column(JSON))
+    draft_reply_subject: str | None = Field(default=None)
+    draft_reply_body: str | None = Field(default=None)
 
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
@@ -80,8 +80,8 @@ class ProprietaryBenchmarkRecord(SQLModel, table=True):
 
     __tablename__ = "space_proprietary_benchmarks"
 
-    id: Optional[int] = Field(default=None, primary_key=True)
-    source_application_id: Optional[uuid.UUID] = Field(default=None, index=True)
+    id: int | None = Field(default=None, primary_key=True)
+    source_application_id: uuid.UUID | None = Field(default=None, index=True)
     distributor: str = Field(default="Unknown", index=True)
     genre_family: str = Field(default="electronic_indie", index=True)
     dsp_store: str = Field(default="spotify", index=True)

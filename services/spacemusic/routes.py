@@ -30,11 +30,12 @@ Endpoints:
 from __future__ import annotations
 
 import uuid
-from datetime import datetime
-from typing import Any, Dict, List, Optional
+from datetime import UTC, datetime
+from typing import Annotated, Any
 
 import structlog
-from fastapi import APIRouter, Body, Header, HTTPException, status
+from fastapi import APIRouter, Body, Header, HTTPException, Query, Response, status
+from fastapi.responses import HTMLResponse, PlainTextResponse
 from pydantic import BaseModel, Field
 
 from services.valuation.engine import (
@@ -85,6 +86,27 @@ from .scrive_signer import (
     ScriveSignatureEnvelope,
     SignatoryRole,
 )
+from .seo_calculator_widget import (
+    InteractiveCalculatorTeaserRequest,
+    InteractiveCalculatorTeaserResponse,
+    evaluate_interactive_calculator_teaser,
+    render_embeddable_calculator_html,
+    render_embeddable_calculator_widget_js,
+)
+from .seo_geo_data import (
+    LANDING_PAGES_BY_SLUG,
+    SEO_PAGE_METADATA_OVERRIDES,
+    build_page_jsonld_schemas,
+    generate_cloudflare_redirects,
+    get_backlink_outreach_kit,
+    get_brand_facts_payload,
+    get_indie_catalog_benchmark_report_2026,
+    render_llms_full_txt,
+    render_llms_txt,
+    render_pricing_md,
+    render_sitemap_xml,
+    resolve_canonical_redirect,
+)
 from .typeform_adapter import (
     application_to_valuation_input,
     generate_reply_draft,
@@ -102,8 +124,8 @@ router = APIRouter()
 logger = structlog.get_logger(__name__)
 
 # In-memory store backed by SQLite DealLakeRepository so state persists across restarts
-_APPLICATIONS_STORE: Dict[uuid.UUID, CatalogApplication] = {}
-_BENCHMARKS_STORE: List[ProprietaryBenchmarkRecord] = []
+_APPLICATIONS_STORE: dict[uuid.UUID, CatalogApplication] = {}
+_BENCHMARKS_STORE: list[ProprietaryBenchmarkRecord] = []
 _deal_lake = DealLakeRepository()
 _scrive_engine = ScriveExecutionEngine()
 _fintech_ledger = FintechEscrowLedger()
@@ -115,8 +137,8 @@ class ClosingPackRequest(BaseModel):
     seller_legal_name: str
     seller_address: str
     buyer_entity_name: str = "Designated Institutional Buyer Affiliate"
-    seller_agreed_price_eur: Optional[float] = None
-    buyer_gross_funding_eur: Optional[float] = None
+    seller_agreed_price_eur: float | None = None
+    buyer_gross_funding_eur: float | None = None
     origination_fee_pct: float = 0.06
     holdback_pct: float = 0.20
     carried_tail_pct: float = 0.075
@@ -128,7 +150,7 @@ class ScriveEnvelopeRequest(BaseModel):
     seller_address: str
     buyer_entity_name: str = "Designated Institutional Buyer Affiliate"
     buyer_email: str = "acquisitions@institutional-buyer.io"
-    seller_agreed_price_eur: Optional[float] = None
+    seller_agreed_price_eur: float | None = None
     origination_fee_pct: float = 0.06
     holdback_pct: float = 0.20
     carried_tail_pct: float = 0.075
@@ -136,24 +158,24 @@ class ScriveEnvelopeRequest(BaseModel):
 
 class ScriveSignActionRequest(BaseModel):
     signer_role: SignatoryRole = SignatoryRole.SELLER
-    signer_email: Optional[str] = None
+    signer_email: str | None = None
     ip_address: str = "127.0.0.1"
-    expected_document_sha256: Optional[str] = None
+    expected_document_sha256: str | None = None
 
 
 class SplitEscrowRequest(BaseModel):
     seller_legal_name: str
     seller_iban: str
     buyer_entity_name: str = "Designated Institutional Buyer Affiliate"
-    seller_agreed_price_eur: Optional[float] = None
-    buyer_gross_funding_eur: Optional[float] = None
+    seller_agreed_price_eur: float | None = None
+    buyer_gross_funding_eur: float | None = None
     origination_fee_pct: float = 0.06
     holdback_pct: float = 0.20
     carried_tail_pct: float = 0.075
     settlement_currency: str = "EUR"
     provider_rail: EscrowProviderRail = EscrowProviderRail.AIRWALLEX_VIRTUAL_LOCKBOX
     space_treasury_iban: str = "SE00 0000 0000 0000 0000 0000 (SPACE Corporate Treasury)"
-    idempotency_key: Optional[str] = None
+    idempotency_key: str | None = None
 
 
 class LockboxMonthlyDistributionRequest(BaseModel):
@@ -163,7 +185,7 @@ class LockboxMonthlyDistributionRequest(BaseModel):
     carried_tail_pct: float = 0.075
     is_month_12_holdback_check: bool = False
     currency: str = "EUR"
-    idempotency_key: Optional[str] = None
+    idempotency_key: str | None = None
 
 
 class InstantValuationStatusResponse(BaseModel):
@@ -182,19 +204,19 @@ class InstantValuationStatusResponse(BaseModel):
     valuation_confidence: float
     distributor_export_guide: str
     monetization_plan: DownFunnelMonetizationPlan
-    scrive_envelopes: List[ScriveSignatureEnvelope] = Field(default_factory=list)
+    scrive_envelopes: list[ScriveSignatureEnvelope] = Field(default_factory=list)
 
 
 class DirectEvaluationRequest(BaseModel):
     catalog: CatalogValuationInput
-    raw_statement_csv: Optional[str] = None
+    raw_statement_csv: str | None = None
 
 
 class StatementUploadRequest(BaseModel):
     raw_statement_csv: str
     default_currency: str = "USD"
-    artist_or_label_override: Optional[str] = None
-    listen_url_override: Optional[str] = None
+    artist_or_label_override: str | None = None
+    listen_url_override: str | None = None
 
 
 class TypeformCsvImportRequest(BaseModel):
@@ -206,16 +228,16 @@ class ApplicationEvaluationResponse(BaseModel):
     application_id: uuid.UUID
     pipeline_status: str
     valuation_stage: str
-    autonomous_decision: Optional[str] = None
+    autonomous_decision: str | None = None
     valuation: CatalogValuationOutput
     reply_draft: ReplyDraft
-    statement_summary: Optional[ParsedStatementSummary] = None
-    implied_revenue_crosscheck: Optional[ImpliedRevenueCrossCheck] = None
-    distributor_export_guide: Optional[str] = None
-    institutional_routing: Optional[InstitutionalRoutingReport] = None
-    blind_deal_teaser: Optional[BlindDealTeaser] = None
-    isrc_collision_alerts: List[IsrcCollisionAlert] = Field(default_factory=list)
-    monetization_plan: Optional[DownFunnelMonetizationPlan] = None
+    statement_summary: ParsedStatementSummary | None = None
+    implied_revenue_crosscheck: ImpliedRevenueCrossCheck | None = None
+    distributor_export_guide: str | None = None
+    institutional_routing: InstitutionalRoutingReport | None = None
+    blind_deal_teaser: BlindDealTeaser | None = None
+    isrc_collision_alerts: list[IsrcCollisionAlert] = Field(default_factory=list)
+    monetization_plan: DownFunnelMonetizationPlan | None = None
 
 
 @router.post(
@@ -223,7 +245,7 @@ class ApplicationEvaluationResponse(BaseModel):
     response_model=ApplicationEvaluationResponse,
     status_code=status.HTTP_201_CREATED,
 )
-async def handle_typeform_webhook(payload: Dict[str, Any] = Body(...)):
+async def handle_typeform_webhook(payload: Annotated[dict[str, Any], Body()]):
     """
     Receives a Typeform webhook (`xzx5SBJb` - SPACE catalog review), parses all fields,
     and executes either:
@@ -249,7 +271,7 @@ async def handle_typeform_webhook(payload: Dict[str, Any] = Body(...)):
     # Check if Typeform 2.0 submission includes direct statement files
     direct_csv_text = payload.get("raw_statement_csv")
     raw_attachments = payload.get("statement_attachments") or []
-    parsed_attachments: List[InboundAttachmentPayload] = []
+    parsed_attachments: list[InboundAttachmentPayload] = []
     if isinstance(raw_attachments, list):
         for item in raw_attachments:
             if isinstance(item, dict):
@@ -260,10 +282,10 @@ async def handle_typeform_webhook(payload: Dict[str, Any] = Body(...)):
             InboundAttachmentPayload(filename="typeform_upload.csv", content_text=direct_csv_text)
         )
 
-    stmt_summary: Optional[ParsedStatementSummary] = None
-    routing: Optional[InstitutionalRoutingReport] = None
-    blind_teaser: Optional[BlindDealTeaser] = None
-    collision_alerts: List[IsrcCollisionAlert] = []
+    stmt_summary: ParsedStatementSummary | None = None
+    routing: InstitutionalRoutingReport | None = None
+    blind_teaser: BlindDealTeaser | None = None
+    collision_alerts: list[IsrcCollisionAlert] = []
     final_valuation = zt_res.valuation
     final_reply = zt_res.reply_draft
     final_decision = zt_res.autonomous_decision
@@ -409,7 +431,7 @@ async def evaluate_catalog_direct(req: DirectEvaluationRequest):
     Automatically enriches SPACE's proprietary RPM benchmark store when a CSV statement is supplied.
     """
     val_input = req.catalog
-    stmt_summary: Optional[ParsedStatementSummary] = None
+    stmt_summary: ParsedStatementSummary | None = None
 
     if req.raw_statement_csv:
         stmt_summary = parse_statement_csv(
@@ -546,7 +568,7 @@ async def attach_statements_to_application(
     app_row.valuation_report_json = valuation.dict() if hasattr(valuation, "dict") else valuation.model_dump()
     app_row.draft_reply_subject = reply_draft.subject
     app_row.draft_reply_body = reply_draft.body
-    app_row.updated_at = datetime.utcnow()
+    app_row.updated_at = datetime.now(UTC).replace(tzinfo=None)
 
     for b in stmt_summary.benchmarks:
         _BENCHMARKS_STORE.append(
@@ -746,8 +768,8 @@ async def sign_scrive_envelope_endpoint(
     response_model=ScriveSignatureEnvelope,
 )
 async def handle_scrive_webhook(
-    payload: Dict[str, Any] = Body(...),
-    x_scrive_signature: Optional[str] = Header(default=None),
+    payload: Annotated[dict[str, Any], Body()],
+    x_scrive_signature: str | None = Header(default=None),
 ):
     """
     Webhook callback receiver for Scrive e-signature events (`SELLER_SIGNED`, `COMPLETED_LOCKED`).
@@ -890,7 +912,7 @@ async def import_typeform_csv(req: TypeformCsvImportRequest):
     full DCF + Forensics evaluations, autonomous routing decisions, and reply drafts.
     """
     apps = parse_typeform_csv_export(req.csv_content, skip_test_rows=req.skip_test_rows)
-    results: List[ApplicationEvaluationResponse] = []
+    results: list[ApplicationEvaluationResponse] = []
     for app_row in apps:
         zt_res = execute_zero_touch_stage1(app_row, engine=_engine)
         _APPLICATIONS_STORE[app_row.id] = app_row
@@ -950,3 +972,101 @@ async def list_proprietary_benchmarks():
         }
         for b in _BENCHMARKS_STORE
     ]
+
+
+@router.post(
+    "/calculator/live-teaser",
+    response_model=InteractiveCalculatorTeaserResponse,
+)
+async def post_calculator_live_teaser(req: InteractiveCalculatorTeaserRequest):
+    return evaluate_interactive_calculator_teaser(req)
+
+
+@router.get("/embed/calculator", response_class=HTMLResponse)
+async def get_embed_calculator():
+    return HTMLResponse(content=render_embeddable_calculator_html())
+
+
+@router.get("/widget/calculator.js")
+async def get_widget_calculator_js():
+    return Response(
+        content=render_embeddable_calculator_widget_js(),
+        media_type="application/javascript",
+    )
+
+
+@router.get("/llms.txt", response_class=PlainTextResponse)
+async def get_llms_txt():
+    return PlainTextResponse(content=render_llms_txt())
+
+
+@router.get("/llms-full.txt", response_class=PlainTextResponse)
+async def get_llms_full_txt():
+    return PlainTextResponse(content=render_llms_full_txt())
+
+
+@router.get("/pricing.md", response_class=PlainTextResponse)
+async def get_pricing_md():
+    return PlainTextResponse(content=render_pricing_md())
+
+
+@router.get("/_redirects", response_class=PlainTextResponse)
+async def get_cloudflare_redirects():
+    return PlainTextResponse(content=generate_cloudflare_redirects())
+
+
+@router.get("/sitemap.xml")
+async def get_sitemap_xml():
+    return Response(content=render_sitemap_xml(), media_type="application/xml")
+
+
+@router.get("/brand-facts")
+async def get_brand_facts():
+    return get_brand_facts_payload()
+
+
+@router.get("/seo/metadata")
+async def get_seo_metadata(path: str = Query(default="/")):
+    norm_path = path if path == "/" or path.endswith("/") else f"{path}/"
+    meta = SEO_PAGE_METADATA_OVERRIDES.get(norm_path, SEO_PAGE_METADATA_OVERRIDES["/"])
+    return {
+        "metadata": meta.model_dump() if hasattr(meta, "model_dump") else meta.dict(),
+        "jsonld_schemas": build_page_jsonld_schemas(norm_path),
+        "canonical_redirect_301": resolve_canonical_redirect(path),
+    }
+
+
+@router.get("/seo/landing-pages")
+async def list_seo_landing_pages():
+    pages = []
+    for lp in LANDING_PAGES_BY_SLUG.values():
+        lp_dict = lp.model_dump() if hasattr(lp, "model_dump") else lp.dict()
+        lp_dict["jsonld_schemas"] = build_page_jsonld_schemas(lp.canonical_path)
+        pages.append(lp_dict)
+    return {
+        "total": len(pages),
+        "genre_count": sum(1 for p in pages if p["category"] == "genre"),
+        "distributor_count": sum(1 for p in pages if p["category"] == "distributor"),
+        "pages": pages,
+    }
+
+
+@router.get("/seo/landing-pages/{slug}")
+async def get_seo_landing_page_by_slug(slug: str):
+    lp = LANDING_PAGES_BY_SLUG.get(slug)
+    if not lp:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Landing page not found")
+    lp_dict = lp.model_dump() if hasattr(lp, "model_dump") else lp.dict()
+    lp_dict["jsonld_schemas"] = build_page_jsonld_schemas(lp.canonical_path)
+    return lp_dict
+
+
+@router.get("/data/indie-catalog-multiples-ai-fraud-report-2026")
+async def get_indie_catalog_benchmark_report():
+    return get_indie_catalog_benchmark_report_2026()
+
+
+@router.get("/seo/backlink-outreach-kit")
+async def get_seo_backlink_outreach_kit():
+    return get_backlink_outreach_kit()
+

@@ -31,16 +31,19 @@ from __future__ import annotations
 import hashlib
 import json
 import sqlite3
-from datetime import datetime, timezone
+from collections.abc import Sequence
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Sequence
 
 from pydantic import BaseModel, Field
 
 from services.valuation.engine import CatalogValuationOutput
 from services.valuation.statement_parser import ParsedStatementSummary
 
-from .buyer_router import InstitutionalRoutingReport, route_catalog_to_institutional_buyers
+from .buyer_router import (
+    InstitutionalRoutingReport,
+    route_catalog_to_institutional_buyers,
+)
 from .models import CatalogApplication, ProprietaryBenchmarkRecord
 
 
@@ -60,7 +63,7 @@ class BlindDealTeaser(BaseModel):
     target_buyout_eur: float
     target_buyout_usd: float
     implied_multiple: float
-    recommended_buyers: List[str] = Field(default_factory=list)
+    recommended_buyers: list[str] = Field(default_factory=list)
     teaser_markdown: str
     teaser_email_html: str
 
@@ -101,7 +104,7 @@ class IsrcCollisionAlert(BaseModel):
 
 
 def _make_deal_code(app: CatalogApplication) -> str:
-    digest = hashlib.sha1(f"{app.id}:{app.contact_email}".encode("utf-8")).hexdigest()[:6].upper()
+    digest = hashlib.sha1(f"{app.id}:{app.contact_email}".encode()).hexdigest()[:6].upper()
     return f"SPC-{digest}"
 
 
@@ -109,9 +112,9 @@ def generate_blind_deal_teaser(
     app: CatalogApplication,
     valuation: CatalogValuationOutput,
     *,
-    routing: Optional[InstitutionalRoutingReport] = None,
+    routing: InstitutionalRoutingReport | None = None,
     eur_to_usd: float = 1.087,
-    custom_highlights: Optional[List[str]] = None,
+    custom_highlights: list[str] | None = None,
 ) -> BlindDealTeaser:
     """
     Generates an anonymized Blind Deal Teaser (`SPC-XXXXXX`) for institutional buyers.
@@ -208,8 +211,8 @@ def generate_closing_document_pack(
     seller_legal_name: str,
     seller_address: str,
     buyer_entity_name: str = "Designated Institutional Buyer Affiliate",
-    seller_agreed_price_eur: Optional[float] = None,
-    buyer_gross_funding_eur: Optional[float] = None,
+    seller_agreed_price_eur: float | None = None,
+    buyer_gross_funding_eur: float | None = None,
     origination_fee_pct: float = 0.06,
     holdback_pct: float = 0.20,
     carried_tail_pct: float = 0.075,
@@ -253,7 +256,7 @@ def generate_closing_document_pack(
     space_tail_10y = round(ten_yr_cf_sum * tail_pct, 2)
     space_total_10y_comp = round(space_total_take + space_tail_10y, 2)
 
-    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today_str = datetime.now(UTC).strftime("%Y-%m-%d")
     dist_name = app.distributor_or_admin or "Designated Digital Distributor"
 
     ncnd_md = (
@@ -393,7 +396,7 @@ class DealLakeRepository:
 
     def save_application(self, app: CatalogApplication) -> None:
         payload_dict = app.model_dump(mode="json") if hasattr(app, "model_dump") else json.loads(app.json())
-        now_iso = datetime.now(timezone.utc).isoformat()
+        now_iso = datetime.now(UTC).isoformat()
         with self._connect() as conn:
             conn.execute(
                 """
@@ -427,8 +430,8 @@ class DealLakeRepository:
                 ),
             )
 
-    def load_all_applications(self) -> Dict[str, CatalogApplication]:
-        out: Dict[str, CatalogApplication] = {}
+    def load_all_applications(self) -> dict[str, CatalogApplication]:
+        out: dict[str, CatalogApplication] = {}
         with self._connect() as conn:
             rows = conn.execute("SELECT payload_json FROM applications ORDER BY updated_at DESC").fetchall()
             for r in rows:
@@ -469,13 +472,13 @@ class DealLakeRepository:
         self,
         app: CatalogApplication,
         summary: ParsedStatementSummary,
-    ) -> List[IsrcCollisionAlert]:
+    ) -> list[IsrcCollisionAlert]:
         """
         Registers all ISRCs found in a parsed statement into the persistent `isrc_registry`
         and checks if any ISRC was previously submitted by a DIFFERENT seller email.
         """
-        alerts: List[IsrcCollisionAlert] = []
-        now_iso = datetime.now(timezone.utc).isoformat()
+        alerts: list[IsrcCollisionAlert] = []
+        now_iso = datetime.now(UTC).isoformat()
         seller_email_clean = (app.contact_email or "").strip().lower()
         app_id_str = str(app.id)
 

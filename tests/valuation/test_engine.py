@@ -1086,6 +1086,7 @@ def test_phase2_typeform_direct_upload_instant_status_and_scrive_engine():
        SHA-256 document hash verification, and HMAC-SHA256 webhook verification.
     """
     import json
+
     from fastapi import FastAPI
     from fastapi.testclient import TestClient
 
@@ -1288,6 +1289,7 @@ def test_phase4_fintech_split_escrow_cent_exactness_and_lockbox_waterfall():
        when cumulative royalties reach >= 90% of $CF_0$.
     """
     import pytest
+
     from services.spacemusic.fintech_escrow import (
         EscrowProviderRail,
         FintechEscrowLedger,
@@ -1372,10 +1374,165 @@ def test_phase4_fintech_split_escrow_cent_exactness_and_lockbox_waterfall():
     assert last_dist.holdback_released_to_seller == "3700.00"
 
 
+def test_geo_seo_steps_1_to_5_end_to_end(tmp_path):
+    """
+    End-to-end verification of Steps 1 to 5 of SPACE's SEO, GEO, JSON-LD,
+    Programmatic Landing Pages, Embeddable PLG Calculator Widget, and Link-Earning Data Report.
+    """
+    from services.spacemusic.seo_geo_engine import (
+        LANDING_PAGES_BY_SLUG,
+        SEO_PAGE_METADATA_OVERRIDES,
+        export_seo_static_bundle,
+        resolve_canonical_redirect,
+    )
 
+    client = TestClient(spacemusic_app)
 
+    # Step 1: Metadata overrides & landing pages have ZERO '--' or '—' in title, meta_description, h1, og_title;
+    # canonical 301 redirect rules work.
+    for path_key, meta in SEO_PAGE_METADATA_OVERRIDES.items():
+        for field_name in ("title", "meta_description", "h1", "og_title"):
+            val = getattr(meta, field_name)
+            assert "--" not in val, f"Found '--' in {path_key}.{field_name}"
+            assert "—" not in val, f"Found '—' in {path_key}.{field_name}"
 
+    for slug, lp in LANDING_PAGES_BY_SLUG.items():
+        for field_name in ("title", "meta_description", "h1"):
+            val = getattr(lp, field_name)
+            assert "--" not in val, f"Found '--' in {slug}.{field_name}"
+            assert "—" not in val, f"Found '—' in {slug}.{field_name}"
 
+    assert resolve_canonical_redirect("/calculator") == "/calculator/"
+    assert resolve_canonical_redirect("/calculator/") is None
+    redirects_resp = client.get("/_redirects")
+    assert redirects_resp.status_code == 200
+    assert "/calculator /calculator/ 301" in redirects_resp.text
 
+    # Step 2: Live interactive calculator teaser + embeddable HTML & JS widget with dofollow attribution.
+    teaser_resp = client.post(
+        "/calculator/live-teaser",
+        json={
+            "artist_or_label_name": "Metro Phonk Collective",
+            "monthly_net_royalty": 3500.0,
+            "currency": "USD",
+            "genre_hint": "Hip-Hop / Rap / Trap",
+            "distributor": "DistroKid",
+            "rights_scope": "masters",
+            "share_sold_pct": 100.0,
+            "catalog_age_months": 30.0,
+        },
+    )
+    assert teaser_resp.status_code == 200
+    teaser = teaser_resp.json()
+    assert 0 < teaser["price_low_eur"] < teaser["price_median_eur"] < teaser["price_high_eur"]
+    assert teaser["matched_institutional_buyers_count"] >= 1
+    assert len(teaser["top_matched_buyers"]) >= 1
+    assert "DistroKid" in teaser["distributor_export_guide"]
+
+    embed_resp = client.get("/embed/calculator")
+    assert embed_resp.status_code == 200
+    assert "https://spacemusic.io/calculator/" in embed_resp.text
+    assert 'rel="dofollow"' in embed_resp.text
+
+    widget_resp = client.get("/widget/calculator.js")
+    assert widget_resp.status_code == 200
+    assert "application/javascript" in widget_resp.headers["content-type"]
+    assert "https://spacemusic.io/calculator/" in widget_resp.text
+    assert 'rel="dofollow"' in widget_resp.text
+
+    # Step 3: llms.txt, llms-full.txt, pricing.md, sitemap.xml, brand-facts, and 20 programmatic landing pages.
+    llms_resp = client.get("/llms.txt")
+    llms_full_resp = client.get("/llms-full.txt")
+    pricing_resp = client.get("/pricing.md")
+    sitemap_resp = client.get("/sitemap.xml")
+    brand_resp = client.get("/brand-facts")
+
+    for r in (llms_resp, llms_full_resp, pricing_resp, sitemap_resp, brand_resp):
+        assert r.status_code == 200
+
+    combined_geo_text = llms_resp.text + "\n" + llms_full_resp.text + "\n" + pricing_resp.text
+    for genre_kw in ("Hip-Hop", "Phonk", "Pop", "R&B", "Latin", "Afrobeats", "Rock", "Classical", "Ambient"):
+        assert genre_kw in llms_resp.text
+        assert genre_kw in llms_full_resp.text
+        assert genre_kw in pricing_resp.text
+        assert genre_kw in combined_geo_text
+
+    for buyer_kw in (
+        "Duetti",
+        "Create Music Group",
+        "beatBread",
+        "Sound Royalties",
+        "ANote Music",
+        "Royalty Exchange",
+        "SongVest",
+        "Symphonic",
+    ):
+        assert buyer_kw in llms_resp.text
+        assert buyer_kw in llms_full_resp.text
+        assert buyer_kw in pricing_resp.text
+
+    assert "<urlset" in sitemap_resp.text
+    assert "https://spacemusic.io/calculator/" in sitemap_resp.text
+
+    lp_list_resp = client.get("/seo/landing-pages")
+    assert lp_list_resp.status_code == 200
+    lp_list_data = lp_list_resp.json()
+    assert lp_list_data["total"] == 20
+    assert lp_list_data["genre_count"] == 10
+    assert lp_list_data["distributor_count"] == 10
+    assert len(lp_list_data["pages"]) == 20
+
+    hh_resp = client.get("/seo/landing-pages/sell-hip-hop-rap-catalog")
+    assert hh_resp.status_code == 200
+    assert hh_resp.json()["category"] == "genre"
+
+    dk_resp = client.get("/seo/landing-pages/sell-distrokid-royalties")
+    assert dk_resp.status_code == 200
+    assert dk_resp.json()["category"] == "distributor"
+
+    # Step 4: JSON-LD structured data schemas on /calculator/
+    meta_resp = client.get("/seo/metadata", params={"path": "/calculator"})
+    assert meta_resp.status_code == 200
+    meta_payload = meta_resp.json()
+    assert meta_payload["canonical_redirect_301"] == "/calculator/"
+    schemas = meta_payload["jsonld_schemas"]
+    schema_types = {s["@type"] for s in schemas}
+    for expected_type in ("SoftwareApplication", "FinancialService", "Organization", "FAQPage", "BreadcrumbList"):
+        assert expected_type in schema_types
+
+    org_schema = next(s for s in schemas if s["@type"] == "Organization")
+    knows_about_blob = " | ".join(org_schema["knowsAbout"])
+    for genre_kw in ("Hip-Hop", "Pop", "R&B", "Latin", "Electronic", "Rock", "Classical", "Ambient"):
+        assert genre_kw in knows_about_blob
+
+    # Step 5: 2026 Indie Catalog Multiples & AI Fraud Benchmark Report + Backlink Outreach Kit + Static Bundle Export
+    report_resp = client.get("/data/indie-catalog-multiples-ai-fraud-report-2026")
+    assert report_resp.status_code == 200
+    report_data = report_resp.json()
+    assert len(report_data["genre_multiples_table"]) == 8
+    assert report_data["dataset_jsonld"]["@type"] == "Dataset"
+    assert any(s["@type"] == "Dataset" for s in report_data["jsonld_schemas"])
+
+    outreach_resp = client.get("/seo/backlink-outreach-kit")
+    assert outreach_resp.status_code == 200
+    outreach_kit = outreach_resp.json()
+    assert len(outreach_kit) >= 5
+    for item in outreach_kit:
+        assert "--" not in item["subject"]
+        assert "—" not in item["subject"]
+        assert "--" not in item["body"]
+        assert "—" not in item["body"]
+
+    written_files = export_seo_static_bundle(str(tmp_path / "seo_bundle"))
+    for expected_file in (
+        "llms.txt",
+        "llms-full.txt",
+        "pricing.md",
+        "sitemap.xml",
+        "_redirects",
+        "embed-calculator.html",
+        "widget-calculator.js",
+    ):
+        assert expected_file in written_files
 
 

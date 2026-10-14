@@ -17,7 +17,7 @@ deal-room sharing.
 
 from __future__ import annotations
 
-from typing import List, Optional, Sequence, Set
+from collections.abc import Sequence
 
 from pydantic import BaseModel, Field
 
@@ -35,19 +35,19 @@ class InstitutionalPartnerProfile(BaseModel):
     partner_id: str
     partner_name: str
     deal_type: str  # FULL_OR_TRACK_BUYOUT | LABEL_ACQUISITION_OR_JV | ROYALTY_ADVANCE_FINANCING | FRACTIONAL_CATALOG_MARKETPLACE | DISTRIBUTION_ADVANCE
-    decision_makers: List[str]
-    contact_emails: List[str]
+    decision_makers: list[str]
+    contact_emails: list[str]
     min_ltm_eur: float
     max_ltm_eur: float
     min_age_months: float
     min_integrity_score: float = 65.0
-    preferred_genres: Set[GenreFamily]
-    supported_rights: Set[RightsScope]
+    preferred_genres: set[GenreFamily]
+    supported_rights: set[RightsScope]
     target_multiple_range: str
     thesis_summary: str
 
 
-INSTITUTIONAL_BUY_BOXES: List[InstitutionalPartnerProfile] = [
+INSTITUTIONAL_BUY_BOXES: list[InstitutionalPartnerProfile] = [
     InstitutionalPartnerProfile(
         partner_id="duetti",
         partner_name="Duetti",
@@ -214,16 +214,16 @@ class BuyerMatchRecommendation(BaseModel):
     partner_name: str
     deal_type: str
     fit_score: float = Field(description="0.0 to 100.0 institutional buy-box fit score")
-    decision_makers: List[str]
-    contact_emails: List[str]
+    decision_makers: list[str]
+    contact_emails: list[str]
     target_multiple_range: str
-    match_rationale: List[str]
+    match_rationale: list[str]
 
 
 class InstitutionalRoutingReport(BaseModel):
     eligible_for_syndication: bool
-    disqualification_reason: Optional[str] = None
-    recommended_buyers: List[BuyerMatchRecommendation] = Field(default_factory=list)
+    disqualification_reason: str | None = None
+    recommended_buyers: list[BuyerMatchRecommendation] = Field(default_factory=list)
     underwriting_memo_markdown: str = ""
 
 
@@ -279,7 +279,7 @@ def route_catalog_to_institutional_buyers(
         else RightsScope.MASTERS
     )
 
-    recommendations: List[BuyerMatchRecommendation] = []
+    recommendations: list[BuyerMatchRecommendation] = []
     for buyer in INSTITUTIONAL_BUY_BOXES:
         if cf0 < buyer.min_ltm_eur * 0.80 or cf0 > buyer.max_ltm_eur:
             continue
@@ -289,7 +289,7 @@ def route_catalog_to_institutional_buyers(
             continue
 
         score = 60.0
-        reasons: List[str] = []
+        reasons: list[str] = []
 
         # 1. LTM sweet-spot scoring
         if buyer.min_ltm_eur <= cf0 <= buyer.max_ltm_eur:

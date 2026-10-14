@@ -24,8 +24,9 @@ webhook (`xzx5SBJb` - SPACE catalog review) or direct application arrives:
 from __future__ import annotations
 
 import re
+from collections.abc import Sequence
 from datetime import date
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -54,7 +55,7 @@ from .typeform_adapter import (
 # 1. URL Extraction Helpers (Artist / Track / Album IDs)
 # ---------------------------------------------------------------------------
 
-def extract_spotify_reference(url: Optional[str]) -> Tuple[Optional[str], Optional[str]]:
+def extract_spotify_reference(url: str | None) -> tuple[str | None, str | None]:
     """
     Extracts `(entity_type, spotify_id)` from a Spotify URL or URI.
     `entity_type` is one of `"artist"`, `"track"`, `"album"`, `"playlist"`, or `None`.
@@ -81,12 +82,12 @@ def extract_spotify_reference(url: Optional[str]) -> Tuple[Optional[str], Option
 # ---------------------------------------------------------------------------
 
 class LiveSpotifyTrackItem(BaseModel):
-    track_id: Optional[str] = None
+    track_id: str | None = None
     title: str
     duration_ms: int = 180_000
     total_streams: int = 0
-    release_date: Optional[date] = None
-    label: Optional[str] = None
+    release_date: date | None = None
+    label: str | None = None
 
 
 class LiveSpotifyArtistSnapshot(BaseModel):
@@ -95,14 +96,14 @@ class LiveSpotifyArtistSnapshot(BaseModel):
     verified: bool = False
     followers: int = 0
     monthly_listeners: int = 0
-    external_social_links: List[str] = Field(default_factory=list)
-    biography: Optional[str] = None
-    top_tracks: List[LiveSpotifyTrackItem] = Field(default_factory=list)
-    releases: List[ReleaseMetadataItem] = Field(default_factory=list)
+    external_social_links: list[str] = Field(default_factory=list)
+    biography: str | None = None
+    top_tracks: list[LiveSpotifyTrackItem] = Field(default_factory=list)
+    releases: list[ReleaseMetadataItem] = Field(default_factory=list)
     source: str = "live_spotify_api"
 
 
-def _parse_iso_date_prefix(raw: Optional[str]) -> Optional[date]:
+def _parse_iso_date_prefix(raw: str | None) -> date | None:
     if not raw:
         return None
     s = str(raw).strip()
@@ -117,8 +118,8 @@ def _parse_iso_date_prefix(raw: Optional[str]) -> Optional[date]:
 
 
 def parse_scrape_creators_spotify_payload(
-    raw_payload: Dict[str, Any],
-    fallback_artist_id: Optional[str] = None,
+    raw_payload: dict[str, Any],
+    fallback_artist_id: str | None = None,
 ) -> LiveSpotifyArtistSnapshot:
     """
     Normalizes a raw Spotify artist JSON payload (such as ScrapeCreators / Treg
@@ -141,14 +142,14 @@ def parse_scrape_creators_spotify_payload(
     monthly_listeners = int(basic.get("monthly_listeners") or 0)
 
     ext_links_raw = basic.get("external_links") or data.get("external_links") or []
-    ext_links: List[str] = []
+    ext_links: list[str] = []
     for item in ext_links_raw:
         if isinstance(item, str):
             ext_links.append(item)
         elif isinstance(item, dict) and item.get("url"):
             ext_links.append(str(item["url"]))
 
-    top_tracks: List[LiveSpotifyTrackItem] = []
+    top_tracks: list[LiveSpotifyTrackItem] = []
     for t in data.get("top_tracks") or []:
         if not isinstance(t, dict):
             continue
@@ -170,7 +171,7 @@ def parse_scrape_creators_spotify_payload(
             )
         )
 
-    releases: List[ReleaseMetadataItem] = []
+    releases: list[ReleaseMetadataItem] = []
     for alb in data.get("albums") or []:
         if not isinstance(alb, dict):
             continue
@@ -239,11 +240,11 @@ class ImpliedRevenueCrossCheck(BaseModel):
 def evaluate_implied_stream_revenue_crosscheck(
     *,
     declared_ltm_eur: float,
-    spotify_monthly_listeners: Optional[int],
+    spotify_monthly_listeners: int | None,
     top_tracks: Sequence[LiveSpotifyTrackItem],
     ownership_share_pct: float = 100.0,
-    notes: Optional[str] = None,
-) -> Optional[ImpliedRevenueCrossCheck]:
+    notes: str | None = None,
+) -> ImpliedRevenueCrossCheck | None:
     """
     Computes an upper-bound and midpoint LTM royalty estimate from live Spotify metrics:
     - Each monthly listener generates ~3.2 streams/month on average (up to ~6.5 for high-repeat genres).
@@ -272,7 +273,7 @@ def evaluate_implied_stream_revenue_crosscheck(
     # 2. Estimate annual Spotify streams from cumulative top-track streams (generous ceiling: 45% of lifetime top tracks earned in LTM, scaled by 1.5x for deep catalog)
     annual_streams_from_top_tracks = top_streams_sum * 0.45 * 1.5
 
-    est_annual_spotify_streams = int(round(max(annual_streams_from_listeners, annual_streams_from_top_tracks)))
+    est_annual_spotify_streams = round(max(annual_streams_from_listeners, annual_streams_from_top_tracks))
 
     # Midpoint vs generous ceiling RPM & multi-DSP multiplier
     # Midpoint: €0.0028/stream on Spotify, Spotify = 55% of all DSPs -> €0.0051 per Spotify stream across all DSPs
@@ -333,7 +334,7 @@ def evaluate_implied_stream_revenue_crosscheck(
 # 4. Distributor-Specific CSV Export Step-by-Step Instructions
 # ---------------------------------------------------------------------------
 
-DISTRIBUTOR_EXPORT_GUIDES: Dict[str, str] = {
+DISTRIBUTOR_EXPORT_GUIDES: dict[str, str] = {
     "distrokid": (
         "**How to export your DistroKid statement (takes ~30 seconds):**\n"
         "  1. Log in to **distrokid.com/bank** and click **\"See Excruciating Detail\"**.\n"
@@ -398,7 +399,7 @@ DISTRIBUTOR_EXPORT_GUIDES: Dict[str, str] = {
 }
 
 
-def get_distributor_export_guide(distributor_or_admin: Optional[str]) -> str:
+def get_distributor_export_guide(distributor_or_admin: str | None) -> str:
     """
     Returns a tailored step-by-step CSV export guide based on the applicant's distributor.
     """
@@ -454,8 +455,8 @@ class ZeroTouchStage1Result(BaseModel):
     artist_or_label_name: str
     contact_email: str
     spotify_enriched: bool = False
-    spotify_snapshot: Optional[LiveSpotifyArtistSnapshot] = None
-    implied_revenue_crosscheck: Optional[ImpliedRevenueCrossCheck] = None
+    spotify_snapshot: LiveSpotifyArtistSnapshot | None = None
+    implied_revenue_crosscheck: ImpliedRevenueCrossCheck | None = None
     autonomous_decision: str
     pipeline_status: str
     valuation: CatalogValuationOutput
@@ -466,7 +467,7 @@ class ZeroTouchStage1Result(BaseModel):
 def apply_live_spotify_enrichment(
     val_input: CatalogValuationInput,
     snapshot: LiveSpotifyArtistSnapshot,
-) -> Tuple[CatalogValuationInput, Optional[ImpliedRevenueCrossCheck]]:
+) -> tuple[CatalogValuationInput, ImpliedRevenueCrossCheck | None]:
     """
     Enriches a `CatalogValuationInput` with live Spotify metadata (`followers`,
     `monthly_listeners`, `verified`, `external_social_links_count`, `releases`, and
@@ -484,7 +485,7 @@ def apply_live_spotify_enrichment(
     # Populate top tracks if Stage 2 CSV tracks are not yet present
     if not val_input.tracks and snapshot.top_tracks:
         total_top_streams = sum(max(0, t.total_streams) for t in snapshot.top_tracks)
-        synthesized_tracks: List[TrackInput] = []
+        synthesized_tracks: list[TrackInput] = []
         for idx, t in enumerate(snapshot.top_tracks):
             share = (
                 t.total_streams / total_top_streams
@@ -518,10 +519,10 @@ def apply_live_spotify_enrichment(
 def execute_zero_touch_stage1(
     app_row: CatalogApplication,
     *,
-    engine: Optional[SpaceValuationEngine] = None,
-    spotify_snapshot: Optional[LiveSpotifyArtistSnapshot] = None,
-    raw_spotify_payload: Optional[Dict[str, Any]] = None,
-    reference_date: Optional[date] = None,
+    engine: SpaceValuationEngine | None = None,
+    spotify_snapshot: LiveSpotifyArtistSnapshot | None = None,
+    raw_spotify_payload: dict[str, Any] | None = None,
+    reference_date: date | None = None,
 ) -> ZeroTouchStage1Result:
     """
     Executes the complete Zero-Touch Stage 1 pipeline:
@@ -544,7 +545,7 @@ def execute_zero_touch_stage1(
             fallback_artist_id=extracted_id or app_row.spotify_artist_id,
         )
 
-    crosscheck: Optional[ImpliedRevenueCrossCheck] = None
+    crosscheck: ImpliedRevenueCrossCheck | None = None
     if snap is not None:
         val_input, crosscheck = apply_live_spotify_enrichment(val_input, snap)
         app_row.spotify_artist_id = snap.spotify_artist_id
