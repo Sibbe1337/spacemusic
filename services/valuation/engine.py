@@ -46,6 +46,14 @@ from .dtw_matcher import (
     compute_cross_track_dtw_synchrony,
     evaluate_dtw_lifecycle,
 )
+from .lead_lag_and_title_forensics import (
+    ChainOfTitleAuditReport,
+    ChainOfTitleStatus,
+    LeadLagArbitrageReport,
+    LeadLagSignalStatus,
+    evaluate_chain_of_title,
+    evaluate_lead_lag_arbitrage,
+)
 
 
 RULES_DEFAULT_PATH = Path(__file__).parent / "rules.yaml"
@@ -281,6 +289,8 @@ class CatalogValuationOutput(BaseModel):
     risk_flags: List[RiskFlag] = Field(default_factory=list)
     dtw_analysis: Optional[DTWMatchResult] = None
     ai_profile_validation: Optional[AIProfileValidationReport] = None
+    lead_lag_arbitrage: Optional[LeadLagArbitrageReport] = None
+    chain_of_title: Optional[ChainOfTitleAuditReport] = None
     deal_structure: DealStructureRecommendation
     yearly_projected_cashflows_p50_eur: List[float] = Field(default_factory=list)
     missing_data_fields: List[str] = Field(default_factory=list)
@@ -1010,6 +1020,76 @@ class SpaceValuationEngine:
             if ai_report.recommended_haircut_pct > 0:
                 effective_cf0_eur = max(0.0, effective_cf0_eur * (1.0 - ai_report.recommended_haircut_pct))
 
+        # Forensics Check 10: Lead-Lag Arbitrage & Pre-Clawback Dump Detector (90-Day Accounting Lag)
+        lead_lag_report: Optional[LeadLagArbitrageReport] = None
+        if inp.monthly_history and inp.spotify_monthly_listeners is not None:
+            sorted_mh_ll = sorted(inp.monthly_history, key=lambda m: m.period)
+            sp_rev_share = float(inp.dsp_share.get("spotify", 0.65)) if inp.dsp_share else 0.65
+            lead_lag_report = evaluate_lead_lag_arbitrage(
+                trailing_monthly_revenues_eur=[m.net_royalties_eur for m in sorted_mh_ll],
+                trailing_monthly_streams=[m.streams for m in sorted_mh_ll],
+                spotify_monthly_listeners=inp.spotify_monthly_listeners,
+                spotify_revenue_share=sp_rev_share,
+            )
+            if lead_lag_report is not None:
+                if lead_lag_report.signal_status == LeadLagSignalStatus.PRE_CLAWBACK_DUMP_WARNING:
+                    risk_flags.append(
+                        RiskFlag(
+                            code="PRE_CLAWBACK_DUMP_WARNING",
+                            severity=RiskSeverity.CRITICAL,
+                            title="Pre-Clawback Dump Alert: Live DSP Velocity Collapsed vs. Trailing CSV",
+                            description=lead_lag_report.rationale,
+                            discount_rate_bps_impact=lead_lag_report.recommended_discount_bps,
+                            haircut_pct_impact=lead_lag_report.recommended_haircut_pct,
+                        )
+                    )
+                    effective_cf0_eur = max(
+                        0.0, effective_cf0_eur * (1.0 - lead_lag_report.recommended_haircut_pct)
+                    )
+                elif lead_lag_report.signal_status == LeadLagSignalStatus.POST_STATEMENT_DECELERATION:
+                    risk_flags.append(
+                        RiskFlag(
+                            code="POST_STATEMENT_DECELERATION",
+                            severity=RiskSeverity.MEDIUM,
+                            title="Live DSP Velocity Below Trailing Statement Average",
+                            description=lead_lag_report.rationale,
+                            discount_rate_bps_impact=lead_lag_report.recommended_discount_bps,
+                            haircut_pct_impact=lead_lag_report.recommended_haircut_pct,
+                        )
+                    )
+
+        # Forensics Check 11: Chain-of-Title, Distributor-Hopping & Collaborator Split Auditor
+        title_report = evaluate_chain_of_title(
+            artist_or_label_name=inp.artist_or_label_name,
+            declared_distributor=inp.distributor_or_admin,
+            declared_ownership_pct=inp.ownership_share_pct,
+            releases=inp.releases,
+            track_titles=[t.title for t in tracks if t.title],
+            track_labels=[t.spotify_label for t in tracks if t.spotify_label],
+            notes=inp.notes,
+            reference_date=ref_date,
+        )
+        if title_report.distributor_hopping_detected or title_report.unrecouped_advance_risk:
+            risk_flags.append(
+                RiskFlag(
+                    code="DISTRIBUTOR_HOPPING_UNRECOUPED_RISK",
+                    severity=RiskSeverity.HIGH,
+                    title="Distributor-Hopping / Potential Unrecouped Advance Exposure",
+                    description=" | ".join(title_report.findings),
+                    discount_rate_bps_impact=200,
+                )
+            )
+        if title_report.collaborator_tracks_detected and inp.ownership_share_pct >= 99.0:
+            risk_flags.append(
+                RiskFlag(
+                    code="COLLABORATOR_SPLIT_SHEET_VERIFICATION",
+                    severity=RiskSeverity.MEDIUM,
+                    title="Collaborative / Featured Tracks Require Signed Split Sheets",
+                    description=f"{len(title_report.collaborator_tracks_detected)} track(s) include featured artists/producers while seller claims 100% ownership.",
+                    discount_rate_bps_impact=100,
+                )
+            )
+
         dollar_weighted_age_months = float(
             sum(a * w for a, w in zip(track_ages_months, track_weights))
         )
@@ -1240,6 +1320,8 @@ class SpaceValuationEngine:
             risk_flags=risk_flags,
             dtw_analysis=dtw_result,
             ai_profile_validation=ai_report,
+            lead_lag_arbitrage=lead_lag_report,
+            chain_of_title=title_report,
             deal_structure=deal_structure,
             yearly_projected_cashflows_p50_eur=[round(v, 2) for v in yearly_cfs_p50],
             missing_data_fields=missing_fields,

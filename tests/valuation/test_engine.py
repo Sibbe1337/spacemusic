@@ -767,6 +767,93 @@ def test_autonomous_inbox_to_underwriting_and_institutional_buyer_router(engine:
     assert "2Scratch" in res.slack_deal_card_markdown
 
 
+def test_lead_lag_arbitrage_and_chain_of_title_forensics(engine: SpaceValuationEngine):
+    """
+    Verifies Forensics Check 10 (Lead-Lag Arbitrage & Pre-Clawback Dump Detector)
+    and Forensics Check 11 (Chain-of-Title, Distributor-Hopping & Collaborator Split Auditor):
+    1. A catalog with strong trailing CSV statements (€3,000/mo) that has collapsed on live Spotify
+       (120 monthly listeners -> RVR < 0.35) triggers `PRE_CLAWBACK_DUMP_WARNING` and is blocked
+       from institutional buyer syndication.
+    2. A catalog that hopped from Create Music Group / Empire P-lines to DistroKid and has
+       collaborative (`feat.` / `&`) tracks while claiming 100% ownership triggers
+       `DISTRIBUTOR_HOPPING_UNRECOUPED_RISK` and `COLLABORATOR_SPLIT_SHEET_VERIFICATION`
+       and generates the required closing document checklist.
+    """
+    from services.spacemusic.buyer_router import route_catalog_to_institutional_buyers
+    from services.spacemusic.models import CatalogApplication
+    from services.valuation.ai_profile_detector import ReleaseMetadataItem
+    from services.valuation.lead_lag_and_title_forensics import (
+        ChainOfTitleStatus,
+        LeadLagSignalStatus,
+    )
+
+    # Case 1: Pre-Clawback Dump + Distributor Hopping + Collaborator Split Exposure
+    dump_inp = CatalogValuationInput(
+        catalog_title="Dumped Catalog",
+        artist_or_label_name="Hopper Artist",
+        distributor_or_admin="DistroKid",
+        ownership_share_pct=100.0,
+        declared_ltm_amount=36000.0,
+        declared_currency="EUR",
+        statements_verified=True,
+        spotify_followers=850,
+        spotify_monthly_listeners=120,  # Crashed in real-time despite €3k/mo in trailing statements!
+        dsp_share={"spotify": 0.80, "apple_music": 0.20},
+        monthly_history=[
+            MonthlyStatementPoint(period=f"2025-{m:02d}", net_royalties_eur=3000.0, streams=1000000)
+            for m in range(1, 13)
+        ],
+        releases=[
+            ReleaseMetadataItem(
+                title="Big Hit (feat. Lil Guest & ProducerX)",
+                release_date=date(2024, 6, 1),
+                release_type="SINGLE",
+                track_count=1,
+                label="Create Music Group / Empire",
+            ),
+            ReleaseMetadataItem(
+                title="Recent Reupload",
+                release_date=date(2026, 2, 1),
+                release_type="SINGLE",
+                track_count=1,
+                label="9912345 Records DK",
+            ),
+        ],
+        tracks=[
+            TrackInput(
+                isrc="USHOP2400001",
+                title="Big Hit (feat. Lil Guest & ProducerX)",
+                release_date=date(2024, 6, 1),
+                ltm_royalties_eur=36000.0,
+                annual_streams=12000000,
+                spotify_label="Create Music Group / Empire",
+            )
+        ],
+    )
+    dump_out = engine.evaluate(dump_inp, reference_date=date(2026, 10, 14))
+
+    assert dump_out.lead_lag_arbitrage is not None
+    assert dump_out.lead_lag_arbitrage.signal_status == LeadLagSignalStatus.PRE_CLAWBACK_DUMP_WARNING
+    assert dump_out.lead_lag_arbitrage.real_time_velocity_ratio < 0.35
+
+    assert dump_out.chain_of_title is not None
+    assert dump_out.chain_of_title.title_status == ChainOfTitleStatus.ENCUMBRANCE_OR_HOPPING_ALERT
+    assert dump_out.chain_of_title.distributor_hopping_detected is True
+    assert len(dump_out.chain_of_title.collaborator_tracks_detected) == 1
+
+    flag_codes = {rf.code for rf in dump_out.risk_flags}
+    assert "PRE_CLAWBACK_DUMP_WARNING" in flag_codes
+    assert "DISTRIBUTOR_HOPPING_UNRECOUPED_RISK" in flag_codes
+    assert "COLLABORATOR_SPLIT_SHEET_VERIFICATION" in flag_codes
+
+    # Institutional router must block a Pre-Clawback Dump catalog
+    app_dump = CatalogApplication(artist_or_label_name="Hopper Artist", distributor_or_admin="DistroKid")
+    routing = route_catalog_to_institutional_buyers(app_dump, dump_out)
+    assert routing.eligible_for_syndication is False
+    assert "Pre-Clawback Dump Warning" in (routing.disqualification_reason or "")
+
+
+
 
 
 

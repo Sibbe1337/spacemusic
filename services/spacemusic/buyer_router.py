@@ -251,11 +251,15 @@ def route_catalog_to_institutional_buyers(
         )
 
     flag_codes = {rf.code for rf in valuation.risk_flags}
-    if "DTW_ARTIFICIAL_STEP_PLATEAU" in flag_codes or "IMPLIED_STREAM_REVENUE_MISMATCH" in flag_codes:
+    if (
+        "DTW_ARTIFICIAL_STEP_PLATEAU" in flag_codes
+        or "IMPLIED_STREAM_REVENUE_MISMATCH" in flag_codes
+        or "PRE_CLAWBACK_DUMP_WARNING" in flag_codes
+    ):
         return InstitutionalRoutingReport(
             eligible_for_syndication=False,
             disqualification_reason=(
-                "Blocked by SPACE Stream Forensics (DTW Artificial Step-Plateau or Extreme Implied-Revenue Mismatch)."
+                "Blocked by SPACE Stream Forensics (DTW Artificial Step-Plateau, Pre-Clawback Dump Warning, or Extreme Implied-Revenue Mismatch)."
             ),
         )
 
@@ -379,6 +383,22 @@ def generate_institutional_underwriting_memo(
         for rf in valuation.risk_flags
     ) or "- None (`100/100 Integrity Score`)"
 
+    lead_lag_str = (
+        f"`{valuation.lead_lag_arbitrage.signal_status.value}` (RVR: `{valuation.lead_lag_arbitrage.real_time_velocity_ratio:.2f}x`)"
+        if valuation.lead_lag_arbitrage
+        else "`AWAITING_STAGE2_STATEMENT_COMPARISON`"
+    )
+    title_status_str = (
+        f"`{valuation.chain_of_title.title_status.value}`"
+        if valuation.chain_of_title
+        else "`CLEAN_SINGLE_OWNER`"
+    )
+    closing_docs_lines = (
+        "\n".join(f"- [ ] {doc}" for doc in valuation.chain_of_title.required_closing_documents)
+        if valuation.chain_of_title and valuation.chain_of_title.required_closing_documents
+        else "- [ ] Signed Catalog Purchase Agreement & Distributor LOD"
+    )
+
     return (
         f"# SPACE Institutional Underwriting Memo — {app_row.artist_or_label_name}\n\n"
         f"**Stage:** `{valuation.valuation_stage}` | **Status:** `{valuation.pipeline_status}`\n"
@@ -394,9 +414,13 @@ def generate_institutional_underwriting_memo(
         f"- **Catalog Integrity Score:** `{valuation.integrity_score:.1f} / 100.0`\n"
         f"- **AI & Fake Profile Status:** `{ai_status}`\n"
         f"- **DTW Lifecycle Trajectory:** `{dtw_arch}`\n"
+        f"- **90-Day Lead-Lag Arbitrage Check:** {lead_lag_str}\n"
+        f"- **Chain-of-Title & Split Status:** {title_status_str}\n"
         f"- **Track HHI Concentration:** `{valuation.track_hhi:.3f}`\n"
         f"### Active Risk Flags\n"
         f"{risk_lines}\n\n"
         f"## 3. Institutional Buy-Box Matches\n"
-        f"{buyer_lines}\n"
+        f"{buyer_lines}\n\n"
+        f"## 4. Required Closing & Chain-of-Title Checklist\n"
+        f"{closing_docs_lines}\n"
     )
