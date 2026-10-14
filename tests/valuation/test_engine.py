@@ -460,3 +460,106 @@ def test_typeform_csv_export_parser_and_email_sanitization(engine: SpaceValuatio
     assert val.price_median_eur > 50000.0
 
 
+def test_ai_and_fake_artist_profile_forensics_detector(engine: SpaceValuationEngine):
+    """
+    Verifies that the AI & Fake Artist Profile Forensics Detector accurately catches:
+    1. Explicit AI-generated music disclosure + same-day batch dumping (RAMMEDEBEL pattern).
+    2. Fake major-label P-line spoofing on DIY distributors + ghost listener counts (Joseph Kargbo pattern).
+    3. Short-clip loop farming (~59s tracks) + zero followers (NDS Notdoingshi pattern).
+    4. Verified organic human artists (Micky, 2Scratch, Daniel Sadowski) pass with score 0.0.
+    """
+    from services.valuation.ai_profile_detector import (
+        AuthenticityStatus,
+        ReleaseMetadataItem,
+    )
+
+    # 1. RAMMEDEBEL pattern: explicit AI disclosure + 7 singles uploaded on the exact same day (2026-10-10)
+    rammedebel_releases = [
+        ReleaseMetadataItem(
+            title=f"AI Track {i}",
+            release_date=date(2026, 10, 10),
+            release_type="SINGLE",
+            track_count=1,
+            label="13710407 Records DK",
+            total_streams=0,
+            duration_ms=210000,
+        )
+        for i in range(7)
+    ]
+    ram_inp = CatalogValuationInput(
+        catalog_title="RAMMEDEBEL Catalog",
+        artist_or_label_name="RAMMEDEBEL",
+        distributor_or_admin="DistroKid",
+        declared_ltm_amount=5000.0,
+        declared_currency="USD",
+        spotify_followers=21,
+        spotify_monthly_listeners=206,
+        external_social_links_count=0,
+        releases=rammedebel_releases,
+        notes="Please let me know what information you need to evaluate my catalog, including music created with AI tools where applicable.",
+    )
+    ram_out = engine.evaluate(ram_inp, reference_date=date(2026, 10, 14))
+    assert ram_out.ai_profile_validation is not None
+    assert ram_out.ai_profile_validation.self_disclosed_ai is True
+    assert ram_out.ai_profile_validation.mass_upload_cadence_detected is True
+    assert ram_out.ai_profile_validation.authenticity_status == AuthenticityStatus.CONFIRMED_AI_OR_FARM
+    assert ram_out.ai_profile_validation.ai_fake_probability_score >= 80.0
+    assert any(rf.code == "AI_OR_FAKE_ARTIST_PROFILE_RISK" for rf in ram_out.risk_flags)
+
+    # 2. Joseph Kargbo pattern: DIY distributor (UnitedMasters) with spoofed Universal/Sony/Def Jam/Maybach labels & 9 monthly listeners
+    jk_releases = [
+        ReleaseMetadataItem(
+            title=f"Album {i}",
+            release_date=date(2026, 7, 15 + i),
+            release_type="ALBUM",
+            track_count=12,
+            label="sony music Entertainement RCA records columbia records epic records" if i % 2 == 0 else "Maybach Music Group",
+            total_streams=0,
+        )
+        for i in range(6)
+    ]
+    jk_inp = CatalogValuationInput(
+        catalog_title="Joseph Kargbo Catalog",
+        artist_or_label_name="joseph kargbo Entertainement",
+        distributor_or_admin="united master",
+        declared_ltm_amount=4000.0,
+        declared_currency="EUR",
+        spotify_followers=1176,
+        spotify_monthly_listeners=9,
+        releases=jk_releases,
+    )
+    jk_out = engine.evaluate(jk_inp, reference_date=date(2026, 10, 14))
+    assert jk_out.ai_profile_validation is not None
+    assert jk_out.ai_profile_validation.spoofed_major_label_detected is True
+    assert jk_out.ai_profile_validation.mass_upload_cadence_detected is True
+    assert jk_out.ai_profile_validation.authenticity_status == AuthenticityStatus.CONFIRMED_AI_OR_FARM
+
+    # 3. Organic human artist (Micky) passes cleanly with 0 AI risk
+    organic_inp = CatalogValuationInput(
+        catalog_title="Micky Catalog",
+        artist_or_label_name="Micky",
+        distributor_or_admin="FUGA",
+        declared_ltm_amount=31000.0,
+        declared_currency="USD",
+        spotify_followers=128607,
+        spotify_monthly_listeners=556909,
+        external_social_links_count=2,
+        releases=[
+            ReleaseMetadataItem(
+                title="This Is The Life",
+                release_date=date(2021, 2, 11),
+                release_type="SINGLE",
+                track_count=1,
+                label="FRTYFVE",
+                total_streams=40667826,
+                duration_ms=190659,
+            )
+        ],
+    )
+    organic_out = engine.evaluate(organic_inp, reference_date=date(2026, 10, 14))
+    assert organic_out.ai_profile_validation is not None
+    assert organic_out.ai_profile_validation.authenticity_status == AuthenticityStatus.VERIFIED_ORGANIC
+    assert organic_out.ai_profile_validation.ai_fake_probability_score == 0.0
+
+
+

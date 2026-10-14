@@ -34,6 +34,12 @@ import numpy as np
 import yaml
 from pydantic import BaseModel, Field
 
+from .ai_profile_detector import (
+    AIProfileValidationReport,
+    AuthenticityStatus,
+    ReleaseMetadataItem,
+    evaluate_ai_and_fake_profile,
+)
 from .dtw_matcher import (
     DTWMatchResult,
     LifecycleArchetype,
@@ -178,6 +184,11 @@ class CatalogValuationInput(BaseModel):
 
     genres: List[str] = Field(default_factory=list)
     spotify_followers: Optional[int] = None
+    spotify_monthly_listeners: Optional[int] = None
+    spotify_verified: Optional[bool] = None
+    external_social_links_count: Optional[int] = None
+    organization_website: Optional[str] = None
+    releases: List[ReleaseMetadataItem] = Field(default_factory=list)
     spotify_popularity: Optional[int] = None
 
     tracks: List[TrackInput] = Field(default_factory=list)
@@ -269,6 +280,7 @@ class CatalogValuationOutput(BaseModel):
 
     risk_flags: List[RiskFlag] = Field(default_factory=list)
     dtw_analysis: Optional[DTWMatchResult] = None
+    ai_profile_validation: Optional[AIProfileValidationReport] = None
     deal_structure: DealStructureRecommendation
     yearly_projected_cashflows_p50_eur: List[float] = Field(default_factory=list)
     missing_data_fields: List[str] = Field(default_factory=list)
@@ -951,6 +963,53 @@ class SpaceValuationEngine:
                         for d in track_year1_decays
                     ]
 
+        # Forensics Check 9: AI & Fake Artist Profile Authenticity Detector
+        ai_report = evaluate_ai_and_fake_profile(
+            artist_or_label_name=inp.artist_or_label_name,
+            listen_url=inp.listen_url,
+            organization_website=inp.organization_website,
+            distributor_or_admin=inp.distributor_or_admin,
+            notes=inp.notes,
+            declared_ltm_eur=effective_cf0_eur,
+            spotify_followers=inp.spotify_followers,
+            spotify_monthly_listeners=inp.spotify_monthly_listeners,
+            spotify_verified=inp.spotify_verified,
+            external_social_links_count=inp.external_social_links_count,
+            releases=inp.releases,
+            track_durations_ms=[t.duration_ms for t in tracks if t.duration_ms is not None],
+            track_release_dates=[t.release_date for t in tracks if t.release_date is not None],
+            track_labels=[t.spotify_label for t in tracks if t.spotify_label],
+            track_streams=[t.annual_streams for t in tracks if t.annual_streams is not None],
+            reference_date=ref_date,
+        )
+        if ai_report.authenticity_status in {
+            AuthenticityStatus.CONFIRMED_AI_OR_FARM,
+            AuthenticityStatus.SUSPECTED_AI_OR_FAKE,
+            AuthenticityStatus.REVIEW_REQUIRED,
+        }:
+            sev = (
+                RiskSeverity.CRITICAL
+                if ai_report.authenticity_status == AuthenticityStatus.CONFIRMED_AI_OR_FARM
+                else RiskSeverity.HIGH
+                if ai_report.authenticity_status == AuthenticityStatus.SUSPECTED_AI_OR_FAKE
+                else RiskSeverity.MEDIUM
+            )
+            risk_flags.append(
+                RiskFlag(
+                    code="AI_OR_FAKE_ARTIST_PROFILE_RISK",
+                    severity=sev,
+                    title=f"AI / Synthetic Artist Profile Flag ({ai_report.authenticity_status.value})",
+                    description=(
+                        f"AI/Fake Profile Score {ai_report.ai_fake_probability_score:.0f}/100: "
+                        + " | ".join(ai_report.signals_detected)
+                    ),
+                    discount_rate_bps_impact=ai_report.recommended_discount_bps,
+                    haircut_pct_impact=ai_report.recommended_haircut_pct,
+                )
+            )
+            if ai_report.recommended_haircut_pct > 0:
+                effective_cf0_eur = max(0.0, effective_cf0_eur * (1.0 - ai_report.recommended_haircut_pct))
+
         dollar_weighted_age_months = float(
             sum(a * w for a, w in zip(track_ages_months, track_weights))
         )
@@ -1180,6 +1239,7 @@ class SpaceValuationEngine:
             implied_blended_rpm_usd=round(implied_rpm_usd, 6) if implied_rpm_usd is not None else None,
             risk_flags=risk_flags,
             dtw_analysis=dtw_result,
+            ai_profile_validation=ai_report,
             deal_structure=deal_structure,
             yearly_projected_cashflows_p50_eur=[round(v, 2) for v in yearly_cfs_p50],
             missing_data_fields=missing_fields,

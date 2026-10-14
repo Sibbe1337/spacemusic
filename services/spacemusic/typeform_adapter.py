@@ -358,6 +358,7 @@ def application_to_valuation_input(app_row: CatalogApplication) -> CatalogValuat
         declared_ltm_amount=app_row.declared_ltm_amount,
         declared_currency=app_row.declared_currency,
         statements_verified=app_row.statements_verified,
+        organization_website=app_row.organization_website,
         notes=app_row.rights_notes,
     )
 
