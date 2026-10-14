@@ -853,6 +853,129 @@ def test_lead_lag_arbitrage_and_chain_of_title_forensics(engine: SpaceValuationE
     assert "Pre-Clawback Dump Warning" in (routing.disqualification_reason or "")
 
 
+def test_heterogeneous_symphonic_csv_and_youtube_studio_xlsx_ingestion(engine: SpaceValuationEngine):
+    """
+    Verifies native OpenXML `.xlsx` parsing (`read_xlsx_worksheets`, `convert_xlsx_to_csv_text`)
+    and multi-attachment heterogeneous merging (`parse_multi_attachment_statements`) for a label
+    that submits both a Symphonic CSV statement (`Reporting Period` = `MAR-26`, `Royalty ($US)`)
+    and a multi-sheet YouTube Studio Analytics `.xlsx` export (`Revenus estimés (MAD)` + Sheet 3
+    monthly `Vues engagées`).
+    """
+    import base64
+    import io
+    import zipfile
+    from services.spacemusic.inbox_ingestor import (
+        InboundAttachmentPayload,
+        InboundEmailStatementWebhook,
+        ingest_inbound_email_statements,
+    )
+    from services.spacemusic.models import CatalogApplication
+
+    def _build_minimal_youtube_xlsx(total_mad: float, months_views: list[tuple[str, int]]) -> bytes:
+        ns = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+        s1_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<worksheet xmlns="{ns}"><sheetData>
+  <row r="1">
+    <c r="A1" t="inlineStr"><is><t>Contenu</t></is></c>
+    <c r="B1" t="inlineStr"><is><t>Titre de la vidéo</t></is></c>
+    <c r="C1" t="inlineStr"><is><t>Heure de publication de la vidéo</t></is></c>
+    <c r="D1" t="inlineStr"><is><t>Vues engagées</t></is></c>
+    <c r="E1" t="inlineStr"><is><t>Revenus estimés (MAD)</t></is></c>
+  </row>
+  <row r="2">
+    <c r="A2" t="inlineStr"><is><t>Total</t></is></c>
+    <c r="B2" t="inlineStr"><is><t></t></is></c>
+    <c r="C2" t="inlineStr"><is><t></t></is></c>
+    <c r="D2"><v>5900000</v></c>
+    <c r="E2"><v>{total_mad}</v></c>
+  </row>
+  <row r="3">
+    <c r="A3" t="inlineStr"><is><t>UMkaxT4nK-M</t></is></c>
+    <c r="B3" t="inlineStr"><is><t>Majda Raoui - Ach dani douar zine REGGADA 2023</t></is></c>
+    <c r="C3" t="inlineStr"><is><t>Jun 30, 2023</t></is></c>
+    <c r="D3"><v>3500000</v></c>
+    <c r="E3"><v>{total_mad * 0.6}</v></c>
+  </row>
+  <row r="4">
+    <c r="A4" t="inlineStr"><is><t>E6QA9uGBJDA</t></is></c>
+    <c r="B4" t="inlineStr"><is><t>Chaba Hajar - 3la Darbouka 3ndha</t></is></c>
+    <c r="C4" t="inlineStr"><is><t>Aug 15, 2020</t></is></c>
+    <c r="D4"><v>2400000</v></c>
+    <c r="E4"><v>{total_mad * 0.4}</v></c>
+  </row>
+</sheetData></worksheet>"""
+        s2_xml = f'<worksheet xmlns="{ns}"><sheetData><row r="1"><c r="A1" t="inlineStr"><is><t>Date</t></is></c></row></sheetData></worksheet>'
+        s3_rows = ['<row r="1"><c r="A1" t="inlineStr"><is><t>Date</t></is></c><c r="B1" t="inlineStr"><is><t>Vues engagées</t></is></c></row>']
+        for idx, (m_str, v_cnt) in enumerate(months_views, start=2):
+            s3_rows.append(
+                f'<row r="{idx}"><c r="A{idx}" t="inlineStr"><is><t>{m_str}</t></is></c><c r="B{idx}"><v>{v_cnt}</v></c></row>'
+            )
+        s3_xml = f'<worksheet xmlns="{ns}"><sheetData>{"".join(s3_rows)}</sheetData></worksheet>'
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            zf.writestr("xl/workbook.xml", f'<workbook xmlns="{ns}"></workbook>')
+            zf.writestr("xl/worksheets/sheet1.xml", s1_xml)
+            zf.writestr("xl/worksheets/sheet2.xml", s2_xml)
+            zf.writestr("xl/worksheets/sheet3.xml", s3_xml)
+        return buf.getvalue()
+
+    symphonic_csv = (
+        '\ufeff"Reporting Period",Label,Release Name,Release Artists,UPC Code,Track Title,ISRC Code,'
+        'Track Artists,Digital Service Provider,Activity Period,Territory,Sale or Void,Count,Royalty ($US)\n'
+        'MAR-26,phoenix records,Mateswa walo,Chaba Wijdane,195729253100,Mateswa walo,QZTRX2133482,'
+        'Chaba Wijdane,Spotify,March 2026,MA,Sale,45000,155.50\n'
+        'MAR-26,phoenix records,Jitk ya Bhar,Cheb Finani,195729253101,Jitk ya Bhar,GBWUL1922158,'
+        'Cheb Finani,YouTube Content ID,March 2026,DZ,Sale,90000,70.00\n'
+    )
+    yt_months = [(f"2025-{m:02d}", 480000 + m * 5000) for m in range(1, 13)]
+    yt_xlsx_bytes = _build_minimal_youtube_xlsx(50264.85, yt_months)
+
+    phoenix_app = CatalogApplication(
+        contact_name="Mohammed Belmokhtar",
+        contact_email="phoenixstudio48@gmail.com",
+        artist_or_label_name="phoenix records label",
+        declared_ltm_amount=8340.0,
+        declared_currency="USD",
+        rights_scope="both",
+        distributor_or_admin="Symphonic",
+        rights_notes="Raï / Reggada Moroccan music label catalog",
+    )
+    store = {phoenix_app.id: phoenix_app}
+
+    webhook = InboundEmailStatementWebhook(
+        sender_email="phoenixstudio48@gmail.com",
+        sender_name="Mohammed Belmokhtar",
+        subject="Re: Your SPACE catalog review — phoenix records label",
+        attachments=[
+            InboundAttachmentPayload(
+                filename="phoenixrecords_MAR-26.csv",
+                content_text=symphonic_csv,
+            ),
+            InboundAttachmentPayload(
+                filename="Last 365 Phoenix.xlsx",
+                content_base64=base64.b64encode(yt_xlsx_bytes).decode("ascii"),
+            ),
+        ],
+    )
+
+    res = ingest_inbound_email_statements(
+        webhook,
+        applications_store=store,
+        engine=engine,
+        reference_date=date(2026, 10, 14),
+    )
+
+    assert res.matched_existing_application is True
+    assert "Symphonic" in res.detected_distributor
+    assert "YouTube Studio" in res.detected_distributor
+    assert res.valuation.valuation_stage == "STAGE_2_STATEMENT_VERIFIED"
+    assert res.valuation.genre_family == GenreFamily.LATIN_AFRO
+    assert res.valuation.baseline.effective_cf0_eur > 6000.0
+    assert res.valuation.price_median_eur > 12000.0
+    assert res.institutional_routing.eligible_for_syndication is True
+
+
+
 
 
 

@@ -151,7 +151,10 @@ def infer_genre_from_application(app_row: CatalogApplication) -> str:
         return "ambient"
     if re.search(r"\b(lofi|lo-fi|chillhop|study beats)\b", blob):
         return "lo-fi"
-    if re.search(r"\b(raspe|salsa|salseo|reggaeton|latin|afrobeats|corrido)\b", blob):
+    if re.search(
+        r"\b(raspe|salsa|salseo|reggaeton|latin|afrobeats|afro|corrido|reggada|rai|raï|chaabi|maghreb|arabic|oriental)\b",
+        blob,
+    ):
         return "latin"
     if re.search(r"\b(trap nation|tribal trap|trap|rap|hip hop|hip-hop|beatz|beatzs|phonk|drill|brokeasf)\b", blob):
         return "hip-hop"

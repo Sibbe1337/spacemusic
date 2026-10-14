@@ -21,10 +21,13 @@ from __future__ import annotations
 import csv
 import io
 import re
+import statistics
+import xml.etree.ElementTree as ET
+import zipfile
 from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from pydantic import BaseModel, Field
 
@@ -93,7 +96,17 @@ HEADER_ALIASES = {
         "transaction month",
         "usage period",
     ],
-    "isrc": ["isrc", "isrc code", "track isrc", "recording isrc", "asset isrc"],
+    "isrc": [
+        "isrc",
+        "isrc code",
+        "track isrc",
+        "recording isrc",
+        "asset isrc",
+        "code isrc",
+        "contenu",
+        "content",
+        "video id",
+    ],
     "track_title": [
         "title",
         "song title",
@@ -101,17 +114,24 @@ HEADER_ALIASES = {
         "track name",
         "track",
         "release title",
+        "release name",
         "asset title",
         "song",
         "recording title",
+        "titre de la vidéo",
+        "video title",
     ],
     "artist_name": [
         "artist",
         "artist name",
         "track artist",
+        "track artists",
+        "release artists",
         "primary artist",
         "display artist",
         "main artist",
+        "channel name",
+        "chaîne",
     ],
     "dsp_store": [
         "store",
@@ -125,6 +145,7 @@ HEADER_ALIASES = {
         "retailer",
         "digital service provider",
         "source",
+        "plateforme",
     ],
     "country_code": [
         "country of sale",
@@ -144,9 +165,15 @@ HEADER_ALIASES = {
         "plays",
         "units sold",
         "total streams",
+        "vues engagées",
+        "engaged views",
+        "vues",
+        "views",
     ],
     "earnings": [
         "earnings (usd)",
+        "royalty ($us)",
+        "royalty (usd)",
         "earnings",
         "net royalty",
         "net revenue",
@@ -161,9 +188,71 @@ HEADER_ALIASES = {
         "your revenue",
         "net payout",
         "net share",
+        "revenus estimés (mad)",
+        "revenus estimés (eur)",
+        "revenus estimés (usd)",
+        "revenus estimés",
+        "estimated revenue (usd)",
+        "estimated revenue (eur)",
+        "estimated revenue",
     ],
-    "currency": ["currency", "payable currency", "reporting currency", "sale currency", "statement currency"],
-    "release_date": ["release date", "original release date", "street date", "first release date"],
+    "currency": [
+        "currency",
+        "payable currency",
+        "reporting currency",
+        "sale currency",
+        "statement currency",
+    ],
+    "release_date": [
+        "release date",
+        "original release date",
+        "street date",
+        "first release date",
+        "heure de publication de la vidéo",
+        "video publish time",
+    ],
+}
+
+MONTH_NAME_MAP = {
+    "jan": 1,
+    "january": 1,
+    "janvier": 1,
+    "feb": 2,
+    "february": 2,
+    "février": 2,
+    "fevrier": 2,
+    "mar": 3,
+    "march": 3,
+    "mars": 3,
+    "apr": 4,
+    "april": 4,
+    "avril": 4,
+    "may": 5,
+    "mai": 5,
+    "jun": 6,
+    "june": 6,
+    "juin": 6,
+    "jul": 7,
+    "july": 7,
+    "juillet": 7,
+    "aug": 8,
+    "august": 8,
+    "août": 8,
+    "aout": 8,
+    "sep": 9,
+    "sept": 9,
+    "september": 9,
+    "septembre": 9,
+    "oct": 10,
+    "october": 10,
+    "octobre": 10,
+    "nov": 11,
+    "november": 11,
+    "novembre": 11,
+    "dec": 12,
+    "december": 12,
+    "décembre": 12,
+    "decembre": 12,
 }
 
 
@@ -190,6 +279,15 @@ def _normalize_period(raw: str) -> Optional[str]:
         month = p1 if p1 <= 12 else p2
         if 1 <= month <= 12:
             return f"{year:04d}-{month:02d}"
+    # Match MON-YY or MONTH YYYY (e.g. "MAR-26", "March 2026", "Oct-2025")
+    m4 = re.match(r"^([A-Za-zÀ-ÿ]+)[\s\-_/]+(\d{2,4})$", s)
+    if m4:
+        m_name = m4.group(1).strip().lower()
+        yr_raw = int(m4.group(2))
+        year = (2000 + yr_raw) if yr_raw < 100 else yr_raw
+        month = MONTH_NAME_MAP.get(m_name) or MONTH_NAME_MAP.get(m_name[:3])
+        if month and 1990 <= year <= 2100:
+            return f"{year:04d}-{month:02d}"
     return None
 
 
@@ -197,7 +295,17 @@ def _parse_date(raw: Optional[str]) -> Optional[date]:
     if not raw:
         return None
     s = raw.strip()
-    for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%m/%d/%Y", "%d/%m/%Y", "%Y-%m"):
+    for fmt in (
+        "%Y-%m-%d",
+        "%Y/%m/%d",
+        "%m/%d/%Y",
+        "%d/%m/%Y",
+        "%Y-%m",
+        "%b %d, %Y",
+        "%B %d, %Y",
+        "%d %b %Y",
+        "%d %B %Y",
+    ):
         try:
             dt = datetime.strptime(s, fmt)
             return dt.date()
@@ -265,14 +373,46 @@ def _detect_column_mapping(headers: List[str]) -> Tuple[Dict[str, str], str]:
         distributor = "UnitedMasters"
     elif "your revenue" in lower_headers or ("statement period" in lower_headers and "digital service provider" in lower_headers):
         distributor = "Too Lost"
-    elif "net share" in lower_headers or ("usage period" in lower_headers and "partner" in lower_headers):
+    elif (
+        "net share" in lower_headers
+        or "royalty ($us)" in lower_headers
+        or "sale or void" in lower_headers
+        or ("usage period" in lower_headers and "partner" in lower_headers)
+        or ("reporting period" in lower_headers and "activity period" in lower_headers and "digital service provider" in lower_headers)
+    ):
         distributor = "Symphonic"
+    elif (
+        "titre de la vidéo" in lower_headers
+        or "video title" in lower_headers
+        or "vues engagées" in lower_headers
+        or "engaged views" in lower_headers
+    ):
+        distributor = "YouTube Studio"
     elif "asset title" in lower_headers or "royalty period" in lower_headers:
         distributor = "FUGA / Enterprise"
     else:
         distributor = "Standard CSV"
 
     return mapping, distributor
+
+
+def _infer_header_currency(earnings_header: str, headers: List[str], fallback: str) -> str:
+    eh = (earnings_header or "").strip().upper()
+    m = re.search(r"\(([A-Z$€£]{2,4})\)", eh)
+    if m:
+        tok = m.group(1)
+        if tok in ("$US", "USD", "US$"):
+            return "USD"
+        if tok in ("EUR", "€"):
+            return "EUR"
+        if tok in ("GBP", "£"):
+            return "GBP"
+        return tok
+    lower_headers = [h.strip().lower() for h in headers]
+    if "earnings (usd)" in lower_headers or "royalty ($us)" in lower_headers:
+        return "USD"
+    return fallback
+
 
 
 def parse_statement_csv(
@@ -306,30 +446,37 @@ def parse_statement_csv(
     reader = csv.DictReader(io.StringIO("\n".join(lines)), delimiter=delimiter)
     headers = list(reader.fieldnames or [])
     col_map, detected_distributor = _detect_column_mapping(headers)
+    inferred_hdr_currency = _infer_header_currency(
+        col_map.get("earnings", ""), headers, default_currency
+    )
 
     rows: List[NormalizedStatementRow] = []
     for raw_row in reader:
         period_raw = raw_row.get(col_map.get("sale_month", ""), "")
-        sale_month = _normalize_period(period_raw) or "2026-01"
+        sale_month = _normalize_period(period_raw)
+        if not sale_month and "Activity Period" in raw_row:
+            sale_month = _normalize_period(raw_row.get("Activity Period", ""))
+        sale_month = sale_month or "2026-01"
 
         isrc = (raw_row.get(col_map.get("isrc", ""), "") or "").strip().upper()
         title = (raw_row.get(col_map.get("track_title", ""), "") or "Untitled Track").strip()
+        if isrc.lower() in ("total", "totals", "grand total") or title.lower() in ("total", "totals"):
+            continue
         if not isrc:
             # Generate deterministic pseudo-ISRC from track title if missing
             slug = re.sub(r"[^A-Z0-9]", "", title.upper())[:8] or "TRACK"
             isrc = f"SPACE{slug}"
 
         artist = (raw_row.get(col_map.get("artist_name", ""), "") or "Unknown Artist").strip()
-        dsp = _normalize_dsp_name(raw_row.get(col_map.get("dsp_store", ""), "spotify"))
+        default_dsp = "youtube" if detected_distributor == "YouTube Studio" else "spotify"
+        dsp = _normalize_dsp_name(raw_row.get(col_map.get("dsp_store", ""), default_dsp))
         country = (raw_row.get(col_map.get("country_code", ""), "US") or "US").strip().upper()[:2]
         streams = max(0, _parse_int(raw_row.get(col_map.get("streams", ""), 0)))
 
         raw_earnings = _parse_float(raw_row.get(col_map.get("earnings", ""), 0.0))
         row_currency = (
-            raw_row.get(col_map.get("currency", ""), "") or default_currency
+            raw_row.get(col_map.get("currency", ""), "") or inferred_hdr_currency
         ).strip().upper()
-        if "earnings (usd)" in [h.strip().lower() for h in headers]:
-            row_currency = "USD"
 
         net_eur = convert_to_eur(raw_earnings, row_currency, rules)
         rel_date = _parse_date(raw_row.get(col_map.get("release_date", ""), None))
@@ -348,6 +495,235 @@ def parse_statement_csv(
                 release_date=rel_date,
             )
         )
+
+    return _summarize_normalized_rows(rows, detected_distributor, rules)
+
+
+def _col_letters_to_index(cell_ref: str) -> int:
+    m = re.match(r"^([A-Za-z]+)", cell_ref or "")
+    if not m:
+        return 0
+    idx = 0
+    for ch in m.group(1).upper():
+        idx = idx * 26 + (ord(ch) - ord("A") + 1)
+    return max(0, idx - 1)
+
+
+def read_xlsx_worksheets(raw_bytes: bytes) -> List[Tuple[str, List[List[str]]]]:
+    """
+    Zero-dependency OpenXML `.xlsx` reader using Python's standard library (`zipfile` + `xml.etree`).
+    Returns a list of `(sheet_name, rows_matrix)` tuples across all worksheets in the workbook.
+    """
+    ns = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
+    sheets_out: List[Tuple[str, List[List[str]]]] = []
+    with zipfile.ZipFile(io.BytesIO(raw_bytes), "r") as zf:
+        shared_strings: List[str] = []
+        if "xl/sharedStrings.xml" in zf.namelist():
+            ss_root = ET.fromstring(zf.read("xl/sharedStrings.xml"))
+            for si in ss_root.findall(f".//{ns}si"):
+                texts = [t.text or "" for t in si.findall(f".//{ns}t")]
+                shared_strings.append("".join(texts))
+
+        sheet_files = sorted(
+            name
+            for name in zf.namelist()
+            if name.startswith("xl/worksheets/sheet") and name.endswith(".xml")
+        )
+        for s_name in sheet_files:
+            s_root = ET.fromstring(zf.read(s_name))
+            matrix: List[List[str]] = []
+            for row_el in s_root.findall(f".//{ns}row"):
+                cells = row_el.findall(f"{ns}c")
+                if not cells:
+                    continue
+                row_vals: List[str] = []
+                for pos, c_el in enumerate(cells):
+                    ref = c_el.attrib.get("r", "")
+                    col_idx = _col_letters_to_index(ref) if ref else pos
+                    while len(row_vals) < col_idx:
+                        row_vals.append("")
+                    c_type = c_el.attrib.get("t", "")
+                    v_el = c_el.find(f"{ns}v")
+                    is_el = c_el.find(f"{ns}is")
+                    val_str = ""
+                    if v_el is not None and v_el.text is not None:
+                        if c_type == "s":
+                            s_idx = int(v_el.text)
+                            val_str = shared_strings[s_idx] if 0 <= s_idx < len(shared_strings) else ""
+                        else:
+                            val_str = v_el.text
+                    elif is_el is not None:
+                        val_str = "".join(t.text or "" for t in is_el.findall(f".//{ns}t"))
+                    row_vals.append(val_str.strip())
+                if any(v for v in row_vals):
+                    matrix.append(row_vals)
+            if matrix:
+                sheets_out.append((s_name, matrix))
+    return sheets_out
+
+
+def convert_xlsx_to_csv_text(
+    raw_bytes: bytes,
+    *,
+    filename: str = "statement.xlsx",
+    reference_end_month: str = "2026-09",
+) -> str:
+    """
+    Converts a distributor or YouTube Studio `.xlsx` workbook into a normalized CSV text
+    suitable for `parse_statement_csv()`.
+
+    Supports:
+    1. Standard single-sheet or multi-sheet distributor `.xlsx` files (TuneCore, Symphonic, Believe, FUGA).
+    2. Multi-sheet YouTube Studio Analytics exports (`Table data` / `Données du tableau` in Sheet 1
+       with per-video revenues + `Totals` / `Totaux` in Sheet 3 with monthly engaged views),
+       proportionally allocating LTM or lifetime YouTube video revenue across active months so both
+       track-level HHI/decay and monthly time-series DTW trajectories are preserved.
+    """
+    sheets = read_xlsx_worksheets(raw_bytes)
+    if not sheets:
+        return ""
+
+    sheet1_headers = [h.strip() for h in sheets[0][1][0]]
+    lower_s1 = {h.lower() for h in sheet1_headers if h}
+    is_youtube_studio = any(
+        k in lower_s1
+        for k in ("titre de la vidéo", "video title", "vues engagées", "engaged views")
+    )
+
+    if is_youtube_studio:
+        # Parse Sheet 1 per-video totals and revenue
+        s1_rows = sheets[0][1]
+        col_map_s1, _ = _detect_column_mapping(sheet1_headers)
+        hdr_idx = {h: i for i, h in enumerate(sheet1_headers)}
+
+        def _get_cell(r_list: List[str], canonical: str, default: str = "") -> str:
+            col_name = col_map_s1.get(canonical, "")
+            idx = hdr_idx.get(col_name, -1)
+            return r_list[idx] if 0 <= idx < len(r_list) else default
+
+        earnings_col_name = col_map_s1.get("earnings", "Revenus estimés (MAD)")
+        yt_currency = _infer_header_currency(earnings_col_name, sheet1_headers, "MAD")
+
+        video_records: List[Dict[str, Any]] = []
+        total_video_rev = 0.0
+        total_video_views = 0
+
+        for r in s1_rows[1:]:
+            vid_id = _get_cell(r, "isrc", "").strip()
+            vid_title = _get_cell(r, "track_title", "").strip()
+            if not vid_id or vid_id.lower() in ("total", "totaux", "totals"):
+                continue
+            views = max(0, _parse_int(_get_cell(r, "streams", "0")))
+            rev = max(0.0, _parse_float(_get_cell(r, "earnings", "0")))
+            pub_date = _parse_date(_get_cell(r, "release_date", ""))
+            # Extract artist from "Artist - Track" if present
+            if " - " in vid_title:
+                artist_part = vid_title.split(" - ", 1)[0].strip()
+            elif " | " in vid_title:
+                artist_part = vid_title.split(" | ", 1)[0].strip()
+            else:
+                artist_part = "YouTube Channel"
+            video_records.append(
+                {
+                    "id": f"YT{re.sub(r'[^A-Za-z0-9]', '', vid_id)[:10].upper()}",
+                    "title": vid_title or vid_id,
+                    "artist": artist_part,
+                    "views": views,
+                    "rev": rev,
+                    "release_date": pub_date.isoformat() if pub_date else "",
+                }
+            )
+            total_video_rev += rev
+            total_video_views += views
+
+        # Check Sheet 3 for monthly engaged-view series (`Date`, `Vues engagées` / `Engaged views`)
+        monthly_views_series: List[Tuple[str, int]] = []
+        if len(sheets) >= 3:
+            s3_rows = sheets[2][1]
+            for r in s3_rows[1:]:
+                if len(r) >= 2:
+                    m_norm = _normalize_period(r[0])
+                    v_cnt = max(0, _parse_int(r[1]))
+                    if m_norm and v_cnt > 0 and m_norm <= reference_end_month:
+                        monthly_views_series.append((m_norm, v_cnt))
+
+        # Keep trailing 36 months (or 12 months for a Last-365 export) to avoid double-counting or partial current month
+        is_last_365 = "365" in filename.lower() or len(monthly_views_series) <= 14
+        if is_last_365 and len(monthly_views_series) > 12:
+            monthly_views_series = monthly_views_series[-12:]
+        elif len(monthly_views_series) > 36:
+            monthly_views_series = monthly_views_series[-36:]
+
+        out_buf = io.StringIO()
+        writer = csv.writer(out_buf)
+        writer.writerow(
+            [
+                "Sale Month",
+                "ISRC",
+                "Video Title",
+                "Artist Name",
+                "DSP",
+                "Country",
+                "Engaged Views",
+                "Earnings",
+                "Currency",
+                "Release Date",
+            ]
+        )
+
+        if monthly_views_series and video_records:
+            total_series_views = max(1, sum(v for _, v in monthly_views_series))
+            # Scale revenue to the selected window if lifetime workbook was sliced to 36m
+            window_view_ratio = (
+                1.0
+                if is_last_365
+                else min(1.0, total_series_views / max(1, total_video_views))
+            )
+            top_videos = video_records[:40]
+            top_rev_sum = max(1e-6, sum(v["rev"] for v in top_videos))
+            top_view_sum = max(1, sum(v["views"] for v in top_videos))
+
+            for m_str, m_views in monthly_views_series:
+                m_share = m_views / total_series_views
+                for v in top_videos:
+                    v_rev_share = (
+                        (v["rev"] / top_rev_sum)
+                        if total_video_rev > 0
+                        else (v["views"] / top_view_sum)
+                    )
+                    v_view_share = v["views"] / top_view_sum
+                    alloc_rev = total_video_rev * window_view_ratio * m_share * v_rev_share
+                    alloc_views = int(round(m_views * v_view_share))
+                    if alloc_rev > 0 or alloc_views > 0:
+                        writer.writerow(
+                            [
+                                m_str,
+                                v["id"],
+                                v["title"],
+                                v["artist"],
+                                "YouTube",
+                                "MA",
+                                alloc_views,
+                                f"{alloc_rev:.4f}",
+                                yt_currency,
+                                v["release_date"],
+                            ]
+                        )
+            return out_buf.getvalue()
+
+    # Default single-sheet / generic Excel conversion
+    out_buf = io.StringIO()
+    writer = csv.writer(out_buf)
+    for r in sheets[0][1]:
+        writer.writerow(r)
+    return out_buf.getvalue()
+
+
+def _summarize_normalized_rows(
+    rows: List[NormalizedStatementRow],
+    detected_distributor: str,
+    rules: Dict[str, Any],
+) -> ParsedStatementSummary:
 
     if not rows:
         return ParsedStatementSummary(detected_distributor=detected_distributor, row_count=0)
@@ -512,3 +888,172 @@ def parse_statement_csv(
         country_share=country_share,
         benchmarks=benchmarks,
     )
+
+
+def merge_statement_summaries(
+    summaries: Sequence[ParsedStatementSummary],
+) -> ParsedStatementSummary:
+    """
+    Merges multiple `ParsedStatementSummary` objects (for example, a Symphonic master/Content-ID
+    CSV statement + a direct YouTube Studio Analytics `.xlsx` statement) into a single unified
+    `ParsedStatementSummary` while reconciling overlapping vs. non-overlapping time windows.
+    """
+    valid = [s for s in summaries if s.row_count > 0]
+    if not valid:
+        return ParsedStatementSummary(detected_distributor="Empty", row_count=0)
+    if len(valid) == 1:
+        return valid[0]
+
+    # Deduplicate if both a "Last 365" and "Lifetime" YouTube Studio workbook were uploaded
+    yt_summaries = [s for s in valid if s.detected_distributor == "YouTube Studio"]
+    other_summaries = [s for s in valid if s.detected_distributor != "YouTube Studio"]
+    if len(yt_summaries) > 1:
+        # Prefer the 12-month Last 365 workbook for LTM accuracy, but take monthly history from the longest one
+        yt_sorted_by_len = sorted(yt_summaries, key=lambda s: s.months_covered)
+        ltm_yt = yt_sorted_by_len[0]
+        long_yt = yt_sorted_by_len[-1]
+        # Scale the long_yt monthly history so its trailing 12 months match ltm_yt's exact LTM revenue
+        long_l12 = sum(p.net_royalties_eur for p in long_yt.monthly_history[-12:])
+        scale = (ltm_yt.ltm_net_royalty_eur / long_l12) if long_l12 > 0 else 1.0
+        scaled_history = [
+            MonthlyStatementPoint(
+                period=p.period,
+                net_royalties_eur=round(p.net_royalties_eur * scale, 4),
+                streams=p.streams,
+            )
+            for p in long_yt.monthly_history
+        ]
+        merged_yt = ParsedStatementSummary(
+            detected_distributor="YouTube Studio",
+            row_count=ltm_yt.row_count + long_yt.row_count,
+            period_start=long_yt.period_start,
+            period_end=long_yt.period_end,
+            months_covered=len(scaled_history),
+            total_streams=long_yt.total_streams,
+            total_net_royalty_eur=round(sum(p.net_royalties_eur for p in scaled_history), 2),
+            ltm_net_royalty_eur=ltm_yt.ltm_net_royalty_eur,
+            ltm_streams=ltm_yt.ltm_streams,
+            tracks=ltm_yt.tracks,
+            monthly_history=scaled_history,
+            dsp_share=ltm_yt.dsp_share,
+            country_share=ltm_yt.country_share,
+            benchmarks=ltm_yt.benchmarks,
+        )
+        valid = other_summaries + [merged_yt]
+        if len(valid) == 1:
+            return valid[0]
+
+    dist_names: List[str] = []
+    for s in valid:
+        if s.detected_distributor not in dist_names:
+            dist_names.append(s.detected_distributor)
+    combined_distributor = " + ".join(dist_names)
+
+    # Combine LTM royalties and streams additively across distinct royalty sources
+    # (or average if identical distributor months were split across files)
+    same_distributor = len(set(s.detected_distributor for s in valid)) == 1
+    monthly_rev: Dict[str, float] = defaultdict(float)
+    monthly_streams: Dict[str, int] = defaultdict(int)
+    for s in valid:
+        for pt in s.monthly_history:
+            monthly_rev[pt.period] += pt.net_royalties_eur
+            monthly_streams[pt.period] += pt.streams or 0
+
+    sorted_months = sorted(monthly_rev.keys())
+    monthly_history = [
+        MonthlyStatementPoint(
+            period=m,
+            net_royalties_eur=round(monthly_rev[m], 4),
+            streams=monthly_streams[m],
+        )
+        for m in sorted_months
+    ]
+
+    if same_distributor:
+        l12 = sorted_months[-12:]
+        ann = 12.0 / max(1, len(l12))
+        combined_ltm_eur = round(sum(monthly_rev[m] for m in l12) * ann, 2)
+        combined_ltm_streams = int(round(sum(monthly_streams[m] for m in l12) * ann))
+    else:
+        combined_ltm_eur = round(sum(s.ltm_net_royalty_eur for s in valid), 2)
+        combined_ltm_streams = sum(s.ltm_streams for s in valid)
+        # Ensure trailing 12 months of monthly_history reflect the combined LTM run-rate
+        # when one source only uploaded a partial 1-quarter sample (e.g. Symphonic MAR-26)
+        raw_l12_sum = sum(monthly_rev[m] for m in sorted_months[-12:])
+        if 0 < raw_l12_sum < combined_ltm_eur * 0.85:
+            missing_annual_eur = combined_ltm_eur - raw_l12_sum
+            monthly_topup = missing_annual_eur / max(1, len(sorted_months[-12:]))
+            l12_set = set(sorted_months[-12:])
+            monthly_history = [
+                MonthlyStatementPoint(
+                    period=pt.period,
+                    net_royalties_eur=round(
+                        pt.net_royalties_eur + (monthly_topup if pt.period in l12_set else 0.0),
+                        4,
+                    ),
+                    streams=pt.streams,
+                )
+                for pt in monthly_history
+            ]
+
+    # Combine tracks by ISRC
+    track_map: Dict[str, TrackInput] = {}
+    for s in valid:
+        for t in s.tracks:
+            if t.isrc not in track_map:
+                track_map[t.isrc] = t.model_copy(deep=True) if hasattr(t, "model_copy") else t.copy(deep=True)
+            else:
+                existing = track_map[t.isrc]
+                existing.ltm_royalties_eur = round(
+                    (existing.ltm_royalties_eur or 0.0) + (t.ltm_royalties_eur or 0.0), 4
+                )
+                existing.annual_streams = (existing.annual_streams or 0) + (t.annual_streams or 0)
+
+    tracks_list = list(track_map.values())
+    total_track_ltm = max(1e-6, sum(t.ltm_royalties_eur or 0.0 for t in tracks_list))
+    for t in tracks_list:
+        t.revenue_share = round((t.ltm_royalties_eur or 0.0) / total_track_ltm, 6)
+    tracks_list.sort(key=lambda t: t.ltm_royalties_eur or 0.0, reverse=True)
+
+    # Combine DSP share weighted by LTM royalty
+    dsp_weighted: Dict[str, float] = defaultdict(float)
+    country_weighted: Dict[str, float] = defaultdict(float)
+    for s in valid:
+        w = max(1.0, s.ltm_net_royalty_eur)
+        for dsp, sh in s.dsp_share.items():
+            dsp_weighted[dsp] += sh * w
+        for c, sh in s.country_share.items():
+            country_weighted[c] += sh * w
+
+    dsp_denom = max(1e-6, sum(dsp_weighted.values()))
+    country_denom = max(1e-6, sum(country_weighted.values()))
+    dsp_share = {
+        k: round(v / dsp_denom, 4)
+        for k, v in sorted(dsp_weighted.items(), key=lambda kv: kv[1], reverse=True)
+    }
+    country_share = {
+        k: round(v / country_denom, 4)
+        for k, v in sorted(country_weighted.items(), key=lambda kv: kv[1], reverse=True)
+    }
+
+    all_benchmarks: List[EmpiricalBenchmarkEntry] = []
+    for s in valid:
+        all_benchmarks.extend(s.benchmarks)
+
+    return ParsedStatementSummary(
+        detected_distributor=combined_distributor,
+        row_count=sum(s.row_count for s in valid),
+        period_start=sorted_months[0] if sorted_months else None,
+        period_end=sorted_months[-1] if sorted_months else None,
+        months_covered=len(sorted_months),
+        total_streams=sum(s.total_streams for s in valid),
+        total_net_royalty_eur=round(sum(s.total_net_royalty_eur for s in valid), 2),
+        ltm_net_royalty_eur=combined_ltm_eur,
+        ltm_streams=combined_ltm_streams,
+        tracks=tracks_list,
+        monthly_history=monthly_history,
+        dsp_share=dsp_share,
+        country_share=country_share,
+        benchmarks=all_benchmarks[:50],
+    )
+

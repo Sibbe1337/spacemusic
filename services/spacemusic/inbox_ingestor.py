@@ -39,6 +39,8 @@ from services.valuation.engine import (
 )
 from services.valuation.statement_parser import (
     ParsedStatementSummary,
+    convert_xlsx_to_csv_text,
+    merge_statement_summaries,
     parse_statement_csv,
 )
 from .buyer_router import (
@@ -88,7 +90,8 @@ def _extract_csv_texts_from_attachments(
     attachments: Sequence[InboundAttachmentPayload],
 ) -> List[Tuple[str, str]]:
     """
-    Extracts `(filename, decoded_text)` pairs from raw text, base64, or `.zip` attachments.
+    Extracts `(filename, decoded_csv_text)` pairs from raw text, base64, `.xlsx` Excel
+    workbooks, or `.zip` archives (containing `.csv`, `.tsv`, `.txt`, or `.xlsx` files).
     """
     extracted: List[Tuple[str, str]] = []
     for att in attachments:
@@ -106,13 +109,36 @@ def _extract_csv_texts_from_attachments(
         if not raw_bytes:
             continue
 
+        is_xlsx = fname.lower().endswith(".xlsx")
+        if is_xlsx:
+            try:
+                csv_text = convert_xlsx_to_csv_text(raw_bytes, filename=fname)
+                if csv_text.strip():
+                    extracted.append((fname, csv_text))
+                continue
+            except Exception:
+                pass
+
         if fname.lower().endswith(".zip") or (raw_bytes[:4] == b"PK\x03\x04"):
             try:
                 with zipfile.ZipFile(io.BytesIO(raw_bytes)) as zf:
-                    for member in sorted(zf.namelist()):
+                    names = zf.namelist()
+                    # Check if this PK zip is actually an unmarked .xlsx OpenXML workbook
+                    if "xl/workbook.xml" in names:
+                        csv_text = convert_xlsx_to_csv_text(raw_bytes, filename=fname)
+                        if csv_text.strip():
+                            extracted.append((fname, csv_text))
+                        continue
+                    for member in sorted(names):
                         if member.endswith("/") or member.startswith("__MACOSX"):
                             continue
-                        if any(member.lower().endswith(ext) for ext in (".csv", ".tsv", ".txt")):
+                        m_lower = member.lower()
+                        if m_lower.endswith(".xlsx"):
+                            m_bytes = zf.read(member)
+                            csv_text = convert_xlsx_to_csv_text(m_bytes, filename=member)
+                            if csv_text.strip():
+                                extracted.append((member, csv_text))
+                        elif any(m_lower.endswith(ext) for ext in (".csv", ".tsv", ".txt")):
                             member_bytes = zf.read(member)
                             extracted.append(
                                 (member, member_bytes.decode("utf-8-sig", errors="replace"))
@@ -149,13 +175,55 @@ def combine_csv_statement_texts(file_pairs: Sequence[Tuple[str, str]]) -> str:
             combined_lines.append(lines[0])
             combined_lines.extend(lines[1:])
         else:
-            # Skip repeated header line if it matches the primary header
             if header.lower() == primary_header.lower():
                 combined_lines.extend(lines[1:])
             else:
                 combined_lines.extend(lines[1:])
 
     return "\n".join(combined_lines)
+
+
+def parse_multi_attachment_statements(
+    file_pairs: Sequence[Tuple[str, str]],
+    *,
+    default_currency: str = "USD",
+) -> ParsedStatementSummary:
+    """
+    Parses one or more extracted statement files (`(filename, csv_text)`).
+    - Files sharing the exact same schema header are grouped and parsed together.
+    - Heterogeneous statement schemas (e.g. a Symphonic `.csv` + a YouTube Studio `.xlsx`)
+      are parsed individually with their respective schema/currency detectors and merged via
+      `merge_statement_summaries()`.
+    """
+    if not file_pairs:
+        return ParsedStatementSummary(detected_distributor="Empty", row_count=0)
+    if len(file_pairs) == 1:
+        return parse_statement_csv(file_pairs[0][1], default_currency=default_currency)
+
+    # Group by header line unless the file is a YouTube Studio workbook (which should be parsed individually first so Last 365 vs Lifetime deduplication works cleanly)
+    header_groups: Dict[str, List[Tuple[str, str]]] = {}
+    individual_summaries: List[ParsedStatementSummary] = []
+
+    for fname, text in file_pairs:
+        lines = [ln for ln in text.lstrip("\ufeff").splitlines() if ln.strip()]
+        if not lines:
+            continue
+        hdr_key = lines[0].strip().lower()
+        if fname.lower().endswith(".xlsx") or "youtube" in text[:400].lower():
+            individual_summaries.append(
+                parse_statement_csv(text, default_currency=default_currency)
+            )
+        else:
+            header_groups.setdefault(hdr_key, []).append((fname, text))
+
+    for _, grp in header_groups.items():
+        combined_txt = combine_csv_statement_texts(grp)
+        individual_summaries.append(
+            parse_statement_csv(combined_txt, default_currency=default_currency)
+        )
+
+    return merge_statement_summaries(individual_summaries)
+
 
 
 def match_application_by_email_or_subject(
@@ -243,14 +311,15 @@ def ingest_inbound_email_statements(
     was_existing = matched_app is not None
 
     file_pairs = _extract_csv_texts_from_attachments(webhook.attachments)
-    combined_csv = combine_csv_statement_texts(file_pairs)
 
     currency = (
         matched_app.declared_currency
         if matched_app and matched_app.declared_currency
         else webhook.default_currency
     )
-    stmt_summary = parse_statement_csv(combined_csv, default_currency=currency)
+    stmt_summary = parse_multi_attachment_statements(
+        file_pairs, default_currency=currency
+    )
 
     if matched_app is None:
         inferred_artist = (
