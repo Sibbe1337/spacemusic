@@ -402,3 +402,61 @@ def test_dtw_phase_shift_invariance_and_artificial_step_plateau_detection(engine
     flag_codes = {rf.code for rf in out.risk_flags}
     assert "DTW_ARTIFICIAL_STEP_PLATEAU" in flag_codes
 
+
+def test_typeform_csv_export_parser_and_email_sanitization(engine: SpaceValuationEngine):
+    """
+    Verifies bulk parsing of Typeform `xzx5SBJb` CSV exports, including currency
+    normalization (`$`, `usd`, `British Pounds`), email typo correction (`@gnail.com`),
+    synthetic test row filtering, and genre inference.
+    """
+    from services.spacemusic.typeform_adapter import (
+        application_to_valuation_input,
+        normalize_currency,
+        parse_typeform_csv_export,
+        sanitize_email,
+    )
+
+    assert normalize_currency("$") == "USD"
+    assert normalize_currency("usd") == "USD"
+    assert normalize_currency("British Pounds") == "GBP"
+    assert sanitize_email("2scratch.business@gnail.com") == "2scratch.business@gmail.com"
+
+    sample_csv = (
+        "#,What would you like to discuss?,What is your name?,Which email should we reply to?,"
+        "Which artist or label is this catalog released under?,Where can we listen to the catalog?,"
+        "Which rights would you like us to review?,Has the owner authorized you to discuss this catalog?,"
+        "Do you know the catalog's royalty income for the last 12 months?,"
+        "Approximately how much did those rights earn in the last 12 months?,"
+        "Which currency is that amount in?,What does that amount represent?,"
+        "Who distributes or administers these royalties?,"
+        "Anything we should know about the rights you want reviewed?,"
+        "Which organization do you represent?,Does your organization have a website?,"
+        "What would you like to discuss with SPACE?,How did you hear about SPACE?,"
+        "Email me occasional SPACE news and catalog insights.,landing_path,apply_source_path,"
+        "Response Type,Start Date (UTC),Stage Date (UTC),Submit Date (UTC),Network ID,Tags,Ending\n"
+        "a7skwqj9176ajv0fhkzja7skwqjotfhv,Selling my own catalog,Justin Tumeh,2scratch.business@gnail.com,"
+        "2Scratch,https://open.spotify.com/track/39m3vSEBm9PZoYF0XZNM1p,Master recording rights,,"
+        "I can provide an approximate amount,30000,USD,"
+        "Royalties payable to the owner after distributor or administrator deductions,"
+        "Tribal Trap & Trap Nation,,,,,,No,/apply/,/,completed,2026-10-13 20:04:07,,2026-10-13 20:07:07,24db04e431,,Your review request has been received.\n"
+        "fif217qc3hrzfifjah3f6mk9mmljah3f,A partnership or another inquiry,Ryan Mitchell,wQjq1l@example.com,"
+        "Echo Valley Entertainment,https://example.com,Master recording rights,I still need to confirm,"
+        "I need to check my statements,45000,British Pounds,Royalties before those deductions,"
+        "None,Test,Meridian,https://example.com,Test,Friend,No,test_url_parameter,test_url_parameter,"
+        "completed,2026-10-08 12:11:12,,2026-10-08 12:11:12,7f4e53ce4e,AI Generated,\n"
+    )
+
+    apps = parse_typeform_csv_export(sample_csv, skip_test_rows=True)
+    assert len(apps) == 1
+    app = apps[0]
+    assert app.contact_email == "2scratch.business@gmail.com"
+    assert app.declared_ltm_amount == 30000.0
+    assert app.declared_currency == "USD"
+
+    val_input = application_to_valuation_input(app)
+    val = engine.evaluate(val_input)
+    assert val.genre_family == GenreFamily.HIPHOP_RNB_PHONK
+    assert val.pipeline_status == "AWAITING_STATEMENTS"
+    assert val.price_median_eur > 50000.0
+
+

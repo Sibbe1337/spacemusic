@@ -36,6 +36,7 @@ from .models import CatalogApplication, ProprietaryBenchmarkRecord, ReplyDraft
 from .typeform_adapter import (
     application_to_valuation_input,
     generate_reply_draft,
+    parse_typeform_csv_export,
     parse_typeform_webhook_payload,
 )
 
@@ -59,6 +60,11 @@ class StatementUploadRequest(BaseModel):
     default_currency: str = "USD"
     artist_or_label_override: Optional[str] = None
     listen_url_override: Optional[str] = None
+
+
+class TypeformCsvImportRequest(BaseModel):
+    csv_content: str
+    skip_test_rows: bool = True
 
 
 class ApplicationEvaluationResponse(BaseModel):
@@ -285,6 +291,46 @@ async def attach_statements_to_application(
         reply_draft=reply_draft,
         statement_summary=stmt_summary,
     )
+
+
+@router.post("/catalog-review/import-csv")
+async def import_typeform_csv(req: TypeformCsvImportRequest):
+    """
+    Bulk-imports and evaluates a Typeform CSV export (`responses-xzx5SBJb-*.csv`),
+    storing all applications and returning their full DCF + Forensics evaluations and reply drafts.
+    """
+    apps = parse_typeform_csv_export(req.csv_content, skip_test_rows=req.skip_test_rows)
+    results: List[ApplicationEvaluationResponse] = []
+    for app_row in apps:
+        val_input = application_to_valuation_input(app_row)
+        valuation = _engine.evaluate(val_input)
+        reply_draft = generate_reply_draft(app_row, valuation)
+
+        app_row.pipeline_status = valuation.pipeline_status
+        app_row.valuation_stage = valuation.valuation_stage
+        app_row.effective_cf0_eur = valuation.baseline.effective_cf0_eur
+        app_row.price_low_eur = valuation.price_low_eur
+        app_row.price_median_eur = valuation.price_median_eur
+        app_row.price_high_eur = valuation.price_high_eur
+        app_row.implied_multiple_median = valuation.implied_ltm_multiple_median
+        app_row.discount_rate = valuation.discount_rate.total_discount_rate
+        app_row.integrity_score = valuation.integrity_score
+        app_row.valuation_confidence = valuation.valuation_confidence
+        app_row.valuation_report_json = valuation.dict() if hasattr(valuation, "dict") else valuation.model_dump()
+        app_row.draft_reply_subject = reply_draft.subject
+        app_row.draft_reply_body = reply_draft.body
+
+        _APPLICATIONS_STORE[app_row.id] = app_row
+        results.append(
+            ApplicationEvaluationResponse(
+                application_id=app_row.id,
+                pipeline_status=app_row.pipeline_status,
+                valuation_stage=app_row.valuation_stage,
+                valuation=valuation,
+                reply_draft=reply_draft,
+            )
+        )
+    return results
 
 
 @router.get("/catalog-review/applications")

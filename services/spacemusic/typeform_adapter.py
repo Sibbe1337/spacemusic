@@ -5,8 +5,11 @@ Typeform Adapter (`xzx5SBJb` - SPACE catalog review) & Automated Reply Draft Gen
 
 from __future__ import annotations
 
+import csv
+import io
 import re
-from typing import Any, Dict, Optional
+from datetime import datetime
+from typing import Any, Dict, List, Optional
 
 from services.valuation.engine import (
     CatalogValuationInput,
@@ -87,6 +90,80 @@ def _parse_numeric_amount(raw: Any) -> float:
     return float(m.group(1)) if m else 0.0
 
 
+def normalize_currency(raw: Any) -> str:
+    if not raw:
+        return "USD"
+    s = str(raw).strip().lower()
+    if s in {"$", "usd", "us dollar", "us dollars", "dollar", "dollars"} or "usd" in s or "$" in s:
+        return "USD"
+    if s in {"€", "eur", "euro", "euros"} or "eur" in s or "€" in s:
+        return "EUR"
+    if s in {"£", "gbp", "british pound", "british pounds", "pound", "pounds"} or "gbp" in s or "pound" in s or "£" in s:
+        return "GBP"
+    if "sek" in s or "krona" in s or "kronor" in s:
+        return "SEK"
+    if "cad" in s:
+        return "CAD"
+    if "aud" in s:
+        return "AUD"
+    code = str(raw).strip().upper()[:3]
+    return code if code.isalpha() and len(code) == 3 else "USD"
+
+
+_EMAIL_DOMAIN_TYPOS = {
+    "gnail.com": "gmail.com",
+    "gmial.com": "gmail.com",
+    "gamil.com": "gmail.com",
+    "gmail.co": "gmail.com",
+    "hotmial.com": "hotmail.com",
+    "yaho.com": "yahoo.com",
+}
+
+
+def sanitize_email(raw: Any) -> str:
+    if not raw:
+        return ""
+    email = str(raw).strip()
+    if "@" not in email:
+        return email
+    local, _, domain = email.partition("@")
+    domain_clean = _EMAIL_DOMAIN_TYPOS.get(domain.lower(), domain)
+    return f"{local}@{domain_clean}"
+
+
+def infer_genre_from_application(app_row: CatalogApplication) -> str:
+    """
+    Infers a primary genre string for `SpaceValuationEngine` from distributor,
+    artist/label name, and rights notes when Typeform does not ask an explicit genre question.
+    """
+    blob = " ".join(
+        filter(
+            None,
+            [
+                app_row.artist_or_label_name,
+                app_row.distributor_or_admin,
+                app_row.rights_notes,
+            ],
+        )
+    ).lower()
+
+    if re.search(r"\b(ambient|sleep|meditation|white noise|binaural|nature)\b", blob):
+        return "ambient"
+    if re.search(r"\b(lofi|lo-fi|chillhop|study beats)\b", blob):
+        return "lo-fi"
+    if re.search(r"\b(raspe|salsa|salseo|reggaeton|latin|afrobeats|corrido)\b", blob):
+        return "latin"
+    if re.search(r"\b(trap nation|tribal trap|trap|rap|hip hop|hip-hop|beatz|beatzs|phonk|drill|brokeasf)\b", blob):
+        return "hip-hop"
+    if re.search(r"\b(proton|house|techno|edm|electronic|dance|club)\b", blob):
+        return "electronic"
+    if re.search(r"\b(instrumental|classical|jazz|soundtrack|score|music kit|valve|epidemic)\b", blob):
+        return "classical"
+    if re.search(r"\b(rock|metal|country|folk|punk)\b", blob):
+        return "rock"
+    return "pop"
+
+
 def _map_inquiry_route(label: Optional[str]) -> str:
     if not label:
         return "own_catalog"
@@ -155,7 +232,7 @@ def parse_typeform_webhook_payload(payload: Dict[str, Any]) -> CatalogApplicatio
     knows_ltm = "need to check" not in knows_raw
 
     ltm_amount = _parse_numeric_amount(extracted.get("declared_ltm_amount"))
-    currency = (str(extracted.get("declared_currency") or "USD").strip().upper()[:3]) or "USD"
+    currency = normalize_currency(extracted.get("declared_currency"))
     listen_url = extracted.get("listen_url")
     spotify_id = extract_spotify_artist_id(listen_url)
 
@@ -167,7 +244,7 @@ def parse_typeform_webhook_payload(payload: Dict[str, Any]) -> CatalogApplicatio
         typeform_form_id=form_id,
         inquiry_route=route,
         contact_name=str(extracted.get("contact_name") or "").strip(),
-        contact_email=str(extracted.get("contact_email") or "").strip(),
+        contact_email=sanitize_email(extracted.get("contact_email")),
         artist_or_label_name=str(extracted.get("artist_or_label_name") or "").strip(),
         listen_url=listen_url,
         spotify_artist_id=spotify_id,
@@ -185,6 +262,69 @@ def parse_typeform_webhook_payload(payload: Dict[str, Any]) -> CatalogApplicatio
         referral_source=extracted.get("referral_source"),
         newsletter_opt_in=newsletter_opt_in,
     )
+
+
+def parse_typeform_csv_export(
+    csv_content: str,
+    skip_test_rows: bool = True,
+) -> List[CatalogApplication]:
+    """
+    Parses a Typeform CSV export (`responses-xzx5SBJb-*.csv`) into `CatalogApplication` objects.
+    Automatically skips synthetic Typeform test rows (e.g. `@example.com` or `AI Generated` tag)
+    when `skip_test_rows=True`.
+    """
+    reader = csv.DictReader(io.StringIO(csv_content.lstrip("\ufeff")))
+    applications: List[CatalogApplication] = []
+
+    for row in reader:
+        response_id = (row.get("#") or "").strip()
+        if not response_id:
+            continue
+
+        tags = (row.get("Tags") or "").strip()
+        raw_email = (row.get("Which email should we reply to?") or "").strip()
+        landing_path = (row.get("landing_path") or "").strip()
+
+        if skip_test_rows and (
+            "ai generated" in tags.lower()
+            or raw_email.lower().endswith("@example.com")
+            or landing_path == "test_url_parameter"
+        ):
+            continue
+
+        payload = {
+            "event_id": response_id,
+            "inquiry_route": row.get("What would you like to discuss?"),
+            "contact_name": row.get("What is your name?"),
+            "contact_email": raw_email,
+            "artist_or_label_name": row.get("Which artist or label is this catalog released under?"),
+            "listen_url": (row.get("Where can we listen to the catalog?") or "").strip() or None,
+            "rights_scope": row.get("Which rights would you like us to review?"),
+            "owner_authorized": row.get("Has the owner authorized you to discuss this catalog?") or "Yes",
+            "knows_ltm_royalties": row.get("Do you know the catalog's royalty income for the last 12 months?"),
+            "declared_ltm_amount": row.get("Approximately how much did those rights earn in the last 12 months?"),
+            "declared_currency": row.get("Which currency is that amount in?"),
+            "royalty_basis": row.get("What does that amount represent?"),
+            "distributor_or_admin": (row.get("Who distributes or administers these royalties?") or "").strip() or None,
+            "rights_notes": (row.get("Anything we should know about the rights you want reviewed?") or "").strip() or None,
+            "organization_name": (row.get("Which organization do you represent?") or "").strip() or None,
+            "organization_website": (row.get("Does your organization have a website?") or "").strip() or None,
+            "partnership_topic": (row.get("What would you like to discuss with SPACE?") or "").strip() or None,
+            "referral_source": (row.get("How did you hear about SPACE?") or "").strip() or None,
+            "newsletter_opt_in": row.get("Email me occasional SPACE news and catalog insights?"),
+        }
+
+        app_row = parse_typeform_webhook_payload(payload)
+        submit_dt_str = (row.get("Submit Date (UTC)") or "").strip()
+        if submit_dt_str:
+            try:
+                app_row.created_at = datetime.strptime(submit_dt_str, "%Y-%m-%d %H:%M:%S")
+            except ValueError:
+                pass
+
+        applications.append(app_row)
+
+    return applications
 
 
 def application_to_valuation_input(app_row: CatalogApplication) -> CatalogValuationInput:
@@ -206,6 +346,7 @@ def application_to_valuation_input(app_row: CatalogApplication) -> CatalogValuat
         owner_authorized=app_row.owner_authorized,
         listen_url=app_row.listen_url,
         spotify_artist_id=app_row.spotify_artist_id,
+        genres=[infer_genre_from_application(app_row)],
         rights_scope=RightsScope(app_row.rights_scope)
         if app_row.rights_scope in {r.value for r in RightsScope}
         else RightsScope.MASTERS,
