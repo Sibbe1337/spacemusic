@@ -1490,6 +1490,20 @@ def test_geo_seo_steps_1_to_5_end_to_end(tmp_path):
     assert dk_resp.status_code == 200
     assert dk_resp.json()["category"] == "distributor"
 
+    # Pre-rendered HTML landing page, benchmark report HTML, and .well-known/brand-facts.json
+    hh_html_resp = client.get("/sell/sell-hip-hop-rap-catalog/")
+    assert hh_html_resp.status_code == 200
+    assert "application/ld+json" in hh_html_resp.text
+    assert "Hip-Hop" in hh_html_resp.text
+
+    report_html_resp = client.get("/data/indie-catalog-multiples-ai-fraud-report-2026/")
+    assert report_html_resp.status_code == 200
+    assert "2026 Indie Music Catalog" in report_html_resp.text
+
+    wk_resp = client.get("/.well-known/brand-facts.json")
+    assert wk_resp.status_code == 200
+    assert "SPACE" in wk_resp.json()["brand_name"]
+
     # Step 4: JSON-LD structured data schemas on /calculator/
     meta_resp = client.get("/seo/metadata", params={"path": "/calculator"})
     assert meta_resp.status_code == 200
@@ -1532,6 +1546,11 @@ def test_geo_seo_steps_1_to_5_end_to_end(tmp_path):
         "_redirects",
         "embed-calculator.html",
         "widget-calculator.js",
+        ".well-known/brand-facts.json",
+        "data/indie-catalog-multiples-ai-fraud-report-2026/index.html",
+        "sell/sell-hip-hop-rap-catalog/index.html",
+        "sell/sell-distrokid-royalties/index.html",
+        "seo-metadata-manifest.json",
     ):
         assert expected_file in written_files
 

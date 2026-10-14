@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Catalog Valuation Calculator | SPACE (spacemusic.io)</title>
+<style>
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0b0d13; color: #f3f5f9; }
+  .widget-card { max-width: 560px; margin: 16px auto; padding: 24px; background: #121621; border: 1px solid #232a3d; border-radius: 14px; }
+  h2 { margin: 0 0 6px; font-size: 20px; color: #ffffff; }
+  p.sub { margin: 0 0 18px; font-size: 13px; color: #9aa4bf; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  label { display: block; font-size: 12px; color: #b4bdd6; margin-bottom: 4px; }
+  input, select { width: 100%; box-sizing: border-box; padding: 9px 10px; border-radius: 8px; border: 1px solid #2b344d; background: #0d1018; color: #ffffff; font-size: 13px; }
+  button { width: 100%; padding: 11px; border: none; border-radius: 8px; background: #4f46e5; color: #ffffff; font-weight: 600; font-size: 14px; cursor: pointer; }
+  .result { margin-top: 16px; padding: 14px; border-radius: 10px; background: #171c2b; border: 1px solid #2e3856; display: none; }
+  .val-range { font-size: 22px; font-weight: 700; color: #38bdf8; margin: 4px 0; }
+  .meta { font-size: 12px; color: #a5b0cc; }
+  .footer { margin-top: 16px; font-size: 12px; text-align: center; color: #7e8aa8; }
+  .footer a { color: #818cf8; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="widget-card">
+  <h2>Instant Music Catalog Valuation Calculator</h2>
+  <p class="sub">8-Genre Bayesian DCF &amp; Institutional Buy-Box Matching</p>
+  <form id="spaceCalcForm">
+    <div class="grid">
+      <div>
+        <label>Artist or Label Name</label>
+        <input type="text" id="artist_name" value="Independent Artist">
+      </div>
+      <div>
+        <label>Monthly Net Royalties (USD)</label>
+        <input type="number" id="monthly_royalty" value="2500" min="50" step="50">
+      </div>
+      <div>
+        <label>Primary Genre</label>
+        <select id="genre_hint">
+          <option value="Hip-Hop / Rap / Trap">Hip-Hop / Rap / Trap</option>
+          <option value="Pop / Indie Pop">Pop / Indie Pop</option>
+          <option value="Electronic / Dance / House">Electronic / Dance / House</option>
+          <option value="Latin / Reggaeton / Afrobeats">Latin / Reggaeton / Afrobeats</option>
+          <option value="Rock / Metal / Country">Rock / Metal / Country</option>
+          <option value="Lo-Fi / Chillhop">Lo-Fi / Chillhop</option>
+        </select>
+      </div>
+      <div>
+        <label>Distributor</label>
+        <select id="distributor">
+          <option value="DistroKid">DistroKid</option>
+          <option value="TuneCore">TuneCore</option>
+          <option value="UnitedMasters">UnitedMasters</option>
+          <option value="Too Lost">Too Lost</option>
+          <option value="Symphonic">Symphonic</option>
+          <option value="CD Baby">CD Baby</option>
+          <option value="The Orchard / Sony">The Orchard / Sony</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit">Calculate Catalog Valuation Range</button>
+  </form>
+  <div id="calcResult" class="result">
+    <div class="meta">Indicative Institutional Valuation Range (EUR)</div>
+    <div id="valRangeText" class="val-range"></div>
+    <div id="valMetaText" class="meta"></div>
+  </div>
+  <div class="footer">
+    <a href="https://spacemusic.io/calculator/" rel="dofollow">Powered by SPACE Music Catalog Valuation Engine</a>
+  </div>
+</div>
+<script>
+document.getElementById("spaceCalcForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  var payload = {
+    artist_or_label_name: document.getElementById("artist_name").value,
+    monthly_net_royalty: parseFloat(document.getElementById("monthly_royalty").value || "0"),
+    genre_hint: document.getElementById("genre_hint").value,
+    distributor: document.getElementById("distributor").value,
+    currency: "USD"
+  };
+  var res = await fetch("/calculator/live-teaser", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+  var data = await res.json();
+  var box = document.getElementById("calcResult");
+  box.style.display = "block";
+  document.getElementById("valRangeText").textContent =
+    "EUR " + Math.round(data.price_low_eur).toLocaleString() +
+    " to EUR " + Math.round(data.price_high_eur).toLocaleString() +
+    " (Median: EUR " + Math.round(data.price_median_eur).toLocaleString() + ")";
+  document.getElementById("valMetaText").textContent =
+    "Implied Multiple: " + data.implied_ltm_multiple_median + "x LTM | Matched Buyers: " +
+    data.matched_institutional_buyers_count + " (" + (data.top_matched_buyers || []).join(", ") + ")";
+});
+</script>
+</body>
+</html>

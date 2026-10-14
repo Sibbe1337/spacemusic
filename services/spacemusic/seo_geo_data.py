@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
 
@@ -596,6 +597,92 @@ def get_backlink_outreach_kit() -> list[dict[str, str]]:
     ]
 
 
+def render_landing_page_html(lp: LandingPageContent) -> str:
+    schemas_html = "\n".join(
+        f'<script type="application/ld+json">{json.dumps(s)}</script>'
+        for s in build_page_jsonld_schemas(lp.canonical_path)
+    )
+    steps_html = "".join(f"<li>{step}</li>" for step in lp.export_or_underwriting_steps)
+    faqs_html = "".join(
+        f"<div style='margin-bottom:14px'><strong>{q['question']}</strong><p style='margin:4px 0 0;color:#cbd5e1'>{q['answer']}</p></div>"
+        for q in lp.faq_items
+    )
+    buyers_str = ", ".join(lp.top_matched_buyers)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{lp.title}</title>
+  <meta name="description" content="{lp.meta_description}" />
+  <link rel="canonical" href="{SITE_URL}{lp.canonical_path}" />
+  <meta property="og:title" content="{lp.title}" />
+  <meta property="og:description" content="{lp.meta_description}" />
+  <meta property="og:url" content="{SITE_URL}{lp.canonical_path}" />
+  <meta property="og:type" content="website" />
+  {schemas_html}
+</head>
+<body style="margin:0;padding:32px 20px;background:#0b0f19;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6">
+  <main style="max-width:840px;margin:0 auto">
+    <nav style="margin-bottom:24px;font-size:14px"><a href="{SITE_URL}/" style="color:#818cf8;text-decoration:none">SPACE</a> / <a href="{SITE_URL}/sell/" style="color:#818cf8;text-decoration:none">Sell Catalog</a> / <span>{lp.slug}</span></nav>
+    <h1 style="font-size:32px;margin:0 0 12px">{lp.h1}</h1>
+    <p style="font-size:18px;color:#cbd5e1;margin:0 0 24px">{lp.hero_subtitle}</p>
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:28px;background:#111827;padding:20px;border-radius:12px;border:1px solid #1e293b">
+      <div><div style="font-size:12px;color:#94a3b8">2026 LTM Multiple Range</div><div style="font-size:20px;font-weight:700;color:#a5b4fc">{lp.typical_multiple_range}</div></div>
+      <div><div style="font-size:12px;color:#94a3b8">Eligible LTM Range</div><div style="font-size:20px;font-weight:700">{lp.typical_ltm_range}</div></div>
+      <div><div style="font-size:12px;color:#94a3b8">Decay Benchmark</div><div style="font-size:15px;font-weight:600">{lp.annual_decay_benchmark}</div></div>
+    </section>
+    <h2 style="font-size:22px">Matched Institutional Buyers</h2>
+    <p style="color:#cbd5e1">{buyers_str}</p>
+    <h2 style="font-size:22px">How to Value &amp; Sell in 3 Steps</h2>
+    <ol style="color:#cbd5e1">{steps_html}</ol>
+    <div style="margin:28px 0"><a href="{SITE_URL}/calculator/" style="display:inline-block;padding:12px 24px;background:#6366f1;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Calculate Your Catalog Value in 60 Seconds</a></div>
+    <h2 style="font-size:22px">Frequently Asked Questions</h2>
+    {faqs_html}
+  </main>
+</body>
+</html>"""
+
+
+def render_benchmark_report_html() -> str:
+    rep = get_indie_catalog_benchmark_report_2026()
+    meta = SEO_PAGE_METADATA_OVERRIDES["/data/indie-catalog-multiples-ai-fraud-report-2026/"]
+    schemas_html = "\n".join(
+        f'<script type="application/ld+json">{json.dumps(s)}</script>'
+        for s in rep["jsonld_schemas"]
+    )
+    rows_html = "".join(
+        f"<tr><td style='padding:8px;border-bottom:1px solid #1e293b'>{g['genre_cohort']}</td>"
+        f"<td style='padding:8px;border-bottom:1px solid #1e293b'>{g['multiple_range_ltm']}</td>"
+        f"<td style='padding:8px;border-bottom:1px solid #1e293b'>{g['median_multiple']}x</td>"
+        f"<td style='padding:8px;border-bottom:1px solid #1e293b'>{g['yr1_decay_pct']}</td>"
+        f"<td style='padding:8px;border-bottom:1px solid #1e293b'>{g['wacc_discount_rate']}</td></tr>"
+        for g in rep["genre_multiples_table"]
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{meta.title}</title>
+  <meta name="description" content="{meta.meta_description}" />
+  <link rel="canonical" href="{rep['canonical_url']}" />
+  {schemas_html}
+</head>
+<body style="margin:0;padding:32px 20px;background:#0b0f19;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6">
+  <main style="max-width:900px;margin:0 auto">
+    <h1 style="font-size:30px">{rep['title']}</h1>
+    <p style="color:#cbd5e1">Sample size: {rep['sample_size_catalogs']} indie catalogs ({rep['ltm_range_analyzed_usd']} LTM) | Published: {rep['published_date']}</p>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:14px">
+      <thead><tr style="text-align:left;border-bottom:2px solid #334155"><th style="padding:8px">Genre Cohort</th><th style="padding:8px">LTM Multiple Range</th><th style="padding:8px">Median</th><th style="padding:8px">Yr-1 Decay</th><th style="padding:8px">WACC</th></tr></thead>
+      <tbody>{rows_html}</tbody>
+    </table>
+    <p><a href="{SITE_URL}/calculator/" rel="dofollow" style="color:#818cf8">Run the Interactive 60-Second Catalog DCF Calculator</a></p>
+  </main>
+</body>
+</html>"""
+
+
 def export_seo_static_bundle(
     output_dir: str = "/workspace/services/spacemusic/seo_static_bundle",
 ) -> dict[str, str]:
@@ -613,11 +700,29 @@ def export_seo_static_bundle(
         "sitemap.xml": render_sitemap_xml(),
         "_redirects": generate_cloudflare_redirects(),
         "embed-calculator.html": render_embeddable_calculator_html(),
+        "embed/calculator/index.html": render_embeddable_calculator_html(),
         "widget-calculator.js": render_embeddable_calculator_widget_js(),
+        "widget/calculator.js": render_embeddable_calculator_widget_js(),
+        ".well-known/brand-facts.json": json.dumps(get_brand_facts_payload(), indent=2),
+        "data/indie-catalog-multiples-ai-fraud-report-2026/index.html": render_benchmark_report_html(),
+        "seo-metadata-manifest.json": json.dumps(
+            {
+                path: {
+                    "metadata": meta.model_dump() if hasattr(meta, "model_dump") else meta.dict(),
+                    "jsonld_schemas": build_page_jsonld_schemas(path),
+                }
+                for path, meta in SEO_PAGE_METADATA_OVERRIDES.items()
+            },
+            indent=2,
+        ),
     }
+    for slug, lp in LANDING_PAGES_BY_SLUG.items():
+        artifacts[f"sell/{slug}/index.html"] = render_landing_page_html(lp)
+
     written: dict[str, str] = {}
     for filename, content in artifacts.items():
         file_path = out_path / filename
+        file_path.parent.mkdir(parents=True, exist_ok=True)
         file_path.write_text(content, encoding="utf-8")
         written[filename] = str(file_path)
     return written

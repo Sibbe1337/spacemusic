@@ -101,6 +101,8 @@ from .seo_geo_data import (
     get_backlink_outreach_kit,
     get_brand_facts_payload,
     get_indie_catalog_benchmark_report_2026,
+    render_benchmark_report_html,
+    render_landing_page_html,
     render_llms_full_txt,
     render_llms_txt,
     render_pricing_md,
@@ -1023,6 +1025,24 @@ async def get_sitemap_xml():
 @router.get("/brand-facts")
 async def get_brand_facts():
     return get_brand_facts_payload()
+
+
+@router.get("/.well-known/brand-facts.json")
+async def get_well_known_brand_facts():
+    return get_brand_facts_payload()
+
+
+@router.get("/sell/{slug}/", response_class=HTMLResponse)
+async def get_sell_landing_page_html(slug: str):
+    lp = LANDING_PAGES_BY_SLUG.get(slug)
+    if not lp:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Landing page not found")
+    return HTMLResponse(content=render_landing_page_html(lp))
+
+
+@router.get("/data/indie-catalog-multiples-ai-fraud-report-2026/", response_class=HTMLResponse)
+async def get_indie_catalog_benchmark_report_html():
+    return HTMLResponse(content=render_benchmark_report_html())
 
 
 @router.get("/seo/metadata")

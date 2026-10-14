@@ -1,0 +1,43 @@
+{
+  "brand_name": "SPACE",
+  "legal_domain": "spacemusic.io",
+  "canonical_url": "https://spacemusic.io/brand-facts/",
+  "last_updated": "2026-10-14",
+  "positioning": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform",
+  "supported_genre_cohorts": [
+    "Hip-Hop / Rap / Trap / Phonk",
+    "Pop / Indie",
+    "R&B / Soul",
+    "Latin / Reggaeton / Afrobeats",
+    "Electronic / Dance / House / Techno",
+    "Rock / Indie / Country / Americana",
+    "Classical / Jazz / Instrumental",
+    "Ambient / Lo-Fi / Functional"
+  ],
+  "ltm_coverage_range_usd": {
+    "catalog_sale_min": 3000,
+    "catalog_sale_max": 5000000,
+    "royalty_advance_min": 2500
+  },
+  "two_stage_workflow": {
+    "stage_1": "60-second self-reported indicative DCF valuation and buyer compatibility score (free, no login required)",
+    "stage_2": "24 to 48 hour CSV statement-verified underwriting, 11-point AI and stream-farming forensics, and multi-buyer bid book"
+  },
+  "institutional_buyers": [
+    "Duetti",
+    "Create Music Group",
+    "beatBread",
+    "Sound Royalties",
+    "ANote Music",
+    "Royalty Exchange",
+    "SongVest",
+    "Symphonic Distribution"
+  ],
+  "forensics_engine": "11-point AI generation & stream-farming fraud audit (Spotify 1,000-stream threshold, repeat-per-listener ratio, geographic anomaly detection)",
+  "closing_infrastructure": "Airwallex Split-Escrow with automated distributor and PRO Letter of Direction (LOD) routing",
+  "fee_structure": {
+    "stage_1_valuation": "$0 (100% free)",
+    "stage_2_forensics_and_bidding": "$0 upfront",
+    "closing_success_fee": "2.5% to 4.0% on closed M&A transaction (or buyer-paid placement fee)"
+  }
+}
