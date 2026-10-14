@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.12']
-        node-version: ['18.x']
+        node-version: ['22.x']
 
     steps:
       - name: Checkout repository
@@ -56,7 +56,7 @@ jobs:
 
       - name: Install admin_ui dependencies (using pnpm)
         run: |
-          corepack enable
+          npm install -g pnpm@10
           cd services/admin_ui
           pnpm install
 
