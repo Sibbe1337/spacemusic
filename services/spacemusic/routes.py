@@ -46,6 +46,15 @@ from .zero_touch_stage1 import (
     execute_zero_touch_stage1,
     get_distributor_export_guide,
 )
+from .buyer_router import (
+    InstitutionalRoutingReport,
+    route_catalog_to_institutional_buyers,
+)
+from .inbox_ingestor import (
+    AutonomousStage2UnderwritingResult,
+    InboundEmailStatementWebhook,
+    ingest_inbound_email_statements,
+)
 
 router = APIRouter()
 logger = structlog.get_logger(__name__)
@@ -84,6 +93,7 @@ class ApplicationEvaluationResponse(BaseModel):
     statement_summary: Optional[ParsedStatementSummary] = None
     implied_revenue_crosscheck: Optional[ImpliedRevenueCrossCheck] = None
     distributor_export_guide: Optional[str] = None
+    institutional_routing: Optional[InstitutionalRoutingReport] = None
 
 
 @router.post(
@@ -293,6 +303,8 @@ async def attach_statements_to_application(
             )
         )
 
+    routing = route_catalog_to_institutional_buyers(app_row, valuation)
+
     return ApplicationEvaluationResponse(
         application_id=app_row.id,
         pipeline_status=valuation.pipeline_status,
@@ -300,7 +312,59 @@ async def attach_statements_to_application(
         valuation=valuation,
         reply_draft=reply_draft,
         statement_summary=stmt_summary,
+        institutional_routing=routing,
     )
+
+
+@router.post(
+    "/webhooks/inbound-email",
+    response_model=AutonomousStage2UnderwritingResult,
+)
+async def handle_inbound_email_statements(webhook: InboundEmailStatementWebhook):
+    """
+    Autonomous Inbox-to-Underwriting endpoint:
+    When an artist replies to `hello@spacemusic.io` with attached `.csv` / `.tsv` / `.zip`
+    royalty statements, matches their application, merges and parses all statements,
+    upgrades the valuation to `STAGE_2_STATEMENT_VERIFIED`, routes the catalog to
+    SPACE's 8 institutional buyers, and returns both the Seller Offer Draft and Slack Deal Card.
+    """
+    res = ingest_inbound_email_statements(
+        webhook,
+        applications_store=_APPLICATIONS_STORE,
+        engine=_engine,
+    )
+    for b in res.statement_summary.benchmarks:
+        _BENCHMARKS_STORE.append(
+            ProprietaryBenchmarkRecord(
+                source_application_id=uuid.UUID(res.application_id),
+                distributor=res.detected_distributor,
+                genre_family=res.valuation.genre_family.value,
+                dsp_store=b.dsp_store,
+                country_code=b.country_code,
+                total_streams=b.total_streams,
+                total_net_royalty_eur=b.total_net_royalty_eur,
+                observed_rpm_eur=b.observed_rpm_eur,
+                observed_rpm_usd=b.observed_rpm_usd,
+            )
+        )
+    return res
+
+
+@router.get(
+    "/catalog-review/{application_id}/buyer-routing",
+    response_model=InstitutionalRoutingReport,
+)
+async def get_application_buyer_routing(application_id: uuid.UUID):
+    """
+    Returns the ranked Institutional Buy-Box matches and Markdown Underwriting Memo
+    for an evaluated application.
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    return route_catalog_to_institutional_buyers(app_row, valuation)
 
 
 @router.post("/catalog-review/import-csv")

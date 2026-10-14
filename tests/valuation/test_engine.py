@@ -673,5 +673,100 @@ def test_zero_touch_stage1_pipeline_and_implied_revenue_crosscheck(engine: Space
     assert "See Excruciating Detail" in res_org.reply_draft.body
 
 
+def test_autonomous_inbox_to_underwriting_and_institutional_buyer_router(engine: SpaceValuationEngine):
+    """
+    Verifies:
+    1. `ingest_inbound_email_statements` unpacks a `.zip` archive containing multiple monthly
+       distributor CSV files, matches the sender email (`2scratch.business@gmail.com`) to the
+       existing `CatalogApplication`, upgrades it to `STAGE_2_STATEMENT_VERIFIED`, and produces
+       both the Seller Offer Draft and Slack Deal Card.
+    2. `route_catalog_to_institutional_buyers` ranks SPACE's 8 institutional buyers (`Duetti`,
+       `Create Music Group`, `beatBread`, `Sound Royalties`, `ANote Music`, `Royalty Exchange`,
+       `SongVest`, `Symphonic`) for organic catalogs and blocks AI/fake or step-plateau catalogs.
+    """
+    import base64
+    import io
+    import zipfile
+    from services.spacemusic.buyer_router import route_catalog_to_institutional_buyers
+    from services.spacemusic.inbox_ingestor import (
+        InboundAttachmentPayload,
+        InboundEmailStatementWebhook,
+        ingest_inbound_email_statements,
+    )
+    from services.spacemusic.models import CatalogApplication
+
+    app_2scratch = CatalogApplication(
+        contact_name="Justin Tumeh",
+        contact_email="2scratch.business@gmail.com",
+        artist_or_label_name="2Scratch",
+        listen_url="https://open.spotify.com/track/39m3vSEBm9PZoYF0XZNM1p",
+        declared_ltm_amount=30000.0,
+        declared_currency="USD",
+        distributor_or_admin="Tribal Trap & Trap Nation",
+        rights_notes="Trap / Hip-Hop master catalog",
+    )
+    store = {app_2scratch.id: app_2scratch}
+
+    # Build a ZIP archive with 2 CSV statement files covering 12 months
+    csv_part1 = (
+        "Sale Month,Title,Artist,ISRC,Store,Country of Sale,Quantity,Earnings (USD),Release Date\n"
+        + "\n".join(
+            f"2025-{m:02d},All Night,2Scratch,US2SC1900001,Spotify,US,420000,1650.00,2019-06-15\n"
+            f"2025-{m:02d},Superstar,2Scratch,US2SC2000002,Apple Music,DE,210000,980.00,2020-03-10"
+            for m in range(1, 7)
+        )
+    )
+    csv_part2 = (
+        "Sale Month,Title,Artist,ISRC,Store,Country of Sale,Quantity,Earnings (USD),Release Date\n"
+        + "\n".join(
+            f"2025-{m:02d},All Night,2Scratch,US2SC1900001,Spotify,US,405000,1590.00,2019-06-15\n"
+            f"2025-{m:02d},Superstar,2Scratch,US2SC2000002,Apple Music,DE,200000,940.00,2020-03-10"
+            for m in range(7, 13)
+        )
+    )
+
+    zip_buf = io.BytesIO()
+    with zipfile.ZipFile(zip_buf, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr("2scratch_2025_h1.csv", csv_part1)
+        zf.writestr("2scratch_2025_h2.csv", csv_part2)
+    zip_b64 = base64.b64encode(zip_buf.getvalue()).decode("ascii")
+
+    webhook = InboundEmailStatementWebhook(
+        sender_email="2scratch.business@gnail.com",  # tests typo sanitization matching too!
+        sender_name="Justin Tumeh",
+        subject="Re: Your SPACE catalog review — 2Scratch",
+        attachments=[
+            InboundAttachmentPayload(
+                filename="2Scratch_DistroKid_2025_Statements.zip",
+                content_base64=zip_b64,
+            )
+        ],
+    )
+
+    res = ingest_inbound_email_statements(
+        webhook,
+        applications_store=store,
+        engine=engine,
+        reference_date=date(2026, 1, 15),
+    )
+
+    assert res.matched_existing_application is True
+    assert res.files_processed == ["2scratch_2025_h1.csv", "2scratch_2025_h2.csv"]
+    assert res.detected_distributor == "DistroKid"
+    assert res.statement_summary.months_covered == 12
+    assert res.valuation.valuation_stage == "STAGE_2_STATEMENT_VERIFIED"
+    assert res.valuation.pipeline_status == "VALUATION_READY"
+    assert res.seller_offer_draft.template_type == "INDICATIVE_OFFER"
+
+    # Verify Institutional Buyer Routing matches Create Music Group & Duetti at the top
+    assert res.institutional_routing.eligible_for_syndication is True
+    top_partner_ids = [b.partner_id for b in res.institutional_routing.recommended_buyers]
+    assert "create_music_group" in top_partner_ids
+    assert "duetti" in top_partner_ids
+    assert "SPACE Institutional Underwriting Memo — 2Scratch" in res.institutional_routing.underwriting_memo_markdown
+    assert "2Scratch" in res.slack_deal_card_markdown
+
+
+
 
 

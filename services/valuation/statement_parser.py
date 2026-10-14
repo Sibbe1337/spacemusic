@@ -82,6 +82,8 @@ HEADER_ALIASES = {
         "sale month",
         "sales period",
         "reporting month",
+        "reporting period",
+        "statement period",
         "period",
         "activity period",
         "month",
@@ -89,11 +91,41 @@ HEADER_ALIASES = {
         "royalty period",
         "accounting period",
         "transaction month",
+        "usage period",
     ],
-    "isrc": ["isrc", "isrc code", "track isrc", "recording isrc"],
-    "track_title": ["title", "song title", "track title", "track", "release title", "asset title", "song"],
-    "artist_name": ["artist", "artist name", "track artist", "primary artist", "display artist"],
-    "dsp_store": ["store", "Music Store", "music store", "dsp", "service", "platform", "partner", "channel", "retailer"],
+    "isrc": ["isrc", "isrc code", "track isrc", "recording isrc", "asset isrc"],
+    "track_title": [
+        "title",
+        "song title",
+        "track title",
+        "track name",
+        "track",
+        "release title",
+        "asset title",
+        "song",
+        "recording title",
+    ],
+    "artist_name": [
+        "artist",
+        "artist name",
+        "track artist",
+        "primary artist",
+        "display artist",
+        "main artist",
+    ],
+    "dsp_store": [
+        "store",
+        "Music Store",
+        "music store",
+        "dsp",
+        "service",
+        "platform",
+        "partner",
+        "channel",
+        "retailer",
+        "digital service provider",
+        "source",
+    ],
     "country_code": [
         "country of sale",
         "country",
@@ -101,8 +133,18 @@ HEADER_ALIASES = {
         "country code",
         "sale country",
         "region",
+        "territory code",
     ],
-    "streams": ["quantity", "units", "streams", "net quantity", "count", "plays", "units sold"],
+    "streams": [
+        "quantity",
+        "units",
+        "streams",
+        "net quantity",
+        "count",
+        "plays",
+        "units sold",
+        "total streams",
+    ],
     "earnings": [
         "earnings (usd)",
         "earnings",
@@ -115,9 +157,13 @@ HEADER_ALIASES = {
         "payable",
         "total earned",
         "usd_earnings",
+        "artist net",
+        "your revenue",
+        "net payout",
+        "net share",
     ],
-    "currency": ["currency", "payable currency", "reporting currency", "sale currency"],
-    "release_date": ["release date", "original release date", "street date"],
+    "currency": ["currency", "payable currency", "reporting currency", "sale currency", "statement currency"],
+    "release_date": ["release date", "original release date", "street date", "first release date"],
 }
 
 
@@ -215,6 +261,12 @@ def _detect_column_mapping(headers: List[str]) -> Tuple[Dict[str, str], str]:
         distributor = "DistroKid"
     elif "sales period" in lower_headers and "music store" in lower_headers:
         distributor = "TuneCore"
+    elif "artist net" in lower_headers or ("reporting period" in lower_headers and "track isrc" in lower_headers):
+        distributor = "UnitedMasters"
+    elif "your revenue" in lower_headers or ("statement period" in lower_headers and "digital service provider" in lower_headers):
+        distributor = "Too Lost"
+    elif "net share" in lower_headers or ("usage period" in lower_headers and "partner" in lower_headers):
+        distributor = "Symphonic"
     elif "asset title" in lower_headers or "royalty period" in lower_headers:
         distributor = "FUGA / Enterprise"
     else:
