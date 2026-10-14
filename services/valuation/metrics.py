@@ -1,5 +1,6 @@
-from prometheus_client import Counter, Histogram, Gauge, start_http_server
 import os
+
+from prometheus_client import Counter, Histogram, start_http_server
 
 # --- Celery Task Metrics ---
 CELERY_TASKS_PROCESSED_TOTAL = Counter(

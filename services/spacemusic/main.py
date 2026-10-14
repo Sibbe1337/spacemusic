@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 import structlog
+from fastapi import FastAPI
 
 app = FastAPI()
 logger = structlog.get_logger(__name__)
@@ -14,8 +14,9 @@ async def read_root():
     return {"message": "Welcome to SpaceMusic Service"}
 
 # Further imports and routes would go into routes.py
-# from . import routes
-# app.include_router(routes.router)
+from . import routes
+
+app.include_router(routes.router)
 
 if __name__ == "__main__":
     import uvicorn

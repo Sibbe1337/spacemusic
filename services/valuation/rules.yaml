@@ -1,20 +1,184 @@
 STREAM_DECLINE:
-  description: "Rule to apply if a significant decline in streams is detected."
-  # Example parameters for this rule, actual structure depends on your logic
-  threshold_percentage: 0.3 # e.g., 30% decline
-  min_streams_for_eval: 1000 # e.g., only apply if streams were above this
-  # How to adjust valuation if triggered, e.g., multiplier or fixed adjustment
-  valuation_multiplier: 0.8 # Reduce valuation by 20%
-  # Flag to enable/disable this rule, could be checked via feature flag system
+  description: "Rule to apply if a significant decline in streams or monthly royalties is detected."
+  threshold_percentage: 0.30
+  min_streams_for_eval: 1000
+  valuation_multiplier: 0.80
   enabled_flag_name: "fallback_rule_stream_decline"
 
 GEO_CONCENTRATION:
-  description: "Rule to apply if listener geo-concentration is too high (e.g., indicating non-organic audience)."
-  # Example parameters
-  max_single_country_percentage: 0.7 # e.g., if >70% listeners from one country
+  description: "Rule to apply if listener or stream geo-concentration is too high (indicating non-organic audience or tier-3 farm)."
+  max_single_country_percentage: 0.70
+  high_risk_tier3_share_threshold: 0.55
   min_total_listeners_for_eval: 500
-  # Adjustment if triggered
-  confidence_reduction_factor: 0.5 # Reduce confidence by 50%
+  confidence_reduction_factor: 0.50
   enabled_flag_name: "fallback_rule_geo_concentration"
 
-# Add other rules as needed 
+SPOTIFY_1000_STREAM_THRESHOLD:
+  description: "Spotify April 2024+ policy: tracks with <1,000 annual streams generate $0 recorded royalties."
+  annual_stream_floor: 1000
+  warning_zone_streams: 1800
+  penalty_per_subthreshold_share: 0.25
+
+FUNCTIONAL_NOISE_POLICY:
+  description: "Spotify 2024-2026 functional noise policy: minimum 120s track duration for white noise/nature/ASMR/ambient functional tracks."
+  min_duration_ms: 120000
+  functional_genres:
+    - "ambient"
+    - "sleep"
+    - "white noise"
+    - "rain"
+    - "nature"
+    - "meditation"
+    - "wellness"
+    - "asmr"
+    - "soundscape"
+    - "binaural"
+    - "drone"
+    - "spa"
+  short_track_haircut: 0.85
+
+TRACK_CONCENTRATION_HHI:
+  description: "Herfindahl-Hirschman Index (HHI) for revenue concentration across tracks."
+  diversified_hhi_ceiling: 0.12
+  moderate_hhi_ceiling: 0.35
+  single_track_risk_hhi: 0.50
+  max_discount_rate_premium: 0.045
+
+COHORT_DECAY_PRIORS:
+  description: "Empirical annual decay rates across 8 distinct genre families and 4 dollar-age cohorts."
+  ambient_functional:
+    frontline_0_12m: 0.26
+    burn_in_12_24m: 0.14
+    mid_catalog_24_48m: 0.06
+    evergreen_48m_plus: 0.025
+  lofi_chill:
+    frontline_0_12m: 0.32
+    burn_in_12_24m: 0.17
+    mid_catalog_24_48m: 0.08
+    evergreen_48m_plus: 0.032
+  electronic_dance:
+    frontline_0_12m: 0.42
+    burn_in_12_24m: 0.22
+    mid_catalog_24_48m: 0.11
+    evergreen_48m_plus: 0.040
+  hiphop_rnb_phonk:
+    frontline_0_12m: 0.56
+    burn_in_12_24m: 0.30
+    mid_catalog_24_48m: 0.14
+    evergreen_48m_plus: 0.055
+  pop_indie:
+    frontline_0_12m: 0.46
+    burn_in_12_24m: 0.24
+    mid_catalog_24_48m: 0.115
+    evergreen_48m_plus: 0.042
+  rock_metal_country:
+    frontline_0_12m: 0.34
+    burn_in_12_24m: 0.17
+    mid_catalog_24_48m: 0.075
+    evergreen_48m_plus: 0.025
+  latin_afro:
+    frontline_0_12m: 0.42
+    burn_in_12_24m: 0.21
+    mid_catalog_24_48m: 0.095
+    evergreen_48m_plus: 0.038
+  classical_jazz_instrumental:
+    frontline_0_12m: 0.25
+    burn_in_12_24m: 0.13
+    mid_catalog_24_48m: 0.055
+    evergreen_48m_plus: 0.020
+  # Backward-compatible aliases
+  electronic_indie:
+    frontline_0_12m: 0.42
+    burn_in_12_24m: 0.22
+    mid_catalog_24_48m: 0.11
+    evergreen_48m_plus: 0.040
+  pop_hiphop_rnb:
+    frontline_0_12m: 0.52
+    burn_in_12_24m: 0.28
+    mid_catalog_24_48m: 0.13
+    evergreen_48m_plus: 0.050
+  rock_folk_country:
+    frontline_0_12m: 0.34
+    burn_in_12_24m: 0.17
+    mid_catalog_24_48m: 0.075
+    evergreen_48m_plus: 0.025
+
+DTW_MODEL:
+  description: "Dynamic Time Warping (DTW) parameters for shape-based lifecycle matching and fraud plateau detection."
+  sakoe_chiba_band_months: 3
+  min_months_for_dtw: 6
+  knn_top_k: 3
+  kernel_bandwidth_sigma: 0.35
+  max_dtw_blend_weight: 0.55
+  step_plateau_distance_threshold: 0.18
+
+DISTRIBUTOR_FEES:
+  description: "Default distributor/admin commission rates when applicant reports gross royalties before deductions."
+  distrokid: 0.00
+  tunecore: 0.00
+  amuse: 0.00
+  cdbaby: 0.09
+  fuga: 0.15
+  the_orchard: 0.15
+  believe: 0.20
+  symphonic: 0.15
+  unitedmasters: 0.10
+  onerpm: 0.15
+  route_note: 0.15
+  awal: 0.15
+  empire: 0.20
+  default_unknown: 0.12
+
+RPM_BENCHMARKS_USD_PER_STREAM:
+  description: "Expected net payout per stream (USD) by DSP and territory tier for anomaly detection."
+  spotify:
+    blended_min: 0.0014
+    blended_expected: 0.0029
+    blended_max: 0.0058
+    functional_noise_min: 0.0004
+    functional_noise_expected: 0.0012
+    latin_afro_min: 0.0009
+  apple_music:
+    blended_min: 0.0035
+    blended_expected: 0.0068
+    blended_max: 0.0110
+  youtube:
+    blended_min: 0.0003
+    blended_expected: 0.0014
+    blended_max: 0.0040
+  amazon_music:
+    blended_min: 0.0025
+    blended_expected: 0.0048
+    blended_max: 0.0085
+  default:
+    blended_min: 0.0005
+    blended_expected: 0.0025
+    blended_max: 0.0080
+
+DISCOUNT_RATE_MODEL:
+  base_rate_masters: 0.12
+  base_rate_publishing: 0.105
+  base_rate_both: 0.11
+  unverified_statement_penalty: 0.05
+  unconfirmed_representation_penalty: 0.03
+  max_discount_rate: 0.28
+  min_discount_rate: 0.095
+
+FX_RATES_TO_EUR:
+  EUR: 1.00
+  USD: 0.92
+  GBP: 1.17
+  SEK: 0.088
+  CAD: 0.67
+  AUD: 0.60
+  MAD: 0.0935
+  CHF: 1.05
+  NOK: 0.086
+  DKK: 0.134
+  BRL: 0.16
+  MXN: 0.048
+  JPY: 0.0061
+  INR: 0.011
+  TRY: 0.027
+  ZAR: 0.051
+

@@ -1,47 +1,65 @@
-import os
-import uuid
-import joblib
-import pandas as pd
-import yaml
-import redis
 import json
-from datetime import timedelta
-import time
+import os
 
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-from sqlmodel import Session, create_engine, select # Using synchronous session for Celery task
-from tenacity import retry, stop_after_attempt, wait_exponential
-import structlog
-
-# Assuming libs is in PYTHONPATH
-from libs.py_common.celery_config import create_celery_app
-from libs.py_common.kafka import create_avro_producer, delivery_report, KafkaException # Added KafkaException
 # Assuming services/offers/models.py contains the Offer model definition
 # This creates a dependency. Ideally, models could be in libs if shared, or use an API.
 # For now, direct import path relative to a common root for services.
 import sys
+import time
+import uuid
+from datetime import datetime, timedelta
 from pathlib import Path
+
+import joblib
+import pandas as pd
+import redis
+import spotipy
+import structlog
+import yaml
+from spotipy.oauth2 import SpotifyClientCredentials
+from sqlmodel import (  # Using synchronous session for Celery task
+    Session,
+    create_engine,
+    select,
+)
+from tenacity import retry, stop_after_attempt, wait_exponential
+
+# Assuming libs is in PYTHONPATH
+from libs.py_common.celery_config import create_celery_app
+from libs.py_common.kafka import (  # Added KafkaException
+    KafkaException,
+    create_avro_producer,
+    delivery_report,
+)
+
 # Add project root to sys.path to allow absolute-like imports for services
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(PROJECT_ROOT))
-from services.offers.models import Offer # Now this should work
-from services.offers.db import DATABASE_URL as OFFERS_DB_URL # Get sync DB URL for offers
-from libs.analytics.feature_pipeline import process_data_for_features # Adjusted based on typical use
+from libs.analytics.feature_pipeline import (
+    process_data_for_features,  # Adjusted based on typical use
+)
+from services.offers.db import (
+    DATABASE_URL as OFFERS_DB_URL,  # Get sync DB URL for offers
+)
+from services.offers.models import Offer  # Now this should work
+
+from .engine import CatalogValuationInput, SpaceValuationEngine
+
+space_valuation_engine = SpaceValuationEngine()
 # Kafka producer - placeholder. Use a proper Kafka client library like confluent-kafka-python
 # from confluent_kafka import Producer
 
 # Import metrics
 from .metrics import (
-    CELERY_TASKS_PROCESSED_TOTAL,
-    CELERY_TASK_DURATION_SECONDS,
-    SPOTIFY_API_CALLS_TOTAL,
-    SPOTIFY_API_LATENCY_SECONDS,
+    APP_ERRORS_TOTAL,
     CACHE_HITS_TOTAL,
     CACHE_MISSES_TOTAL,
+    CELERY_TASK_DURATION_SECONDS,
+    CELERY_TASKS_PROCESSED_TOTAL,
     MODEL_PREDICTIONS_TOTAL,
-    APP_ERRORS_TOTAL,
-    start_metrics_server
+    SPOTIFY_API_CALLS_TOTAL,
+    SPOTIFY_API_LATENCY_SECONDS,
+    start_metrics_server,
 )
 
 logger = structlog.get_logger(__name__)
@@ -211,32 +229,45 @@ def run_valuation(self, offer_id_str: str):
             feature_dict = process_data_for_features(raw_features_data)
             feature_df = pd.DataFrame([feature_dict])
 
-            if not model:
-                logger.error("Valuation model not loaded. Cannot predict.")
-                offer.status = "VALUATION_FAILED_MODEL_MISSING"
-                session.add(offer)
-                session.commit()
-                APP_ERRORS_TOTAL.labels(service_name="valuation", error_type="model_missing", component="predict").inc()
-                MODEL_PREDICTIONS_TOTAL.labels(outcome="error_model_missing").inc()
-                status = "failure_model_missing"
-                return {"status": "error", "message": "Valuation model not loaded"}
-            
-            try:
-                prediction_results = model.predict(feature_df)
-                MODEL_PREDICTIONS_TOTAL.labels(outcome="success").inc()
-                computed_low_eur = int(prediction_results[0][0])
-                computed_median_eur = int(prediction_results[0][1])
-                computed_high_eur = int(prediction_results[0][2])
-                computed_confidence = float(prediction_results[0][3])
-            except Exception as e:
-                logger.error("Error during model prediction", error=str(e), offer_id=str(offer_id))
-                offer.status = "VALUATION_FAILED_PREDICTION_ERROR"
-                session.add(offer)
-                session.commit()
-                APP_ERRORS_TOTAL.labels(service_name="valuation", error_type="prediction_error", component="predict").inc()
-                MODEL_PREDICTIONS_TOTAL.labels(outcome="error_prediction").inc()
-                status = "failure_prediction_error"
-                return {"status": "error", "message": f"Model prediction error: {e}"}
+            if model:
+                try:
+                    prediction_results = model.predict(feature_df)
+                    MODEL_PREDICTIONS_TOTAL.labels(outcome="success").inc()
+                    computed_low_eur = int(prediction_results[0][0])
+                    computed_median_eur = int(prediction_results[0][1])
+                    computed_high_eur = int(prediction_results[0][2])
+                    computed_confidence = float(prediction_results[0][3])
+                except Exception as e:
+                    logger.error("Error during model prediction", error=str(e), offer_id=str(offer_id))
+                    offer.status = "VALUATION_FAILED_PREDICTION_ERROR"
+                    session.add(offer)
+                    session.commit()
+                    APP_ERRORS_TOTAL.labels(service_name="valuation", error_type="prediction_error", component="predict").inc()
+                    MODEL_PREDICTIONS_TOTAL.labels(outcome="error_prediction").inc()
+                    status = "failure_prediction_error"
+                    return {"status": "error", "message": f"Model prediction error: {e}"}
+            else:
+                logger.info("Using SPACE Cohort DCF & Forensics Engine for offer valuation", offer_id=str(offer_id))
+                declared_ltm = (offer.amount_cents / 100.0) if getattr(offer, "amount_cents", 0) else 5000.0
+                val_input = CatalogValuationInput(
+                    catalog_title=offer.title or "Catalog Offer",
+                    artist_or_label_name=(
+                        offer.creator.display_name or offer.creator.username
+                        if offer.creator else (offer.title or "Unknown Artist")
+                    ),
+                    spotify_artist_id=offer.creator.platform_id if offer.creator else None,
+                    declared_ltm_amount=declared_ltm,
+                    declared_currency=getattr(offer, "currency_code", "EUR") or "EUR",
+                    genres=spotify_data.get("genres", []) if spotify_data else [],
+                    spotify_followers=spotify_data.get("followers", {}).get("total") if spotify_data else None,
+                    spotify_popularity=spotify_data.get("popularity") if spotify_data else None,
+                )
+                engine_output = space_valuation_engine.evaluate(val_input)
+                MODEL_PREDICTIONS_TOTAL.labels(outcome="success_space_engine").inc()
+                computed_low_eur = engine_output.price_low_cents
+                computed_median_eur = engine_output.price_median_cents
+                computed_high_eur = engine_output.price_high_cents
+                computed_confidence = engine_output.valuation_confidence
 
             # 5. Apply fallback rules
             # Example rule check from rules.yaml (needs actual flag checks)
