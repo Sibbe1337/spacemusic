@@ -39,6 +39,13 @@ from .typeform_adapter import (
     parse_typeform_csv_export,
     parse_typeform_webhook_payload,
 )
+from .zero_touch_stage1 import (
+    ImpliedRevenueCrossCheck,
+    LiveSpotifyArtistSnapshot,
+    ZeroTouchStage1Result,
+    execute_zero_touch_stage1,
+    get_distributor_export_guide,
+)
 
 router = APIRouter()
 logger = structlog.get_logger(__name__)
@@ -71,9 +78,12 @@ class ApplicationEvaluationResponse(BaseModel):
     application_id: uuid.UUID
     pipeline_status: str
     valuation_stage: str
+    autonomous_decision: Optional[str] = None
     valuation: CatalogValuationOutput
     reply_draft: ReplyDraft
     statement_summary: Optional[ParsedStatementSummary] = None
+    implied_revenue_crosscheck: Optional[ImpliedRevenueCrossCheck] = None
+    distributor_export_guide: Optional[str] = None
 
 
 @router.post(
@@ -84,26 +94,22 @@ class ApplicationEvaluationResponse(BaseModel):
 async def handle_typeform_webhook(payload: Dict[str, Any] = Body(...)):
     """
     Receives a Typeform webhook (`xzx5SBJb` - SPACE catalog review), parses all 19 fields,
-    executes Stage 1 DCF & Forensics triage, and prepares a tailored email reply draft.
+    executes the Zero-Touch Stage 1 pipeline (optional embedded `spotify_snapshot` or
+    `raw_spotify_payload`, mathematical stream-to-revenue cross-check, 8-genre DCF,
+    AI/fake profile forensics, and distributor-specific export guide injection),
+    and stores the evaluated application.
     """
     app_row = parse_typeform_webhook_payload(payload)
-    val_input = application_to_valuation_input(app_row)
-    valuation = _engine.evaluate(val_input)
-    reply_draft = generate_reply_draft(app_row, valuation)
+    raw_spotify = payload.get("raw_spotify_payload")
+    snap_dict = payload.get("spotify_snapshot")
+    snap = LiveSpotifyArtistSnapshot(**snap_dict) if isinstance(snap_dict, dict) else None
 
-    app_row.pipeline_status = valuation.pipeline_status
-    app_row.valuation_stage = valuation.valuation_stage
-    app_row.effective_cf0_eur = valuation.baseline.effective_cf0_eur
-    app_row.price_low_eur = valuation.price_low_eur
-    app_row.price_median_eur = valuation.price_median_eur
-    app_row.price_high_eur = valuation.price_high_eur
-    app_row.implied_multiple_median = valuation.implied_ltm_multiple_median
-    app_row.discount_rate = valuation.discount_rate.total_discount_rate
-    app_row.integrity_score = valuation.integrity_score
-    app_row.valuation_confidence = valuation.valuation_confidence
-    app_row.valuation_report_json = valuation.dict() if hasattr(valuation, "dict") else valuation.model_dump()
-    app_row.draft_reply_subject = reply_draft.subject
-    app_row.draft_reply_body = reply_draft.body
+    zt_res = execute_zero_touch_stage1(
+        app_row,
+        engine=_engine,
+        spotify_snapshot=snap,
+        raw_spotify_payload=raw_spotify if isinstance(raw_spotify, dict) else None,
+    )
 
     _APPLICATIONS_STORE[app_row.id] = app_row
     logger.info(
@@ -111,15 +117,19 @@ async def handle_typeform_webhook(payload: Dict[str, Any] = Body(...)):
         application_id=str(app_row.id),
         artist=app_row.artist_or_label_name,
         pipeline_status=app_row.pipeline_status,
+        autonomous_decision=zt_res.autonomous_decision,
         price_median_eur=app_row.price_median_eur,
     )
 
     return ApplicationEvaluationResponse(
         application_id=app_row.id,
-        pipeline_status=app_row.pipeline_status,
-        valuation_stage=app_row.valuation_stage,
-        valuation=valuation,
-        reply_draft=reply_draft,
+        pipeline_status=zt_res.pipeline_status,
+        valuation_stage=zt_res.valuation.valuation_stage,
+        autonomous_decision=zt_res.autonomous_decision,
+        valuation=zt_res.valuation,
+        reply_draft=zt_res.reply_draft,
+        implied_revenue_crosscheck=zt_res.implied_revenue_crosscheck,
+        distributor_export_guide=zt_res.distributor_export_guide,
     )
 
 
@@ -297,37 +307,24 @@ async def attach_statements_to_application(
 async def import_typeform_csv(req: TypeformCsvImportRequest):
     """
     Bulk-imports and evaluates a Typeform CSV export (`responses-xzx5SBJb-*.csv`),
-    storing all applications and returning their full DCF + Forensics evaluations and reply drafts.
+    running the Zero-Touch Stage 1 pipeline across all rows and returning their
+    full DCF + Forensics evaluations, autonomous routing decisions, and reply drafts.
     """
     apps = parse_typeform_csv_export(req.csv_content, skip_test_rows=req.skip_test_rows)
     results: List[ApplicationEvaluationResponse] = []
     for app_row in apps:
-        val_input = application_to_valuation_input(app_row)
-        valuation = _engine.evaluate(val_input)
-        reply_draft = generate_reply_draft(app_row, valuation)
-
-        app_row.pipeline_status = valuation.pipeline_status
-        app_row.valuation_stage = valuation.valuation_stage
-        app_row.effective_cf0_eur = valuation.baseline.effective_cf0_eur
-        app_row.price_low_eur = valuation.price_low_eur
-        app_row.price_median_eur = valuation.price_median_eur
-        app_row.price_high_eur = valuation.price_high_eur
-        app_row.implied_multiple_median = valuation.implied_ltm_multiple_median
-        app_row.discount_rate = valuation.discount_rate.total_discount_rate
-        app_row.integrity_score = valuation.integrity_score
-        app_row.valuation_confidence = valuation.valuation_confidence
-        app_row.valuation_report_json = valuation.dict() if hasattr(valuation, "dict") else valuation.model_dump()
-        app_row.draft_reply_subject = reply_draft.subject
-        app_row.draft_reply_body = reply_draft.body
-
+        zt_res = execute_zero_touch_stage1(app_row, engine=_engine)
         _APPLICATIONS_STORE[app_row.id] = app_row
         results.append(
             ApplicationEvaluationResponse(
                 application_id=app_row.id,
-                pipeline_status=app_row.pipeline_status,
-                valuation_stage=app_row.valuation_stage,
-                valuation=valuation,
-                reply_draft=reply_draft,
+                pipeline_status=zt_res.pipeline_status,
+                valuation_stage=zt_res.valuation.valuation_stage,
+                autonomous_decision=zt_res.autonomous_decision,
+                valuation=zt_res.valuation,
+                reply_draft=zt_res.reply_draft,
+                implied_revenue_crosscheck=zt_res.implied_revenue_crosscheck,
+                distributor_export_guide=zt_res.distributor_export_guide,
             )
         )
     return results

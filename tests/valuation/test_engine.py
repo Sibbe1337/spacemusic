@@ -562,4 +562,116 @@ def test_ai_and_fake_artist_profile_forensics_detector(engine: SpaceValuationEng
     assert organic_out.ai_profile_validation.ai_fake_probability_score == 0.0
 
 
+def test_zero_touch_stage1_pipeline_and_implied_revenue_crosscheck(engine: SpaceValuationEngine):
+    """
+    Verifies the Zero-Touch Stage 1 pipeline (`services/spacemusic/zero_touch_stage1.py`):
+    1. Live Spotify enrichment + mathematical Implied-Stream-to-Revenue Cross-Check catches
+       fabricated LTM revenue claims (e.g. $144,000/yr with 9 monthly listeners -> `AUTO_DECLINE_AI_OR_FAKE_PROFILE`).
+    2. Qualified organic artist (e.g. 2Scratch / Micky via DistroKid) receives `AUTO_SEND_STAGE1_CSV_REQUEST`
+       with tailored distributor-specific click-path export instructions injected directly into the email body.
+    """
+    from services.spacemusic.models import CatalogApplication
+    from services.spacemusic.zero_touch_stage1 import (
+        ZeroTouchActionDecision,
+        execute_zero_touch_stage1,
+        extract_spotify_reference,
+    )
+
+    ent_type, sp_id = extract_spotify_reference("https://open.spotify.com/intl-fr/artist/7EUezfT3313RE1WoM0vMu0?si=abc")
+    assert ent_type == "artist"
+    assert sp_id == "7EUezfT3313RE1WoM0vMu0"
+
+    # Case A: Fabricated revenue + spoofed major-label P-lines on DIY distributor (Joseph Kargbo pattern)
+    fake_app = CatalogApplication(
+        contact_name="Joseph Kargbo",
+        contact_email="kargbo93@hotmail.fr",
+        artist_or_label_name="joseph kargbo Entertainement",
+        listen_url="https://open.spotify.com/artist/7EUezfT3313RE1WoM0vMu0",
+        declared_ltm_amount=144000.0,
+        declared_currency="USD",
+        distributor_or_admin="united master",
+    )
+    raw_fake_spotify = {
+        "result": {
+            "artist_basic": {
+                "uri": "spotify:artist:7EUezfT3313RE1WoM0vMu0",
+                "name": "joseph kargbo Entertainement",
+                "verified": False,
+                "followers": 1176,
+                "monthly_listeners": 9,
+                "external_links": [],
+            },
+            "top_tracks": [
+                {"name": "Track 1", "duration_ms": 195000, "playcount": 0, "release_date": "2026-08-01"},
+                {"name": "Track 2", "duration_ms": 185000, "playcount": 0, "release_date": "2026-08-01"},
+            ],
+            "albums": [
+                {
+                    "name": f"Album {i}",
+                    "release_date": f"2026-07-{10 + i:02d}",
+                    "total_tracks": 12,
+                    "label": "sony music Entertainement RCA records columbia records epic records",
+                }
+                for i in range(6)
+            ],
+        }
+    }
+    res_fake = execute_zero_touch_stage1(
+        fake_app,
+        engine=engine,
+        raw_spotify_payload=raw_fake_spotify,
+        reference_date=date(2026, 10, 14),
+    )
+    assert res_fake.spotify_enriched is True
+    assert res_fake.implied_revenue_crosscheck is not None
+    assert res_fake.implied_revenue_crosscheck.discrepancy_status == "EXTREME_FABRICATION_OR_MISMATCH"
+    assert res_fake.autonomous_decision == ZeroTouchActionDecision.AUTO_DECLINE_AI_OR_FAKE_PROFILE
+    assert res_fake.pipeline_status == "DECLINED_AI_OR_FAKE_PROFILE"
+    assert res_fake.reply_draft.template_type == "AUTO_DECLINE_AI_OR_FAKE"
+    assert any(rf.code == "IMPLIED_STREAM_REVENUE_MISMATCH" for rf in res_fake.valuation.risk_flags)
+
+    # Case B: Verified organic artist on DistroKid gets tailored DistroKid export instructions
+    organic_app = CatalogApplication(
+        contact_name="Micky",
+        contact_email="micky@example.org",
+        artist_or_label_name="Micky",
+        listen_url="https://open.spotify.com/artist/6QYd4joWXUMK3IXE77QHa2",
+        declared_ltm_amount=25000.0,
+        declared_currency="EUR",
+        distributor_or_admin="DistroKid",
+    )
+    raw_organic_spotify = {
+        "result": {
+            "artist_basic": {
+                "uri": "spotify:artist:6QYd4joWXUMK3IXE77QHa2",
+                "name": "Micky",
+                "verified": True,
+                "followers": 128607,
+                "monthly_listeners": 556909,
+                "external_links": ["https://instagram.com/micky", "https://facebook.com/micky"],
+            },
+            "top_tracks": [
+                {"name": "This Is The Life", "duration_ms": 190659, "playcount": 40667826, "release_date": "2021-02-11"},
+                {"name": "Summer Night", "duration_ms": 175000, "playcount": 8200000, "release_date": "2022-06-15"},
+            ],
+            "singles": [
+                {"name": "This Is The Life", "release_date": "2021-02-11", "total_tracks": 1, "label": "FRTYFVE"},
+            ],
+        }
+    }
+    res_org = execute_zero_touch_stage1(
+        organic_app,
+        engine=engine,
+        raw_spotify_payload=raw_organic_spotify,
+        reference_date=date(2026, 10, 14),
+    )
+    assert res_org.spotify_enriched is True
+    assert res_org.implied_revenue_crosscheck is not None
+    assert res_org.implied_revenue_crosscheck.discrepancy_status == "PLAUSIBLE"
+    assert res_org.autonomous_decision == ZeroTouchActionDecision.AUTO_SEND_STAGE1_CSV_REQUEST
+    assert "distrokid.com/bank" in res_org.reply_draft.body
+    assert "See Excruciating Detail" in res_org.reply_draft.body
+
+
+
 
