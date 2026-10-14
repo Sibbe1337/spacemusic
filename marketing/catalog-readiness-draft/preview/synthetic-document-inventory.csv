@@ -1,0 +1,6 @@
+synthetic_only,reference,document,example_status
+"SYNTHETIC NOT REAL","D1","Receipt export","Observed in synthetic set; no issuer authentication"
+"SYNTHETIC NOT REAL","D2","Track register","Recording F identifier not supplied"
+"SYNTHETIC NOT REAL","D3","Recording F split","Declared; signed document not supplied"
+"SYNTHETIC NOT REAL","D4","Distribution agreement","Not supplied"
+"SYNTHETIC NOT REAL","D5","Advance or lien status","Unknown"

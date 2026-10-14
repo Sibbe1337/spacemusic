@@ -1,0 +1,57 @@
+# SPACE
+
+> SPACE buys revenue-generating music catalogs directly from independent artists, producers, labels, and catalog owners. Sellers can request a review for a lump-sum purchase of defined music rights or royalty interests, without an auction marketplace.
+
+Last updated: 2026-09-07
+
+Catalogs are reviewed individually using revenue history, rights ownership, documentation, and the interest offered for sale. SPACE's published genre coverage includes ambient, lo-fi, meditation, electronic, house, wellness, and soundscape music. A genre label is not a guarantee of acceptance or a fixed valuation.
+
+The application and initial review are free, with no listing fee or auction commission and no obligation to accept an offer. The initial-offer timeline is typically 5-7 business days after the relevant catalog information is received, subject to review. Payment is by bank transfer after the agreement is complete and rights-transfer requirements are satisfied; the review timeline is not a payment guarantee.
+
+Partial transactions can cover defined shares of catalog rights. The agreement identifies what is sold, what remains with the creator, and any continuing responsibilities. Future creative work should be distinguished from the existing rights included in the transaction. Published reference multiples and calculator outputs are indicative, not guaranteed offers.
+
+The pricing and offer policy below describes the commercial process. Educational articles and comparisons are published by SPACE, not an independent buyer-ranking service. Contact: hello@spacemusic.io.
+
+## Core Service
+
+- [SPACE home](https://spacemusic.io/): Overview of the direct catalog acquisition service.
+- [How it works](https://spacemusic.io/how-it-works/): Submission, review, agreement, and payment steps.
+- [Apply to sell a catalog](https://spacemusic.io/apply/): Start a catalog review with rights and revenue information.
+- [Sell by genre](https://spacemusic.io/sell/): Browse genre-specific catalog sale pages.
+- [Pricing and offer policy](https://spacemusic.io/pricing.md): Plain-text reference for seller costs, offer factors, partial transactions, timing, and payment conditions.
+- [About SPACE](https://spacemusic.io/about/): Company background and positioning.
+
+## Guides
+
+- [Selling a music catalog for a lump sum](https://spacemusic.io/blog/sell-music-catalog-lump-sum-2026/): Define the interest sold, prepare records, compare net proceeds, and review the sale process.
+- [Music rights 101](https://spacemusic.io/guides/music-rights-101/): Introduction to masters, publishing, royalties, licensing, and metadata.
+- [Catalog valuation guide](https://spacemusic.io/guides/music-catalog-valuation-2026/): Valuation factors and illustrative reference multiples, not guaranteed purchase offers.
+- [Blanket licenses explained](https://spacemusic.io/blog/what-is-a-blanket-license/): Sourced explanation of ASCAP, BMI, SESAC, performing rights, and licensing scope.
+
+## Comparisons
+
+- [Ambient and lo-fi catalog buyer comparison](https://spacemusic.io/blog/ambient-lo-fi-music-catalog-buyers/): Sourced profiles distinguishing direct purchases, marketplaces, and advances; no private-offer ranking.
+- [Royalty Exchange alternatives](https://spacemusic.io/blog/royalty-exchange-alternatives/): Auction and non-auction routes, private purchases, and existing listing commitments.
+- [beatBread versus catalog buyers](https://spacemusic.io/blog/beatbread-vs-catalog-buyers/): Published fees, hypothetical cash-at-closing examples, recoupment, and retained income; no universal payout winner.
+
+## Tools
+
+- [Catalog value calculator](https://spacemusic.io/calculator/): Estimate a reference value from revenue, costs, years, and the share sold; not a purchase offer.
+- [Streaming calculator](https://spacemusic.io/tools/streaming-calculator/): Illustrative streaming-revenue estimates, not guaranteed platform payments.
+
+## Glossary
+
+- [Music rights glossary](https://spacemusic.io/glossary/): Index of music-rights and royalty terms.
+- [Master rights](https://spacemusic.io/glossary/master-rights/): Recording-rights terminology.
+- [Publishing rights](https://spacemusic.io/glossary/publishing-rights/): Composition and publishing-rights terminology.
+- [Catalog valuation](https://spacemusic.io/glossary/catalog-valuation/): Valuation terminology.
+- [Revenue multiple](https://spacemusic.io/glossary/revenue-multiple/): Earnings-multiple terminology used in catalog pricing.
+- [Advance](https://spacemusic.io/glossary/advance/): Music-advance terminology and a link to the upfront-cash comparison.
+- [Recoupment](https://spacemusic.io/glossary/recoupment/): Recovery of advances or other agreed costs from income.
+
+## Optional
+
+- [Brand facts](https://spacemusic.io/brand-facts/): SPACE's published company reference; stated valuation ranges are indicative.
+- [Seller profiles](https://spacemusic.io/for/): Browse information for different creator and catalog-owner situations.
+- [Streaming rates overview](https://spacemusic.io/streaming-rates/): Platform-specific reference estimates rather than fixed per-stream payment guarantees.
+- [Privacy policy](https://spacemusic.io/privacy/): Information about SPACE's handling of personal data.

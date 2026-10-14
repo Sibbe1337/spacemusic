@@ -1,0 +1,857 @@
+{
+  "checkedAt": "2026-09-17T13:12:19.604Z",
+  "origin": "https://fa09e20b.spacemusic-a6n.pages.dev",
+  "manifest": "marketing/conversion-20260917/manifest-v3.json",
+  "revision": "281a5a73031a",
+  "urls": 141,
+  "productionSpotChecks": 6,
+  "status": "PASS",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/"
+    },
+    {
+      "path": "/apply/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/apply/"
+    },
+    {
+      "path": "/calculator/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/calculator/"
+    },
+    {
+      "path": "/pricing.md",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/pricing.md"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/llms.txt"
+    },
+    {
+      "path": "/how-it-works/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/how-it-works/"
+    },
+    {
+      "path": "/streaming-rates/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/"
+    },
+    {
+      "path": "/tools/streaming-calculator/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/tools/streaming-calculator/"
+    },
+    {
+      "path": "/guides/how-to-sell-music-rights/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/guides/how-to-sell-music-rights/"
+    },
+    {
+      "path": "/guides/music-rights-101/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/guides/music-rights-101/"
+    },
+    {
+      "path": "/guides/music-catalog-valuation-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/guides/music-catalog-valuation-2026/"
+    },
+    {
+      "path": "/guides/best-music-rights-buyers-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/guides/best-music-rights-buyers-2026/"
+    },
+    {
+      "path": "/guides/how-long-does-it-take-to-sell-a-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/guides/how-long-does-it-take-to-sell-a-music-catalog/"
+    },
+    {
+      "path": "/guides/what-are-your-streams-worth-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+    },
+    {
+      "path": "/glossary/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/"
+    },
+    {
+      "path": "/compare/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/"
+    },
+    {
+      "path": "/sell/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/"
+    },
+    {
+      "path": "/data/music-catalog-market-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/data/music-catalog-market-2026/"
+    },
+    {
+      "path": "/data/space-market-index/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/data/space-market-index/"
+    },
+    {
+      "path": "/data/conversion-intelligence/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/data/conversion-intelligence/"
+    },
+    {
+      "path": "/brand-facts/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/brand-facts/"
+    },
+    {
+      "path": "/streaming-rates/spotify-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/spotify-2026/"
+    },
+    {
+      "path": "/streaming-rates/apple-music-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/apple-music-2026/"
+    },
+    {
+      "path": "/streaming-rates/youtube-music-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/youtube-music-2026/"
+    },
+    {
+      "path": "/streaming-rates/amazon-music-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/amazon-music-2026/"
+    },
+    {
+      "path": "/streaming-rates/tidal-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/tidal-2026/"
+    },
+    {
+      "path": "/streaming-rates/deezer-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/deezer-2026/"
+    },
+    {
+      "path": "/streaming-rates/soundcloud-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/streaming-rates/soundcloud-2026/"
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/about/"
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/privacy/"
+    },
+    {
+      "path": "/compare/space-vs-royalty-exchange/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/space-vs-royalty-exchange/"
+    },
+    {
+      "path": "/compare/space-vs-hipgnosis/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/space-vs-hipgnosis/"
+    },
+    {
+      "path": "/compare/space-vs-duetti/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/space-vs-duetti/"
+    },
+    {
+      "path": "/compare/space-vs-primary-wave/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/space-vs-primary-wave/"
+    },
+    {
+      "path": "/compare/space-vs-reservoir/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/space-vs-reservoir/"
+    },
+    {
+      "path": "/compare/space-vs-round-hill/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/space-vs-round-hill/"
+    },
+    {
+      "path": "/blog/maximizing-your-lo-fi-catalog-value/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/maximizing-your-lo-fi-catalog-value/"
+    },
+    {
+      "path": "/blog/streaming-royalties-guide-for-ambient-music/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/streaming-royalties-guide-for-ambient-music/"
+    },
+    {
+      "path": "/blog/why-selling-partial-rights-makes-sense/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/why-selling-partial-rights-makes-sense/"
+    },
+    {
+      "path": "/blog/how-to-register-your-ambient-music-with-pros/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/how-to-register-your-ambient-music-with-pros/"
+    },
+    {
+      "path": "/blog/case-study-ambient-producer-catalog-sale/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/case-study-ambient-producer-catalog-sale/"
+    },
+    {
+      "path": "/blog/future-of-ai-in-ambient-music/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/future-of-ai-in-ambient-music/"
+    },
+    {
+      "path": "/glossary/master-rights/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/master-rights/"
+    },
+    {
+      "path": "/glossary/publishing-rights/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/publishing-rights/"
+    },
+    {
+      "path": "/glossary/mechanical-royalties/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/mechanical-royalties/"
+    },
+    {
+      "path": "/glossary/performance-royalties/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/performance-royalties/"
+    },
+    {
+      "path": "/glossary/sync-licensing/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/sync-licensing/"
+    },
+    {
+      "path": "/glossary/pro/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/pro/"
+    },
+    {
+      "path": "/glossary/isrc/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/isrc/"
+    },
+    {
+      "path": "/glossary/iswc/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/iswc/"
+    },
+    {
+      "path": "/glossary/music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/music-catalog/"
+    },
+    {
+      "path": "/glossary/catalog-valuation/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/catalog-valuation/"
+    },
+    {
+      "path": "/glossary/revenue-multiple/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/revenue-multiple/"
+    },
+    {
+      "path": "/glossary/streaming-royalties/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/streaming-royalties/"
+    },
+    {
+      "path": "/glossary/distribution-deal/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/distribution-deal/"
+    },
+    {
+      "path": "/glossary/blanket-license/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/blanket-license/"
+    },
+    {
+      "path": "/glossary/compulsory-license/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/compulsory-license/"
+    },
+    {
+      "path": "/glossary/neighboring-rights/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/neighboring-rights/"
+    },
+    {
+      "path": "/glossary/digital-aggregator/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/digital-aggregator/"
+    },
+    {
+      "path": "/glossary/content-id/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/content-id/"
+    },
+    {
+      "path": "/glossary/royalty-split/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/royalty-split/"
+    },
+    {
+      "path": "/glossary/buyout-deal/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/buyout-deal/"
+    },
+    {
+      "path": "/glossary/advance/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/advance/"
+    },
+    {
+      "path": "/glossary/recoupment/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/recoupment/"
+    },
+    {
+      "path": "/glossary/sub-publishing/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/sub-publishing/"
+    },
+    {
+      "path": "/glossary/sample-clearance/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/sample-clearance/"
+    },
+    {
+      "path": "/glossary/cue-sheet/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/cue-sheet/"
+    },
+    {
+      "path": "/glossary/metadata/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/metadata/"
+    },
+    {
+      "path": "/glossary/music-publisher/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/music-publisher/"
+    },
+    {
+      "path": "/glossary/record-label/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/record-label/"
+    },
+    {
+      "path": "/glossary/independent-artist/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/independent-artist/"
+    },
+    {
+      "path": "/glossary/catalog-acquisition/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/catalog-acquisition/"
+    },
+    {
+      "path": "/glossary/exclusive-vs-non-exclusive-license/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/exclusive-vs-non-exclusive-license/"
+    },
+    {
+      "path": "/glossary/partial-sale-vs-full-sale/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/partial-sale-vs-full-sale/"
+    },
+    {
+      "path": "/glossary/catalog-loan/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/glossary/catalog-loan/"
+    },
+    {
+      "path": "/compare/full-buyout-vs-revenue-split/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/full-buyout-vs-revenue-split/"
+    },
+    {
+      "path": "/compare/selling-masters-vs-selling-publishing/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/selling-masters-vs-selling-publishing/"
+    },
+    {
+      "path": "/compare/major-label-vs-independent/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/major-label-vs-independent/"
+    },
+    {
+      "path": "/compare/distrokid-vs-tunecore/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/distrokid-vs-tunecore/"
+    },
+    {
+      "path": "/compare/spotify-vs-apple-music-royalties/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/spotify-vs-apple-music-royalties/"
+    },
+    {
+      "path": "/compare/sync-licensing-vs-streaming-revenue/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/sync-licensing-vs-streaming-revenue/"
+    },
+    {
+      "path": "/compare/exclusive-vs-non-exclusive-license/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/exclusive-vs-non-exclusive-license/"
+    },
+    {
+      "path": "/compare/self-publishing-vs-publishing-deal/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/self-publishing-vs-publishing-deal/"
+    },
+    {
+      "path": "/compare/catalog-sale-vs-catalog-loan/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/catalog-sale-vs-catalog-loan/"
+    },
+    {
+      "path": "/compare/partial-sale-vs-full-sale/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/compare/partial-sale-vs-full-sale/"
+    },
+    {
+      "path": "/for/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/"
+    },
+    {
+      "path": "/for/ambient-music-producer/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/ambient-music-producer/"
+    },
+    {
+      "path": "/for/lo-fi-beat-maker/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/lo-fi-beat-maker/"
+    },
+    {
+      "path": "/for/meditation-music-creator/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/meditation-music-creator/"
+    },
+    {
+      "path": "/for/independent-artist-catalog-owner/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/independent-artist-catalog-owner/"
+    },
+    {
+      "path": "/for/music-producer-ready-to-retire/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/music-producer-ready-to-retire/"
+    },
+    {
+      "path": "/for/side-project-musician/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/side-project-musician/"
+    },
+    {
+      "path": "/for/sync-licensing-composer/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/sync-licensing-composer/"
+    },
+    {
+      "path": "/for/wellness-app-soundtrack-creator/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+    },
+    {
+      "path": "/sell/sell-afro-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-afro-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-ambient-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-ambient-music-catalog/"
+    },
+    {
+      "path": "/sell/sell-bass-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-bass-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-breakbeat-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-breakbeat-catalog/"
+    },
+    {
+      "path": "/sell/sell-chillhop-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-chillhop-catalog/"
+    },
+    {
+      "path": "/sell/sell-chillout-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-chillout-catalog/"
+    },
+    {
+      "path": "/sell/sell-cinematic-ambient-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-cinematic-ambient-catalog/"
+    },
+    {
+      "path": "/sell/sell-dance-pop-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-dance-pop-catalog/"
+    },
+    {
+      "path": "/sell/sell-deep-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-deep-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-downtempo-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-downtempo-catalog/"
+    },
+    {
+      "path": "/sell/sell-drone-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-drone-music-catalog/"
+    },
+    {
+      "path": "/sell/sell-drum-and-bass-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-drum-and-bass-catalog/"
+    },
+    {
+      "path": "/sell/sell-electro-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-electro-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-electronic-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-electronic-music-catalog/"
+    },
+    {
+      "path": "/sell/sell-electronica-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-electronica-catalog/"
+    },
+    {
+      "path": "/sell/sell-focus-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-focus-music-catalog/"
+    },
+    {
+      "path": "/sell/sell-future-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-future-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-garage-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-garage-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-house-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-house-music-catalog/"
+    },
+    {
+      "path": "/sell/sell-indie-dance-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-indie-dance-catalog/"
+    },
+    {
+      "path": "/sell/sell-lo-fi-beats-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-lo-fi-beats-catalog/"
+    },
+    {
+      "path": "/sell/sell-meditation-music-rights/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-meditation-music-rights/"
+    },
+    {
+      "path": "/sell/sell-melodic-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-melodic-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-melodic-techno-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-melodic-techno-catalog/"
+    },
+    {
+      "path": "/sell/sell-nature-soundscape-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-nature-soundscape-catalog/"
+    },
+    {
+      "path": "/sell/sell-new-age-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-new-age-music-catalog/"
+    },
+    {
+      "path": "/sell/sell-organic-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-organic-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-progressive-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-progressive-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-psytrance-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-psytrance-catalog/"
+    },
+    {
+      "path": "/sell/sell-sleep-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-sleep-music-catalog/"
+    },
+    {
+      "path": "/sell/sell-study-beats-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-study-beats-catalog/"
+    },
+    {
+      "path": "/sell/sell-synthwave-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-synthwave-catalog/"
+    },
+    {
+      "path": "/sell/sell-tech-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-tech-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-techno-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-techno-catalog/"
+    },
+    {
+      "path": "/sell/sell-trance-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-trance-catalog/"
+    },
+    {
+      "path": "/sell/sell-tropical-house-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-tropical-house-catalog/"
+    },
+    {
+      "path": "/sell/sell-uk-garage-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-uk-garage-catalog/"
+    },
+    {
+      "path": "/sell/sell-wellness-music-catalog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/sell/sell-wellness-music-catalog/"
+    },
+    {
+      "path": "/blog/what-is-a-blanket-license/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/what-is-a-blanket-license/"
+    },
+    {
+      "path": "/blog/sell-music-catalog-lump-sum-2026/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/sell-music-catalog-lump-sum-2026/"
+    },
+    {
+      "path": "/blog/ambient-lo-fi-music-catalog-buyers/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/ambient-lo-fi-music-catalog-buyers/"
+    },
+    {
+      "path": "/blog/royalty-exchange-alternatives/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/royalty-exchange-alternatives/"
+    },
+    {
+      "path": "/blog/beatbread-vs-catalog-buyers/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/beatbread-vs-catalog-buyers/"
+    },
+    {
+      "path": "/blog/music-catalog-sale-documents-checklist/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/music-catalog-sale-documents-checklist/"
+    },
+    {
+      "path": "/blog/music-catalog-offer-checklist/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/music-catalog-offer-checklist/"
+    },
+    {
+      "path": "/blog/independent-record-label-funding-options/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/independent-record-label-funding-options/"
+    },
+    {
+      "path": "/blog/",
+      "status": 200,
+      "previewNoindex": true,
+      "canonical": "https://spacemusic.io/blog/"
+    }
+  ]
+}

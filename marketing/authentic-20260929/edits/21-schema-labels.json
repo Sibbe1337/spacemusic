@@ -1,0 +1,133 @@
+{
+ "area": "Owner item 5: schema and labels",
+ "edits": [
+  {
+   "code": true,
+   "modules": [
+    "BlogPost-G1IBKFnh"
+   ],
+   "find": "author:{\"@type\":\"Person\",name:i.author.name}",
+   "replace": "author:i.author.name===\"SPACE Editorial Team\"?{\"@type\":\"Organization\",name:i.author.name}:{\"@type\":\"Person\",name:i.author.name}",
+   "reason": "team byline is an organization, not a person"
+  },
+  {
+   "jsonLd": true,
+   "pages": [
+    "blog/maximizing-your-lo-fi-catalog-value/",
+    "blog/streaming-royalties-guide-for-ambient-music/",
+    "blog/why-selling-partial-rights-makes-sense/",
+    "blog/how-to-register-your-ambient-music-with-pros/",
+    "blog/case-study-ambient-producer-catalog-sale/",
+    "blog/future-of-ai-in-ambient-music/"
+   ],
+   "find": "Person",
+   "replace": "Organization",
+   "reason": "author schema type for SPACE Editorial Team (prerendered JSON-LD)"
+  },
+  {
+   "find": "Success Stories",
+   "replace": "Examples",
+   "modules": [
+    "BlogPost",
+    "InternalLinks"
+   ],
+   "pages": [
+    "blog/"
+   ],
+   "reason": "category held invented success stories; now illustrative examples"
+  },
+  {
+   "code": true,
+   "modules": [
+    "MarketDataPage"
+   ],
+   "find": "n.map(a=>e.jsxs(\"div\",{className:\"mb-8\",children:[e.jsx(\"h3\"",
+   "replace": "n.filter(a=>t.dataPoints.some(i=>i.category===a&&i.source!==\"No verified public source\")).map(a=>e.jsxs(\"div\",{className:\"mb-8\",children:[e.jsx(\"h3\"",
+   "reason": "hide cards, columns and sources with no verified data",
+   "rerender": [
+    "data/music-catalog-market-2026/index.html"
+   ]
+  },
+  {
+   "code": true,
+   "modules": [
+    "MarketDataPage"
+   ],
+   "find": "t.dataPoints.filter(i=>i.category===a)",
+   "replace": "t.dataPoints.filter(i=>i.category===a&&i.source!==\"No verified public source\")",
+   "reason": "hide cards, columns and sources with no verified data"
+  },
+  {
+   "code": true,
+   "modules": [
+    "MarketDataPage"
+   ],
+   "find": "e.jsx(\"th\",{className:\"text-left py-3 px-4 font-medium\",children:\"Market Size\"}),e.jsx(\"th\",{className:\"text-left py-3 px-4 font-medium\",children:\"Growth\"}),",
+   "replace": "",
+   "reason": "hide cards, columns and sources with no verified data"
+  },
+  {
+   "code": true,
+   "modules": [
+    "MarketDataPage"
+   ],
+   "find": "e.jsx(\"td\",{className:\"py-3 px-4\",children:a.marketSize}),e.jsx(\"td\",{className:\"py-3 px-4\",children:a.growth}),",
+   "replace": "",
+   "reason": "hide cards, columns and sources with no verified data"
+  },
+  {
+   "code": true,
+   "modules": [
+    "MarketDataPage"
+   ],
+   "find": "t.citations.map((a,i)=>",
+   "replace": "t.citations.filter(a=>!/^(Statista|No verified public source)/.test(a.source)).map((a,i)=>",
+   "reason": "hide cards, columns and sources with no verified data"
+  },
+  {
+   "find": "Hipgnosis Songs Fund Annual Report 2024",
+   "replace": "Music Business Worldwide \u2014 Blackstone becomes owner of Hipgnosis Songs Fund (2024)",
+   "modules": [
+    "MarketDataPage"
+   ],
+   "pages": [
+    "data/"
+   ],
+   "reason": "label named a report the link did not point to"
+  },
+  {
+   "href": true,
+   "find": "https://www.hipgnosissongs.com/investor-relations/",
+   "replace": "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/",
+   "modules": [
+    "MarketDataPage"
+   ],
+   "pages": [
+    "data/"
+   ],
+   "reason": "old investor site redirects away; source for the Blackstone figures on the page"
+  },
+  {
+   "find": "Music Business Worldwide \u2014 Catalog Deal Tracker",
+   "replace": "Music Business Worldwide",
+   "modules": [
+    "MarketDataPage"
+   ],
+   "pages": [
+    "data/"
+   ],
+   "reason": "no such tracker; link is the MBW homepage"
+  },
+  {
+   "find": "Billboard \u2014 Music Catalog Valuations",
+   "replace": "Billboard \u2014 Business",
+   "modules": [
+    "MarketDataPage"
+   ],
+   "pages": [
+    "data/"
+   ],
+   "reason": "label named an article the link did not point to"
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+{
+  "checkedAt": "2026-09-10T15:08:46.751Z",
+  "widths": [
+    320,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "accessibility": [
+    {
+      "screen": "apply",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "apply",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "received",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "received",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "catalog",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "catalog",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "paused",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "paused",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "documents",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "documents",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "review",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "review",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "under-review",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "under-review",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "clarification",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "clarification",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    }
+  ],
+  "checks": [
+    "full simulated journey",
+    "validation and zero income",
+    "keyboard",
+    "local save/resume and reload",
+    "sample upload failure/retry/removal",
+    "submission failure/retry/double event",
+    "manual clarification",
+    "HTML escaping",
+    "reset preserves unrelated storage",
+    "blocked storage",
+    "late storage failure updates save indicator",
+    "catalog edits disable stale progress links",
+    "no JavaScript fallback",
+    "reduced motion",
+    "200% layout zoom",
+    "no real file inputs",
+    "no remote requests or submissions",
+    "no cookies",
+    "HTTP method and asset allowlist"
+  ],
+  "remoteRequests": [],
+  "posts": [],
+  "errors": []
+}

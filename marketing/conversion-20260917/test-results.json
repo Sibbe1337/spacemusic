@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checks": 2181,
+  "htmlPages": 139,
+  "cssGzipBytes": 1359,
+  "links": {
+    "pages": 139,
+    "sitemap": 141,
+    "internalLinks": 6665,
+    "issues": {},
+    "orphans": [
+      "/data/conversion-intelligence/",
+      "/data/space-market-index/"
+    ],
+    "unreachable": [
+      "/data/conversion-intelligence/",
+      "/data/space-market-index/"
+    ],
+    "maxDepth": 3
+  },
+  "scope": [
+    "index.html",
+    "sell/index.html",
+    "calculator/index.html"
+  ],
+  "production": "unchanged"
+}

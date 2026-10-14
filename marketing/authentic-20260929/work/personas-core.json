@@ -1,0 +1,692 @@
+[
+ {
+  "text": "Your catalog may include hundreds of tracks spanning albums, EPs, singles, and extended ambient pieces.",
+  "urls": [
+   "https://spacemusic.io/for/ambient-music-producer/",
+   "https://spacemusic.io/for/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.02,
+   "unsourced_number": 0.13,
+   "policy_conflict": 0.02,
+   "credential": 0.6
+  }
+ },
+ {
+  "text": "You've built a dedicated listener base on Spotify's ambient playlists, Bandcamp, and niche communities.",
+  "urls": [
+   "https://spacemusic.io/for/ambient-music-producer/",
+   "https://spacemusic.io/for/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.02,
+   "unsourced_number": 0.05,
+   "policy_conflict": 0.03,
+   "credential": 0.81
+  }
+ },
+ {
+  "text": "Your music generates steady streaming revenue with remarkably stable month-over-month performance, and you've noticed growing interest from wellness apps, YouTube creators, and meditation platforms looking to license your work.",
+  "urls": [
+   "https://spacemusic.io/for/ambient-music-producer/",
+   "https://spacemusic.io/for/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.05,
+   "policy_conflict": 0.03,
+   "credential": 0.6
+  }
+ },
+ {
+  "text": "An ambient producer with a 200-track catalog generating $18,000/year in combined streaming and sync revenue listed on SpaceMusic.io.",
+  "urls": [
+   "https://spacemusic.io/for/ambient-music-producer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.13,
+   "unsourced_number": 0.73,
+   "policy_conflict": 0.2,
+   "credential": 0.86
+  }
+ },
+ {
+  "text": "After a comprehensive metadata audit revealed $3,200 in uncollected international royalties, the catalog was valued at a 12x multiple — reflecting its exceptional revenue stability (less than 3% month-over-month variance) and strong positioning in the growing wellness market.",
+  "urls": [
+   "https://spacemusic.io/for/ambient-music-producer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.66,
+   "unsourced_number": 0.93,
+   "policy_conflict": 0.27,
+   "credential": 0.84
+  }
+ },
+ {
+  "text": "The producer chose a partial sale of 40%, receiving $86,400 upfront while retaining majority ownership and ongoing income from the remaining 60%.",
+  "urls": [
+   "https://spacemusic.io/for/ambient-music-producer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.68,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.17,
+   "credential": 0.95
+  }
+ },
+ {
+  "text": "The capital was used to build a dedicated ambient music studio, and the catalog's total revenue has since grown 25% with the buyer's active sync licensing efforts.",
+  "urls": [
+   "https://spacemusic.io/for/ambient-music-producer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.15,
+   "unsourced_number": 0.9,
+   "policy_conflict": 0.06,
+   "credential": 0.88
+  }
+ },
+ {
+  "text": "Lo-fi hip-hop is one of the most-streamed micro-genres on Spotify and YouTube, with channels like Lofi Girl drawing tens of millions of regular listeners.",
+  "urls": [
+   "https://spacemusic.io/for/",
+   "https://spacemusic.io/for/lo-fi-beat-maker/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.77,
+   "policy_conflict": 0.03,
+   "credential": 0.09
+  }
+ },
+ {
+  "text": "The global wellness market is worth over $5 trillion and growing, and meditation app usage has exploded — creating enormous demand for high-quality meditation music.",
+  "urls": [
+   "https://spacemusic.io/for/",
+   "https://spacemusic.io/for/meditation-music-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.03,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "But over the years, you've accumulated a catalog of ambient, lo-fi, or electronic music that you created as a passion project, side hustle, or creative outlet.",
+  "urls": [
+   "https://spacemusic.io/for/",
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.02,
+   "unsourced_number": 0.03,
+   "policy_conflict": 0.03,
+   "credential": 0.56
+  }
+ },
+ {
+  "text": "Maybe you went through an intense production phase and released several albums, or you consistently dropped tracks over a few years before life pulled you in other directions.",
+  "urls": [
+   "https://spacemusic.io/for/",
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.02,
+   "unsourced_number": 0.04,
+   "policy_conflict": 0.03,
+   "credential": 0.52
+  }
+ },
+ {
+  "text": "The wellness app market is growing at 15-20% annually, and your catalog of purpose-built wellness music is an asset that's becoming more valuable every year.",
+  "urls": [
+   "https://spacemusic.io/for/",
+   "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.08,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.06,
+   "credential": 0.08
+  }
+ },
+ {
+  "text": "A lo-fi beat maker with 800+ beats generating $24,000/year across Spotify streaming ($12,000), YouTube Content ID ($7,000), and BeatStars licensing ($5,000) sought to simplify their income and raise capital for a home studio upgrade.",
+  "urls": [
+   "https://spacemusic.io/for/lo-fi-beat-maker/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.11,
+   "unsourced_number": 0.83,
+   "policy_conflict": 0.08,
+   "credential": 0.94
+  }
+ },
+ {
+  "text": "SpaceMusic.io's unified valuation aggregated all revenue streams and applied an 11x multiple, valuing the catalog at $264,000.",
+  "urls": [
+   "https://spacemusic.io/for/lo-fi-beat-maker/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.73,
+   "unsourced_number": 0.86,
+   "policy_conflict": 0.5,
+   "credential": 0.68
+  }
+ },
+ {
+  "text": "The producer sold 50% for $132,000, allowing the buyer to actively manage Content ID and licensing while the producer continued earning from the retained half.",
+  "urls": [
+   "https://spacemusic.io/for/lo-fi-beat-maker/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.63,
+   "unsourced_number": 0.8,
+   "policy_conflict": 0.08,
+   "credential": 0.94
+  }
+ },
+ {
+  "text": "Within a year, the buyer's active management had increased total catalog revenue by 30%, benefiting both parties.",
+  "urls": [
+   "https://spacemusic.io/for/lo-fi-beat-maker/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.37,
+   "unsourced_number": 0.9,
+   "policy_conflict": 0.06,
+   "credential": 0.89
+  }
+ },
+ {
+  "text": "A meditation music creator with 150 tracks — including guided meditation underscores, binaural beat compositions, and nature-ambient soundscapes — was generating $22,000/year from Spotify ($10,000), Insight Timer ($5,000), YouTube Content ID ($4,000), and direct licensing to two yoga studio chains ($3,000).",
+  "urls": [
+   "https://spacemusic.io/for/meditation-music-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.09,
+   "unsourced_number": 0.61,
+   "policy_conflict": 0.05,
+   "credential": 0.92
+  }
+ },
+ {
+  "text": "Traditional valuations at 10x suggested $220,000, but SpaceMusic.io's wellness-aware methodology recognized the catalog's alignment with the $130B global meditation market, the creator's established Insight Timer following (50,000+ listeners), and the functional design of the compositions.",
+  "urls": [
+   "https://spacemusic.io/for/meditation-music-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.47,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.23,
+   "credential": 0.69
+  }
+ },
+ {
+  "text": "The catalog was valued at 14x, and a wellness-focused investment fund acquired 100% for $308,000.",
+  "urls": [
+   "https://spacemusic.io/for/meditation-music-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.67,
+   "unsourced_number": 0.91,
+   "policy_conflict": 0.22,
+   "credential": 0.94
+  }
+ },
+ {
+  "text": "The creator used the proceeds to launch a wellness music production course and began building a new catalog.",
+  "urls": [
+   "https://spacemusic.io/for/meditation-music-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.1,
+   "unsourced_number": 0.11,
+   "policy_conflict": 0.05,
+   "credential": 0.85
+  }
+ },
+ {
+  "text": "A 58-year-old ambient music producer with a 25-year career and a 600-track catalog generating $32,000/year decided to retire from active music production.",
+  "urls": [
+   "https://spacemusic.io/for/music-producer-ready-to-retire/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.05,
+   "unsourced_number": 0.35,
+   "policy_conflict": 0.04,
+   "credential": 0.92
+  }
+ },
+ {
+  "text": "SpaceMusic.io valued the catalog at 13x annual revenue ($416,000), reflecting the catalog's diverse revenue streams, impeccable metadata, and the evergreen quality of ambient compositions.",
+  "urls": [
+   "https://spacemusic.io/for/music-producer-ready-to-retire/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.77,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.66,
+   "credential": 0.93
+  }
+ },
+ {
+  "text": "The producer chose an installment sale — receiving $200,000 at closing and $216,000 over three years — to optimize capital gains tax impact.",
+  "urls": [
+   "https://spacemusic.io/for/music-producer-ready-to-retire/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.62,
+   "unsourced_number": 0.86,
+   "policy_conflict": 0.49,
+   "credential": 0.93
+  }
+ },
+ {
+  "text": "The buyer was a wellness music investment fund that committed to maintaining the catalog's artistic integrity while expanding its sync licensing footprint.",
+  "urls": [
+   "https://spacemusic.io/for/music-producer-ready-to-retire/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.06,
+   "unsourced_number": 0.12,
+   "policy_conflict": 0.07,
+   "credential": 0.85
+  }
+ },
+ {
+  "text": "Even a small catalog sale ($2,000-$20,000) can be meaningful as unexpected income",
+  "urls": [
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.53,
+   "unsourced_number": 0.67,
+   "policy_conflict": 0.13,
+   "credential": 0.12
+  }
+ },
+ {
+  "text": "A software engineer who had produced ambient electronic music as a side project during college accumulated 45 tracks across three albums and several singles.",
+  "urls": [
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.11,
+   "policy_conflict": 0.04,
+   "credential": 0.9
+  }
+ },
+ {
+  "text": "The catalog was generating $2,800/year through DistroKid and ASCAP but hadn't been actively managed in three years.",
+  "urls": [
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.09,
+   "unsourced_number": 0.59,
+   "policy_conflict": 0.05,
+   "credential": 0.64
+  }
+ },
+ {
+  "text": "The creator was still paying the annual distributor fee and reporting the income on taxes, but it felt like more trouble than it was worth.",
+  "urls": [
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.07,
+   "policy_conflict": 0.08,
+   "credential": 0.63
+  }
+ },
+ {
+  "text": "After a quick SpaceMusic.io valuation (completed in 48 hours for this straightforward catalog), the music was valued at 9x annual revenue ($25,200).",
+  "urls": [
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.8,
+   "unsourced_number": 0.78,
+   "policy_conflict": 0.77,
+   "credential": 0.92
+  }
+ },
+ {
+  "text": "A wellness content creator purchased the full catalog within 10 days of listing.",
+  "urls": [
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.16,
+   "unsourced_number": 0.62,
+   "policy_conflict": 0.46,
+   "credential": 0.96
+  }
+ },
+ {
+  "text": "The seller used the proceeds as a down payment contribution on a new car — a tangible return on a creative side project they'd nearly forgotten about.",
+  "urls": [
+   "https://spacemusic.io/for/side-project-musician/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.2,
+   "unsourced_number": 0.17,
+   "policy_conflict": 0.07,
+   "credential": 0.93
+  }
+ },
+ {
+  "text": "A sync licensing composer with 250 tracks placed across four music libraries, generating $35,000/year from sync fees ($20,000), backend PRO performance royalties ($10,000), and Spotify streaming ($5,000), wanted to transition from active sync composing to teaching.",
+  "urls": [
+   "https://spacemusic.io/for/sync-licensing-composer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.13,
+   "unsourced_number": 0.67,
+   "policy_conflict": 0.06,
+   "credential": 0.96
+  }
+ },
+ {
+  "text": "A pre-sale cue sheet audit revealed 15 missing TV placements worth an estimated $6,000/year in uncollected backend royalties, which were registered and began generating income within two quarters.",
+  "urls": [
+   "https://spacemusic.io/for/sync-licensing-composer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.52,
+   "unsourced_number": 0.78,
+   "policy_conflict": 0.1,
+   "credential": 0.92
+  }
+ },
+ {
+  "text": "The catalog was revalued at $41,000/year and sold at a 12x multiple ($492,000) to a production music fund that took over all library relationships and actively expanded the catalog's placement footprint.",
+  "urls": [
+   "https://spacemusic.io/for/sync-licensing-composer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.58,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.22,
+   "credential": 0.96
+  }
+ },
+ {
+  "text": "The composer now teaches film scoring at a community college.",
+  "urls": [
+   "https://spacemusic.io/for/sync-licensing-composer/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.1,
+   "policy_conflict": 0.03,
+   "credential": 0.9
+  }
+ },
+ {
+  "text": "Wellness App Composers: Your Soundtracks Power a $5 Trillion Industry",
+  "urls": [
+   "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.05,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.05,
+   "credential": 0.06
+  }
+ },
+ {
+  "text": "A wellness soundtrack creator had built a catalog of 120 purpose-designed compositions for meditation, sleep, and breathwork, generating $28,000/year from licensing deals with three meditation apps ($18,000), Spotify streaming ($6,000), and YouTube Content ID ($4,000).",
+  "urls": [
+   "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.12,
+   "unsourced_number": 0.79,
+   "policy_conflict": 0.07,
+   "credential": 0.95
+  }
+ },
+ {
+  "text": "SpaceMusic.io's functional music valuation recognized the therapeutic design premium and the strong alignment with the growing wellness app market (projected 18% CAGR).",
+  "urls": [
+   "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.16,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.14,
+   "credential": 0.45
+  }
+ },
+ {
+  "text": "A performance royalty audit recovered $5,500/year in uncollected in-app performance royalties from one app that wasn't reporting to ASCAP.",
+  "urls": [
+   "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.56,
+   "unsourced_number": 0.86,
+   "policy_conflict": 0.07,
+   "credential": 0.8
+  }
+ },
+ {
+  "text": "The catalog was valued at 15x the corrected annual revenue of $33,500, and a health tech investment firm acquired it for $502,500.",
+  "urls": [
+   "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.71,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.29,
+   "credential": 0.95
+  }
+ },
+ {
+  "text": "The buyer integrated the catalog into a new AI-driven meditation app, expanding its reach to over 2 million users.",
+  "urls": [
+   "https://spacemusic.io/for/wellness-app-soundtrack-creator/"
+  ],
+  "module": "personas-poXD4ezC-intent-50f4feb4050e.js",
+  "scores": {
+   "promise": 0.09,
+   "unsourced_number": 0.93,
+   "policy_conflict": 0.06,
+   "credential": 0.93
+  }
+ },
+ {
+  "text": "Annualizing gives $12,000.",
+  "urls": [
+   "https://spacemusic.io/guides/music-catalog-valuation-2026/"
+  ],
+  "module": "ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.44,
+   "unsourced_number": 0.66,
+   "policy_conflict": 0.14,
+   "credential": 0.11
+  }
+ },
+ {
+  "text": "Agreed upfront payment",
+  "urls": [
+   "https://spacemusic.io/how-it-works/"
+  ],
+  "module": "HowItWorksPage-Br1vbw7A-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.24,
+   "unsourced_number": 0.03,
+   "policy_conflict": 0.53,
+   "credential": 0.09
+  }
+ },
+ {
+  "text": "Auction or listing commission",
+  "urls": [
+   "https://spacemusic.io/"
+  ],
+  "module": "Index-og-motion-7c15365471de.js",
+  "scores": {
+   "promise": 0.06,
+   "unsourced_number": 0.04,
+   "policy_conflict": 0.71,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "The $15B+ wellness app market is hungry for licensed meditation music.",
+  "urls": [
+   "https://spacemusic.io/sell/"
+  ],
+  "module": "GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.11,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.05,
+   "credential": 0.06
+  }
+ },
+ {
+  "text": "Study Beats Are Powering a Billion-Stream Playlist Economy",
+  "urls": [
+   "https://spacemusic.io/sell/"
+  ],
+  "module": "GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.05,
+   "unsourced_number": 0.64,
+   "policy_conflict": 0.04,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Millions of students stream study beats daily, and exam seasons create predictable revenue spikes that buyers love.",
+  "urls": [
+   "https://spacemusic.io/sell/"
+  ],
+  "module": "GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.06,
+   "unsourced_number": 0.68,
+   "policy_conflict": 0.05,
+   "credential": 0.13
+  }
+ },
+ {
+  "text": "Sleep Music Sits at the Center of a $100 Billion Market",
+  "urls": [
+   "https://spacemusic.io/sell/"
+  ],
+  "module": "GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.09,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.04,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Sleep apps, smart mattress brands, and wellness platforms are investing heavily in licensed sleep audio.",
+  "urls": [
+   "https://spacemusic.io/sell/"
+  ],
+  "module": "GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.1,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.05,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Wellness Music Is a Core Asset in a $60 Billion Industry",
+  "urls": [
+   "https://spacemusic.io/sell/"
+  ],
+  "module": "GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.08,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.04,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Then compare your annualized outcome against common 4–10x valuation ranges in the catalog calculator.",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/amazon-music-2026/",
+   "https://spacemusic.io/streaming-rates/apple-music-2026/",
+   "https://spacemusic.io/streaming-rates/deezer-2026/",
+   "https://spacemusic.io/streaming-rates/soundcloud-2026/",
+   "https://spacemusic.io/streaming-rates/spotify-2026/",
+   "https://spacemusic.io/streaming-rates/tidal-2026/",
+   "https://spacemusic.io/streaming-rates/youtube-music-2026/"
+  ],
+  "module": "StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.13,
+   "unsourced_number": 0.63,
+   "policy_conflict": 0.17,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "as a lump sum, based on 4–10x annual revenue",
+  "urls": [
+   "https://spacemusic.io/tools/streaming-calculator/"
+  ],
+  "module": "StreamingCalculator-BmaIiv3O-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js",
+  "scores": {
+   "promise": 0.58,
+   "unsourced_number": 0.78,
+   "policy_conflict": 0.36,
+   "credential": 0.04
+  }
+ }
+]

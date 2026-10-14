@@ -1,0 +1,148 @@
+{
+ "area": "Growth: direct answer sentences for AI answer engines",
+ "edits": [
+  {
+   "find": "Deezer is often discussed through the lens of artist-centric economics, but your 2026 payout results still depend on catalog behavior, territory mix, and rights execution.",
+   "replace": "Deezer has no fixed rate per stream: under its artist-centric payment model, earnings vary by country, subscription mix and rights setup, and artists need more than 1,000 streams a month from at least 500 unique listeners for a boost, according to Deezer. Your 2026 payout results also depend on catalog behavior, territory mix, and rights execution.",
+   "reason": "policy",
+   "modules": [
+    "RelatedContent"
+   ],
+   "pages": [
+    "streaming-rates/deezer-2026/"
+   ]
+  },
+  {
+   "find": "The decision between signing with a major record label and remaining independent is one of the most consequential choices a music creator can make.",
+   "replace": "A major label usually pays for recording, distribution and marketing and typically owns your master recordings in exchange for a royalty, while independent artists keep their masters and most or all revenue after distributor fees. The decision between signing with a major record label and remaining independent is one of the most consequential choices a music creator can make.",
+   "reason": "policy",
+   "modules": [
+    "comparisons"
+   ],
+   "pages": [
+    "compare/major-label-vs-independent/"
+   ]
+  },
+  {
+   "find": "Artificial intelligence has impacted all music genres, but its relationship with ambient music is particularly complex.",
+   "replace": "AI is both a threat and an opportunity for ambient music: Deezer reported in April 2026 that it receives nearly 75,000 fully AI-generated tracks a day but that they made up only 1-3% of total streams, and some human creators use AI as a collaborative tool. Artificial intelligence has impacted all music genres, but its relationship with ambient music is particularly complex.",
+   "reason": "policy",
+   "modules": [
+    "BlogPost"
+   ],
+   "pages": [
+    "blog/future-of-ai-in-ambient-music/"
+   ]
+  },
+  {
+   "find": "Round Hill Music and SPACE represent two very different eras and approaches to music catalog acquisition.",
+   "replace": "Round Hill Music is an institutional investor in established pop, rock and country catalogs that sold its UK-listed fund to Concord in 2023, according to Music Business Worldwide, while SPACE reviews catalogs from independent creators and buys directly without commission. Round Hill Music and SPACE represent two very different eras and approaches to music catalog acquisition.",
+   "reason": "policy",
+   "modules": [
+    "competitorComparisonsExpanded"
+   ],
+   "pages": [
+    "compare/space-vs-round-hill/"
+   ]
+  },
+  {
+   "find": "Publishing \u2014 the business of managing and monetizing musical compositions \u2014 is one of the most misunderstood aspects of the music industry.",
+   "replace": "Self-publishing means you register as your own publisher and keep 100% of the writer's and publisher's shares, while a publishing deal gives a publisher a share of your publishing income, set by the deal, for administration, sync pitching and international collection. Publishing \u2014 the business of managing and monetizing musical compositions \u2014 is one of the most misunderstood aspects of the music industry.",
+   "reason": "policy",
+   "modules": [
+    "comparisons"
+   ],
+   "pages": [
+    "compare/self-publishing-vs-publishing-deal/"
+   ]
+  },
+  {
+   "find": "YouTube Music is best evaluated as part of a broader YouTube ecosystem, not as an isolated stream counter.",
+   "replace": "YouTube Music has no single rate per stream: what you earn depends on the listener's country, ad-supported versus Premium listening and your rights administration, and Content ID can add income when your music is used in videos other people upload. YouTube Music is best evaluated as part of a broader YouTube ecosystem, not as an isolated stream counter.",
+   "reason": "policy",
+   "modules": [
+    "RelatedContent"
+   ],
+   "pages": [
+    "streaming-rates/youtube-music-2026/"
+   ]
+  },
+  {
+   "find": "For ambient music creators, proper registration with Performance Rights Organizations (PROs) is often overlooked but critically important.",
+   "replace": "To register ambient music with a PRO, join one as both writer and publisher, then register each work with all title versions, every writer and publisher with their ownership shares, and ISRC codes, so performance royalties can be collected. For ambient music creators, proper registration with Performance Rights Organizations (PROs) is often overlooked but critically important.",
+   "reason": "policy",
+   "modules": [
+    "BlogPost"
+   ],
+   "pages": [
+    "blog/how-to-register-your-ambient-music-with-pros/"
+   ]
+  },
+  {
+   "find": "Choosing between SPACE and Duetti starts with the rights you control and the income you are willing to sell.",
+   "replace": "SPACE and Duetti both buy music rights from independent creators: SPACE reviews catalogs across all genres with no fixed earnings floor, while Duetti's offer page states at least $2,000 a year from music rights, so compare written offers for the same rights. Choosing between SPACE and Duetti starts with the rights you control and the income you are willing to sell.",
+   "reason": "policy",
+   "modules": [
+    "competitorComparisonsExpanded"
+   ],
+   "pages": [
+    "compare/space-vs-duetti/"
+   ]
+  },
+  {
+   "find": "Spotify and Apple Music are the two dominant music streaming platforms globally, and understanding how their royalty structures differ is essential for maximizing your income as an independent artist.",
+   "replace": "Apple Music pays more per stream on average, about one cent per play on individual paid plans according to Apple's 2021 letter to artists, while Spotify reaches more listeners, with 777 million monthly active users at June 30, 2026, according to Spotify. Spotify and Apple Music are the two dominant music streaming platforms globally, and understanding how their royalty structures differ is essential for maximizing your income as an independent artist.",
+   "reason": "policy",
+   "modules": [
+    "comparisons"
+   ],
+   "pages": [
+    "compare/spotify-vs-apple-music-royalties/"
+   ]
+  },
+  {
+   "find": "Every piece of recorded music generates two distinct sets of rights: master rights over the sound recording and publishing rights over the underlying composition.",
+   "replace": "Music rights are the two copyrights in every recorded song: master rights in the sound recording, usually owned by whoever paid for and controlled the recording, and publishing rights in the composition, owned by its songwriters, and each earns its own royalties.",
+   "reason": "policy",
+   "modules": [
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "guides/music-rights-101/"
+   ]
+  },
+  {
+   "find": "A partial catalog sale can mean selected recordings or a defined share of the rights or royalties you control.",
+   "replace": "There is no standard percentage to sell: a partial sale transfers selected recordings or a defined share and leaves you the income from what you keep, while a full sale transfers all of your interest in the agreed catalog. A partial catalog sale can mean selected recordings or a defined share of the rights or royalties you control.",
+   "reason": "policy",
+   "modules": [
+    "comparisons"
+   ],
+   "pages": [
+    "compare/partial-sale-vs-full-sale/"
+   ]
+  },
+  {
+   "find": "Independent creators can sell master recordings, publishing rights, or both \u2014 either as a full catalog or partial stake.",
+   "replace": "To sell music rights, confirm which masters and publishing rights you own, gather royalty statements, PRO confirmations, split sheets and registrations, and ask buyers to review a full catalog or partial stake before they make a written offer. Independent creators can sell master recordings, publishing rights, or both \u2014 either as a full catalog or partial stake.",
+   "reason": "policy",
+   "modules": [
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "guides/how-to-sell-music-rights/"
+   ]
+  },
+  {
+   "find": "Spotify is still the biggest discovery engine for most independent catalogs, but payout conversations often miss the key point: there is no single universal per-stream number.",
+   "replace": "Spotify has no fixed rate per stream: it allocates each period's net revenue by share of eligible streams, and according to Spotify, since April 2024 a track needs at least 1,000 streams in the previous 12 months to earn recorded music royalties. Spotify is still the biggest discovery engine for most independent catalogs.",
+   "reason": "policy",
+   "modules": [
+    "RelatedContent"
+   ],
+   "pages": [
+    "streaming-rates/spotify-2026/"
+   ]
+  }
+ ]
+}

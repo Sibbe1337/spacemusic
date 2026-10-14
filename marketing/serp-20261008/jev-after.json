@@ -1,0 +1,212 @@
+{
+  "release": "tmp/serp-preview-v2-20261008",
+  "inputTokens": 20245,
+  "interpretation": "Editorial model judgments only; not facts, observed query attribution, ranking predictions or measured conversion changes.",
+  "results": [
+    {
+      "route": "/guides/music-catalog-valuation-2026/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 5377,
+        "output_tokens": 141
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.64
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.96
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.17
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.81,
+          "probabilities": {
+            "proof": 0.86,
+            "journey": 0.01,
+            "answer": 0.11,
+            "sufficient": 0.02
+          }
+        }
+      }
+    },
+    {
+      "route": "/calculator/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2176,
+        "output_tokens": 141
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.45
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.43,
+          "probabilities": {
+            "proof": 0.57,
+            "sufficient": 0.07,
+            "answer": 0.24,
+            "journey": 0.12
+          }
+        }
+      }
+    },
+    {
+      "route": "/compare/space-vs-royalty-exchange/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2997,
+        "output_tokens": 141
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.78
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.92
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.83
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.56,
+          "probabilities": {
+            "journey": 0.01,
+            "proof": 0.67,
+            "sufficient": 0.02,
+            "answer": 0.3
+          }
+        }
+      }
+    },
+    {
+      "route": "/guides/how-to-sell-music-rights/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 6019,
+        "output_tokens": 141
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.9
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.15
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.92
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.72,
+          "probabilities": {
+            "sufficient": 0.04,
+            "journey": 0.03,
+            "answer": 0.14,
+            "proof": 0.79
+          }
+        }
+      }
+    },
+    {
+      "route": "/blog/independent-record-label-funding-options/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3676,
+        "output_tokens": 141
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.59
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.98
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.08
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.91
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.52,
+          "probabilities": {
+            "answer": 0.29,
+            "proof": 0.64,
+            "sufficient": 0.03,
+            "journey": 0.04
+          }
+        }
+      }
+    }
+  ]
+}

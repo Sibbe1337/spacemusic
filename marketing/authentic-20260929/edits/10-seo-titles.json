@@ -1,0 +1,30 @@
+{
+ "area": "Search titles chosen with Jev (experiments/jev-site-review/output/landing.json)",
+ "edits": [
+  {
+   "find": "Music Catalog Valuation: Method, Example & Review",
+   "replace": "How Much Is a Music Catalog Worth? Valuation Guide 2026",
+   "reason": "Jev click score 3.02 vs 2.59, truthful 0.91"
+  },
+  {
+   "find": "Understand music catalog valuation, calculate a hypothetical sale from net income, and prepare the documents for an individual catalog review.",
+   "replace": "How catalog value is set: net income, the rights sold, risk and the multiple a buyer assumes. A worked example, then a free individual review.",
+   "reason": "Jev click score; matches page"
+  },
+  {
+   "find": "Deezer Pay Per Stream (2026) \u2014 Estimate Royalties and Offer Range",
+   "replace": "How Much Does Deezer Pay Per Stream in 2026?",
+   "reason": "Jev click score 2.75 vs 2.26; removes 'offer range' promise"
+  },
+  {
+   "find": "Major Label vs. Independent: The Right Path for Ambient Music Creators",
+   "replace": "Major Label vs Independent Label: Key Differences for Artists",
+   "reason": "Jev click score 2.91 vs 1.98; matches broader queries"
+  },
+  {
+   "find": "Use documented net income to explore a hypothetical sale, or request an individual review if you do not know which assumptions to use.",
+   "replace": "A catalog's sale value is usually its annual net royalties multiplied by a multiple the buyer assumes. Use documented net income to explore a hypothetical sale, or request an individual review if you do not know which assumptions to use.",
+   "reason": "answer the 'how much is my catalog worth' query on the first screen without stating a multiple"
+  }
+ ]
+}

@@ -1,0 +1,873 @@
+{
+  "source": "tmp/buyer-intent-v2-20260916",
+  "output": "tmp/selling-guide-v1-20260916",
+  "revision": "60a6105118f8",
+  "route": "/guides/how-to-sell-music-rights/",
+  "htmlFile": "guides/how-to-sell-music-rights/index.html",
+  "old": {
+    "slug": "how-to-sell-music-rights",
+    "title": "How to Sell Your Music Rights in 2026: The Complete Guide",
+    "metaDescription": "Learn how to sell your music rights in 2026. This comprehensive guide covers catalog valuation (3–15x multiples), the step-by-step sale process, buyer types, tax implications, and strategies to maximize your payout. Built for independent creators by SPACE.",
+    "primaryKeyword": "sell music rights",
+    "tldr": "Independent creators can sell master recordings, publishing rights, or both — either as a full catalog or partial stake. The process typically takes two to twelve weeks depending on whether you work with a direct buyer or an auction marketplace. Catalogs are valued at 3 to 15 times their net annual royalty income, with the multiple driven by genre, revenue trajectory, metadata quality, and sync potential. The buyer landscape in 2026 includes over 100 active acquirers ranging from institutional funds like Hipgnosis and Primary Wave to tech-enabled platforms like Duetti and niche specialists like SPACE that focus on independent creators. Before you sell, you'll need streaming analytics, revenue statements, PRO confirmations, split sheets, and copyright registrations. A partial sale — selling 50% or 75% of your rights — lets you access liquidity while retaining ongoing income and creative control. Tax treatment depends on whether proceeds qualify as capital gains or ordinary income, so consult a professional before closing. This guide walks you through every step so you can sell with confidence and at the right price.",
+    "introduction": "Selling your music rights is one of the most consequential financial decisions an independent creator can make. A single transaction can convert years of creative work into a lump sum that funds a new project, pays off debt, or sets the foundation for long-term financial security. But it can also leave money on the table — or transfer away rights you'll later wish you'd kept.\n\nThe music-rights market has transformed dramatically over the past decade. What was once an opaque, invitation-only process dominated by a handful of major-label-affiliated publishers has become a liquid, competitive marketplace with over 100 active buyers vying for quality catalogs. Streaming revenue, which now accounts for more than 67% of global recorded-music income according to the IFPI, has made catalogs predictable income-producing assets — and investors have taken notice. Goldman Sachs projects the global music market will reach $131 billion by 2030, and much of that growth will flow through catalog acquisitions.\n\nYet the process of actually selling remains intimidating. Creators don't know what their catalog is worth, which buyers to approach, or what documents they need. They worry about taxes, about losing creative control, and about whether now is even the right time. This guide answers all of those questions. Across ten sections, we'll cover what you can sell, who's buying, how valuations work, what the process looks like step by step, and how to avoid the most common mistakes. Whether you're seriously evaluating offers or simply exploring your options, the information here will put you in control.",
+    "tableOfContents": [
+      "What Are Music Rights and What Can You Sell?",
+      "Who Buys Music Catalogs in 2026?",
+      "How Much Is Your Music Catalog Worth?",
+      "The Catalog Sale Process Step by Step",
+      "What Documents Do You Need?",
+      "Full Sale vs Partial Rights Sale",
+      "Tax Implications of Selling Your Music Catalog",
+      "How to Increase Your Catalog's Value Before Selling",
+      "Common Mistakes When Selling Music Rights",
+      "Is Selling Your Music Rights Worth It?"
+    ],
+    "sections": [
+      {
+        "id": "what-are-music-rights",
+        "heading": "What Are Music Rights and What Can You Sell?",
+        "content": "Before you can sell your music rights, you need to understand exactly what you own. Every recorded song generates two distinct copyrights, and each can be sold independently or together.\n\n**Master rights** cover the specific sound recording — the actual audio file a listener hears on Spotify, Apple Music, or any other platform. If you self-produced and self-released your music, you almost certainly own your masters. This is the asset that generates revenue every time someone streams, downloads, or purchases your recording.\n\n**Publishing rights** (also called composition rights) cover the underlying musical work — the melody, harmony, lyrics, and arrangement that could theoretically be performed or re-recorded by anyone. If you wrote the song, you own the publishing. If you co-wrote it, you own your percentage as documented in your split sheets.\n\nWhen selling, you have several structural options. A **full catalog sale** means transferring 100% of the rights to every qualifying track you own. This is the simplest transaction and typically commands the highest total price because the buyer acquires a clean, complete asset with no fractional ownership to manage.\n\nA **partial catalog sale** means selling the rights to a subset of your tracks while retaining others. You might sell your older releases that have stabilized in revenue while holding onto newer tracks that are still growing. This lets you monetize mature assets without sacrificing upside on recent work.\n\nYou can also sell a **percentage of your rights** rather than the whole thing. Selling 50% of your catalog means the buyer receives half of all future royalties while you continue earning the other half. Some creators sell 75% to maximize their upfront payout while keeping a 25% stake that provides ongoing passive income. These fractional structures are increasingly common, especially on platforms that specialize in independent creators.\n\nFinally, you can sell masters and publishing separately or together. A buyer who acquires both controls 100% of the income a song generates, which is why bundled sales typically achieve higher multiples. However, if your publishing is administered by a third party or tied up in a co-publishing deal, you may only be able to sell the masters — and that's still a meaningful transaction.\n\nThe key takeaway: you have more flexibility than you think. The structure of the sale should match your financial goals, your creative plans, and the specific assets you hold."
+      },
+      {
+        "id": "who-buys",
+        "heading": "Who Buys Music Catalogs in 2026?",
+        "content": "The buyer landscape for music catalogs has expanded dramatically. Twenty years ago, a handful of major publishers and a few boutique firms were the only game in town. Today, there are more than 100 active buyers, and the competition has pushed valuations higher and given sellers more leverage than ever.\n\n**Institutional investment funds** represent the largest buyers by deal volume. Hipgnosis Songs Fund, founded in 2018, pioneered the model of acquiring song catalogs as alternative financial assets, building a portfolio valued at over $2 billion. Primary Wave Music operates similarly, targeting iconic catalogs and actively managing them to grow sync, brand partnership, and licensing revenue. Round Hill Music, Influence Media Partners, and Lyric Capital Group are other prominent players in this tier. These buyers typically focus on catalogs generating $100,000 or more in annual revenue and pay multiples of 10 to 20x or higher for proven, diversified assets.\n\n**Tech-enabled acquisition platforms** have emerged as a new category. Duetti, backed by significant venture capital, uses data analytics and proprietary valuation models to make fast, competitive offers on catalogs of all sizes. Their technology-first approach means faster turnaround times and more transparent pricing. Other platforms in this category include Stem and various fintech-adjacent startups exploring music as a tokenizable asset class.\n\n**Niche specialists** focus on specific genres, catalog sizes, or creator demographics. SPACE, for example, specializes in independent creators, offering personalized service and valuation expertise tailored to smaller catalogs that institutional funds may overlook. These buyers understand that a $5,000-per-year ambient catalog and a $5,000-per-year hip-hop catalog have very different growth trajectories and risk profiles, and they price accordingly.\n\n**Auction marketplaces** like Royalty Exchange allow creators to list their catalogs for competitive bidding by individual and institutional investors. The auction model can drive prices above what a single buyer might offer, especially for catalogs with unique characteristics that attract multiple bidders. However, auctions also involve listing fees, platform commissions, and less certainty about the final sale price.\n\n**Direct investors** — high-net-worth individuals and family offices — have entered the market seeking uncorrelated returns. Music royalties don't move with the stock market, which makes them attractive for portfolio diversification. These buyers often work through intermediaries or platforms but can also be reached through industry brokers.\n\nThe diversity of the buyer pool works in your favor. You're no longer limited to a single take-it-or-leave-it offer from one publisher. You can solicit competing bids, choose the buyer whose terms best match your goals, and negotiate from a position of genuine optionality."
+      },
+      {
+        "id": "how-much-worth",
+        "heading": "How Much Is Your Music Catalog Worth?",
+        "content": "Catalog valuation is both art and science. The core methodology is straightforward: buyers calculate a multiple of your catalog's net annual royalty income, called **Net Publisher's Share (NPS)**. NPS represents the revenue that actually reaches the rights holder after platform fees, distributor commissions, and PRO deductions. If your catalog generates $10,000 per year in NPS and a buyer offers a 10x multiple, the purchase price is $100,000.\n\nThe multiple itself is where the nuance lies. In 2026, independent catalogs typically trade at **3x to 15x NPS**, with the range reflecting a set of factors that buyers weigh carefully.\n\n**Revenue trajectory** is the single most important variable. A catalog whose earnings have grown 10–20% annually over the past three years will command a higher multiple than one that has been flat or declining. Buyers are purchasing future cash flows, so growth signals that the asset will be worth more over time.\n\n**Genre and use case** significantly affect multiples. Ambient, lo-fi, cinematic, and instrumental catalogs tend to earn higher multiples because they have strong sync licensing potential and are used heavily in content creation, meditation apps, and background music services — all growing markets. Conversely, catalogs in highly competitive genres with short listener attention spans may trade at lower multiples unless they include breakout hits.\n\n**Catalog age and depth** matter because buyers want predictable, seasoned revenue. A catalog with five years of consistent earnings data is easier to underwrite than one with only twelve months of history. Similarly, a catalog with 200 tracks offers more diversification than one with 20 — if any single track's revenue drops, the overall impact is smaller.\n\n**Metadata quality** directly influences valuation. Clean ISRC codes, accurate PRO registrations, documented split sheets, and consistent distributor records reduce the buyer's due-diligence costs and signal a well-managed asset. Poor metadata can reduce a multiple by 1–3x because of the risk that revenue is being lost or misattributed.\n\n**Revenue diversification** across platforms, territories, and income types (streaming, sync, Content ID, mechanical, performance) increases a catalog's resilience and, therefore, its multiple. A catalog earning 90% of its revenue from a single platform is riskier than one with revenue spread across Spotify, Apple Music, YouTube, sync placements, and international PROs.\n\n**Ownership clarity** is binary: either you can prove clean chain of title, or you can't. Uncleared samples, disputed splits, or missing documentation create legal risk that buyers price into the deal — often severely.\n\nAs a rough framework: catalogs with declining revenue, limited track count, and metadata issues might trade at 3–5x. Solid, stable catalogs with clean data trade at 6–10x. Growing catalogs with sync activity, strong metadata, and diversified revenue can reach 12–15x or higher for exceptional assets."
+      },
+      {
+        "id": "sale-process",
+        "heading": "The Catalog Sale Process Step by Step",
+        "content": "Selling a music catalog follows a structured process, and understanding each step in advance helps you move through it efficiently and with confidence.\n\n**Step 1: Gather your documentation.** Before approaching any buyer, compile your streaming analytics (from your distributor dashboard), revenue statements (ideally 12–36 months of history), PRO statements, copyright registration certificates, split sheets, and any relevant contracts (distribution agreements, sync licenses, co-publishing deals). The more organized this package is upfront, the faster the process moves.\n\n**Step 2: Get a preliminary valuation.** You can estimate your catalog's value by multiplying your average annual NPS by an expected multiple (see the valuation section above), but a formal valuation from a buyer or marketplace will be more precise. Platforms like SPACE offer free catalog assessments based on your actual revenue data. You can also request indicative offers from multiple buyers to benchmark the market.\n\n**Step 3: Choose your sale channel.** You have three primary options: approach a direct buyer (fastest, most predictable), list on an auction marketplace (potentially higher price, less certainty), or engage a broker to solicit offers on your behalf (best for larger catalogs where the broker's commission is justified by the uplift they generate). For most independent catalogs under $500,000 in value, working with a direct buyer or a specialized platform is the most efficient path.\n\n**Step 4: Due diligence.** Once a buyer is interested, they'll verify everything in your documentation package. They'll audit your revenue data against platform records, confirm your PRO registrations, check for liens or encumbrances on the copyrights, and review any existing agreements that affect the rights. This is where clean metadata and organized records pay off — gaps or discrepancies slow the process and can reduce the offer price.\n\n**Step 5: Negotiate and sign.** The buyer presents a formal offer, and you negotiate the terms: purchase price, payment structure (lump sum vs. installments), transition timeline, and any retained rights or creative controls. Once both sides agree, you sign a purchase agreement. Having a music attorney review this document is strongly recommended — the cost of legal review ($500–$2,000) is negligible relative to the deal value.\n\n**Step 6: Transfer and payment.** The buyer initiates the transfer of rights with your distributor, PRO, and any other relevant organizations. You receive payment according to the agreed schedule — most direct buyers pay within 7 to 14 days of contract execution. Auctions may take longer due to escrow processes.\n\n**Typical timelines:** Direct buyer transactions typically close in 2 to 8 weeks from first contact. Auction processes run 4 to 12 weeks including the listing period, bidding, and settlement. Complex catalogs with multiple co-owners, international registrations, or unresolved legal issues can take longer."
+      },
+      {
+        "id": "documents-needed",
+        "heading": "What Documents Do You Need?",
+        "content": "Buyers need to verify what they're acquiring, and the documentation you provide is the foundation of that process. Arriving with a complete, organized package signals professionalism and accelerates every stage of the deal. Here's what you should prepare.\n\n**Streaming analytics** from your distributor dashboard (DistroKid, TuneCore, CD Baby, AWAL, or whichever service you use). Export your full play history by track, by platform, and by territory for at least the past 12 months — ideally 24 to 36 months. Buyers want to see not just total numbers but trends: which tracks are growing, which are declining, and where the revenue comes from geographically.\n\n**Revenue statements** showing all income your catalog has generated. This includes distributor payouts, PRO distributions, sync licensing fees, Content ID revenue, and any other income streams. If you earn revenue from multiple sources, consolidate everything into a single summary document alongside the source statements. Accuracy matters — if your stated revenue doesn't match the supporting documents, the buyer will flag it.\n\n**PRO confirmations** proving that your compositions are registered with ASCAP, BMI, SESAC, or the relevant international PRO. Your PRO portal allows you to export a list of registered works showing titles, ISWC codes, songwriter shares, and publisher information. This confirms that composition-level royalties are being collected and attributed correctly.\n\n**Split sheets** for every co-written track. These documents record each contributor's name, PRO affiliation, IPI number, and ownership percentage, signed by all parties. If a track has no co-writers, a statement to that effect is helpful. Missing split sheets are one of the most common deal delays because buyers cannot confirm ownership without them.\n\n**Copyright registration certificates** from the US Copyright Office (or equivalent international body). While copyright exists automatically upon creation, formal registration provides legal advantages and serves as independent verification of your claim. If you haven't registered your works, consider doing so before initiating a sale — it strengthens your position.\n\n**Sample clearance documentation** for any tracks that incorporate third-party elements. This includes the clearance agreement, any ongoing royalty obligations to the original rights holders, and confirmation that the license covers all territories and uses. If tracks are sample-free, a written declaration to that effect simplifies due diligence.\n\n**Distribution agreements** — your current contract with your distributor. Buyers need to understand the terms: Is the agreement exclusive? What is the commission rate? What is the notice period for termination? Some distribution agreements include clauses that affect transferability, so this document is essential.\n\n**Sync licenses and placements** — if any of your tracks have been placed in film, television, advertising, or other media, provide copies of the sync agreements. Active sync placements increase catalog value and demonstrate commercial viability beyond streaming.\n\nOrganize everything in a clearly labeled folder structure (digital is fine) before your first conversation with a buyer. The creators who close deals fastest are the ones whose documentation is ready on day one."
+      },
+      {
+        "id": "full-vs-partial",
+        "heading": "Full Sale vs Partial Rights Sale",
+        "content": "One of the most important decisions in the selling process is how much of your catalog — and how much of each right — you're willing to part with. The answer depends on your financial needs, your long-term creative plans, and your appetite for ongoing involvement.\n\nA **full sale (100% of rights)** means transferring complete ownership of the selected tracks or entire catalog to the buyer. You receive the maximum lump-sum payment, and the buyer assumes all future revenue and administrative responsibility. This is the cleanest transaction structure: there are no ongoing royalty splits to manage, no shared decision-making, and no ambiguity about who controls the asset. For creators who want a definitive financial event — paying off a mortgage, funding a new venture, or simply converting an illiquid asset into cash — a full sale is the most straightforward path.\n\nThe trade-off is permanence. Once you sell 100%, you no longer earn royalties from those tracks. If your catalog's value increases significantly after the sale — because a song goes viral, lands a major sync placement, or benefits from market-wide multiple expansion — you don't participate in that upside. You also lose control over how your music is used commercially, although most reputable buyers maintain the artistic integrity of acquired catalogs.\n\nA **partial sale** takes two forms. You can sell a **subset of your tracks** (keeping your favorites or most promising releases) or sell a **percentage of all your tracks** (e.g., 50% or 75% of the entire catalog).\n\nSelling a percentage is increasingly popular, especially among independent creators who want liquidity without fully exiting. In a 50% sale, the buyer receives half of all future royalties and you retain the other half. You still earn passive income, you maintain a financial interest in the catalog's growth, and in many cases you retain day-to-day creative control. The per-unit price is typically slightly lower than in a full sale because the buyer is acquiring a minority or shared position, which is less liquid and harder to manage.\n\nA 75% sale is a middle ground that's become a common structure: the creator gets a substantial upfront payment while keeping a 25% residual stake. This retains a meaningful income stream and provides participation in any future value increase, while giving the buyer enough ownership to justify active management of the asset.\n\n**Impact on creative control** varies by deal. In most partial sales, the majority owner has the right to make licensing decisions (including sync placements). However, many buyers are willing to include approval rights or consultation clauses for the original creator, especially if the creator's brand is closely tied to the music. These terms are negotiable — don't assume you have to accept a standard-form contract.\n\n**When partial makes the most sense:** you believe your catalog's value will increase but you need capital now; you want to diversify your financial portfolio without completely exiting music income; or you want to test the market before committing to a full sale. Many creators start with a partial sale of older material and return later to sell additional rights once they've seen how the process works."
+      },
+      {
+        "id": "tax-implications",
+        "heading": "Tax Implications of Selling Your Music Catalog",
+        "content": "The tax treatment of a catalog sale can significantly affect your net proceeds, and getting it wrong is one of the most expensive mistakes creators make. While this section provides a general overview, you should consult a qualified tax professional before closing any deal — the specifics depend on your individual circumstances, filing status, and jurisdiction.\n\n**Capital gains vs. ordinary income** is the central distinction. If your catalog qualifies as a capital asset held for more than one year (which it almost always does for creators who have owned their rights since creation), the proceeds from a sale may be taxed at the long-term capital gains rate rather than the ordinary income rate. In the United States, the long-term capital gains rate ranges from 0% to 20% depending on your taxable income, compared to ordinary income rates that can reach 37%. The difference on a $200,000 sale could be $20,000 to $34,000 in additional tax if proceeds are characterized as ordinary income instead of capital gains.\n\n**Section 1231 property** is a tax classification that may apply to music copyrights under certain conditions. If your catalog qualifies as Section 1231 property — generally meaning it's a business asset held for more than one year — any gains are treated as long-term capital gains while any losses can be deducted as ordinary losses. This is an advantageous classification, but it requires careful documentation and potentially a formal appraisal. The IRS has scrutinized music catalog sales in this area, so professional guidance is essential.\n\n**Self-created property considerations** add complexity. Historically, copyrights created by the taxpayer's personal effort were treated as ordinary income property, not capital assets. However, the Tax Cuts and Jobs Act of 2017 changed this for tax years beginning after 2017, allowing self-created musical compositions to be treated as capital assets if the taxpayer elects to do so. This election should be made with your tax advisor's guidance, and it needs to be documented properly in your tax return.\n\n**Installment sales** can help spread the tax liability across multiple years. If the buyer pays you in installments (e.g., 50% at closing and 50% twelve months later), you may be able to recognize the gain proportionally over the payment period rather than all at once. This can keep you in a lower tax bracket and reduce your overall tax burden. However, installment sales come with their own rules and limitations under IRS Section 453.\n\n**State taxes** vary considerably. Some states have no income tax (Florida, Texas, Tennessee, Nevada, among others), while others tax capital gains at the same rate as ordinary income (California, at rates up to 13.3%). If you're considering a large catalog sale, your state of residence at the time of the transaction directly affects your net proceeds.\n\n**Net Investment Income Tax (NIIT)** of 3.8% applies to investment income (including capital gains) for individuals with modified adjusted gross income above $200,000 ($250,000 for married couples filing jointly). A significant catalog sale can push you above these thresholds, triggering additional tax.\n\n**Practical steps:** engage a CPA or tax attorney who has experience with intellectual property transactions before you sign anything. Model out the after-tax proceeds under different deal structures (lump sum vs. installments, full sale vs. partial). Consider the timing of the sale relative to your other income in that tax year. And keep meticulous records of your cost basis — the expenses you incurred creating the catalog — because this reduces your taxable gain."
+      },
+      {
+        "id": "increase-value",
+        "heading": "How to Increase Your Catalog's Value Before Selling",
+        "content": "If you're considering a sale in the next 6 to 12 months, there are concrete steps you can take now to maximize the multiple you receive. Think of this as preparing a house for sale — the underlying asset is the same, but presentation and condition materially affect the price.\n\n**Clean up your metadata.** This is the highest-ROI activity you can undertake. Verify that every track in your catalog has a valid ISRC code, that your PRO registrations match your distributor records, that songwriter splits are accurate and documented, and that track titles and artist names are consistent across platforms. Metadata errors cause royalty leakage and signal disorganization to buyers. A catalog with pristine metadata can command 1 to 3 additional multiple points over an identical catalog with sloppy records.\n\n**Conduct a rights audit.** Confirm that you actually own what you think you own. Check for any outstanding co-writer claims, verify that all samples are cleared or that affected tracks are identified, and review your distribution and publishing agreements for any clauses that restrict transfer. Discovering ownership issues during buyer due diligence is the fastest way to kill a deal or reduce an offer.\n\n**Pitch to playlists and grow streaming revenue.** Buyers value revenue trajectory, so even modest growth in the months before a sale can move the needle. Submit tracks to editorial and algorithmic playlists on Spotify, Apple Music, and Amazon Music. Promote catalog tracks on social media — a TikTok or Instagram Reel featuring an older song can drive significant new streams. The goal isn't to inflate numbers artificially but to show that the catalog has active engagement potential.\n\n**Pursue sync placements.** Even one or two sync placements in the months before a sale serve as proof of concept that your music has commercial value beyond streaming. Register with sync licensing platforms like Musicbed, Artlist, or Epidemic Sound. Submit to music libraries. Reach out to music supervisors. A catalog with demonstrated sync activity is categorically more valuable than one without it, even if the sync income itself is modest.\n\n**Diversify revenue streams.** If your catalog is 100% dependent on Spotify streaming income, take steps to broaden the base. Ensure Content ID is activated on YouTube. Register with SoundExchange for digital performance royalties. Confirm your PRO registrations to capture performance royalties. Distribute to additional platforms if you aren't already on all major services. Each new active revenue stream makes the catalog more resilient and more attractive to buyers.\n\n**Consider remastered or alternative releases.** If your earliest recordings have lower audio quality, a remaster can improve their streaming performance and playlist eligibility. Instrumental versions, acoustic versions, or remixes of popular tracks create new ISRCs and new revenue opportunities without new composition. These derivative works add depth to the catalog and demonstrate ongoing commercial viability.\n\n**Document everything.** Create a catalog summary document that includes: total track count, release dates, genre classifications, annual revenue by year, revenue by platform, notable placements or achievements, and ownership structure. This \"data room\" is what buyers will request first, and having it ready signals that you're a serious, organized seller."
+      },
+      {
+        "id": "common-mistakes",
+        "heading": "Common Mistakes When Selling Music Rights",
+        "content": "The catalog sale process is relatively straightforward, but creators consistently make a handful of avoidable errors that cost them money, time, or both. Here are the most common mistakes and how to avoid them.\n\n**Selling too early.** Some creators rush to sell before their catalog has reached its full potential. If your tracks are still gaining momentum — growing streams month over month, attracting new playlist placements, or generating increasing sync interest — selling now means pricing the catalog based on current revenue rather than its trajectory. Buyers will factor in growth to some extent, but you'll always capture more value by selling a catalog that has demonstrated sustained, seasoned performance. A general rule: wait until your catalog has at least 12 to 24 months of stable or growing revenue history before approaching buyers.\n\n**Not cleaning up rights and metadata before approaching buyers.** Walking into a negotiation with missing split sheets, unregistered compositions, or inconsistent metadata immediately puts you at a disadvantage. Buyers will either reduce their offer to account for the administrative work required or walk away entirely. Spend the time upfront to get your records in order — it directly translates to a higher price.\n\n**Accepting the first offer without shopping the market.** The catalog acquisition market is competitive, and different buyers value different attributes. An institutional fund might undervalue a small ambient catalog that a niche specialist would pay a premium for. Always solicit at least two or three offers before committing. The incremental effort is minimal and the financial upside can be substantial — it's not uncommon for competing offers to differ by 20 to 30%.\n\n**Ignoring tax implications until after the deal closes.** Too many creators sign a purchase agreement without understanding the tax consequences, then face a painful surprise when they file their return. The difference between capital gains and ordinary income treatment on a $100,000 sale can be $15,000 or more. Consult a tax professional before you sign, not after. Structure the deal to optimize your after-tax outcome from the start.\n\n**Not understanding what you're giving up.** Selling your masters means someone else controls how your recordings are used — including sync licensing, sampling permissions, and distribution decisions. Selling your publishing means someone else collects your songwriter royalties. Make sure you fully understand the scope of the rights transfer before you agree to it. Ask the buyer explicitly: What happens if I want to perform these songs live? Can my music be used in advertising I disagree with? Do I retain any approval rights? Get answers in writing.\n\n**Failing to use professional representation.** A music attorney costs $500 to $2,000 to review a purchase agreement, a fraction of the deal value. Yet many creators skip this step to save money, only to discover later that the contract included unfavorable terms they didn't understand — non-compete clauses, holdback provisions, or indemnification obligations that expose them to liability. The attorney fee is not a cost; it's insurance.\n\n**Undervaluing non-streaming revenue.** Many creators focus exclusively on Spotify numbers when assessing their catalog, but sync income, Content ID revenue, mechanical royalties, and international performance royalties all contribute to NPS. If you're not collecting all available revenue streams, you're both leaving money on the table today and suppressing your catalog's valuation for a future sale. Activate every income channel before you sell.\n\n**Being emotionally attached to the price.** Your catalog is worth what the market will pay, not what you feel it should be worth based on the effort you invested. If multiple independent buyers converge on similar valuations and those numbers are lower than your expectations, the market is giving you information. You can choose not to sell — that's a valid decision — but anchoring to an unrealistic price will result in a stalled process and wasted time for everyone involved."
+      },
+      {
+        "id": "is-it-worth-it",
+        "heading": "Is Selling Your Music Rights Worth It?",
+        "content": "This is the question every creator eventually asks, and the honest answer is: it depends on your circumstances. There's no universally right or wrong choice — only the choice that aligns with your financial goals, creative trajectory, and personal values.\n\n**When selling makes sense.** If you need a significant amount of capital now — for a down payment on a home, to fund a new creative project, to invest in a business, or to eliminate debt — a catalog sale converts an illiquid asset into immediate cash. The lump sum you receive today has a time value that ongoing royalties cannot replicate. You could invest the proceeds in assets that grow faster than your royalty stream, start a venture with higher return potential, or simply achieve financial peace of mind that changes how you approach your creative work.\n\nSelling also makes sense if your catalog has plateaued or is declining in revenue. Streaming trends shift, algorithms change, and genres cycle in and out of popularity. If your catalog's best earning years are behind it, selling at today's valuation — which still reflects a multiple of current income — locks in value before further erosion. A buyer with active management resources may also be able to extract value from the catalog (through sync pitching, playlist promotion, or international expansion) that you can't replicate on your own.\n\n**When holding makes sense.** If your catalog is growing, holding lets you benefit from both increasing annual income and the higher multiple that growing catalogs command. Selling a catalog that earns $10,000 per year at 8x nets you $80,000. But if that catalog grows to $15,000 per year in two years and sells at 10x, you'd receive $150,000 — nearly double — plus you'd have earned $25,000 in royalties during the wait. Time works in your favor when momentum is on your side.\n\nHolding also makes sense if you derive non-financial value from ownership — creative control, artistic identity, the ability to use your music however you choose. Some creators view their catalog as a core part of who they are, not just a financial asset. That perspective is entirely valid, and no amount of money changes it.\n\n**How partial sales bridge the gap.** If you're torn, a partial sale can give you the best of both worlds. Selling 50% of your catalog provides a meaningful upfront payment while you continue earning half of all future royalties. You maintain a financial stake in the catalog's growth, retain some degree of influence over how your music is used, and gain a capitalized partner who has a vested interest in maximizing the catalog's value. For many independent creators, this is the optimal structure — liquidity without full exit.\n\n**The market context matters too.** In 2026, buyer competition is high, multiples are strong, and interest rates have stabilized — all of which favor sellers. There's no guarantee these conditions persist indefinitely. If you've been considering a sale, the current market environment is as favorable as it's been in the past decade.\n\nUltimately, the decision comes down to a clear-eyed assessment of what your catalog is worth, what you need the money for, and whether you're ready to part with the asset. Platforms like SPACE exist to make that assessment accessible: get a free valuation, understand your options, and decide on your own timeline. Whether you sell today, sell partially, or decide to hold, the power should always rest with the creator."
+      }
+    ],
+    "faq": [
+      {
+        "question": "How long does it take to sell a music catalog?",
+        "answer": "The timeline depends on the sale channel and the complexity of your catalog. Direct buyer transactions typically close in 2 to 8 weeks from first contact, including due diligence and paperwork. Auction marketplaces run 4 to 12 weeks because of the listing period and bidding process. Catalogs with co-ownership issues, uncleared samples, or incomplete documentation can take longer."
+      },
+      {
+        "question": "Can I sell my music rights if I'm signed to a distributor?",
+        "answer": "Yes, but your distribution agreement matters. Most modern distribution deals are non-exclusive licenses, meaning you retain ownership of your masters and can sell them. However, some agreements include exclusivity windows or transfer restrictions. Review your distributor contract before initiating a sale, and factor in any notice period required for transitioning to the buyer's preferred distributor."
+      },
+      {
+        "question": "What is Net Publisher's Share (NPS) and why does it matter?",
+        "answer": "NPS is the royalty revenue that actually reaches you after all intermediary fees — platform commissions, distributor cuts, PRO administrative costs — are deducted. Buyers base their valuation multiples on NPS, not gross revenue, because NPS represents the true economic benefit of owning the catalog. If your gross streaming revenue is $15,000 but your distributor takes 15%, your NPS is approximately $12,750."
+      },
+      {
+        "question": "Do I need a lawyer to sell my music catalog?",
+        "answer": "It's not legally required, but it's strongly recommended. A music attorney will review the purchase agreement to ensure the terms protect your interests, flag any problematic clauses, and advise on deal structure. The cost — typically $500 to $2,000 for a contract review — is trivial relative to the deal value and can prevent costly mistakes."
+      },
+      {
+        "question": "Can I sell just my master rights and keep my publishing?",
+        "answer": "Absolutely. Masters and publishing are separate copyrights that can be sold independently. Some creators sell their masters while retaining publishing to continue collecting songwriter royalties. This is common when the creator wants to maintain their connection to the compositional side of the work. However, selling both together typically yields a higher total valuation because the buyer controls all income streams."
+      },
+      {
+        "question": "Will selling my catalog affect my ability to release new music?",
+        "answer": "No. A catalog sale transfers the rights to existing recordings and/or compositions. It does not affect your ability to write, record, or release new music going forward. Your future works are separate assets that you own from the moment of creation. Some purchase agreements include a right of first refusal on future releases, but this is negotiable."
+      },
+      {
+        "question": "How do I know if I'm getting a fair price for my catalog?",
+        "answer": "The best way to verify fair pricing is to solicit multiple offers. If three independent buyers each value your catalog at 8 to 10x NPS, you can be confident the market rate is in that range. You should also compare your multiple against published benchmarks: independent catalogs typically trade at 3 to 15x depending on genre, revenue trajectory, and metadata quality. A free valuation from platforms like SPACE can give you a data-driven starting point."
+      },
+      {
+        "question": "What happens to my royalties after I sell?",
+        "answer": "Once the sale closes and the rights transfer is complete, future royalties flow to the new owner. There is typically a transition period of 30 to 90 days during which some payments may still be directed to you due to reporting delays from PROs and distributors. Your purchase agreement should specify how these transitional payments are handled — usually the seller remits any post-closing royalties to the buyer."
+      },
+      {
+        "question": "Can I buy back my music rights after selling them?",
+        "answer": "There is no automatic right to repurchase, but it's possible if the buyer is willing. Some creators negotiate a buyback clause in the original purchase agreement, specifying conditions and pricing for repurchase. Without such a clause, you would need to negotiate a new acquisition from the current rights holder at whatever the market price is at that time — which could be higher or lower than what you originally received."
+      }
+    ],
+    "citations": [
+      {
+        "source": "IFPI Global Music Report 2025",
+        "url": "https://www.ifpi.org/resources/"
+      },
+      {
+        "source": "Billboard — Music Catalog Valuations and Market Trends",
+        "url": "https://www.billboard.com/business/"
+      },
+      {
+        "source": "Music Business Worldwide — Catalog Acquisitions Tracker",
+        "url": "https://www.musicbusinessworldwide.com/"
+      },
+      {
+        "source": "RIAA — US Recorded Music Revenue Data",
+        "url": "https://www.riaa.com/u-s-sales-database/"
+      },
+      {
+        "source": "Citigroup — Putting the Band Back Together: The Music Economy",
+        "url": "https://www.citigroup.com/global/insights/citigps/putting-the-band-back-together"
+      },
+      {
+        "source": "Shot Tower Capital — Music Royalty Valuation Fundamentals",
+        "url": "https://shottowercapital.com/"
+      },
+      {
+        "source": "Goldman Sachs — Music in the Air: Global Music Industry Outlook",
+        "url": "https://www.goldmansachs.com/insights/pages/infographics/music-in-the-air/"
+      }
+    ],
+    "spokeLinks": [
+      {
+        "slug": "sell-ambient-music-catalog",
+        "title": "Sell Ambient Music Catalog",
+        "url": "/sell/sell-ambient-music-catalog"
+      },
+      {
+        "slug": "sell-lo-fi-beats-catalog",
+        "title": "Sell Lo-Fi Beats Catalog",
+        "url": "/sell/sell-lo-fi-beats-catalog"
+      },
+      {
+        "slug": "sell-meditation-music-rights",
+        "title": "Sell Meditation Music Rights",
+        "url": "/sell/sell-meditation-music-rights"
+      },
+      {
+        "slug": "music-catalog-valuation-2026",
+        "title": "Music Catalog Valuation Guide 2026",
+        "url": "/guides/music-catalog-valuation-2026"
+      },
+      {
+        "slug": "space-vs-royalty-exchange",
+        "title": "SPACE vs Royalty Exchange",
+        "url": "/compare/space-vs-royalty-exchange"
+      },
+      {
+        "slug": "space-vs-hipgnosis",
+        "title": "SPACE vs Hipgnosis",
+        "url": "/compare/space-vs-hipgnosis"
+      },
+      {
+        "slug": "space-vs-duetti",
+        "title": "SPACE vs Duetti",
+        "url": "/compare/space-vs-duetti"
+      },
+      {
+        "slug": "best-music-rights-buyers-2026",
+        "title": "Best Music Rights Buyers 2026",
+        "url": "/guides/best-music-rights-buyers-2026"
+      },
+      {
+        "slug": "partial-rights-explained",
+        "title": "Partial Rights Sales Explained",
+        "url": "/guides/partial-rights-explained"
+      },
+      {
+        "slug": "music-catalog-tax-guide",
+        "title": "Tax Implications of Selling Music Catalog",
+        "url": "/guides/music-catalog-tax-guide"
+      }
+    ]
+  },
+  "next": {
+    "slug": "how-to-sell-music-rights",
+    "title": "How to Sell Your Music Rights in 2026: The Complete Guide",
+    "metaDescription": "Learn how to sell music rights: define your catalog, prepare royalty records, compare offers and protect future releases. Start with a free SPACE review.",
+    "primaryKeyword": "sell music rights",
+    "tldr": "To sell music rights, define the recordings, compositions or income share you can transfer, document the income, and compare written offers for the same scope. Have an independent adviser review the agreement before signing. SPACE reviews revenue-generating catalogs across genres; an application is free and does not guarantee an offer.",
+    "introduction": "This guide is for independent artists, producers, labels and catalog owners considering a sale of existing music. It covers ownership, buyers, valuation, documents, partial sales, tax questions and closing. If you need capital for a new release, compare the income you would give up with the funding you actually need. Selling a catalog is not the same as taking a loan or an advance.\n\nSPACE is a potential direct buyer, not your independent legal, tax or valuation adviser. The checklist below is educational: local law and your actual contracts determine what can be transferred. Reviewed September 16, 2026.",
+    "tableOfContents": [
+      "What Are Music Rights and What Can You Sell?",
+      "Who Buys Music Catalogs in 2026?",
+      "How Much Is Your Music Catalog Worth?",
+      "The Catalog Sale Process Step by Step",
+      "What Documents Do You Need?",
+      "Full Sale vs Partial Rights Sale",
+      "Tax Implications of Selling Your Music Catalog",
+      "How to Increase Your Catalog's Value Before Selling",
+      "Common Mistakes When Selling Music Rights",
+      "Is Selling Your Music Rights Worth It?"
+    ],
+    "sections": [
+      {
+        "id": "what-are-music-rights",
+        "heading": "What Are Music Rights and What Can You Sell?",
+        "content": "A sale starts with the specific interest you own, not the artist name or distributor account. A recording and its underlying musical composition are separate copyright works. Owning one does not establish ownership of the other. [U.S. Copyright Office](https://www.copyright.gov/register/pa-sr.html).\n\n- **Masters:** identify the recordings and the ownership or royalty interest you hold in each.\n- **Publishing:** identify the compositions, co-writer shares, publisher agreements and collection arrangements separately.\n- **Income rights:** an agreement may transfer a defined payment stream rather than copyright ownership. Read the actual grant.\n\nSelf-releasing does not by itself settle ownership. Check producer, artist, label, work-for-hire and collaboration agreements, samples and any earlier assignments. U.S. copyright law allows transfers of all or part of exclusive rights, with specific written-transfer requirements; other jurisdictions can differ. [Copyright Basics](https://www.copyright.gov/circs/circ01.pdf).\n\n**For labels:** separate company-owned masters from recordings licensed for a limited term. List artist royalties and producer points before describing the label's available income. A catalog asset sale is also distinct from selling shares in the label company. Use the [rights overview](/guides/music-rights-101/) to prepare questions, then confirm the chain of title with an independent music lawyer.",
+        "contentHtml": "<p>A sale starts with the specific interest you own, not the artist name or distributor account. A recording and its underlying musical composition are separate copyright works. Owning one does not establish ownership of the other. <a href=\"https://www.copyright.gov/register/pa-sr.html\">U.S. Copyright Office</a>.</p>\n<ul>\n<li><strong>Masters:</strong> identify the recordings and the ownership or royalty interest you hold in each.</li>\n<li><strong>Publishing:</strong> identify the compositions, co-writer shares, publisher agreements and collection arrangements separately.</li>\n<li><strong>Income rights:</strong> an agreement may transfer a defined payment stream rather than copyright ownership. Read the actual grant.</li>\n</ul>\n<p>Self-releasing does not by itself settle ownership. Check producer, artist, label, work-for-hire and collaboration agreements, samples and any earlier assignments. U.S. copyright law allows transfers of all or part of exclusive rights, with specific written-transfer requirements; other jurisdictions can differ. <a href=\"https://www.copyright.gov/circs/circ01.pdf\">Copyright Basics</a>.</p>\n<p><strong>For labels:</strong> separate company-owned masters from recordings licensed for a limited term. List artist royalties and producer points before describing the label&#39;s available income. A catalog asset sale is also distinct from selling shares in the label company. Use the <a href=\"/guides/music-rights-101/\">rights overview</a> to prepare questions, then confirm the chain of title with an independent music lawyer.</p>\n"
+      },
+      {
+        "id": "who-buys",
+        "heading": "Who Buys Music Catalogs in 2026?",
+        "content": "Compare the transaction and the counterparty, not just the headline price. A direct buyer purchases an agreed interest; a broker represents a party; a marketplace introduces potential transactions. Ask who will sign and pay, whom any intermediary represents, and what fees or exclusivity apply.\n\n**SPACE:** direct catalog review for independent artists, producers, labels and owners across genres. The application and initial review are free; there is no auction or listing commission and no obligation to accept. The [offer policy](/pricing.md) explains the current scope. This is not a promise to purchase every catalog.\n\n**Duetti:** its current product page describes master, publishing and other royalty interests. Check the precise offered share and terms rather than assuming it only buys a single rights type. [Duetti's product page](https://www.duetti.co/what-we-do).\n\n**Royalty Exchange:** its seller FAQ describes royalty-income transactions, including fixed-term and life-of-rights structures. Compare the actual income sold, term and fees before comparing its headline proceeds with a direct sale. [Royalty Exchange's seller FAQ](https://royaltyexchange.com/resources/creators/frequently-asked-questions-about-selling-royalties).\n\n**Advances are a separate comparison.** For example, beatBread describes its advances as purchases of limited revenue for a limited period, not loans; its FAQ also explains collection if the advance is not recouped by the stated term. Do not assume all advances have identical repayment or ownership terms. [beatBread FAQ](https://www.beatbread.com/faq). SPACE's review is for a potential catalog purchase, not an advertised loan or advance product.",
+        "contentHtml": "<p>Compare the transaction and the counterparty, not just the headline price. A direct buyer purchases an agreed interest; a broker represents a party; a marketplace introduces potential transactions. Ask who will sign and pay, whom any intermediary represents, and what fees or exclusivity apply.</p>\n<p><strong>SPACE:</strong> direct catalog review for independent artists, producers, labels and owners across genres. The application and initial review are free; there is no auction or listing commission and no obligation to accept. The <a href=\"/pricing.md\">offer policy</a> explains the current scope. This is not a promise to purchase every catalog.</p>\n<p><strong>Duetti:</strong> its current product page describes master, publishing and other royalty interests. Check the precise offered share and terms rather than assuming it only buys a single rights type. <a href=\"https://www.duetti.co/what-we-do\">Duetti&#39;s product page</a>.</p>\n<p><strong>Royalty Exchange:</strong> its seller FAQ describes royalty-income transactions, including fixed-term and life-of-rights structures. Compare the actual income sold, term and fees before comparing its headline proceeds with a direct sale. <a href=\"https://royaltyexchange.com/resources/creators/frequently-asked-questions-about-selling-royalties\">Royalty Exchange&#39;s seller FAQ</a>.</p>\n<p><strong>Advances are a separate comparison.</strong> For example, beatBread describes its advances as purchases of limited revenue for a limited period, not loans; its FAQ also explains collection if the advance is not recouped by the stated term. Do not assume all advances have identical repayment or ownership terms. <a href=\"https://www.beatbread.com/faq\">beatBread FAQ</a>. SPACE&#39;s review is for a potential catalog purchase, not an advertised loan or advance product.</p>\n"
+      },
+      {
+        "id": "how-much-worth",
+        "heading": "How Much Is Your Music Catalog Worth?",
+        "content": "Start with documented income attributable to the interest being sold. Do not mix an entire distributor account's gross receipts with the smaller share you can transfer. Reconcile fees, co-owner and artist payments, currency conversions and any non-recurring receipts.\n\nThere is no substantiated universal multiple for every independent catalog on this page. A negotiated price depends on rights, term, revenue history, concentration and the buyer's assumptions. WIPO distinguishes a transaction price from valuation and describes income, market and cost approaches to IP valuation. [WIPO valuation overview](https://www.wipo.int/en/web/business/ip-valuation).\n\n**Hypothetical scenario, not a market valuation or SPACE offer:** monthly net income of $1,000 x 12 x a seller-assumed multiple of 4 x a 50% share sold = **$24,000**. The multiple is an input, not a recommended market rate. If $1,000 already represents the income of the exact interest offered, do not deduct the ownership share a second time.\n\nUse the [scenario calculator](/calculator/) to change your own assumptions and the [valuation guide](/guides/music-catalog-valuation-2026/) to understand the evidence. A free buyer review is not an independent appraisal. [Request a free individual review](/apply/) when you want SPACE to assess a possible purchase.\n\n**NPS is not a universal label for all net royalties.** Net Publisher's Share concerns publishing economics; master receipts need their own reconciliation. Ask the buyer to show the exact revenue base, deductions and period behind any quoted multiple. More tracks, cleaner metadata or a particular genre do not automatically earn a fixed price premium.",
+        "contentHtml": "<p>Start with documented income attributable to the interest being sold. Do not mix an entire distributor account&#39;s gross receipts with the smaller share you can transfer. Reconcile fees, co-owner and artist payments, currency conversions and any non-recurring receipts.</p>\n<p>There is no substantiated universal multiple for every independent catalog on this page. A negotiated price depends on rights, term, revenue history, concentration and the buyer&#39;s assumptions. WIPO distinguishes a transaction price from valuation and describes income, market and cost approaches to IP valuation. <a href=\"https://www.wipo.int/en/web/business/ip-valuation\">WIPO valuation overview</a>.</p>\n<p><strong>Hypothetical scenario, not a market valuation or SPACE offer:</strong> monthly net income of $1,000 x 12 x a seller-assumed multiple of 4 x a 50% share sold = <strong>$24,000</strong>. The multiple is an input, not a recommended market rate. If $1,000 already represents the income of the exact interest offered, do not deduct the ownership share a second time.</p>\n<p>Use the <a href=\"/calculator/\">scenario calculator</a> to change your own assumptions and the <a href=\"/guides/music-catalog-valuation-2026/\">valuation guide</a> to understand the evidence. A free buyer review is not an independent appraisal. <a href=\"/apply/\">Request a free individual review</a> when you want SPACE to assess a possible purchase.</p>\n<p><strong>NPS is not a universal label for all net royalties.</strong> Net Publisher&#39;s Share concerns publishing economics; master receipts need their own reconciliation. Ask the buyer to show the exact revenue base, deductions and period behind any quoted multiple. More tracks, cleaner metadata or a particular genre do not automatically earn a fixed price premium.</p>\n"
+      },
+      {
+        "id": "sale-process",
+        "heading": "The Catalog Sale Process Step by Step",
+        "content": "Use this sequence as a preparation checklist, not a guaranteed closing timetable.\n\n1. **Define the scope.** List the included recordings or compositions, your share, territory, duration and any excluded releases. Set a clear cutoff if future music must stay outside the deal.\n2. **Prepare the evidence.** Gather the catalog schedule, available royalty statements and relevant rights agreements. Identify missing items rather than filling gaps with estimates presented as facts.\n3. **Request review.** SPACE's guided Apply form starts with the basics. No document upload is required to begin; relevant income and rights evidence is requested privately afterward. [Start the review](/apply/).\n4. **Compare written proposals.** Check that the rights, earnings period, fees, retained income and payment conditions are comparable. Do not equate the biggest headline number with the best terms.\n5. **Complete due diligence and independent advice.** Resolve ownership, transfer restrictions, security interests and accounting questions. Review representations, indemnities, holdbacks and ongoing duties with your adviser.\n6. **Agree the handover and payment.** Record the royalty cutoff, notices, account transitions and how late receipts will be reconciled. Do not share account passwords as a substitute for an agreed transfer procedure.\n\nSPACE's policy gives a typical initial-offer timeframe of 5-7 business days after relevant information is received, if the catalog is a fit. That is not a guaranteed closing or payout date. Bank-transfer payment follows a completed agreement and satisfied transfer requirements. [Current policy](/pricing.md).",
+        "contentHtml": "<p>Use this sequence as a preparation checklist, not a guaranteed closing timetable.</p>\n<ol>\n<li><strong>Define the scope.</strong> List the included recordings or compositions, your share, territory, duration and any excluded releases. Set a clear cutoff if future music must stay outside the deal.</li>\n<li><strong>Prepare the evidence.</strong> Gather the catalog schedule, available royalty statements and relevant rights agreements. Identify missing items rather than filling gaps with estimates presented as facts.</li>\n<li><strong>Request review.</strong> SPACE&#39;s guided Apply form starts with the basics. No document upload is required to begin; relevant income and rights evidence is requested privately afterward. <a href=\"/apply/\">Start the review</a>.</li>\n<li><strong>Compare written proposals.</strong> Check that the rights, earnings period, fees, retained income and payment conditions are comparable. Do not equate the biggest headline number with the best terms.</li>\n<li><strong>Complete due diligence and independent advice.</strong> Resolve ownership, transfer restrictions, security interests and accounting questions. Review representations, indemnities, holdbacks and ongoing duties with your adviser.</li>\n<li><strong>Agree the handover and payment.</strong> Record the royalty cutoff, notices, account transitions and how late receipts will be reconciled. Do not share account passwords as a substitute for an agreed transfer procedure.</li>\n</ol>\n<p>SPACE&#39;s policy gives a typical initial-offer timeframe of 5-7 business days after relevant information is received, if the catalog is a fit. That is not a guaranteed closing or payout date. Bank-transfer payment follows a completed agreement and satisfied transfer requirements. <a href=\"/pricing.md\">Current policy</a>.</p>\n"
+      },
+      {
+        "id": "documents-needed",
+        "heading": "What Documents Do You Need?",
+        "content": "Prepare enough information to connect each income stream to the rights offered. Requirements depend on the catalog and transaction; registration certificates or PRO statements are relevant where applicable, not universal proof that all rights are transferable.\n\n- **Catalog schedule:** titles, artists, release dates, ISRCs for recordings, composition identifiers where applicable, ownership shares and territories.\n- **Royalty evidence:** original statements for the available history, with the currency, reporting periods, distributor or collecting entity and deductions identifiable. Separate earning dates from payout dates.\n- **Rights chain:** artist and producer agreements, co-writer splits, assignments, licenses and sample clearances. Flag unsigned or disputed items.\n- **Existing commitments:** distribution and publishing agreements, advances, recoupment balances, security interests, approvals and notice requirements.\n- **Label accounting:** distinguish the label's interest from amounts payable to artists, producers or other partners. Identify who remains responsible for those payments after closing.\n- **Supporting context:** streaming analytics, track concentration and documented licensing income. Analytics support the story but do not replace payment evidence or contracts.\n\nKeep source files unaltered and explain any separate reconciliation. Do not send passwords or unnecessary identity documents in a public form. Use the [seller document checklist](/blog/music-catalog-sale-documents-checklist/) to organize the next step.",
+        "contentHtml": "<p>Prepare enough information to connect each income stream to the rights offered. Requirements depend on the catalog and transaction; registration certificates or PRO statements are relevant where applicable, not universal proof that all rights are transferable.</p>\n<ul>\n<li><strong>Catalog schedule:</strong> titles, artists, release dates, ISRCs for recordings, composition identifiers where applicable, ownership shares and territories.</li>\n<li><strong>Royalty evidence:</strong> original statements for the available history, with the currency, reporting periods, distributor or collecting entity and deductions identifiable. Separate earning dates from payout dates.</li>\n<li><strong>Rights chain:</strong> artist and producer agreements, co-writer splits, assignments, licenses and sample clearances. Flag unsigned or disputed items.</li>\n<li><strong>Existing commitments:</strong> distribution and publishing agreements, advances, recoupment balances, security interests, approvals and notice requirements.</li>\n<li><strong>Label accounting:</strong> distinguish the label&#39;s interest from amounts payable to artists, producers or other partners. Identify who remains responsible for those payments after closing.</li>\n<li><strong>Supporting context:</strong> streaming analytics, track concentration and documented licensing income. Analytics support the story but do not replace payment evidence or contracts.</li>\n</ul>\n<p>Keep source files unaltered and explain any separate reconciliation. Do not send passwords or unnecessary identity documents in a public form. Use the <a href=\"/blog/music-catalog-sale-documents-checklist/\">seller document checklist</a> to organize the next step.</p>\n"
+      },
+      {
+        "id": "full-vs-partial",
+        "heading": "Full Sale vs Partial Rights Sale",
+        "content": "A full sale means all of the interest defined in the agreement, not necessarily every copyright or every royalty connected to a song. A partial sale may cover selected tracks, a percentage of an owned interest or a defined income stream. The terms must say which.\n\n**Hypothetical ownership example:** if you own 50% of a master and sell half of your own interest, you transfer 25 percentage points of the whole master, subject to the required rights and consents. That is different from selling 50 percentage points of the whole master.\n\nAsk separately about licensing approvals, distribution decisions, accounting access, future transfers and dispute handling. Retaining a percentage does not automatically preserve creative control. A sale does not automatically include a buyback right; any contractual repurchase or reversion terms must be reviewed explicitly, alongside applicable law.\n\nExclude future recordings and compositions expressly if that is your intention. Check options, first-refusal rights, delivery obligations and restrictions as well as the catalog schedule. Compare [partial and full sales](/compare/partial-sale-vs-full-sale/) before deciding what to offer.",
+        "contentHtml": "<p>A full sale means all of the interest defined in the agreement, not necessarily every copyright or every royalty connected to a song. A partial sale may cover selected tracks, a percentage of an owned interest or a defined income stream. The terms must say which.</p>\n<p><strong>Hypothetical ownership example:</strong> if you own 50% of a master and sell half of your own interest, you transfer 25 percentage points of the whole master, subject to the required rights and consents. That is different from selling 50 percentage points of the whole master.</p>\n<p>Ask separately about licensing approvals, distribution decisions, accounting access, future transfers and dispute handling. Retaining a percentage does not automatically preserve creative control. A sale does not automatically include a buyback right; any contractual repurchase or reversion terms must be reviewed explicitly, alongside applicable law.</p>\n<p>Exclude future recordings and compositions expressly if that is your intention. Check options, first-refusal rights, delivery obligations and restrictions as well as the catalog schedule. Compare <a href=\"/compare/partial-sale-vs-full-sale/\">partial and full sales</a> before deciding what to offer.</p>\n"
+      },
+      {
+        "id": "tax-implications",
+        "heading": "Tax Implications of Selling Your Music Catalog",
+        "content": "The amount quoted by a buyer is not necessarily the amount you keep. Ask an independent tax adviser to model the transaction using your residency, entity, acquisition history, rights sold, payment schedule and deductible costs. Do this before signing, not after receipt of the proceeds.\n\nDo not assume every music-rights sale automatically receives capital-gains treatment. As a U.S.-specific example, IRS Publication 550 describes an election for qualifying self-created musical compositions or copyrights in musical works, with conditions and deadlines. This should not be generalized to all sound recordings, sellers or countries. [IRS Publication 550](https://www.irs.gov/publications/p550).\n\nFor planning, request a written breakdown of gross consideration, transaction fees, any debt or advance settlement, holdbacks and estimated taxes. Ask how installments, cross-border withholding, tax basis and any ongoing royalty receipts affect your situation. This guide does not quote a tax rate, recommend an election or replace professional advice.",
+        "contentHtml": "<p>The amount quoted by a buyer is not necessarily the amount you keep. Ask an independent tax adviser to model the transaction using your residency, entity, acquisition history, rights sold, payment schedule and deductible costs. Do this before signing, not after receipt of the proceeds.</p>\n<p>Do not assume every music-rights sale automatically receives capital-gains treatment. As a U.S.-specific example, IRS Publication 550 describes an election for qualifying self-created musical compositions or copyrights in musical works, with conditions and deadlines. This should not be generalized to all sound recordings, sellers or countries. <a href=\"https://www.irs.gov/publications/p550\">IRS Publication 550</a>.</p>\n<p>For planning, request a written breakdown of gross consideration, transaction fees, any debt or advance settlement, holdbacks and estimated taxes. Ask how installments, cross-border withholding, tax basis and any ongoing royalty receipts affect your situation. This guide does not quote a tax rate, recommend an election or replace professional advice.</p>\n"
+      },
+      {
+        "id": "increase-value",
+        "heading": "How to Increase Your Catalog's Value Before Selling",
+        "content": "Improve the reliability of the evidence before trying to promise a higher price. Correct mismatched identifiers and splits, reconcile statements, and resolve rights gaps. These steps make the catalog easier to assess; no fixed increase in the sale multiple is guaranteed.\n\nDocument historical revenue by track, platform and territory. Explain unusual spikes, playlist dependence, one-off sync receipts, takedowns or recent distributor changes. Keep a reproducible explanation of adjustments rather than presenting a selectively favorable month as normal income.\n\nIf you pursue new marketing, sync opportunities, collection registrations or alternative versions, check eligibility, permissions and existing exclusivity first. Do not create conflicting licenses, new obligations or manipulated streams to improve a sale narrative. A remaster or extra version is not automatically more valuable or eligible for a particular identifier.\n\nCreate a concise catalog summary and a private evidence folder. For a label seeking release capital, also calculate the money left to meet artist commitments and operating costs after a sale. The [label funding guide](/blog/independent-record-label-funding-options/) compares that workflow with advances, loans and retaining the catalog.",
+        "contentHtml": "<p>Improve the reliability of the evidence before trying to promise a higher price. Correct mismatched identifiers and splits, reconcile statements, and resolve rights gaps. These steps make the catalog easier to assess; no fixed increase in the sale multiple is guaranteed.</p>\n<p>Document historical revenue by track, platform and territory. Explain unusual spikes, playlist dependence, one-off sync receipts, takedowns or recent distributor changes. Keep a reproducible explanation of adjustments rather than presenting a selectively favorable month as normal income.</p>\n<p>If you pursue new marketing, sync opportunities, collection registrations or alternative versions, check eligibility, permissions and existing exclusivity first. Do not create conflicting licenses, new obligations or manipulated streams to improve a sale narrative. A remaster or extra version is not automatically more valuable or eligible for a particular identifier.</p>\n<p>Create a concise catalog summary and a private evidence folder. For a label seeking release capital, also calculate the money left to meet artist commitments and operating costs after a sale. The <a href=\"/blog/independent-record-label-funding-options/\">label funding guide</a> compares that workflow with advances, loans and retaining the catalog.</p>\n"
+      },
+      {
+        "id": "common-mistakes",
+        "heading": "Common Mistakes When Selling Music Rights",
+        "content": "Avoid comparing unlike deals. A price for a temporary income interest is not directly comparable with an outright copyright transfer; a percentage of your share is not necessarily that percentage of the whole song.\n\n- **Unclear revenue base:** compare the same rights, period, deductions and currency, and do not count a royalty twice.\n- **Unverified ownership:** distribution access, registrations and an artist name are not substitutes for the relevant agreements.\n- **Headline-only comparisons:** inspect fees, deferred payments, conditions, retained royalties and the counterparty's obligations.\n- **Unexamined restrictions:** check exclusivity, options, future releases, licensing approvals and any broker mandate before committing elsewhere.\n- **Skipping advice:** ask an independent music lawyer and tax adviser to review the proposed structure. Fees and scope vary; request a quote rather than relying on a generic fee estimate.\n- **Assuming the handover is immediate:** agree responsibility for late royalties, notices, statements and any ongoing artist payments.\n\nUse the [offer checklist](/blog/music-catalog-offer-checklist/) to record the answers before you sign. Comparing proposals can be useful, but a different buyer or more preparation does not guarantee a higher offer.",
+        "contentHtml": "<p>Avoid comparing unlike deals. A price for a temporary income interest is not directly comparable with an outright copyright transfer; a percentage of your share is not necessarily that percentage of the whole song.</p>\n<ul>\n<li><strong>Unclear revenue base:</strong> compare the same rights, period, deductions and currency, and do not count a royalty twice.</li>\n<li><strong>Unverified ownership:</strong> distribution access, registrations and an artist name are not substitutes for the relevant agreements.</li>\n<li><strong>Headline-only comparisons:</strong> inspect fees, deferred payments, conditions, retained royalties and the counterparty&#39;s obligations.</li>\n<li><strong>Unexamined restrictions:</strong> check exclusivity, options, future releases, licensing approvals and any broker mandate before committing elsewhere.</li>\n<li><strong>Skipping advice:</strong> ask an independent music lawyer and tax adviser to review the proposed structure. Fees and scope vary; request a quote rather than relying on a generic fee estimate.</li>\n<li><strong>Assuming the handover is immediate:</strong> agree responsibility for late royalties, notices, statements and any ongoing artist payments.</li>\n</ul>\n<p>Use the <a href=\"/blog/music-catalog-offer-checklist/\">offer checklist</a> to record the answers before you sign. Comparing proposals can be useful, but a different buyer or more preparation does not guarantee a higher offer.</p>\n"
+      },
+      {
+        "id": "is-it-worth-it",
+        "heading": "Is Selling Your Music Rights Worth It?",
+        "content": "Evaluate the proceeds alongside the income and decision-making rights you would give up. A catalog sale may provide capital for a defined purpose, but retaining the catalog, selling less, or declining an offer are also valid outcomes.\n\nWrite down your funding need, acceptable scope and remaining obligations. Stress-test retained income instead of assuming last year's royalties will repeat. A label funding a new release should account for the sold income no longer being available to cover artists, distribution and operating costs.\n\nCompare a potential sale with [loans and royalty advances](/compare/catalog-sale-vs-catalog-loan/) only on their actual terms. Do not assume investment returns on sale proceeds will replace royalties, or that holding always produces a better future price. Neither future income nor a later sale price is guaranteed.\n\nIf a direct sale of existing catalog interests is what you want to explore, [request a free catalog review](/apply/). SPACE considers all genres and reviews rights and documented income individually. You are not required to accept an offer. If you need an independent valuation, legal opinion or loan, this review is not a substitute for that service.",
+        "contentHtml": "<p>Evaluate the proceeds alongside the income and decision-making rights you would give up. A catalog sale may provide capital for a defined purpose, but retaining the catalog, selling less, or declining an offer are also valid outcomes.</p>\n<p>Write down your funding need, acceptable scope and remaining obligations. Stress-test retained income instead of assuming last year&#39;s royalties will repeat. A label funding a new release should account for the sold income no longer being available to cover artists, distribution and operating costs.</p>\n<p>Compare a potential sale with <a href=\"/compare/catalog-sale-vs-catalog-loan/\">loans and royalty advances</a> only on their actual terms. Do not assume investment returns on sale proceeds will replace royalties, or that holding always produces a better future price. Neither future income nor a later sale price is guaranteed.</p>\n<p>If a direct sale of existing catalog interests is what you want to explore, <a href=\"/apply/\">request a free catalog review</a>. SPACE considers all genres and reviews rights and documented income individually. You are not required to accept an offer. If you need an independent valuation, legal opinion or loan, this review is not a substitute for that service.</p>\n"
+      }
+    ],
+    "faq": [
+      {
+        "question": "How long does it take to sell a music catalog?",
+        "answer": "There is no universal closing timetable. Rights checks, document availability, consents and contract terms affect timing. SPACE typically aims for an initial offer within 5-7 business days after receiving the relevant information if the catalog is a fit. That is not a guaranteed payment date."
+      },
+      {
+        "question": "Can I sell my music rights if I'm signed to a distributor?",
+        "answer": "Possibly. Check who owns the rights and what your specific distribution contract permits, including assignment, exclusivity, advances, notice and payment directions. Using a distributor does not by itself establish ownership or permission to transfer."
+      },
+      {
+        "question": "What is Net Publisher's Share (NPS) and why does it matter?",
+        "answer": "Net Publisher's Share refers to publishing economics, not every type of net music royalty. For master income or another royalty interest, request a separate reconciliation of receipts, deductions and the share being sold. Define the revenue base before comparing multiples."
+      },
+      {
+        "question": "Do I need a lawyer to sell my music catalog?",
+        "answer": "Independent legal review is strongly recommended. Ask a music lawyer to assess the rights grant, transfer restrictions, future releases, warranties, liability and payment conditions. Ask for an individual fee quote; SPACE is a potential buyer, not your independent legal adviser."
+      },
+      {
+        "question": "Can I sell just my master rights and keep my publishing?",
+        "answer": "Masters and compositions are separate copyright works. A transaction can be limited to the master interest you are entitled to transfer while excluding publishing, subject to your contracts and applicable law. Make those inclusions and exclusions explicit."
+      },
+      {
+        "question": "Will selling my catalog affect my ability to release new music?",
+        "answer": "The agreement determines the scope. If future music must remain outside the transaction, state the catalog cutoff and exclusions expressly and check options, first-refusal rights, delivery obligations and restrictions. Do not rely on the phrase catalog sale alone."
+      },
+      {
+        "question": "How do I know if I'm getting a fair price for my catalog?",
+        "answer": "Compare written proposals covering the same rights, income base, duration and fees, and seek independent advice where needed. A calculator assumption or an unverified market multiple does not establish a fair price. SPACE review is not an independent appraisal."
+      },
+      {
+        "question": "What happens to my royalties after I sell?",
+        "answer": "The buyer receives the income assigned under the agreement; you keep only the interests and receipts reserved to you. Define the earning-period cutoff and reconciliation for payments received later. Do not assume every receipt after closing belongs to the buyer."
+      },
+      {
+        "question": "Can I buy back my music rights after selling them?",
+        "answer": "Do not assume a contractual buyback right exists. Review any express repurchase, expiry or reversion provisions with your lawyer, including applicable statutory rights. Without an applicable mechanism, a later purchase would require the holder to agree."
+      }
+    ],
+    "citations": [
+      {
+        "source": "U.S. Copyright Office: compositions and sound recordings",
+        "url": "https://www.copyright.gov/register/pa-sr.html"
+      },
+      {
+        "source": "U.S. Copyright Office: Copyright Basics",
+        "url": "https://www.copyright.gov/circs/circ01.pdf"
+      },
+      {
+        "source": "WIPO: valuing intellectual property assets",
+        "url": "https://www.wipo.int/en/web/business/ip-valuation"
+      },
+      {
+        "source": "Duetti: current product scope",
+        "url": "https://www.duetti.co/what-we-do"
+      },
+      {
+        "source": "Royalty Exchange: seller FAQ",
+        "url": "https://royaltyexchange.com/resources/creators/frequently-asked-questions-about-selling-royalties"
+      },
+      {
+        "source": "beatBread: advance terms explained",
+        "url": "https://www.beatbread.com/faq"
+      },
+      {
+        "source": "IRS Publication 550: U.S. musical-works election",
+        "url": "https://www.irs.gov/publications/p550"
+      },
+      {
+        "source": "SPACE: pricing and offer policy",
+        "url": "/pricing.md"
+      }
+    ],
+    "spokeLinks": [
+      {
+        "slug": "sell-ambient-music-catalog",
+        "title": "Sell Ambient Music Catalog",
+        "url": "/sell/sell-ambient-music-catalog"
+      },
+      {
+        "slug": "sell-lo-fi-beats-catalog",
+        "title": "Sell Lo-Fi Beats Catalog",
+        "url": "/sell/sell-lo-fi-beats-catalog"
+      },
+      {
+        "slug": "sell-meditation-music-rights",
+        "title": "Sell Meditation Music Rights",
+        "url": "/sell/sell-meditation-music-rights"
+      },
+      {
+        "slug": "music-catalog-valuation-2026",
+        "title": "Music Catalog Valuation Guide 2026",
+        "url": "/guides/music-catalog-valuation-2026"
+      },
+      {
+        "slug": "space-vs-royalty-exchange",
+        "title": "SPACE vs Royalty Exchange",
+        "url": "/compare/space-vs-royalty-exchange"
+      },
+      {
+        "slug": "space-vs-hipgnosis",
+        "title": "SPACE vs Hipgnosis",
+        "url": "/compare/space-vs-hipgnosis"
+      },
+      {
+        "slug": "space-vs-duetti",
+        "title": "SPACE vs Duetti",
+        "url": "/compare/space-vs-duetti"
+      },
+      {
+        "slug": "best-music-rights-buyers-2026",
+        "title": "Best Music Rights Buyers 2026",
+        "url": "/guides/best-music-rights-buyers-2026"
+      },
+      {
+        "slug": "partial-rights-explained",
+        "title": "Partial Rights Sales Explained",
+        "url": "/compare/partial-sale-vs-full-sale/"
+      },
+      {
+        "slug": "music-catalog-tax-guide",
+        "title": "Tax Implications of Selling Music Catalog",
+        "url": "/guides/how-to-sell-music-rights/#tax-implications"
+      }
+    ],
+    "reviewedDate": "2026-09-16",
+    "reviewedFaqHtml": "<details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">How long does it take to sell a music catalog?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">There is no universal closing timetable. Rights checks, document availability, consents and contract terms affect timing. SPACE typically aims for an initial offer within 5-7 business days after receiving the relevant information if the catalog is a fit. That is not a guaranteed payment date.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">Can I sell my music rights if I'm signed to a distributor?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">Possibly. Check who owns the rights and what your specific distribution contract permits, including assignment, exclusivity, advances, notice and payment directions. Using a distributor does not by itself establish ownership or permission to transfer.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">What is Net Publisher's Share (NPS) and why does it matter?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">Net Publisher's Share refers to publishing economics, not every type of net music royalty. For master income or another royalty interest, request a separate reconciliation of receipts, deductions and the share being sold. Define the revenue base before comparing multiples.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">Do I need a lawyer to sell my music catalog?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">Independent legal review is strongly recommended. Ask a music lawyer to assess the rights grant, transfer restrictions, future releases, warranties, liability and payment conditions. Ask for an individual fee quote; SPACE is a potential buyer, not your independent legal adviser.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">Can I sell just my master rights and keep my publishing?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">Masters and compositions are separate copyright works. A transaction can be limited to the master interest you are entitled to transfer while excluding publishing, subject to your contracts and applicable law. Make those inclusions and exclusions explicit.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">Will selling my catalog affect my ability to release new music?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">The agreement determines the scope. If future music must remain outside the transaction, state the catalog cutoff and exclusions expressly and check options, first-refusal rights, delivery obligations and restrictions. Do not rely on the phrase catalog sale alone.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">How do I know if I'm getting a fair price for my catalog?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">Compare written proposals covering the same rights, income base, duration and fees, and seek independent advice where needed. A calculator assumption or an unverified market multiple does not establish a fair price. SPACE review is not an independent appraisal.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">What happens to my royalties after I sell?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">The buyer receives the income assigned under the agreement; you keep only the interests and receipts reserved to you. Define the earning-period cutoff and reconciliation for payments received later. Do not assume every receipt after closing belongs to the buyer.</p></details><details class=\"border-b border-black/10\"><summary class=\"cursor-pointer text-base font-medium py-5\">Can I buy back my music rights after selling them?</summary><p class=\"text-muted-foreground pb-5 leading-relaxed\">Do not assume a contractual buyback right exists. Review any express repurchase, expiry or reversion provisions with your lawyer, including applicable statutory rights. Without an applicable mechanism, a later purchase would require the holder to agree.</p></details>"
+  },
+  "linkChanges": {
+    "/guides/partial-rights-explained": "/compare/partial-sale-vs-full-sale/",
+    "/guides/music-catalog-tax-guide": "/guides/how-to-sell-music-rights/#tax-implications"
+  },
+  "entry": "index-article-360c41838159-quietseo-fd17485db4c3-intent-50f4feb4050e-selling-60a6105118f8.js",
+  "modules": [
+    [
+      "PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js",
+      "PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e-selling-60a6105118f8.js"
+    ],
+    [
+      "index-article-360c41838159-quietseo-fd17485db4c3-intent-50f4feb4050e.js",
+      "index-article-360c41838159-quietseo-fd17485db4c3-intent-50f4feb4050e-selling-60a6105118f8.js"
+    ]
+  ],
+  "sourceHashes": {
+    ".well-known/brand-facts.json": "b6b076ce10b63e67a167066262bf367143471b1c199e43930a2ff6e09d37f74c",
+    "_headers": "63e457f8873000fe4569a25fc87c3d7b7bff0ed64293a6d7658e1e922efdb70d",
+    "_redirects": "92b2160dabfa411f8f3d3a0113bd3a9660c7ebed46f0bd05b75b4af1c3911fa4",
+    "about/index.html": "e9b883ee6efa4acb9bf482e29155a58d6220e63bf8cd66bbd674aaebd41f0089",
+    "apply/assets/index-1Mu13qxd.js": "10d63b7fdd4e5a7af7e0f015f8a35d0e9272f1c4d4cafb78bad1bed7794eec24",
+    "apply/assets/index-5BYcXjBi.js": "0975e70644ceab9818949c22d67b1e52d9e4e0eb2b43be93c4e88ffef9e8d74e",
+    "apply/assets/index-B1pNjteW.js": "d8d7db72346d0611e7f3c37caadf220fcdb410fad51c795e4ceabc5ab02596d2",
+    "apply/assets/index-BK3T0J9j.js": "b873b24eb6c2208b125acec56ea5e57e83e879c156e89c59c3b99205e4b8f3d7",
+    "apply/assets/index-BLFmiXep.js": "e9d3823504a3ffa8408879f107b9bbed0897223042a75c14d27f4ba65720ce39",
+    "apply/assets/index-B__1VwK8.css": "7e8dbc1db8dea41cf0935ae5262199bd960635c2d22777de2bc21d71ede158e7",
+    "apply/assets/index-BkZRW9dH.js": "880ced059a7ad73f3fbc80f0669a945e812c1b08bc34ce0b18551c4d517326ef",
+    "apply/assets/index-DcTnRmbS.css": "0def958371836f95003627799b67d2ef4065de7a14c721e253f6407935031521",
+    "apply/assets/intake-6242837e53af.js": "6242837e53af1658f8152721f8d76e51549ea6e0d4108e2d0aebaff915a11045",
+    "apply/assets/intake-86de0bb0053b.css": "86de0bb0053b3c77914b44d48a9971ef851963c6068e6026e3593dd400f37b6c",
+    "apply/assets/typeform-sdk-6.0.0-b08faae17abf.js": "b08faae17abf78b775de86827e7db3d14913ba7f49c5279221f22880172c284c",
+    "apply/favicon.svg": "b0a330401e5e53cb33df25129a6aa96cf27f7e94bfb80eb3500012b0b9bd3ab5",
+    "apply/index.html": "488c73a0bea26a3706aed8f2c71b87ac6602f013578bac9d1ed8fb1ce2ac8766",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "66dad611374ea8360a06e45e5b2629a5db5bdf201fa5fa0354546efb5d6028a3",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "e83bfb1e68fa13afa96242ad18f910382a27ac04960dcbc2ca90bca353b5d5af",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9-review-51e10d24b4de.js": "f3b9ed498cc8fd057704f56c58ee30c83b78e63e0ae3e28eef6653ad2c23f631",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9.js": "6556342563b35b614aa2e9826868ab05abff3f56e436078a009c13fc4dd14464",
+    "assets/AboutPage-DsfQzfae.js": "cfefc6e3e7bb3a36ebed036a479480eba865613cba56d45ab2f96d6473d7ec33",
+    "assets/ApplicationForm-DRjdd2L1.js": "6bc4133c2033954845e67f30941f0a07ffbc1317c44c20adfdf6756533df5b17",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "760f6c9e4a5c3d7fdcf8f3c0dbba6acf07a751fa1a3c648aa5a7c2104d363b48",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "36946fdcebb49c6299596f503e99c882df4ca7c101076639cff0ce3d4f48609b",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9-review-51e10d24b4de.js": "751cf713e096433ddbe6c6b2af3d626797c709227fc04c9baa48134fbc0569fc",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9.js": "c1f3cf284bfa6b65c25d8d187e076e35697acc078f27133923d8397219bc3244",
+    "assets/BlogPost-G1IBKFnh.js": "9f57abd54d09f6e7e61508f873ed7057284ff13ed11d90ae37332c6ba6a533ab",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "f56eb52405eb34991b6310af7e63692f03276400eb37a1a148899a75e755c011",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "c797ec211ac98a2a0adee878fdd415aecd24185d693a6c5dc10207c5cb46e785",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9-review-51e10d24b4de.js": "5f7b85466a25829b0e184481096ea2cdf8111daf0d07708a7c7251d7b155139e",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9.js": "9a29947202d1ebd40f995347244fb1a28829aca790bdc3a955f681359c6ded4c",
+    "assets/BlogPost-article-07d34f58788e.js": "07d34f58788e232a5338fc6a738242b89e533563feece2a97cdae77d53f6b9f3",
+    "assets/BlogPost-article-3275da0ae018.js": "3275da0ae018b488c6ceabe0c101a39489f0fd38660ac0eb79e743f3f52e3e78",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "1dd131d2f0dc66a902c999dc1412d83379d32cc40f927b963e97000cb050c489",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "eb1a901eb667060ae56f9cdecbf0feab448a0cf45a961ed8d1078c0b87955a36",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9-review-51e10d24b4de.js": "4422bc28badcf587298c1ce5b488c7b2ad24118f1a70cf12c8cbc745d3c76d2d",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9.js": "e5605805f1b1c11ce2f252e13d329f5597a0af3bde238b1a88d2269e518cff8e",
+    "assets/BlogPost-article-437699c15ad1.js": "437699c15ad1cdbebea72bf5fe40ad07577c07ae852eaa2dbc5caf092caeb7bc",
+    "assets/BlogPost-article-62bb6a10eadf.js": "62bb6a10eadfb3d9e6b41cdffce04eb6c93214347102f762c18237f8503d33e6",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a85c701117f3fa0d3a6686eceb253bb0ded80ea97df5da1fbeac8ea846d30e56",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "e29fb9a9551ed7a27b2b830f698ed015356cd17e9b0facb95ce6a9144893a827",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9-review-51e10d24b4de.js": "5e396e0c06c154b12134582f2a0997ec95757da33ba8388e7e643a5f6f14f24c",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9.js": "a691890246881d161f6f24e41557f772d369a2af51bdde4cfc43e43ec6fcdf42",
+    "assets/BlogPost-article-a30c92800e27.js": "a30c92800e275e889bfdc25581ef042f41d695fa9f9e84cef5094466d555d324",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "e09c72704943f0ecd95cf03e5320d13c3f3d58e906c0ed1bbbcefec9fad44fb0",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "190cb7cfcb1ff7741e2e8bde0cb0a4529692e42b808f09a146e82917a0320593",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9-review-51e10d24b4de.js": "7178a948eb8aca7dbd399b910640585451e2d9b6d1c75933dc60c84451217fd8",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9.js": "ac048a76fd7f93edb5c5ee9321df411279b567fa640680c0443465aecd0d17e5",
+    "assets/BlogPost-article-c16281d23f03.js": "c16281d23f032c0e2b862c1ffd51d7aa6c87259e00be4496444d34507cd02625",
+    "assets/BlogPost-article-c31cc299fe21.js": "c31cc299fe214f082b1d8e49403ed6434ef7cf50e256b31ffe4bb4672916bfd0",
+    "assets/BlogPost-article-dc0202e1b5df.js": "dc0202e1b5df59fe34b914e858c0f16da31ce0d5bf2b8b5e22327d4a201b888d",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "0575b300220aa0201104f4c740003f298cd68dd4acfd1e20aa67371b538f0d44",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "2d34f25d39c9deba69848d133eddbb81a8fae0fdeb47f8132259968b68614ed9",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9-review-51e10d24b4de.js": "95b78c2329852ab97ced6061b6921dd016c4143f44d9b98db59b59b478dc36b7",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9.js": "8371213d4076bf478f54b92ee436625de535fc89f5ca5d59bd2e2e8aa7a26914",
+    "assets/BlogPost-article-ef1dc3562c07.js": "ef1dc3562c07a4dbfbe9be4333573a89c66457375eb353235e7a02ce25c6f6b6",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "c70ad6b9d2db83a7bf0622ffb7a7bfb48a5177c308b141c98d8005b62c69b3e9",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "d50efe82ad161c536842b13e24f19979555b0fab2e4a5de82c8c0d89e73aba1d",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9-review-51e10d24b4de.js": "ffb201471b15596eb3e06c1c40c329b303b1dbda92e7b8b8197b303239c7f184",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9.js": "da2a7f575a5907fd887d3508891c3773d21be99e1371cbbfbbae5bbca1fee9a3",
+    "assets/BlogPost-article-f1c64c21fe43.js": "f1c64c21fe43d0b3937026f4cc37e3c3b1d92582213e2a03b08fc4488929415b",
+    "assets/BlogPost-article-fcc8ce257955-quietseo-fd17485db4c3.js": "9409ad03fafdef1bdba508e2d16a6746528d46004889bd962d804881f8703336",
+    "assets/BlogPost-article-fcc8ce257955.js": "fcc8ce257955b1482e0f3a05772d0543a6f540a3baea94458f6f2ebf1ca714df",
+    "assets/BlogPost-article-fecc12715f4f.js": "fecc12715f4f7c25a4b4da3e9def34d0134b111ea19b08d7199725f24865bff0",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "e6b6b52bcdb8ef9899e9ba6ef777458c62fbd748ea9857727ca21c209909ec60",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "390db178cba4fd6f753be8b97e691b310e9153ee6ddf348414bc5e951be84543",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9-review-51e10d24b4de.js": "0d5cf0343ff13a8057bcdd3926281bef3a0f3474d08e7aa5935f829da4acc0a6",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9.js": "51c7dcb425f74ac353105ae27ad18744ded30f69c19a5f6af33c81ebdc4492d8",
+    "assets/BlogPost-blanket-3a06fa5a441b.js": "3a06fa5a441b97942aba4a4062afbe7818b2bb829e9be4efd2d43ba0ef4ae286",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a9f14df04506e11c62cd40e7b7ece48bb932e886d1840dbd4263c3b37066bb2a",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "5a273179a06917aef2fb1c68a46aad8c5cf9aa29c580286d1d0108cafb677879",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9-review-51e10d24b4de.js": "172f80ecf3173a626557bac3b2e8eeed3ac6b882adf374e544bedcaa1d0ad75a",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9.js": "ff59ebfa2893ec7dd83f1dac866bd0910da85cf6497c0ec9e72020c6bc9e050d",
+    "assets/BrandFacts-C8AGFe30.js": "8fe74e64aeb43cb61ca2b3854074e3653fa2b3414773c01e0c8e0e0f1f18a517",
+    "assets/Calculator-LQUD5H9x.js": "3426e258dca3a0e169ab1c687ea611a9c7ca56eebb46c702ada79b392dea34f6",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "659e8f04980530cc319fe90592e9ca6fc917840a07d4e00a1d6fceb08cbbd4a5",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "dbfc63eb2676124fb77cc7e7365199082904f07e13386fcb4eb7cff7ccf92c84",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9-review-51e10d24b4de.js": "5a47719e25c15dd06097d3b332d9bb75f4ce2d7d4737e9f53d768768b24beb0a",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9.js": "e29ad828959f0530752795805e2e00b3e4ae74b690abae5f47da68d4c0af5440",
+    "assets/Calculator-scenario-a3cd3270b5bd.js": "a3cd3270b5bd5b0d0a0fcad89ab0c40e6ecc92fe713979d80736aa41a73e187e",
+    "assets/CanonicalApplication-3b3108140369.js": "3b3108140369076364e6966bc14bd2e590684d962cd27009181a539ef3d43193",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "13f951d6be11ce7b40251c5ba9abb9f396b894fd40c890a2fa2a2c39617e20ab",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "668bb2270177f5bfa7097c3d964280c0bb8c0b04fdd75acb8ae6b7fe15c7722e",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "2be4dfb6bcacb123827bf3e9f6a9540a48c545ea947399ec558bc8d405400beb",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de.js": "0b6face98f007980ef9e9056fbe5054c900c77cca26cfadb11e6d2b814c1feb1",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9.js": "8f4d3be006aed1da3e5ee08e70ca4651becbcef75ea676bd0ddab13e63f05adc",
+    "assets/ComparisonIndex-3O4JKCOr.js": "b2a9646a1b4b7444d4d02e959a16f0e2ce678715fbf09e648006309d6a470bc7",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "bdc8c4b2f89a24840a2f47f542dfb4e6e8b245cdc808d8db7085609f65255ebb",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "69e045eb3b858469002fd317d0e2715a663c9e56a2655ec3496675df21bef760",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "e140c1266c9fba9f8be77feb3c980c8a5d976ac8ff79d793ac5ab2094a460e66",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de.js": "ff7a4719b926455530bb563a46d9d839ad7b5ae574f80183a7c873bf046f2f11",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9.js": "13672d41356630a55cbf60414a81b1f6c6b962f270131a9f804203a7b41a0d35",
+    "assets/ComparisonPage-CJny3OeB.js": "e6f18957e1be1e21958bfb2bafd299b8f4de79133e55b36a9a83b71b56536ed7",
+    "assets/CompetitorComparisonPage-nqD8Tapv.js": "f8e9430538d2d6f32e1320ea110df6885125540cdb3210a2d0945652c992ef63",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "3f4d1f07291e0a74f14ea8edd0fe7e694f633f0f85721ee4115aff4d59851c3b",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "a961b865d7acf4f9e2ff122ec1081ceed2ac7fb8ed5408aa6cbaf49f45ac5565",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9-review-51e10d24b4de.js": "1942629235fc3edd5c013de1c09b46537ec8d372a7528adc7d454a83fee1976c",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9.js": "5983510d5703c39d680c729a4b2338367706606a073666074d67d99085482433",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd.js": "35f2ec92f2bd1789b33f87c04a6eb4440eb1718051bb6d736afc4f279291a880",
+    "assets/ConversionAnalyticsPage-2arjwYU--journey-396b323aebc9.js": "c714a9f22b898309988144e5998edbe7a73ec8c6bc8fc7a22edbe560b2f31cf8",
+    "assets/ConversionAnalyticsPage-2arjwYU-.js": "64c81d5bdc12c7b0d600b0d74dcc28b47ed40e082041bf2ff6fdaf9949b599e4",
+    "assets/CookieBanner-BhC_lodR.js": "80f074a61b9890d4b164166f8cba3c5f9e2a2914fa6adddfc3e1edb37f12e2df",
+    "assets/Footer-CiCbq8u0-journey-396b323aebc9.js": "658126da82b5a4bc16ab4ec425b4f1e14766880f1022b501b3dc8b4663c2ed01",
+    "assets/Footer-CiCbq8u0.js": "b8164bbf815c24d4988a2a5960f5d66aeeb2f5e851b81fcbc30eb699c145b780",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "0110da722b44dfc05a9e4a176a3890e0b2e987ef5c1fe22d341da01742c0639e",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "fcb8ce323b73bf36850cb5415583de64e10dba609206449be01575c37fa9869d",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de.js": "e14c61f6056efde0847d52c82a538fd859ff02f67aaca77da9b270497902e43e",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9.js": "91efdbd4ae55901d15ae249d58e32fa458a884ef2c795af080766c2b359ef893",
+    "assets/GenreIndex-nzzjt_go.js": "eac1aa337046b51822f1e2d83cfcf72624b0b2e0094268a3e39e5a27cacb9c91",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "b6f976b13e5a96716377cebd3000c19fc4965323f60dab3ec76eac2df9d15725",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "ccdf7be0a4ac59e5e34fc218d6834678f1fd3192fab3929920cdf2032ead2ad9",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "8bc2624cf42f95d6505b4d9a45be81ea33b5321f575fc96be56ba0585e5cfcb1",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de.js": "7c913b97381c4a58e83a07601ceab24cb36c5f9246f55f301b89031ce8060483",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9.js": "cd63b953ac40a4f2ba0a3720c7f6ea55b927942033bf71d968791f6f60e88568",
+    "assets/GenreLandingPage-DbglrrCT.js": "23ac34f2ec884474782b57321dda28b9250d79fff54e83800262e410b6f65d49",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "e1b15b65a4a1ac3fc7d070e235950759b554b92ef3f27ec71c2f71a4334bfb13",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "3dfe3326495235be0a5466de484194e92454aafe68ad68efa4f8c5a8ea46efc8",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9-review-51e10d24b4de.js": "5a3ff67f81e8f31de90a3d2169e4b581edecbcb8225d3f16a9508ad15dbb5f97",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9.js": "efa0fa0fa01b10b19131c240a80403fb385e6d6656d15ae2c1e68acfdeeb6ce6",
+    "assets/GlossaryIndex-DVh5_Wjv.js": "b2bec8a81e265972212be7247a9349002ec07e5b827594e9b124ddcb4c788c45",
+    "assets/GlossaryTerm-CI-gCv5q.js": "d0eaad0991bac6ed0352bc5a3f656aa7d4b87ee270cdfa4698b6b5fab02df1b1",
+    "assets/GlossaryTerm-article-12805570752d.js": "12805570752dbfcc26a1f2a989c53090a010dc7ff8dd9cd19aaf4daf490b41bb",
+    "assets/GlossaryTerm-article-7a4dd79fe682.js": "7a4dd79fe682d43b65c5df52db7dca2608d480033170135fdb1eb805930a9ac2",
+    "assets/GlossaryTerm-article-9f01eacb62b7.js": "9f01eacb62b735b438269d26671b12eb77f701b074cb35761da8742c2e794c92",
+    "assets/GlossaryTerm-article-b5addb3dd0c1-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "34dc1e37f364e7a48238179e114a8abf22804bc671f6ee1ff39fa5c5953e699b",
+    "assets/GlossaryTerm-article-b5addb3dd0c1-journey-396b323aebc9-review-51e10d24b4de.js": "c6c8d8f1549594e305d4f10bd6e539771e8239a416ad507e64582a3d0f7052d9",
+    "assets/GlossaryTerm-article-b5addb3dd0c1-journey-396b323aebc9.js": "061855154096f5cb547e08ec2ce2bc6dde372bda8628e0a97385b5bc5e268678",
+    "assets/GlossaryTerm-article-b5addb3dd0c1.js": "b5addb3dd0c1d9ef6a84f4948a897199c389396db1139f94440e2ed4bc5f96e9",
+    "assets/GlossaryTerm-article-bafaef98cff6-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "29021c1886eed71e621328ae976111e33d8d2519fe8df4c308816f3bfb298bb8",
+    "assets/GlossaryTerm-article-bafaef98cff6-quietseo-fd17485db4c3.js": "ca85bb620507e0578828dd6a9f075885a681b44d8d99c9fa1428300eb8fab6b4",
+    "assets/GlossaryTerm-article-bafaef98cff6.js": "bafaef98cff6a20eac9ec9d2901e7f7c1fa605e9e0ea4a955278cc0fb5afbb0f",
+    "assets/GlossaryTerm-article-bfc6dca1bd48.js": "bfc6dca1bd483919fcc6694f691d10bbbc302b19170920176514ebe6b8b7cfeb",
+    "assets/GlossaryTerm-article-c20db1c28db6.js": "c20db1c28db6a1a83ad23db72a46011bfeadf73707e9967e49fb1d52c4b78c42",
+    "assets/GlossaryTerm-blanket-6c4b34b1694b.js": "6c4b34b1694b822bc6dd8a22981e0942a512a0ccbebc4ee24381e2d2e7dad41b",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "13b59628b39f17cef08a27ad578dad0166f1602fd46e65877bdd7317b4acfb89",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a34614e30876ec90d153d15f0f13a3e8caffb24b5b8c287d7cc7fcbd6ab4267d",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "767f73dbf95c9f0c6c7283d86fcc0b993e6ff484ee5a5c6be351448920ccdc8b",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de.js": "5afc6917bc4747a7acb09583b080fd434deaf824c47d7104cc17d6cd58352c1f",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9.js": "6d88c12a2754606fc96c5d5e80deb6d5433281deca15507072db56d47d91622f",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ-.js": "1fe92cb922c68569605a1aa1c4df42179d7a121b1e05d3ac69903fe11e36d119",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "91b39b6aeba485a2d33e7bee02903a162675f0cbe7f2b88690ea1b565467ef58",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "f56097e22a574665b7389d3f546dfb8ef76a42418185ac9cdb85611591789e7e",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "8e5673296c6a18f007ad13f38cf9bf69a9200b9a654bc0b55e226a036f509312",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de.js": "f83db9bba0e04a71f3fba626e1564c96670764b4156b9908c1f05ba43052b9c3",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9.js": "e37f8dc58fc0fa15bcb061fa9f587b6108a182b7d6511e5ec6395b614d728f34",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW.js": "c2c5a153252db66abf431d47b7d9cc09a42eb9d8b637fd9a11311231df679ef5",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "eedf57b2dea988480c843fe48b38334caa605bc8371749af62c34c787b9d7c54",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "eb253ea4aa15a2cd73453e61221b04c42afa55b7e4098e9f7e3aea5dffe5d1c0",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9-review-51e10d24b4de.js": "6204464bb60868a128a399b018afd61e0afaaf638c4e7b0581d739cb8e0b2a5b",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9.js": "2b8601cef23919fd8899cd870128aed61e80ec60e916a1d9ae546e46831e7d13",
+    "assets/HowItWorksPage-Br1vbw7A.js": "98c2b5ecfe819183ac4d1f0be5eaf35081b0265e656b68525bd758eec8f74605",
+    "assets/Index-DtVciBUY.js": "0ba759efcf67f8f59d7f423bc78e4bc3891860dbe8d745c17977f9688a674116",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quiet-10a8b6d4e02b-quietseo-fd17485db4c3.js": "adebc9029652f070ca46d7806e57d9724a9c9654b26a325230cbd78bcdf13bfb",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quiet-10a8b6d4e02b.js": "313a8aa72c781d3b371dcf5cecd2b8c0909744c966ce4d157d1ed2729f90d991",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "bf41525302d148cc802ad6c3fee16bd5a80423433d439e14a014958dbf63c7e4",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de.js": "2f7dfabac74f07927edba70cc674096b23a2ae304c2474f2aea418fc8c12c971",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9.js": "3b52e5c2c3d7e055a0cd0ea80c91a415392c5f43d843b7fc39ba0540b133e919",
+    "assets/Index-og-type-32d4337373ff.js": "32d4337373ff014426b0f5668fc2611c3114b93201d9e915a5bc3d120495104a",
+    "assets/Index-social-38be1f8b9b02.js": "38be1f8b9b02a375b72c79232f2b2ce992c0a0a155909f2d6e55c74773cfc63b",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "44e8c8795189b005607725a1106601eaa6d4087410d87e47b8809a461b8f1484",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "0a93711386dabc07b067b71b884b0a7db4afb8ac68e6380dd87b62d70ee1d0b8",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9-review-51e10d24b4de.js": "7fed42e2bcfd6d51eb3bb4135842417f4b66f355be6e2d4ca2eb917ed2e8ad3c",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9.js": "3a07fca6d525959172ac7ab156fd46b40e09973b003bec65b6971c713dd87b85",
+    "assets/MarketDataPage-DVgckm8v.js": "3e1e18b6c4ab24e0bde24447232f05291d7ef619e45f17c4d6fd1f595ae951ef",
+    "assets/MarketIndexPage-BwChy8dR-journey-396b323aebc9.js": "8cdaeb778dc6aa79c3c42070b50fb844318771481f4e753cb2fd83b712194967",
+    "assets/MarketIndexPage-BwChy8dR.js": "900c8f22385ea40c4fffd05c1f1804fa8afbf556f76f71a525830613de591458",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "2c8424dc6db165e8c679c344449185f8a0baae6c3fff82b4191ab21792654250",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "978edc0865db67155b138121ca30f5d9de31aa4f23b0a62e7ef6dcb088759d56",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9-review-51e10d24b4de.js": "a87e00b27b0a1ec5a21228ae139fde03c1ce11b5c8dec4c19783a48bdb20983d",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9.js": "6d7c7c280dda2ed0a545d7520ee9d10d1361dbfa22b7eed78c87dbc543c7cbc5",
+    "assets/Navbar-DK5bZPep.js": "8974dddd51dfccfe1fd468285c3aaad11c3777c6a802ad4051e595421bbc4d0f",
+    "assets/NotFound-7UqaHOXk.js": "8f7550930fcf40248a9e0899f1bdae895e4e380019a77192625b254ecf4e4443",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "55bd12951ed4c84afae212bcd681efd53424316c9d7da9299ad91fa33275b10d",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a0ff861a20265f050b80012b179e3e877070b3303165287d14623298eb963149",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "b1667730bd677f1e7314006ce957aea6eeb25f0a5a8ff591e830ddaa8ff937b2",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de.js": "863be7b659c0fc35392a7971ceb0115ff6e973e8396a283b110b3764bf36f89d",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9.js": "57b04b90fd00f4d35e413490a16283128a17659cdf736e188c9c6f1f0229d32b",
+    "assets/PersonaIndex-Cx7Tq99Z.js": "4a90f35b38768aa66d7af0f2ed987edae73aac8edce1143fe02e446068fa87e3",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "072cab55343b615aad5f06181cd9a4df3776f0ed40e2fc1de5831fd20577371b",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "84b2d8b7ade131ac6e126b9788a9afd7233a6ccc7f9d15c741c29a8b1a764414",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "ee59307c7c8446035fb37a51595cdc2a38a871ec4f3998dc1463a4d78b6f6a1a",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de.js": "0d3caceb7384d3a09ca6e29cbbf6476904c9f9baa1120112858cfb6895474e15",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9.js": "ca0273591c9aa750efeed925d0745c9b69134f67385a7f6cae5825023d9d14da",
+    "assets/PersonaPage-BoYmt9tR.js": "180db423ffc8ddc32f18c6fa506c76f1916741c388a600a74e8a3b7b91ee6e89",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "8b986b9ac228ea03128c66242d9fab5d4e45be321a1175dcae2ee6918655770e",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "9a1935e50f77dbec2226a793219ed5582d28fc539a96a924a1ef14f7a40b3a85",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "f02c9ae871f8f4041fd4007552a54b0956225c14e923faab4f38b7bbcd7863c4",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de.js": "213b5a058c5fbf92a09d4291d736447c4bcd85d16adc43d7a049cf465b730504",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9.js": "c80c537f86cc7a5fb5df67547ada21c49c518e54dda0f5ef819c6621d9a2f8f9",
+    "assets/PillarGuidePage-C957L0vZ.js": "2324d6ef0734370afb5fac60c69acc855228ac6370b139a1f703e1e52c8c39ee",
+    "assets/PlatformLogo-2tAWwfS3.js": "047b9cde877a03ee93153557f22313fa69cc82e3289d19404717cd22909957d4",
+    "assets/PrivacyPage-nphbg5_k-journey-396b323aebc9-review-51e10d24b4de.js": "3be06ff9d7aab7594008792c1555409489c9f75115365855797023f8741af3a6",
+    "assets/PrivacyPage-nphbg5_k-journey-396b323aebc9.js": "db5ff08a0ed561ad70f278edd7c00b6111aae768cd1abb71e0fd3d5666862ddf",
+    "assets/PrivacyPage-nphbg5_k.js": "23b64259edda7af62b7ca5d85692340246970fd8ea8893eec336222b7e661806",
+    "assets/PrivacyPage-typeform-18a2f3fdfec1-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "28b6c02a09866323f5f51126cca1e50656d639654937d4b4b39ff4ec18c14c87",
+    "assets/PrivacyPage-typeform-18a2f3fdfec1-growth-52842f5a03ff.js": "c1c12a74f9302b1e99f183c4ace9fa9432e24876d45ff690819f85648d9c135f",
+    "assets/PrivacyPage-typeform-18a2f3fdfec1.js": "18a2f3fdfec179e88137697af202fe62894e242256093f10f2a2ab31f6c45dff",
+    "assets/RelatedContent-BT4Ol14S-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "b5120c05c1a0446611f173f12e040ae9950ac8cfa547baf94e27adedbb0a16cb",
+    "assets/RelatedContent-BT4Ol14S-quietseo-fd17485db4c3.js": "9b48bed92b4ac21bb9af3849d2bff80b3306fd6b837a893c4c3e9a748a1e3093",
+    "assets/RelatedContent-BT4Ol14S.js": "3f4bb485a311bc408b8e47b2b1f3999bb0df7be7b4cf3d926d0c9a1535b53680",
+    "assets/SEOHead-C4J8_WVH.js": "c7e97d02db082771494c7cf684da4059b645b31603eab0321365b13e6d0fe2c7",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "56c054ee6bbd74d5221d2ad00ef0d2c48bf3ae36ec9a2c9c8cb82f1f3458132e",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "0fbaee228049b1e2901d6fd593cf2dc33d01ec408c7ed1487e3c0a72f9bf0cdf",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "a2955719ad67ba52184629fd6c2543effa03ebd531257a963b58ac1da21e8016",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de.js": "377e419e9113f3eca8bd9073c0443b264f64ac598a6b09185a5f0dfa92f57575",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9.js": "63ca5970367dd4e22a300f90ece0caf49bd217bcdba0a0745459b15f578b6756",
+    "assets/StreamGuidePage-Bj-CUdUa.js": "f2cc82c2b00a22e790a03068edc288fa8b20730ad9919888672c308d734f1b2f",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "891e68260e603a80ae8ce3f6c035786a39cbd0af126b628b0e62069e782f0cc8",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "305e1ce39b7b1dcc62f948519bd1e18bd001db6cd1de8029afd8853a8410aa80",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9-review-51e10d24b4de.js": "76a524df4bc8380937a63f1c453588780339d1bb3dca761e319fb4fbcef7f3ca",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9.js": "bddf50a392392c3e8423ea5919645d6c7a9c4f40739cc034371faf3a053fa744",
+    "assets/StreamingCalculator-BmaIiv3O.js": "b887dd513a48672abf3e0f9729c5aec1c476ce3b1b9f08a5dfc75c3424188f6d",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "0f4affd6ec1e58b42f17d2be2f329277054409cc1802fd531d93afbff0f17c3e",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "684560f41b088837cec1eed2287d5293312c928119b9b9bf109f6729d46d9070",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "3d5172861f4277af7f06742937caa0109328980a5f64ff3b0cbdc071e36a7dd7",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de.js": "694c0adb183b2fc9485a5c22df255bf3612044d95c3f3a648a33cfa56e8f027c",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9.js": "e8b4fdc4c3a6bb8b36b4c7560fdd972860d74ff1e49892de40853ec5a596ee99",
+    "assets/StreamingRatePage-Dx_E9vup.js": "3b60571836c2e01577b6a0cb6f85442c75d1601c0a8f935f495d9c8034a880c6",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "c8519a684c626040432d2df84317fd0694b697535e938e35f36d2105a6374b73",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "41054e3e4b9f0b85a0c1a1f16a22257205a33090bdec2483ae2ecb1216095a7f",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "ec26064f7bcece02e9c9fe268fc3161be5b4e3af8be222396cc1065a5539200a",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de.js": "6398acbfa9a8c3d2b0a1a7065be92056159bc613498f9bdbdf9f51693571705a",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9.js": "4beba8f2699a3e7e36ccd65624f1063d3e29dc611d1bb55ad1657fbc4df008e3",
+    "assets/StreamingRatesHubPage-DOmrAiAa.js": "af00225596170b7e782237807103f47647935f85b3ce9f447657fc7c16698493",
+    "assets/ValuationGuidePage-Bs86RCS2.js": "450375cbfc0deb4e7ce16c3de36e22097b64d36d5dc337ddbc796c31363da651",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "59a5392ade50aaf0b2aa8b164e019f4c96f99ceb2ff843b8300cdb7e5cf1a9f2",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "aab326f48480795035b8656d5f6aa3072a864a40ebd100ab3ec72a51fe14b1cc",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "ef1d300d24d48c59168ab617cabc8d0461d8f6b49b2f76ae92153b9b2db5a3a5",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de.js": "057ada9fbac694e6b407e97b3ce64276fae8bd4ad79fe3fcffa3cdfb122e7c04",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9.js": "681950b1e8acfc777bc05096dbbac7f3f99e9b2e73645e199812b09c74fa04a0",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9.js": "2a90eac661c9a1cf66a8527aa1dfeeaeddb967f6f68f4125366cb126d68627e9",
+    "assets/ValuationGuidePage-reviewed-2c5cfb6de9e9.js": "2c5cfb6de9e9979c6d496c64dff4d6a5eeb4adcdaef199d989e0ca37da4bae48",
+    "assets/ValuationGuidePage-reviewed-3f4508478677.js": "3f45084786770a160ef1cfa736216c64f79b3ed80e5e39d62e3825cecdf09b2f",
+    "assets/accordion-DNmmZSWQ.js": "60e4ab498028885df013f138a94e2ab68aa6eb2275fbad1339bf6ec561bb121a",
+    "assets/breadcrumbSchema-ClfraVQe.js": "2ca4699e2e2cbb91301d9728e9dffb1b5d6e2ec850337adcaa3beddda8ec95d7",
+    "assets/button-Kc_XA-7I.js": "e093007ea83519a721951391cf79193242cead6361839a8903c38f5c012fdd85",
+    "assets/commercialGenrePages-DCv6f_Bz.js": "ea914a0a15e5514f31a80c7a5200afcc3b85ff8ac191b4d6820a17e188e3a317",
+    "assets/comparisons-OFVO5GNZ-intent-50f4feb4050e.js": "2d5b5cbfba02084e2dad305e068e8d3a61178bc2410de2791e00d4e4fc2468cb",
+    "assets/comparisons-OFVO5GNZ.js": "43c62e276937240defb385ce3874e03bff53ff01d69fe4141c96864e87b9b0e7",
+    "assets/competitorComparisons-primary-wave-11caed4cdd0f-quietseo-fd17485db4c3.js": "8b21619bac47aa529490f79f531b63cb4a20a20b2e0ed3aed9ed86a36305716f",
+    "assets/competitorComparisons-primary-wave-11caed4cdd0f.js": "11caed4cdd0fa540ee19ecabfbcf1669ca7321742297c4dbfef436483376ec87",
+    "assets/competitorComparisonsExpanded-D0DJzCdV-quietseo-fd17485db4c3.js": "a00b80562847dc05df436c7621ad12deaafbaf914581607c2a9973fd6b720be4",
+    "assets/competitorComparisonsExpanded-D0DJzCdV.js": "1bc4c8e349e90d117f6851db39ede67257e15a4bb1c108068bba0d233ee1f4e2",
+    "assets/glossary-osNbpTze.js": "62e702270faf3270900c113248732efddc8309e0ee25add4b402cbaff0cf0888",
+    "assets/growth-c2581618659c.css": "c2581618659c92051757e960b290f018367bfaecc53f50f92836e89ee76d47c6",
+    "assets/index-CdURxxep.css": "2101d210e4f984108db9d5d612158b43bd342fa22e69f915050de623d79d58d1",
+    "assets/index-Cu12htIi.js": "f64197f6796589bbf0fd65a37e6e8b59b4c6375b26545eb24932dcb6dc0b4a67",
+    "assets/index-apply-navigation-a80fae372370.js": "a80fae3723701abb452639f5daeafb53deaf8e85f9e9d99f4d8857c3ee6769c4",
+    "assets/index-article-0f351c3163d8.js": "0f351c3163d81d4ccc6d018f3b4cab6a931d828f82e47f10a01737b4486b80e7",
+    "assets/index-article-106aa515e0d0.js": "106aa515e0d01e7f1e0a0ed958e1068070eb79b1c6238c47d261164bd099c273",
+    "assets/index-article-360c41838159-quietseo-fd17485db4c3-intent-50f4feb4050e.js": "c203678f344e288ab54e48b0cbb0b5299581d70027aaca316150d97363b6e7c9",
+    "assets/index-article-360c41838159-quietseo-fd17485db4c3.js": "b285e7a2bc1dce9d140951c4be6290c7aaefa52e11564a7c8dc26ba6f932646c",
+    "assets/index-article-360c41838159.js": "360c418381590dfd55a3e042623172bf289e32bf67f5515eccd1d4817d284089",
+    "assets/index-article-72530f860335.js": "72530f860335ab8201a68f0dfdd87ead901e865fb7731c4ca0d7ca49b1c74b46",
+    "assets/index-article-78efc048ebfa.js": "78efc048ebfaad92e1adc7e7f2fbc07e0b49bfa4724cf4582be9b5801fd72a26",
+    "assets/index-article-8da2f241ed06.js": "8da2f241ed06acaa0bc541f2ee531fe943470a9dfb3e194e7f765bc41819ca80",
+    "assets/index-article-a510d9fd099f.js": "a510d9fd099fae50974e80f5340828e3fff533e9ad56c496e8d6122d2893b454",
+    "assets/index-article-d9f46e1ca318.js": "d9f46e1ca31822d14721ba25156289870a5bb48a38cf2c224bbcf5ddcbd12f56",
+    "assets/index-article-f387b88293f2.js": "f387b88293f2aaa1fcb80ae665897c099fea9297cb1f03ffa27f9b7931ec5e6d",
+    "assets/index-blanket-22fc13e5e2be.js": "22fc13e5e2be1dfa521f0fa15608222d94a9368f09bd797d350755be8f2aa10b",
+    "assets/index-funnel-24b85d23cd2a.js": "24b85d23cd2a5c94b0c5eb937fd60c2592b9055341eb0c9bfd05e031762d4455",
+    "assets/index-guide-36708b151164.js": "36708b1511643e35e1310504ed17885f1fbfa40ab4aa8be2f13b0cf44782b391",
+    "assets/index-guide-e66c64405e6c-journey-396b323aebc9-review-51e10d24b4de.js": "ebbd15e60f19a08017e285473789fb1b5328aec1a7a3f24df2d2feeacd2fc708",
+    "assets/index-guide-e66c64405e6c-journey-396b323aebc9.js": "9413767099c298d208cbbfbec08b70079032bccd15250d3930ed762cff2a96c4",
+    "assets/index-guide-e66c64405e6c.js": "e66c64405e6c47d8e0bd8e8a2f7d62479292ad62311401179267a71dcdb2e508",
+    "assets/index-guide-f2960345f6e9.js": "f2960345f6e9efab63af7df70bcdfac05e693be80fc3022ca2dbac9b7b58dcb7",
+    "assets/index-local-fonts-25c7a65a524b.css": "25c7a65a524b62b62a4673d1a712dada46fa2a01d3e656a0402bee8e58ee3964",
+    "assets/index-og-type-d8b819cc2ac9.js": "d8b819cc2ac9374c28a6aadf45c985666f547a2d02baea505342f77613e3fdd7",
+    "assets/index-primary-wave-2520ec9f5f7b.js": "2520ec9f5f7b1ff0bb95a6f38c5d3f40eca9ab8900dc65ae2ed901ffadf00be2",
+    "assets/index-social-77ca88e8ba4b.js": "77ca88e8ba4bd54b358f39dffaa7781a0473abad53915dac8948cbda5d25a04e",
+    "assets/index-typeform-45ce7e3ed34b-growth-52842f5a03ff-quiet-10a8b6d4e02b.js": "b2d6a77aad74446f18ae006bc5655c16a3b2094021447dd79571fad4bb6a3ac3",
+    "assets/index-typeform-45ce7e3ed34b-growth-52842f5a03ff.js": "0f90a1e87284c09d9590c3214aa522c5574e2ea0fbe95b95e22685f394535ddd",
+    "assets/index-typeform-45ce7e3ed34b.js": "45ce7e3ed34b94b1977cfdeaf6bbec87babe1978d5e4733f89bbf7ad981c15a0",
+    "assets/journey-cta-632796e93c26.css": "632796e93c261e3e471a37bfc9e5997a4b4a2fe91f368e3353767d11d99b6464",
+    "assets/personas-poXD4ezC-intent-50f4feb4050e.js": "992461a1f57f8f9f149a47368fce362b661f44cf28bd334961a34ea024c2bc58",
+    "assets/personas-poXD4ezC.js": "9f6e2acf154fcce729945f7848563f4950de6be177e2ced68f979a42a72c8107",
+    "assets/preload-helper-D1teU4R_.js": "fbabb599d4b3ccf54e39c358a4f361ffceb4e42c8ef7be414588924210341317",
+    "assets/quiet-9a6ada9924fd.css": "9a6ada9924fd7519ddbf5279f8df028d2c550715f617e815b73ba56db25bf81d",
+    "assets/quiet-site-97dedc0e1b45.css": "97dedc0e1b45c1f6a7cd23ad0a5bd42bbcd0d9b77e5e1d972961a017eb09d643",
+    "assets/streamingRates-D0lrxoIa.js": "6f10347a4fc57127aef67754a3861c67fed999be74babb3c93f375e56b4028f7",
+    "assets/vendor-DhPEFgb5.js": "c9ca51efcd0ff1503f63b9e8be4e694c380a740cf1c2fa920027f0382327f70e",
+    "assets/vendor-charts-CzCimo7o.js": "15e6701f171be0d4e91db70b55736524ff4f4b25113a3a106423f69e2ad62724",
+    "assets/vendor-query-ByDhhwTy.js": "1429681d8b79a923c357ae7443b3dd9f421e33d61140e4cc13b825659eb71fea",
+    "assets/vendor-router-D1jo5eb_.js": "c24491baf42f92ed5c8b3bd40780a68317eda1bea0dd284c1e18a368ff4641cd",
+    "assets/vendor-ui-DsGNjII5.js": "a054b3d91526c4dbfe7c62dc165a98a7daf091303dae5eb97de68cb0e587843a",
+    "blog/ambient-lo-fi-music-catalog-buyers/index.html": "2a6ca42272c76066c097165d198c7b510c15b1a89f9d341a6081ebd342a5e9a3",
+    "blog/beatbread-vs-catalog-buyers/index.html": "9c6f031565c53bd5fb4d627ad899d2656eff3056d0ddad29bba1f153d9fc2ba8",
+    "blog/case-study-ambient-producer-catalog-sale/index.html": "00bba8c459731b7cd9d4195beb12a5999b80988454c923fc1965200204559349",
+    "blog/future-of-ai-in-ambient-music/index.html": "88b66c6846233c220859a09a453a2569be70265c35d6616960a71548aa093776",
+    "blog/how-to-register-your-ambient-music-with-pros/index.html": "9eda0ded28bee1da5bcca917e4a9a7cc1f982d9ace769e0aa94767617a339ca9",
+    "blog/independent-record-label-funding-options/index.html": "9706e52d15f7de9104222373c8cc71d87a415f5d9f96163a3c78aa96dc4b2e46",
+    "blog/maximizing-your-lo-fi-catalog-value/index.html": "ba007a7a8dca327238c017322e8ec72614b58989fb9315ff78329b3899f52757",
+    "blog/music-catalog-offer-checklist/index.html": "a27b15144a15409687ed2d4d34d3f8a2e6c1badc13b0eb0827e0d07c68d2848f",
+    "blog/music-catalog-sale-documents-checklist/index.html": "51cb7c45850a2da69a8de6c2889ba7b8512c188577cd87692ea2b95d914a34a2",
+    "blog/royalty-exchange-alternatives/index.html": "61f9a26cbdf5c379b10c6b3cbd6147a45bfaa899a9f8c2cd40c2e21ea05b09d1",
+    "blog/sell-music-catalog-lump-sum-2026/index.html": "0d469afec6374d0653d561767142f83aaed6c83fe89409eafcbfa6760017f780",
+    "blog/streaming-royalties-guide-for-ambient-music/index.html": "8b585e1ec9ed8b6df93a45bc4f3362966f074f1dc248b3e6adc54ac12776bdd4",
+    "blog/what-is-a-blanket-license/index.html": "e4eade7a5ef0f2f41505d5f8dfceeaeea2bb082ccca887349b4e3b421a8dd1cf",
+    "blog/why-selling-partial-rights-makes-sense/index.html": "4e942799af9bf1dbaa73421f05b7bb4db60f0f90bdc54e95f5901e8c4d9ff3fc",
+    "brand-facts/index.html": "29d44b3b478846d638bb47df741f288f8ec158ab3af4f356adc4e47a4b0ac628",
+    "calculator/index.html": "19e99fe301af0d17095c679e8cfdf7631ce51833dfea742f17fe9b7282019028",
+    "compare/catalog-sale-vs-catalog-loan/index.html": "ead89ce3a9c9b910b6956f6968cb3247150d024cb345cd68c7f6bea9cb820d75",
+    "compare/distrokid-vs-tunecore/index.html": "662c4cc01f491789f3241beed77d6d1560abcadb58ea96e64b1592656d9afb8e",
+    "compare/exclusive-vs-non-exclusive-license/index.html": "7edca1dc29bdcb11cb80ad9fdd51f5bdf328340f79a8138db3590253ee1b381c",
+    "compare/full-buyout-vs-revenue-split/index.html": "6bd634b95983f79ad2d0a4a46036e2dc7fe5943804aa342491bec1d373ae6811",
+    "compare/index.html": "85c4264aa4d1378e1596462495ff1fb01746591ab8759a55d37562ccb3ddb9fd",
+    "compare/major-label-vs-independent/index.html": "e9e1c3a930a66df071b748e78a3ae69530c9c99feb08a634228448edf68bdb82",
+    "compare/partial-sale-vs-full-sale/index.html": "95d4c7b4fb68d3085f020c93d7c67ec3f33f08d95d8277f9ad20ac39ff6033e2",
+    "compare/self-publishing-vs-publishing-deal/index.html": "f92a0be66bca9ad367e82faf28eee3ba37833d2c9bdfaa732feb8e88d33e9a6e",
+    "compare/selling-masters-vs-selling-publishing/index.html": "f3e2df9090f7e1660ce93009e1114b12ec56ea41e4233d146bacd07471de626c",
+    "compare/space-vs-duetti/index.html": "45f1e9890bca042c845b7be5ba7596f0d7daad8ddd93360cc74c1723717d0ce5",
+    "compare/space-vs-hipgnosis/index.html": "b191fa488e253d9f956a5dd0bdbd853cff598d47bb1c86d4104e2702a0a171d7",
+    "compare/space-vs-primary-wave/index.html": "7618aed10954dbab8e08ca18c8c5f2dd96cc4b8dc06a702f490665fc7c64dd0d",
+    "compare/space-vs-reservoir/index.html": "3c09944f456c4d99d99b8b99792e197c39314af05117322055a58e012246f1b4",
+    "compare/space-vs-round-hill/index.html": "55f9df5b7ab90041cfa51358ec800c00e2f4e5f6ea1a2fca622589a2c2ec582a",
+    "compare/space-vs-royalty-exchange/index.html": "1e70f12c80bc3eb5aa788a65111666d46b91b17548a20ab3750c7021a46867aa",
+    "compare/spotify-vs-apple-music-royalties/index.html": "f3f320a5504113a27a93c2f77daa11a51efb42160aa1bd2623c10a09a21e367c",
+    "compare/sync-licensing-vs-streaming-revenue/index.html": "76850818c39e92f254e3179334c4a28e8d843f3ac9cf37b8ec37f9dabb0c8af1",
+    "data/conversion-intelligence/index.html": "c811e78e17507105eed4ada78ef352ac85f940e5a097e0361523efddc991ff0b",
+    "data/music-catalog-market-2026/index.html": "f1ad310dacc69440b13f139b761604d2ba772dd91fd5f603975daee50cd83f35",
+    "data/space-market-index/index.html": "1e78f2e2facc2d23538e2c74e2c081d91f04a7521743d449f3c8f42318deb4fe",
+    "favicon.svg": "b0a330401e5e53cb33df25129a6aa96cf27f7e94bfb80eb3500012b0b9bd3ab5",
+    "fonts/fraunces-OFL.txt": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+    "fonts/fraunces-latin-48282a415ec2.woff2": "48282a415ec22e31beaf0a0666e6fae0c8cbddcd0b1f6e729f27c3ade8a64e43",
+    "fonts/fraunces-latin-ext-f120089b9440.woff2": "f120089b9440f3e35a980a2137347b1851ad46ee4b8ad5c63b6c07e053fa40e2",
+    "fonts/fraunces-vietnamese-7e3c04662669.woff2": "7e3c04662669cd2b8ee672e4e5d63146d21f6aa36654b211718af5fe0bb3bd51",
+    "fonts/inter-OFL.txt": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+    "fonts/inter-cyrillic-aebf2ab4a4ce.woff2": "aebf2ab4a4ce6810d73c1ac7be7cafb4e5ec4cee2d6db5fb3e09691747ec4bd6",
+    "fonts/inter-cyrillic-ext-fccca918fea4.woff2": "fccca918fea40089dacadc7045861314d1a6bc91f1f323cc1eeb22ebcdb321b5",
+    "fonts/inter-greek-46dd4cdca58c.woff2": "46dd4cdca58c26ae87cc6927657bf83b2e8abfc39ffd0ab176e301a8d28d22bf",
+    "fonts/inter-greek-ext-a2e2c783ca6f.woff2": "a2e2c783ca6f9c20486e81e72a279203e86730bbf8f01ff6a5ee9dbd09e1c271",
+    "fonts/inter-latin-c940764593d0.woff2": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+    "fonts/inter-latin-ext-a28eb6d3ccb5.woff2": "a28eb6d3ccb534ae0c94ca999371df024aab60b08c3c8a5720ee9e32fa0faaa2",
+    "fonts/inter-vietnamese-8db00ff46c67.woff2": "8db00ff46c67b22cda8bed865acf7077651cac8d2841d5b40980556b48961931",
+    "fonts/manifest.json": "d5c4fb740707eeb06b2065f7a1893449dcf89b0eb0c89de5f96265cb993fc504",
+    "fonts/plus-jakarta-sans-OFL.txt": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99",
+    "fonts/plus-jakarta-sans-cyrillic-ext-a16f29d7d2a2.woff2": "a16f29d7d2a21a4f9b3249a82eb2725ed5bdb91500dfb5c4758977de27477f20",
+    "fonts/plus-jakarta-sans-latin-cd8db90cd950.woff2": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+    "fonts/plus-jakarta-sans-latin-ext-0303e02b53b0.woff2": "0303e02b53b0298fb26a0193941a2e8754f0f9a9fce50d90b178d8da3424873f",
+    "fonts/plus-jakarta-sans-vietnamese-5c913fc1b1f8.woff2": "5c913fc1b1f86f4b475e5df45a796aa480d1f7f0891ed6f1a5991d6d1be887c3",
+    "fonts/provider.css": "0ca27ebf738dd4b2129f7273c8850261b6263e14204831a64cc9322dd8a21ffe",
+    "for/ambient-music-producer/index.html": "c986e389a5c7247e185dbfb2eb40851e6028d20188a585691f30b2f38e02b902",
+    "for/independent-artist-catalog-owner/index.html": "9a87ce63d3a2601d6e3a31e853e192d6da8e44086063bb03679deec3bbfccdc8",
+    "for/index.html": "c10dfc9c8271ba33a2e82cb94eceac9ea02f59384a6ba101eaef2cac1cc9e8c4",
+    "for/lo-fi-beat-maker/index.html": "33c41aced8376ad3f0f635293c3dc03b1c95d8dacb7a18728fcac781bb67a857",
+    "for/meditation-music-creator/index.html": "8208e2870fe8340f148ba124e718da02ed67301e6b5e993525182ffedcb17acb",
+    "for/music-producer-ready-to-retire/index.html": "7671b579668f7e084dd9fd78bab53ebc4e163d987286b99de8269e462e1832f0",
+    "for/side-project-musician/index.html": "063178e9374af57ec277347bc1577bd95fd027426d88e7c65c8266f899c06296",
+    "for/sync-licensing-composer/index.html": "ed2562ebd91e696d19df0e9aa54ca76becc26966581afb7e7bc98280e7bbcda4",
+    "for/wellness-app-soundtrack-creator/index.html": "8790c7dd2c240b2f28cbb6f7ba6a9a9e76dadf5421dd1665602f01f0806a146b",
+    "glossary/advance/index.html": "a9c681c5c48139e03aedde1aa235f71f19d246f54abcd1c7b28df8b31e3a4e5c",
+    "glossary/blanket-license/index.html": "37f418ad05259acc36834a80713e58a96383fc498e5362b78d71aa268a1104ec",
+    "glossary/buyout-deal/index.html": "74a7ed609fc7797a95ae61ed89200b0c1adb5a33c987b92ede30cf28a42c49fc",
+    "glossary/catalog-acquisition/index.html": "0b2073482de1419122b4e3240cb5ae7b5f0f0d170c9ec444f4685b7882951362",
+    "glossary/catalog-loan/index.html": "3d868e4cc5b8d5c9c92c338ef13bd81efd7a107b44bdca626201e65d6b932e23",
+    "glossary/catalog-valuation/index.html": "388e8f5ba67972e9f82c0c06f639b2ba6cd3f9d3bf7b04f098aaef8fe40eae47",
+    "glossary/compulsory-license/index.html": "21fbd4237684837e5213efc5c718abb46487015249ede027ee88b3f4072dda8c",
+    "glossary/content-id/index.html": "4ab1a852b99802e7c57ef8847e749857ab7b44d02a596f0ce8730100f377cd36",
+    "glossary/cue-sheet/index.html": "3a22bb3e44dd31858c6936548f8d1a86ca8b7c0d7ef0cca946dc37b181393a8b",
+    "glossary/digital-aggregator/index.html": "f0e398d560ec50028aab042af068152792602fa52c82cf3b292cbe6ca89a86f5",
+    "glossary/distribution-deal/index.html": "4afbf999a5c25118b5d455ad1a30ec1b1d96311e6699cd089d652041b551f619",
+    "glossary/exclusive-vs-non-exclusive-license/index.html": "7054a21cec9b04919a1803888d6a248062ed10fe897b8acac065c67ad9baf91a",
+    "glossary/independent-artist/index.html": "599bc45c4bc6cfda74abb8aef680e4fb943a26b46d9ee085c31d1cc3719cd1bf",
+    "glossary/index.html": "09d7ff12dfffb140fbbeb7e9dd1fb8584ea460ed57bee4b4781cd6c1f9a62c15",
+    "glossary/isrc/index.html": "8a61613a70bda244e7be5646683d99916160ac5dd47f0104783bc17d2b8e35b8",
+    "glossary/iswc/index.html": "25133de1d7f9eae7f6864cb8914a71bd3dbcc3705e6ad7aa2ca6a38e59c778f5",
+    "glossary/master-rights/index.html": "73e65548c25f65017ef1fa153a163d65a2afc57a19921560a68bcca39bb4af7d",
+    "glossary/mechanical-royalties/index.html": "dd04d299d90f9627088be0e01c59345e9fa8599e75acd96b5e9db1dc802ed65e",
+    "glossary/metadata/index.html": "d8e72dec65fbff68e695f6a0e9a6cffb1ffe7b7d6af9e7857b02c056124e6a8b",
+    "glossary/music-catalog/index.html": "9c983822ea2a48aff14dd78c3f0950b0b664e4a11212da902a35921ebdd8abc3",
+    "glossary/music-publisher/index.html": "06c8d5cabfccdef045dcf776efa09346ceaeecae9245d7c806c6a9196c87db9e",
+    "glossary/neighboring-rights/index.html": "d3b0159c70188966be43ec00fdc6d012815b53997a02662871e644c621aa0e03",
+    "glossary/partial-sale-vs-full-sale/index.html": "d218ebcfa22b14b847ffbd4dfe6711c5b23e18d7844ea864f81f275a121c24ab",
+    "glossary/performance-royalties/index.html": "b76643a366934666bd0ef052b7ed308d31b91508053400cb1dbd0bb5a6d3595e",
+    "glossary/pro/index.html": "f74209129144be9a1105077879c23240a34145ec2b49b54f2e82602e43d9771c",
+    "glossary/publishing-rights/index.html": "32996057ffb5316187841768c6a044973866775c3a343b791ab7647cdd95e5b7",
+    "glossary/record-label/index.html": "b7ebe0b21b8ac414ac8108df43ca6313266d3448292993d7af4d6d50eca21daa",
+    "glossary/recoupment/index.html": "99b537722807f0a98edc1500406b6538119070e19371f2115aa21b286e465857",
+    "glossary/revenue-multiple/index.html": "b5039ff1acf54bb62008d2e40bae6ffb1b3abddb013cdb58c1089686c938c24d",
+    "glossary/royalty-split/index.html": "d9c4fea8aec02f91fd03da80550e0c47199791327eb336c28f52cc211499cbcb",
+    "glossary/sample-clearance/index.html": "ee07313fc275beeee6835a2519a57efd6b105afb12fb8f7cbfc4085d8752cc1b",
+    "glossary/streaming-royalties/index.html": "1850de795afec1d663a299058afa305f9d2ebb55def4b7aaedff8cb373dc825d",
+    "glossary/sub-publishing/index.html": "3ac6dd7f6b47fc92e60d0b7ecdd9808e0df2e4c79cf8d9d239d765d700484208",
+    "glossary/sync-licensing/index.html": "7059eaf8c2c58f73c9a03eb1ddef3d627ca4b99b138bfb40bb0d5a4222770519",
+    "guides/best-music-rights-buyers-2026/index.html": "456b64e4505ee8895559ca433dfde21de2dc5b144d53deb83b29d8c0e312a456",
+    "guides/how-long-does-it-take-to-sell-a-music-catalog/index.html": "ae8c0ccafb0e3131fc16e71aa402e0857593c7b4e0ffef2d3a441ca0f5a4a0b5",
+    "guides/how-to-sell-music-rights/index.html": "e940cf55e1c070336c6d8761aeb0f3126db2ba26af3865e789c91a78fcad45ad",
+    "guides/music-catalog-valuation-2026/index.html": "c2d6dfc9a8e069b1f7de4c42c0185769476cdd08af9153f26ec92b28b7ee3e38",
+    "guides/music-rights-101/index.html": "03a8dbef12853835ceacdf50e7e7de0cb7324dbe028570df2172992b5865b9c2",
+    "guides/what-are-your-streams-worth-2026/index.html": "f87d97b4d16d1569700106c331998711b5f07939338ff5dbd0a56b2453800488",
+    "how-it-works/index.html": "78a77f40655c960626ee8451d6ac982d30a338c92c2fd473b6e0545ba87e312e",
+    "index.html": "aacd78cf01d5c5a95f94188ba41288227d215f949630fd4dd1c0825e10a8bd95",
+    "llms.txt": "0d77c6d31f14867bf2f3922256bdb6468a27dd52f20e53a04231ad852d9ce522",
+    "lovable-uploads/4d6d6265-96f2-4576-9913-83d4dbbb0cbb.png": "87bf47559362114c19f464fcc595db16d7ce558b573edba11a956e42774598ab",
+    "pricing.md": "91fecfde2b93c066eaf7d2734fb7776bf238cf3b65102b89d35f1d968090383d",
+    "privacy/index.html": "d33552c2d34e216618a1d9dfd4553ca4096d3ed3e66d8c9a2c0827a8656110bb",
+    "robots.txt": "f5f851c91eb25dc109310927aaaec9065d7d65e8b940c15764a5e5d939ca7a96",
+    "sell/index.html": "52b10745a79ce56f96a85445b2d976296bf950b9ce507faa061a871b82104a82",
+    "sell/sell-afro-house-catalog/index.html": "5e1a9f8eb7f73d5959f25b108e12b1c4ec42b60a4d7b00bcd330771870589307",
+    "sell/sell-ambient-music-catalog/index.html": "903e8de750c23d3eb4c085de84c20cc672aa413e3820bf87d365e7a8368603b4",
+    "sell/sell-bass-house-catalog/index.html": "09c939d07f4cef1f1a40283116eae804e2468326ca0e2e83a20d9d66134f5770",
+    "sell/sell-breakbeat-catalog/index.html": "e921e4629c8c5f884a82d976e1efcd470b2a767b34200d0877b87e80906a6bf5",
+    "sell/sell-chillhop-catalog/index.html": "168a26b689e641d3a59481370f37336c06e57aec36eb706d18a446a903e05289",
+    "sell/sell-chillout-catalog/index.html": "9942dd6cada61bc2cde8288379984d7c21ee8d69a3bbd2d030202f36d432b461",
+    "sell/sell-cinematic-ambient-catalog/index.html": "2d93a33afb1e9259d94c53d59758ec6d41e49e1a2f2eeb387048319178c64013",
+    "sell/sell-dance-pop-catalog/index.html": "0858cfceeb9a0ab1d828ee8de3e4b8a448b34e641731b07f1f960a451e44c839",
+    "sell/sell-deep-house-catalog/index.html": "f6ec57d4e2fdbe484775a02f2bf7b77a67d9faaaff28237939741e8593ac22c2",
+    "sell/sell-downtempo-catalog/index.html": "748624721c9991a5f5f6e068418a53bca29c9361942f0ede32802d36c07b17ec",
+    "sell/sell-drone-music-catalog/index.html": "2181ee99ae5ad7da43ebc8077ef8cc21acc9927b7847595ce014c7e5c076fd85",
+    "sell/sell-drum-and-bass-catalog/index.html": "9bd32965807f3eb8e3fc75c3a3b4e9df95e11ad8d6e5942b4d390ac3ea8c37a3",
+    "sell/sell-electro-house-catalog/index.html": "43ea9c5b638ef8b7d39e29959a9e596092bda845df88998c64644df859fc750c",
+    "sell/sell-electronic-music-catalog/index.html": "9bc2961043f33a39a136a4af48b3d0e876cd92bde23b49517352cf6a65509301",
+    "sell/sell-electronica-catalog/index.html": "7a72efa41c2b986d2e253371961e5429bf16d6a7070218533dd7d78c2c00fed0",
+    "sell/sell-focus-music-catalog/index.html": "eacabdc0a27f6e5c82a9643a0501080f31aade749dee46948ab1e5832f9b67e6",
+    "sell/sell-future-house-catalog/index.html": "af9b6011495d3fddb639229e09f949b76f893b02a7185e2fe70425b50987f519",
+    "sell/sell-garage-house-catalog/index.html": "d4057204bcb2fdd209dbbe679d059be98d35c17354df393aad4aaabc4201ad93",
+    "sell/sell-house-music-catalog/index.html": "8b91a219dd10f2cd40c5c52769d3227fba8bcaaea2d364a257cd7200f24a7ce3",
+    "sell/sell-indie-dance-catalog/index.html": "13546803b8837045bd3c5256bf29a0d3963852125f46b056068272c750c71756",
+    "sell/sell-lo-fi-beats-catalog/index.html": "b3aaeb2dbac2519f95b1af2936f3f9a1ca89e5c8b2f82fee0085acddcafb2841",
+    "sell/sell-meditation-music-rights/index.html": "5cafeeb8ef5d341e53643e8574f977f5d65fc1d0a9ac2d0fb4a7de7610e18e31",
+    "sell/sell-melodic-house-catalog/index.html": "914969b429bae01c43b11c515918f273fb5b365afef71eb017b2590963fe8e3b",
+    "sell/sell-melodic-techno-catalog/index.html": "607e72770eaddf818a3935c00fbaae0e250d30e0dda6b78bf11a149dc05dcb2c",
+    "sell/sell-nature-soundscape-catalog/index.html": "c515886a8228aa3adc41bde26d87bfc073f478f0f0e16cf359b5473d6dfc9983",
+    "sell/sell-new-age-music-catalog/index.html": "0bdb70ab8a5c88c953aa57cabbf5e0c4c53353703892c0b29bac4fef87e588da",
+    "sell/sell-organic-house-catalog/index.html": "2ea509120c6f514ccfcc5ec6276939aca978955d83c484086cc8af46b0f72167",
+    "sell/sell-progressive-house-catalog/index.html": "4adc2a11971a2782fb5744ad48f6ee3f10c2b8917496b1053e0b3bcd1fdca694",
+    "sell/sell-psytrance-catalog/index.html": "f52b77616cf3426eb02fb4f84def28f66f8be3653ce403e53614b2614f9b1bf0",
+    "sell/sell-sleep-music-catalog/index.html": "539058efd8514849ebc3819640a96f2d675da42e72c078b2ca1de08744d29960",
+    "sell/sell-study-beats-catalog/index.html": "656e3fccffc4a4c78e50653cfd38f35b889d01ba12bf211a37fd6bf1d1482dcc",
+    "sell/sell-synthwave-catalog/index.html": "576d893dcf0de24cfa38edd0750348c589d7297ff11a32c3edc0338e77adbf12",
+    "sell/sell-tech-house-catalog/index.html": "7195c2b484574ccd87ac727ecb18a88be90af3ecf7240903ad166a4a8f0f1d50",
+    "sell/sell-techno-catalog/index.html": "dedbfade676b091ecd3cea0e20f0a24ac857a44d5d0476524ecfb01756385dc9",
+    "sell/sell-trance-catalog/index.html": "fd3dcf3cb3caf53002e2e351a9fe96fa2f81987fc519c3ff8b0cc0f761ce7206",
+    "sell/sell-tropical-house-catalog/index.html": "02a00aac22ec42ad2ad11774db87123846ca5c5b1fdc7aa6ff0be090306614da",
+    "sell/sell-uk-garage-catalog/index.html": "44578660b64d0d34004d5c5eaca1819ec1afa46798da0ddb54311daf35f71c02",
+    "sell/sell-wellness-music-catalog/index.html": "266efd82dab3b4114d15415a71daba907d818a7d93c3d8c503f3b229fe76d7fa",
+    "sitemap.xml": "92264843442cfd5791e06118c8342b0850b6493693fb51be2cc623c1a0f51080",
+    "social/space-catalog-v1.png": "d4f7886a3cdc1487d888b1a85975ce8e5684a8d65a99512c8f0baa9f48550453",
+    "streaming-rates/amazon-music-2026/index.html": "1edbdd974fe0a27593fe6cdffe41d200b7770a52b97c9a3e8d001ebf74b45136",
+    "streaming-rates/apple-music-2026/index.html": "0032b284b85001d63dfa91ffc18b2c2caf7e8825c2b6f57322d3e59d6b79f6da",
+    "streaming-rates/deezer-2026/index.html": "4ae447a3f80530f1fe4399daa89b05e56c035dc7f55520619191f08927245134",
+    "streaming-rates/index.html": "ea014ddacd8c73ceb488f22339cafc8911bd8447ac23987c4cd37cd4b264bba6",
+    "streaming-rates/soundcloud-2026/index.html": "77be0650dedfaecc41c1225b306c38089c6a9090c1f143e93eac84accb5b640b",
+    "streaming-rates/spotify-2026/index.html": "b65f693e32f7132f5433c822bdbd6c80c87657c34475c9331a010e4910690cbb",
+    "streaming-rates/tidal-2026/index.html": "88b8cb3bfcc928a3ab9f332f14260e063ce5341ed7434ddae94be3ea620f12ab",
+    "streaming-rates/youtube-music-2026/index.html": "6762aa10d901c45e561351705139792763c6d8ec627b5327872377645bc21dcf",
+    "tools/streaming-calculator/index.html": "34c3d1b685393bc4e86b7c212d20cacec0d1e97a6a91d7e0c22aea9372117307"
+  },
+  "status": "PREVIEW ONLY; production unchanged"
+}

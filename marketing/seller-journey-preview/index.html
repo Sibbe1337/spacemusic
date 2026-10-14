@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'"
+    />
+    <title>SPACE | Seller Journey Preview</title>
+    <link rel="icon" href="data:," />
+    <link
+      rel="preload"
+      href="/inter.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.mjs"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <aside class="preview-banner" aria-label="Preview notice">
+      <strong>INTERACTIVE PREVIEW</strong
+      ><span
+        >Fictional data only. No files, applications or emails are sent.</span
+      >
+    </aside>
+    <header class="masthead shell">
+      <a class="wordmark" href="/" aria-label="SPACE preview home">SPACE</a>
+      <span class="header-label">Seller review</span>
+      <div id="header-actions"></div>
+    </header>
+    <div class="shell">
+      <div id="storage-note" class="storage-note" role="status"></div>
+      <div id="reset-slot"></div>
+    </div>
+    <main id="main" class="shell" tabindex="-1">
+      <h1>Your catalog.<br />Your next chapter.</h1>
+      <p>
+        This interactive prototype needs JavaScript. It demonstrates a proposed
+        seller workflow using fictional data, without sending applications or
+        accepting documents.
+      </p>
+      <noscript
+        ><p>
+          No application has been created. Nothing is submitted from this
+          preview.
+        </p></noscript
+      >
+    </main>
+    <div
+      id="announcement"
+      class="sr-only"
+      role="status"
+      aria-live="polite"
+    ></div>
+    <footer class="footer shell">
+      <span>SPACE / Seller experience concept</span
+      ><span>Free initial review. No obligation to sell.</span>
+    </footer>
+  </body>
+</html>

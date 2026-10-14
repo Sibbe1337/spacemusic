@@ -1,0 +1,22 @@
+{
+  "checks": 2919,
+  "htmlPages": 139,
+  "brands": 275,
+  "publicFiles": 532,
+  "links": {
+    "pages": 139,
+    "sitemap": 141,
+    "internalLinks": 6660,
+    "issues": {},
+    "orphans": [
+      "/data/conversion-intelligence/",
+      "/data/space-market-index/"
+    ],
+    "unreachable": [
+      "/data/conversion-intelligence/",
+      "/data/space-market-index/"
+    ],
+    "maxDepth": 3
+  },
+  "status": "PASS"
+}

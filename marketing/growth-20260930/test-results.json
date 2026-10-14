@@ -1,0 +1,110 @@
+{
+  "manifest": "marketing/growth-20260930/manifest-v1.json",
+  "checks": 2439,
+  "rerenderReport": [
+    {
+      "page": "data/music-catalog-market-2026/index.html",
+      "h2Before": 11,
+      "h2After": 11,
+      "newLinks": [
+        "/data/music-catalog-deals/"
+      ]
+    },
+    {
+      "page": "guides/what-are-your-streams-worth-2026/index.html",
+      "h2Before": 11,
+      "h2After": 11,
+      "newLinks": []
+    },
+    {
+      "page": "tools/streaming-calculator/index.html",
+      "h2Before": 3,
+      "h2After": 3,
+      "newLinks": [
+        "https://artists.spotify.com/en/royalties-guide",
+        "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+      ]
+    }
+  ],
+  "pagesChanged": 135,
+  "browserPages": 138,
+  "titleChanges": [
+    [
+      "blog/case-study-ambient-producer-catalog-sale/index.html",
+      "Case Study: Ambient Producer Turned $85K/Year Into a $765K Catalog Deal | SPACE Blog",
+      "Ambient Producer Catalog Sale: An Illustrative Walkthrough | SPACE Blog"
+    ],
+    [
+      "compare/major-label-vs-independent/index.html",
+      "Major Label vs. Independent: The Right Path for Ambient Music Creators — SPACE",
+      "Major Label vs Independent Label: Key Differences for Artists — SPACE"
+    ],
+    [
+      "for/wellness-app-soundtrack-creator/index.html",
+      "Wellness App Composers: Your Soundtracks Power a $5 Trillion Industry — SPACE",
+      "Wellness App Composers: Your Soundtracks Power the Wellness Industry — SPACE"
+    ],
+    [
+      "guides/music-catalog-valuation-2026/index.html",
+      "Music Catalog Valuation: Method, Example & Review — SPACE",
+      "How Much Is a Music Catalog Worth? Valuation Guide 2026 — SPACE"
+    ],
+    [
+      "streaming-rates/deezer-2026/index.html",
+      "Deezer Pay Per Stream (2026) — Estimate Royalties and Offer Range — SPACE",
+      "How Much Does Deezer Pay Per Stream in 2026? — SPACE"
+    ]
+  ],
+  "h1Changes": [
+    [
+      "blog/case-study-ambient-producer-catalog-sale/index.html",
+      "Case Study: Ambient Producer Turned $85K/Year Into a $765K Catalog Deal",
+      "Ambient Producer Catalog Sale: An Illustrative Walkthrough"
+    ],
+    [
+      "compare/major-label-vs-independent/index.html",
+      "Major Label vs. Independent: The Right Path for Ambient Music Creators",
+      "Major Label vs Independent Label: Key Differences for Artists"
+    ],
+    [
+      "for/wellness-app-soundtrack-creator/index.html",
+      "Wellness App Composers: Your Soundtracks Power a $5 Trillion Industry",
+      "Wellness App Composers: Your Soundtracks Power the Wellness Industry"
+    ],
+    [
+      "sell/sell-ambient-music-catalog/index.html",
+      "Your Ambient Catalog Has Never Been Worth More",
+      "What Is Your Ambient Catalog Worth?"
+    ],
+    [
+      "sell/sell-cinematic-ambient-catalog/index.html",
+      "Cinematic Ambient Music Commands the Highest Multiples in Functional Music",
+      "Cinematic Ambient Music Is Built for Sync"
+    ],
+    [
+      "sell/sell-lo-fi-beats-catalog/index.html",
+      "Turn Your Lo-Fi Beats Into a Life-Changing Payout",
+      "Turn Your Lo-Fi Beats Catalog Into an Offer"
+    ],
+    [
+      "sell/sell-meditation-music-rights/index.html",
+      "Meditation Music Rights Are Commanding Premium Valuations",
+      "Meditation Music Rights Have Long-Term Licensing Value"
+    ],
+    [
+      "sell/sell-sleep-music-catalog/index.html",
+      "Sleep Music Sits at the Center of a $100 Billion Market",
+      "Sleep Music Serves a Daily, Functional Need"
+    ],
+    [
+      "sell/sell-study-beats-catalog/index.html",
+      "Study Beats Are Powering a Billion-Stream Playlist Economy",
+      "Study Beats Are Built for Repeat Listening"
+    ],
+    [
+      "sell/sell-wellness-music-catalog/index.html",
+      "Wellness Music Is a Core Asset in a $60 Billion Industry",
+      "Wellness Music Is a Working Asset for Spas, Studios and Apps"
+    ]
+  ]
+}

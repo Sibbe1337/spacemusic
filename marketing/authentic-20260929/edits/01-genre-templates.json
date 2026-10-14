@@ -1,0 +1,74 @@
+{
+ "area": "Generated subgenre template in commercialGenrePages (JS template literals); HTML text is covered by genre-b.json and the plain edits below",
+ "edits": [
+  {
+   "template": true,
+   "find": "An independent ${a} producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent ${a} producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case"
+  },
+  {
+   "template": true,
+   "find": "After catalog cleanup and buyer-ready packaging, the ${a} catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this ${a} catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case"
+  },
+  {
+   "template": true,
+   "find": "Buyer demand is rising for ${a}",
+   "replace": "Buyers look for ${a}",
+   "reason": "unsourced trend claim"
+  },
+  {
+   "find": "Buyer demand is rising for ",
+   "replace": "Buyers look for ",
+   "reason": "unsourced trend claim (rendered HTML)"
+  },
+  {
+   "template": true,
+   "find": ", with upside for licensing-ready and rights-clean catalogs",
+   "replace": ", with licensing-ready and rights-clean catalogs in a stronger position",
+   "reason": "multiple removed; softened"
+  },
+  {
+   "find": "An independent chillout producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent chillout producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (rendered HTML)"
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the chillout catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this chillout catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (rendered HTML)"
+  },
+  {
+   "find": "An independent downtempo producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent downtempo producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (rendered HTML)"
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the downtempo catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this downtempo catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (rendered HTML)"
+  },
+  {
+   "find": "An independent electronica producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent electronica producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (rendered HTML)"
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the electronica catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this electronica catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (rendered HTML)"
+  },
+  {
+   "find": "How do we protect SEO quality with more pages?",
+   "replace": "What should I prepare before a review?",
+   "reason": "internal SEO note published as a seller FAQ"
+  },
+  {
+   "find": "Use cluster architecture: a strong pillar, then intent-specific subgenre pages with unique context, unique FAQs, and strong internal linking.",
+   "replace": "Royalty statements for the income you report, a track list, and the agreements that show you own and can transfer the rights. SPACE confirms by email which evidence it needs.",
+   "reason": "internal SEO note published as a seller FAQ"
+  }
+ ]
+}

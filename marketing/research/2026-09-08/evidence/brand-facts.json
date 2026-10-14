@@ -1,0 +1,44 @@
+{
+  "requested": "/brand-facts/",
+  "url": "https://spacemusic.io/brand-facts/",
+  "status": 200,
+  "fetched": "2026-09-08T12:43:58.771Z",
+  "contentType": "text/html; charset=utf-8",
+  "title": "Brand Facts - SPACE",
+  "description": "Key facts about SPACE: what music catalogs we buy, how direct offers work, seller fees, valuation ranges, and machine-readable links for researchers and AI assistants.",
+  "canonical": "https://spacemusic.io/brand-facts/",
+  "headings": [
+    "SPACE Brand Facts",
+    "Key Facts",
+    "Catalog Types and Reference Multiples",
+    "Quick Links"
+  ],
+  "paragraphs": [
+    "SPACE buys revenue-generating music catalogs directly from independent creators. The company focuses on ambient, lo-fi, meditation, electronic, house, wellness, and soundscape catalogs with clean rights and proven revenue.",
+    "These ranges are references, not guaranteed offers. Actual offers depend on revenue history, growth, platform mix, rights clarity, documentation quality, and buyer fit.",
+    "Machine-readable versions: /.well-known/brand-facts.json and /pricing.md"
+  ],
+  "links": [
+    {
+      "text": "How It Works",
+      "href": "/how-it-works/"
+    },
+    {
+      "text": "Catalog Value Calculator",
+      "href": "/calculator/"
+    },
+    {
+      "text": "Apply to Sell Your Catalog",
+      "href": "/apply/"
+    },
+    {
+      "text": "/.well-known/brand-facts.json",
+      "href": "/.well-known/brand-facts.json"
+    },
+    {
+      "text": "/pricing.md",
+      "href": "/pricing.md"
+    }
+  ],
+  "text": "SPACE Brand FactsSPACE buys revenue-generating music catalogs directly from independent creators. The company focuses on ambient, lo-fi, meditation, electronic, house, wellness, and soundscape catalogs with clean rights and proven revenue.Key FactsAttributeDetailCompanySPACEBrand NameSPACECategoryDirect music rights buyerSpecialtyRevenue-generating mood, soundscape, electronic, house, and wellness-adjacent music catalogsSeller Fees$0 application fee, 0% listing fee, 0% auction commissionPartial RightsYes - sellers can review 50%, 75%, or 100% catalog salesCreative ControlFuture music remains with the creatorEvaluation Timeline5-7 business days for initial offer reviewPayment MethodBank transferContacthello@spacemusic.ioCatalog Types and Reference MultiplesCatalog TypeReference RangeAmbient and mood music4-10x annual revenueLo-fi and beats3-6x annual revenueMeditation and wellness5-10x annual revenueFocus music4-7x annual revenueNature soundscapes3-6x annual revenueElectronic and house3-7x annual revenueThese ranges are references, not guaranteed offers. Actual offers depend on revenue history, growth, platform mix, rights clarity, documentation quality, and buyer fit.Quick LinksHow It WorksCatalog Value CalculatorApply to Sell Your CatalogMachine-readable versions: /.well-known/brand-facts.json and /pricing.md"
+}

@@ -1,0 +1,86 @@
+{
+ "area": "Genre valuation display prefixes (HTML); runs before genre-a/genre-b",
+ "edits": [
+  {
+   "find": "4-8x annual revenue for well-performing ambient catalogs",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "3-6x annual revenue for established lo-fi catalogs",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "4-7x annual revenue for established focus music catalogs",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "3-5x annual revenue for drone catalogs with proven sync or installation placements",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "3-6x annual revenue for established chillhop catalogs",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "3-5x annual revenue for study beats catalogs with proven playlist performance",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "4-8x annual revenue for established sleep music catalogs",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "4-7x annual revenue for established wellness music catalogs",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "5-9x annual revenue for cinematic ambient catalogs with proven sync placements",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "3-6x annual revenue for new age catalogs with stable streaming performance and wellness licensing potential",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "3-7x annual revenue depending on catalog consistency",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "3-6x annual revenue for consistent house catalogs",
+   "replace": "No fixed multiple",
+   "reason": "valuation display shows text before the first comma (rendered HTML)",
+   "htmlOnly": true
+  },
+  {
+   "find": "5-10x annual revenue",
+   "replace": "No fixed multiple",
+   "reason": "valuation display prefix (rendered HTML)",
+   "htmlOnly": true,
+   "pages": [
+    "sell/sell-meditation-music-rights/"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "area": "Genre landing page template",
+ "edits": [
+  {
+   "find": "A real-world scenario.",
+   "replace": "An illustrative example.",
+   "reason": "Case studies were fabricated; the section now holds labelled illustrative arithmetic."
+  },
+  {
+   "find": "Typical valuation",
+   "replace": "How value is set",
+   "reason": "label sat above removed multiples; values now describe individual review",
+   "modules": [
+    "GenreLandingPage"
+   ],
+   "pages": [
+    "sell/"
+   ]
+  }
+ ]
+}

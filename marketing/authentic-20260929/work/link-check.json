@@ -1,0 +1,458 @@
+{
+ "checked": 90,
+ "bad": {
+  "https://fonts.googleapis.com": {
+   "code": "404",
+   "pages": [
+    "about/index.html",
+    "blog/ambient-lo-fi-music-catalog-buyers/index.html",
+    "blog/beatbread-vs-catalog-buyers/index.html",
+    "blog/case-study-ambient-producer-catalog-sale/index.html",
+    "blog/future-of-ai-in-ambient-music/index.html",
+    "blog/how-to-register-your-ambient-music-with-pros/index.html",
+    "blog/index.html",
+    "blog/maximizing-your-lo-fi-catalog-value/index.html",
+    "blog/royalty-exchange-alternatives/index.html",
+    "blog/sell-music-catalog-lump-sum-2026/index.html",
+    "blog/streaming-royalties-guide-for-ambient-music/index.html",
+    "blog/what-is-a-blanket-license/index.html",
+    "blog/why-selling-partial-rights-makes-sense/index.html",
+    "brand-facts/index.html",
+    "calculator/index.html",
+    "compare/catalog-sale-vs-catalog-loan/index.html",
+    "compare/distrokid-vs-tunecore/index.html",
+    "compare/exclusive-vs-non-exclusive-license/index.html",
+    "compare/full-buyout-vs-revenue-split/index.html",
+    "compare/index.html",
+    "compare/major-label-vs-independent/index.html",
+    "compare/partial-sale-vs-full-sale/index.html",
+    "compare/self-publishing-vs-publishing-deal/index.html",
+    "compare/selling-masters-vs-selling-publishing/index.html",
+    "compare/space-vs-duetti/index.html",
+    "compare/space-vs-hipgnosis/index.html",
+    "compare/space-vs-primary-wave/index.html",
+    "compare/space-vs-reservoir/index.html",
+    "compare/space-vs-round-hill/index.html",
+    "compare/space-vs-royalty-exchange/index.html",
+    "compare/spotify-vs-apple-music-royalties/index.html",
+    "compare/sync-licensing-vs-streaming-revenue/index.html",
+    "data/conversion-intelligence/index.html",
+    "data/music-catalog-market-2026/index.html",
+    "data/space-market-index/index.html",
+    "for/ambient-music-producer/index.html",
+    "for/independent-artist-catalog-owner/index.html",
+    "for/index.html",
+    "for/lo-fi-beat-maker/index.html",
+    "for/meditation-music-creator/index.html",
+    "for/music-producer-ready-to-retire/index.html",
+    "for/side-project-musician/index.html",
+    "for/sync-licensing-composer/index.html",
+    "for/wellness-app-soundtrack-creator/index.html",
+    "glossary/advance/index.html",
+    "glossary/blanket-license/index.html",
+    "glossary/buyout-deal/index.html",
+    "glossary/catalog-acquisition/index.html",
+    "glossary/catalog-loan/index.html",
+    "glossary/catalog-valuation/index.html",
+    "glossary/compulsory-license/index.html",
+    "glossary/content-id/index.html",
+    "glossary/cue-sheet/index.html",
+    "glossary/digital-aggregator/index.html",
+    "glossary/distribution-deal/index.html",
+    "glossary/exclusive-vs-non-exclusive-license/index.html",
+    "glossary/independent-artist/index.html",
+    "glossary/index.html",
+    "glossary/isrc/index.html",
+    "glossary/iswc/index.html",
+    "glossary/master-rights/index.html",
+    "glossary/mechanical-royalties/index.html",
+    "glossary/metadata/index.html",
+    "glossary/music-catalog/index.html",
+    "glossary/music-publisher/index.html",
+    "glossary/neighboring-rights/index.html",
+    "glossary/partial-sale-vs-full-sale/index.html",
+    "glossary/performance-royalties/index.html",
+    "glossary/pro/index.html",
+    "glossary/publishing-rights/index.html",
+    "glossary/record-label/index.html",
+    "glossary/recoupment/index.html",
+    "glossary/revenue-multiple/index.html",
+    "glossary/royalty-split/index.html",
+    "glossary/sample-clearance/index.html",
+    "glossary/streaming-royalties/index.html",
+    "glossary/sub-publishing/index.html",
+    "glossary/sync-licensing/index.html",
+    "guides/best-music-rights-buyers-2026/index.html",
+    "guides/how-long-does-it-take-to-sell-a-music-catalog/index.html",
+    "guides/how-to-sell-music-rights/index.html",
+    "guides/music-catalog-valuation-2026/index.html",
+    "guides/music-rights-101/index.html",
+    "guides/what-are-your-streams-worth-2026/index.html",
+    "how-it-works/index.html",
+    "privacy/index.html",
+    "sell/index.html",
+    "sell/sell-afro-house-catalog/index.html",
+    "sell/sell-ambient-music-catalog/index.html",
+    "sell/sell-bass-house-catalog/index.html",
+    "sell/sell-breakbeat-catalog/index.html",
+    "sell/sell-chillhop-catalog/index.html",
+    "sell/sell-chillout-catalog/index.html",
+    "sell/sell-cinematic-ambient-catalog/index.html",
+    "sell/sell-dance-pop-catalog/index.html",
+    "sell/sell-deep-house-catalog/index.html",
+    "sell/sell-downtempo-catalog/index.html",
+    "sell/sell-drone-music-catalog/index.html",
+    "sell/sell-drum-and-bass-catalog/index.html",
+    "sell/sell-electro-house-catalog/index.html",
+    "sell/sell-electronic-music-catalog/index.html",
+    "sell/sell-electronica-catalog/index.html",
+    "sell/sell-focus-music-catalog/index.html",
+    "sell/sell-future-house-catalog/index.html",
+    "sell/sell-garage-house-catalog/index.html",
+    "sell/sell-house-music-catalog/index.html",
+    "sell/sell-indie-dance-catalog/index.html",
+    "sell/sell-lo-fi-beats-catalog/index.html",
+    "sell/sell-meditation-music-rights/index.html",
+    "sell/sell-melodic-house-catalog/index.html",
+    "sell/sell-melodic-techno-catalog/index.html",
+    "sell/sell-nature-soundscape-catalog/index.html",
+    "sell/sell-new-age-music-catalog/index.html",
+    "sell/sell-organic-house-catalog/index.html",
+    "sell/sell-progressive-house-catalog/index.html",
+    "sell/sell-psytrance-catalog/index.html",
+    "sell/sell-sleep-music-catalog/index.html",
+    "sell/sell-study-beats-catalog/index.html",
+    "sell/sell-synthwave-catalog/index.html",
+    "sell/sell-tech-house-catalog/index.html",
+    "sell/sell-techno-catalog/index.html",
+    "sell/sell-trance-catalog/index.html",
+    "sell/sell-tropical-house-catalog/index.html",
+    "sell/sell-uk-garage-catalog/index.html",
+    "sell/sell-wellness-music-catalog/index.html",
+    "streaming-rates/amazon-music-2026/index.html",
+    "streaming-rates/apple-music-2026/index.html",
+    "streaming-rates/deezer-2026/index.html",
+    "streaming-rates/index.html",
+    "streaming-rates/soundcloud-2026/index.html",
+    "streaming-rates/spotify-2026/index.html",
+    "streaming-rates/tidal-2026/index.html",
+    "streaming-rates/youtube-music-2026/index.html",
+    "tools/streaming-calculator/index.html"
+   ]
+  },
+  "https://fonts.gstatic.com": {
+   "code": "404",
+   "pages": [
+    "about/index.html",
+    "blog/ambient-lo-fi-music-catalog-buyers/index.html",
+    "blog/beatbread-vs-catalog-buyers/index.html",
+    "blog/case-study-ambient-producer-catalog-sale/index.html",
+    "blog/future-of-ai-in-ambient-music/index.html",
+    "blog/how-to-register-your-ambient-music-with-pros/index.html",
+    "blog/index.html",
+    "blog/maximizing-your-lo-fi-catalog-value/index.html",
+    "blog/royalty-exchange-alternatives/index.html",
+    "blog/sell-music-catalog-lump-sum-2026/index.html",
+    "blog/streaming-royalties-guide-for-ambient-music/index.html",
+    "blog/what-is-a-blanket-license/index.html",
+    "blog/why-selling-partial-rights-makes-sense/index.html",
+    "brand-facts/index.html",
+    "calculator/index.html",
+    "compare/catalog-sale-vs-catalog-loan/index.html",
+    "compare/distrokid-vs-tunecore/index.html",
+    "compare/exclusive-vs-non-exclusive-license/index.html",
+    "compare/full-buyout-vs-revenue-split/index.html",
+    "compare/index.html",
+    "compare/major-label-vs-independent/index.html",
+    "compare/partial-sale-vs-full-sale/index.html",
+    "compare/self-publishing-vs-publishing-deal/index.html",
+    "compare/selling-masters-vs-selling-publishing/index.html",
+    "compare/space-vs-duetti/index.html",
+    "compare/space-vs-hipgnosis/index.html",
+    "compare/space-vs-primary-wave/index.html",
+    "compare/space-vs-reservoir/index.html",
+    "compare/space-vs-round-hill/index.html",
+    "compare/space-vs-royalty-exchange/index.html",
+    "compare/spotify-vs-apple-music-royalties/index.html",
+    "compare/sync-licensing-vs-streaming-revenue/index.html",
+    "data/conversion-intelligence/index.html",
+    "data/music-catalog-market-2026/index.html",
+    "data/space-market-index/index.html",
+    "for/ambient-music-producer/index.html",
+    "for/independent-artist-catalog-owner/index.html",
+    "for/index.html",
+    "for/lo-fi-beat-maker/index.html",
+    "for/meditation-music-creator/index.html",
+    "for/music-producer-ready-to-retire/index.html",
+    "for/side-project-musician/index.html",
+    "for/sync-licensing-composer/index.html",
+    "for/wellness-app-soundtrack-creator/index.html",
+    "glossary/advance/index.html",
+    "glossary/blanket-license/index.html",
+    "glossary/buyout-deal/index.html",
+    "glossary/catalog-acquisition/index.html",
+    "glossary/catalog-loan/index.html",
+    "glossary/catalog-valuation/index.html",
+    "glossary/compulsory-license/index.html",
+    "glossary/content-id/index.html",
+    "glossary/cue-sheet/index.html",
+    "glossary/digital-aggregator/index.html",
+    "glossary/distribution-deal/index.html",
+    "glossary/exclusive-vs-non-exclusive-license/index.html",
+    "glossary/independent-artist/index.html",
+    "glossary/index.html",
+    "glossary/isrc/index.html",
+    "glossary/iswc/index.html",
+    "glossary/master-rights/index.html",
+    "glossary/mechanical-royalties/index.html",
+    "glossary/metadata/index.html",
+    "glossary/music-catalog/index.html",
+    "glossary/music-publisher/index.html",
+    "glossary/neighboring-rights/index.html",
+    "glossary/partial-sale-vs-full-sale/index.html",
+    "glossary/performance-royalties/index.html",
+    "glossary/pro/index.html",
+    "glossary/publishing-rights/index.html",
+    "glossary/record-label/index.html",
+    "glossary/recoupment/index.html",
+    "glossary/revenue-multiple/index.html",
+    "glossary/royalty-split/index.html",
+    "glossary/sample-clearance/index.html",
+    "glossary/streaming-royalties/index.html",
+    "glossary/sub-publishing/index.html",
+    "glossary/sync-licensing/index.html",
+    "guides/best-music-rights-buyers-2026/index.html",
+    "guides/how-long-does-it-take-to-sell-a-music-catalog/index.html",
+    "guides/how-to-sell-music-rights/index.html",
+    "guides/music-catalog-valuation-2026/index.html",
+    "guides/music-rights-101/index.html",
+    "guides/what-are-your-streams-worth-2026/index.html",
+    "how-it-works/index.html",
+    "privacy/index.html",
+    "sell/index.html",
+    "sell/sell-afro-house-catalog/index.html",
+    "sell/sell-ambient-music-catalog/index.html",
+    "sell/sell-bass-house-catalog/index.html",
+    "sell/sell-breakbeat-catalog/index.html",
+    "sell/sell-chillhop-catalog/index.html",
+    "sell/sell-chillout-catalog/index.html",
+    "sell/sell-cinematic-ambient-catalog/index.html",
+    "sell/sell-dance-pop-catalog/index.html",
+    "sell/sell-deep-house-catalog/index.html",
+    "sell/sell-downtempo-catalog/index.html",
+    "sell/sell-drone-music-catalog/index.html",
+    "sell/sell-drum-and-bass-catalog/index.html",
+    "sell/sell-electro-house-catalog/index.html",
+    "sell/sell-electronic-music-catalog/index.html",
+    "sell/sell-electronica-catalog/index.html",
+    "sell/sell-focus-music-catalog/index.html",
+    "sell/sell-future-house-catalog/index.html",
+    "sell/sell-garage-house-catalog/index.html",
+    "sell/sell-house-music-catalog/index.html",
+    "sell/sell-indie-dance-catalog/index.html",
+    "sell/sell-lo-fi-beats-catalog/index.html",
+    "sell/sell-meditation-music-rights/index.html",
+    "sell/sell-melodic-house-catalog/index.html",
+    "sell/sell-melodic-techno-catalog/index.html",
+    "sell/sell-nature-soundscape-catalog/index.html",
+    "sell/sell-new-age-music-catalog/index.html",
+    "sell/sell-organic-house-catalog/index.html",
+    "sell/sell-progressive-house-catalog/index.html",
+    "sell/sell-psytrance-catalog/index.html",
+    "sell/sell-sleep-music-catalog/index.html",
+    "sell/sell-study-beats-catalog/index.html",
+    "sell/sell-synthwave-catalog/index.html",
+    "sell/sell-tech-house-catalog/index.html",
+    "sell/sell-techno-catalog/index.html",
+    "sell/sell-trance-catalog/index.html",
+    "sell/sell-tropical-house-catalog/index.html",
+    "sell/sell-uk-garage-catalog/index.html",
+    "sell/sell-wellness-music-catalog/index.html",
+    "streaming-rates/amazon-music-2026/index.html",
+    "streaming-rates/apple-music-2026/index.html",
+    "streaming-rates/deezer-2026/index.html",
+    "streaming-rates/index.html",
+    "streaming-rates/soundcloud-2026/index.html",
+    "streaming-rates/spotify-2026/index.html",
+    "streaming-rates/tidal-2026/index.html",
+    "streaming-rates/youtube-music-2026/index.html",
+    "tools/streaming-calculator/index.html"
+   ]
+  },
+  "https://support.apple.com/guide/apple-music-for-artists/welcome/web": {
+   "code": "404",
+   "pages": [
+    "streaming-rates/index.html"
+   ]
+  },
+  "https://help.soundcloud.com/hc/en-us/sections/360004122613-Monetization": {
+   "code": "403",
+   "pages": [
+    "streaming-rates/index.html"
+   ]
+  },
+  "https://artists.tidal.com/": {
+   "code": "403",
+   "pages": [
+    "streaming-rates/index.html"
+   ]
+  },
+  "https://www.gov.uk/government/publications/economics-of-music-streaming-review": {
+   "code": "404",
+   "pages": [
+    "streaming-rates/index.html"
+   ]
+  },
+  "https://support.distrokid.com/hc/en-us/articles/360013547274-How-and-When-Do-I-Get-Paid": {
+   "code": "403",
+   "pages": [
+    "blog/sell-music-catalog-lump-sum-2026/index.html"
+   ]
+  },
+  "https://www.consumerfinance.gov/archive/blog/budgeting-how-to-create-a-budget-and-stick-with-it/": {
+   "code": "403",
+   "pages": [
+    "blog/sell-music-catalog-lump-sum-2026/index.html"
+   ]
+  },
+  "https://www.bmi.com/creators/faqs": {
+   "code": "403",
+   "pages": [
+    "blog/what-is-a-blanket-license/index.html"
+   ]
+  },
+  "https://www.bmi.com/news/new-update-from-mike-oneill": {
+   "code": "403",
+   "pages": [
+    "blog/what-is-a-blanket-license/index.html"
+   ]
+  },
+  "https://www.bmi.com/creators/royalty-policy-manual": {
+   "code": "403",
+   "pages": [
+    "blog/what-is-a-blanket-license/index.html"
+   ]
+  },
+  "https://artists.apple.com/support/1124-apple-music-insights-overview": {
+   "code": "404",
+   "pages": [
+    "guides/what-are-your-streams-worth-2026/index.html"
+   ]
+  },
+  "https://www.ascap.com": {
+   "code": "403",
+   "pages": [
+    "guides/best-music-rights-buyers-2026/index.html"
+   ]
+  },
+  "https://www.ascap.com/help/royalties-and-payment/payment": {
+   "code": "403",
+   "pages": [
+    "guides/music-rights-101/index.html"
+   ]
+  },
+  "https://www.bmi.com/creators/royalty": {
+   "code": "403",
+   "pages": [
+    "guides/music-rights-101/index.html"
+   ]
+  },
+  "https://www.citigroup.com/global/insights/citigps/putting-the-band-back-together": {
+   "code": "404",
+   "pages": [
+    "data/music-catalog-market-2026/index.html",
+    "guides/how-to-sell-music-rights/index.html"
+   ]
+  },
+  "https://shottowercapital.com/": {
+   "code": "000",
+   "pages": [
+    "guides/how-to-sell-music-rights/index.html"
+   ]
+  },
+  "https://www.goldmansachs.com/insights/pages/infographics/music-in-the-air/": {
+   "code": "404",
+   "pages": [
+    "guides/how-to-sell-music-rights/index.html"
+   ]
+  },
+  "https://www.royaltyexchange.com/how-it-works": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-royalty-exchange/index.html"
+   ]
+  },
+  "https://www.musicbusinessworldwide.com/the-rise-of-music-royalty-marketplaces/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-royalty-exchange/index.html"
+   ]
+  },
+  "https://www.billboard.com/pro/music-catalog-sales-explained/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-royalty-exchange/index.html"
+   ]
+  },
+  "https://ir.reservoir-media.com/": {
+   "code": "000",
+   "pages": [
+    "compare/space-vs-reservoir/index.html"
+   ]
+  },
+  "https://www.musicbusinessworldwide.com/companies/reservoir-media/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-reservoir/index.html"
+   ]
+  },
+  "https://www.billboard.com/pro/reservoir-media-music-catalog-growth/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-reservoir/index.html"
+   ]
+  },
+  "https://www.billboard.com/artist/hipgnosis-songs-fund/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-hipgnosis/index.html"
+   ]
+  },
+  "https://www.musicbusinessworldwide.com/concord-acquires-round-hill-music-royalty-fund/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-round-hill/index.html"
+   ]
+  },
+  "https://www.billboard.com/pro/concord-round-hill-music-merger-details/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-round-hill/index.html"
+   ]
+  },
+  "https://variety.com/2023/music/news/round-hill-music-concord-acquisition-1235574628/": {
+   "code": "404",
+   "pages": [
+    "compare/space-vs-round-hill/index.html"
+   ]
+  },
+  "https://www.alliedmarketresearch.com/music-rights-market": {
+   "code": "403",
+   "pages": [
+    "data/music-catalog-market-2026/index.html"
+   ]
+  },
+  "https://www.grandviewresearch.com/industry-analysis/meditation-market": {
+   "code": "403",
+   "pages": [
+    "data/music-catalog-market-2026/index.html"
+   ]
+  },
+  "https://www.fortunebusinessinsights.com/sleep-aids-market-101860": {
+   "code": "403",
+   "pages": [
+    "data/music-catalog-market-2026/index.html"
+   ]
+  }
+ }
+}

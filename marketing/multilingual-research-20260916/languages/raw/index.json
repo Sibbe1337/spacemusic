@@ -1,0 +1,344 @@
+{
+  "research_date": "2026-09-16",
+  "capture_note": "Tool result payloads are preserved as returned, not full website crawls. Country database labels are intended targets only; no Semrush keyword report was executed.",
+  "tool_discovery_file": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/tool-discovery.json",
+  "responses": [
+    {
+      "id": "semrush-01-discovery",
+      "tool": "mcp__codex_apps__semrush_keyword_research",
+      "retrieved_at_utc": "2026-09-16 11:24:35 UTC",
+      "params": {},
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/semrush-01-discovery.json"
+    },
+    {
+      "id": "web-01-es-pt-discovery",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:24:51 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "vender catálogo musical regalías España derechos canciones"
+          },
+          {
+            "q": "vender catálogo musical regalías México anticipo"
+          },
+          {
+            "q": "vender catálogo musical royalties Brasil direitos fonográficos"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-01-es-pt-discovery.json"
+    },
+    {
+      "id": "web-02-pt-de-fr-sv-discovery",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:25:04 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "\"vender\" \"royalties\" música Brasil catálogo"
+          },
+          {
+            "q": "\"Musikkatalog\" \"verkaufen\""
+          },
+          {
+            "q": "\"vendre\" \"catalogue musical\""
+          },
+          {
+            "q": "\"sälja\" \"musikkatalog\""
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-02-pt-de-fr-sv-discovery.json"
+    },
+    {
+      "id": "web-03-sv-fr-intent",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:25:16 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "sälja musikrättigheter katalog Sverige"
+          },
+          {
+            "q": "sälja royalties musik Sverige musikkatalog"
+          },
+          {
+            "q": "vendre catalogue musical droits France artiste indépendant"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-03-sv-fr-intent.json"
+    },
+    {
+      "id": "web-04-sv-exact-expansion",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:25:28 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "\"sälja musikrättigheter\""
+          },
+          {
+            "q": "\"sälja\" \"musikkatalog\" -site:diva-portal.org"
+          },
+          {
+            "q": "\"sälja\" \"låtkatalog\""
+          },
+          {
+            "q": "\"sälja\" \"royalties\" musik"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-04-sv-exact-expansion.json"
+    },
+    {
+      "id": "web-05-es-market-qualification",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:25:45 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "\"vender catálogo\" México música"
+          },
+          {
+            "q": "\"venta de catálogos\" México música"
+          },
+          {
+            "q": "\"vender regalías\" música España"
+          },
+          {
+            "q": "\"vender catálogo\" España música"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-05-es-market-qualification.json"
+    },
+    {
+      "id": "web-06-es-fr-commercial-expansion",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:25:54 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "\"catálogos musicales\" \"México\" \"compra\" -site:wikipedia.org"
+          },
+          {
+            "q": "\"regalías\" \"catálogo\" site:larrosa.pro"
+          },
+          {
+            "q": "\"vendre son catalogue\" musique"
+          },
+          {
+            "q": "\"rachat de catalogue\" musique France"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-06-es-fr-commercial-expansion.json"
+    },
+    {
+      "id": "web-07-es-de-seller-terms",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:26:05 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "vender catálogo musical regalías",
+            "domains": [
+              "duetti.co"
+            ]
+          },
+          {
+            "q": "catálogo musical venta regalías México",
+            "domains": [
+              "larrosa.pro",
+              "symphoniclatino.com",
+              "limbomusic.com"
+            ]
+          },
+          {
+            "q": "\"Musikrechte verkaufen\""
+          },
+          {
+            "q": "\"Masterrechte\" \"verkaufen\""
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-07-es-de-seller-terms.json"
+    },
+    {
+      "id": "web-08-official-seller-pages",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:26:17 UTC",
+      "params": {
+        "open": [
+          {
+            "ref_id": "https://www.duetti.co"
+          },
+          {
+            "ref_id": "https://www.delta-juliet.com/pt/"
+          },
+          {
+            "ref_id": "https://symdistro.com.br/next/"
+          },
+          {
+            "ref_id": "https://www.limbomusic.com/es/sell-your-music-catalog"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-08-official-seller-pages.json"
+    },
+    {
+      "id": "web-09-de-fr-keyword-expansion",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:26:29 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "\"Musikkatalog bewerten\""
+          },
+          {
+            "q": "\"Tantiemen verkaufen\" Musik"
+          },
+          {
+            "q": "\"vendre\" \"catalogue\" site:boleromusic.com"
+          },
+          {
+            "q": "\"vendre\" \"catalogue musical\" France -site:wikipedia.org -site:qub.ca -site:copibec.ca"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-09-de-fr-keyword-expansion.json"
+    },
+    {
+      "id": "web-10-fr-sv-official-local-presence",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:26:40 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "site:pophouse.se musikkatalog rättigheter"
+          },
+          {
+            "q": "site:pophouse.com Sverige katalog förvärvar rättigheter"
+          },
+          {
+            "q": "site:duetti.co France French Naïma"
+          },
+          {
+            "q": "site:boleromusic.com/fr artistes catalogue vendre"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-10-fr-sv-official-local-presence.json"
+    },
+    {
+      "id": "web-11-seller-vs-investor-local",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:27:02 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "Pophouse förvärvar Avicii musikkatalog pressmeddelande"
+          },
+          {
+            "q": "\"vendre\" \"droits musicaux\" catalogue"
+          },
+          {
+            "q": "\"vender\" \"royalties musicais\" catálogo"
+          },
+          {
+            "q": "\"catálogo musical\" \"México\" adquisición Duetti"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-11-seller-vs-investor-local.json"
+    },
+    {
+      "id": "web-12-es-pt-valuation-masters",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:27:14 UTC",
+      "params": {
+        "search_query": [
+          {
+            "q": "\"valoración\" \"catálogo musical\" vender"
+          },
+          {
+            "q": "\"valuación\" \"catálogo musical\""
+          },
+          {
+            "q": "\"avaliação de catálogo musical\""
+          },
+          {
+            "q": "\"vender direitos\" \"master\" música"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-12-es-pt-valuation-masters.json"
+    },
+    {
+      "id": "web-13-official-country-intent-validation",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:27:33 UTC",
+      "params": {
+        "open": [
+          {
+            "ref_id": "https://rehkatsch.de/rechtsgebiete/musikrecht/musikkatalog-verkaufen/"
+          },
+          {
+            "ref_id": "https://www.unchainedmusic.io/de/rights-management/"
+          },
+          {
+            "ref_id": "https://www.boleromusic.com/fr/for-creators"
+          },
+          {
+            "ref_id": "https://rightr.co/"
+          },
+          {
+            "ref_id": "https://casete.com.mx/servicios"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-13-official-country-intent-validation.json"
+    },
+    {
+      "id": "web-14-fr-pt-de-validation-details",
+      "tool": "web__run",
+      "retrieved_at_utc": "2026-09-16 11:27:44 UTC",
+      "params": {
+        "open": [
+          {
+            "ref_id": "turn212view2",
+            "lineno": 35
+          },
+          {
+            "ref_id": "turn212view3",
+            "lineno": 110
+          },
+          {
+            "ref_id": "turn212view1",
+            "lineno": 65
+          },
+          {
+            "ref_id": "https://cnmlab.fr/onde-courte/linvestissement-dans-des-catalogues-musicaux-francais-et-etrangers/"
+          }
+        ],
+        "response_length": "long"
+      },
+      "path": "/Users/emilsoujeh/spacemusic/marketing/multilingual-research-20260916/languages/raw/web-14-fr-pt-de-validation-details.json"
+    }
+  ]
+}

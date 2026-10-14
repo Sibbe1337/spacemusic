@@ -1,0 +1,39 @@
+{
+  "synthetic": true,
+  "rows": 216,
+  "currency": "EUR",
+  "totalCents": 1200000,
+  "monthly": {
+    "2025-01": 120000,
+    "2025-02": 110000,
+    "2025-03": 100000,
+    "2025-04": 105000,
+    "2025-05": 95000,
+    "2025-06": 100000,
+    "2025-07": 100000,
+    "2025-08": 100000,
+    "2025-09": 100000,
+    "2025-10": 95000,
+    "2025-11": 90000,
+    "2025-12": 85000
+  },
+  "tracks": {
+    "DEMO-A": 480000,
+    "DEMO-B": 264000,
+    "DEMO-C": 168000,
+    "DEMO-D": 120000,
+    "DEMO-E": 96000,
+    "DEMO-F": 72000
+  },
+  "platforms": {
+    "Platform A": 720000,
+    "Platform B": 300000,
+    "Other platforms": 180000
+  },
+  "missingMonths": [],
+  "negativeRows": 0,
+  "concentrationAvailable": true,
+  "quarterChange": -0.18181818181818177,
+  "firstQuarter": 330000,
+  "lastQuarter": 270000
+}

@@ -1,0 +1,17 @@
+{
+  "observed_date": "2026-09-16",
+  "tool": "mcp__codex_apps__semrush_keyword_research",
+  "arguments": {},
+  "scope": "Non-English keyword research discovery only; parent owns English volume research",
+  "status": "insufficient_api_units",
+  "raw_response_excerpt": "If you can see this response, the user has an active Semrush subscription, but does not have enough API units to complete this request.",
+  "account_options_url": "https://www.semrush.com/mcp-access",
+  "report_schema_obtained": false,
+  "report_executed": false,
+  "keywords_measured": [],
+  "volume": null,
+  "keyword_difficulty": null,
+  "cpc": null,
+  "interpretation": "Missing measurement, not zero demand. Do not turn SERP presence or translation into a volume estimate.",
+  "parent_update": "Parent subsequently confirmed Google Ads Planner access and is collecting actual volumes. No Planner results supplied to this workstream."
+}

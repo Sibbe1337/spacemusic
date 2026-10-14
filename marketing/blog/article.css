@@ -1,0 +1,46 @@
+.space-blog-article {
+  padding: 128px 24px 96px;
+  color: var(--color-ink, #1a1a1a);
+  background: var(--color-cream, #f8f3ec);
+}
+.space-blog-article article { max-width: 1040px; margin-inline: auto; }
+.space-blog-header { margin-bottom: 40px; }
+.space-blog-header nav { display: flex; gap: 12px; font-size: 14px; margin-bottom: 28px; }
+.space-blog-header h1 {
+  max-width: 970px;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.14;
+  text-wrap: balance;
+}
+.space-blog-meta { margin-top: 24px; font-size: 14px; line-height: 1.8; }
+.space-blog-content, .space-blog-toc { max-width: 760px; }
+.space-blog-content { font-size: 17px; line-height: 1.8; }
+.space-blog-content p { margin: 0 0 22px; }
+.space-blog-content h2, .space-blog-content h3 { scroll-margin-top: 110px; text-wrap: balance; }
+.space-blog-content h2 { font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.25; font-weight: 600; margin: 52px 0 22px; letter-spacing: -.02em; }
+.space-blog-content h3 { font-size: 1.2rem; line-height: 1.45; font-weight: 600; margin: 32px 0 12px; }
+.space-blog-content ul, .space-blog-content ol { padding-left: 24px; margin: 0 0 24px; }
+.space-blog-content ul { list-style: disc; }
+.space-blog-content ol { list-style: decimal; }
+.space-blog-content li { margin-bottom: 12px; padding-left: 4px; }
+.space-blog-article a { color: var(--color-brand, #2a74ff); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.space-blog-article a:hover { text-decoration-thickness: 2px; }
+.space-blog-article a:focus-visible, .space-blog-table:focus-visible { outline: 2px solid var(--color-brand, #2a74ff); outline-offset: 5px; }
+.space-blog-toc { border-block: 1px solid rgba(26,26,26,.14); padding-block: 24px; margin-block: 32px 44px; }
+.space-blog-toc p { font-size: 13px; text-transform: uppercase; letter-spacing: .09em; margin-bottom: 16px; font-weight: 600; }
+.space-blog-toc ol { list-style: decimal; padding-left: 22px; font-size: 15px; line-height: 1.6; }
+.space-blog-toc li { padding-block: 5px; }
+.space-blog-table { overflow-x: auto; margin-bottom: 26px; }
+.space-blog-table table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.65; }
+.space-blog-table th, .space-blog-table td { text-align: left; vertical-align: top; padding: 16px; border-bottom: 1px solid rgba(26,26,26,.14); }
+.space-blog-table th { font-weight: 600; background: rgba(255,255,255,.6); }
+.space-blog-table td:first-child { width: 100px; font-weight: 600; }
+@media (max-width: 600px) {
+  .space-blog-article { padding: 104px 20px 64px; }
+  .space-blog-content { font-size: 16px; line-height: 1.8; }
+  .space-blog-table th, .space-blog-table td { padding: 12px 8px; }
+  .space-blog-header { margin-bottom: 30px; }
+}

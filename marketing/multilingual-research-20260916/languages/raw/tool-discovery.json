@@ -1,0 +1,19 @@
+{
+  "retrieved_at_utc": "2026-09-16 11:24:35 UTC",
+  "source": "ALL_TOOLS",
+  "matching_tools": [
+    {
+      "name": "mcp__codex_apps__semrush_execute_report",
+      "description": "Research keywords & traffic\n\nExecute any Semrush report. Requires params from get_report_schema. This tool is part of plugin `Semrush`.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__codex_apps__semrush_execute_report(args: {\n  // Report parameters from get_report_schema\n  params: { [key: string]: unknown; };\n  // Report name — the same one passed to get_report_schema, copied exactly\n  report: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__codex_apps__semrush_get_report_schema",
+      "description": "Research keywords & traffic\n\nGet parameters for a report. MUST call before execute_report if params unknown. This tool is part of plugin `Semrush`.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__codex_apps__semrush_get_report_schema(args: {\n  // Report name from the discovery tool's 'reports' list — copied exactly, with no toolkit prefix (e.g. 'geo', not 'audience.geo').\n  report: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "mcp__codex_apps__semrush_keyword_research",
+      "description": "Research keywords & traffic\n\nKeyword Analytics: look up any keyword — search volume, CPC, competition, keyword difficulty, SERP results (organic and paid), related keywords, broad match variations, phrase questions, and ads history. Returns available reports. NEXT: get_report_schema then execute_report. This tool is part of plugin `Semrush`.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__codex_apps__semrush_keyword_research(args: {}): Promise<CallToolResult>; };\n```"
+    }
+  ],
+  "note": "Discovery returned insufficient API units instead of a reports list. No schema or execute_report calls were made; parent subsequently confirmed the same blocker and prohibited further Semrush calls."
+}

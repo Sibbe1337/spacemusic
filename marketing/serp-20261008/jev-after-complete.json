@@ -1,0 +1,242 @@
+{
+  "release": "tmp/serp-preview-v3-20261008",
+  "inputTokens": 22381,
+  "interpretation": "Editorial model judgments only; not facts, observed query attribution, ranking predictions or measured conversion changes.",
+  "results": [
+    {
+      "route": "/guides/music-catalog-valuation-2026/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 5589,
+        "output_tokens": 141
+      },
+      "inputCoverage": {
+        "heading": "Music Catalog Valuation Guide 2026: How Much Is Your Catalog Worth?",
+        "includesHero": true,
+        "textCharacters": 15577,
+        "schemaScripts": 3
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.63
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.96
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.18
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.84,
+          "probabilities": {
+            "answer": 0.09,
+            "proof": 0.88,
+            "sufficient": 0.02,
+            "journey": 0.01
+          }
+        }
+      }
+    },
+    {
+      "route": "/calculator/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2176,
+        "output_tokens": 141
+      },
+      "inputCoverage": {
+        "heading": "How much could your music catalog sell for?",
+        "includesHero": true,
+        "textCharacters": 4606,
+        "schemaScripts": 1
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.52
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.91
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.37,
+          "probabilities": {
+            "answer": 0.25,
+            "proof": 0.53,
+            "journey": 0.13,
+            "sufficient": 0.09
+          }
+        }
+      }
+    },
+    {
+      "route": "/compare/space-vs-royalty-exchange/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3205,
+        "output_tokens": 141
+      },
+      "inputCoverage": {
+        "heading": "SPACE vs Royalty Exchange: Which Is Better for Selling Your Music Catalog?",
+        "includesHero": true,
+        "textCharacters": 6705,
+        "schemaScripts": 3
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.39
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.92
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.87
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.57,
+          "probabilities": {
+            "proof": 0.68,
+            "journey": 0.01,
+            "answer": 0.29,
+            "sufficient": 0.02
+          }
+        }
+      }
+    },
+    {
+      "route": "/guides/how-to-sell-music-rights/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 7554,
+        "output_tokens": 141
+      },
+      "inputCoverage": {
+        "heading": "How to Sell Your Music Rights in 2026: The Complete Guide",
+        "includesHero": true,
+        "textCharacters": 25065,
+        "schemaScripts": 3
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.73
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.14
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.76,
+          "probabilities": {
+            "proof": 0.82,
+            "sufficient": 0.03,
+            "answer": 0.13,
+            "journey": 0.02
+          }
+        }
+      }
+    },
+    {
+      "route": "/blog/independent-record-label-funding-options/",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3857,
+        "output_tokens": 141
+      },
+      "inputCoverage": {
+        "heading": "Independent Record Label Funding: Catalog Sales, Advances and Loans",
+        "includesHero": true,
+        "textCharacters": 11315,
+        "schemaScripts": 2
+      },
+      "answers": {
+        "answer_first": {
+          "type": "noul",
+          "noul": 0.53
+        },
+        "next_step_clear": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "distinctions_clear": {
+          "type": "noul",
+          "noul": 0.98
+        },
+        "has_claim_risk": {
+          "type": "noul",
+          "noul": 0.09
+        },
+        "metadata_truthful": {
+          "type": "noul",
+          "noul": 0.85
+        },
+        "focus": {
+          "type": "choice",
+          "choice": "proof",
+          "confidence": 0.53,
+          "probabilities": {
+            "answer": 0.28,
+            "proof": 0.65,
+            "journey": 0.04,
+            "sufficient": 0.03
+          }
+        }
+      }
+    }
+  ]
+}

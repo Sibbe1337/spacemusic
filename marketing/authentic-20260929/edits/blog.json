@@ -1,0 +1,799 @@
+{
+ "area": "blog",
+ "edits": [
+  {
+   "find": "John Doe",
+   "replace": "SPACE Editorial Team",
+   "reason": "author",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "Jane Smith",
+   "replace": "SPACE Editorial Team",
+   "reason": "author",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "Michael Brown",
+   "replace": "SPACE Editorial Team",
+   "reason": "author",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "Music Rights Specialist",
+   "replace": "Editorial team",
+   "reason": "author"
+  },
+  {
+   "find": "Music Industry Analyst",
+   "replace": "Editorial team",
+   "reason": "author"
+  },
+  {
+   "find": "Streaming Platform Expert",
+   "replace": "Editorial team",
+   "reason": "author"
+  },
+  {
+   "find": "John has over 15 years of experience in the music industry, specializing in rights management and catalog valuation for independent artists.",
+   "replace": "SPACE Editorial Team writes SPACE's guides on catalog sales, rights and royalties.",
+   "reason": "author"
+  },
+  {
+   "find": "Jane is a renowned music industry analyst who has helped hundreds of artists maximize their catalog value through strategic rights management.",
+   "replace": "SPACE Editorial Team writes SPACE's guides on catalog sales, rights and royalties.",
+   "reason": "author"
+  },
+  {
+   "find": "Michael is a streaming platform expert with deep insights into how algorithms work and how artists can optimize their content for maximum visibility and earnings.",
+   "replace": "SPACE Editorial Team writes SPACE's guides on catalog sales, rights and royalties.",
+   "reason": "author"
+  },
+  {
+   "find": "Legacy article. Original contributor details have not been verified.",
+   "replace": "Reviewed and updated by SPACE Editorial Team in September 2026.",
+   "reason": "author"
+  },
+  {
+   "find": "Original contributor information (unverified)",
+   "replace": "About the author",
+   "reason": "author"
+  },
+  {
+   "find": "Case Study: Ambient Producer Turned $85K/Year Into a $765K Catalog Deal",
+   "replace": "Ambient Producer Catalog Sale: An Illustrative Walkthrough",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "A step-by-step breakdown of how an independent ambient producer prepared rights, cleaned metadata, and negotiated a 12x annual-revenue sale.",
+   "replace": "An illustrative walkthrough of how an ambient producer catalog sale is reviewed: rights, revenue history, metadata, concentration and documentation. Not a SPACE transaction.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Meet Alex: Ambient Producer and Rights Seller",
+   "replace": "The Example: A Hypothetical Ambient Producer Catalog",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Meet Alex: Ambient Producer",
+   "replace": "The Example Catalog",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Alex (name changed for privacy) began creating ambient and lo-fi music in 2017, building a catalog of over 200 tracks across 15 releases. In 2024, Alex successfully sold 75% of their catalog rights for 12x annual revenue\u2014a premium multiple typically reserved for major artists.",
+   "replace": "A catalog sale for an ambient producer starts with a rights and metadata audit, then a review of royalty statements, rights ownership, revenue consistency and concentration in top tracks, and any offer depends on that individual review. Illustrative example, not a SPACE transaction: this walkthrough uses a hypothetical ambient producer, not a real seller. The inputs are simple assumptions chosen to show how a catalog sale review works. There is no deal, buyer or price in this article.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "This case study examines how Alex prepared their catalog, approached the sale process, and maximized their valuation.",
+   "replace": "It covers how the producer could prepare the catalog, what a review looks at, and which factors affect any offer.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "The Catalog: Key Statistics",
+   "replace": "The Hypothetical Catalog: Inputs",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "200+ ambient and lo-fi tracks",
+   "replace": "Hypothetical: 60 ambient and lo-fi tracks",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "15 album and EP releases between 2017-2024",
+   "replace": "Hypothetical: 6 album and EP releases over several years",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Predominantly instrumental (95%)",
+   "replace": "Hypothetical: all instrumental",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "2.5M+ monthly listeners across platforms",
+   "replace": "Hypothetical: master and publishing rights owned by the producer, with no label or co-writer shares",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Regular playlist placements on major editorial playlists",
+   "replace": "Hypothetical: three years of royalty statements from the distributor and PRO",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Annual revenue: Approximately $85,000",
+   "replace": "Hypothetical: $20,000 a year in documented royalties",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Sale price: Approximately $765,000 (for 75% ownership)",
+   "replace": "No price is given here. Any offer depends on an individual review of the catalog.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Preparation Phase: 18 Months Before Sale",
+   "replace": "Preparation Phase: Before a Sale Review",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Alex's first step was conducting a comprehensive rights audit:",
+   "replace": "A sensible first step for this producer is a rights audit:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Verified proper PRO registration for all compositions",
+   "replace": "Verify PRO registration for all compositions",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Ensured consistent metadata across all platforms",
+   "replace": "Check that metadata is consistent across all platforms",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Documented all sample clearances and licenses",
+   "replace": "Document all sample clearances and licenses",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Resolved two potential copyright issues proactively",
+   "replace": "Identify and resolve any open copyright questions before the review",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Created digital archive of all master recordings in lossless format",
+   "replace": "Keep an archive of all master recordings in lossless format",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Before approaching buyers, Alex implemented several strategies to enhance catalog performance:",
+   "replace": "Some producers also work on the catalog before a review. Common steps include:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Created thematic compilations of best-performing tracks",
+   "replace": "Creating thematic compilations of the most-streamed tracks",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Released acoustic piano versions of top ambient pieces",
+   "replace": "Releasing alternate versions, such as piano versions, of popular pieces",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Developed focused sub-brands for sleep, study, and meditation",
+   "replace": "Organizing releases around listening contexts such as sleep, study and meditation",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Collaborated with complementary artists to expand audience",
+   "replace": "Collaborating with other artists to reach new listeners",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Released a vinyl collection of selected works",
+   "replace": "Releasing selected works on physical formats",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "These efforts resulted in a 30% increase in streaming and 40% increase in sync placements during the preparation phase.",
+   "replace": "A review looks at the documented revenue history, so these steps count once their results show up in royalty statements.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Alex prepared comprehensive financial records:",
+   "replace": "For the review, the producer would gather financial records:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "36 months of verified revenue statements from all platforms",
+   "replace": "Three years of royalty statements from all sources",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Alex hired a music data analyst to prepare performance reports highlighting:",
+   "replace": "Streaming data from distributor and platform dashboards can show:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Algorithmic favorability scores",
+   "replace": "Share of streams from algorithmic and editorial playlists",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Territory expansion opportunities",
+   "replace": "Streams and revenue by territory",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "These analytics demonstrated that the catalog had consistent and predictable performance with growth potential\u2014critical factors for premium valuation.",
+   "replace": "This data helps a reviewer judge revenue consistency and concentration in top tracks. Both affect any offer.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Why a Partial Sale (75%)?",
+   "replace": "Full or Partial Sale?",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Alex chose to retain 25% ownership for strategic reasons:",
+   "replace": "At SPACE, sellers can review different transaction sizes, including 50%, 75% or 100% of defined catalog rights. Keeping a share means:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Maintained ongoing interest in catalog's commercial performance",
+   "replace": "Keeping an ongoing interest in the catalog's commercial performance",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Continued to receive 25% of future revenue with no management responsibilities",
+   "replace": "Continuing to receive the retained share of future royalties",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Leveraged buyer's marketing and sync teams while retaining partial upside",
+   "replace": "Receiving a smaller upfront payment than a sale of the full rights",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Established relationship for potential future catalog sales",
+   "replace": "Accepting that the amount and rights transferred change with the selected share",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Buyer Selection Process",
+   "replace": "Comparing Options",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Rather than accepting the first offer, Alex:",
+   "replace": "Before accepting any offer, a seller can:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Approached five potential buyers specializing in ambient/instrumental music",
+   "replace": "Compare direct buyers, marketplaces and advances",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Created a competitive bidding environment",
+   "replace": "Ask which rights, territories and income periods each offer covers",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Evaluated buyers on financial offer and catalog growth strategy",
+   "replace": "Compare fees, payment timing and any obligation to accept",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Selected a buyer with specialized experience in wellness and meditation platforms",
+   "replace": "Have a music lawyer review the purchase agreement",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Key Factors That Secured Premium Valuation",
+   "replace": "Key Factors a Catalog Sale Review Looks At",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Key Success Factors",
+   "replace": "Key Review Factors",
+   "reason": "fabricated case",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "Alex's catalog demonstrated revenue from multiple sources:",
+   "replace": "A reviewer looks at where the revenue comes from, for example:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "70% from streaming platforms",
+   "replace": "Streaming platforms",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "15% from sync licenses (TV, film, advertisements)",
+   "replace": "Sync licenses (TV, film, advertisements)",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "10% from direct platform licensing (meditation apps)",
+   "replace": "Direct licensing, for example to meditation apps",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "5% from physical sales and other sources",
+   "replace": "Physical sales and other sources",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "This diversification reduced platform risk, increasing buyer confidence.",
+   "replace": "Revenue spread across several sources depends less on any one platform.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "2. Impeccable Rights Management",
+   "replace": "2. Clear Rights Ownership",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "The catalog featured:",
+   "replace": "The review checks for:",
+   "reason": "fabricated case",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "100% original compositions (no uncleared samples)",
+   "replace": "Original compositions, or samples with documented clearances",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "This clean rights picture minimized buyer risk and expedited due diligence.",
+   "replace": "Clear, documented ownership makes due diligence simpler.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "3. Demonstrated Growth Trend",
+   "replace": "3. Revenue Consistency and Trend",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "The catalog showed:",
+   "replace": "The review looks at:",
+   "reason": "fabricated case",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "Consistent 15-20% annual revenue growth",
+   "replace": "Whether revenue is steady, growing or declining",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Expanding territorial reach (particularly in Asia)",
+   "replace": "Revenue by territory",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Growing sync licensing placements",
+   "replace": "Sync licensing history",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Increasing playlist inclusions",
+   "replace": "Concentration in top tracks",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "This growth trajectory justified premium valuation based on future potential.",
+   "replace": "A consistent history is easier to assess than one strong year.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Post-Sale Outcomes",
+   "replace": "What the Example Does Not Show",
+   "reason": "fabricated case",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "Financial Impact",
+   "replace": "No Outcome or Price",
+   "reason": "fabricated case",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "The sale transformed Alex's financial position:",
+   "replace": "This walkthrough describes a hypothetical review, so it has no outcome. It does not show:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Cleared all studio equipment and business debts",
+   "replace": "A price or valuation multiple",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Purchased a home studio property",
+   "replace": "A buyer or a deal timeline",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Established an investment portfolio for long-term stability",
+   "replace": "How a seller used any proceeds",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Continues receiving 25% of growing catalog revenue",
+   "replace": "Future royalty income for a retained share",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Creative Freedom",
+   "replace": "After a Sale",
+   "reason": "fabricated case",
+   "modules": [
+    "BlogPost",
+    "Resources"
+   ],
+   "pages": [
+    "blog/",
+    "resources/"
+   ]
+  },
+  {
+   "find": "With financial pressure removed, Alex now:",
+   "replace": "After any sale, a producer can still, subject to the agreement:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Creates music without revenue considerations",
+   "replace": "Release new music outside the catalog that was sold",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Explores experimental ambient sub-genres",
+   "replace": "Explore experimental ambient sub-genres",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Collaborates with orchestral performers",
+   "replace": "Collaborate with other performers",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Develops live ambient performance experiences",
+   "replace": "Develop live ambient performance experiences",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Clean, well-documented rights are worth the effort, potentially adding 2-3x multipliers to valuation.",
+   "replace": "Clean, well-documented rights are worth the effort. Rights ownership and documentation quality are part of how an offer is determined.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "2. Strategic Growth Has Exponential Value",
+   "replace": "2. A Steady Revenue History Matters",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Focused efforts to grow catalog performance in the 18-24 months before sale can significantly impact multipliers.",
+   "replace": "Revenue consistency and growth trend are part of the review, so a documented history of steady income counts.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "4. Specialist Buyers Pay More",
+   "replace": "4. Buyers Who Know the Genre",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Finding buyers who specifically value ambient and lo-fi music catalogs results in higher valuations than generalist music buyers.",
+   "replace": "Buyers who understand ambient and lo-fi listening, such as sleep, study and focus use, can assess these catalogs on their own terms.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Alex's case demonstrates that ambient music catalogs can achieve premium valuations when properly prepared, documented, and presented to appropriate buyers. The growing use of ambient music in wellness applications, streaming platforms, and commercial environments has created significant value for creators who strategically build and manage their catalogs.",
+   "replace": "This illustrative example shows what a review of an ambient producer catalog sale looks at: rights ownership, revenue history and consistency, metadata, concentration in top tracks and documentation. Ambient music is used on streaming platforms, in wellness apps and in commercial settings, and a well-documented catalog is easier to assess for all of these uses.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Recent catalog acquisitions have seen multiples ranging from 8-12x annual revenue for well-performing lo-fi catalogs with consistent streaming history.",
+   "replace": "Buyers pay most attention to lo-fi catalogs with a consistent streaming history. Any price depends on an individual review of revenue, rights and documentation.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Lo-fi music catalogs have seen substantial valuation increases over the past three years, driven by:",
+   "replace": "Buyer interest in lo-fi catalogs is shaped by:",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The market for lo-fi music catalogs remains strong heading into 2025, with particular value assigned to well-organized catalogs with clean rights and consistent performance.",
+   "replace": "Buyers look closely at well-organized lo-fi catalogs with clean rights and consistent performance.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "User-Centric Model (Deezer, SoundCloud)",
+   "replace": "User-Centric and Artist-Centric Models (SoundCloud, Deezer)",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://help.soundcloud.com/hc/en-us/articles/1260801306810-Fan-powered-Royalties",
+    "https://www.prnewswire.com/news-releases/universal-music-group-and-deezer-to-launch-the-first-comprehensive-artist-centric-music-streaming-model-301918974.html"
+   ]
+  },
+  {
+   "find": "This emerging model distributes an individual subscriber's fee only among artists they actually listened to. For ambient music, this can be advantageous because:",
+   "replace": "SoundCloud's help center says its Fan-Powered Royalties pay artists from their own fans' listening instead of a shared pool. Deezer's artist-centric model, announced with Universal Music Group in 2023, works differently: it gives extra weight to artists with an engaged audience and to streams listeners actively search for. For ambient music, fan-based payment can be advantageous because:",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://help.soundcloud.com/hc/en-us/articles/1260801306810-Fan-powered-Royalties",
+    "https://www.prnewswire.com/news-releases/universal-music-group-and-deezer-to-launch-the-first-comprehensive-artist-centric-music-streaming-model-301918974.html"
+   ]
+  },
+  {
+   "find": "Ambient music typically generates fewer total streams than pop or hip-hop",
+   "replace": "Since 2024, Spotify says a track needs at least 1,000 streams in the previous 12 months to generate recorded royalties",
+   "reason": "figure sourced",
+   "sources": [
+    "https://support.spotify.com/us/artists/article/track-monetization-eligibility/",
+    "https://artists.spotify.com/blog/modernizing-our-royalty-system"
+   ]
+  },
+  {
+   "find": "Create shorter tracks (5-10 minutes) to increase stream counts",
+   "replace": "Consider track length: shorter tracks produce more streams per listening hour, and Spotify says functional noise recordings must be at least two minutes long to earn royalties",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/blog/modernizing-our-royalty-system"
+   ]
+  },
+  {
+   "find": "Target algorithmic playlists like \"Deep Focus\" and \"Peaceful Piano\"",
+   "replace": "Pitch new releases to editorial playlists such as \"Deep Focus\" and \"Peaceful Piano\" through Spotify for Artists",
+   "reason": "policy"
+  },
+  {
+   "find": "Higher payouts per stream make complete album listening more valuable",
+   "replace": "Complete album listening adds plays across the whole release",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Spatial Audio and Dolby Atmos can increase per-stream rates for immersive ambient works",
+   "replace": "Apple Music announced in January 2024 that tracks available in Spatial Audio receive up to 10% higher royalty weighting, which can suit immersive ambient works",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/apple-music-to-pay-artists-up-to-10-higher-royalties-for-music-available-in-spatial-audio/"
+   ]
+  },
+  {
+   "find": "These direct deals often pay significantly more than traditional streaming.",
+   "replace": "Terms vary by deal, so compare any license fee with the streaming income the tracks earn today.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Typically spans 5-15 years",
+   "replace": "The term is set in the contract",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Provides larger upfront payment than perpetuity deals",
+   "replace": "The upfront payment reflects the limited period of income the buyer receives",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Unlike full catalog sales, partial rights deals typically allow you to:",
+   "replace": "Depending on the contract, a partial rights deal may allow you to:",
+   "reason": "policy"
+  },
+  {
+   "find": "Case Study: Ambient Artist Portfolio Strategy",
+   "replace": "Illustrative Example: Ambient Artist Portfolio Strategy",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Consider the case of ambient artist Maya L., who implemented a strategic partial rights approach:",
+   "replace": "Illustrative example, not a SPACE transaction: consider a hypothetical ambient artist with 5 albums and $20,000 a year in documented master royalties who looks at a partial rights sale:",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Sold 50% of master rights to her back catalog (5 albums)",
+   "replace": "Hypothetical: offers 50% of the master rights to the back catalog",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Retained 100% of publishing rights",
+   "replace": "Hypothetical: keeps 100% of the publishing rights",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Received $175,000 upfront payment",
+   "replace": "No price is given here. Any offer depends on an individual review",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Invested in studio equipment and marketing",
+   "replace": "Plans to use any proceeds for studio equipment and marketing",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Saw 40% increase in streaming across all works within 12 months",
+   "replace": "Would keep receiving 50% of the master royalties after a sale",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Maya continued receiving 50% of her master royalties while benefiting from the buyer's marketing expertise, creating a win-win scenario.",
+   "replace": "A review of this catalog would check who owns the masters, how consistent the royalties are, how complete the metadata is and how much income depends on the top tracks. The retained share means the artist keeps part of the future income.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "For ambient and lo-fi creators whose work often appreciates in value and listenership over time, this balanced approach often makes more sense than either keeping 100% of rights or selling everything outright.",
+   "replace": "For ambient and lo-fi creators whose work can keep earning for years, this balanced approach can make more sense than either keeping 100% of rights or selling everything outright.",
+   "reason": "policy"
+  },
+  {
+   "find": "Note: You can only register with one PRO per territory.",
+   "replace": "Note: writer membership is usually exclusive within a territory. Check your PRO's membership terms before you join.",
+   "reason": "policy"
+  },
+  {
+   "find": "This ensures you collect both writer's share (50%) and publisher's share (50%) of performance royalties.",
+   "replace": "ASCAP, for example, pays performance royalties 50% to writers and 50% to publishers, so a self-published writer needs a publisher account to collect both shares.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ascap.com/help/my-ascap-membership/join-as-publisher"
+   ]
+  },
+  {
+   "find": "Secure and register these identifiers:",
+   "replace": "Know these identifiers:",
+   "reason": "policy"
+  },
+  {
+   "find": "ISWC (International Standard Musical Work Code) for compositions",
+   "replace": "ISWC (International Standard Musical Work Code) for compositions, which the ISWC network says is allocated automatically when a work is registered with a collecting society",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.iswc.org/get-iswc"
+   ]
+  },
+  {
+   "find": "Ambient music is frequently used in meditation and wellness applications. Request that these platforms submit cue sheets to PROs, documenting:",
+   "replace": "Ambient music is frequently used in meditation and wellness applications. Cue sheets are mainly used for film, TV and other audiovisual works. For apps, ask how the platform licenses music and whether it reports use to PROs, including:",
+   "reason": "policy"
+  },
+  {
+   "find": "Register each channel/component separately if appropriate",
+   "replace": "Ask your PRO whether and how it registers multi-part installation works",
+   "reason": "policy"
+  },
+  {
+   "find": "Consider special PRO programs for experimental or installation works",
+   "replace": "Ask your PRO how it handles live and exhibition performances",
+   "reason": "policy"
+  },
+  {
+   "find": "Register split sheets reflecting original creators",
+   "replace": "Register splits that reflect the shares agreed with original creators",
+   "reason": "policy"
+  },
+  {
+   "find": "Specializes in instrumental and ambient composition",
+   "replace": "Generates instrumental compositions in a range of styles, including ambient",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.aiva.ai/"
+   ]
+  },
+  {
+   "find": ": Can generate ambient-like textures and atmospheres",
+   "replace": ": A 2020 OpenAI research model that generates raw audio, including ambient-like textures. It is not a consumer product",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://openai.com/index/jukebox/"
+   ]
+  },
+  {
+   "find": "AI-generated ambient music is rapidly entering streaming platforms:",
+   "replace": "AI-generated music is entering streaming platforms:",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Estimated 15,000+ AI-generated ambient tracks added monthly to Spotify",
+   "replace": "Deezer reported in April 2026 that it receives nearly 75,000 fully AI-generated tracks a day, more than 44% of its daily deliveries, across all genres",
+   "reason": "figure sourced",
+   "sources": [
+    "https://newsroom-deezer.com/2026/04/ai-generated-tracks-represent-44-of-new-uploaded-music/"
+   ]
+  },
+  {
+   "find": "Some wellness platforms now predominantly feature AI compositions",
+   "replace": "Deezer also reported that these tracks made up only 1-3% of total streams",
+   "reason": "figure sourced",
+   "sources": [
+    "https://newsroom-deezer.com/2026/04/ai-generated-tracks-represent-44-of-new-uploaded-music/"
+   ]
+  },
+  {
+   "find": "Several meditation apps exclusively use AI for soundscape generation",
+   "replace": "Some soundscape apps, such as Endel, generate their audio with software",
+   "reason": "unsourced figure removed",
+   "sources": [
+    "https://endel.io/"
+   ]
+  },
+  {
+   "find": "Most jurisdictions require human authorship for copyright protection",
+   "replace": "The US Copyright Office requires human authorship for copyright registration; rules in other countries vary",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.copyright.gov/ai/"
+   ]
+  },
+  {
+   "find": "Some AI developers claim copyright in their system's output",
+   "replace": "AI tools' terms of service differ on who owns the output",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Many human ambient creators are finding success using AI as a collaborative partner:",
+   "replace": "Some human ambient creators use AI as a collaborative partner:",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Human-created catalogs with documented originality may command premium multiples",
+   "replace": "Human-created catalogs with documented originality may be easier to assess",
+   "reason": "multiple removed"
+  }
+ ]
+}

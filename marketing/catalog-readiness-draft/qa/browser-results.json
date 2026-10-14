@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-09-09T08:18:18.868Z",
+  "widths": [
+    320,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "pages": [
+    "index.html",
+    "sample.html",
+    "review.html",
+    "sources.html"
+  ],
+  "localLinks": 36,
+  "externalSubmissions": 0,
+  "accessibility": [
+    {
+      "page": "index.html",
+      "width": 390,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "page": "sample.html",
+      "width": 390,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "page": "sample.html",
+      "width": 1440,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "page": "review.html",
+      "width": 390,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "page": "review.html",
+      "width": 1440,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "page": "sources.html",
+      "width": 390,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "page": "sources.html",
+      "width": 1440,
+      "violations": [],
+      "incomplete": []
+    }
+  ],
+  "pdf": "/Users/emilsoujeh/spacemusic/output/pdf/space-catalog-readiness-sample.pdf",
+  "keyboard": true,
+  "noJavaScript": true,
+  "reducedMotion": true,
+  "formSubmissionRejected": true,
+  "pathTraversalRejected": true,
+  "allArithmeticUiCases": true,
+  "noStorageOrCookies": true,
+  "remoteRequests": [],
+  "errors": [],
+  "failures": []
+}

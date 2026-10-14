@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-09-09T08:18:52.197Z",
+  "sourceChecks": [
+    {
+      "url": "https://spacemusic.io/apply/",
+      "status": 200,
+      "finalUrl": "https://spacemusic.io/apply/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://spacemusic.io/calculator/",
+      "status": 200,
+      "finalUrl": "https://spacemusic.io/calculator/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://spacemusic.io/blog/music-catalog-sale-documents-checklist/",
+      "status": 200,
+      "finalUrl": "https://spacemusic.io/blog/music-catalog-sale-documents-checklist/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.copyright.gov/circs/circ56a.pdf",
+      "status": 200,
+      "finalUrl": "https://www.copyright.gov/circs/circ56a.pdf",
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://spacemusic.io/pricing.md",
+      "status": 200,
+      "finalUrl": "https://spacemusic.io/pricing.md",
+      "contentType": "text/markdown; charset=utf-8"
+    },
+    {
+      "url": "https://spacemusic.io/blog/music-catalog-offer-checklist/",
+      "status": 200,
+      "finalUrl": "https://spacemusic.io/blog/music-catalog-offer-checklist/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.stripe.com/payment-links",
+      "status": 200,
+      "finalUrl": "https://docs.stripe.com/payment-links",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.stripe.com/testing",
+      "status": 200,
+      "finalUrl": "https://docs.stripe.com/testing",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://stripe.com/en-se/pricing",
+      "status": 200,
+      "finalUrl": "https://stripe.com/en-se/pricing",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.konsumentverket.se/lagar/lagen-om-distansavtal-och-avtal-utanfor-affarslokaler/",
+      "status": 200,
+      "finalUrl": "https://www.konsumentverket.se/lagar/lagen-om-distansavtal-och-avtal-utanfor-affarslokaler-konsument/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.skatteverket.se/foretag/moms/saljavarorochtjanster/forsaljningtillandraeulander/saljatjanstertillandraeulander.4.76a43be412206334b89800010696.html",
+      "status": 200,
+      "finalUrl": "https://www.skatteverket.se/foretag/moms/saljavarorochtjanster/forsaljningtillandraeulander/saljatjanstertillandraeulander.4.76a43be412206334b89800010696.html",
+      "contentType": "text/html;charset=UTF-8"
+    },
+    {
+      "url": "https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/grundlaggande-principer/",
+      "status": 200,
+      "finalUrl": "https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/grundlaggande-principer/",
+      "contentType": "text/html; charset=utf-8"
+    }
+  ],
+  "productionSnapshot": "tmp/calculator-review-v2-20260909",
+  "production": {
+    "origin": "https://spacemusic.io",
+    "publicFiles": 333,
+    "hostingConfigurationNotServed": [
+      "_headers",
+      "_redirects"
+    ],
+    "mismatches": []
+  },
+  "sitemapUrls": 139,
+  "pdfSha256": "2e256e54ec737c69feddd110516b06e4127c8548e379a44ac359196515bfeb8b",
+  "pdfBytes": 111156,
+  "previewPdfIdentical": true
+}

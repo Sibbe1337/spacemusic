@@ -1,0 +1,19 @@
+{
+  "slug":"music-catalog-offer-checklist",
+  "title":"Music Catalog Offer Checklist: Questions Before You Sign",
+  "seoTitle":"Music Catalog Offer Checklist: Before You Sign | SPACE",
+  "description":"Compare music catalog offers by rights, term, net proceeds, payment conditions and retained obligations. Questions to take to independent legal review.",
+  "datePublished":"2026-09-07",
+  "dateModified":"2026-09-07",
+  "author":"SPACE",
+  "image":"https://spacemusic.io/social/space-catalog-v1.png",
+  "imageAlt":"SPACE: Sell your music catalog. One direct buyer. One clear offer. Free evaluation. No obligation.",
+  "category":"Catalog Sale Preparation",
+  "relatedGlossary":"/glossary/buyout-deal/",
+  "relatedLinkLabel":"Music catalog offer checklist: questions before signing",
+  "verificationText":["A larger headline price is not necessarily the better offer", "The example is arithmetic only, not a SPACE offer", "Get independent review before committing", "Does a free review mean I must sell?"],
+  "navigationChecks":[
+    {"label":"request a free catalog review","path":"/apply/","title":"We buy your music catalog."},
+    {"label":"seller's document checklist","path":"/blog/music-catalog-sale-documents-checklist/","title":"Music Catalog Sale Documents: A Seller's Checklist"}
+  ]
+}

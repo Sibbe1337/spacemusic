@@ -1,0 +1,1230 @@
+[
+ {
+  "text": "15-25% of net revenue",
+  "urls": [
+   "https://spacemusic.io/compare/major-label-vs-independent/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.68,
+   "unsourced_number": 0.57,
+   "policy_conflict": 0.36,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Hipgnosis Songs Fund",
+  "urls": [
+   "https://spacemusic.io/compare/space-vs-hipgnosis/",
+   "https://spacemusic.io/guides/best-music-rights-buyers-2026/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.49,
+   "policy_conflict": 0.05,
+   "credential": 0.81
+  }
+ },
+ {
+  "text": "Label advances are recouped from the artist's royalty share at the contractual royalty rate (typically 15-25% of net revenue).",
+  "urls": [
+   "https://spacemusic.io/glossary/advance/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.2,
+   "unsourced_number": 0.83,
+   "policy_conflict": 0.08,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Distribution advances are recouped from streaming revenue at 100% until recouped.",
+  "urls": [
+   "https://spacemusic.io/glossary/advance/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.22,
+   "unsourced_number": 0.78,
+   "policy_conflict": 0.08,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "The advance amount is typically calculated as a percentage (50-80%) of projected earnings over the deal term.",
+  "urls": [
+   "https://spacemusic.io/glossary/advance/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.21,
+   "unsourced_number": 0.86,
+   "policy_conflict": 0.08,
+   "credential": 0.06
+  }
+ },
+ {
+  "text": "For example, when a radio station obtains a blanket license from ASCAP, it gains the right to play any of the millions of songs in ASCAP's repertoire without needing to negotiate individual permissions or track usage on a per-song basis.",
+  "urls": [
+   "https://spacemusic.io/glossary/blanket-license/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.26,
+   "policy_conflict": 0.04,
+   "credential": 0.75
+  }
+ },
+ {
+  "text": "High-profile acquisitions include Bob Dylan selling his publishing to Universal Music for an estimated $300-400 million, Bruce Springsteen selling masters and publishing to Sony for approximately $500 million, and numerous catalog deals by investment firms like Hipgnosis Song Management, Primary Wave, Round Hill Music, and KKR.",
+  "urls": [
+   "https://spacemusic.io/glossary/catalog-acquisition/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.28,
+   "unsourced_number": 0.91,
+   "policy_conflict": 0.05,
+   "credential": 0.94
+  }
+ },
+ {
+  "text": "The buyer's return model typically targets 8-15% annual yield on invested capital, with upside from streaming growth, improved collection (filling metadata gaps and registering with additional societies), and active sync licensing.",
+  "urls": [
+   "https://spacemusic.io/glossary/catalog-acquisition/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.14,
+   "unsourced_number": 0.85,
+   "policy_conflict": 0.08,
+   "credential": 0.06
+  }
+ },
+ {
+  "text": "The loan amount is typically based on a multiple of the catalog's annual revenue, similar to a catalog valuation but usually more conservative (3x-8x annual revenue versus 8x-15x for a sale).",
+  "urls": [
+   "https://spacemusic.io/glossary/catalog-loan/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.25,
+   "unsourced_number": 0.93,
+   "policy_conflict": 0.1,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Key terms include: loan-to-value ratio (typically 50-80% of the catalog's appraised value), interest rate (usually 8-15% depending on the catalog's risk profile and size), amortization schedule (typically 3-7 years), debt service coverage ratio requirements (usually 1.25x-1.50x \u2014 the catalog's annual revenue must exceed annual debt service by this factor), covenants (minimum revenue thresholds, restrictions on licensing decisions that could impair the catalog's value), and events of default (which could trigger foreclosure on the catalog).",
+  "urls": [
+   "https://spacemusic.io/glossary/catalog-loan/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.2,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.31,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Professional catalog valuations typically analyze 3-5 years of historical revenue data broken down by source (streaming mechanicals, streaming performance, sync, physical, download, etc.), territory, and trend.",
+  "urls": [
+   "https://spacemusic.io/glossary/catalog-valuation/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.5,
+   "policy_conflict": 0.05,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "The valuation model projects future cash flows using a discounted cash flow (DCF) analysis, adjusting for streaming market growth rates (typically 5-10% annually), potential catalog decay rates (1-3% per year for non-evergreen content), and discount rates reflecting the risk profile of the asset (typically 8-15%).",
+  "urls": [
+   "https://spacemusic.io/glossary/catalog-valuation/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.05,
+   "unsourced_number": 0.93,
+   "policy_conflict": 0.07,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "The statutory rate as of 2023 is 12 cents per copy for songs over 5 minutes or 9.1 cents per copy for songs 5 minutes or under (for physical/download).",
+  "urls": [
+   "https://spacemusic.io/glossary/compulsory-license/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.26,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.05,
+   "credential": 0.02
+  }
+ },
+ {
+  "text": "Revenue from Content ID claims is split between YouTube (which retains approximately 45% of ad revenue) and the rights holder (who receives approximately 55%).",
+  "urls": [
+   "https://spacemusic.io/glossary/content-id/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.27,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.05,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "The system handles over 800 million reference files and generates billions of dollars annually for rights holders.",
+  "urls": [
+   "https://spacemusic.io/glossary/content-id/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.13,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.04,
+   "credential": 0.2
+  }
+ },
+ {
+  "text": "Payment schedules vary \u2014 some aggregators pay monthly, others quarterly, with reporting delays of 1-3 months.",
+  "urls": [
+   "https://spacemusic.io/glossary/digital-aggregator/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.75,
+   "policy_conflict": 0.11,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Traditional distributors and label services companies like AWAL, Stem, and The Orchard may take a percentage of revenue (typically 15-30%) but offer additional services like playlist pitching, marketing support, and advance funding.",
+  "urls": [
+   "https://spacemusic.io/glossary/distribution-deal/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.15,
+   "unsourced_number": 0.81,
+   "policy_conflict": 0.08,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Revenue is typically reported and paid monthly or quarterly, with a 2-3 month lag from the date of streaming.",
+  "urls": [
+   "https://spacemusic.io/glossary/distribution-deal/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.55,
+   "policy_conflict": 0.08,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "The independent music sector accounts for approximately 35-40% of global recorded music market share, including both truly independent artists and artists on independent labels.",
+  "urls": [
+   "https://spacemusic.io/glossary/independent-artist/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.02,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.03,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Independent artists typically retain 80-100% of recording revenue (after distributor fees) compared to 15-25% under a traditional label deal.",
+  "urls": [
+   "https://spacemusic.io/glossary/independent-artist/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.36,
+   "unsourced_number": 0.9,
+   "policy_conflict": 0.05,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Master rights are governed by copyright law and typically last for 70 years after the death of the author (or 95 years from publication for works made for hire) in the United States under the Copyright Act.",
+  "urls": [
+   "https://spacemusic.io/glossary/master-rights/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.65,
+   "policy_conflict": 0.03,
+   "credential": 0.02
+  }
+ },
+ {
+  "text": "In a standard record deal, the label owns the masters and the artist receives a royalty rate typically between 15-25% of net revenue.",
+  "urls": [
+   "https://spacemusic.io/glossary/master-rights/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.16,
+   "unsourced_number": 0.88,
+   "policy_conflict": 0.04,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "As of 2023, the rate for physical and permanent digital downloads is 12 cents per unit for songs over 5 minutes, or 9.1 cents for songs 5 minutes or under.",
+  "urls": [
+   "https://spacemusic.io/glossary/mechanical-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.3,
+   "unsourced_number": 0.92,
+   "policy_conflict": 0.05,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Music catalogs have become highly valued financial assets, particularly since 2020, when major acquisitions like Hipgnosis Songs Fund and investment firms like KKR began purchasing catalogs from legendary artists for hundreds of millions of dollars.",
+  "urls": [
+   "https://spacemusic.io/glossary/music-catalog/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.09,
+   "unsourced_number": 0.81,
+   "policy_conflict": 0.04,
+   "credential": 0.83
+  }
+ },
+ {
+  "text": "Catalog valuation is typically performed using a revenue multiple methodology, where the catalog's average annual net revenue over the past 2-3 years is multiplied by a factor that reflects growth trends, genre stability, revenue diversification, and market conditions.",
+  "urls": [
+   "https://spacemusic.io/glossary/music-catalog/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.08,
+   "unsourced_number": 0.59,
+   "policy_conflict": 0.06,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Multiples for independent catalogs typically range from 5x to 15x annual net revenue, while premium catalogs from iconic artists have traded at 20x-30x+.",
+  "urls": [
+   "https://spacemusic.io/glossary/music-catalog/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.28,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.09,
+   "credential": 0.16
+  }
+ },
+ {
+  "text": "In exchange for these services, the publisher typically receives a share of the publishing income \u2014 the publisher's share \u2014 which is usually 50% of total publishing revenue in a traditional co-publishing deal, though this can vary.",
+  "urls": [
+   "https://spacemusic.io/glossary/music-publisher/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.23,
+   "unsourced_number": 0.8,
+   "policy_conflict": 0.05,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "These publishers have relationships with music supervisors at meditation apps, wellness brands, documentary filmmakers, and other potential licensees that independent artists might not be able to reach on their own.",
+  "urls": [
+   "https://spacemusic.io/glossary/music-publisher/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.04,
+   "policy_conflict": 0.04,
+   "credential": 0.59
+  }
+ },
+ {
+  "text": "In a standard publishing deal, the writer receives 50% (writer's share only) and the publisher receives 50% (full publisher's share).",
+  "urls": [
+   "https://spacemusic.io/glossary/music-publisher/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.18,
+   "unsourced_number": 0.55,
+   "policy_conflict": 0.05,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Administration deals typically charge 10-25% of gross collections.",
+  "urls": [
+   "https://spacemusic.io/glossary/music-publisher/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.18,
+   "unsourced_number": 0.86,
+   "policy_conflict": 0.1,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "The payment is typically split 50/50 between the performer and the producer/label.",
+  "urls": [
+   "https://spacemusic.io/glossary/neighboring-rights/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.25,
+   "unsourced_number": 0.78,
+   "policy_conflict": 0.03,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "The distribution split for SoundExchange payments is 45% to the featured artist, 50% to the rights owner (label), and 5% to a fund for non-featured musicians and vocalists.",
+  "urls": [
+   "https://spacemusic.io/glossary/neighboring-rights/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.21,
+   "unsourced_number": 0.92,
+   "policy_conflict": 0.04,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "For example, selling 50% of a catalog valued at $100,000 would generate approximately $50,000 in immediate capital while the seller continues to earn 50% of all future revenue.",
+  "urls": [
+   "https://spacemusic.io/glossary/partial-sale-vs-full-sale/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.59,
+   "unsourced_number": 0.23,
+   "policy_conflict": 0.21,
+   "credential": 0.23
+  }
+ },
+ {
+  "text": "The typical split is 50/50 between writer and publisher shares.",
+  "urls": [
+   "https://spacemusic.io/glossary/performance-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.08,
+   "unsourced_number": 0.7,
+   "policy_conflict": 0.03,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "PRO distribution cycles typically occur quarterly, with a 6-9 month lag from the date of performance to payment.",
+  "urls": [
+   "https://spacemusic.io/glossary/performance-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.79,
+   "policy_conflict": 0.06,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "PROs typically distribute royalties quarterly, with a processing delay of 6-9 months.",
+  "urls": [
+   "https://spacemusic.io/glossary/pro/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.05,
+   "unsourced_number": 0.85,
+   "policy_conflict": 0.14,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "In the US, the mechanical royalty rate for physical and permanent digital downloads is set by the Copyright Royalty Board at 9.1 cents per copy for songs under 5 minutes.",
+  "urls": [
+   "https://spacemusic.io/glossary/publishing-rights/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.21,
+   "unsourced_number": 0.66,
+   "policy_conflict": 0.03,
+   "credential": 0.02
+  }
+ },
+ {
+  "text": "Publishing administration deals typically take 10-25% of publishing revenue, while traditional publishing deals may take 50% of the publisher's share in exchange for more active pitching and administration.",
+  "urls": [
+   "https://spacemusic.io/glossary/publishing-rights/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.17,
+   "unsourced_number": 0.93,
+   "policy_conflict": 0.08,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "In exchange, the label owns the master recordings and pays the artist a royalty on sales and streams \u2014 typically 15-25% of net revenue in a traditional deal.",
+  "urls": [
+   "https://spacemusic.io/glossary/record-label/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.31,
+   "unsourced_number": 0.88,
+   "policy_conflict": 0.06,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Record label deal structures include: traditional deals (label owns masters, 15-25% artist royalty), profit-sharing deals (50/50 or similar split of net profits after costs), licensing deals (artist owns masters, licenses to label for a term with a higher royalty rate of 25-50%), distribution deals (label handles distribution for a fee of 15-30%), and 360 deals (label participates in multiple revenue streams including touring, merchandise, and endorsements).",
+  "urls": [
+   "https://spacemusic.io/glossary/record-label/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.25,
+   "unsourced_number": 0.84,
+   "policy_conflict": 0.06,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "For example, if an artist receives a $10,000 advance with a 20% royalty rate, and the recording generates $50,000 in gross revenue, the artist's recoupable share is $10,000 (20% of $50,000), which exactly covers the advance.",
+  "urls": [
+   "https://spacemusic.io/glossary/recoupment/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.31,
+   "unsourced_number": 0.25,
+   "policy_conflict": 0.06,
+   "credential": 0.5
+  }
+ },
+ {
+  "text": "The label has been collecting the remaining $40,000 (80%) throughout this period.",
+  "urls": [
+   "https://spacemusic.io/glossary/recoupment/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.4,
+   "unsourced_number": 0.49,
+   "policy_conflict": 0.04,
+   "credential": 0.6
+  }
+ },
+ {
+  "text": "During the peak of the catalog acquisition boom (2020-2022), multiples for top-tier catalogs reached 25x-30x annual revenue, driven by institutional investors and low interest rates.",
+  "urls": [
+   "https://spacemusic.io/glossary/revenue-multiple/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.18,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.08,
+   "credential": 0.13
+  }
+ },
+ {
+  "text": "As interest rates rose and the market matured, multiples for premium catalogs settled back to 15x-20x, while independent and mid-tier catalogs typically trade at 8x-15x.",
+  "urls": [
+   "https://spacemusic.io/glossary/revenue-multiple/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.19,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.12,
+   "credential": 0.07
+  }
+ },
+ {
+  "text": "In financial terms, a 10x multiple implies a 10% annual yield on the buyer's investment, assuming flat revenue.",
+  "urls": [
+   "https://spacemusic.io/glossary/revenue-multiple/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.18,
+   "unsourced_number": 0.74,
+   "policy_conflict": 0.11,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Terms vary widely: a well-known sample might cost $10,000-$100,000+ upfront plus 25-50% of publishing, while an obscure sample might clear for a few hundred dollars.",
+  "urls": [
+   "https://spacemusic.io/glossary/sample-clearance/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.26,
+   "unsourced_number": 0.84,
+   "policy_conflict": 0.11,
+   "credential": 0.08
+  }
+ },
+ {
+  "text": "These royalties have become the dominant revenue source for the recorded music industry, accounting for over 65% of global recorded music revenue.",
+  "urls": [
+   "https://spacemusic.io/glossary/streaming-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.03,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "As a rough guide, Spotify pays approximately $0.003-$0.005 per stream, Apple Music pays $0.007-$0.01, and Tidal pays $0.006-$0.01.",
+  "urls": [
+   "https://spacemusic.io/glossary/streaming-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.38,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.06,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "A user who plays a 2-hour ambient playlist while working or sleeping may generate 20-40 individual track streams in a single session.",
+  "urls": [
+   "https://spacemusic.io/glossary/streaming-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.1,
+   "unsourced_number": 0.82,
+   "policy_conflict": 0.03,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Streaming royalty calculations use a pro-rata model on most platforms: the platform's total royalty pool (typically 65-70% of gross revenue) is divided among all streams proportionally.",
+  "urls": [
+   "https://spacemusic.io/glossary/streaming-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.06,
+   "unsourced_number": 0.92,
+   "policy_conflict": 0.04,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "The royalty is split between the sound recording side (paid to labels/distributors at approximately 52-55% of the royalty pool) and the composition side (paid as mechanical and performance royalties at approximately 15-16% of the pool).",
+  "urls": [
+   "https://spacemusic.io/glossary/streaming-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.15,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.04,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Deezer implemented a partial user-centric model in 2024.",
+  "urls": [
+   "https://spacemusic.io/glossary/streaming-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.5,
+   "policy_conflict": 0.03,
+   "credential": 0.52
+  }
+ },
+ {
+  "text": "Spotify introduced a minimum stream threshold of 1,000 annual streams per track for monetization in 2024.",
+  "urls": [
+   "https://spacemusic.io/glossary/streaming-royalties/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.04,
+   "credential": 0.15
+  }
+ },
+ {
+  "text": "The sub-publisher typically retains a percentage of the royalties collected (usually 15-25%) and remits the remainder to the original publisher.",
+  "urls": [
+   "https://spacemusic.io/glossary/sub-publishing/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.15,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.06,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Sub-publishing agreements specify the territory covered, the term (typically 3-5 years with an option to renew), the commission retained by the sub-publisher (15-25%), retention rights (the sub-publisher may retain rights to any sync deals they secure for a period after the agreement ends), the scope of rights administered (mechanical, performance, sync, print), and minimum performance obligations.",
+  "urls": [
+   "https://spacemusic.io/glossary/sub-publishing/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.11,
+   "unsourced_number": 0.81,
+   "policy_conflict": 0.08,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Sync licensing is one of the most lucrative revenue streams in the music industry because fees are negotiated on a case-by-case basis and can range from a few hundred dollars for a small indie project to hundreds of thousands of dollars for a major film or national commercial placement.",
+  "urls": [
+   "https://spacemusic.io/glossary/sync-licensing/"
+  ],
+  "module": "glossary-osNbpTze.js",
+  "scores": {
+   "promise": 0.19,
+   "unsourced_number": 0.64,
+   "policy_conflict": 0.06,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Spotify pays $0.003\u2013$0.005 per stream, Apple Music pays $0.007\u2013$0.01, and Tidal leads at $0.008\u2013$0.013.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.43,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.11,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "At these rates, an independent ambient or lo-fi artist with 500,000 monthly streams earns roughly $2,000\u2013$5,000 per year.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.53,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.12,
+   "credential": 0.1
+  }
+ },
+ {
+  "text": "However, your catalog's lump-sum value is typically 4\u201310x your annual streaming revenue \u2014 meaning a catalog earning $5,000/year could be worth $20,000\u2013$50,000 as a one-time payout.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.69,
+   "unsourced_number": 0.9,
+   "policy_conflict": 0.34,
+   "credential": 0.12
+  }
+ },
+ {
+  "text": "Every independent artist eventually Googles it: \"How much does Spotify pay per stream?\" The answer \u2014 somewhere between $0.003 and $0.005 \u2014 usually triggers one of two reactions: disbelief or resignation.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.37,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.04,
+   "credential": 0.07
+  }
+ },
+ {
+  "text": "Most artists assume streaming platforms pay a fixed rate per play \u2014 play a song, earn a penny.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.36,
+   "unsourced_number": 0.57,
+   "policy_conflict": 0.04,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "If a Tidal subscriber spends their entire month listening to your ambient catalog, the majority of their $10.99 goes to you \u2014 not to Drake or Taylor Swift.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.54,
+   "unsourced_number": 0.75,
+   "policy_conflict": 0.05,
+   "credential": 0.15
+  }
+ },
+ {
+  "text": "If Spotify pays $0.004 per stream but your distributor takes 15%, your NPS is $0.0034.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.52,
+   "unsourced_number": 0.71,
+   "policy_conflict": 0.06,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Tidal leads at $0.008\u2013$0.013 per stream, meaning a million Tidal streams could earn you $8,000\u2013$13,000.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.67,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.2,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Apple Music follows at $0.007\u2013$0.01 per stream \u2014 roughly double Spotify's rate \u2014 because every Apple Music listener is a paying subscriber.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.42,
+   "unsourced_number": 0.93,
+   "policy_conflict": 0.08,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Amazon Music sits in the middle at $0.004\u2013$0.008, though rates depend heavily on which tier the listener uses.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.5,
+   "unsourced_number": 0.83,
+   "policy_conflict": 0.04,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Spotify, despite being the largest platform, pays $0.003\u2013$0.005 per stream.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.52,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.05,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "Its massive free tier (380M+ users who don't pay for subscriptions) significantly dilutes the average payout.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.07,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.04,
+   "credential": 0.13
+  }
+ },
+ {
+  "text": "YouTube Music pays a comparable $0.002\u2013$0.005, though the broader YouTube ecosystem adds Content ID revenue that can meaningfully boost total earnings for ambient artists.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.59,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.05,
+   "credential": 0.06
+  }
+ },
+ {
+  "text": "Deezer ($0.004\u2013$0.007) and SoundCloud ($0.002\u2013$0.004) round out the field with smaller subscriber bases but innovative payment models.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.64,
+   "unsourced_number": 0.96,
+   "policy_conflict": 0.06,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "10,000 Tidal streams can be worth more than 30,000 Spotify streams.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.39,
+   "unsourced_number": 0.82,
+   "policy_conflict": 0.06,
+   "credential": 0.1
+  }
+ },
+ {
+  "text": "A stream is a stream, regardless of duration (after the 30-second minimum threshold).",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.13,
+   "unsourced_number": 0.65,
+   "policy_conflict": 0.03,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "When a playlist curator rotates your track out, your streams can drop 80% overnight.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.11,
+   "unsourced_number": 0.84,
+   "policy_conflict": 0.03,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "This volatility makes ambient streaming revenue inherently less predictable than genres where fans follow specific artists.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.61,
+   "policy_conflict": 0.03,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Ambient artists often release high volumes of content \u2014 albums with 15-20 tracks, each 5-10 minutes long.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.03,
+   "unsourced_number": 0.7,
+   "policy_conflict": 0.03,
+   "credential": 0.05
+  }
+ },
+ {
+  "text": "While a deep catalog generates more total streams, the per-track stream count is diluted, which can push individual tracks below platform minimum thresholds (Spotify now requires 1,000 annual streams per track for monetization).",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.08,
+   "unsourced_number": 0.91,
+   "policy_conflict": 0.05,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Mainstream pop and hip-hop catalogs from established artists trade at 15-30x annual revenue.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.48,
+   "unsourced_number": 0.93,
+   "policy_conflict": 0.21,
+   "credential": 0.11
+  }
+ },
+ {
+  "text": "Independent catalogs in stable genres like ambient, lo-fi, and mood music typically trade at 4-10x annual revenue.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.37,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.2,
+   "credential": 0.07
+  }
+ },
+ {
+  "text": "At a conservative 4x multiple, your catalog has a lump-sum value of $9,600.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.7,
+   "unsourced_number": 0.52,
+   "policy_conflict": 0.25,
+   "credential": 0.15
+  }
+ },
+ {
+  "text": "At 10x (achievable for catalogs with growing streams and diversified platform distribution), that's $24,000.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.69,
+   "unsourced_number": 0.55,
+   "policy_conflict": 0.24,
+   "credential": 0.15
+  }
+ },
+ {
+  "text": "Scale this up: an artist earning $500/month ($6,000/year) has a catalog worth $24,000\u2013$60,000.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.7,
+   "unsourced_number": 0.45,
+   "policy_conflict": 0.19,
+   "credential": 0.15
+  }
+ },
+ {
+  "text": "At $1,000/month ($12,000/year), the range is $48,000\u2013$120,000.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.72,
+   "unsourced_number": 0.51,
+   "policy_conflict": 0.21,
+   "credential": 0.12
+  }
+ },
+ {
+  "text": "Why would someone pay 8x annual revenue for a music catalog?",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.23,
+   "unsourced_number": 0.76,
+   "policy_conflict": 0.08,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "If your monthly revenue has been growing 5-10% month-over-month, your catalog commands a higher multiple.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.13,
+   "unsourced_number": 0.64,
+   "policy_conflict": 0.26,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "For independent ambient, lo-fi, meditation, and mood music catalogs, typical ranges are: 4-6x for catalogs with declining or flat revenue, 6-8x for stable catalogs with diversified platform distribution, and 8-10x for growing catalogs with strong listener demographics and multiple revenue sources.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.37,
+   "unsourced_number": 0.68,
+   "policy_conflict": 0.23,
+   "credential": 0.06
+  }
+ },
+ {
+  "text": "Here's the reality: at $0.004 per stream, earning $50,000 from streaming alone would require 12.5 million streams.",
+  "urls": [
+   "https://spacemusic.io/guides/what-are-your-streams-worth-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.32,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.05,
+   "credential": 0.03
+  }
+ },
+ {
+  "text": "Higher per-stream rates make each Apple Music listener roughly 2x more valuable than a Spotify listener for ambient artists.",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/apple-music-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.37,
+   "unsourced_number": 0.94,
+   "policy_conflict": 0.07,
+   "credential": 0.04
+  }
+ },
+ {
+  "text": "Dominant platform for ambient and lo-fi discovery via editorial playlists like Deep Focus (5M+ followers) and Peaceful Piano (7M+ followers).",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/spotify-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.04,
+   "unsourced_number": 0.92,
+   "policy_conflict": 0.04,
+   "credential": 0.15
+  }
+ },
+ {
+  "text": "Videos titled '8 Hours of Rain Sounds' or '12-Hour Deep Sleep Music' regularly accumulate 10M+ views.",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/youtube-music-2026/"
+  ],
+  "module": "streamingRates-D0lrxoIa.js",
+  "scores": {
+   "promise": 0.06,
+   "unsourced_number": 0.86,
+   "policy_conflict": 0.04,
+   "credential": 0.09
+  }
+ },
+ {
+  "text": "+Competitive per-stream rates in the $0.004-$0.007 range",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/deezer-2026/"
+  ],
+  "module": null,
+  "scores": {
+   "promise": 0.68,
+   "unsourced_number": 0.95,
+   "policy_conflict": 0.15,
+   "credential": 0.06
+  },
+  "note": "HTML text; leading +/\u2212 is an icon, search the module without it"
+ },
+ {
+  "text": "\u2212Small global market share concentrated primarily in European markets",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/deezer-2026/"
+  ],
+  "module": null,
+  "scores": {
+   "promise": 0.05,
+   "unsourced_number": 0.61,
+   "policy_conflict": 0.04,
+   "credential": 0.1
+  },
+  "note": "HTML text; leading +/\u2212 is an icon, search the module without it"
+ },
+ {
+  "text": "\u2212Minimum threshold of 1,000 streams and 500 unique listeners to qualify for boosted rates",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/deezer-2026/"
+  ],
+  "module": null,
+  "scores": {
+   "promise": 0.14,
+   "unsourced_number": 0.87,
+   "policy_conflict": 0.06,
+   "credential": 0.18
+  },
+  "note": "HTML text; leading +/\u2212 is an icon, search the module without it"
+ },
+ {
+  "text": "\u2212Recent minimum stream threshold (1,000 streams/year) cuts off long-tail catalog revenue",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/spotify-2026/"
+  ],
+  "module": null,
+  "scores": {
+   "promise": 0.18,
+   "unsourced_number": 0.89,
+   "policy_conflict": 0.07,
+   "credential": 0.06
+  },
+  "note": "HTML text; leading +/\u2212 is an icon, search the module without it"
+ },
+ {
+  "text": "+Highest per-stream rates of any major streaming platform",
+  "urls": [
+   "https://spacemusic.io/streaming-rates/tidal-2026/"
+  ],
+  "module": null,
+  "scores": {
+   "promise": 0.38,
+   "unsourced_number": 0.63,
+   "policy_conflict": 0.05,
+   "credential": 0.05
+  },
+  "note": "HTML text; leading +/\u2212 is an icon, search the module without it"
+ }
+]

@@ -1,0 +1,58 @@
+{
+  "provider": "https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap",
+  "fetchedAt": "2026-09-07T08:40:24.108Z",
+  "files": [
+    {
+      "name": "inter-cyrillic-ext-fccca918fea4.woff2",
+      "sha256": "fccca918fea40089dacadc7045861314d1a6bc91f1f323cc1eeb22ebcdb321b5",
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2",
+      "bytes": 25844
+    },
+    {
+      "name": "inter-cyrillic-aebf2ab4a4ce.woff2",
+      "sha256": "aebf2ab4a4ce6810d73c1ac7be7cafb4e5ec4cee2d6db5fb3e09691747ec4bd6",
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2",
+      "bytes": 18744
+    },
+    {
+      "name": "inter-greek-ext-a2e2c783ca6f.woff2",
+      "sha256": "a2e2c783ca6f9c20486e81e72a279203e86730bbf8f01ff6a5ee9dbd09e1c271",
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2",
+      "bytes": 11272
+    },
+    {
+      "name": "inter-greek-46dd4cdca58c.woff2",
+      "sha256": "46dd4cdca58c26ae87cc6927657bf83b2e8abfc39ffd0ab176e301a8d28d22bf",
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2",
+      "bytes": 19044
+    },
+    {
+      "name": "inter-vietnamese-8db00ff46c67.woff2",
+      "sha256": "8db00ff46c67b22cda8bed865acf7077651cac8d2841d5b40980556b48961931",
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2",
+      "bytes": 10280
+    },
+    {
+      "name": "inter-latin-ext-a28eb6d3ccb5.woff2",
+      "sha256": "a28eb6d3ccb534ae0c94ca999371df024aab60b08c3c8a5720ee9e32fa0faaa2",
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2",
+      "bytes": 85272
+    },
+    {
+      "name": "inter-latin-c940764593d0.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+      "bytes": 48432
+    },
+    {
+      "name": "inter-OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+      "bytes": 4377
+    }
+  ],
+  "preloads": [
+    "/fonts/inter-latin-c940764593d0.woff2"
+  ],
+  "cssSha256": "b63f24211bce715e30092ef44cfcad5f8621dc4426e64f613e384c3b227ac5c1"
+}

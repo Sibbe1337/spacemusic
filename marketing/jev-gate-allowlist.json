@@ -1,0 +1,464 @@
+{
+ "items": [
+  {
+   "text": "Its seller guide covers auction preparation and transfer.",
+   "reason": "Source-checked 2026-10-08: https://royaltyexchange.com/how-auctions-work-sellers contains Listings, Listing Agreement and Post Auction Process sections. This describes the source contents, not a promised time or outcome.",
+   "reviewed": "2026-10-08"
+  },
+  {
+   "text": "Treating a calculator as an offer.",
+   "reason": "Context-checked 2026-10-08: bold mistake label within Common Mistakes When Selling Music Rights. The next sentence says a chosen multiple gives a scenario, not a verified offer. The extractor isolates the label; the page does not claim a calculator produces an offer.",
+   "reviewed": "2026-10-08"
+  },
+  {
+   "text": "Its 2020 Direct Listings announcement also describes offers at a seller-set price without an auction.",
+   "reason": "Source-checked 2026-10-08: https://royaltyexchange.com/blog/introducing-direct-listings-giving-artists-more-control-over-their-catalog explicitly describes the historical non-auction format. Adjacent copy requires confirmation of current availability; this is not a claim that every current sale avoids an auction.",
+   "reviewed": "2026-10-08"
+  },
+  {
+   "text": "+Marketplace access to competing investors",
+   "reason": "Source-checked 2026-10-08: https://royaltyexchange.com/how-auctions-work-sellers describes one royalty asset offered to multiple bidders. This bullet describes the marketplace, not a guarantee of investor interest, a sale or a higher price.",
+   "reviewed": "2026-10-08"
+  },
+  {
+   "text": "Its seller guide describes a bidding phase of usually less than one week after an opening bid triggers the auction.",
+   "reason": "Source-checked 2026-10-08: https://royaltyexchange.com/how-auctions-work-sellers, Auctions section, distinguishes opening bids and live bidding duration. The next sentences explicitly separate preparation and transfer and deny a payment deadline. Attributed provider guidance, not a SPACE promise.",
+   "reviewed": "2026-10-08"
+  },
+  {
+   "text": "For catalogs older than ten years, the panel's average perceived bases were 10.2x for masters and 12.1x for publishing.",
+   "reason": "Source-checked 2026-10-08: https://www.duetti.co/music-finance-index-h2-2026 reports these average bases for the 10+ years band. The paragraph links that source and explicitly identifies industry-panel perceptions, not independently verified deals, a universal price table or an offer minimum.",
+   "reviewed": "2026-10-08"
+  },
+  {
+   "text": "Apple Music has said its average per play was $0.01 for individual paid plans in 2020 (Apple Music for Artists).",
+   "reason": "Verified 2026-09-29 on artists.apple.com/support/1124-apple-music-insights-royalty-rate; source linked in the sentence.",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2026 | Primary Wave Music | Pete Townshend | certain music rights (incl. songs from The Who repertoire), name/image/likeness and future creative projects | $100 million-plus (reported) | Variety \u2014 Pete Townshend's Music Catalog and Other Rights Acquired by Primary Wave Music in Nine-Figure Deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Apr 2026 | Bertelsmann (BMG) | Concord (Great Mountain Partners affiliates) | merger of BMG and Concord, including both companies' publishing and recorded catalogsA merger, not a catalog sale. Bertelsmann owns about 67% and Great Mountain affiliates about 33% plus a one-time cash payment of $1.16 billion. Completed September 1, 2026. | Undisclosed | Music Business Worldwide \u2014 BMG and Concord confirm merger, with Bertelsmann as majority-owner",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Mar 2026 | Primary Wave Music | Francisco Partners | Kobalt Music Group: worldwide publishing operations, owned copyright catalog and AMRAA company acquisition. Announced March 2026 and closed in July 2026. | north of $1.5 billion (Billboard estimate) | Music Business Worldwide \u2014 Confirmed: Primary Wave Music to acquire Kobalt from Francisco Partners",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Sep 2023 | Litmus Music (backed by Carlyle) | Katy Perry | her stake in master royalty income and publishing for five albums (2008\u20132020) | around $225 million (reported) | Music Business Worldwide \u2014 Katy Perry sells music rights to Litmus Music in $220m+ deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Sep 2023 | Concord | Round Hill Music Royalty Fund (London-listed) | 51 catalogs, over 150,000 songs, plus a stake in the Carlin catalogTakeover offer of $1.15 per share. Completed November 2023. | approximately $468.8 million | Music Business Worldwide \u2014 Concord set to buy Round Hill's UK-listed royalty fund in a huge $468.8m deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Sep 2022 | Concord | Phil Collins, Mike Rutherford and Tony Banks (Genesis) | publishing and recorded music income for the three members' solo work and GenesisExcludes Peter Gabriel's and Steve Hackett's shares. | over $300 million (reported) | Music Business Worldwide \u2014 Phil Collins, Mike Rutherford, and Tony Banks of Genesis sell rights to Concord in $300m deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2022 | Hipgnosis Songs Capital (Hipgnosis and Blackstone) | Justin Timberlake | 100% of his song catalog (writer and publisher share) | just above $100 million (reported) | Variety \u2014 Justin Timberlake Sells Song Catalog to Hipgnosis for 'Just Above' $100 Million",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Feb 2022 | Universal Music Publishing Group | Sting | entire song catalog, solo and The Police | north of $300 million (reported) | Music Business Worldwide \u2014 Sting sells song catalog to Universal for $300m+",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Feb 2022 | Spirit Music Group | Jason Aldean | 90% of artist share of masters (nine albums), plus neighboring rights and SoundExchange royaltiesResold to BMG in 2025 (see below). | upwards of $100 million (reported) | Music Business Worldwide \u2014 Spirit Music Group buys Jason Aldean masters in $100m+ deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Oct 2021 | Chord Music Partners (KKR with Dundee Partners) | Kobalt Capital (KMR Music Royalties II) | portfolio of over 62,000 copyrightsPrice confirmed by Kobalt Capital. | approximately $1.1 billion | Music Business Worldwide \u2014 Confirmed: Kobalt sells catalog to new KKR venture, Chord, for $1.1 billion",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Dec 2020 | Primary Wave Music | Stevie Nicks | 80% interest in her publishing copyrights | 80% stake in copyrights valued at about $100 million (reported, per the Wall Street Journal) | Music Business Worldwide \u2014 Primary Wave buys majority stake in Stevie Nicks publishing catalog for around $80m",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Nov 2020 | Hipgnosis Songs Fund | Kobalt Capital (KMR Music Royalties I fund) | 42 catalogs, over 33,000 songsHipgnosis stated an 18.3x blended multiple on historic annual income. | $322.9 million | Music Business Worldwide \u2014 Hipgnosis Songs Fund buys huge catalog from Kobalt in $322.9m acquisition",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Nov 2020 | Shamrock Capital | Ithaca Holdings (Scooter Braun) | masters of Taylor Swift's first six albums, plus music videos and album artwork | about $300 million (reported) | Music Business Worldwide \u2014 Confirmed: Taylor Swift masters sold by Scooter Braun to Shamrock",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "This tracker lists 52 publicly reported music catalog acquisitions from 2019 to 2026.",
+   "reason": "SPACE's own count of the rows in the tracker.",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Deezer | over 120 million tracksH1 2026 subscriber source: https://www.musicbusinessworldwide.com/deezers-direct-subscribers-grow-to-5-8m-in-h1-2026-but-total-subscriber-base-falls-to-8-9m/ . Daily deliveries (Deezer Newsroom): about 90,000 fully AI-generated tracks delivered per day, more than 50% of all daily uploads at peak in June 2026 (Jul 21, 2026, https://newsroom-deezer.com/2026/07/ai-music-exceeds-50-percent-daily-uploads-deezer/). Earlier: nearly 75,000 AI tracks per day, 44% of daily uploads, and 13.4 million AI tracks detected in 2025 (Apr 20, 2026, https://newsroom-deezer.com/2026/04/ai-generated-tracks-represent-44-of-new-uploaded-music/). Deezer does not state a total tracks-delivered-per-day number; the 50% share implies roughly 180,000 at peak, but that is our arithmetic, not a Deezer figure. AI tracks are 1-3% of streams. | 9.1 million total subscribers (Dec 31, 2025); 8.9 million total and 5.8 million direct subscribers (H1 2026, to June 30, 2026) | Deezer offers page, 'Compare all plans' tableDeezer investor relations key figures page (9.1M); Music Business Worldwide reporting Deezer's H1 2026 results of July 28, 2026 (8.9M / 5.8M)",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (marketing/growth-20260930/data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "SoundCloud | over 400 million tracksIncludes user uploads (DJ sets, demos, remixes), so not comparable with licensed-catalog counts. The soundcloud.com/company page states no numbers. | 40 million active creators and 40 million active listeners (as stated on page in Sep 2026, undated) | SoundCloud guide 'How to Promote Music on SoundCloud' (soundcloud.com)Same SoundCloud page",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (marketing/growth-20260930/data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Pandora | Not publishedPandora's About page (checked Sep 2026) states no catalog size, and no official current track count was found. MAUs fell 7% year over year, from 42.7M. | 39.8 million monthly active users; about 5.6 million self-pay subscribers, Pandora Plus and Premium (June 30, 2026) | CatalogSiriusXM Q2 2026 earnings release (Form 8-K, SEC)",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (marketing/growth-20260930/data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jul 2026 | Pophouse Entertainment | Iron Maiden | 50% stake in publishing and master rights, plus name/image/likeness (incl. 'Eddie') | Undisclosed | Music Business Worldwide \u2014 Iron Maiden sells stake in catalog, name, image & likeness rights to Pophouse",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jul 2026 | Influence Media Partners (with BlackRock-managed funds) | Anthem Entertainment | substantially all assets: publishing catalogs (24,000+ released songs), film & TV publishing, master recordingsExpected to close Q4 2026. MBW had earlier reported the offer at a little over $650 million. | over $600 million | Music Business Worldwide \u2014 Confirmed: Influence Media Partners to acquire Anthem Entertainment catalogs for over USD $600M",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2026 | Sony Music Publishing (with a Sony Music Group/GIC venture) | Blackstone (Recognition Music Group) | Recognition's entire catalog, shares in over 45,000 songsFinancial terms not disclosed. Billboard's sources put the catalog nearer the $2 billion range. Recognition is the former Hipgnosis Songs Fund portfolio. | $3.5 billion to $4 billion (reported by Bloomberg) | Music Business Worldwide \u2014 Sony Music Publishing confirms agreement to acquire Blackstone's Recognition Music Group catalog, encompassing over 45,000 songs",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2026 | Warner Music Group (via its joint venture with Bain Capital) | Red Hot Chili Peppers | recorded music catalog, 13 studio albums (1984\u20132022)First reported by The Hollywood Reporter, which cited $350 million. | more than $300 million (reported) | Music Business Worldwide \u2014 Red Hot Chili Peppers sells recorded music catalog to Warner Music Group for $300 million+",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Mar 2026 | HarbourView Equity Partners | Quincy Jones estate | select recorded music and publishing assets, ancillary rights, name/image/likeness partnership | Undisclosed | Music Business Worldwide \u2014 Quincy Jones estate sells catalog and ancillary rights to HarbourView",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Mar 2026 | Pophouse Entertainment | BMG and the Tina Turner estate | majority stake in Tina Turner's music interests (artist share of recordings, writer's share, neighboring rights) and NIL rightsBMG keeps a significant minority stake. | Undisclosed | Music Business Worldwide \u2014 Tina Turner music interests acquired by Pophouse in 'strategic transaction' with BMG",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Feb 2026 | Sony Music Group | Blackstone (Recognition Music Group) | tranche of publishing rights and some master royalty streams (incl. Jeff Bhasker and Jack Antonoff works)Reported by Billboard. | more than $200 million (reported) | Music Business Worldwide \u2014 Blackstone sells part of Recognition Music catalog to Sony Music for over $200m (report)",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Nov 2025 | HarbourView Equity Partners | Slipknot | majority stake in catalog (publishing and masters; no future works)Figure first reported by Billboard in August 2025. | about $120 million (reported) | Music Business Worldwide \u2014 Slipknot sell majority stake in catalog to HarbourView Equity Partners",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Sep 2025 | Reservoir Media | Miles Davis estate | about 90% of Miles Davis' music publishing and of the estate's income from his recordingsTerms not disclosed. Press estimates put it in the $40\u201360 million range. Sony retains the classic recordings. | Undisclosed | Music Business Worldwide \u2014 Reservoir acquires Miles Davis publishing catalog",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Sep 2025 | BMG | Spirit Music Group | Jason Aldean's recorded catalog and neighboring rights, plus rights from 22 other artists and songwriters (1,000+ songs)BMG called it its largest single catalog acquisition investment. | around $250 million (reported) | Music Business Worldwide \u2014 BMG acquires Jason Aldean's recorded catalog plus tranche of other rights in $250m deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2025 | Taylor Swift | Shamrock Capital | masters of her first six albumsPrice not disclosed. MBW described it as a nine-figure sum. Billboard's sources said Swift paid close to the roughly $360 million Shamrock had paid. | Undisclosed | Music Business Worldwide \u2014 Taylor Swift buys back master rights to first six albums from Shamrock Capital",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2025 | Round Hill Music | Terry Shaddick, Linus Eklow, Carmine Appice, Dirty Heads, Al Stewart | publishing catalogs (Shaddick, Eklow, Appice, Dirty Heads) and selected Al Stewart master rightsSeveral deals announced together. The figure is the combined value. | upwards of $25 million combined (reported) | Music Business Worldwide \u2014 Round Hill, with $1.1bn music portfolio, strikes flurry of catalog acquisitions",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Apr 2025 | Influence Media Partners | DJ Khaled | interest in recorded music and publishing catalog, plus two joint venturesThe reported figure covers the whole package, not the catalog alone. | low nine figures (reported) | Variety \u2014 DJ Khaled Strikes Nine-Figure Deal With Influence Media for Music Catalog and Two New Joint Ventures",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Mar 2025 | Primary Wave | The Notorious B.I.G. estate | 50% interest in publishing, recordings and certain name/image/likeness rights | deal valued the estate at $200 million (reported by the Wall Street Journal) | Music Business Worldwide \u2014 Primary Wave acquires stake in Biggie Smalls catalog in deal valuing Notorious B.I.G. estate at $200m",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Feb 2025 | Warner Music Group | Providence Equity Partners | controlling stake in Tempo Music Investments (rights incl. Wiz Khalifa, Tyler Joseph, Florida Georgia Line, Jonas Brothers)Providence keeps a minority stake. | north of $450 million (reported) | Music Business Worldwide \u2014 Confirmed: Warner buys majority stake in Tempo",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Oct 2024 | Sony Music | Pink Floyd | recorded music catalog, neighboring rights, name and likeness (publishing excluded)First reported by the Financial Times. | approximately $400 million (reported) | Music Business Worldwide \u2014 Sony strikes deal to acquire Pink Floyd catalog in $400 million deal, say sources",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Sep 2024 | Litmus Music | Opus Music Group | company owning rights in Juice WRLD, Ozuna, Maluma and Rauw Alejandro catalogsBillboard had reported an asking price above $200 million. | Undisclosed | Music Business Worldwide \u2014 Litmus Music acquires Opus, owner of Juice WRLD and Maluma rights, after extending credit facility to $400m",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jul 2024 | Blackstone | Hipgnosis Songs Fund shareholders | London-listed fund with 138 catalogs, rights in more than 40,000 songsPublic takeover completed after a bidding contest with Concord. The fund was later renamed Recognition Music Group. | $1.584 billion ($1.31 per share in cash) | Music Business Worldwide \u2014 Blackstone's Hipgnosis Songs Fund is no longer a publicly traded company",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jun 2024 | Sony Music | Queen (band members and Queen companies) | recording and publishing rights, royalties from prior Disney and UMG deals, name and likeness; excludes live performanceFirst reported by Hits, citing sources. MBW later reported Apollo as a co-funder. | \u00a31 billion (about $1.27 billion) (reported) | Music Business Worldwide \u2014 Queen catalog to be acquired by Sony Music in $1.27bn deal (report)",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Apr 2024 | Pophouse Entertainment | KISS | song catalog, artist share of masters, publishing, brand name, image and likeness | more than $300 million (reported by Bloomberg and AP) | Music Business Worldwide \u2014 KISS sells song catalog, name and IP to Pophouse, company behind ABBA Voyage, in $300m deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Feb 2024 | Sony Music Group | Michael Jackson estate | 50% of Michael Jackson's publishing (including the Mijac catalog) and recorded mastersExcludes 'MJ' Broadway musical royalties. A California appeals court cleared the deal in August 2024. | at least $600 million for the stake, valuing the catalog at $1.2 billion or more (reported) | Variety \u2014 Sony Music Acquires Major Stake in Michael Jackson Catalog, Valued at $1.2 Billion-Plus",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Feb 2024 | Universal Music Group (minority) and Dundee Partners (majority) | KKR | KKR's majority stake in Chord Music Partners (60,000+ copyrights); UMG took a 25.8% interest | $240 million for UMG's 25.8% stake; Chord valued at $1.85 billion | Music Business Worldwide \u2014 Universal Music buys $240m stake in Chord Music Partners",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jan 2023 | Hipgnosis Songs Capital (Hipgnosis and Blackstone) | Justin Bieber | publishing copyrights, master recording and neighboring rights interests in 290+ titles released before 2022UMG retains ownership of the masters; the buyer receives Bieber's artist royalties. | about $200 million (reported, per the Wall Street Journal) | Music Business Worldwide \u2014 Done deal: Justin Bieber sells catalog to Hipgnosis' Blackstone fund",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Feb 2022 | Universal Music Group | Neil Diamond | entire song catalog and all master recordings, including 110 unreleased tracksTerms not disclosed. Billboard estimated a valuation of about $145 million. | Undisclosed | Music Business Worldwide \u2014 Neil Diamond sells complete song catalog and all master recordings to Universal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jan 2022 | Sony Music Entertainment | Bob Dylan | entire recorded music catalog since 1962, plus rights to multiple future releasesAgreement concluded July 2021, announced January 2022. | $150 million to $200 million (reported) | Variety \u2014 Bob Dylan Sells Recorded-Music Catalog to Sony Music",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jan 2022 | Warner Chappell Music | David Bowie estate | publishing catalog spanning six decades | upward of $250 million (reported) | Variety \u2014 David Bowie's Estate Sells His Publishing Catalog to Warner Chappell",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Dec 2021 | BMG and KKR | ZZ Top | entire music interests: publishing plus recorded and performance royalty income | around $50 million (reported) | Variety \u2014 ZZ Top Sells Catalog to BMG and KKR for Around $50 Million",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Dec 2021 | Sony Music Group | Bruce Springsteen | recorded music and publishing catalogsMBW's sources put the total above $550 million. Eldridge Industries co-funded the publishing purchase. | about $500 million (reported) | Variety \u2014 Bruce Springsteen Sells Catalog to Sony Music",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Nov 2021 | BMG | M\u00f6tley Cr\u00fce | recorded music catalog (nine studio albums plus live and compilation releases) | around $90 million (reported) | Music Business Worldwide \u2014 BMG buys M\u00f6tley Cr\u00fce recordings catalog for around $90 million",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Oct 2021 | BMG | Tina Turner | artist's share of recordings, writer's share of publishing, neighboring rights, name/image/likeness | around $50 million (reported) | Music Business Worldwide \u2014 BMG buys bundle of Tina Turner rights in music's latest big-money deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jun 2021 | Reservoir Media | Tommy Boy Music (Tom Silverman) | record label and publishing company, 6,000+ master recordingsDisclosed in an SEC filing by Roth CH Acquisition Co. II, the SPAC merging with Reservoir. | about $100 million | Music Business Worldwide \u2014 Reservoir buys Tommy Boy Music in $100m deal",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2021 | Hipgnosis Songs Fund | Red Hot Chili Peppers | song catalog (publishing) | upwards of $140 million (reported) | Variety \u2014 Red Hot Chili Peppers to Sell Song Catalog to Hipgnosis for Upwards of $140 Million",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Mar 2021 | Sony Music Publishing | Paul Simon | complete song catalog, including Simon & Garfunkel eraTerms not disclosed. Later press coverage cited a figure around $250 million from sources. | Undisclosed | Music Business Worldwide \u2014 Paul Simon sells song catalog to Sony Music Publishing",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jan 2021 | Hipgnosis Songs Fund | Neil Young | 50% of the copyright and income interests in his song catalog (1,180 songs)Terms not disclosed. Press estimates conflicted, from about $50 million (Variety source, disputed) to around $150 million (MBW). | Undisclosed | Billboard \u2014 Neil Young Sells 50% of Song Catalog to Hipgnosis",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jan 2021 | Hipgnosis Songs Fund | Shakira | 100% of publishing rights, publisher and writer's share (145 songs) | Undisclosed | Music Business Worldwide \u2014 Hipgnosis buys 100% of Shakira's publishing catalog, spanning 145 songs",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Dec 2020 | Universal Music Publishing Group | Bob Dylan | entire song catalog, 600+ copyrights (publisher and writer shares) | between $300 million and $400 million (reported, industry sources) | Music Business Worldwide \u2014 Universal buys Bob Dylan publishing rights, acquiring catalog worth hundreds of millions of dollars",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Oct 2019 | Hipgnosis Songs Fund | Timbaland | 100% of producer royalties across a catalog of 108 albums and songs | Undisclosed | Music Business Worldwide \u2014 Hipgnosis acquires Timbaland catalog",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Jun 2019 | Ithaca Holdings (Scooter Braun) | Big Machine Label Group (Scott Borchetta and shareholders) | record label and publishing operation, including masters of Taylor Swift's first six albumsA company acquisition that included a major artist masters catalog. | more than $300 million (reported, per the Wall Street Journal) | Variety \u2014 Scooter Braun's Ithaca Holdings Acquires Big Machine Label Group",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "May 2019 | Primary Wave Music Publishing | Whitney Houston estate | 50% stake in estate assets: music and film royalties, merchandise, name and likeness rights | about $7 million for the 50% stake; estate valued at $14 million (reported) | Music Business Worldwide \u2014 Primary Wave Music Publishing acquires 50% stake in Whitney Houston Estate",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "12.75x historical three-year average net income | Hipgnosis Songs Fund's first annual report said its first 12 catalogs (\u00a3120m) 'represented a blended acquisition multiple of 12.75x historical three year average net income'Hipgnosis Songs Fund's first acquisitions, June 2018 to March 2019 | Jun 2019 | Music Business Worldwide \u2014 Hipgnosis already owns over 5,000 songs \u2013 with another $1bn-plus of deals in its sights",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "12.56x annual net income | Hipgnosis Songs Fund report: since IPO, catalogs acquired or under exclusivity with a total value of \u00a3387m 'represents an aggregate multiple of 12.56x annual net income'All Hipgnosis catalogs acquired or under exclusivity from IPO to mid-2019 | Jun 2019 | Music Business Worldwide \u2014 Hipgnosis already owns over 5,000 songs \u2013 with another $1bn-plus of deals in its sights",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "18.3x historic annual income | Hipgnosis Songs Fund said the $322.9m it paid for Kobalt Capital's first fund 'represents a 18.3X blended acquisition multiple on the catalog's historic annual income'Hipgnosis purchase of 42 catalogs (33,000+ songs) from Kobalt Capital | Nov 2020 | Music Business Worldwide \u2014 Hipgnosis Songs Fund buys huge catalog from Kobalt in $322.9m acquisition",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "15.32x (blended acquisition multiple) | Hipgnosis Songs Fund results: cumulative expenditure of about $2bn since its 2018 IPO 'represents an average/blended acquisition multiple of 15.32x'All Hipgnosis Songs Fund acquisitions from 2018 to early 2021 | Jun 2021 | Music Business Worldwide \u2014 Hipgnosis Songs Fund now owns a music catalog worth over $2.2 billion",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "17.96x historical annual NPS | Hipgnosis Songs Fund's $2.21bn independent portfolio valuation 'reflected a multiple of 17.96x historical annual net publisher share income'Fair-value multiple of the whole Hipgnosis portfolio. This is a valuation, not a purchase price. | Jun 2021 | Music Business Worldwide \u2014 Hipgnosis Songs Fund now owns a music catalog worth over $2.2 billion",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "16.2x historic annual net revenues | Round Hill Music Royalty Fund said its acquisitions 'were completed at a blended multiple of 16.2x historic annual net revenues'38 catalogs plus a 29.1% stake in RH Carlin Holdings, about $342m invested as of June 30, 2021 | Sep 2021 | Music Business Worldwide \u2014 Round Hill's UK Fund has spent $342m on acquisitions \u2013 and is buying catalogs at a multiple of 16.2x",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "17.9x historic three-year NPS | Round Hill Music Royalty Fund said copyrights bought since July 2021 'were acquired at an average historic three-year net publisher's share multiple of 17.9x'5,600+ compositions bought with $86.5m of C-share proceeds plus credit facility | Feb 2022 | Music Business Worldwide \u2014 Round Hill's UK fund has acquired 5,600 songs since July, paying an average multiple of 17.9x",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "14.7x NPS/NLS (average acquisition multiple) | Reservoir Media's investor factsheet says its average acquisition multiple has been 14.7x, and that it has on average reduced the 'effective multiple' by 2.3x afterwardsReservoir's catalog acquisitions in recent years, measured on Net Publisher Share / Net Label Share | Apr 2023 | Music Business Worldwide \u2014 Reservoir Media has spent over $695m on catalogs to date (and 5 other things we learned about the company from its new Investor Factsheet)",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "18.3x NLS at purchase; 11.7x effective | Reservoir Media's investor factsheet: a $101.3m acquisition in 2021 was bought at 18.3x Net Label Share ($5.5m); NLS rose to $8.7m in FY2022, cutting the effective multiple to 11.7xA single 2021 recorded-music acquisition by Reservoir, whose name the factsheet does not give | Apr 2023 | Music Business Worldwide \u2014 Reservoir Media has spent over $695m on catalogs to date (and 5 other things we learned about the company from its new Investor Factsheet)",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "19.56x annual net revenue | Citrin Cooperman's independent valuation of Round Hill Music Royalty Fund used 'a multiple of 19.56X annual net revenue', which it said matched the average multiple paid for publishing catalogs in comparable H2 2022\u2013H1 2023 dealsValuation of Round Hill fund assets (incl. Carlin stake) at about $654.75m. Concord's accepted offer of $468.8m was lower. | Sep 2023 | Music Business Worldwide \u2014 Concord is ready to pay $468.8m to buy Round Hill's UK fund. How did it reach that price?",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "10.2x (masters, 10+ yrs); 12.1x (publishing, 10+ yrs) | Duetti's Music Finance Index H2 2026 (a survey of its industry panel) lists perceived multiples for catalogs older than 10 years of 10.2x for masters and 12.1x for publishing, based on annual revenueSell-side expectations for independent catalogs. Younger catalogs get lower multiples, e.g. 3.8x\u20135.1x for masters aged 6\u201324 months. | Jul 2026 | Duetti \u2014 Music Finance Index H2 2026",
+   "reason": "Deal tracker row: price and facts as reported by the publication in the row's own source cell; researched 2026-09-30 (marketing/growth-20260930/data/deals.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Spotify | over 100 million tracksCompany Info page also lists 7 million podcast titles and 700,000 audiobooks. | 777 million monthly active users and 300 million Premium subscribers (quarter ended June 30, 2026) | Spotify For the Record, Company Info pageSpotify Q2 2026 shareholder update, Form 6-K exhibit 99.1 (SEC)",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Apple Music | over 100 million songsApple announced the 100 million song milestone in its Newsroom on Oct 3, 2022 (https://www.apple.com/newsroom/2022/10/celebrating-100-million-songs/). Apple does not publish current Apple Music subscriber numbers. | Not published | apple.com Apple Music product page",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Amazon Music | 100 million songsFigure refers to the Amazon Music Unlimited catalog. Amazon does not publish Amazon Music subscriber numbers. | Not published | Amazon Music Unlimited landing page (US): '100 million songs ad-free and on demand'",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "YouTube Music | over 100M songs, videos, live performances, and moreThe 100M figure mixes songs with videos and live performances, so it is not a pure track count. The subscriber figure combines YouTube Music Premium and YouTube Premium and includes trials. No newer official total was found. | 125 million YouTube Music and Premium subscribers globally, including trials (announced Mar 5, 2025) | YouTube Music Premium page (US)YouTube Official Blog, Lyor Cohen",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "TIDAL | over 180 million tracksTIDAL does not publish subscriber numbers. | Not published | TIDAL About page: 'over 180+ million tracks'; site footer: 'over 180 million songs'",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Qobuz | over 100 million songs | 1.2 million monthly active users (FY2025, published Jun 16, 2026) | Qobuz Discover page (US)Qobuz press release, 'Qobuz Delivers 45.7% Revenue Growth in 2025'",
+   "reason": "Platform table row: figure as stated by the platform or filing in the row's own source cell (data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "United States | $11.99/month | $15.99/month | $19.99/month | $5.99/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "United Kingdom | \u00a311.99/month | \u00a315.99/month | \u00a319.99/month | \u00a35.99/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "France | 11,99 \u20ac/month | 15,99 \u20ac/month | 19,99 \u20ac/month | 5,99 \u20ac/month (promo: 1 \u20ac/month for 6 months) | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Germany | 11,99 \u20ac/month | 15,99 \u20ac/month | 19,99 \u20ac/month | 5,99 \u20ac/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Sweden | 119 kr/month | 159 kr/month | 209 kr/month | 59 kr/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Canada | CAD $11.99/month | CAD $15.99/month | CAD $19.99/month | CAD $5.99/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Australia | AU$13.99/month | AU$17.99/month | AU$21.99/month | AU$6.99/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Spain | 11,99 \u20ac/month | 15,99 \u20ac/month | 19,99 \u20ac/month | 5,99 \u20ac/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Italy | \u20ac11,99/month | \u20ac15,99/month | \u20ac19,99/month | \u20ac5,99/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Netherlands | \u20ac 11,99/month | \u20ac 15,99/month | \u20ac 19,99/month | \u20ac 5,99/month | Deezer offers page",
+   "reason": "Deezer price row: prices as shown on the Deezer offers page linked in the row (data/deezer-prices.json).",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "The other 12 prices were not disclosed.",
+   "reason": "SPACE's own count of the rows in the tracker.",
+   "reviewed": "2026-09-30"
+  },
+  {
+   "text": "Spotify, Apple Music, Amazon Music, Deezer and Qobuz each say on their own pages that they offer 100 million tracks or more.",
+   "reason": "Summary of the table directly below, where each platform's figure links to its own page (data/platform-catalogs.json).",
+   "reviewed": "2026-09-30"
+  }
+ ]
+}

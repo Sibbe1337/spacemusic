@@ -1,0 +1,16 @@
+{
+  "name": "space-intake-notifications",
+  "main": "entry.mjs",
+  "account_id": "420086457a566181f87bab202f320739",
+  "compatibility_date": "2026-09-15",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": { "SEND_ENABLED": "true" },
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "space-intake-notifications",
+    "database_id": "c8fee9f4-8312-4443-a70c-130a326a2774"
+  }]
+}

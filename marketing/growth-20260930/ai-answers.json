@@ -1,0 +1,1103 @@
+{
+ "release": "tmp/growth-preview-v1-20260930",
+ "inputTokens": 95594,
+ "estUsd": 0.004,
+ "results": [
+  {
+   "path": "/blog/ambient-lo-fi-music-catalog-buyers/",
+   "title": "Ambient and Lo-Fi Music Catalog Buyers Compared | SPACE",
+   "h1": "Companies That Buy Ambient and Lo-Fi Music Catalogs: A Comparison",
+   "opening": "If you want to sell an ambient or lo-fi music catalog, start by comparing the transaction, not just the company name. SPACE offers direct catalog purchases; Duetti and Limbo also publish acquisition options. Royalty Exchange connects sellers with investors, while beatBread offers royalty advances rather than a conventional catalog buyout. Your rights, earnings and preferred deal structure determine which conversation is relevant. Disclosure: SPACE publishes this guide and is one of the companies included. This is not an independent ranking or a test of private offers. We compare publicly described services, identify questions to ask and do not claim that any company will accept your catalog or pay the highest price. Sources were checked on September 7, 2026.",
+   "answers": 0.44,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/beatbread-vs-catalog-buyers/",
+   "title": "beatBread vs Catalog Buyers: Upfront Cash Compared | SPACE",
+   "h1": "beatBread vs Catalog Buyers: Which Pays More Upfront?",
+   "opening": "There is no verified across-the-board winner. To compare beatBread with a catalog buyer, ask how much cash is payable at closing, how much arrives later, and which royalties you give up. A larger advance is not automatically a better deal, and a permanent sale is not automatically more profitable. Compare actual written proposals for the same tracks and your own share of their income. Disclosure: SPACE publishes this guide and buys music catalogs. This is a sourced explanation, not an independent ranking or a test of private offers. Public product descriptions were checked on September 7, 2026. Examples are illustrations, not offers or earnings forecasts.",
+   "answers": 0.76,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/case-study-ambient-producer-catalog-sale/",
+   "title": "Ambient Producer Catalog Sale: An Illustrative Walkthrough | SPACE Blog",
+   "h1": "Ambient Producer Catalog Sale: An Illustrative Walkthrough",
+   "opening": "Reviewed and updated by SPACE Editorial Team in September 2026. A catalog sale for an ambient producer starts with a rights and metadata audit, then a review of royalty statements, rights ownership, revenue consistency and concentration in top tracks, and any offer depends on that individual review. Illustrative example, not a SPACE transaction: this walkthrough uses a hypothetical ambient producer, not a real seller. The inputs are simple assumptions chosen to show how a catalog sale review works. There is no deal, buyer or price in this article.",
+   "answers": 0.52,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/future-of-ai-in-ambient-music/",
+   "title": "The Future of AI in Ambient Music: Threat or Opportunity? | SPACE Blog",
+   "h1": "The Future of AI in Ambient Music: Threat or Opportunity?",
+   "opening": "Reviewed and updated by SPACE Editorial Team in September 2026. AI is both a threat and an opportunity for ambient music: Deezer reported in April 2026 that it receives nearly 75,000 fully AI-generated tracks a day but that they made up only 1-3% of total streams, and some human creators use AI as a collaborative tool. Artificial intelligence has impacted all music genres, but its relationship with ambient music is particularly complex. The meditative, atmospheric nature of ambient music makes it both especially vulnerable to AI generation and uniquely positioned to benefit from human-AI collaboration.",
+   "answers": 0.88,
+   "specific": "specific"
+  },
+  {
+   "path": "/blog/how-to-register-your-ambient-music-with-pros/",
+   "title": "How to Properly Register Your Ambient Music with PROs for Maximum Royalties | SPACE Blog",
+   "h1": "How to Properly Register Your Ambient Music with PROs for Maximum Royalties",
+   "opening": "Reviewed and updated by SPACE Editorial Team in September 2026. To register ambient music with a PRO, join one as both writer and publisher, then register each work with all title versions, every writer and publisher with their ownership shares, and ISRC codes, so performance royalties can be collected. For ambient music creators, proper registration with Performance Rights Organizations (PROs) is often overlooked but critically important. Ambient music's widespread use in commercial spaces, meditation apps, and streaming playlists means significant performance royalties may be waiting to be collected.",
+   "answers": 0.85,
+   "specific": "specific"
+  },
+  {
+   "path": "/blog/independent-record-label-funding-options/",
+   "title": "Independent Record Label Funding Options | SPACE",
+   "h1": "Independent Record Label Funding: Catalog Sales, Advances and Loans",
+   "opening": "An independent label looking for capital has two separate decisions: how much cash it needs now, and which future income or rights it can afford to commit. Selling an interest in an existing catalog, taking a royalty advance and borrowing money are not interchangeable. Compare the cash available after costs, the income left to run the label and the obligations in the agreement, not just the headline amount. SPACE's published offer is a direct catalog purchase, not a loan or royalty-advance product. Artists, producers and labels across genres can request an individual review of revenue-generating catalog rights. The application and initial review are free, with no obligation to accept an offer. See the pricing and offer policy.",
+   "answers": 0.35,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/",
+   "title": "Resources for your next catalog decision | SPACE",
+   "h1": "Resources for your next catalog decision",
+   "opening": "Find a clear next step for your catalog. Start with a guide, prepare for a review, or compare your options. Previously published articles, kept available in their original locations.",
+   "answers": 0.41,
+   "specific": "vague"
+  },
+  {
+   "path": "/blog/maximizing-your-lo-fi-catalog-value/",
+   "title": "Maximizing Your Lo-Fi Music Catalog Value: Expert Strategies for 2025 | SPACE Blog",
+   "h1": "Maximizing Your Lo-Fi Music Catalog Value: Expert Strategies for 2025",
+   "opening": "Reviewed and updated by SPACE Editorial Team in September 2026. The market for lo-fi music catalogs has evolved significantly in recent years. With the rise of streaming platforms and the genre's growing popularity for work, study, and relaxation, lo-fi music has become a valuable asset class for musicians and investors alike.",
+   "answers": 0.04,
+   "specific": "vague"
+  },
+  {
+   "path": "/blog/music-catalog-offer-checklist/",
+   "title": "Music Catalog Offer Checklist: Before You Sign | SPACE",
+   "h1": "Music Catalog Offer Checklist: Questions Before You Sign",
+   "opening": "Before accepting a music catalog offer, compare the rights transferred, the term, the money available at closing, the payment conditions and the obligations that remain yours. A larger headline price is not necessarily the better offer if it covers more rights, lasts longer or depends on uncertain future payments. Use this checklist to prepare questions, not as a substitute for advice on your contract. SPACE is a direct buyer and has a commercial interest in an acquisition. Get independent legal advice from a qualified music lawyer and tax advice appropriate to your circumstances before signing. No universal fair price, tax outcome or best deal structure is assumed here.",
+   "answers": 0.51,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/music-catalog-sale-documents-checklist/",
+   "title": "Music Catalog Sale Documents: A Seller's Checklist | SPACE",
+   "h1": "Music Catalog Sale Documents: A Seller's Checklist",
+   "opening": "A music catalog sale starts with evidence of what you own and what that ownership earns. Prepare royalty statements, a track-and-rights schedule, relevant agreements and a short list of unresolved issues. Keep the original files: a summary spreadsheet helps a reviewer navigate the evidence, but does not replace it. This checklist is for independent artists, producers, labels and catalog owners preparing for an initial review. The exact documents depend on the rights, countries and transaction. It is not a legal opinion, a promise of eligibility or a requirement to upload everything in the first application. SPACE is a prospective direct buyer, not your independent adviser.",
+   "answers": 0.75,
+   "specific": "specific"
+  },
+  {
+   "path": "/blog/royalty-exchange-alternatives/",
+   "title": "Royalty Exchange Alternatives: Sell Without an Auction | SPACE",
+   "h1": "Royalty Exchange Alternatives: How to Sell Your Music Rights Without an Auction",
+   "opening": "You can explore a music rights sale without a public auction by requesting a purchase proposal from a buyer such as SPACE or Duetti, or discussing an acquisition through Limbo. If your priority is keeping the underlying catalog rather than selling it, an advance is a different option. First decide whether you want to avoid bidding, marketplace exposure or transferring ownership: those are three separate goals. Disclosure: SPACE publishes this guide and is one of the options discussed. It is not an independent ranking or a comparison of private offers. Public sources were checked on September 7, 2026; eligibility and contractual terms must be confirmed with each provider.",
+   "answers": 0.79,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/sell-music-catalog-lump-sum-2026/",
+   "title": "Sell Your Music Catalog for a Lump Sum in 2026 | SPACE",
+   "h1": "How to Sell Your Music Catalog for a Lump Sum in 2026",
+   "opening": "Selling your music catalog for a lump sum means exchanging specified music rights or royalty income for an upfront payment. Start by defining what you own, documenting its earnings and requesting an offer. Before signing, compare the cash you would actually receive with the rights and future income you would give up. You do not necessarily have to sell every track or every right. A sale can cover selected recordings, a percentage interest or a defined income stream. This guide focuses on evaluating that trade-off, rather than promising a particular price for your catalog.",
+   "answers": 0.48,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/streaming-royalties-guide-for-ambient-music/",
+   "title": "The Complete Guide to Streaming Royalties for Ambient Music Producers | SPACE Blog",
+   "h1": "The Complete Guide to Streaming Royalties for Ambient Music Producers",
+   "opening": "Reviewed and updated by SPACE Editorial Team in September 2026. Ambient music faces unique challenges and opportunities in the streaming royalty landscape. With typically longer track lengths and different listening patterns compared to mainstream genres, ambient producers need specialized strategies to maximize their revenue.",
+   "answers": 0.08,
+   "specific": "vague"
+  },
+  {
+   "path": "/blog/what-is-a-blanket-license/",
+   "title": "Blanket Licenses: ASCAP, BMI & SESAC for Musicians | SPACE",
+   "h1": "What Is a Blanket License? ASCAP, BMI & SESAC Explained for Independent Musicians",
+   "opening": "A blanket license lets a business use a defined repertoire under one agreement, within specified rights, uses and territories. In U.S. performing-rights licensing, it generally covers public performances of the compositions or shares represented by the licensor. It does not clear every song or every use of music. Global Music Rights explains its coverage. For independent musicians, the practical question is how those license fees become royalties you can document. This guide explains the U.S. system and what to check before presenting a catalog to a buyer. For a shorter definition, see our blanket license glossary entry.",
+   "answers": 0.84,
+   "specific": "some"
+  },
+  {
+   "path": "/blog/why-selling-partial-rights-makes-sense/",
+   "title": "Why Selling Partial Rights Makes Sense for Independent Ambient Artists | SPACE Blog",
+   "h1": "Why Selling Partial Rights Makes Sense for Independent Ambient Artists",
+   "opening": "Reviewed and updated by SPACE Editorial Team in September 2026. For independent ambient and lo-fi music creators, selling your entire catalog isn't always the best option. Partial rights sales offer a balanced approach that provides immediate capital while preserving long-term creative and financial interests.",
+   "answers": 0.64,
+   "specific": "vague"
+  },
+  {
+   "path": "/brand-facts/",
+   "title": "Brand Facts - SPACE",
+   "h1": "SPACE Brand Facts",
+   "opening": "SPACE buys revenue-generating music catalogs directly from independent artists, producers, labels, and catalog owners. All genres are considered; income, rights and documentation are reviewed individually. An application does not guarantee an offer. These are examples, not an exhaustive genre list. Hip-hop, R&B, pop, rock and other genres are also considered. There is no fixed genre multiple. Any offer depends on documented income, trends, platform mix, rights, contracts and buyer fit.",
+   "answers": 0.35,
+   "specific": "some"
+  },
+  {
+   "path": "/compare/catalog-sale-vs-catalog-loan/",
+   "title": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs — SPACE",
+   "h1": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs",
+   "opening": "A catalog sale exchanges defined rights or royalty interests for a purchase price. A catalog-backed loan creates a repayment obligation secured under the agreement. A royalty advance can use a different structure again: do not assume every upfront payment is a loan. For independent artists and labels in any genre, compare the rights committed, net cash available, future income retained and consequences if royalties fall. SPACE considers direct catalog purchases; it does not offer a loan or royalty-advance product. A catalog sale transfers the interests specified in the agreement. It can cover selected recordings, a defined share or all of the seller's interest in the included catalog. The buyer receives the income attached to the interest purchased, not automatically every royalty the artist or label earns.",
+   "answers": 0.4,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/distrokid-vs-tunecore/",
+   "title": "DistroKid vs. TuneCore: The Best Distributor for Ambient Music Creators — SPACE",
+   "h1": "DistroKid vs. TuneCore: The Best Distributor for Ambient Music Creators",
+   "opening": "Choosing the right digital distributor is one of the most important practical decisions for independent musicians. DistroKid and TuneCore are two of the most popular options, and while they both deliver your music to major streaming platforms, their pricing models, feature sets, and approaches differ significantly. For ambient and meditation music producers who typically release high volumes of content (multiple albums or EPs per year, plus singles), the choice of distributor has real financial implications. A producer releasing 50 tracks per year will pay very different amounts depending on which platform they choose. This comparison examines both services through the specific lens of what ambient and wellness music creators need most. DistroKid operates on a flat annual subscription model, allowing artists to upload unlimited music to major streaming platforms for a fixed yearly fee. It is widely used by independent artists for its speed, simplicity, and unlimited upload model.",
+   "answers": 0.06,
+   "specific": "some"
+  },
+  {
+   "path": "/compare/exclusive-vs-non-exclusive-license/",
+   "title": "Exclusive vs. Non-Exclusive License: Choosing the Right Music Licensing Model — SPACE",
+   "h1": "Exclusive vs. Non-Exclusive License: Choosing the Right Music Licensing Model",
+   "opening": "When licensing your music for commercial use — whether for apps, videos, films, or other media — you'll encounter two fundamental licensing models: exclusive and non-exclusive. This distinction determines whether your music can be used by one licensee or many, and it directly impacts your revenue potential, creative flexibility, and long-term strategy. For ambient and meditation music creators, licensing is often a primary revenue driver, making this decision particularly important. The right model depends on the value of the specific opportunity, the uniqueness of your content, and your overall business strategy. This comparison examines both models to help you make informed licensing decisions that align with your goals. An exclusive license grants a single licensee the sole right to use your music in a specified way, territory, and time period. During the exclusivity period, you cannot license the same music to anyone else for the same type of use.",
+   "answers": 0.32,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/full-buyout-vs-revenue-split/",
+   "title": "Full Buyout vs. Revenue Split: Which Deal Structure Is Right for Your Music? — SPACE",
+   "h1": "Full Buyout vs. Revenue Split: Which Deal Structure Is Right for Your Music?",
+   "opening": "When monetizing your music catalog, two fundamental deal structures emerge: full buyouts and revenue splits. A full buyout means selling your rights for a one-time lump sum — you receive immediate capital but give up all future income from those rights. A revenue split keeps you as a stakeholder, earning an ongoing percentage of the income your music generates. Both structures are common in the music industry, and the right choice depends on your financial situation, your confidence in the catalog's future performance, and your personal goals. For ambient and meditation music creators, this decision carries particular weight because these genres tend to generate stable, long-tail revenue that can compound over years. Selling outright means potentially leaving significant future value on the table, while a revenue split means waiting for gradual income over time. This comparison breaks down the key differences to help you make an informed decision. A full buyout is a one-time transaction where you sell 100% of your music rights (masters, publishing, or both) for a lump sum payment. After the sale, all future revenue from those rights goes to the buyer.",
+   "answers": 0.26,
+   "specific": "some"
+  },
+  {
+   "path": "/compare/",
+   "title": "Music Rights Comparisons — SPACE",
+   "h1": "Comparisons",
+   "opening": "Side-by-side comparisons to help you make informed decisions about your music rights and catalog monetization. Compare full buyout deals and revenue split arrangements for selling your music rights. Learn the pros, cons, and which is best for ambient, lo-fi, and meditation music creators.",
+   "answers": 0.2,
+   "specific": "vague"
+  },
+  {
+   "path": "/compare/major-label-vs-independent/",
+   "title": "Major Label vs Independent Label: Key Differences for Artists — SPACE",
+   "h1": "Major Label vs Independent Label: Key Differences for Artists",
+   "opening": "A major label usually pays for recording, distribution and marketing and typically owns your master recordings in exchange for a royalty, while independent artists keep their masters and most or all revenue after distributor fees. The decision between signing with a major record label and remaining independent is one of the most consequential choices a music creator can make. Major labels (Universal Music Group, Sony Music Entertainment, Warner Music Group) offer unmatched resources, global distribution infrastructure, and marketing muscle. Independent artists retain full ownership, creative control, and a much larger share of revenue per stream. For ambient, lo-fi, and meditation music creators, this decision has unique nuances. These genres thrive on authenticity, niche community building, and long-tail streaming — qualities that often align better with the independent model. However, a label's playlist relationships and sync department connections can accelerate growth. This comparison examines both paths through the lens of what matters most to creators in the ambient and wellness music space. Signing with a major label means entering a contractual agreement where the label finances recording, handles distribution and marketing, and promotes your music through their industry relationships. In exchange, the label typically owns your master recordings and pays you a royalty on revenue.",
+   "answers": 0.8,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/partial-sale-vs-full-sale/",
+   "title": "Partial Sale vs. Full Sale: How Much of Your Catalog Should You Sell? — SPACE",
+   "h1": "Partial Sale vs. Full Sale: How Much of Your Catalog Should You Sell?",
+   "opening": "There is no standard percentage to sell: a partial sale transfers selected recordings or a defined share and leaves you the income from what you keep, while a full sale transfers all of your interest in the agreed catalog. A partial catalog sale can mean selected recordings or a defined share of the rights or royalties you control. A full sale means all of your interest in the agreed catalog, not necessarily every right in every song, and not automatically your future releases. For independent artists and labels across genres, the useful comparison is net cash now versus income, rights and responsibilities retained. Neither route is always better, and keeping a majority percentage does not by itself guarantee licensing or creative control. A partial transaction may cover a subset of recordings, a percentage of an owned interest, or a defined royalty-income interest. Co-ownership is not the structure of every deal. Specify tracks, rights, shares, income streams, territory and duration before comparing prices.",
+   "answers": 0.45,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/self-publishing-vs-publishing-deal/",
+   "title": "Self-Publishing vs. Publishing Deal: Managing Your Composition Rights — SPACE",
+   "h1": "Self-Publishing vs. Publishing Deal: Managing Your Composition Rights",
+   "opening": "Self-publishing means you register as your own publisher and keep 100% of the writer's and publisher's shares, while a publishing deal gives a publisher a share of your publishing income, set by the deal, for administration, sync pitching and international collection. Publishing — the business of managing and monetizing musical compositions — is one of the most misunderstood aspects of the music industry. Every songwriter and composer must decide whether to self-publish (handle all publishing administration personally or through a lightweight admin service) or sign a publishing deal (partner with a music publisher who takes on administration, promotion, and sync pitching in exchange for a share of revenue). For ambient and meditation music creators, this decision impacts how effectively you collect royalties from streaming, public performance, and sync licensing across the globe. Self-publishing gives you maximum control and revenue retention but requires administrative diligence. A publishing deal provides professional support and potential sync opportunities but costs a significant portion of your publishing income. This comparison examines both paths for creators in the ambient and wellness music space. Self-publishing means you act as your own music publisher. You register directly with a PRO as both a songwriter and a publisher, handle all administration, and collect the full publisher's share in addition to the writer's share of your composition royalties.",
+   "answers": 0.68,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/selling-masters-vs-selling-publishing/",
+   "title": "Selling Masters vs. Selling Publishing: Understanding Your Two Assets — SPACE",
+   "h1": "Selling Masters vs. Selling Publishing: Understanding Your Two Assets",
+   "opening": "Every piece of recorded music creates two separate intellectual property assets: the master recording (the actual audio) and the publishing rights (the underlying composition). These are independent assets that can be owned, licensed, and sold separately. When considering a sale, understanding the differences between these two asset classes is critical to making the right decision. Masters and publishing generate revenue through different channels, have different risk profiles, and hold different strategic value. This comparison helps ambient, lo-fi, and meditation music creators understand what they're selling in each case and which asset may be more advantageous to hold or sell based on their specific situation. Selling your master rights transfers ownership of the specific sound recordings you've created. The buyer gains control over how those recordings are distributed, licensed, and monetized across streaming platforms, sync placements, and other commercial uses.",
+   "answers": 0.46,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/space-vs-duetti/",
+   "title": "SPACE vs Duetti: Which Music Catalog Buyer Is Right for You?",
+   "h1": "SPACE vs Duetti: Which Music Catalog Buyer Is Right for You?",
+   "opening": "SPACE considers revenue-generating catalogs across all genres, not only ambient or wellness music. Duetti also works with independent music creators. Compare the specific rights, retained income, conditions and services in a written offer rather than assuming either buyer pays more because of genre or technology. SPACE reviews revenue-generating catalogs from independent artists, producers, labels and catalog owners across all genres. Hip-hop, R&B, pop and rock are considered alongside ambient, lo-fi and electronic music. A review assesses documented income, ownership and the defined interest proposed for sale. Genre alone does not guarantee an offer or exclude an application.",
+   "answers": 0.16,
+   "specific": "some"
+  },
+  {
+   "path": "/compare/space-vs-hipgnosis/",
+   "title": "SPACE vs Hipgnosis Songs Fund: Comparing Music Catalog Buyers",
+   "h1": "SPACE vs Hipgnosis Songs Fund: Comparing Music Catalog Buyers",
+   "opening": "Hipgnosis Songs Fund was a London-listed fund that bought hit catalogs from major artists. Blackstone took it private in 2024, it was renamed Recognition Music Group in 2025, and Sony Music Publishing acquired its catalog in 2026. SPACE reviews catalogs from indie creators, including ambient, lo-fi, and wellness music, with no fixed earnings floor in its offer policy. If you're an indie creator, SPACE is a buyer you can apply to today. SPACE is a direct music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. Built for independent creators, SPACE's offer policy sets no fixed earnings floor, and the application and initial review are free. Creators can sell full or partial rights; the rights they keep are defined in the agreement.",
+   "answers": 0.23,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/space-vs-primary-wave/",
+   "title": "SPACE vs Primary Wave Music: Comparing Music Catalog Buyers for Independent Creators",
+   "h1": "SPACE vs Primary Wave Music: Comparing Music Catalog Buyers for Independent Creators",
+   "opening": "SPACE offers independent catalog owners a direct purchase review. Primary Wave combines catalog investment with artist and estate partnerships. Its public positioning does not establish a universal minimum revenue threshold or exclude every independent artist. For smaller catalogs, compare eligibility and written terms rather than assuming that the biggest company pays the most. SPACE reviews revenue-generating catalogs from independent artists, producers, labels, and catalog owners. Its published genre coverage includes ambient, lo-fi, meditation, electronic, house, wellness, and soundscape music. A review considers the revenue history, documented ownership, and interest offered for sale; neither genre nor catalog size guarantees an offer.",
+   "answers": 0.32,
+   "specific": "some"
+  },
+  {
+   "path": "/compare/space-vs-reservoir/",
+   "title": "SPACE vs Reservoir Media: How Two Music Rights Buyers Compare",
+   "h1": "SPACE vs Reservoir Media: How Two Music Rights Buyers Compare",
+   "opening": "Reservoir Media (NASDAQ: RSVR) is a publicly traded independent music company that acquires publishing and master rights from a mix of established and emerging artists, primarily in mainstream genres. SPACE reviews catalogs from indie creators, including ambient, lo-fi, and wellness music, with no fixed earnings floor in its offer policy. Reservoir is relevant if you have an established mainstream catalog; SPACE is built for niche indie creators. SPACE is a direct music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. It is built for independent creators, with a free application and initial review and no listing fee or commission. SPACE reviews each catalog individually and supports both full and partial rights purchases. A review considers annualized revenue, consistency and trend, platform mix, genre demand and licensing utility, rights ownership, metadata quality and concentration in top tracks.",
+   "answers": 0.63,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/space-vs-round-hill/",
+   "title": "SPACE vs Round Hill Music: What Independent Creators Need to Know",
+   "h1": "SPACE vs Round Hill Music: What Independent Creators Need to Know",
+   "opening": "Round Hill Music is a catalog investor focused on established pop, rock and country songs. In 2023 it sold its London-listed fund, Round Hill Music Royalty Fund, to Concord for $468.8 million, and it continues to manage private funds with over $1.1 billion in catalog value, according to Round Hill. SPACE reviews catalogs from indie creators, including ambient, lo-fi, and wellness music. The comparison shows the difference between institutional and indie-focused catalog buyers. SPACE is a direct music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. Built for independent creators, SPACE provides a simple submission-to-offer process with no auction, listing fee or commission. It supports both full and partial rights purchases, such as 50% or 75% of defined catalog rights. Each catalog is reviewed individually, looking at revenue history, rights ownership, metadata and documentation.",
+   "answers": 0.49,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/space-vs-royalty-exchange/",
+   "title": "SPACE vs Royalty Exchange: Which Is Better for Selling Your Music Catalog?",
+   "h1": "SPACE vs Royalty Exchange: Which Is Better for Selling Your Music Catalog?",
+   "opening": "Royalty Exchange runs an auction-style marketplace where investors bid on your royalties; its commission is set before listing and collected after the auction ends. SPACE buys catalogs directly with no auction, listing fee or commission, and reviews catalogs including ambient, lo-fi, and wellness music. Choose Royalty Exchange if you want competitive bidding; choose SPACE for a direct offer on ambient, meditation or other music. SPACE (spacemusic.io) is a music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. Rather than listing your catalog on a marketplace, SPACE reviews your catalog and makes a direct offer. An initial offer typically follows 5-7 business days after the relevant catalog information is received; payment is by bank transfer after the agreement is complete and the rights transfer requirements are met. SPACE also supports partial sales, such as 50% or 75% of defined catalog rights, so creators keep the share they do not sell.",
+   "answers": 0.75,
+   "specific": "specific"
+  },
+  {
+   "path": "/compare/spotify-vs-apple-music-royalties/",
+   "title": "Spotify vs. Apple Music Royalties: Which Platform Pays More for Ambient Music? — SPACE",
+   "h1": "Spotify vs. Apple Music Royalties: Which Platform Pays More for Ambient Music?",
+   "opening": "Apple Music pays more per stream on average, about one cent per play on individual paid plans according to Apple's 2021 letter to artists, while Spotify reaches more listeners, with 777 million monthly active users at June 30, 2026, according to Spotify. Spotify and Apple Music are the two dominant music streaming platforms globally, and understanding how their royalty structures differ is essential for maximizing your income as an independent artist. While both platforms pay per-stream royalties, their payment models, per-stream rates, and audience demographics differ significantly. For ambient and meditation music creators, these differences have practical implications: the platform where your listeners are concentrated matters more than average per-stream rates, and listener behavior (session length, repeat plays, playlist integration) varies between platforms. This comparison breaks down the royalty economics of each platform to help you understand where your money comes from and how to optimize your earning strategy across both services. Spotify is the world's largest music streaming platform, with 777 million monthly active users and 300 million Premium subscribers as of June 30, 2026, according to Spotify's Q2 2026 report. It uses a pro-rata royalty model where the total royalty pool is divided proportionally among all streams on the platform.",
+   "answers": 0.82,
+   "specific": "some"
+  },
+  {
+   "path": "/compare/sync-licensing-vs-streaming-revenue/",
+   "title": "Sync Licensing vs. Streaming Revenue: Diversifying Your Music Income — SPACE",
+   "h1": "Sync Licensing vs. Streaming Revenue: Diversifying Your Music Income",
+   "opening": "For ambient, lo-fi, and meditation music creators, two primary revenue streams dominate: streaming royalties (the accumulation of micro-payments from platforms like Spotify and Apple Music) and sync licensing fees (one-time or recurring payments for using music in visual media, apps, and other commercial contexts). These revenue streams have fundamentally different economics, risk profiles, and growth trajectories. Streaming revenue is passive, predictable, and scales with listener volume. Sync licensing is active, unpredictable, but can generate dramatically higher per-placement income. Understanding the tradeoffs between these two revenue sources is essential for building a sustainable and diversified music income. Most successful ambient music creators leverage both, but understanding when to prioritize one over the other can significantly impact your total earnings. Sync licensing generates revenue by licensing your music for use in visual media — films, TV shows, commercials, video games, mobile apps, YouTube videos, podcasts, and corporate presentations. Each placement is negotiated individually, and fees vary enormously based on the usage.",
+   "answers": 0.36,
+   "specific": "some"
+  },
+  {
+   "path": "/data/music-catalog-deals/",
+   "title": "Music Catalog Deal Tracker 2019–2026: Public Deals and Prices — SPACE",
+   "h1": "Music Catalog Deal Tracker: Public Deals 2019–2026",
+   "opening": "This tracker lists 52 publicly reported music catalog acquisitions from 2019 to 2026. Every row links to the report it comes from. A price is shown only when the parties or a filing disclosed it (7 deals) or a named publication reported it (33 deals). The other 12 prices were not disclosed. SPACE does not estimate prices. Found an error or a missing deal? Email hello@spacemusic.io with a source.",
+   "answers": 0.45,
+   "specific": "specific"
+  },
+  {
+   "path": "/data/music-catalog-market-2026/",
+   "title": "The Music Catalog Market in 2026: Data, Trends, and Valuations — SPACE",
+   "h1": "The Music Catalog Market in 2026: Data, Trends, and Valuations",
+   "opening": "The music catalog market in 2026 rests on royalty income from a recorded music business that reached $31.7 billion in 2025, according to IFPI's Global Music Report 2026, with streaming making up 69.6% of that. Goldman Sachs' Music in the Air 2025 report puts global music revenues at $104.9 billion in 2024 and forecasts $196.8 billion by 2035. Named deals show the scale of catalog buying, such as Blackstone's $1.584 billion bid for Hipgnosis Songs Fund in 2024. There is no reliable published multiple for small or niche catalogs, so valuations come from individual review. The music catalog market has undergone a structural transformation over the past decade. What was once a niche corner of the entertainment industry — dominated by a handful of major-label transactions — has evolved into a multi-billion-dollar asset class attracting hedge funds, pension funds, and specialized acquisition firms. Streaming platforms have turned song catalogs into predictable, royalty-generating instruments not unlike real estate or infrastructure assets. This report aggregates publicly available data from IFPI, CISAC, Goldman Sachs, Music Business Worldwide, and other sources named next to each figure to provide a snapshot of the music catalog market as it stands in 2026. Whether you are a rights holder evaluating a sale, an investor sizing an opportunity, or a platform operator building in this space, the data below aims to give you a clear, citation-ready picture of where the market is and where it is heading.",
+   "answers": 0.2,
+   "specific": "specific"
+  },
+  {
+   "path": "/data/streaming-platform-catalog-sizes/",
+   "title": "Streaming Platform Catalog Sizes 2026: Spotify, Apple Music, Deezer and More — SPACE",
+   "h1": "How Many Songs Are on Spotify, Apple Music and Other Platforms? (2026)",
+   "opening": "Most major streaming services say they offer more than 100 million tracks. The table below shows what each platform states about its catalog and its users, with a link to the page where it says so. Where a platform does not publish a number, the table says so. Platforms count differently. Some figures include videos, live recordings or user uploads, and none of them say how many tracks are ever played. A bigger catalog also means more competition for listening time, which is one reason income from older tracks varies so much.",
+   "answers": 0.47,
+   "specific": "some"
+  },
+  {
+   "path": "/for/ambient-music-producer/",
+   "title": "Sell Your Ambient Music Catalog — Fair Valuations for Ambient Producers — SPACE",
+   "h1": "Sell Your Ambient Music Catalog — Fair Valuations for Ambient Producers",
+   "opening": "You create expansive, atmospheric soundscapes — drones, pads, field recordings woven into immersive audio experiences. Your catalog may include hundreds of tracks spanning albums, EPs, singles, and extended ambient pieces. You've built a dedicated listener base on Spotify's ambient playlists, Bandcamp, and niche communities. Your music may generate steady streaming revenue from month to month, and you may have seen interest from wellness apps, YouTube creators, and meditation platforms looking to license your work. You know your catalog has value, but you're unsure how to quantify it or find the right buyer who appreciates the unique qualities of ambient music. Get a review based on your catalog's own revenue history rather than a one-size-fits-all multiple",
+   "answers": 0.35,
+   "specific": "vague"
+  },
+  {
+   "path": "/for/independent-artist-catalog-owner/",
+   "title": "Independent Artists: Your Catalog Is Your Most Valuable Asset — SPACE",
+   "h1": "Independent Artists: Your Catalog Is Your Most Valuable Asset",
+   "opening": "An independently released catalog can generate income without a major-label agreement, but distributing your own music does not prove you own every master or composition. Start with the rights and royalty interests you actually control. Your catalog may span one release or years of work, across any genre. If you are exploring a sale, identify the recordings, collaborators, existing agreements and net income before comparing an upfront payment with the income you would retain. SPACE offers a free initial review for a potential direct purchase, not a buyer-listing marketplace. Understand which rights and income need to be assessed before an offer can be meaningful",
+   "answers": 0.3,
+   "specific": "some"
+  },
+  {
+   "path": "/for/",
+   "title": "Sell Your Music Catalog — Solutions by Creator Type — SPACE",
+   "h1": "Solutions by creator type",
+   "opening": "We review revenue-generating catalogs from independent artists, producers, labels and owners across genres. Find the preparation guidance that fits your situation. You create expansive, atmospheric soundscapes — drones, pads, field recordings woven into immersive audio experiences. Your catalog may include hundreds of tracks spanning albums, EPs, singles, and extended ambient pieces. You've built a dedicated listener base on Spotify's ambient playlists, Bandcamp, and niche communities. Your music may generate steady streaming revenue from month to month, and you may have seen interest from wellness apps, YouTube creators, and meditation platforms looking to license your work. You know your catalog has value, but you're unsure how to quantify it or find the right buyer who appreciates the unique qualities of ambient music.",
+   "answers": 0.22,
+   "specific": "some"
+  },
+  {
+   "path": "/for/lo-fi-beat-maker/",
+   "title": "Monetize Your Lo-Fi Beat Catalog — Built for Beat Makers — SPACE",
+   "h1": "Monetize Your Lo-Fi Beat Catalog — Built for Beat Makers",
+   "opening": "You craft warm, nostalgic, vinyl-crackle beats that soundtrack study sessions, coffee shop moments, and late-night creative flows. Your catalog might include hundreds or even thousands of lo-fi beats distributed across streaming platforms, YouTube channels, and beat licensing platforms. Lo-fi hip-hop has a large audience on Spotify and YouTube, where channels like Lofi Girl run round-the-clock livestreams of lo-fi beats. Your beats generate revenue from multiple sources: streaming royalties, YouTube Content ID claims, beat licensing sales, and sync placements. But managing this complex web of revenue streams while continuing to produce new beats is overwhelming, and you're curious about whether your catalog could be worth more as a packaged asset than as a collection of individual income streams. Transform a complex web of micro-revenue streams into a single upfront payment",
+   "answers": 0.38,
+   "specific": "some"
+  },
+  {
+   "path": "/for/meditation-music-creator/",
+   "title": "Sell Your Meditation Music Catalog — The Wellness Market Is Buying — SPACE",
+   "h1": "Sell Your Meditation Music Catalog — The Wellness Market Is Buying",
+   "opening": "You create purpose-built music for meditation, mindfulness, yoga, breathwork, and relaxation. Your tracks are carefully designed with specific frequencies, tempos, and sonic characteristics that support contemplative practices — binaural beats, solfeggio frequencies, nature soundscapes layered with gentle instrumentation, and extended ambient pieces that guide listeners through meditation sessions. Your audience is deeply engaged: they play your music on repeat during daily practice, subscribe to your Insight Timer or YouTube channel, and recommend your work within wellness communities. The Global Wellness Institute estimates the global wellness economy at $6.8 trillion in 2024, and meditation apps and platforms use music in many of their sessions. Your catalog sits at the intersection of music and wellness, giving it unique value that traditional music industry metrics may underestimate. Get a review that considers wellness licensing income alongside streaming figures",
+   "answers": 0.18,
+   "specific": "some"
+  },
+  {
+   "path": "/for/music-producer-ready-to-retire/",
+   "title": "Retiring from Music Production? Your Catalog Can Fund Your Next Chapter — SPACE",
+   "h1": "Retiring from Music Production? Your Catalog Can Fund Your Next Chapter",
+   "opening": "You've had a fulfilling career creating music — perhaps decades of producing ambient, electronic, lo-fi, or meditation tracks. Your catalog represents years of creative work and generates a steady stream of passive income. But you're ready for a change. Maybe you want to retire fully, pursue a different creative passion, focus on family, or simply stop dealing with the business side of music. Your catalog is your most valuable asset, and selling it could provide the financial foundation for your next chapter. But the prospect of navigating a catalog sale — valuations, buyers, contracts, tax implications — feels overwhelming, especially if you've been focused on the creative side of music for your entire career. Convert your life's work into retirement capital — funded by the music you've already created",
+   "answers": 0.45,
+   "specific": "vague"
+  },
+  {
+   "path": "/for/side-project-musician/",
+   "title": "Turn Your Side Project Music Into Real Money — SPACE",
+   "h1": "Turn Your Side Project Music Into Real Money",
+   "opening": "Music isn't your primary income — you have a day job, another business, or other creative pursuits that occupy most of your time. But over the years, you've accumulated a catalog of ambient, lo-fi, or electronic music that you created as a passion project, side hustle, or creative outlet. Maybe you went through an intense production phase and released several albums, or you consistently dropped tracks over a few years before life pulled you in other directions. These tracks still generate some streaming revenue — maybe a few hundred or a few thousand dollars per year — but you rarely think about them, and you've stopped actively promoting or releasing new music. Your catalog is a dormant asset: it has value, but it's not being maximized, and managing it feels like a chore for something that's no longer a priority. Transform a neglected side project into a meaningful lump sum payment",
+   "answers": 0.27,
+   "specific": "vague"
+  },
+  {
+   "path": "/for/sync-licensing-composer/",
+   "title": "Sync Composers: Sell Your Library Music Catalog for What It&#x27;s Really Worth — SPACE",
+   "h1": "Sync Composers: Sell Your Library Music Catalog for What It's Really Worth",
+   "opening": "You compose music specifically for licensing — TV shows, films, commercials, video games, YouTube content, corporate videos, and mobile apps. You may work through sync agents, music libraries, or directly with music supervisors. Your catalog is built for function: tracks are meticulously tagged with mood, tempo, instrumentation, and use-case metadata. You provide stems, alternate mixes, and multiple versions of each composition to maximize placement potential. Your revenue comes from a combination of upfront sync fees, backend performance royalties (collected through your PRO when placements air), and potentially streaming royalties if your music is also distributed to consumer platforms. Managing a sync-focused catalog involves juggling relationships with multiple libraries, agents, and direct clients, tracking cue sheets, and ensuring your PRO registrations are complete for every placement. Get a valuation that reflects the full value of your sync business — not just streaming revenue",
+   "answers": 0.21,
+   "specific": "some"
+  },
+  {
+   "path": "/for/wellness-app-soundtrack-creator/",
+   "title": "Wellness App Composers: Your Soundtracks Power the Wellness Industry — SPACE",
+   "h1": "Wellness App Composers: Your Soundtracks Power the Wellness Industry",
+   "opening": "You create music specifically designed for wellness applications — meditation apps, yoga platforms, sleep aids, breathwork guides, fitness apps, and mental health tools. Your work goes beyond traditional music production: you design soundscapes with specific therapeutic intentions, matching tempos to breathing patterns, incorporating frequency-based elements like binaural beats, and crafting progressions that guide users through specific wellness experiences. Your music might be licensed to platforms like Calm, Headspace, Insight Timer, or Peloton, or you might have developed soundtracks for smaller, independent wellness apps. You understand that your music isn't just entertainment — it's a functional component of a wellness product, and its value should reflect that functional role. The Global Wellness Institute estimates the global wellness economy at $6.8 trillion in 2024, and your catalog of purpose-built wellness music can be an asset with documented, recurring income. Get a review that treats your music as a product component with licensing income",
+   "answers": 0.37,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/advance/",
+   "title": "Advance — Music Rights Glossary — SPACE",
+   "h1": "Advance",
+   "opening": "An upfront payment made to a rights holder against future royalties, which must be recouped before additional royalties are paid. An advance is a prepayment of royalties given by a label, publisher, distributor, or investor to a music rights holder. The advance is essentially a loan against the future earnings of the music — the rights holder receives money upfront, and the payer recoups (recovers) that advance from future royalties before any additional royalty payments are made. Advances are one of the most important financial mechanisms in the music industry and serve as a way for creators to receive guaranteed income while their music generates revenue over time. The key characteristic of a standard advance is that it is recoupable but non-returnable. This means that if the music does not generate enough royalties to cover the advance, the artist typically does not have to pay the difference back. However, no additional royalties are paid until the advance is fully recouped. The size of an advance is usually based on the projected future earnings of the music over the term of the deal, discounted to reflect risk. For ambient and meditation music creators, advances can come in several forms: a label or publisher advance against future royalties, a distribution advance from distributors that offer advance programs based on historical streaming data, or a catalog advance or loan from specialist companies that provide funding against existing catalog revenue.",
+   "answers": 0.92,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/blanket-license/",
+   "title": "Blanket License — Music Rights Glossary — SPACE",
+   "h1": "Blanket License",
+   "opening": "A license that grants access to an entire catalog of music for a set fee, rather than licensing individual works. A blanket license is a type of music license that grants the licensee the right to use any and all works within a particular catalog or repertoire for a set period of time, in exchange for a single fee or periodic payments. Rather than negotiating individual licenses for each song used, the blanket license provides broad access to an entire library of music. This licensing model is most commonly used by Performing Rights Organizations (PROs) when licensing businesses, broadcasters, and venues. For example, when a radio station obtains a blanket license from ASCAP, it gains the right to play any of the millions of songs in ASCAP's repertoire without needing to negotiate individual permissions or track usage on a per-song basis. The PRO then distributes the collected fees to rights holders based on usage data. Blanket licenses are also used by streaming platforms, background music services (like Muzak or Mood Media), fitness chains, restaurants, retail stores, and other businesses that play music publicly. For ambient and meditation music creators, blanket licenses are relevant in two ways: your music may be played under blanket licenses held by yoga studios, spas, and wellness centers (generating performance royalties through your PRO), and you may also encounter blanket licensing deals from music libraries or sync platforms that want to offer your entire catalog to their clients.",
+   "answers": 0.92,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/buyout-deal/",
+   "title": "Buyout Deal — Music Rights Glossary — SPACE",
+   "h1": "Buyout Deal",
+   "opening": "A transaction where music rights are sold for a one-time lump sum payment, transferring ownership permanently. A buyout deal is a transaction structure in which the owner of music rights sells those rights to a buyer for a single, upfront lump sum payment. In a full buyout, the seller permanently transfers ownership and all future revenue from the sold rights to the buyer. After the sale, the buyer receives all royalties, licensing income, and other revenue generated by the music, while the seller retains no ongoing financial interest. Buyout deals are common in several contexts: catalog acquisitions (where an investor purchases an artist's entire catalog), sync licensing (where a client pays a one-time fee for perpetual use of a track), and work-for-hire arrangements (where a composer creates music to order and assigns all rights to the client upon payment). The primary advantage of a buyout for the seller is immediate, guaranteed cash — there's no risk of future revenue declining, and the seller can use the funds for other investments or purposes. The primary disadvantage is that the seller foregoes all future upside. If the music catalog grows in value or generates more revenue than expected, the seller doesn't benefit. For ambient and meditation music creators considering selling their catalogs, the buyout vs. ongoing revenue share decision is one of the most consequential financial choices they'll face. The decision should be informed by a proper catalog valuation, understanding of revenue trends, personal financial needs, and tax implications.",
+   "answers": 0.93,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/catalog-acquisition/",
+   "title": "Catalog Acquisition — Music Rights Glossary — SPACE",
+   "h1": "Catalog Acquisition",
+   "opening": "The purchase of a music catalog — the masters, publishing, or both — from a rights holder by an investor or company. Catalog acquisition refers to the purchase of a music catalog — encompassing master recordings, publishing rights, or both — from an existing rights holder by a buyer such as an investment fund, music company, or individual investor. The music catalog acquisition market has grown enormously since 2018, driven by the recognition that music catalogs represent stable, inflation-resistant, uncorrelated assets with predictable cash flows derived from streaming royalties and licensing income. High-profile acquisitions include Universal Music Publishing Group's purchase of Bob Dylan's song catalog, announced in December 2020, Sony Music Group's acquisition of Bruce Springsteen's recorded music and songwriting catalogs, announced in December 2021, and numerous catalog deals by investment firms like Hipgnosis Song Management, Primary Wave, Round Hill Music, and KKR. While these headline-grabbing deals involve legendary artists, the catalog acquisition market extends far beyond superstars. Marketplaces such as Royalty Exchange, direct buyers, and independent music investors also handle catalogs from independent artists and small catalog owners. Ambient, lo-fi, and meditation music catalogs can be attractive to buyers when their revenue is stable and well documented, because this music is less tied to trends than many other genres.",
+   "answers": 0.86,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/catalog-loan/",
+   "title": "Catalog Loan — Music Rights Glossary — SPACE",
+   "h1": "Catalog Loan",
+   "opening": "A financing arrangement that uses a music catalog's future royalties as collateral for a loan, without transferring ownership. A catalog loan (also known as royalty-backed financing or a catalog-backed credit facility) is a financial product that allows music rights holders to borrow money using their catalog's future royalty income as collateral. Unlike a catalog sale, a loan does not transfer ownership of the rights — the creator retains full ownership and receives their catalog back free and clear once the loan is repaid. During the loan term, the lender typically receives the catalog's royalty income to service the debt (principal and interest), and any excess revenue above the debt service is passed through to the borrower. Catalog loans have emerged as an alternative to outright sales for creators who need capital but don't want to permanently give up their rights. Specialist royalty-finance companies and some banks with entertainment lending divisions offer these products. The loan amount is typically based on the catalog's annual revenue, similar to a catalog valuation but usually more conservative than a sale price. For ambient and meditation music creators, a catalog loan can fund new productions, equipment purchases, marketing campaigns, or personal financial needs without sacrificing the long-term value of a growing catalog.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/catalog-valuation/",
+   "title": "Catalog Valuation — Music Rights Glossary — SPACE",
+   "h1": "Catalog Valuation",
+   "opening": "The process of determining the fair market value of a music catalog based on its revenue and assets. Catalog valuation is the financial assessment process used to determine what a music catalog is worth on the open market. This process takes into account historical revenue, projected future earnings, the quality and diversity of the catalog's revenue streams, and broader market conditions. Valuation is critical when selling a catalog, seeking investment or financing, estate planning, or simply understanding the worth of your creative assets. The most common valuation method in the music industry is the revenue multiple approach, where a catalog's average annual net publisher share (NPS) revenue is multiplied by a factor (the \"multiple\") to arrive at a total valuation. The multiple reflects how many years' worth of current revenue a buyer is willing to pay upfront. For example, with purely hypothetical numbers, a catalog earning $10,000 per year and a multiple of 10 would be valued at $100,000; the multiple actually used depends on the individual review. Several factors influence the multiple applied: catalogs with growing revenue command higher multiples, as do catalogs with diversified income sources, clean metadata, and compositions in evergreen genres. Ambient and meditation music catalogs can be valued favorably when their revenue is stable, because listening in these genres is often habitual rather than trend-driven, which makes revenue less exposed to the peaks and valleys seen in pop or hip-hop catalogs.",
+   "answers": 0.83,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/compulsory-license/",
+   "title": "Compulsory License — Music Rights Glossary — SPACE",
+   "h1": "Compulsory License",
+   "opening": "A statutory license that allows anyone to create a new recording of a previously published composition, subject to set royalty rates. A compulsory license (also called a statutory license or mechanical license) is a provision in copyright law that allows anyone to record and distribute their own version of a previously published musical composition, without needing the copyright owner's permission, as long as they follow specific procedural requirements and pay the statutory royalty rate. This concept was established in the US Copyright Act of 1909 and is now codified in Section 115 of the Copyright Act of 1976. The compulsory license was originally created to prevent monopolistic control of compositions — without it, a songwriter could exclusively license their song to a single recording artist and prevent any cover versions. The compulsory license ensures that once a composition has been publicly distributed in a recording, the songwriter cannot prevent others from recording their own versions. However, the compulsory license only covers the right to make a faithful reproduction of the composition — it does not permit changes to the basic melody or fundamental character of the work. For ambient music creators, compulsory licensing is less commonly encountered than in pop or rock music, since covers of ambient compositions are relatively rare. However, understanding compulsory licensing is important if your compositions are covered by other artists, or if you want to create your own recordings of existing compositions for meditation playlists or ambient arrangements.",
+   "answers": 0.92,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/content-id/",
+   "title": "Content ID — Music Rights Glossary — SPACE",
+   "h1": "Content ID",
+   "opening": "YouTube's automated system that identifies and manages copyrighted content uploaded to the platform. Content ID is YouTube's proprietary digital fingerprinting system that automatically scans uploaded videos to detect copyrighted music and other protected content. When a rights holder registers their music with Content ID, the system creates a digital reference file (fingerprint) of the audio. YouTube then automatically scans every new video upload against its database of reference files. When a match is detected, the rights holder can choose to: block the video (prevent it from being viewed), track the video (monitor its views and analytics), or monetize the video (place ads on it and collect the ad revenue). Content ID is a significant revenue opportunity for music creators, especially in genres like ambient, lo-fi, and meditation music that are frequently used as background music in YouTube videos. Creators use ambient music in study-with-me videos, meditation guides, sleep streams, ASMR content, and productivity vlogs — often without obtaining proper licenses. Content ID allows rights holders to monetize these unauthorized uses rather than simply blocking them, turning infringement into a revenue stream. Many digital aggregators offer Content ID registration as part of their distribution services, and specialized Content ID management companies exist that focus exclusively on maximizing YouTube monetization for music rights holders.",
+   "answers": 0.87,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/cue-sheet/",
+   "title": "Cue Sheet — Music Rights Glossary — SPACE",
+   "h1": "Cue Sheet",
+   "opening": "A document that logs all music used in a film, TV show, or other audiovisual production for royalty tracking. A cue sheet is a detailed document that catalogs every piece of music used in a television program, film, advertisement, video game, or other audiovisual production. It serves as the primary mechanism by which performance royalties are tracked and paid for music used in visual media. The cue sheet lists each musical cue (instance of music use) along with critical information: the title of the composition, the composer(s) and publisher(s), their PRO affiliations, the duration of the cue, the type of use (background, feature, theme, etc.), and the timing within the program. Cue sheets are typically prepared by the production company and submitted to the relevant PROs after the production airs or is distributed. The PROs then use this information to calculate and distribute performance royalties to the listed writers and publishers. For ambient and meditation music composers who work in sync licensing, cue sheets are critically important. If your music is placed in a TV show, film, or advertisement, the cue sheet ensures you receive performance royalties every time that program airs — domestically and internationally, for years or even decades. A single placement in a successful TV series can generate ongoing performance royalties through reruns, international broadcasts, and streaming platform availability.",
+   "answers": 0.84,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/digital-aggregator/",
+   "title": "Digital Aggregator — Music Rights Glossary — SPACE",
+   "h1": "Digital Aggregator",
+   "opening": "A service that delivers music to multiple digital streaming platforms and online stores on behalf of artists and labels. A digital aggregator (also called a digital distributor) is a company that serves as the intermediary between music creators and digital streaming platforms/download stores. Since most streaming services like Spotify, Apple Music, and Amazon Music do not accept direct uploads from individual artists, aggregators provide the essential service of encoding, delivering, and managing music across dozens of platforms simultaneously. Popular digital aggregators include DistroKid, TuneCore, CD Baby, LANDR, Amuse, and RouteNote. Each has a different business model: some charge annual subscription fees, some charge one-time fees per release, and some take a percentage of revenue in exchange for free distribution. Plans change, so check each service's current pricing page. Beyond basic distribution, many aggregators now offer additional services such as YouTube Content ID registration, publishing administration, sync licensing opportunities, playlist pitching, advance funding, and analytics dashboards. For ambient and meditation music creators, the choice of aggregator is particularly important because of the high volume of releases typical in these genres. An ambient producer might release dozens of tracks per year across multiple albums and singles, which can make unlimited distribution models more cost-effective than per-release pricing. Additionally, features like automated Content ID registration can help protect ambient tracks that are frequently used without permission in YouTube videos and social media content.",
+   "answers": 0.91,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/distribution-deal/",
+   "title": "Distribution Deal — Music Rights Glossary — SPACE",
+   "h1": "Distribution Deal",
+   "opening": "An agreement between a rights holder and a distributor to deliver music to streaming platforms and retailers. A distribution deal is a contractual agreement between a music rights holder (artist, label, or catalog owner) and a distribution company that handles the delivery of recordings to digital streaming platforms, download stores, and potentially physical retailers. Distribution is the logistical bridge between creating music and making it available to listeners worldwide. In the digital era, distributors handle the technical process of encoding and delivering audio files and metadata to platforms like Spotify, Apple Music, Amazon Music, YouTube Music, Tidal, Deezer, and dozens of others. They also collect revenue from these platforms and pass it back to the rights holder, minus their fee. Distribution deals come in several structures. DIY distributors like DistroKid, TuneCore, and CD Baby charge flat annual fees or per-release fees and let artists keep 100% (or near 100%) of their royalties. Traditional distributors and label services companies like AWAL, Stem, and The Orchard may take a negotiated percentage of revenue but offer additional services like playlist pitching, marketing support, and advance funding. For ambient and meditation music creators releasing frequently — which is common given the genre's demand for extensive content libraries — choosing the right distribution model is essential to maximizing net revenue across potentially hundreds of releases.",
+   "answers": 0.91,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/exclusive-vs-non-exclusive-license/",
+   "title": "Exclusive vs. Non-Exclusive License — Music Rights Glossary — SPACE",
+   "h1": "Exclusive vs. Non-Exclusive License",
+   "opening": "Licensing arrangements that differ in whether the music can be licensed to multiple parties simultaneously. In music licensing, the distinction between exclusive and non-exclusive licenses is fundamental to how music is commercialized. An exclusive license grants the licensee sole rights to use the music in a specified way, territory, and time period — the rights holder cannot license the same music to anyone else under the same terms during the exclusivity period. A non-exclusive license allows the rights holder to license the same music to multiple parties simultaneously. Exclusive licenses are typically more expensive because the licensee is paying for exclusivity — the assurance that competitors won't be using the same music. They are common in high-value sync placements (national TV commercials, feature films) and premium licensing deals. Non-exclusive licenses are the standard for music libraries, stock music platforms, and lower-budget sync placements. They allow the creator to generate revenue from the same track across multiple licensees. For ambient and meditation music creators, non-exclusive licensing through platforms like Epidemic Sound, Artlist, or Pond5 is often the most practical approach. It allows a single meditation track to be licensed to dozens of YouTube creators, app developers, and content producers simultaneously, generating cumulative revenue. However, premium exclusive deals — such as licensing a collection of tracks exclusively to a major meditation app — can be highly lucrative and may justify the exclusivity.",
+   "answers": 0.77,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/independent-artist/",
+   "title": "Independent Artist — Music Rights Glossary — SPACE",
+   "h1": "Independent Artist",
+   "opening": "A musician who releases and manages their music without the backing of a major record label. An independent artist (or indie artist) is a musician who creates, releases, and manages their music career without a contractual relationship with a major record label (Universal, Sony, or Warner) or their subsidiaries. Independent artists handle their own creative decisions, business operations, marketing, and distribution — or they hire service providers and freelancers to assist with specific functions while retaining overall control and ownership. The independent model has become increasingly viable and even preferred for many musicians thanks to democratized recording technology (affordable home studios and digital audio workstations), direct-to-consumer distribution (digital aggregators that deliver music to all major streaming platforms), social media marketing, and emerging revenue streams like sync licensing platforms and direct fan monetization. Independent artists retain ownership of their master recordings and compositions, which means they control all licensing decisions and collect the full revenue from their music (minus distributor and service provider fees). For ambient and meditation music creators, independence is often the natural choice. These genres thrive on creative authenticity, niche community building, and long-tail streaming revenue — qualities that align well with the independent model. Many successful ambient artists build sustainable careers through a combination of streaming revenue, sync licensing, direct sales (Bandcamp), Patreon/subscription support, and performance at wellness events and festivals.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/",
+   "title": "Music Rights Glossary — SPACE",
+   "h1": "Music Rights Glossary.",
+   "opening": "Ownership rights to a specific sound recording of a musical work. Ownership rights to the underlying musical composition, including melody, lyrics, and arrangement.",
+   "answers": 0.31,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/isrc/",
+   "title": "ISRC (International Standard Recording Code) — Music Rights Glossary — SPACE",
+   "h1": "ISRC (International Standard Recording Code)",
+   "opening": "A unique 12-character alphanumeric code that identifies a specific sound recording. The International Standard Recording Code (ISRC) is a globally recognized identifier assigned to individual sound recordings and music videos. Think of it as a fingerprint for your recording — each unique version of a track gets its own ISRC, and that code stays with the recording for its entire commercial life. ISRCs are essential for tracking plays, streams, and sales across digital platforms. When you upload music to Spotify, Apple Music, or any other streaming service through a distributor, each track is tagged with an ISRC. This code allows the platforms to accurately report usage data back to rights holders and royalty collection organizations. Without an ISRC, it becomes extremely difficult to track where your music is being played and ensure you receive all the royalties you're owed. For ambient and meditation music producers who may release dozens or even hundreds of tracks (including variations, extended versions, and remixes), having a proper ISRC system is critical for catalog management. Each variation of a recording needs its own ISRC — a 10-minute extended mix and a 3-minute edit of the same composition are two different recordings and require two different ISRCs. Distributors like DistroKid, TuneCore, and CD Baby can assign ISRCs automatically, or you can obtain your own ISRC registrant code to self-assign codes.",
+   "answers": 0.86,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/iswc/",
+   "title": "ISWC (International Standard Musical Work Code) — Music Rights Glossary — SPACE",
+   "h1": "ISWC (International Standard Musical Work Code)",
+   "opening": "A unique identifier for a musical composition, distinct from any particular recording of it. The International Standard Musical Work Code (ISWC) is a unique reference number assigned to a musical composition or work. While the ISRC identifies a specific sound recording, the ISWC identifies the underlying composition — the melody, harmony, and lyrics that exist independently of any particular recorded performance. This distinction is important because a single composition can have many different recordings (covers, remixes, orchestral arrangements), and each of those recordings will have its own ISRC, but they all share the same underlying composition identified by the ISWC. ISWCs are assigned by authorized agencies, typically the national PROs or their affiliates, working under the authority of CISAC (the International Confederation of Societies of Authors and Composers). When you register a composition with your PRO, an ISWC is eventually assigned to that work. The ISWC helps ensure that all performances and recordings of your composition are properly linked, so that royalties from cover versions, international performances, and various recordings all flow back to the correct composer. For ambient music creators who frequently create variations and arrangements of their themes, understanding ISWCs is essential. An ambient piece and its extended meditation version may share the same ISWC if the composition is substantially the same, even though they have different ISRCs as recordings.",
+   "answers": 0.87,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/master-rights/",
+   "title": "Master Rights — Music Rights Glossary — SPACE",
+   "h1": "Master Rights",
+   "opening": "Ownership rights to a specific sound recording of a musical work. Master rights refer to the ownership and control of a specific sound recording. When a song is recorded, two separate copyrights are created: one for the composition (the melody, lyrics, and arrangement) and one for the actual recorded version of that composition. The master right covers the latter — the actual audio file or recording that listeners hear. Whoever owns the master rights controls how that recording is reproduced, distributed, and monetized. Historically, record labels funded recording sessions and therefore retained master rights as part of their deals with artists. In exchange, artists received royalties on sales and streams. However, the rise of affordable home studios and digital distribution has made it increasingly common for independent artists to retain their own masters. Owning your masters means you have full control over licensing decisions, can sell or transfer the recording to third parties, and collect all revenue generated from that specific recording. For ambient and meditation music creators, master rights are especially valuable because these recordings often generate long-tail streaming revenue over many years, and sync licensing opportunities for wellness apps, YouTube channels, and guided meditation platforms all require master rights clearance.",
+   "answers": 0.91,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/mechanical-royalties/",
+   "title": "Mechanical Royalties — Music Rights Glossary — SPACE",
+   "h1": "Mechanical Royalties",
+   "opening": "Royalties paid to songwriters and publishers when a musical composition is reproduced or distributed. Mechanical royalties are payments made to the owners of a musical composition whenever that composition is reproduced. The term \"mechanical\" dates back to the era of player pianos and music boxes, when compositions were literally reproduced mechanically. Today, mechanical royalties are generated every time a song is pressed onto a CD, downloaded digitally, or streamed on platforms like Spotify, Apple Music, or YouTube Music. In the streaming era, mechanical royalties have become one of the primary revenue streams for songwriters and publishers. Unlike performance royalties (which are paid when music is played publicly), mechanical royalties are specifically tied to the act of reproduction — each stream counts as a mechanical reproduction of the underlying composition. For ambient and meditation music creators, mechanical royalties represent a steady income stream because listeners tend to play these genres on repeat for extended sessions, generating multiple streams per listening session. The rates for streaming mechanicals are set through complex industry agreements and vary by platform, territory, and whether the listener is on a free or paid tier.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/metadata/",
+   "title": "Metadata — Music Rights Glossary — SPACE",
+   "h1": "Metadata",
+   "opening": "The descriptive information embedded in or associated with a music file that identifies the work and its rights holders. Metadata in the music industry refers to all the descriptive and administrative information associated with a sound recording and its underlying composition. This includes basic identifiers (song title, artist name, album title, track number), technical information (ISRC, ISWC, UPC/EAN, duration, BPM, key), rights information (songwriter credits, publisher information, producer credits, PRO affiliations), and descriptive tags (genre, mood, instrumentation, era). Metadata is the backbone of the modern music industry — it is how streaming platforms, collection societies, and rights organizations identify music, attribute it to the correct rights holders, and ensure royalties are paid accurately. Poor or incomplete metadata is one of the biggest causes of lost royalties in the music industry. When metadata is missing, incorrect, or inconsistent across platforms, royalties can end up in \"black box\" funds — pools of unmatched money that eventually get distributed pro-rata to major rights holders rather than to the creators who earned them. For ambient and meditation music producers, metadata quality is particularly important because these genres often have similar-sounding titles (variations of \"Peaceful Morning,\" \"Deep Meditation,\" \"Ocean Waves\") and may not have distinctive artist names. Accurate and complete metadata — including proper ISRC codes, songwriter information, and publisher details — is essential to distinguish your tracks from others and ensure your royalties reach you.",
+   "answers": 0.85,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/music-catalog/",
+   "title": "Music Catalog — Music Rights Glossary — SPACE",
+   "h1": "Music Catalog",
+   "opening": "A collection of musical works and/or recordings owned or controlled by a single entity. A music catalog refers to the complete collection of musical compositions and/or sound recordings that are owned or controlled by a particular rights holder — whether that's an individual songwriter, a music publisher, a record label, or an investment fund. The catalog is essentially the portfolio of intellectual property assets that generates ongoing revenue through various streams such as streaming royalties, sync licensing fees, performance royalties, and mechanical royalties. Music catalogs have become recognized financial assets, particularly since the late 2010s, when buyers such as Hipgnosis Songs Fund and investment firms such as KKR began purchasing catalogs from well-known artists. This has created a trickle-down effect where catalogs of all sizes — including those of independent ambient, lo-fi, and meditation music producers — are recognized as legitimate financial assets that can be valued, sold, or used as collateral. For ambient and meditation music creators, a well-organized catalog can be particularly valuable because these genres tend to have exceptionally long revenue tails. A meditation track created five years ago may still generate consistent streaming revenue today, and its sync licensing potential remains intact indefinitely. Building and maintaining a catalog with clean metadata, clear ownership documentation, and diversified revenue streams increases its market value significantly.",
+   "answers": 0.71,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/music-publisher/",
+   "title": "Music Publisher — Music Rights Glossary — SPACE",
+   "h1": "Music Publisher",
+   "opening": "A company that manages, promotes, and administers the rights to musical compositions on behalf of songwriters. A music publisher is a company or entity that handles the business side of musical compositions on behalf of songwriters and composers. The publisher's role encompasses several key functions: administration (registering compositions with collection societies, issuing licenses, collecting royalties), creative development (helping songwriters improve their craft and connect with collaborators), synchronization (pitching compositions for placement in films, TV, ads, and other media), and exploitation (finding new revenue opportunities for the catalog). In exchange for these services, the publisher typically receives a share of the publishing income — the publisher's share — which is 50% of total publishing revenue in a traditional publishing deal and a smaller share in a co-publishing deal. Publishing deals come in several forms: traditional publishing deals (where the publisher takes ownership of the compositions for a set term or permanently), co-publishing deals (where ownership is shared), administration deals (where the songwriter retains ownership and the publisher provides administrative services for a lower, negotiated fee), and single-song agreements. For ambient and meditation music creators, a publisher with experience in sync licensing for the wellness and mindfulness sector can be particularly valuable. These publishers have relationships with music supervisors at meditation apps, wellness brands, documentary filmmakers, and other potential licensees that independent artists might not be able to reach on their own.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/neighboring-rights/",
+   "title": "Neighboring Rights — Music Rights Glossary — SPACE",
+   "h1": "Neighboring Rights",
+   "opening": "Rights that protect performers and record producers, separate from the copyright in the composition. Neighboring rights (also called related rights) are a category of intellectual property rights that protect the interests of performers and producers of sound recordings, separate from the rights of the songwriter or composer. While copyright protects the musical composition, neighboring rights protect the people who bring that composition to life through their performance and the technical/financial investment of producing the recording. In many countries, neighboring rights generate royalties when sound recordings are broadcast on radio, played in public spaces, or used in certain types of streaming. The key distinction is that neighboring rights apply to the sound recording and the performance captured in it, not the underlying composition. In the United States, neighboring rights are more limited than in many other countries due to the lack of a terrestrial performance right for sound recordings (US radio stations do not pay recording artists for playing their music over AM/FM). However, SoundExchange collects digital performance royalties for non-interactive digital transmissions (internet radio, satellite radio, cable music channels) in the US. Internationally, neighboring rights are a significant revenue source collected by organizations like PPL (UK), GVL (Germany), and SENA (Netherlands). For ambient music producers whose music is frequently played on internet radio stations, in-flight entertainment systems, and background music services across the globe, uncollected neighboring rights can represent substantial missed revenue.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/partial-sale-vs-full-sale/",
+   "title": "Partial Sale vs. Full Sale — Music Rights Glossary — SPACE",
+   "h1": "Partial Sale vs. Full Sale",
+   "opening": "Selling a percentage of your music rights versus selling 100% of ownership. When selling music rights, creators can choose between a full sale (transferring 100% of ownership and all future revenue) or a partial sale (selling a percentage of the rights while retaining the remainder). A full sale provides maximum upfront capital but completely eliminates the seller's future revenue stream from the sold assets. A partial sale allows the creator to generate some immediate capital while continuing to earn from the retained portion of the rights. In a hypothetical example, selling 50% of a catalog valued at $100,000 would generate about $50,000 in immediate capital while the seller continues to earn 50% of all future revenue. Partial sales are available through marketplaces such as Royalty Exchange, through direct buyers, and through financial models that allow fractional ownership of music rights. They offer a middle ground that addresses creators' need for capital without requiring them to fully divest from their creative work. For ambient and meditation music creators, partial sales can be attractive when the catalog's revenue is stable or growing. Selling part of a growing catalog provides working capital for new productions, marketing, or personal needs while preserving the long-term upside of the remaining ownership stake.",
+   "answers": 0.82,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/performance-royalties/",
+   "title": "Performance Royalties — Music Rights Glossary — SPACE",
+   "h1": "Performance Royalties",
+   "opening": "Royalties earned when a musical composition is performed publicly, broadcast, or streamed. Performance royalties are payments made to songwriters, composers, and publishers whenever their musical compositions are performed publicly. This includes live performances at venues, radio broadcasts (terrestrial, satellite, and internet), television broadcasts, streaming on interactive platforms like Spotify, background music in businesses, and any other public use of a composition. Performance royalties are collected and distributed by Performing Rights Organizations (PROs) such as ASCAP, BMI, and SESAC in the United States, PRS for Music in the UK, and GEMA in Germany. These organizations negotiate blanket licenses with music users (radio stations, streaming services, venues, etc.) and then distribute the collected fees to their songwriter and publisher members based on usage data. For ambient and meditation music producers, performance royalties can be a surprisingly robust income stream. Music played in yoga studios, wellness centers, spa facilities, and through meditation apps all qualifies as public performance. Additionally, ambient music playlists on streaming platforms tend to have long average listening times, which can result in higher performance royalty accumulation per listener session compared to genres with shorter track lengths.",
+   "answers": 0.9,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/pro/",
+   "title": "PRO (Performing Rights Organization) — Music Rights Glossary — SPACE",
+   "h1": "PRO (Performing Rights Organization)",
+   "opening": "An organization that collects and distributes performance royalties on behalf of songwriters and publishers. A Performing Rights Organization (PRO) is an entity that acts as an intermediary between music creators and music users to collect and distribute performance royalties. PROs license the public performance of musical compositions to businesses, broadcasters, streaming services, venues, and other entities that play music publicly. They then distribute the collected license fees to their affiliated songwriters, composers, and music publishers. In the United States, the three major PROs are ASCAP (American Society of Composers, Authors and Publishers), BMI (Broadcast Music, Inc.), and SESAC (which is now invitation-only). Internationally, each country typically has its own PRO — PRS for Music in the UK, SOCAN in Canada, APRA AMCOS in Australia, GEMA in Germany, and SACEM in France, among many others. Songwriters can only affiliate with one PRO at a time in the US, and each PRO has different distribution methodologies, payment schedules, and membership benefits. For ambient and meditation music creators, choosing the right PRO and properly registering all works is essential to ensure royalty collection from streaming platforms, wellness apps, yoga studios, and other venues where their music is performed publicly.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/publishing-rights/",
+   "title": "Publishing Rights — Music Rights Glossary — SPACE",
+   "h1": "Publishing Rights",
+   "opening": "Ownership rights to the underlying musical composition, including melody, lyrics, and arrangement. Publishing rights pertain to the ownership and administration of the musical composition itself — the notes, melodies, harmonies, lyrics, and structural arrangement that make up a song. Unlike master rights, which cover a specific recording, publishing rights exist independently of any particular performance or recording of the work. This means that every cover version, remix, or new recording of a composition still generates publishing royalties for the rights holder. Publishing rights are typically split into two shares: the writer's share (which belongs to the songwriter and is paid directly by the performing rights organization) and the publisher's share (which can be assigned to a music publisher in exchange for administration, promotion, and sync placement services). For creators of ambient and lo-fi music, publishing rights are a significant long-term asset. Compositions used in meditation apps, yoga studio playlists, and sleep soundscapes can generate performance royalties every time they are played publicly. Additionally, because ambient music often has a timeless quality, these compositions tend to maintain consistent streaming performance over years, making the publishing catalog a stable revenue-generating asset.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/record-label/",
+   "title": "Record Label — Music Rights Glossary — SPACE",
+   "h1": "Record Label",
+   "opening": "A company that finances, produces, markets, and distributes sound recordings on behalf of artists. A record label is a company that signs recording artists, finances the creation of sound recordings, and handles the marketing, promotion, and distribution of those recordings. Labels range from major multinational corporations (Universal Music Group, Sony Music Entertainment, Warner Music Group) to small independent labels run by a single person. The traditional label model involves the label providing an advance to the artist, paying for recording costs, manufacturing and distributing the physical or digital product, and marketing the release. In exchange, the label owns the master recordings and pays the artist a royalty on sales and streams, set in the contract as a percentage of net revenue. The rise of digital distribution and social media has disrupted the traditional label model significantly. Many artists now self-release their music through digital aggregators, build audiences through social media and playlist placements, and retain full ownership of their masters. In response, labels have developed new deal structures including profit-sharing deals, licensing deals (where the artist retains ownership but licenses masters to the label for a set term), and services deals (where the label provides specific services like marketing for a fee). For ambient and meditation music creators, the traditional major label model is rarely the best fit. Independent labels and collectives that specialize in ambient, electronic, or wellness music (or self-releasing) tend to offer better terms and more creative control.",
+   "answers": 0.9,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/recoupment/",
+   "title": "Recoupment — Music Rights Glossary — SPACE",
+   "h1": "Recoupment",
+   "opening": "The process by which a label or publisher recovers an advance from an artist's future royalties. Recoupment is the accounting process through which a record label, music publisher, or other entity recovers an advance payment from the future royalties earned by the music. When an artist receives an advance, the label begins deducting the artist's share of royalties to repay the advance. Until the full advance amount has been recouped, the artist receives no additional royalty payments beyond the advance. Once recoupment is complete, the artist begins receiving their contractual royalty rate on all subsequent earnings. Understanding recoupment is crucial because it directly affects when — and if — an artist starts earning ongoing royalties from their music. The recoupment rate depends on the artist's royalty rate in the contract. For example, if an artist receives a $10,000 advance with a 20% royalty rate, and the recording generates $50,000 in gross revenue, the artist's recoupable share is $10,000 (20% of $50,000), which exactly covers the advance. The label has been collecting the remaining $40,000 (80%) throughout this period. Many artists never fully recoup their advances, which means they never see royalties beyond the initial advance payment. For ambient and meditation music creators, understanding recoupment terms is essential when evaluating deals — a larger advance may seem attractive, but a longer recoupment period means delayed access to ongoing royalty income.",
+   "answers": 0.93,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/revenue-multiple/",
+   "title": "Revenue Multiple — Music Rights Glossary — SPACE",
+   "h1": "Revenue Multiple",
+   "opening": "The factor applied to annual revenue to determine a music catalog's sale price. A revenue multiple is the valuation metric most commonly used in music catalog transactions. It represents the number of years of current annual revenue that a buyer is willing to pay upfront to acquire a catalog. In a purely hypothetical example, if a catalog earns $20,000 per year and sells at a multiple of 10, the purchase price would be $200,000. The multiple essentially reflects the buyer's confidence in the catalog's ability to continue generating revenue into the future, as well as broader supply-and-demand dynamics in the music rights market. Revenue multiples in the music industry have changed over the past decade. Demand from institutional investors and low interest rates pushed prices for high-profile catalogs up in the early 2020s, and higher interest rates later made buyers more selective. Multiples differ between high-profile, mid-tier and independent catalogs, and each catalog is priced on its own review. Several factors influence the multiple: revenue growth or decline trends, the proportion of streaming vs. legacy revenue, genre stability, metadata quality, geographic distribution of listeners, and whether the sale includes masters, publishing, or both. For ambient and meditation music catalogs, the same factors apply, and stable revenue with little seasonal fluctuation supports a stronger valuation.",
+   "answers": 0.9,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/royalty-split/",
+   "title": "Royalty Split — Music Rights Glossary — SPACE",
+   "h1": "Royalty Split",
+   "opening": "The agreed division of royalty income among multiple rights holders or collaborators on a musical work. A royalty split is the predetermined agreement on how revenue from a musical work or recording will be divided among the various parties who contributed to its creation. Any time multiple people contribute to a song — whether as co-writers, co-producers, featured artists, or other collaborators — a royalty split determines what percentage of income each person receives. Royalty splits are typically documented in a split sheet, which is a simple agreement signed by all collaborators before or shortly after the work is completed. Getting splits agreed upon early is one of the most important business practices in the music industry, as disputes over ownership and revenue shares are among the most common legal issues musicians face. The split can be equal (each contributor gets the same share) or weighted based on contribution (a producer who created the beat might get a different share than a vocalist who added a melody). For ambient and meditation music, royalty splits are relevant when collaborating with sound designers, field recording artists, vocalists, or other instrumentalists. The splits apply to all revenue generated by the work — streaming royalties, sync fees, performance royalties, and any other income. It is essential to document splits in writing, register them correctly with PROs and distributors, and ensure all parties have matching records to avoid disputes down the line.",
+   "answers": 0.92,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/sample-clearance/",
+   "title": "Sample Clearance — Music Rights Glossary — SPACE",
+   "h1": "Sample Clearance",
+   "opening": "The legal process of obtaining permission to use a portion of an existing recording or composition in a new work. Sample clearance is the process of obtaining legal permission to incorporate a portion of a pre-existing sound recording or musical composition into a new work. When a producer uses a sample — whether it's a drum break, a vocal phrase, a melodic line, or even a short atmospheric texture — they need to clear two separate sets of rights: the master recording rights (from the label or recording owner) and the publishing rights (from the publisher or songwriter). Failing to clear samples before release can result in lawsuits, injunctions against distribution, and significant financial penalties. The terms of a sample clearance are negotiated on a case-by-case basis. The rights holders may demand an upfront fee, a percentage of royalties from the new work, a co-writing credit, or a combination of these. Some samples are denied clearance entirely, forcing producers to recreate the sound (a process called interpolation or replay) or remove the sample. For ambient and lo-fi music producers, sampling is a common creative technique — sampling nature sounds, field recordings, vintage synth textures, and obscure ambient recordings to create layered soundscapes. While sampling original field recordings you've created yourself requires no clearance, using samples from other artists' recordings or sample packs with restrictive licenses requires careful attention to the terms of use and potentially formal clearance.",
+   "answers": 0.93,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/streaming-royalties/",
+   "title": "Streaming Royalties — Music Rights Glossary — SPACE",
+   "h1": "Streaming Royalties",
+   "opening": "Payments generated when music is played on interactive streaming platforms like Spotify, Apple Music, or Tidal. Streaming royalties are the payments earned by rights holders when their music is played on digital streaming platforms. These royalties have become the dominant revenue source for the recorded music industry: according to the IFPI Global Music Report 2026, streaming accounted for 69.6% of global recorded music revenues in 2025. Streaming royalties are actually composed of multiple separate payments to different rights holders: the master recording owner receives a royalty from the streaming platform (typically through a distributor), while the composition owners receive both mechanical royalties (through the MLC or a publisher) and performance royalties (through a PRO). The per-stream rate varies significantly between platforms and is not a fixed amount — it depends on the platform's total revenue pool, the number of subscribers, and the total number of streams in a given period. Platforms do not publish a fixed per-stream rate. Spotify states that no major streaming service pays a fixed rate per stream, and Apple reported an average of $0.01 per play for Apple Music individual paid plans in 2020, including label and publisher royalties. For ambient and meditation music creators, streaming is particularly important because listener behavior in these genres favors long, repeated listening sessions. A user who plays a 2-hour ambient playlist while working or sleeping can generate many individual track streams in a single session. Additionally, algorithmic playlists and curated wellness playlists on major platforms consistently drive discovery of ambient and meditation content.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/sub-publishing/",
+   "title": "Sub-Publishing — Music Rights Glossary — SPACE",
+   "h1": "Sub-Publishing",
+   "opening": "An arrangement where a publisher licenses a foreign publisher to administer and collect royalties in another territory. Sub-publishing is an arrangement in which a music publisher (the original publisher) contracts with a publisher in a foreign territory (the sub-publisher) to administer, promote, and collect royalties for the original publisher's catalog in that territory. Music copyright and royalty collection is inherently territorial — each country has its own collection societies, legal frameworks, and business practices. A US-based publisher may be highly effective at collecting royalties domestically but lack the relationships, local registrations, and administrative infrastructure needed to collect royalties in Japan, Germany, Brazil, or dozens of other markets. Sub-publishers fill this gap by handling local registration, collection, and administration. The sub-publisher retains a negotiated percentage of the royalties collected and remits the remainder to the original publisher. For ambient and meditation music creators, sub-publishing is particularly relevant because these genres have genuinely global audiences. A meditation track created in Los Angeles might be streamed heavily in South Korea, used in a yoga app in Germany, and played on radio in Brazil. Without sub-publishing relationships or a publisher with global infrastructure, the royalties generated in these territories may go uncollected. Many modern publishing administrators (like Songtrust, CD Baby Publishing, or TuneCore Publishing) offer global administration services that function similarly to sub-publishing networks.",
+   "answers": 0.93,
+   "specific": "specific"
+  },
+  {
+   "path": "/glossary/sync-licensing/",
+   "title": "Sync Licensing — Music Rights Glossary — SPACE",
+   "h1": "Sync Licensing",
+   "opening": "A license granting permission to synchronize music with visual media such as film, TV, ads, or video games. Sync licensing (short for synchronization licensing) is the process of licensing music for use alongside visual media. Whenever music is paired with video content — whether in a film, television show, commercial, video game, YouTube video, social media content, or mobile app — a synchronization license is required. Sync licensing can be a valuable revenue stream because fees are negotiated case by case, from small fees for independent projects to much larger fees for a major film or national commercial placement. Two licenses are typically needed for a sync placement: a sync license from the publisher (for the composition) and a master use license from the master rights holder (for the specific recording). For ambient, lo-fi, and meditation music creators, sync licensing represents a major opportunity. Wellness brands and meditation apps such as Calm, Headspace, and Insight Timer use ambient soundscapes in their content. Additionally, YouTube creators, podcast producers, and corporate video teams frequently need unobtrusive background music, making ambient and lo-fi genres highly sought after for sync placements. The key advantage is that ambient music is designed to complement rather than compete with visual or spoken content, making it ideal for sync use.",
+   "answers": 0.89,
+   "specific": "specific"
+  },
+  {
+   "path": "/guides/best-music-rights-buyers-2026/",
+   "title": "Best Music Rights Buyers for Independent Artists (2026) – SPACE",
+   "h1": "Best Music Rights Buyers for Independent Artists (2026)",
+   "opening": "For independent artists in any genre, including ambient, lo-fi and wellness music, SPACE (the publisher of this guide) is our top pick because it buys directly, charges no auction or listing commission, supports partial rights sales, and does not buy your future music unless it is included in the agreement. For large pop or rock catalogs, Reservoir and Round Hill handle higher-value deals; Hipgnosis's catalog now belongs to Sony Music Publishing. Royalty Exchange suits creators who want competitive auction pricing. Compare payout speed, genre fit, and deal flexibility before choosing. Best for: Independent creators in any genre who want a direct offer with no listing fee or commission",
+   "answers": 0.72,
+   "specific": "specific"
+  },
+  {
+   "path": "/guides/how-long-does-it-take-to-sell-a-music-catalog/",
+   "title": "How Long Does It Take to Sell a Music Catalog? (2026) — Timeline — SPACE",
+   "h1": "How Long Does It Take to Sell a Music Catalog? (2026)",
+   "opening": "Timeline depends less on hype and more on readiness. Most independent sellers can move quickly when rights, metadata, and statements are clean. Most delays come from missing ownership proofs, unresolved collaborator splits, or inconsistent revenue reporting across platforms. In practical terms, you can think of the process as five phases: preparation, initial review, due diligence, offer/terms, and closing. Each phase has one clear job and one common failure mode. This guide shows what typically happens in each step, what slows it down, and what you can prepare now to avoid dead time later. If your goal is speed without pricing mistakes, the best lever is document quality before you enter buyer conversations. Collect statements, rights docs, splits, and metadata exports.",
+   "answers": 0.25,
+   "specific": "some"
+  },
+  {
+   "path": "/guides/how-to-sell-music-rights/",
+   "title": "How to Sell Your Music Rights in 2026: The Complete Guide — SPACE",
+   "h1": "How to Sell Your Music Rights in 2026: The Complete Guide",
+   "opening": "To sell music rights, confirm which masters and publishing rights you own, gather royalty statements, PRO confirmations, split sheets and registrations, and ask buyers to review a full catalog or partial stake before they make a written offer. Independent creators can sell master recordings, publishing rights, or both — either as a full catalog or partial stake. Timing depends on the buyer, the sale channel, and how quickly your documents are ready. Catalogs are usually valued as a multiple of net annual royalty income, and the multiple depends on genre, revenue trajectory, metadata quality, and sync potential. The buyer landscape in 2026 ranges from institutional investors like Primary Wave and Blackstone, which bought Hipgnosis Songs Fund in 2024, to tech-enabled platforms like Duetti and niche specialists like SPACE that focus on independent creators. Before you sell, you'll need streaming analytics, revenue statements, PRO confirmations, split sheets, and copyright registrations. A partial sale — selling 50% or 75% of your rights — lets you access liquidity while retaining ongoing income and creative control. Tax treatment depends on whether proceeds qualify as capital gains or ordinary income, so consult a professional before closing. This guide walks you through every step so you can sell with confidence and at the right price. Selling your music rights is one of the most consequential financial decisions an independent creator can make. A single transaction can convert years of creative work into a lump sum that funds a new project, pays off debt, or sets the foundation for long-term financial security. But it can also leave money on the table — or transfer away rights you'll later wish you'd kept. The music-rights market has transformed dramatically over the past decade. What was once an opaque, invitation-only process dominated by a handful of major-label-affiliated publishers has become a competitive marketplace with many more types of buyers. Streaming revenue, which accounted for 69.6% of global recorded-music income in 2025 according to IFPI's Global Music Report 2026, has made catalogs more predictable income-producing assets, and investors have taken notice. Goldman Sachs' Music in the Air 2025 report forecasts global music revenues of $196.8 billion by 2035, up from $104.9 billion in 2024. Yet the process of actually selling remains intimidating. Creators don't know what their catalog is worth, which buyers to approach, or what documents they need. They worry about taxes, about losing creative control, and about whether now is even the right time. This guide answers all of those questions. Across ten sections, we'll cover what you can sell, who's buying, how valuations work, what the process looks like step by step, and how to avoid the most common mistakes. Whether you're seriously evaluating offers or simply exploring your options, the information here will put you in control.",
+   "answers": 0.72,
+   "specific": "specific"
+  },
+  {
+   "path": "/guides/music-catalog-valuation-2026/",
+   "title": "How Much Is a Music Catalog Worth? Valuation Guide 2026 — SPACE",
+   "h1": "Music Catalog Valuation Guide 2026: How Much Is Your Catalog Worth?",
+   "opening": "By SPACE. Reviewed September 7, 2026. Educational guide; not an independent appraisal. A music catalog's value depends on the future net income a buyer expects from the specific rights being acquired, and the uncertainty around that income. Annual net income multiplied by an assumed multiple can illustrate a sale scenario, but it is not a verified market price or a guaranteed offer. Documented earnings and transferable rights are the starting point for an individual review. Publicly stated multiples vary widely: Hipgnosis Songs Fund reported a blended 15.32x acquisition multiple in 2021, Reservoir Media an average of 14.7x in 2023, and Duetti's Music Finance Index put catalogs older than ten years at 10.2x for masters and 12.1x for publishing in H2 2026.",
+   "answers": 0.53,
+   "specific": "some"
+  },
+  {
+   "path": "/guides/music-rights-101/",
+   "title": "Music Rights 101: Everything Independent Creators Need to Know — SPACE",
+   "h1": "Music Rights 101: Everything Independent Creators Need to Know",
+   "opening": "Music rights are the two copyrights in every recorded song: master rights in the sound recording, usually owned by whoever paid for and controlled the recording, and publishing rights in the composition, owned by its songwriters, and each earns its own royalties. Royalties flow from these rights through a network of platforms, distributors, and performing rights organizations before reaching your pocket. Understanding the difference — and knowing which rights you actually own — is the single most important step before you sell, license, or transfer any part of your catalog. Independent creators who own both their masters and publishing sit in the strongest possible negotiating position, but only if their metadata is clean, their samples are cleared, and their registrations are current. This guide walks you through the entire landscape so you can protect what you've built and monetize it on your own terms. If you write, produce, or perform music independently, you already own valuable intellectual property — whether you realize it or not. Global recorded music revenues reached $31.7 billion in 2025, according to IFPI's Global Music Report 2026, and independent artists who understand their rights are better placed to collect their share. Yet \"music rights\" remains one of the most misunderstood topics in the business. Creators sign away ownership without knowing what they're giving up. They leave royalties uncollected because they never registered with the right organizations. They undervalue their catalogs because they can't articulate what makes them worth buying. This guide exists to change that. Over eight sections we'll break down the two core types of music rights, trace exactly how royalties move from a listener's headphones to your bank account, and explain the registrations, codes, and legal protections every independent creator needs. Whether you plan to hold your catalog forever or you're considering a sale, the knowledge here is the foundation everything else rests on.",
+   "answers": 0.58,
+   "specific": "specific"
+  },
+  {
+   "path": "/guides/what-are-your-streams-worth-2026/",
+   "title": "What Are Your Streams Actually Worth in 2026? The Complete Breakdown — SPACE",
+   "h1": "What Are Your Streams Actually Worth in 2026? The Complete Breakdown",
+   "opening": "Spotify, Apple Music, Tidal and the other major platforms do not pay a fixed rate per stream. Spotify pays rights holders by their share of total monthly streams, and Apple reported an average of $0.01 per play for Apple Music individual paid plans in 2020. Your own rate depends on where your listeners are, which plans they use, and your distributor or label deal. A catalog's lump-sum value is a separate question: a buyer reviews annual net revenue, its consistency and trend, rights ownership, and documentation, and any offer depends on that individual review. Instead of waiting years for streams to trickle in, catalog sales offer immediate liquidity. Every independent artist eventually Googles it: \"How much does Spotify pay per stream?\" There is no single answer: Spotify, like other major services, does not pay a fixed rate per stream, and the per-stream figures that circulate online are estimates. Those numbers tell an incomplete story. What matters isn't how much a single stream is worth. What matters is how much your entire catalog is worth — and whether you're leaving money on the table by collecting streaming royalties one drip at a time instead of unlocking the full value of your music in one move. This guide explains how per-stream payouts are calculated on every major platform in 2026, why ambient and lo-fi artists face particular challenges in the streaming economy, and which factors a catalog valuation looks at. Whether you're earning $200/month or $5,000/month from streaming, the real question isn't \"how much per stream\" — it's \"what is all of this worth together?\"",
+   "answers": 0.43,
+   "specific": "some"
+  },
+  {
+   "path": "/how-it-works/",
+   "title": "How Selling a Music Catalog Works (2026) - Review & Payment — SPACE",
+   "h1": "How it works.",
+   "opening": "Five steps from a free review request to an agreed sale. No auction or listing commission, and no obligation to accept an offer. Start with your email and artist or label name. We follow up by email for the relevant streaming links, royalty statements and rights documents. No documents are required in the initial form.",
+   "answers": 0.54,
+   "specific": "specific"
+  },
+  {
+   "path": "/",
+   "title": "Sell Your Music Catalog (2026) — Get an Offer | SPACE",
+   "h1": "Sell your music catalog.On terms you understand.",
+   "opening": "Your music has earned its place. Explore what comes next. SPACE buys revenue-generating catalogs directly from artists, producers and labels, across all genres. Free initial review. No obligation to sell. No auction or listing. Every catalog is reviewed individually.",
+   "answers": 0.31,
+   "specific": "some"
+  },
+  {
+   "path": "/privacy/",
+   "title": "Privacy Policy — SPACE",
+   "h1": "Privacy Policy",
+   "opening": "When you submit a review request or inquiry, we collect the information you provide, such as your name, email address, role, music links, rights details and any royalty income you choose to supply. Calculator scenario inputs are processed in your browser and are not sent to Plausible. Our website analytics use page paths and allowlisted source paths, not names, email addresses, form answers, documents or financial amounts. The form may include the public page path where your visit began and the page that led you to Apply; query strings and fragments are not forwarded. We use your information to evaluate your music catalog for potential acquisition, communicate about a review or offer, and respond to your inquiries. We do not sell or rent your personal information. Service providers process information for form storage, hosting, email delivery and, where applicable, payments. Marketing updates require a separate opt-in; leaving that question blank or choosing No is not consent.",
+   "answers": 0.23,
+   "specific": "specific"
+  },
+  {
+   "path": "/sell/",
+   "title": "Sell Your Music Catalog by Genre — SPACE",
+   "h1": "What genre do you make?",
+   "opening": "Explore genre-specific valuation topics and prepare your income and rights evidence. The actual offer requires an individual review. Hip-hop, R&B, pop, rock, electronic, ambient and more: we consider revenue-generating catalogs across all genres. The guides below cover our existing mood and electronic topics, not an eligibility list. Artists, producers and labels can request a free individual review.",
+   "answers": 0.34,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-afro-house-catalog/",
+   "title": "Sell Your Afro House Catalog | Afro House Rights Valuation — SPACE",
+   "h1": "Afro House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Afro House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The afro house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.56,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-ambient-music-catalog/",
+   "title": "Sell Your Ambient Music Catalog | Get a Fair Valuation — SPACE",
+   "h1": "What Is Your Ambient Catalog Worth?",
+   "opening": "Ambient music, meaning atmospheric soundscapes, evolving textures, long-form drones, and immersive sonic environments, is a steady category in the music rights market. It is used well beyond streaming: in wellness and meditation apps, in commercial spaces that want a calm sound, and in film and documentary work. If you own ambient music recordings with clear rights and a documented revenue history, your catalog can be reviewed as a long-term royalty asset. Ambient music is valued differently from trend-driven genres. Listeners use it for relaxation, sleep, focus, and meditation, so demand comes from daily habits rather than from new releases. Wellness and meditation apps are one important channel: many of them carry large libraries of calm, instrumental audio for guided and unguided sessions. On streaming services, ambient tracks reach listeners through editorial and algorithmic playlists for relaxation, focus, and sleep. This listening tends to repeat week after week, which gives ambient catalogs a stable revenue profile that buyers can review in the statements. Commercial spaces are another channel. Offices, co-working spaces, hotels, and spas use background music services, and calm instrumental music fits many of those settings. Airlines and other travel services also offer relaxation content. Ambient recordings also tend to have a long revenue tail. A well-produced ambient track from years ago can still perform today, because listeners are looking for a mood rather than a new sound. For a buyer, that durability matters more than short-term peaks. What decides the value of a specific catalog is the evidence behind it: who owns the masters and publishing, how consistent the royalties have been, how complete the metadata is, and how much of the income depends on a few tracks.",
+   "answers": 0.1,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-bass-house-catalog/",
+   "title": "Sell Your Bass House Catalog | Bass House Rights Valuation — SPACE",
+   "h1": "Bass House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Bass House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The bass house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.54,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-breakbeat-catalog/",
+   "title": "Sell Your Breakbeat Catalog | Breakbeat Rights Valuation — SPACE",
+   "h1": "Breakbeat Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Breakbeat catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The breakbeat market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.47,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-chillhop-catalog/",
+   "title": "Sell Your Chillhop Catalog | Jazz-Hop Music Valuations — SPACE",
+   "h1": "Chillhop Has Evolved From a Niche to a Lifestyle Brand Powerhouse",
+   "opening": "Chillhop, the smooth fusion of jazz instrumentation, hip-hop rhythms, and warm analog textures, has grown from a YouTube subculture into an established instrumental genre with its own labels, dedicated streaming audiences, and roots in lifestyle branding. If you produce chillhop or jazz-hop beats, your catalog sits where background music licensing, content creator demand, and café and hospitality music meet. Buyers review chillhop catalogs that can serve these commercial uses. Chillhop has achieved something rare in instrumental music: a genuine brand identity. Chillhop Music, the label that gave the genre its name, built a large YouTube audience, a record label, and a merchandise line, which helped establish chillhop as a commercially viable genre. On Spotify and other services, jazz-hop and chillhop playlists, both editorial and independent, are part of many listeners' daily routines. The genre's streaming economics are favorable because chillhop is often played in long listening sessions, which generates many plays per listener. The commercial licensing market for chillhop is broad. Cafés, from local specialty roasters to larger chains, use chillhop playlists for in-store ambience. Boutique retail stores, co-working spaces, and hotel lobbies also use chillhop-style music because it signals a relaxed, considered aesthetic. Content creators are another major channel. YouTube vloggers, lifestyle influencers, cooking channels, and travel creators often use chillhop as background music because it sets a laid-back mood without distracting from the visuals. This usage can generate Content ID revenue for rights holders who register their tracks, and it introduces the music to new listeners. Brands use chillhop too. Campaigns for coffee, lifestyle products, wellness apps, and fashion labels license chillhop tracks because the genre communicates warmth and approachability. Podcast producers use it for intros, outros, and transitions. For a buyer, the deciding factors are practical: sample clearance, ownership of each master and composition, consistent revenue across the statements, and metadata that makes the tracks easy to license.",
+   "answers": 0.44,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-chillout-catalog/",
+   "title": "Sell Your Chillout Catalog | Chillout Rights Valuation — SPACE",
+   "h1": "Chillout Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Chillout catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The chillout market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.59,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-cinematic-ambient-catalog/",
+   "title": "Sell Your Cinematic Ambient Catalog | Film &amp; Game Music Valuations — SPACE",
+   "h1": "Cinematic Ambient Music Is Built for Sync",
+   "opening": "Cinematic ambient — the intersection of ambient textures, orchestral elements, post-rock dynamics, and emotionally charged atmospheric composition — is a strong fit for the sync licensing marketplace. Unlike pure ambient music, cinematic ambient carries narrative weight: it builds, swells, retreats, and resolves in ways that map perfectly to visual storytelling. This makes it exceptionally sought after by film and TV music supervisors, game audio directors, and trailer production houses. If you create music that evokes cinematic scale and emotional depth without lyrics, your catalog belongs to a segment of the independent music rights market that is built for licensing. Cinematic ambient benefits from steady demand in industries that license music for picture. Streaming series, films, games, advertising, and digital media all need music, and cinematic ambient is versatile enough to work across many visual contexts while still sounding distinctive. Film and television are the largest demand channel. Streaming platforms and broadcasters produce large volumes of original content, and each production needs scored or licensed music. Cinematic ambient tracks are used for cold opens, montage sequences, establishing shots, emotional turning points, and end credits. Music supervisors often license existing recordings instead of commissioning custom scores because it is faster and more cost-effective, especially for documentaries and unscripted content where budgets are tighter. Documentaries are a natural fit. Nature, true crime, history, and science programming all need music that creates mood without competing with narration. The video game industry is another buyer of cinematic ambient music. Exploration games, horror titles, atmospheric indie games, and narrative-driven games use ambient and cinematic compositions for environments, menu screens, cutscenes, and exploration sequences, and developers license existing recordings when original scoring is not in the budget or timeline. Trailer music is a specialized licensing niche with constant demand for tension builds, atmospheric swells, and emotional crescendos. Advertising uses cinematic ambient for brand campaigns, automotive commercials, and technology launches. Sync fees vary widely with the production, the use, and the term, so buyers look at a catalog's documented placements and statements rather than at typical fees. Clean rights, stems, and good metadata are what make a cinematic ambient catalog easy to place and to review.",
+   "answers": 0.72,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-dance-pop-catalog/",
+   "title": "Sell Your Dance Pop Catalog | Dance Pop Rights Valuation — SPACE",
+   "h1": "Dance Pop Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Dance Pop catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The dance pop market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.53,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-deep-house-catalog/",
+   "title": "Sell Your Deep House Catalog | Deep House Rights Valuation — SPACE",
+   "h1": "Deep House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Deep House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The deep house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.54,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-downtempo-catalog/",
+   "title": "Sell Your Downtempo Catalog | Downtempo Rights Valuation — SPACE",
+   "h1": "Downtempo Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Downtempo catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The downtempo market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.48,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-drone-music-catalog/",
+   "title": "Sell Your Drone Music Catalog | Experimental Music Valuations — SPACE",
+   "h1": "Drone Music Is Quietly Becoming a High-Value Sync Asset",
+   "opening": "Drone music — sustained tones, harmonic overtones, slowly evolving textures, and minimalist long-form compositions — occupies a unique position in the music rights marketplace. Once relegated to the fringes of experimental music, drone has found commercial footing in sync licensing for film, contemporary art installations, immersive theater, and the growing market for deep listening experiences. If you create drone or experimental sustained-tone music, your catalog is positioned in a niche that is small but intensely sought after by buyers who struggle to source this content through mainstream channels. Drone music follows different economics from mainstream genres. It will not rival pop or hip-hop in streaming numbers, but it serves several commercial niches where a small catalog can still earn. Sync licensing for film and television is an important channel. Music supervisors use drone compositions for tension, atmosphere, and psychological horror, and sustained, dissonant tones are familiar in contemporary film scoring. That creates demand for licensable drone recordings that can be placed without commissioning an original score. Art installations and immersive experiences are another channel. Museums, galleries, and exhibition designers use sustained-tone compositions for exhibitions, and existing recordings can be licensed for temporary shows. Experimental and immersive theater also uses drone and sustained-tone audio as a foundation for its soundscapes. Long-running productions need that music for the length of the run. The wellness crossover matters too. Deep listening sessions, sound baths, and meditative drone events are now common wellness offerings, and facilitators need licensed recordings. On streaming platforms, experimental and dark ambient playlists reach a dedicated audience that listens in extended sessions. The niche nature of drone music can work in a seller's favor. Well-produced, properly rights-cleared drone recordings are harder to find than mainstream production music, so catalogs with professional production quality and clean rights chains stand out. A review looks at those rights, the sync and licensing history, and how consistent the revenue has been.",
+   "answers": 0.47,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-drum-and-bass-catalog/",
+   "title": "Sell Your Drum and Bass Catalog | Drum and Bass Rights Valuation — SPACE",
+   "h1": "Drum and Bass Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Drum and Bass catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The drum and bass market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.55,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-electro-house-catalog/",
+   "title": "Sell Your Electro House Catalog | Electro House Rights Valuation — SPACE",
+   "h1": "Electro House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Electro House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The electro house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.59,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-electronic-music-catalog/",
+   "title": "Sell Your Electronic Music Catalog | EDM &amp; Electronica Valuation — SPACE",
+   "h1": "Electronic Catalogs Are Expanding Beyond Festival Cycles",
+   "opening": "Electronic music catalogs now monetize across more channels than traditional release cycles alone. Beyond DSP streams, buyers value electronic catalogs for gaming placements, creator ecosystems, and repeatable sync usage in branded content and digital media. The global electronic ecosystem is increasingly rights-driven. Tracks and instrumentals are reused across fitness content, esports edits, short-form video, and ad campaigns. Buyers prioritize catalogs with durable replay value, clean ownership, and enough depth to power playlists and licensing bundles at scale.",
+   "answers": 0.61,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-electronica-catalog/",
+   "title": "Sell Your Electronica Catalog | Electronica Rights Valuation — SPACE",
+   "h1": "Electronica Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Electronica catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The electronica market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.59,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-focus-music-catalog/",
+   "title": "Sell Your Focus Music Catalog | Productivity Music Valuations — SPACE",
+   "h1": "Focus Music Is the Soundtrack to the Remote Work Revolution",
+   "opening": "Focus music, purpose-built soundtracks for concentration, deep work, studying, and productivity, has become a distinct category in the music rights market. Positioned at the intersection of productivity culture and remote work, focus music catalogs attract buyers who see them as functional audio assets as well as music. If you produce music designed to help people concentrate, your recordings belong to a category with steady daily use. Focus music is powered by how people work and learn. Remote and hybrid work have become common: in McKinsey's 2022 American Opportunity Survey, 58 percent of employed respondents said they could work from home at least one day a week. Many knowledge workers and students use music to support long stretches of concentration, and functional music designed to help focus rather than entertain has become its own listening category. Specialized apps serve this demand with focus and relaxation audio, and they need a steady supply of suitable music. On streaming platforms, focus and study playlists are high-engagement categories. Listeners play them for hours while they work, so a single session can include many tracks in a row. That consumption pattern makes focus music efficient at generating streams per listener, and it tends to repeat every working week. Co-working spaces and offices use background music services, and focus-appropriate music suits those settings. Educational technology and corporate training providers also need licensed music for study tools, e-learning modules, and virtual sessions. For a buyer, the category matters less than the catalog. A review looks at whether the tracks are fully instrumental and owned, how consistent the royalties are, how complete the metadata is, and how the income is spread across the catalog.",
+   "answers": 0.4,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-future-house-catalog/",
+   "title": "Sell Your Future House Catalog | Future House Rights Valuation — SPACE",
+   "h1": "Future House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Future House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The future house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.51,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-garage-house-catalog/",
+   "title": "Sell Your Garage House Catalog | Garage House Rights Valuation — SPACE",
+   "h1": "Garage House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Garage House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The garage house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.55,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-house-music-catalog/",
+   "title": "Sell Your House Music Catalog: Value & Direct Offer | SPACE",
+   "h1": "House Music Catalogs Have Durable Utility and Repeat Demand",
+   "opening": "House music remains one of the most reusable electronic formats in commercial contexts. Its rhythmic consistency and instrumental flexibility make it attractive for recurring playlist use and sync-adjacent edits. Buyers are increasingly treating house catalogs as utility assets: usable across workouts, nightlife branding, travel content, and digital campaigns. Catalogs with consistent quality and clear rights perform best because they can be deployed across multiple licensing lanes quickly.",
+   "answers": 0.53,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-indie-dance-catalog/",
+   "title": "Sell Your Indie Dance Catalog | Indie Dance Rights Valuation — SPACE",
+   "h1": "Indie Dance Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Indie Dance catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The indie dance market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.59,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-lo-fi-beats-catalog/",
+   "title": "Sell Your Lo-Fi Beats Catalog | Maximize Your Catalog Value — SPACE",
+   "h1": "Turn Your Lo-Fi Beats Catalog Into an Offer",
+   "opening": "Lo-fi hip-hop, characterized by its warm vinyl crackle, mellow jazz samples, tape-saturated drums, and laid-back tempos, has grown from a YouTube livestream format into a widely used instrumental genre. What started as background music for studying has become an aesthetic used by brands, apps, and a large daily audience. If you have been producing lo-fi beats with clear rights and a steady revenue history, your catalog can be reviewed by a buyer. Lo-fi beats have moved from an internet subculture into everyday listening. The Lofi Girl YouTube channel (formerly ChilledCow) made the 24-hour lo-fi livestream a familiar format and showed that the genre could hold a large, loyal audience. On Spotify and other services, lo-fi and study playlists are a common part of daily routines, and algorithmic playlists keep surfacing lo-fi tracks to new listeners. Lo-fi is usually played in long, uninterrupted sessions while people study, work, or relax. That listening pattern means a catalog's streams tend to repeat steadily, which is visible in its royalty statements. Beyond streaming, lo-fi music is used in licensing. Cafés and retail stores use lo-fi playlists to set an atmosphere. Content creators on YouTube, Twitch, and TikTok use lo-fi beats as background music, which can generate Content ID revenue for rights holders who register their tracks. Brands aimed at younger audiences use lo-fi tracks in social media content and campaigns. For buyers, the key questions are practical. Lo-fi is a crowded production field, so a catalog stands out through clean rights, especially cleared or original samples, a consistent revenue history, strong metadata, and income that is spread across many tracks rather than one or two.",
+   "answers": 0.24,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-meditation-music-rights/",
+   "title": "Sell Your Meditation Music Rights: Value & Direct Offer | SPACE",
+   "h1": "Meditation Music Rights Have Long-Term Licensing Value",
+   "opening": "Meditation music — encompassing guided meditation backgrounds, mindfulness soundscapes, sound healing frequencies, singing bowl recordings, and binaural beat compositions — occupies a uniquely privileged position in the music rights marketplace. Unlike nearly every other genre, meditation music benefits from a demand curve driven not by entertainment trends but by healthcare economics, corporate wellness mandates, and a global mental health crisis that shows no signs of abating. If you create music for meditation, mindfulness, or therapeutic contexts, your recordings may be worth reviewing as a royalty asset. Meditation music has a demand profile that differs from most genres. Meditation and mindfulness apps, corporate wellness programs, and streaming playlists all use calm, functional audio, and the listening repeats as part of daily routines. Meditation apps are the most visible channel. Many of them combine guided sessions with music and soundscapes, and they add new audio over time because variety keeps users engaged. Some apps also let independent musicians publish tracks directly. Corporate wellness programs are another channel. Employers that offer mindfulness sessions, breathing exercises, and relaxation content need audio for them, often through wellness platforms that license music. Therapy and wellness practices also use music in their work. Sound healing sessions, breathwork classes, and relaxation programs use singing bowl recordings, binaural compositions, and guided soundscapes, which can create licensing demand from practitioners and the platforms that serve them. Streaming services have dedicated meditation, sleep, and wellness categories, and smart speakers make it easy to request meditation music by voice. The economics favor sellers in one important way: the content is functional. Listeners judge meditation music by how well it helps them settle, not by how new it is. A high-quality meditation recording from several years ago can remain as useful as a new one, which gives meditation catalogs a long revenue tail. A review confirms this in your statements, together with rights ownership, licensing agreements, and metadata.",
+   "answers": 0.59,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-melodic-house-catalog/",
+   "title": "Sell Your Melodic House Catalog | Melodic House Rights Valuation — SPACE",
+   "h1": "Melodic House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Melodic House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The melodic house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.49,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-melodic-techno-catalog/",
+   "title": "Sell Your Melodic Techno Catalog | Melodic Techno Rights Valuation — SPACE",
+   "h1": "Melodic Techno Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Melodic Techno catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The melodic techno market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.47,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-nature-soundscape-catalog/",
+   "title": "Sell Your Nature Soundscape Catalog | Field Recording Valuations — SPACE",
+   "h1": "Premium Nature Soundscapes Are in High Demand",
+   "opening": "Nature soundscapes, field recordings of rain, ocean waves, forest environments, birdsong, thunderstorms, river currents, and other environmental audio, are a distinct asset class in the music rights marketplace. While not \"music\" in the traditional sense, nature soundscapes are cataloged, distributed, and monetized through the same channels as composed music, and people use them every night for sleep and every day for relaxation and focus. If you have invested time and equipment into capturing high-quality environmental recordings, your catalog may be worth reviewing. Nature soundscapes sit where sleep, wellness apps, and hospitality audio meet. Sleep is the primary demand driver. An Institute of Medicine report estimated that 50 to 70 million Americans have chronic sleep disorders, and many people use rain, ocean, and other natural sounds to help them fall asleep. Sleep and white noise apps are active users of nature soundscape content. They depend on large libraries of recordings and add new sounds over time to keep users engaged. New apps entering the category need nature content as well, so the demand keeps renewing. Relaxation and ASMR content on YouTube has widened the audience for nature audio. Rain sounds, crackling fire, and ocean waves are familiar formats, and many younger listeners now expect nature audio as a standard feature in wellness and productivity tools. On streaming platforms, nature and sleep playlists are often played for hours, including overnight. A single listener can generate many track plays in one session, which makes nature recordings efficient at earning streams per active listener. Hotels, spas, and wellness resorts use nature soundscapes in rooms, treatment spaces, and lobbies, and some airlines offer relaxation channels. Commercial licenses of this kind can bring predictable income when they are documented and transferable. Recording quality and uniqueness are the main differentiators. Generic rain recordings are abundant, while clean recordings from specific, well-documented locations are scarcer. Buyers look at those qualities together with revenue history, rights, and metadata.",
+   "answers": 0.34,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-new-age-music-catalog/",
+   "title": "Sell Your New Age Music Catalog | World Fusion Valuations — SPACE",
+   "h1": "New Age Music Is Experiencing a Generational Value Resurgence",
+   "opening": "New age music — encompassing world fusion, nature-inspired compositions, Celtic and Eastern-influenced instrumentals, crystal bowl recordings, synthesizer-based space music, and holistic healing soundscapes — is a legacy genre experiencing a significant resurgence in commercial value. While the genre's cultural peak may have been in the 1980s and 1990s, the catalogs created during that era and the contemporary productions that carry forward the tradition are finding new audiences and new commercial applications in the modern wellness economy. If you own new age or world fusion music recordings, your catalog is positioned at the intersection of nostalgic listener bases and emerging wellness demand channels. New age music is being revalued as legacy catalog economics meet modern wellness demand. The genre's original audience, the listeners who bought Enya, Yanni, Kitaro, and Windham Hill recordings in the 1980s and 1990s, still listens on streaming platforms, and new age playlists draw a loyal, mostly adult audience. That listener base gives established new age catalogs a stable baseline of streaming revenue. The modern wellness economy has created new channels for new age music. Sound healing has moved into mainstream practice, with sound baths, crystal bowl ceremonies, and gong meditation events now common in many cities. Practitioners need licensed music for their sessions, both for live accompaniment and for recorded sessions distributed through apps and online platforms. Yoga studios are another licensing channel. Many studios have used consumer streaming services, but the professionalization of the yoga industry is moving studios toward licensed business music services, which in turn creates demand for new age and world fusion content. The holistic and integrative health sector adds further use. Naturopathic clinics, acupuncture practices, chiropractic offices, massage studios, and integrative medicine centers use background music as part of their environment. New age and world fusion content, with its acoustic instruments and therapeutic intent, fits these settings well. Streaming behavior also works in the genre's favor. New age listeners tend to return to favorite tracks and artists rather than chase new releases, which creates stable, predictable streaming curves. A well-produced new age recording from 2005 can still earn steadily today because its audience values emotional resonance over novelty. Vinyl reissues, remasters, and retrospective playlists add a further route to value for classic catalogs. For a buyer, the essentials are the same as in any genre: clear rights, especially for older label releases, a consistent revenue history, and complete metadata.",
+   "answers": 0.66,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-organic-house-catalog/",
+   "title": "Sell Your Organic House Catalog | Organic House Rights Valuation — SPACE",
+   "h1": "Organic House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Organic House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The organic house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.53,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-progressive-house-catalog/",
+   "title": "Sell Your Progressive House Catalog | Progressive House Rights Valuation — SPACE",
+   "h1": "Progressive House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Progressive House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The progressive house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.52,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-psytrance-catalog/",
+   "title": "Sell Your Psytrance Catalog | Psytrance Rights Valuation — SPACE",
+   "h1": "Psytrance Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Psytrance catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The psytrance market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.49,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-sleep-music-catalog/",
+   "title": "Sell Your Sleep Music Catalog | Sleep &amp; ASMR Valuations — SPACE",
+   "h1": "Sleep Music Serves a Daily, Functional Need",
+   "opening": "Sleep music, compositions designed to help people fall asleep and stay asleep, including ambient sleep soundscapes, delta wave binaural beats, ASMR audio, sleep story backgrounds, and gentle piano lullabies, is a steady category in the music rights marketplace. It serves a functional, health-adjacent need that is universal and repeats every night. If you create music that helps people sleep and you own its rights, your catalog can be reviewed as a long-term royalty asset. Several factors make sleep music attractive to catalog buyers. Poor sleep is common: an Institute of Medicine report estimated that 50 to 70 million Americans have chronic sleep disorders, and sleep music is one of the most widely used non-pharmaceutical aids. Sleep and meditation apps are the main commercial users of sleep music. Many of them offer sleep sounds, sleep stories with music backgrounds, and sleep playlists, and they add new audio because library variety helps keep users. On streaming platforms, sleep playlists and sleep tracks are often played for many hours per night. A single active listener can generate many track plays in one session, which makes sleep music efficient at earning streams per listener. Sleep technology is another channel. Sound machines, smart mattresses, and sleep earbuds include audio features that need licensed content. Relaxation and ASMR content on YouTube has widened the audience for sleep audio, and many younger listeners now expect sleep sounds as a standard feature in wellness and health apps. Hotels also use sleep audio as part of in-room wellness amenities. For a buyer, the question is how this demand shows up in a specific catalog: the consistency of overnight streaming, the terms of any app or technology licenses, ownership of each master and composition, and the quality of the metadata.",
+   "answers": 0.56,
+   "specific": "specific"
+  },
+  {
+   "path": "/sell/sell-study-beats-catalog/",
+   "title": "Sell Your Study Beats Catalog | Study Music Valuations — SPACE",
+   "h1": "Study Beats Are Built for Repeat Listening",
+   "opening": "Study beats — instrumental compositions optimized for concentration, academic focus, and cognitive performance — have become one of the most reliably monetizable categories in the streaming ecosystem. Built around consistent tempos, minimal lyrical distraction, and extended listening sessions, study beats catalogs generate unusually predictable and recurring revenue that makes them attractive to a growing pool of buyers. If you produce music that students, remote workers, and knowledge professionals turn on when they need to focus, your catalog has quantifiable commercial value. The study beats market is powered by a reliable source of demand: students. According to UNESCO, the number of students enrolled in higher education worldwide reached 269 million in 2024, and many of them listen to music while studying. That audience renews every academic year, as one cohort graduates and another enters. What makes study beats interesting to catalog buyers is the pattern of the revenue. Study music often shows seasonal peaks around exam periods, which differ between the Northern and Southern Hemispheres. When those peaks repeat year after year in a catalog's statements, a buyer can model future revenue with more confidence. Study-oriented playlists are a large part of the streaming ecosystem on Spotify, Apple Music, Amazon Music, and YouTube Music. The study playlist ecosystem also creates a flywheel: tracks that perform well get picked up by algorithmic playlists, which bring more listeners back into study playlists. Beyond streaming, study beats can be licensed by educational technology platforms, study apps, and campus study spaces that want background music. These institutional channels are still developing. The creator economy adds another revenue layer. Study-with-me videos on YouTube, where creators film themselves studying for hours with background music, are a well-established format. These videos can drive Content ID revenue for study beat producers and send new listeners to the music on streaming platforms. A review checks how these patterns show up in the actual statements, along with rights ownership and metadata.",
+   "answers": 0.47,
+   "specific": "some"
+  },
+  {
+   "path": "/sell/sell-synthwave-catalog/",
+   "title": "Sell Your Synthwave Catalog | Synthwave Rights Valuation — SPACE",
+   "h1": "Synthwave Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Synthwave catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The synthwave market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.4,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-tech-house-catalog/",
+   "title": "Sell Your Tech House Catalog: Value & Direct Offer | SPACE",
+   "h1": "Tech House Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Tech House catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The tech house market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.56,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-techno-catalog/",
+   "title": "Sell Your Techno Catalog | Techno Rights Valuation — SPACE",
+   "h1": "Techno Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Techno catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The techno market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.57,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-trance-catalog/",
+   "title": "Sell Your Trance Catalog | Trance Rights Valuation — SPACE",
+   "h1": "Trance Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "Trance catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The trance market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.61,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-tropical-house-catalog/",
+   "title": "Sell Your Tropical House Catalog | Tropical House Valuation — SPACE",
+   "h1": "Tropical House Keeps Strong Commercial Replay Value",
+   "opening": "Tropical house sits in a commercially useful lane: upbeat but non-aggressive, melodic but editable. That combination supports broad usage across social content, brand campaigns, and curated playlist ecosystems. While festival trends move quickly, tropical house maintains long-tail utility in travel, hospitality, lifestyle, and creator content. Buyers look for catalogs with stable performance, clean rights, and enough breadth to power recurring placements.",
+   "answers": 0.49,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-uk-garage-catalog/",
+   "title": "Sell Your UK Garage Catalog | UK Garage Rights Valuation — SPACE",
+   "h1": "UK Garage Catalogs Are Becoming High-Utility Rights Assets",
+   "opening": "UK Garage catalogs are now monetized beyond pure streaming. Buyers evaluate these assets for creator ecosystems, sync-adjacent edits, and recurring playlist utility. If your catalog has coherent quality and documented ownership, it can be positioned for stronger outcomes. The uk garage market rewards structure. Buyers look for repeatable utility, not one-off peaks: clean rights, stable listener behavior, and deployable versions (instrumental/edit/extended). Catalogs that can serve multiple channels simultaneously tend to outperform in acquisition conversations.",
+   "answers": 0.5,
+   "specific": "vague"
+  },
+  {
+   "path": "/sell/sell-wellness-music-catalog/",
+   "title": "Sell Your Wellness &amp; Spa Music Catalog | Premium Valuations — SPACE",
+   "h1": "Wellness Music Is a Working Asset for Spas, Studios and Apps",
+   "opening": "Wellness music, compositions created for spa environments, yoga classes, therapeutic massage, Reiki sessions, breathwork exercises, and holistic health experiences, is a distinct part of the functional music marketplace. Corporate wellness programs, hospitality and spa operators, and digital yoga and fitness platforms all need reliable, high-quality audio for professional wellness settings. If you create music for healing, relaxation, or therapeutic practice and own its rights, your catalog is an asset that commercial buyers review. Wellness music is supported by demand from industries that do not depend on entertainment trends. Many employers offer wellness programs with guided meditation, yoga sessions, and relaxation spaces, and those programs need licensed music. The spa and hospitality sector is another core channel. Spas, wellness resorts, and hotels use curated audio in treatment rooms, relaxation lounges, and hydrotherapy spaces. They treat music as part of the guest experience, and some license it on multi-year terms, which gives catalog owners predictable income when the agreements are documented. Digital yoga and fitness platforms have widened the channels for wellness music. Online classes need background music, and instructors usually cannot use commercial pop or rock without the right licenses, which creates steady demand for purpose-built wellness music. Wellness retreats and wellness travel add a further channel. Retreat centers run sound healing ceremonies, breathwork workshops, and meditation programs that all need audio, and the move toward properly licensed music has opened commercial opportunities for wellness catalog owners. Healthcare settings are an emerging frontier. Clinics, physical therapy practices, dental offices, and mental health practices use calm background music in patient areas and need properly licensed catalogs for their sound systems. For a buyer, these channels matter when they appear in a catalog's revenue: signed licenses, consistent royalties, clear ownership, and metadata that makes the music easy to place.",
+   "answers": 0.58,
+   "specific": "some"
+  },
+  {
+   "path": "/streaming-rates/amazon-music-2026/",
+   "title": "Amazon Music Pay Per Stream (2026) — Royalty Estimation Guide — SPACE",
+   "h1": "Amazon Music Pay Per Stream (2026): What Actually Drives Payouts",
+   "opening": "Amazon Music performance can look deceptively simple at first glance, but 2026 payout outcomes are shaped by tier mix, market economics, and catalog use patterns. For ambient and utility-led catalogs, voice-driven discovery can create meaningful volume, yet value per stream still depends on who listens and under which subscription context. That means planning from a generic industry number can lead to major forecasting errors. This guide focuses on controllable estimation: how to read your own statements, separate tier effects from true catalog quality, and determine whether Amazon-driven growth materially changes your catalog's offer-range potential. The goal is better decisions, not vanity metrics. Amazon Music payouts vary across service tiers and territories, with effective outcomes influenced by subscription context, rights deductions, and listener market mix.",
+   "answers": 0.6,
+   "specific": "some"
+  },
+  {
+   "path": "/streaming-rates/apple-music-2026/",
+   "title": "Apple Music Pay Per Stream (2026) — Estimate Royalties + Offer Range — SPACE",
+   "h1": "Apple Music Pay Per Stream (2026): Payout Mechanics and Estimation",
+   "opening": "Apple Music is often discussed as a higher-quality revenue source because it is subscription-first and less exposed to ad-supported dilution. But a stronger average does not mean fixed outcomes for every catalog. In 2026, your realized payout still depends on territory mix, rights setup, distributor terms, and how much of your listening base sits in markets with stronger ARPU. For catalog operators, Apple Music can improve revenue quality when combined with stable retention and clean rights metadata. This page explains what influences effective earnings, how to build a realistic estimate without relying on headline myths, and how to translate that estimate into a practical valuation conversation. Apple Music allocates subscription-driven revenue with market-level variation and rights-layer deductions. Effective payouts are typically more stable than ad-heavy models but still vary materially.",
+   "answers": 0.21,
+   "specific": "some"
+  },
+  {
+   "path": "/streaming-rates/deezer-2026/",
+   "title": "How Much Does Deezer Pay Per Stream in 2026? — SPACE",
+   "h1": "Deezer Pay Per Stream (2026): Practical Royalty Estimation",
+   "opening": "Deezer has no fixed rate per stream: under its artist-centric payment model, earnings vary by country, subscription mix and rights setup, and artists need more than 1,000 streams a month from at least 500 unique listeners for a boost, according to Deezer. Your 2026 payout results also depend on catalog behavior, territory mix, and rights execution. For independent catalogs, Deezer can add quality revenue in selected markets when listener intent and retention are strong. The key is to avoid headline-rate assumptions and instead estimate from evidence: your net receipts trend, market composition, and consistency over multiple periods. This page gives a practical framework to do that, then connect channel-level insights to total catalog valuation. If you're preparing for a sale, this is where better estimation discipline can prevent both underpricing and unrealistic expectations. Deezer payout outcomes are driven by market economics, listener behavior weighting, and rights/deduction structure. Effective net rates vary across catalogs and periods.",
+   "answers": 0.64,
+   "specific": "some"
+  },
+  {
+   "path": "/streaming-rates/deezer-prices-2026/",
+   "title": "Deezer Prices 2026 by Country: Premium, Duo, Family and Student — SPACE",
+   "h1": "Deezer Prices 2026 by Country: Premium, Duo, Family and Student",
+   "opening": "Deezer sets its prices by country. We checked Deezer's own offers pages for 10 countries in September 2026. Prices are monthly unless noted, and Deezer can change them at any time, so confirm on Deezer's site before you subscribe. Annual plans where listed: United States: Premium $107.99/yr, Duo $174.99/yr, Family $218.99/yr; France: Premium 107,99 €/yr, Duo 174,99 €/yr, Famille 218,99 €/yr; Sweden: Premium 1069 kr/yr, Duo 1749 kr/yr, Family 2299 kr/yr.",
+   "answers": 0.23,
+   "specific": "some"
+  },
+  {
+   "path": "/streaming-rates/",
+   "title": "Streaming Rates (2026) — Spotify, Apple, YouTube + Calculator — SPACE",
+   "h1": "Streaming Rates (2026)",
+   "opening": "Streaming payout is not one fixed number. Effective payout varies by country, plan mix, distributor terms, rights coverage, and claims handling. Estimate from your own net revenue history, then model ranges in the catalog calculator. Estimate now. How Spotify payouts work in 2026, what affects your effective rate, and how to estimate earnings quickly. Free calculator and catalog valuation path.",
+   "answers": 0.5,
+   "specific": "some"
+  },
+  {
+   "path": "/streaming-rates/soundcloud-2026/",
+   "title": "SoundCloud Pay Per Stream (2026) — Royalty Estimator + Guide — SPACE",
+   "h1": "SoundCloud Pay Per Stream (2026): Estimating Net Royalties",
+   "opening": "SoundCloud can be a powerful channel for niche communities and early discovery, but payout outcomes in 2026 vary widely based on monetization eligibility, audience geography, and consumption quality. That makes it risky to forecast from generic numbers alone. For creators with engaged listeners and repeat play behavior, SoundCloud can contribute meaningful cash flow and audience proof, especially when paired with stronger monetization channels elsewhere. This guide explains how to estimate SoundCloud net earnings realistically, which variables matter most for rights owners, and how to map channel performance into a broader catalog valuation strategy without overfitting to outlier months. SoundCloud payouts depend on monetization framework, audience market mix, and rights setup. Effective outcomes are highly catalog-specific and can fluctuate across periods.",
+   "answers": 0.11,
+   "specific": "vague"
+  },
+  {
+   "path": "/streaming-rates/spotify-2026/",
+   "title": "Spotify Pay Per Stream (2026) — Estimate Your Royalties + Calculator — SPACE",
+   "h1": "Spotify Pay Per Stream (2026): How to Estimate Your Real Royalties",
+   "opening": "Spotify has no fixed rate per stream: it allocates each period's net revenue by share of eligible streams, and since April 2024 a track needs at least 1,000 streams in the previous 12 months to earn recorded music royalties. Spotify is still the biggest discovery engine for most independent catalogs. In 2026, your effective payout depends on listener geography, premium versus ad-supported listening mix, your distributor terms, and how your catalog performs relative to total platform consumption in a period. For ambient, lo-fi, and functional music, long listening sessions can create strong volume, but conversion to net revenue depends on who is listening and where. This guide focuses on practical estimation: how to frame realistic ranges, what inputs matter most, and how to avoid over- or under-valuing your stream base when planning a catalog sale. Spotify uses a revenue-pool model where each period's net revenue is allocated based on share of eligible streams. Effective payout varies by territory, subscription mix, and contractual deductions.",
+   "answers": 0.37,
+   "specific": "some"
+  },
+  {
+   "path": "/streaming-rates/tidal-2026/",
+   "title": "TIDAL Pay Per Stream (2026) — How to Estimate Royalties — SPACE",
+   "h1": "TIDAL Pay Per Stream (2026): Effective Rate, Not Headline Rate",
+   "opening": "TIDAL is frequently cited for strong artist economics, but valuation decisions should still be grounded in your own net receipts and consistency profile. In 2026, your realized outcome depends on audience concentration, market-level economics, and rights configuration just like any other DSP. For focused catalogs with dedicated listeners, TIDAL can improve revenue quality, but total impact depends on scale and retention depth. This page helps you estimate conservatively: isolate durable signals from optimistic assumptions, understand what actually changes net payout, and decide how much TIDAL performance should influence your total catalog offer-range expectations. TIDAL payout outcomes are shaped by subscription economics, audience behavior, and rights-layer deductions. Strong averages in industry discourse do not replace catalog-specific net analysis.",
+   "answers": 0.24,
+   "specific": "vague"
+  },
+  {
+   "path": "/streaming-rates/youtube-music-2026/",
+   "title": "YouTube Music Pay Per Stream (2026) — Estimate Earnings + Catalog Value — SPACE",
+   "h1": "YouTube Music Pay Per Stream (2026): Estimating Real Earnings",
+   "opening": "YouTube Music has no single rate per stream: what you earn depends on the listener's country, ad-supported versus Premium listening and your rights administration, and Content ID can add income when your music is used in videos other people upload. YouTube Music is best evaluated as part of a broader YouTube ecosystem, not as an isolated stream counter. In 2026, payout outcomes vary by viewer market, ad-supported versus premium consumption, rights coverage, and how your tracks are used across long-form and user-generated contexts. For mood and functional catalogs, YouTube can introduce upside through repeat utility and discoverability, but only if rights administration is tight and claims are properly handled. This page gives you a practical framework for estimation: separate direct streaming assumptions from rights-dependent upside, quantify what you can trust in your own statements, and convert those signals into a valuation-ready earnings view. YouTube Music combines tiered streaming economics with broader platform monetization dynamics. Effective rates vary with geography, subscription/ad mix, and rights administration outcomes.",
+   "answers": 0.46,
+   "specific": "some"
+  },
+  {
+   "path": "/tools/streaming-calculator/",
+   "title": "Streaming Royalty Calculator 2026 — How Much Do Your Streams Earn? — SPACE",
+   "h1": "How much do your streams earn?",
+   "opening": "From your distributor statement: streaming income divided by streams for the same period. There is no fixed rate per stream. A catalog's sale value is usually its annual net royalties multiplied by a multiple the buyer assumes.",
+   "answers": 0.79,
+   "specific": "some"
+  }
+ ]
+}

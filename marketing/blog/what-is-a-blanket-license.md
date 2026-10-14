@@ -1,0 +1,106 @@
+# What Is a Blanket License? ASCAP, BMI & SESAC Explained for Independent Musicians
+
+A blanket license lets a business use a defined repertoire under one agreement, within specified rights, uses and territories. In U.S. performing-rights licensing, it generally covers public performances of the compositions or shares represented by the licensor. It does not clear every song or every use of music. [Global Music Rights explains its coverage](https://globalmusicrights.com/faq).
+
+For independent musicians, the practical question is how those license fees become royalties you can document. This guide explains the U.S. system and what to check before presenting a catalog to a buyer. For a shorter definition, see our [blanket license glossary entry](/glossary/blanket-license/).
+
+## Who buys a blanket license?
+
+Businesses, venues, broadcasters and digital services obtain licenses for the music uses they offer. Songwriters generally affiliate with a performing rights organization, or PRO, and register their works so the organization can license and administer the relevant rights.
+
+Imagine a cafe choosing music for its customers. It needs to check the repertoire and activities its licenses cover. One PRO's agreement does not automatically cover rights represented by another; Global Music Rights, for example, licenses its represented shares separately from ASCAP, BMI and SESAC. [Global Music Rights licensing FAQ](https://globalmusicrights.com/faq).
+
+A consumer streaming account is another issue. Spotify says its service is for personal, non-commercial use and cannot be played publicly in a business. A cafe should use a service and licensing arrangement that permits its intended business use. [Spotify's commercial-use policy](https://support.spotify.com/us/article/spotify-public-commercial-use/).
+
+## How do ASCAP, BMI and SESAC work?
+
+These organizations license public performances of musical works and distribute performance royalties to the songwriters and publishers they represent. The musical work is the composition; it is separate from the recorded master. [BMI's explanation of its role](https://www.bmi.com/creators/faqs).
+
+| Organization | What to know as an independent musician |
+| --- | --- |
+| ASCAP | Operates on a not-for-profit basis for its songwriter and publisher members. [ASCAP's announcement via CISAC](https://www.cisac.org/fr/node/1421). |
+| BMI | Operates under a for-profit business model. Descriptions that still call BMI a nonprofit are outdated. [BMI's business-model update](https://www.bmi.com/news/new-update-from-mike-oneill). |
+| SESAC | Accepts songwriter and composer affiliations by invitation. [SESAC's affiliation FAQ](https://www.sesac.com/frequently-asked-questions/). |
+
+They are not the only U.S. performing-rights organizations. Before choosing or changing an affiliation, check the current agreement, represented territories, registration process and termination conditions. If you already have a local collecting society, ask it how your U.S. performances are administered before opening another account.
+
+## What does a PRO blanket license cover?
+
+Public performance can include music played to an audience at a venue, on radio, or through a transmission to the public. Coverage depends on the agreement and applicable exceptions; there is no universal license that clears every activity. [Global Music Rights' public-performance guidance](https://globalmusicrights.com/faq).
+
+Keep these distinctions clear:
+
+- **Performance rights concern the composition.** They do not give a business ownership of your master recording.
+- **Video use can require additional permission.** A PRO license does not itself clear synchronization of a composition with video or use of a particular recording. [SESAC's explanation of sync rights](https://www.sesac.com/frequently-asked-questions/).
+- **Mechanical royalties are separate.** The MLC administers a different blanket license for eligible U.S. digital mechanical uses, including interactive streams and downloads. This is not the PRO license discussed above. [The MLC's explanation](https://blog.themlc.com/resources/what-is-the-blanket-compulsory-mechanical-license).
+
+A podcast, online video or meditation app can therefore involve several rights. Identify the recording, composition and intended use before deciding what permissions are needed.
+
+## How do performance royalties reach you?
+
+License fees support royalty distributions, but a public play does not guarantee a separately itemized payment to every writer. Distribution depends on the PRO's reporting, monitoring or sampling methods, payment rules and ability to identify the work and its owners. Registering a song is an administrative step, not a fixed-rate payment promise. [BMI's royalty policy](https://www.bmi.com/creators/royalty-policy-manual).
+
+Registration quality matters. Keep work titles, songwriter identities, agreed splits and publisher or administrator details accurate. BMI warns that late registrations can delay or lose royalties. Payment timing also varies by the source of the performance and the applicable distribution schedule. [BMI's registration and payment rules](https://www.bmi.com/creators/royalty-policy-manual).
+
+Be precise about identifiers: an **ISRC identifies a recording**, while an **ISWC identifies a musical work**. Linking recording information can help matching, but an ISRC does not replace a composition registration or establish its ownership splits. [IFPI's identifier guidance](https://isrc.ifpi.org/faqs).
+
+## Why does documentation matter when selling a catalog?
+
+At SPACE, a catalog review uses royalty statements and rights documentation to assess the earnings and rights being offered. PRO statements can support the publishing portion of a review; distributor or label statements may support the recording portion. The relevant evidence depends on the transaction. [SPACE's offer policy](/pricing.md).
+
+That distinction matters when comparing two statements that both mention the same track. They may describe different revenue streams, different periods, or money already included in another report. Organize them before adding their totals together.
+
+For a **masters-only sale**, distinguish recording income from publishing income you intend to retain. For a **publishing sale or combined transaction**, identify the composition shares, administration agreements and income included in the proposed transfer. Our [masters versus publishing comparison](/compare/selling-masters-vs-selling-publishing/) explains the distinction.
+
+Clean registration helps make a review more reliable. It does not automatically increase a valuation multiple or guarantee an offer. Documented earnings, their consistency, the ownership share and the agreed terms still matter. See our [music catalog valuation guide](/guides/music-catalog-valuation-2026/).
+
+## A rights-documentation checklist
+
+Before submitting a catalog for review, prepare:
+
+1. **A work-and-recording list.** Match titles and alternate titles to composition records, available ISWCs and the ISRCs of relevant recordings.
+2. **Agreed ownership shares.** Record co-writers, publisher or administrator interests and the master share you control. Include signed agreements supporting those shares.
+3. **Registration records.** Check that your PRO records reflect the correct participants. Confirm how your own publisher share is collected rather than assuming every PRO uses the same account setup.
+4. **Separate royalty statements.** Label performance, mechanical, distributor and other reports by payer, period and rights type. Flag overlaps or adjustments.
+5. **Existing commitments.** Identify advances, assignments, distribution terms, samples, disputes or other restrictions relevant to the rights being offered.
+6. **A proposed sale scope.** Specify the works, recordings, percentage, territories and income streams you want reviewed.
+
+If a publisher or administrator already handles your registrations or mechanical collections, coordinate corrections with it. For eligible self-administered U.S. digital mechanical royalties, The MLC provides a separate registration and collection route. [How The MLC works](https://www.themlc.com/).
+
+## How does this connect to selling your catalog?
+
+SPACE buys music catalogs directly from independent owners. You can submit your catalog for a free evaluation, with no listing or auction commission. An initial offer typically takes 5-7 business days after the relevant information is received, subject to review. An application does not guarantee an offer. [SPACE's pricing and offer policy](/pricing.md).
+
+The agreement defines what changes hands. Selling a master does not, by itself, mean selling the composition. If publishing rights are included, registration or administration updates depend on those terms and the collecting society's requirements. Future works are outside a sale limited to specified existing works; check the agreement's scope and any options.
+
+For an indicative starting point, [estimate your catalog value](/calculator/). To have your rights and royalty history reviewed, [apply for a catalog evaluation](/apply/).
+
+## Frequently asked questions
+
+### Is a blanket license the same as owning the music?
+
+No. It gives permission for the uses specified in the agreement. Copyright ownership stays with the relevant owners unless a separate agreement transfers it.
+
+### Do independent musicians need to buy a blanket license?
+
+Usually the music-using business obtains the license. As a songwriter seeking PRO-administered performance income, your tasks are affiliation and accurate work registration. Running an event, business or music service can create separate licensing needs.
+
+### Can I join multiple PROs?
+
+Do not assume you can appoint overlapping organizations for the same rights and territory. Review your current affiliation and any territorial arrangements before changing representation. Ask the organizations involved how a proposed arrangement would work.
+
+### Does a PRO also collect my mechanical royalties?
+
+Performance and mechanical royalties are different income streams. The MLC handles eligible U.S. digital mechanical royalties under its blanket license, while PROs administer public-performance rights. Your publisher or administrator may already collect some of this income for you. [The MLC](https://www.themlc.com/).
+
+### Does selling my catalog automatically transfer my PRO account?
+
+No. A sale concerns the rights and income named in the contract. Relevant work registrations or payment directions may need updating, subject to PRO rules; it is not simply a transfer of your personal account. [BMI's assignment rules](https://www.bmi.com/creators/royalty-policy-manual).
+
+### Will registration guarantee a higher catalog price?
+
+No. Accurate records help verify the income and rights available for review. They do not create a guaranteed price or compensate for income that is absent, unstable or outside the proposed sale.
+
+### How much does a blanket license cost?
+
+There is no single universal fee. The licensor, business category, use and agreement determine the rate. Song registration and affiliation are separate from the fees a business pays to license performances. [Global Music Rights' rate explanation](https://globalmusicrights.com/faq).

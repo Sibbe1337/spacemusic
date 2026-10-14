@@ -1,0 +1,82 @@
+{
+  "verifiedAt": "2026-10-08T07:11:20.284Z",
+  "directory": "tmp/serp-preview-v3-20261008",
+  "origin": "https://spacemusic.io",
+  "verified": [
+    {
+      "url": "https://spacemusic.io/guides/music-catalog-valuation-2026/",
+      "width": 390,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/calculator/",
+      "width": 390,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/compare/space-vs-royalty-exchange/",
+      "width": 390,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/guides/how-to-sell-music-rights/",
+      "width": 390,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/blog/independent-record-label-funding-options/",
+      "width": 390,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/guides/music-catalog-valuation-2026/",
+      "width": 1440,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/calculator/",
+      "width": 1440,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/compare/space-vs-royalty-exchange/",
+      "width": 1440,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/guides/how-to-sell-music-rights/",
+      "width": 1440,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    },
+    {
+      "url": "https://spacemusic.io/blog/independent-record-label-funding-options/",
+      "width": 1440,
+      "metadata": true,
+      "schema": true,
+      "applyNavigation": true
+    }
+  ],
+  "calculatorExample": 24000,
+  "errors": [],
+  "blockedRequests": 42,
+  "realSubmissions": 0,
+  "analyticsSent": 0
+}

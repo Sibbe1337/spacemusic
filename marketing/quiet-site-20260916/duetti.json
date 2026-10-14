@@ -1,0 +1,48 @@
+{
+  "slug":"space-vs-duetti",
+  "title":"SPACE vs Duetti: Which Music Catalog Buyer Is Right for You?",
+  "metaDescription":"Compare SPACE and Duetti on music rights, partial catalog sales, eligibility and offer terms. Both need an individual review; genre alone does not decide fit.",
+  "primaryKeyword":"SPACE vs Duetti",
+  "tldr":"SPACE considers revenue-generating catalogs across all genres, not only ambient or wellness music. Duetti also works with independent music creators. Compare the specific rights, retained income, conditions and services in a written offer rather than assuming either buyer pays more because of genre or technology.",
+  "introduction":"Choosing between SPACE and Duetti starts with the rights you control and the income you are willing to sell. This comparison is published by SPACE, a direct catalog buyer, not an independent ranking service. Public first-party sources were checked September 16, 2026; no private offers, valuation models or service quality were tested. Earlier unsourced funding and monthly deal-count figures are not used as evidence of what a creator will receive.",
+  "spaceProfile":{
+    "description":"SPACE reviews revenue-generating catalogs from independent artists, producers, labels and catalog owners across all genres. Hip-hop, R&B, pop and rock are considered alongside ambient, lo-fi and electronic music. A review assesses documented income, ownership and the defined interest proposed for sale. Genre alone does not guarantee an offer or exclude an application.",
+    "strengths":["Direct purchase review across genres","Review based on the catalog information and rights supplied","Full or partial transactions involving defined catalog interests","Free application and initial catalog review","No obligation to accept an offer","No listing fee or auction commission"],
+    "limitations":["Individual review, not automatic acceptance","No guaranteed valuation multiple or highest-price promise","A purchase is not a promised marketing or financing package"]
+  },
+  "competitorProfile":{
+    "name":"Duetti",
+    "description":"Duetti's public offer includes purchases of master, publishing and royalty interests from independent creators. Its offer page describes partial options and catalog-management and marketing services. The agreement, not this summary, determines which interests transfer and which services apply.",
+    "strengths":["Purchases across different music-rights interests","Partial transaction options","Published eligibility guidance","Work with independent music creators","Catalog-management services described publicly","Marketing services described publicly"],
+    "limitations":["Eligibility guidance is not a guaranteed offer","A service list does not guarantee placements or growth","Request the actual rights, costs and approval terms","No private pricing or service comparison was tested for this page"]
+  },
+  "features":[
+    {"feature":"Genre focus","space":"All genres considered; catalog fit is reviewed individually","competitor":"Independent creators; confirm eligibility for your specific catalog"},
+    {"feature":"Valuation method","space":"Individual review of documented income and rights","competitor":"No independent assessment of its valuation model here"},
+    {"feature":"Deal volume","space":"No verified monthly count presented","competitor":"A monthly transaction count is not used to predict your offer"},
+    {"feature":"Minimum earnings threshold","space":"No fixed earnings floor stated in the cited policy; individual review","competitor":"Offer page states at least $2,000 annually from music rights; confirm current criteria"},
+    {"feature":"Funding","space":"No funding-total claim used to establish offer size","competitor":"Company funding headlines do not establish a seller's purchase price"},
+    {"feature":"Partial rights sales","space":"Defined partial catalog interests can be proposed","competitor":"Partial options are described on the offer page"},
+    {"feature":"Creative control","space":"Retained rights, approvals and future-work exclusions depend on the agreement","competitor":"Confirm reserved rights and approvals in the proposed agreement"},
+    {"feature":"Personalization","space":"Request a review of the rights and transaction scope you propose","competitor":"Public process includes a team meeting and deal customization"},
+    {"feature":"Payout speed","space":"Payment follows the agreement and satisfied transfer requirements, not the initial review alone","competitor":"Ask for written closing conditions and a payment schedule"},
+    {"feature":"Niche market expertise","space":"Genre and licensing utility are review factors, not promised placements","competitor":"Confirm which catalog services are included; do not assume a genre-specific outcome"}
+  ],
+  "verdict":"There is no evidenced universal winner for every catalog. Ask both buyers to evaluate the same recordings, income streams, ownership share and proposed duration. Compare the cash payable, payment conditions, retained income, reserved rights and continuing duties. If catalog development matters, identify the services actually included in writing. A larger headline offer is not necessarily better if it purchases more rights, and choosing to keep the catalog remains an option.",
+  "bestFor":{
+    "space":"Independent owners across genres who want a free, no-obligation review for a direct sale of defined catalog interests.",
+    "competitor":"Independent creators evaluating Duetti's purchase and catalog-service proposal. Confirm the fit and terms directly."
+  },
+  "faq":[
+    {"question":"How does Duetti's AI valuation compare to SPACE's human evaluation?","answer":"We have not tested either valuation process against comparable private offers. A label such as AI or human evaluation does not establish a higher price or better result. Ask how the proposed rights, revenue history, costs, concentration and uncertainty affect the actual written offer rather than treating a process label as proof."},
+    {"question":"Can I sell part of my catalog on Duetti?","answer":"Duetti describes partial master, publishing and royalty-interest options. SPACE also considers defined partial catalog interests. Specify the tracks, percentage, revenue streams, term and retained rights; a partial sale still gives up the agreed interest and associated income."},
+    {"question":"Is Duetti better for larger catalogs?","answer":"Catalog size alone does not establish which buyer is preferable. Check each provider's current requirements and compare written proposals for the same scope. Do not treat a minimum eligibility statement as a guaranteed acceptance or assume a company funding total predicts the price of your catalog."},
+    {"question":"Which platform is better for meditation and wellness music?","answer":"Request comparable offers rather than assuming the genre determines a winner. SPACE considers meditation and wellness alongside other genres. There is no private-offer evidence on this page showing that either buyer consistently pays more for those recordings. Document the actual revenue and rights, and review the proposed agreement independently."}
+  ],
+  "citations":[
+    {"source":"Duetti: current rights-purchase options and eligibility","url":"https://www.duetti.co/what-we-do"},
+    {"source":"Duetti: public purchase process","url":"https://www.duetti.co/"},
+    {"source":"SPACE: pricing and offer policy","url":"https://spacemusic.io/pricing.md"},
+    {"source":"SPACE: application and individual review","url":"https://spacemusic.io/apply/"}
+  ]
+}

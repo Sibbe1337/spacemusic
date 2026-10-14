@@ -1,0 +1,261 @@
+{
+  "status": "Draft-pack checks only; no deployment or application submission",
+  "checked_at": "2026-09-08T13:06:35.660Z",
+  "inclusive_gsc_days": 90,
+  "arithmetic_examples": "passed",
+  "local_artifact_links": "passed",
+  "six_proposed_links_absent_from_existing_sources": "passed",
+  "current_sitemap_count": 139,
+  "checks": [
+    {
+      "requested": "https://spacemusic.io/",
+      "final_url": "https://spacemusic.io/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/",
+      "title": "Sell Your Music Catalog (2026) — Get an Offer | SPACE",
+      "checked_at": "2026-09-08T13:06:34.496Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/apply/",
+      "final_url": "https://spacemusic.io/apply/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/apply/",
+      "title": "Apply to Sell Your Music Catalog — Free Evaluation (2026) — SPACE",
+      "checked_at": "2026-09-08T13:06:34.532Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/ambient-lo-fi-music-catalog-buyers/",
+      "final_url": "https://spacemusic.io/blog/ambient-lo-fi-music-catalog-buyers/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/ambient-lo-fi-music-catalog-buyers/",
+      "title": "Ambient and Lo-Fi Music Catalog Buyers Compared | SPACE",
+      "checked_at": "2026-09-08T13:06:34.582Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/beatbread-vs-catalog-buyers/",
+      "final_url": "https://spacemusic.io/blog/beatbread-vs-catalog-buyers/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/beatbread-vs-catalog-buyers/",
+      "title": "beatBread vs Catalog Buyers: Upfront Cash Compared | SPACE",
+      "checked_at": "2026-09-08T13:06:34.626Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/case-study-ambient-producer-catalog-sale/",
+      "final_url": "https://spacemusic.io/blog/case-study-ambient-producer-catalog-sale/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/case-study-ambient-producer-catalog-sale/",
+      "title": "Case Study: Ambient Producer Turned $85K/Year Into a $765K Catalog Deal | SPACE Blog",
+      "checked_at": "2026-09-08T13:06:34.671Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/future-of-ai-in-ambient-music/",
+      "final_url": "https://spacemusic.io/blog/future-of-ai-in-ambient-music/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/future-of-ai-in-ambient-music/",
+      "title": "The Future of AI in Ambient Music: Threat or Opportunity? | SPACE Blog",
+      "checked_at": "2026-09-08T13:06:34.714Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/how-to-register-your-ambient-music-with-pros/",
+      "final_url": "https://spacemusic.io/blog/how-to-register-your-ambient-music-with-pros/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/how-to-register-your-ambient-music-with-pros/",
+      "title": "How to Properly Register Your Ambient Music with PROs for Maximum Royalties | SPACE Blog",
+      "checked_at": "2026-09-08T13:06:34.755Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/maximizing-your-lo-fi-catalog-value/",
+      "final_url": "https://spacemusic.io/blog/maximizing-your-lo-fi-catalog-value/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/maximizing-your-lo-fi-catalog-value/",
+      "title": "Maximizing Your Lo-Fi Music Catalog Value: Expert Strategies for 2025 | SPACE Blog",
+      "checked_at": "2026-09-08T13:06:34.804Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/music-catalog-offer-checklist/",
+      "final_url": "https://spacemusic.io/blog/music-catalog-offer-checklist/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/music-catalog-offer-checklist/",
+      "title": "Music Catalog Offer Checklist: Before You Sign | SPACE",
+      "checked_at": "2026-09-08T13:06:34.852Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/music-catalog-sale-documents-checklist/",
+      "final_url": "https://spacemusic.io/blog/music-catalog-sale-documents-checklist/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/music-catalog-sale-documents-checklist/",
+      "title": "Music Catalog Sale Documents: A Seller's Checklist | SPACE",
+      "checked_at": "2026-09-08T13:06:34.899Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/royalty-exchange-alternatives/",
+      "final_url": "https://spacemusic.io/blog/royalty-exchange-alternatives/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/royalty-exchange-alternatives/",
+      "title": "Royalty Exchange Alternatives: Sell Without an Auction | SPACE",
+      "checked_at": "2026-09-08T13:06:34.943Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/sell-music-catalog-lump-sum-2026/",
+      "final_url": "https://spacemusic.io/blog/sell-music-catalog-lump-sum-2026/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/sell-music-catalog-lump-sum-2026/",
+      "title": "Sell Your Music Catalog for a Lump Sum in 2026 | SPACE",
+      "checked_at": "2026-09-08T13:06:34.997Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/streaming-royalties-guide-for-ambient-music/",
+      "final_url": "https://spacemusic.io/blog/streaming-royalties-guide-for-ambient-music/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/streaming-royalties-guide-for-ambient-music/",
+      "title": "The Complete Guide to Streaming Royalties for Ambient Music Producers | SPACE Blog",
+      "checked_at": "2026-09-08T13:06:35.045Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/what-is-a-blanket-license/",
+      "final_url": "https://spacemusic.io/blog/what-is-a-blanket-license/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/what-is-a-blanket-license/",
+      "title": "Blanket Licenses: ASCAP, BMI & SESAC for Musicians | SPACE",
+      "checked_at": "2026-09-08T13:06:35.089Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/blog/why-selling-partial-rights-makes-sense/",
+      "final_url": "https://spacemusic.io/blog/why-selling-partial-rights-makes-sense/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/blog/why-selling-partial-rights-makes-sense/",
+      "title": "Why Selling Partial Rights Makes Sense for Independent Ambient Artists | SPACE Blog",
+      "checked_at": "2026-09-08T13:06:35.149Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/calculator/",
+      "final_url": "https://spacemusic.io/calculator/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/calculator/",
+      "title": "Music Catalog Value Calculator: Build a Sale Scenario — SPACE",
+      "checked_at": "2026-09-08T13:06:35.185Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/compare/catalog-sale-vs-catalog-loan/",
+      "final_url": "https://spacemusic.io/compare/catalog-sale-vs-catalog-loan/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/compare/catalog-sale-vs-catalog-loan/",
+      "title": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It — SPACE",
+      "checked_at": "2026-09-08T13:06:35.238Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/compare/partial-sale-vs-full-sale/",
+      "final_url": "https://spacemusic.io/compare/partial-sale-vs-full-sale/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/compare/partial-sale-vs-full-sale/",
+      "title": "Partial Sale vs. Full Sale: How Much of Your Catalog Should You Sell? — SPACE",
+      "checked_at": "2026-09-08T13:06:35.294Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/compare/selling-masters-vs-selling-publishing/",
+      "final_url": "https://spacemusic.io/compare/selling-masters-vs-selling-publishing/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/compare/selling-masters-vs-selling-publishing/",
+      "title": "Selling Masters vs. Selling Publishing: Understanding Your Two Assets — SPACE",
+      "checked_at": "2026-09-08T13:06:35.358Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/guides/music-catalog-valuation-2026/",
+      "final_url": "https://spacemusic.io/guides/music-catalog-valuation-2026/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/guides/music-catalog-valuation-2026/",
+      "title": "Music Catalog Valuation: Method, Example & Review — SPACE",
+      "checked_at": "2026-09-08T13:06:35.413Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/guides/music-rights-101/",
+      "final_url": "https://spacemusic.io/guides/music-rights-101/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/guides/music-rights-101/",
+      "title": "Music Rights 101: Everything Independent Creators Need to Know — SPACE",
+      "checked_at": "2026-09-08T13:06:35.504Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/guides/what-are-your-streams-worth-2026/",
+      "final_url": "https://spacemusic.io/guides/what-are-your-streams-worth-2026/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/guides/what-are-your-streams-worth-2026/",
+      "title": "What Are Your Streams Actually Worth in 2026? The Complete Breakdown — SPACE",
+      "checked_at": "2026-09-08T13:06:35.547Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/how-it-works/",
+      "final_url": "https://spacemusic.io/how-it-works/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "canonical": "https://spacemusic.io/how-it-works/",
+      "title": "How Selling a Music Catalog Works (2026) - Review & Payment — SPACE",
+      "checked_at": "2026-09-08T13:06:35.585Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/pricing.md",
+      "final_url": "https://spacemusic.io/pricing.md",
+      "status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "canonical": null,
+      "title": null,
+      "checked_at": "2026-09-08T13:06:35.608Z",
+      "expected_current_content": true
+    },
+    {
+      "requested": "https://spacemusic.io/sitemap.xml",
+      "final_url": "https://spacemusic.io/sitemap.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "canonical": null,
+      "title": null,
+      "checked_at": "2026-09-08T13:06:35.629Z",
+      "expected_current_content": true
+    }
+  ]
+}

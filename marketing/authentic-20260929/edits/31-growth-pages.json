@@ -1,0 +1,51 @@
+{
+ "area": "Growth 2 and 4: sourced data pages",
+ "edits": [
+  {
+   "code": true,
+   "modules": [
+    "index-article"
+   ],
+   "find": "C=s.lazy(()=>a(()=>import(\"./MarketDataPage-",
+   "replace": "__GD=s.lazy(()=>import(\"./GrowthDataPage-3fee7f6346cb.js\")),C=s.lazy(()=>a(()=>import(\"./MarketDataPage-",
+   "reason": "lazy route component for the data pages"
+  },
+  {
+   "code": true,
+   "modules": [
+    "index-article"
+   ],
+   "find": "e.jsx(t,{path:\"/data/music-catalog-market-2026\",element:e.jsx(C,{})}),",
+   "replace": "e.jsx(t,{path:\"/data/music-catalog-market-2026\",element:e.jsx(C,{})}),e.jsx(t,{path:\"/data/music-catalog-deals\",element:e.jsx(__GD,{})}),e.jsx(t,{path:\"/data/streaming-platform-catalog-sizes\",element:e.jsx(__GD,{})}),e.jsx(t,{path:\"/streaming-rates/deezer-prices-2026\",element:e.jsx(__GD,{})}),",
+   "reason": "routes for the data pages"
+  }
+ ],
+ "files": {
+  "assets/GrowthDataPage-3fee7f6346cb.js": "marketing/growth-20260930/GrowthDataPage.js"
+ },
+ "newPages": [
+  {
+   "file": "data/music-catalog-deals/index.html",
+   "template": "data/music-catalog-market-2026/index.html"
+  },
+  {
+   "file": "data/streaming-platform-catalog-sizes/index.html",
+   "template": "data/music-catalog-market-2026/index.html"
+  },
+  {
+   "file": "streaming-rates/deezer-prices-2026/index.html",
+   "template": "data/music-catalog-market-2026/index.html"
+  }
+ ],
+ "fileEdits": [
+  {
+   "file": "sitemap.xml",
+   "find": "</urlset>",
+   "replace": "<url><loc>https://spacemusic.io/data/music-catalog-deals/</loc><lastmod>2026-09-30</lastmod></url>\n<url><loc>https://spacemusic.io/data/streaming-platform-catalog-sizes/</loc><lastmod>2026-09-30</lastmod></url>\n<url><loc>https://spacemusic.io/streaming-rates/deezer-prices-2026/</loc><lastmod>2026-09-30</lastmod></url>\n</urlset>"
+  },
+  {
+   "file": "llms.txt",
+   "append": "\n## Data pages\n- [Music Catalog Deal Tracker 2019–2026: Public Deals and Prices](https://spacemusic.io/data/music-catalog-deals/): 52 publicly reported music catalog acquisitions with buyer, seller, rights sold, reported price and source, plus multiples stated by catalog buyers.\n- [Streaming Platform Catalog Sizes 2026: Spotify, Apple Music, Deezer and More](https://spacemusic.io/data/streaming-platform-catalog-sizes/): How many songs are on Spotify, Apple Music, Amazon Music, YouTube Music, Deezer, TIDAL, SoundCloud, Qobuz and Pandora, as each platform states it, with sources.\n- [Deezer Prices 2026 by Country: Premium, Duo, Family and Student](https://spacemusic.io/streaming-rates/deezer-prices-2026/): Deezer subscription prices in 10 countries, checked on Deezer's own offers pages in September 2026, with links.\n"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+/* Keep the shared action readable without changing the site's visual system. */
+a[href="/apply/"], a[href="/apply"] {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}

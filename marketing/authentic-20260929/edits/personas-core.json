@@ -1,0 +1,534 @@
+{
+ "area": "personas-core",
+ "edits": [
+  {
+   "find": "SpaceMusic.io helps ambient music producers sell their catalogs at fair market value. Get a transparent valuation and connect with verified buyers who understand ambient music.",
+   "replace": "SpaceMusic.io helps ambient music producers sell their catalogs. Get a free initial review from SPACE, a direct buyer that understands ambient music.",
+   "reason": "policy"
+  },
+  {
+   "find": "Your music generates steady streaming revenue with remarkably stable month-over-month performance, and you've noticed growing interest from wellness apps, YouTube creators, and meditation platforms looking to license your work.",
+   "replace": "Your music may generate steady streaming revenue from month to month, and you may have seen interest from wellness apps, YouTube creators, and meditation platforms looking to license your work.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Transparent catalog valuation methodology that accounts for ambient music's unique revenue stability and growth trajectory in the wellness market",
+   "replace": "An individual review that looks at revenue consistency, growth trend and licensing utility, the factors that matter most for ambient catalogs",
+   "reason": "policy"
+  },
+  {
+   "find": "Curated marketplace connecting you exclusively with buyers who specialize in ambient, wellness, and meditation music",
+   "replace": "A direct buyer: SPACE reviews and buys ambient, wellness, and meditation catalogs itself, with no auction, listing fee or commission",
+   "reason": "policy"
+  },
+  {
+   "find": "Comprehensive metadata audit and rights verification as part of the listing process \u2014 we do the heavy lifting",
+   "replace": "A review of metadata and rights documentation, since both affect what can be transferred and what an offer can reflect",
+   "reason": "policy"
+  },
+  {
+   "find": "Flexible deal structures: full buyout, partial sale, revenue split, or catalog loan \u2014 choose what fits your goals",
+   "replace": "Transaction sizes of 50%, 75%, or 100% of defined catalog rights, so you can compare what you sell with what you keep",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyer vetting process that includes licensing intent disclosure so you know how your music will be used",
+   "replace": "A direct conversation with the buyer, so you can ask how SPACE would manage and license your music",
+   "reason": "policy"
+  },
+  {
+   "find": "End-to-end transaction support including legal review, rights transfer, and post-sale collection transition",
+   "replace": "A written agreement and rights transfer steps before payment by bank transfer; get independent legal advice before signing",
+   "reason": "policy"
+  },
+  {
+   "find": "Valuation tools that analyze your streaming data, sync history, and Content ID revenue to provide an accurate market value",
+   "replace": "A free calculator for scenarios, plus an individual review of your streaming, sync, and Content ID revenue; the calculator is not an offer",
+   "reason": "policy"
+  },
+  {
+   "find": "Receive a fair valuation that reflects ambient music's stable, growing revenue profile \u2014 not a generic one-size-fits-all multiple",
+   "replace": "Get a review based on your catalog's own revenue history rather than a one-size-fits-all multiple",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Connect with buyers who genuinely value atmospheric and contemplative music",
+   "replace": "Deal directly with a buyer that reviews atmospheric and contemplative music",
+   "reason": "policy"
+  },
+  {
+   "find": "Maintain creative control through deal structures that can include licensing restrictions",
+   "replace": "Discuss any licensing restrictions you care about before signing; what is agreed must be in the contract",
+   "reason": "policy"
+  },
+  {
+   "find": "Access a community of ambient music professionals who understand your niche",
+   "replace": "Get a review that looks at the licensing utility of ambient music as well as stream counts",
+   "reason": "policy"
+  },
+  {
+   "find": "Get paid what your catalog is truly worth in a market that increasingly recognizes ambient music's commercial value",
+   "replace": "Compare a written offer with the income you would keep, with no obligation to accept",
+   "reason": "policy"
+  },
+  {
+   "find": "An ambient producer with a 200-track catalog generating $18,000/year in combined streaming and sync revenue listed on SpaceMusic.io. After a comprehensive metadata audit revealed $3,200 in uncollected international royalties, the catalog was valued at a 12x multiple \u2014 reflecting its exceptional revenue stability (less than 3% month-over-month variance) and strong positioning in the growing wellness market. The producer chose a partial sale of 40%, receiving $86,400 upfront while retaining majority ownership and ongoing income from the remaining 60%. The capital was used to build a dedicated ambient music studio, and the catalog's total revenue has since grown 25% with the buyer's active sync licensing efforts.",
+   "replace": "Illustrative example, not a SPACE transaction: an ambient producer owns the masters of 200 tracks and documents $18,000 a year in combined streaming and sync royalties. A review would check that the producer controls the rights being sold, how consistent the monthly revenue has been over several years, and whether metadata and registrations are complete, since gaps in international collection reduce documented income. It would also look at how much of the income comes from a few tracks and whether the sync agreements are written down. The producer could compare a 50% sale with a full sale. Any offer depends on individual review of those factors.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Ambient music catalogs typically demonstrate lower revenue volatility, longer listener engagement sessions, and strong alignment with the growing wellness market. These factors can justify higher multiples compared to trend-dependent genres. We analyze your specific streaming patterns, sync history, and growth trajectory to determine a fair valuation.",
+   "replace": "Many ambient catalogs earn from long listening sessions, playlists, and licensing for wellness or background use. A review checks whether your own revenue history shows that consistency, along with rights ownership, metadata, and concentration in top tracks. We look at your specific streaming patterns, sync history, and growth trend, and any offer depends on that individual review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Yes. You can sell individual albums, specific time periods of your catalog, or a percentage interest in your entire catalog. Many ambient producers prefer partial sales to maintain ongoing income while accessing capital for new projects.",
+   "replace": "Yes. SPACE can review a sale of 50%, 75%, or 100% of defined catalog rights, and the defined rights can be selected albums or recordings. A partial sale lets you keep part of the ongoing income while receiving capital for new projects.",
+   "reason": "policy"
+  },
+  {
+   "find": "Many sellers use the capital from a catalog sale to fund new creative endeavors, building a fresh catalog from scratch.",
+   "replace": "You could use the capital from a catalog sale to fund new creative work and build a fresh catalog from scratch.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "SpaceMusic.io helps lo-fi beat makers sell catalogs, find buyers, and unlock the value of their beats. Fair valuations built for the lo-fi economy.",
+   "replace": "SpaceMusic.io helps lo-fi beat makers sell catalogs directly to SPACE and unlock the value of their beats. A free initial review built for the lo-fi economy.",
+   "reason": "policy"
+  },
+  {
+   "find": "You craft warm, nostalgic, vinyl-crackle beats that soundtrack millions of study sessions, coffee shop moments, and late-night creative flows.",
+   "replace": "You craft warm, nostalgic, vinyl-crackle beats that soundtrack study sessions, coffee shop moments, and late-night creative flows.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Lo-fi hip-hop is one of the most-streamed micro-genres on Spotify and YouTube, with channels like Lofi Girl drawing tens of millions of regular listeners.",
+   "replace": "Lo-fi hip-hop has a large audience on Spotify and YouTube, where channels like Lofi Girl run round-the-clock livestreams of lo-fi beats.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Revenue analytics dashboard that pulls data from all your platforms to give you a complete financial picture",
+   "replace": "A review of statements from each platform, combined into one picture of your catalog's income",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyers on our platform understand lo-fi economics \u2014 they know how to monetize beats across multiple channels",
+   "replace": "A direct buyer: SPACE reviews how beats earn across streaming, Content ID, and licensing, with no auction or listing fee",
+   "reason": "policy"
+  },
+  {
+   "find": "Flexible sale options: sell your entire catalog, specific beat collections, or a percentage of overall revenue",
+   "replace": "Sale options of 50%, 75%, or 100% of defined catalog rights, which can be a specific beat collection",
+   "reason": "policy"
+  },
+  {
+   "find": "Content ID transfer support to ensure the buyer inherits your YouTube monetization without disruption",
+   "replace": "Content ID and other platform transfers set out as part of the rights transfer steps in the agreement",
+   "reason": "policy"
+  },
+  {
+   "find": "Privacy options to sell your catalog discreetly if you want to continue producing under the same artist name",
+   "replace": "A direct sale with no public auction listing, if you want to continue producing under the same artist name",
+   "reason": "policy"
+  },
+  {
+   "find": "Transform a complex web of micro-revenue streams into a single, significant payout",
+   "replace": "Transform a complex web of micro-revenue streams into a single upfront payment",
+   "reason": "policy"
+  },
+  {
+   "find": "Access buyers who understand lo-fi beat monetization and will actively grow the catalog's revenue",
+   "replace": "Deal directly with a buyer that reviews Content ID and beat licensing income alongside streams",
+   "reason": "policy"
+  },
+  {
+   "find": "A lo-fi beat maker with 800+ beats generating $24,000/year across Spotify streaming ($12,000), YouTube Content ID ($7,000), and BeatStars licensing ($5,000) sought to simplify their income and raise capital for a home studio upgrade. SpaceMusic.io's unified valuation aggregated all revenue streams and applied an 11x multiple, valuing the catalog at $264,000. The producer sold 50% for $132,000, allowing the buyer to actively manage Content ID and licensing while the producer continued earning from the retained half. Within a year, the buyer's active management had increased total catalog revenue by 30%, benefiting both parties.",
+   "replace": "Illustrative example, not a SPACE transaction: a beat maker has 800 beats and documents $24,000 a year across Spotify streaming, YouTube Content ID, and beat licensing. A review would combine the statements from each source and check how consistent each one has been. It would confirm that the producer owns the masters, that collaborator splits and samples are documented, and whether the Content ID and licensing accounts can transfer. It would also check how much of the income comes from the top beats. The producer could compare selling 50% with selling the full catalog. Any offer depends on individual review.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "We facilitate the transfer of all platform accounts as part of the transaction.",
+   "replace": "Any account or platform transfers are set out in the agreement.",
+   "reason": "policy"
+  },
+  {
+   "find": "Many beat makers use sale proceeds to upgrade their studios and accelerate production of new content.",
+   "replace": "You could use sale proceeds to upgrade your studio and speed up production of new content.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Meditation music creators: your catalog is more valuable than you think. SpaceMusic.io connects you with buyers in the booming wellness market for fair, transparent catalog sales.",
+   "replace": "Meditation music creators: find out what your catalog could be worth. SpaceMusic.io offers a free review and a transparent, direct catalog purchase by SPACE.",
+   "reason": "policy"
+  },
+  {
+   "find": "The global wellness market is worth over $5 trillion and growing, and meditation app usage has exploded \u2014 creating enormous demand for high-quality meditation music.",
+   "replace": "The Global Wellness Institute estimates the global wellness economy at $6.8 trillion in 2024, and meditation apps and platforms use music in many of their sessions.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ]
+  },
+  {
+   "find": "Traditional music industry valuations don't account for the wellness market premium your music commands",
+   "replace": "Traditional music industry valuations may not account for how wellness listeners and platforms use your music",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Wellness-aware valuation methodology that factors in the meditation app market growth, listener engagement depth, and functional music premium",
+   "replace": "A review that considers licensing utility, listener engagement, and revenue consistency, alongside rights and metadata",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyer network includes wellness app companies, meditation platform operators, and wellness-focused investment funds",
+   "replace": "A direct buyer: SPACE reviews and buys meditation catalogs itself, with no auction or listing fee",
+   "reason": "policy"
+  },
+  {
+   "find": "Licensing deal facilitation for meditation apps and wellness brands as part of the catalog sale or post-sale strategy",
+   "replace": "Existing licensing deals with meditation apps and wellness brands reviewed as part of the catalog's revenue and rights",
+   "reason": "policy"
+  },
+  {
+   "find": "Content ID setup and management to monetize unauthorized YouTube meditation videos using your music",
+   "replace": "Content ID income from YouTube meditation videos reviewed alongside streaming and platform revenue",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyer screening that prioritizes wellness-aligned organizations who will use your music appropriately",
+   "replace": "A direct conversation about how SPACE would manage and license your music after a sale",
+   "reason": "policy"
+  },
+  {
+   "find": "Deal structures that can include creative use restrictions to protect the integrity of your meditation music",
+   "replace": "Any use restrictions you ask for, agreed and written into the contract to protect the integrity of your meditation music",
+   "reason": "policy"
+  },
+  {
+   "find": "Capture the wellness market premium in your catalog valuation \u2014 your music is worth more than generic streaming multiples suggest",
+   "replace": "Get a review that considers wellness licensing income alongside streaming figures",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Connect with buyers who are specifically seeking meditation and mindfulness music catalogs",
+   "replace": "Deal directly with a buyer that reviews meditation and mindfulness music catalogs",
+   "reason": "policy"
+  },
+  {
+   "find": "Monetize the functional value of your music \u2014 binaural beats, specific frequencies, and therapeutic design increase your catalog's worth",
+   "replace": "Show in the review how the functional design of your music, such as binaural beats and specific frequencies, supports licensing and repeat listening",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Unlock capital from a growing asset class at the right moment in the wellness market expansion",
+   "replace": "Turn part or all of your catalog into an upfront payment",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Ensure your music continues to serve its intended purpose through buyer alignment and use restrictions",
+   "replace": "Discuss how your music will be used before you agree to anything",
+   "reason": "policy"
+  },
+  {
+   "find": "Join a marketplace that speaks the language of both music rights and the wellness industry",
+   "replace": "Work with a direct buyer that knows both music rights and wellness use",
+   "reason": "policy"
+  },
+  {
+   "find": "A meditation music creator with 150 tracks \u2014 including guided meditation underscores, binaural beat compositions, and nature-ambient soundscapes \u2014 was generating $22,000/year from Spotify ($10,000), Insight Timer ($5,000), YouTube Content ID ($4,000), and direct licensing to two yoga studio chains ($3,000). Traditional valuations at 10x suggested $220,000, but SpaceMusic.io's wellness-aware methodology recognized the catalog's alignment with the $130B global meditation market, the creator's established Insight Timer following (50,000+ listeners), and the functional design of the compositions. The catalog was valued at 14x, and a wellness-focused investment fund acquired 100% for $308,000. The creator used the proceeds to launch a wellness music production course and began building a new catalog.",
+   "replace": "Illustrative example, not a SPACE transaction: a meditation music creator has 150 tracks, including guided meditation underscores, binaural beat compositions, and nature soundscapes, and documents $22,000 a year from streaming, Insight Timer, YouTube Content ID, and direct licensing to yoga studios. A review would check rights ownership for each track, the revenue history and consistency of each source, and whether the licensing agreements are written and can transfer. It would also look at metadata quality and how much income depends on a few tracks. Any use restrictions the creator wants would need to be agreed in the contract. Any offer depends on individual review.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Meditation music often commands a premium because it serves a functional purpose aligned with the rapidly growing wellness market. Meditation app usage is growing 15-20% annually, and these platforms need high-quality content. Additionally, meditation music listeners demonstrate exceptionally high engagement (long sessions, daily use), which translates to strong streaming revenue per listener.",
+   "replace": "Not automatically. Meditation music serves a functional purpose, so it can earn from licensing to apps and wellness businesses as well as from streaming. Listeners who play it during daily practice can make income steadier. A review checks whether your own revenue history shows that, along with rights ownership, metadata, and concentration in top tracks. Any offer depends on that review.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Yes. We support deal structures that include licensing use restrictions. You can specify that the music may only be used in wellness, meditation, and relaxation contexts, preventing its use in advertising, political content, or other applications that conflict with its intended purpose.",
+   "replace": "You can ask for licensing use restrictions, for example that the music may only be used in wellness, meditation, and relaxation contexts and not in advertising, political content, or other applications that conflict with its intended purpose. Any restriction must be agreed and written into the contract, and it may affect the offer.",
+   "reason": "policy"
+  },
+  {
+   "find": "White-glove service that handles the entire sale process \u2014 from valuation to closing \u2014 so you don't have to navigate it alone",
+   "replace": "A direct process with SPACE, from a free initial review to a written offer and agreement, so you don't have to navigate it alone",
+   "reason": "policy"
+  },
+  {
+   "find": "Transparent, auditable valuation methodology so you can trust the number",
+   "replace": "A review based on the revenue history, rights, and documentation you provide, so you can see what the offer reflects",
+   "reason": "policy"
+  },
+  {
+   "find": "Tax planning resources and guidance specific to catalog sales, including installment sale options and capital gains strategies",
+   "replace": "Preparation questions for your own tax adviser; SPACE does not give tax advice",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyer vetting with emphasis on finding stewards who will respect and actively care for your catalog",
+   "replace": "A direct conversation about how SPACE would manage and care for your catalog after a sale",
+   "reason": "policy"
+  },
+  {
+   "find": "Estate planning guidance for catalogs that may be part of a broader retirement or legacy plan",
+   "replace": "Time to involve your estate planner or lawyer before signing, with no obligation to accept an offer",
+   "reason": "policy"
+  },
+  {
+   "find": "Option for installment sales that spread the purchase price over multiple years for tax optimization",
+   "replace": "Payment by bank transfer after the agreement is complete and the rights transfer requirements are met",
+   "reason": "policy"
+  },
+  {
+   "find": "Post-sale transition support to ensure royalties and registrations transfer smoothly to the new owner",
+   "replace": "Rights transfer steps set out in the agreement, so royalties and registrations move to the new owner",
+   "reason": "policy"
+  },
+  {
+   "find": "Receive a fair price that honors the value of decades of creative output",
+   "replace": "Get a written offer to compare with the income decades of creative output would keep paying you",
+   "reason": "policy"
+  },
+  {
+   "find": "Choose a buyer who will be a good steward of your musical legacy",
+   "replace": "Ask how your musical legacy would be managed before you decide",
+   "reason": "policy"
+  },
+  {
+   "find": "Tax-optimized deal structures to minimize the impact of a large one-time payment",
+   "replace": "Time to plan the tax impact of a large one-time payment with your own adviser before signing",
+   "reason": "policy"
+  },
+  {
+   "find": "A 58-year-old ambient music producer with a 25-year career and a 600-track catalog generating $32,000/year decided to retire from active music production. The catalog included early electronic ambient works alongside more recent meditation-focused compositions, with revenue from Spotify, Apple Music, Bandcamp, and a small Insight Timer presence. SpaceMusic.io valued the catalog at 13x annual revenue ($416,000), reflecting the catalog's diverse revenue streams, impeccable metadata, and the evergreen quality of ambient compositions. The producer chose an installment sale \u2014 receiving $200,000 at closing and $216,000 over three years \u2014 to optimize capital gains tax impact. The buyer was a wellness music investment fund that committed to maintaining the catalog's artistic integrity while expanding its sync licensing footprint.",
+   "replace": "Illustrative example, not a SPACE transaction: a producer retiring after a long career owns a 600-track catalog and documents $32,000 a year from Spotify, Apple Music, Bandcamp, and Insight Timer. The catalog mixes early electronic ambient works with recent meditation-focused compositions. A review would check that the producer owns the masters and any publishing being sold, look at revenue history and consistency by era and platform, and check metadata, registrations, and concentration in top tracks. The producer would plan the tax impact with their own adviser before signing. Any offer depends on individual review, and payment follows the completed agreement and rights transfer.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Mixed catalogs are common and can actually be more valuable due to revenue diversification. We value the catalog holistically, analyzing revenue by era and style to ensure all components are properly accounted for. Different portions of the catalog may appeal to different buyers.",
+   "replace": "Mixed catalogs are common. A review looks at revenue by era and style, since diversification and concentration in top tracks both affect an offer. You can also define which parts of the catalog are included in a sale.",
+   "reason": "policy"
+  },
+  {
+   "find": "Quick, lightweight valuation process designed for smaller catalogs \u2014 no lengthy onboarding for simple sales",
+   "replace": "A free initial review; an initial offer typically follows 5-7 business days after the relevant catalog information is received",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyers on our platform actively seek small to mid-size ambient catalogs at accessible price points",
+   "replace": "SPACE buys directly, so there is no auction listing or buyer search",
+   "reason": "policy"
+  },
+  {
+   "find": "Streamlined sale process that can close in as little as 2-3 weeks for straightforward catalogs",
+   "replace": "Closing timing depends on the agreement, documentation, and rights transfer steps",
+   "reason": "policy"
+  },
+  {
+   "find": "Minimal documentation requirements for clean, well-registered catalogs",
+   "replace": "Fewer documentation questions when registrations and metadata are already clean",
+   "reason": "policy"
+  },
+  {
+   "find": "Low-friction listing: upload your distributor revenue data, and we handle the analysis",
+   "replace": "Share your distributor statements, and SPACE reviews the revenue history",
+   "reason": "policy"
+  },
+  {
+   "find": "Bulk listing for multiple small catalogs or side projects under different artist names",
+   "replace": "Small catalogs or side projects under different artist names reviewed together or separately",
+   "reason": "policy"
+  },
+  {
+   "find": "No minimum catalog size \u2014 even small catalogs have value to the right buyer",
+   "replace": "No listing fee or commission, whatever the catalog size",
+   "reason": "policy"
+  },
+  {
+   "find": "Someone who cares about the music will actively manage and grow its audience",
+   "replace": "Hand ongoing management of the music to the new owner",
+   "reason": "policy"
+  },
+  {
+   "find": "Even a small catalog sale ($2,000-$20,000) can be meaningful as unexpected income",
+   "replace": "Even a small catalog sale can be meaningful as unexpected income",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "A software engineer who had produced ambient electronic music as a side project during college accumulated 45 tracks across three albums and several singles. The catalog was generating $2,800/year through DistroKid and ASCAP but hadn't been actively managed in three years. The creator was still paying the annual distributor fee and reporting the income on taxes, but it felt like more trouble than it was worth. After a quick SpaceMusic.io valuation (completed in 48 hours for this straightforward catalog), the music was valued at 9x annual revenue ($25,200). A wellness content creator purchased the full catalog within 10 days of listing. The seller used the proceeds as a down payment contribution on a new car \u2014 a tangible return on a creative side project they'd nearly forgotten about.",
+   "replace": "Illustrative example, not a SPACE transaction: someone who made ambient electronic music as a side project has 45 tracks across three albums and several singles. The catalog earns $2,800 a year through a distributor and a PRO and has not been actively managed for three years. The creator still pays an annual distributor fee and reports the income on taxes. A review would check that the creator owns the masters and compositions, how steady the income has been, and whether metadata and PRO registrations are complete. There is no obligation to accept an offer, and any offer depends on individual review.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Yes. Catalogs generating as little as $500-$1,000/year can sell for $4,000-$10,000 at typical multiples. For many side-project musicians, this is more valuable as a lump sum than as years of small royalty payments, especially when you factor in the administrative burden of managing the catalog.",
+   "replace": "It can be. Small catalogs can still be reviewed, and the offer depends on documented income, rights ownership, and metadata. For some side-project musicians, a lump sum is more useful than years of small royalty payments, especially when you factor in the administrative burden of managing the catalog.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "For straightforward catalogs with clean metadata and clear ownership, the process can be completed in as little as 2-3 weeks. Larger or more complex catalogs may take 4-8 weeks. We prioritize speed and simplicity for smaller catalog transactions.",
+   "replace": "SPACE's initial offer typically follows 5-7 business days after the relevant catalog information is received. Closing depends on the agreement, documentation, and rights transfer steps. Clean metadata and clear ownership make a small catalog simpler to review.",
+   "reason": "policy"
+  },
+  {
+   "find": "Each can be listed and sold separately or bundled together.",
+   "replace": "Each can be reviewed and sold separately or together.",
+   "reason": "policy"
+  },
+  {
+   "find": "Cue sheet review to identify missing registrations and recover uncollected backend royalties before the sale",
+   "replace": "Cue sheet review, since missing registrations reduce the backend income a catalog can document",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyer network includes sync licensing companies, music library operators, and production music funds that understand this business model",
+   "replace": "A direct buyer: SPACE reviews and buys sync catalogs itself, with no auction or listing fee",
+   "reason": "policy"
+  },
+  {
+   "find": "Deal structures can include the transfer of existing library relationships and sync agent agreements",
+   "replace": "Existing library and sync agent agreements reviewed for whether they can transfer",
+   "reason": "policy"
+  },
+  {
+   "find": "Transfer complex library relationships and agent agreements as part of the sale",
+   "replace": "Where agreements allow it, transfer library relationships and agent agreements as part of the sale",
+   "reason": "policy"
+  },
+  {
+   "find": "Recover uncollected backend royalties through pre-sale cue sheet auditing",
+   "replace": "Find gaps in cue sheet registrations before a sale",
+   "reason": "policy"
+  },
+  {
+   "find": "Connect with buyers who understand production music economics and will actively pitch your catalog",
+   "replace": "Deal directly with a buyer that reviews production music income",
+   "reason": "policy"
+  },
+  {
+   "find": "A sync licensing composer with 250 tracks placed across four music libraries, generating $35,000/year from sync fees ($20,000), backend PRO performance royalties ($10,000), and Spotify streaming ($5,000), wanted to transition from active sync composing to teaching. A pre-sale cue sheet audit revealed 15 missing TV placements worth an estimated $6,000/year in uncollected backend royalties, which were registered and began generating income within two quarters. The catalog was revalued at $41,000/year and sold at a 12x multiple ($492,000) to a production music fund that took over all library relationships and actively expanded the catalog's placement footprint. The composer now teaches film scoring at a community college.",
+   "replace": "Illustrative example, not a SPACE transaction: a composer has 250 tracks placed across four music libraries and documents $35,000 a year from sync fees, backend PRO performance royalties, and streaming. A review would separate the upfront sync fees, which vary by project, from the backend royalties, and look at several years of history for each. It would check the library agreements for transfer restrictions, compare cue sheets with PRO registrations, since missing registrations reduce documented income, and check how much of the income depends on a few placements. Any offer depends on individual review.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "We analyze 3-5 years of sync revenue history to establish a reliable average",
+   "replace": "We look at several years of sync revenue history, where available, to establish a reliable average",
+   "reason": "policy"
+  },
+  {
+   "find": "In most cases, yes. However, some library agreements include non-transferability clauses. We review all existing agreements as part of the sale process and work with the libraries to facilitate transitions. Buyers on our platform expect to inherit these relationships and are experienced in managing them.",
+   "replace": "Often, yes. However, some library agreements include non-transferability clauses. We review existing agreements as part of the review. Where a transfer needs a library's consent, that has to be resolved before closing.",
+   "reason": "policy"
+  },
+  {
+   "find": "Wellness App Composers: Your Soundtracks Power a $5 Trillion Industry",
+   "replace": "Wellness App Composers: Your Soundtracks Power the Wellness Industry",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Created music for wellness apps, yoga platforms, or meditation services? Your catalog sits at the intersection of music rights and the booming wellness economy. Sell or monetize it on SpaceMusic.io.",
+   "replace": "Created music for wellness apps, yoga platforms, or meditation services? Your catalog sits at the intersection of music rights and the wellness economy. Get a free review from SpaceMusic.io.",
+   "reason": "policy"
+  },
+  {
+   "find": "The wellness app market is growing at 15-20% annually, and your catalog of purpose-built wellness music is an asset that's becoming more valuable every year.",
+   "replace": "The Global Wellness Institute estimates the global wellness economy at $6.8 trillion in 2024, and your catalog of purpose-built wellness music can be an asset with documented, recurring income.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ]
+  },
+  {
+   "find": "Functional music valuation methodology that accounts for the therapeutic design, wellness market alignment, and app-licensing potential of your catalog",
+   "replace": "A review that considers the therapeutic design, app licensing income, and revenue consistency of your catalog",
+   "reason": "policy"
+  },
+  {
+   "find": "Buyer network includes wellness app companies seeking to own rather than license their music, wellness-focused investment funds, and health tech platforms",
+   "replace": "A direct buyer: SPACE reviews and buys wellness music catalogs itself, with no auction or listing fee",
+   "reason": "policy"
+  },
+  {
+   "find": "App licensing agreement review and optimization \u2014 ensuring your existing deals are fair and properly structured",
+   "replace": "Review of existing app licensing agreements, since their terms affect what can transfer",
+   "reason": "policy"
+  },
+  {
+   "find": "Performance royalty audit for in-app playback to identify uncollected royalties from apps that don't report to PROs",
+   "replace": "A check on whether in-app playback is reported to your PRO, since unreported plays cannot be documented as income",
+   "reason": "policy"
+  },
+  {
+   "find": "Exclusive licensing analysis: understand the true opportunity cost of exclusivity and negotiate better terms",
+   "replace": "Review of exclusivity terms and how they affect the catalog's licensing options",
+   "reason": "policy"
+  },
+  {
+   "find": "Functional music premium in valuation: tracks designed with specific therapeutic frameworks (binaural beats, 432Hz tuning, circadian-aligned composition) command higher values",
+   "replace": "Functional design, such as binaural beats, 432Hz tuning, or circadian-aligned composition, considered alongside documented revenue",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Post-sale transition support for transferring app licensing relationships to the new owner",
+   "replace": "App licensing relationships transferred under the steps set out in the agreement",
+   "reason": "policy"
+  },
+  {
+   "find": "Capture the wellness tech premium in your catalog's valuation \u2014 your music is a product component, not just entertainment",
+   "replace": "Get a review that treats your music as a product component with licensing income",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Connect with buyers who understand that wellness music catalogs are growing assets tied to a booming market",
+   "replace": "Deal directly with a buyer that reviews wellness music catalogs",
+   "reason": "policy"
+  },
+  {
+   "find": "Optimize existing app licensing agreements before or after a sale to maximize catalog revenue",
+   "replace": "Understand how your existing app licensing agreements affect a sale",
+   "reason": "policy"
+  },
+  {
+   "find": "Recover uncollected performance royalties from in-app playback across multiple platforms",
+   "replace": "Find gaps in performance royalty reporting for in-app playback before a sale",
+   "reason": "policy"
+  },
+  {
+   "find": "Position your catalog at the intersection of two growing markets: music rights and wellness technology",
+   "replace": "Position your catalog at the intersection of music rights and wellness technology",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "A wellness soundtrack creator had built a catalog of 120 purpose-designed compositions for meditation, sleep, and breathwork, generating $28,000/year from licensing deals with three meditation apps ($18,000), Spotify streaming ($6,000), and YouTube Content ID ($4,000). The compositions incorporated specific binaural beat frequencies and were designed around clinical research on music and relaxation. SpaceMusic.io's functional music valuation recognized the therapeutic design premium and the strong alignment with the growing wellness app market (projected 18% CAGR). A performance royalty audit recovered $5,500/year in uncollected in-app performance royalties from one app that wasn't reporting to ASCAP. The catalog was valued at 15x the corrected annual revenue of $33,500, and a health tech investment firm acquired it for $502,500. The buyer integrated the catalog into a new AI-driven meditation app, expanding its reach to over 2 million users.",
+   "replace": "Illustrative example, not a SPACE transaction: a wellness composer has 120 compositions for meditation, sleep, and breathwork and documents $28,000 a year from licensing deals with three meditation apps, streaming, and YouTube Content ID. A review would check whether the composer kept the rights under each app agreement, how long those agreements run, and whether they are exclusive or can transfer. It would look at revenue consistency, whether in-app playback is reported to the composer's PRO, metadata quality, and how much income depends on a single app. Any offer depends on individual review.",
+   "reason": "fabricated case"
+  },
+  {
+   "find": "Why are wellness music catalogs valued at higher multiples?",
+   "replace": "How are wellness music catalogs valued?",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Wellness music catalogs benefit from three premium factors: alignment with the fast-growing wellness market (projected to reach $7 trillion by 2025), the functional nature of the music (it's a product component, not just entertainment), and exceptionally stable revenue driven by habitual daily use patterns (meditation practitioners play music daily, generating consistent streams).",
+   "replace": "A review looks at three factors that matter for wellness catalogs: licensing income from apps and wellness businesses, the functional role of the music in those products, and how steady the revenue is when listeners use it daily. The Global Wellness Institute estimates the global wellness economy at $6.8 trillion in 2024. Rights ownership, metadata, and concentration in top tracks also count, and any offer depends on individual review.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ]
+  },
+  {
+   "find": "Exclusive licenses need careful evaluation. If the exclusive deal is well-compensated, it adds value by providing guaranteed revenue. If it's undervalued, we can advise on renegotiation or waiting until the exclusivity period ends before selling. Some buyers specifically seek catalogs with existing app relationships.",
+   "replace": "Exclusive licenses need careful evaluation. A well-paid exclusive deal can provide documented revenue. If the terms are below what you could earn elsewhere, you may choose to wait until the exclusivity period ends before selling. The review looks at the term, the fees, and whether the license can transfer.",
+   "reason": "policy"
+  },
+  {
+   "find": "Yes, and this is increasingly common. Wellness apps are recognizing that owning their music outright \u2014 rather than paying ongoing licensing fees \u2014 is more cost-effective long-term. Apps like Calm and Headspace have made significant investments in owned music content. Your catalog could be exactly what a growing wellness app needs.",
+   "replace": "Yes. An app could buy a catalog to own its music outright rather than pay ongoing licensing fees, and you are free to consider that. SPACE is a direct buyer, so a free review with SPACE is one way to get a written offer to compare with other options.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "as a lump sum, based on 4\u201310x annual revenue",
+   "replace": "illustrative lump sum at 4x to 10x annual revenue, not a market range or offer",
+   "reason": "multiple removed"
+  }
+ ]
+}

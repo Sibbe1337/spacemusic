@@ -1,0 +1,19 @@
+{
+  "slug":"music-catalog-sale-documents-checklist",
+  "title":"Music Catalog Sale Documents: A Seller's Checklist",
+  "seoTitle":"Music Catalog Sale Documents: A Seller's Checklist | SPACE",
+  "description":"Prepare royalty statements, rights splits, contracts and metadata for a music catalog sale. A practical checklist for a confidential seller review.",
+  "datePublished":"2026-09-07",
+  "dateModified":"2026-09-07",
+  "author":"SPACE",
+  "image":"https://spacemusic.io/social/space-catalog-v1.png",
+  "imageAlt":"SPACE: Sell your music catalog. One direct buyer. One clear offer. Free evaluation. No obligation.",
+  "category":"Catalog Sale Preparation",
+  "relatedGlossary":"/glossary/metadata/",
+  "relatedLinkLabel":"Music catalog sale documents: a seller checklist",
+  "verificationText":["A music catalog sale starts with evidence", "An identifier is a matching tool, not proof of title.", "Missing information is more useful", "Does preparing these documents guarantee a higher price?"],
+  "navigationChecks":[
+    {"label":"start your free catalog review","path":"/apply/","title":"We buy your music catalog."},
+    {"label":"music catalog valuation guide","path":"/guides/music-catalog-valuation-2026/","title":"Music Catalog Valuation Guide 2026: How Much Is Your Catalog Worth?"}
+  ]
+}

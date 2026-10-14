@@ -1,0 +1,1616 @@
+{
+ "release": "tmp/authentic-preview-v2-20260929",
+ "model": "jev",
+ "inputTokens": 172200,
+ "estUsd": 0.0072,
+ "pages": {
+  "/": [
+   {
+    "path": "/how-it-works/",
+    "p": 0.7,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.44,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.88,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.39,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/ambient-lo-fi-music-catalog-buyers/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.69,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.49,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/beatbread-vs-catalog-buyers/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.59,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.62,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/case-study-ambient-producer-catalog-sale/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.8,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.55,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/future-of-ai-in-ambient-music/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.96,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.64,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/how-to-register-your-ambient-music-with-pros/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.92,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.68,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/independent-record-label-funding-options/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.54,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.51,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/maximizing-your-lo-fi-catalog-value/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.74,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.53,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/music-catalog-offer-checklist/": [
+   {
+    "path": "/compare/partial-sale-vs-full-sale/",
+    "p": 0.37,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.42,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/music-catalog-sale-documents-checklist/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.56,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.65,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/royalty-exchange-alternatives/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.51,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.51,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/sell-music-catalog-lump-sum-2026/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.39,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.8,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/streaming-royalties-guide-for-ambient-music/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.59,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.43,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/what-is-a-blanket-license/": [
+   {
+    "path": "/glossary/",
+    "p": 0.46,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.82,
+    "kind": "funnel"
+   }
+  ],
+  "/blog/why-selling-partial-rights-makes-sense/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.09,
+    "kind": "topical"
+   },
+   {
+    "path": "/compare/partial-sale-vs-full-sale/",
+    "p": 0.47,
+    "kind": "funnel"
+   }
+  ],
+  "/brand-facts/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.17,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.65,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/": [
+   {
+    "path": "/compare/partial-sale-vs-full-sale/",
+    "p": 0.37,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.52,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/catalog-sale-vs-catalog-loan/": [
+   {
+    "path": "/compare/partial-sale-vs-full-sale/",
+    "p": 0.6,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/distrokid-vs-tunecore/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.78,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.43,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/exclusive-vs-non-exclusive-license/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.63,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.76,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/full-buyout-vs-revenue-split/": [
+   {
+    "path": "/compare/partial-sale-vs-full-sale/",
+    "p": 0.68,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.67,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/major-label-vs-independent/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.45,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.58,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/partial-sale-vs-full-sale/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.76,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.54,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/self-publishing-vs-publishing-deal/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.97,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.66,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/selling-masters-vs-selling-publishing/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.68,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.47,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/space-vs-duetti/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.77,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.57,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/space-vs-hipgnosis/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.72,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.55,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/space-vs-primary-wave/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.81,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.64,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/space-vs-reservoir/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.79,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.53,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/space-vs-round-hill/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.69,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.6,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/space-vs-royalty-exchange/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.45,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.65,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/spotify-vs-apple-music-royalties/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.84,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.42,
+    "kind": "funnel"
+   }
+  ],
+  "/compare/sync-licensing-vs-streaming-revenue/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.49,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.56,
+    "kind": "funnel"
+   }
+  ],
+  "/data/music-catalog-market-2026/": [
+   {
+    "path": "/guides/best-music-rights-buyers-2026/",
+    "p": 0.02,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/for/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.54,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.48,
+    "kind": "funnel"
+   }
+  ],
+  "/for/ambient-music-producer/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.89,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.63,
+    "kind": "funnel"
+   }
+  ],
+  "/for/independent-artist-catalog-owner/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.54,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.63,
+    "kind": "funnel"
+   }
+  ],
+  "/for/lo-fi-beat-maker/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.7,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.59,
+    "kind": "funnel"
+   }
+  ],
+  "/for/meditation-music-creator/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.48,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/for/music-producer-ready-to-retire/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.78,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.59,
+    "kind": "funnel"
+   }
+  ],
+  "/for/side-project-musician/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.75,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.67,
+    "kind": "funnel"
+   }
+  ],
+  "/for/sync-licensing-composer/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.55,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.53,
+    "kind": "funnel"
+   }
+  ],
+  "/for/wellness-app-soundtrack-creator/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.38,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.55,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.8,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.42,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/advance/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.36,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.62,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/blanket-license/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.76,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.67,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/buyout-deal/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.5,
+    "kind": "topical"
+   },
+   {
+    "path": "/compare/partial-sale-vs-full-sale/",
+    "p": 0.41,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/catalog-acquisition/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.56,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.68,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/catalog-loan/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.3,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.79,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/catalog-valuation/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.98,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.73,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/compulsory-license/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.81,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.6,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/content-id/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.28,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.74,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/cue-sheet/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.72,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.75,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/digital-aggregator/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.49,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.68,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/distribution-deal/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.59,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.83,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/exclusive-vs-non-exclusive-license/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.58,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.87,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/independent-artist/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.71,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.72,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/isrc/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.29,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.83,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/iswc/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.72,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.76,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/master-rights/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.99,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.7,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/mechanical-royalties/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.5,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.59,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/metadata/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.65,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.81,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.75,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.63,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/music-publisher/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.89,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.61,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/neighboring-rights/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.95,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.7,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/partial-sale-vs-full-sale/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.6,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.57,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/performance-royalties/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.44,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.71,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/pro/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.89,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.65,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/publishing-rights/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.98,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.69,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/record-label/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.93,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.56,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/recoupment/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.31,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.63,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/revenue-multiple/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.93,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.65,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/royalty-split/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.85,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.54,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/sample-clearance/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.98,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.77,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/streaming-royalties/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.52,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.56,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/sub-publishing/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.64,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.82,
+    "kind": "funnel"
+   }
+  ],
+  "/glossary/sync-licensing/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.91,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.68,
+    "kind": "funnel"
+   }
+  ],
+  "/guides/best-music-rights-buyers-2026/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.71,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.66,
+    "kind": "funnel"
+   }
+  ],
+  "/guides/how-long-does-it-take-to-sell-a-music-catalog/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.55,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.5,
+    "kind": "funnel"
+   }
+  ],
+  "/guides/how-to-sell-music-rights/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.54,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.71,
+    "kind": "funnel"
+   }
+  ],
+  "/guides/music-catalog-valuation-2026/": [
+   {
+    "path": "/guides/music-rights-101/",
+    "p": 0.07,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.84,
+    "kind": "funnel"
+   }
+  ],
+  "/guides/music-rights-101/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.62,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.62,
+    "kind": "funnel"
+   }
+  ],
+  "/guides/what-are-your-streams-worth-2026/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.45,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.58,
+    "kind": "funnel"
+   }
+  ],
+  "/how-it-works/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.43,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.86,
+    "kind": "funnel"
+   }
+  ],
+  "/privacy/": [
+   {
+    "path": "/how-it-works/",
+    "p": 0.57,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.69,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.61,
+    "kind": "topical"
+   },
+   {
+    "path": "/how-it-works/",
+    "p": 0.59,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-afro-house-catalog/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.03,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.43,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-ambient-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.84,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.59,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-bass-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.89,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.49,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-breakbeat-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.86,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.43,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-chillhop-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.67,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.48,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-chillout-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.88,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.5,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-cinematic-ambient-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.78,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.46,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-dance-pop-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.9,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.52,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-deep-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.88,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.54,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-downtempo-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.9,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.5,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-drone-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.81,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.51,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-drum-and-bass-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.89,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.46,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-electro-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.91,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.43,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-electronic-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.9,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.61,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-electronica-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.92,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.46,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-focus-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.8,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.63,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-future-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.92,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-garage-house-catalog/": [
+   {
+    "path": "/guides/how-to-sell-music-rights/",
+    "p": 0.04,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.47,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-house-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.92,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.5,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-indie-dance-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.89,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-lo-fi-beats-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.73,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.48,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-meditation-music-rights/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.57,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.54,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-melodic-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.9,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.46,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-melodic-techno-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.89,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.59,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-nature-soundscape-catalog/": [
+   {
+    "path": "/data/music-catalog-market-2026/",
+    "p": 0.08,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-new-age-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.73,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-organic-house-catalog/": [
+   {
+    "path": "/how-it-works/",
+    "p": 0.03,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.41,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-progressive-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.9,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.47,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-psytrance-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.87,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.51,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-sleep-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.77,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.46,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-study-beats-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.68,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.72,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-synthwave-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.87,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.5,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-tech-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.92,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-techno-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.88,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.54,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-trance-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.9,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.47,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-tropical-house-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.87,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.47,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-uk-garage-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.9,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.48,
+    "kind": "funnel"
+   }
+  ],
+  "/sell/sell-wellness-music-catalog/": [
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.74,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.5,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.48,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.69,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/amazon-music-2026/": [
+   {
+    "path": "/tools/streaming-calculator/",
+    "p": 0.5,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.5,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/apple-music-2026/": [
+   {
+    "path": "/tools/streaming-calculator/",
+    "p": 0.47,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.46,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/deezer-2026/": [
+   {
+    "path": "/tools/streaming-calculator/",
+    "p": 0.37,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.49,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/soundcloud-2026/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.37,
+    "kind": "topical"
+   },
+   {
+    "path": "/guides/music-catalog-valuation-2026/",
+    "p": 0.45,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/spotify-2026/": [
+   {
+    "path": "/tools/streaming-calculator/",
+    "p": 0.39,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.64,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/tidal-2026/": [
+   {
+    "path": "/streaming-rates/",
+    "p": 0.37,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.59,
+    "kind": "funnel"
+   }
+  ],
+  "/streaming-rates/youtube-music-2026/": [
+   {
+    "path": "/tools/streaming-calculator/",
+    "p": 0.55,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.42,
+    "kind": "funnel"
+   }
+  ],
+  "/tools/streaming-calculator/": [
+   {
+    "path": "/guides/what-are-your-streams-worth-2026/",
+    "p": 0.5,
+    "kind": "topical"
+   },
+   {
+    "path": "/calculator/",
+    "p": 0.43,
+    "kind": "funnel"
+   }
+  ]
+ }
+}

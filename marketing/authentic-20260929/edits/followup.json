@@ -1,0 +1,527 @@
+{
+ "area": "followup",
+ "edits": [
+  {
+   "find": "https://support.apple.com/guide/apple-music-for-artists/welcome/web",
+   "replace": "https://artists.apple.com/support",
+   "href": true,
+   "reason": "dead source link replaced: Apple Music for Artists help centre",
+   "sources": [
+    "https://artists.apple.com/support"
+   ],
+   "modules": [
+    "StreamingRatesHubPage"
+   ]
+  },
+  {
+   "find": "Apple Music for Artists User Guide",
+   "replace": "Apple Music for Artists Support",
+   "reason": "source label matches replacement link",
+   "sources": [
+    "https://artists.apple.com/support"
+   ],
+   "modules": [
+    "StreamingRatesHubPage"
+   ]
+  },
+  {
+   "find": "https://help.soundcloud.com/hc/en-us/sections/360004122613-Monetization",
+   "replace": "https://help.soundcloud.com/hc/en-us/sections/46261009795739-Monetization-on-SoundCloud",
+   "href": true,
+   "reason": "dead source link replaced: SoundCloud Help Center monetization section (old section ID no longer indexed)",
+   "sources": [
+    "https://help.soundcloud.com/hc/en-us/sections/46261009795739-Monetization-on-SoundCloud"
+   ],
+   "modules": [
+    "StreamingRatesHubPage"
+   ]
+  },
+  {
+   "find": "https://www.gov.uk/government/publications/economics-of-music-streaming-review",
+   "replace": "https://committees.parliament.uk/work/646/economics-of-music-streaming/",
+   "href": true,
+   "reason": "dead source link replaced: UK Parliament DCMS Committee inquiry into the economics of music streaming",
+   "sources": [
+    "https://committees.parliament.uk/work/646/economics-of-music-streaming/"
+   ],
+   "modules": [
+    "StreamingRatesHubPage"
+   ]
+  },
+  {
+   "find": "UK Government: Economics of music streaming review",
+   "replace": "UK Parliament DCMS Committee: Economics of music streaming inquiry",
+   "reason": "source label matches replacement link",
+   "sources": [
+    "https://committees.parliament.uk/work/646/economics-of-music-streaming/"
+   ],
+   "modules": [
+    "StreamingRatesHubPage"
+   ]
+  },
+  {
+   "find": "https://artists.apple.com/support/1124-apple-music-insights-overview",
+   "replace": "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate",
+   "href": true,
+   "reason": "dead source link replaced: Apple Music Insights: Royalties, states the $0.01 average per play for individual paid plans in 2020 | HTML href only: glossary-rates.json #192 already rewrites the JS string; plain edits do not touch prerendered hrefs",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ],
+   "modules": [
+    "(prerendered-html-only)"
+   ],
+   "pages": [
+    "guides/what-are-your-streams-worth-2026"
+   ]
+  },
+  {
+   "find": "https://www.citigroup.com/global/insights/citigps/putting-the-band-back-together",
+   "replace": "https://www.citigroup.com/global/insights/music-industry",
+   "href": true,
+   "reason": "dead source link replaced: Citi GPS report page for Putting the Band Back Together",
+   "sources": [
+    "https://www.citigroup.com/global/insights/music-industry"
+   ]
+  },
+  {
+   "find": "Citigroup — Putting the Band Back Together: The Music Economy",
+   "replace": "Citi GPS — Putting the Band Back Together: Remastering the World of Music",
+   "reason": "source label uses the report's real title",
+   "sources": [
+    "https://www.citigroup.com/global/insights/music-industry"
+   ],
+   "modules": [
+    "PillarGuidePage"
+   ]
+  },
+  {
+   "find": "Citigroup GPS: Putting the Band Back Together — Music Industry Report",
+   "replace": "Citi GPS — Putting the Band Back Together: Remastering the World of Music",
+   "reason": "source label uses the report's real title",
+   "sources": [
+    "https://www.citigroup.com/global/insights/music-industry"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  },
+  {
+   "find": "https://shottowercapital.com/",
+   "replace": "https://www.billboard.com/pro/music-catalog-market-attractive-slower-growth-shot-tower/",
+   "href": true,
+   "reason": "dead source link replaced: Shot Tower Capital's own domain no longer resolves; Billboard article reporting Shot Tower Capital's view of the catalog market",
+   "sources": [
+    "https://www.billboard.com/pro/music-catalog-market-attractive-slower-growth-shot-tower/"
+   ],
+   "modules": [
+    "PillarGuidePage"
+   ]
+  },
+  {
+   "find": "Shot Tower Capital — Music Royalty Valuation Fundamentals",
+   "replace": "Billboard — Shot Tower Capital on the music catalog market",
+   "reason": "previous label named an article that does not exist",
+   "sources": [
+    "https://www.billboard.com/pro/music-catalog-market-attractive-slower-growth-shot-tower/"
+   ],
+   "modules": [
+    "PillarGuidePage"
+   ]
+  },
+  {
+   "find": "https://www.goldmansachs.com/insights/pages/infographics/music-in-the-air/",
+   "replace": "https://www.goldmansachs.com/insights/articles/global-music-revenues-are-forecast-to-double-to-200-million-in-2035",
+   "href": true,
+   "reason": "dead source link replaced: Goldman Sachs article on the 2025 Music in the Air report (about $105B in 2024, nearly $200B forecast for 2035)",
+   "sources": [
+    "https://www.goldmansachs.com/insights/articles/global-music-revenues-are-forecast-to-double-to-200-million-in-2035"
+   ],
+   "modules": [
+    "PillarGuidePage"
+   ]
+  },
+  {
+   "find": "Goldman Sachs — Music in the Air: Global Music Industry Outlook",
+   "replace": "Goldman Sachs — Music in the Air 2025: global music revenue forecast",
+   "reason": "source label matches replacement link",
+   "sources": [
+    "https://www.goldmansachs.com/insights/articles/global-music-revenues-are-forecast-to-double-to-200-million-in-2035"
+   ],
+   "modules": [
+    "PillarGuidePage"
+   ]
+  },
+  {
+   "find": "https://www.alliedmarketresearch.com/music-rights-market",
+   "replace": "https://www.goldmansachs.com/insights/articles/global-music-revenues-are-forecast-to-double-to-200-million-in-2035",
+   "href": true,
+   "reason": "dead source link replaced: label already credits Goldman Sachs Music in the Air 2025, which supports the revenue figures on the page",
+   "sources": [
+    "https://www.goldmansachs.com/insights/articles/global-music-revenues-are-forecast-to-double-to-200-million-in-2035"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  },
+  {
+   "find": "Allied Market Research — Music Rights Market Forecast",
+   "replace": "Goldman Sachs — Music in the Air 2025: global music revenue forecast",
+   "reason": "source label matches the figure cited on the page",
+   "sources": [
+    "https://www.goldmansachs.com/insights/articles/global-music-revenues-are-forecast-to-double-to-200-million-in-2035"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  },
+  {
+   "find": "https://www.grandviewresearch.com/industry-analysis/meditation-market",
+   "replace": "https://www.grandviewresearch.com/industry-analysis/meditation-management-apps-market-report",
+   "href": true,
+   "reason": "dead source link replaced: Grand View Research meditation management apps report ($2.20B in 2025, the figure on the page)",
+   "sources": [
+    "https://www.grandviewresearch.com/industry-analysis/meditation-management-apps-market-report"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  },
+  {
+   "find": "Grand View Research — Meditation App Market Size",
+   "replace": "Grand View Research — Meditation Management Apps Market",
+   "reason": "source label matches the report cited on the page",
+   "sources": [
+    "https://www.grandviewresearch.com/industry-analysis/meditation-management-apps-market-report"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  },
+  {
+   "find": "https://www.fortunebusinessinsights.com/sleep-aids-market-101860",
+   "replace": "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/",
+   "href": true,
+   "reason": "dead source link replaced: sleep aids figure was removed from the page; Global Wellness Institute release supports the $6.8 trillion wellness economy figure now on the page",
+   "sources": [
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  },
+  {
+   "find": "Fortune Business Insights — Sleep Aids Market",
+   "replace": "Global Wellness Institute — Global Wellness Economy 2024",
+   "reason": "source label matches the figure cited on the page",
+   "sources": [
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  },
+  {
+   "find": "https://www.royaltyexchange.com/how-it-works",
+   "replace": "https://royaltyexchange.com/how-auctions-work-sellers",
+   "href": true,
+   "reason": "dead source link replaced: Royalty Exchange's page on how auctions work for sellers",
+   "sources": [
+    "https://royaltyexchange.com/how-auctions-work-sellers"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "Royalty Exchange — How It Works",
+   "replace": "Royalty Exchange — How Auctions Work for Sellers",
+   "reason": "source label matches replacement link",
+   "sources": [
+    "https://royaltyexchange.com/how-auctions-work-sellers"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://www.musicbusinessworldwide.com/the-rise-of-music-royalty-marketplaces/",
+   "replace": "https://www.musicbusinessworldwide.com/companies/royalty-exchange/",
+   "href": true,
+   "reason": "dead source link replaced: MBW company page and coverage of Royalty Exchange",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/companies/royalty-exchange/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "Music Business Worldwide — The Rise of Music Royalty Marketplaces",
+   "replace": "Music Business Worldwide — Royalty Exchange coverage",
+   "reason": "previous label named an article that does not exist",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/companies/royalty-exchange/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://www.billboard.com/pro/music-catalog-sales-explained/",
+   "replace": "https://www.billboard.com/pro/pro-tips-for-catalog-buyers-and-sellers/",
+   "href": true,
+   "reason": "dead source link replaced: Billboard guide to buying and selling music publishing catalogs",
+   "sources": [
+    "https://www.billboard.com/pro/pro-tips-for-catalog-buyers-and-sellers/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "Billboard — Music Catalog Sales Explained",
+   "replace": "Billboard — Music Publishing Catalogs: A Guide to Buying and Selling",
+   "reason": "previous label named an article that does not exist",
+   "sources": [
+    "https://www.billboard.com/pro/pro-tips-for-catalog-buyers-and-sellers/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://ir.reservoir-media.com/",
+   "replace": "https://investors.reservoir-media.com/",
+   "href": true,
+   "reason": "dead source link replaced: Reservoir Media investor relations site (current domain)",
+   "sources": [
+    "https://investors.reservoir-media.com/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://www.musicbusinessworldwide.com/companies/reservoir-media/",
+   "replace": "https://www.musicbusinessworldwide.com/companies/reservoir/",
+   "href": true,
+   "reason": "dead source link replaced: MBW company page and acquisition coverage for Reservoir",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/companies/reservoir/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://www.billboard.com/pro/reservoir-media-music-catalog-growth/",
+   "replace": "https://www.billboard.com/pro/reservoir-media-earnings-revenue-145m-acquisitions/",
+   "href": true,
+   "reason": "dead source link replaced: Billboard report on Reservoir Media's full-year revenue and acquisitions",
+   "sources": [
+    "https://www.billboard.com/pro/reservoir-media-earnings-revenue-145m-acquisitions/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "Billboard — Reservoir Media's Growth Strategy",
+   "replace": "Billboard — Reservoir Media full-year revenue and acquisitions",
+   "reason": "previous label named an article that does not exist",
+   "sources": [
+    "https://www.billboard.com/pro/reservoir-media-earnings-revenue-145m-acquisitions/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://www.billboard.com/artist/hipgnosis-songs-fund/",
+   "replace": "https://www.billboard.com/pro/hipgnosis-name-change-music-catalog-company-recognition/",
+   "href": true,
+   "reason": "dead source link replaced: Billboard report on Hipgnosis being renamed Recognition Music Group",
+   "sources": [
+    "https://www.billboard.com/pro/hipgnosis-name-change-music-catalog-company-recognition/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "Billboard — Hipgnosis Songs Fund Overview",
+   "replace": "Billboard — Hipgnosis renamed Recognition Music Group",
+   "reason": "source label matches replacement link",
+   "sources": [
+    "https://www.billboard.com/pro/hipgnosis-name-change-music-catalog-company-recognition/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://www.musicbusinessworldwide.com/concord-acquires-round-hill-music-royalty-fund/",
+   "replace": "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+   "href": true,
+   "reason": "dead source link replaced: MBW: Concord acquires Round Hill's UK fund after $469m sale approved",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://www.billboard.com/pro/concord-round-hill-music-merger-details/",
+   "replace": "https://www.billboard.com/pro/concord-round-hill-music-fund-acquisition-catalog-deal/",
+   "href": true,
+   "reason": "dead source link replaced: Billboard: Concord to buy Round Hill Music Royalty Fund for $469 million",
+   "sources": [
+    "https://www.billboard.com/pro/concord-round-hill-music-fund-acquisition-catalog-deal/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "https://variety.com/2023/music/news/round-hill-music-concord-acquisition-1235574628/",
+   "replace": "https://variety.com/2023/music/news/timothy-xu-universal-music-greater-china-ceo-chairman-1235714057/",
+   "href": true,
+   "reason": "dead source link replaced: Variety: Concord strikes $468 million deal for Round Hill fund",
+   "sources": [
+    "https://variety.com/2023/music/news/timothy-xu-universal-music-greater-china-ceo-chairman-1235714057/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "Variety — Round Hill Music's Catalog Strategy",
+   "replace": "Variety — Concord strikes deal for Round Hill fund",
+   "reason": "previous label named an article that does not exist",
+   "sources": [
+    "https://variety.com/2023/music/news/timothy-xu-universal-music-greater-china-ceo-chairman-1235714057/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "Hipgnosis Songs Fund",
+   "replace": "Duetti",
+   "reason": "policy: Hipgnosis no longer buys catalogs; replaced with an active buyer of independent catalogs",
+   "sources": [
+    "https://www.duetti.co/what-we-do",
+    "https://www.billboard.com/pro/duetti-200-million-fund-indie-music-catalog-acquisitions/"
+   ],
+   "modules": [
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "https://www.hipgnosissongs.com",
+   "replace": "https://www.duetti.co/",
+   "href": true,
+   "reason": "dead source link replaced: Duetti official site (replaces Hipgnosis entry)",
+   "sources": [
+    "https://www.duetti.co/"
+   ],
+   "modules": [
+    "GuideBestMusicRightsBuyers"
+   ]
+  },
+  {
+   "find": "https://www.hipgnosissongs.com",
+   "replace": "https://www.duetti.co/",
+   "reason": "Duetti official site in the guide's JSON-LD ItemList",
+   "sources": [
+    "https://www.duetti.co/what-we-do",
+    "https://www.billboard.com/pro/duetti-200-million-fund-indie-music-catalog-acquisitions/"
+   ],
+   "pages": [
+    "guides/best-music-rights-buyers"
+   ],
+   "htmlOnly": true
+  },
+  {
+   "find": "Ambient, lo-fi, meditation, focus, wellness music catalogs",
+   "replace": "Catalogs across all genres, including ambient, lo-fi, meditation and wellness music",
+   "reason": "policy: SPACE reviews catalogs across all genres",
+   "sources": [
+    "https://spacemusic.io/brand-facts/"
+   ],
+   "modules": [
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "For independent artists in ambient, lo-fi, or wellness genres, SPACE",
+   "replace": "For independent artists in any genre, including ambient, lo-fi and wellness music, SPACE",
+   "reason": "policy: SPACE reviews catalogs across all genres",
+   "sources": [
+    "https://spacemusic.io/brand-facts/"
+   ],
+   "modules": [
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "SPACE buys ambient, lo-fi, and meditation music catalogs.",
+   "replace": "SPACE buys music catalogs across all genres, including ambient, lo-fi, and meditation music.",
+   "reason": "policy: SPACE reviews catalogs across all genres",
+   "sources": [
+    "https://spacemusic.io/brand-facts/"
+   ]
+  },
+  {
+   "find": "SPACE buys ambient, lo-fi, and meditation music catalogs for an immediate lump sum.",
+   "replace": "SPACE buys music catalogs across all genres, including ambient, lo-fi, and meditation music, for a lump sum.",
+   "reason": "policy: SPACE reviews catalogs across all genres; payment follows the agreement (pricing.md)",
+   "sources": [
+    "https://spacemusic.io/brand-facts/"
+   ]
+  },
+  {
+   "find": "SPACE operates at the other end of the spectrum, working with independent creators in the ambient, lo-fi, and meditation space.",
+   "replace": "SPACE operates at the other end of the spectrum, reviewing catalogs from independent creators across all genres, including ambient, lo-fi, and meditation music.",
+   "reason": "policy: SPACE reviews catalogs across all genres",
+   "sources": [
+    "https://spacemusic.io/brand-facts/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "If you have a smaller catalog in the ambient, lo-fi, or wellness space, SPACE is a viable option where Hipgnosis would not be.",
+   "replace": "If you have a smaller catalog in any genre, including ambient, lo-fi, or wellness music, SPACE is a viable option where Hipgnosis would not have been.",
+   "reason": "policy: SPACE reviews catalogs across all genres",
+   "sources": [
+    "https://spacemusic.io/brand-facts/"
+   ],
+   "modules": [
+    "competitorComparisonsExpanded"
+   ]
+  },
+  {
+   "find": "This is precisely the niche that specialized buyers like SPACE Music occupy. Unlike major-label acquisition funds that focus on high-multiple, proven mainstream catalogs, SPACE targets ambient, electronic, wellness, and functional music rights",
+   "replace": "Smaller direct buyers also review these catalogs. Unlike acquisition funds that focus on proven mainstream catalogs, SPACE reviews revenue-generating catalogs across all genres, including ambient, electronic, wellness, and functional music rights",
+   "reason": "policy: SPACE reviews catalogs across all genres",
+   "sources": [
+    "https://spacemusic.io/brand-facts/"
+   ],
+   "modules": [
+    "MarketDataPage"
+   ]
+  }
+ ]
+}

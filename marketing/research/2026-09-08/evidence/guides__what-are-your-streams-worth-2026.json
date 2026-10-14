@@ -1,0 +1,173 @@
+{
+  "requested": "/guides/what-are-your-streams-worth-2026/",
+  "url": "https://spacemusic.io/guides/what-are-your-streams-worth-2026/",
+  "status": 200,
+  "fetched": "2026-09-08T12:43:58.076Z",
+  "contentType": "text/html; charset=utf-8",
+  "title": "What Are Your Streams Actually Worth in 2026? The Complete Breakdown — SPACE",
+  "description": "Compare per-stream rates for Spotify, Apple Music, Tidal, YouTube Music, Amazon Music, Deezer & SoundCloud in 2026. Learn what your catalog is really worth beyond streaming.",
+  "canonical": "https://spacemusic.io/guides/what-are-your-streams-worth-2026/",
+  "headings": [
+    "What Are Your Streams Actually Worth in 2026? The Complete Breakdown",
+    "How Streaming Payouts Actually Work",
+    "Per-Stream Rates by Platform in 2026",
+    "Why Ambient and Lo-Fi Artists Get Hit Hardest",
+    "The Revenue Multiplier: What Nobody Tells You",
+    "How to Calculate Your True Catalog Value",
+    "Stop Counting Streams. Start Thinking About Value.",
+    "Streaming Rates by Platform (2026)",
+    "From Streams to Catalog Value by Genre",
+    "Calculate your streaming earnings and catalog value",
+    "Frequently Asked Questions",
+    "How much does Spotify pay per stream in 2026?",
+    "What is a music stream worth?",
+    "How much do artists get paid per 1,000 streams?",
+    "How much does Apple Music pay per stream compared to Spotify?",
+    "Can I sell my streaming royalties?",
+    "How much is my music catalog worth?",
+    "Which streaming platform pays artists the most?",
+    "Why do ambient and lo-fi artists earn less per minute from streaming?",
+    "What is the difference between pro-rata and user-centric streaming payments?",
+    "How do I increase my streaming revenue as an independent artist?",
+    "Sources",
+    "Detailed platform guides",
+    "Platform pages",
+    "Guides and glossary",
+    "Tools"
+  ],
+  "paragraphs": [
+    "TL;DR",
+    "Spotify pays $0.003–$0.005 per stream, Apple Music pays $0.007–$0.01, and Tidal leads at $0.008–$0.013. At these rates, an independent ambient or lo-fi artist with 500,000 monthly streams earns roughly $2,000–$5,000 per year. However, your catalog's lump-sum value is typically 4–10x your annual streaming revenue — meaning a catalog earning $5,000/year could be worth $20,000–$50,000 as a one-time payout. Instead of waiting years for streams to trickle in, catalog sales offer immediate liquidity.",
+    "Every independent artist eventually Googles it: \"How much does Spotify pay per stream?\" The answer — somewhere between $0.003 and $0.005 — usually triggers one of two reactions: disbelief or resignation. But the per-stream number, while technically accurate, tells a deeply incomplete story. What matters isn't how much a single stream is worth. What matters is how much your entire catalog is worth — and whether you're leaving money on the table by collecting streaming royalties one drip at a time instead of unlocking the full value of your music in one move. This guide breaks down actual per-stream rates across every major platform in 2026, explains why ambient and lo-fi artists face unique challenges in the streaming economy, and reveals the catalog valuation math that most artists never learn. Whether you're earning $200/month or $5,000/month from streaming, the real question isn't \"how much per stream\" — it's \"what is all of this worth together?\"",
+    "Most artists assume streaming platforms pay a fixed rate per play — play a song, earn a penny. The reality is more complex and, frankly, less favorable. The dominant model is pro-rata pooling, used by Spotify, Apple Music, and Amazon Music. Here's how it works: all subscription and ad revenue collected in a given month is pooled together, then divided by the total number of streams across the entire platform. Your share is proportional to your streams relative to everyone else's. This means your per-stream rate isn't fixed — it fluctuates monthly based on how many other artists are being streamed and how much total revenue the platform collected.\n\nThis system has a critical implication: when a massive pop release drives billions of streams in a single month, your per-stream rate can actually decrease even if your own stream count stays constant. You're competing for a share of a finite pool against every artist on the platform.\n\nA newer alternative is the user-centric (or fan-powered) model, used by Tidal, SoundCloud, and Deezer's artist-centric variant. Under this system, each subscriber's monthly fee is distributed only to the artists they personally listened to. If a Tidal subscriber spends their entire month listening to your ambient catalog, the majority of their $10.99 goes to you — not to Drake or Taylor Swift. This model fundamentally benefits niche artists with dedicated listeners, which is why it's gaining traction despite being harder to implement.\n\nOne more metric to understand: NPS, or net-per-stream, is the amount you actually receive after the platform, your distributor, and any label take their cuts. If Spotify pays $0.004 per stream but your distributor takes 15%, your NPS is $0.0034. Always calculate with NPS, not gross per-stream rates.",
+    "Per-stream rates vary dramatically across platforms, and the difference compounds at scale. Tidal leads at $0.008–$0.013 per stream, meaning a million Tidal streams could earn you $8,000–$13,000. Apple Music follows at $0.007–$0.01 per stream — roughly double Spotify's rate — because every Apple Music listener is a paying subscriber. There's no free tier diluting the pool.\n\nAmazon Music sits in the middle at $0.004–$0.008, though rates depend heavily on which tier the listener uses. Amazon Music Unlimited pays competitively, but Prime Music (included free with Prime memberships) pays substantially less. For ambient artists, Amazon's Alexa integration is a wild card — voice-activated plays like 'Alexa, play rain sounds' funnel enormous volume to ambient catalogs.\n\nSpotify, despite being the largest platform, pays $0.003–$0.005 per stream. Its massive free tier (380M+ users who don't pay for subscriptions) significantly dilutes the average payout. YouTube Music pays a comparable $0.002–$0.005, though the broader YouTube ecosystem adds Content ID revenue that can meaningfully boost total earnings for ambient artists.\n\nDeezer ($0.004–$0.007) and SoundCloud ($0.002–$0.004) round out the field with smaller subscriber bases but innovative payment models. Deezer's artist-centric system boosts payments for intentional listens, while SoundCloud's fan-powered royalties benefit artists with devoted fan bases.\n\nSee the platform comparison table below for a side-by-side breakdown. The key takeaway: where your listeners are matters as much as how many you have. 10,000 Tidal streams can be worth more than 30,000 Spotify streams.",
+    "Streaming economics are fundamentally unfair to ambient, lo-fi, and mood music creators — and it's not a bug, it's a structural feature of how platforms count and pay for streams.\n\nFirst, the length problem. A stream is a stream, regardless of duration (after the 30-second minimum threshold). A 2-minute pop song and a 10-minute ambient soundscape earn identical per-stream payouts. But the ambient artist invested 5x more listening time for the same payment. Measured per minute of content consumed, ambient artists earn a fraction of what pop or hip-hop artists earn.\n\nSecond, the passive listening problem. Ambient and lo-fi music is overwhelmingly consumed as background audio — during work, study, sleep, or meditation. Listeners press play and walk away for hours. While this drives impressive stream counts, these passive algorithmic plays are increasingly devalued by platforms like Deezer (whose artist-centric model weights intentional listens higher) and potentially future Spotify policy changes.\n\nThird, the playlist dependency problem. A significant share of ambient streams come from editorial and algorithmic playlists rather than artist-driven discovery. When a playlist curator rotates your track out, your streams can drop 80% overnight. This volatility makes ambient streaming revenue inherently less predictable than genres where fans follow specific artists.\n\nFinally, the catalog depth paradox. Ambient artists often release high volumes of content — albums with 15-20 tracks, each 5-10 minutes long. While a deep catalog generates more total streams, the per-track stream count is diluted, which can push individual tracks below platform minimum thresholds (Spotify now requires 1,000 annual streams per track for monetization).\n\nThe net effect: ambient catalogs often generate solid aggregate revenue but face structural disadvantages in per-stream economics that make the standard \"grow your streams\" advice less effective than it is for mainstream genres.",
+    "Here's the insight that changes everything about how you should think about streaming income: your catalog isn't just a monthly revenue stream — it's a financial asset with a calculable lump-sum value. And that lump-sum value is almost always significantly more than you'd guess.\n\nIn the music industry, catalogs are valued as multiples of annual net revenue. The multiplier depends on the catalog's genre, growth trajectory, listener demographics, and revenue consistency. Mainstream pop and hip-hop catalogs from established artists trade at 15-30x annual revenue. Independent catalogs in stable genres like ambient, lo-fi, and mood music typically trade at 4-10x annual revenue.\n\nLet's make this concrete. Say you're an ambient artist earning $200/month across all streaming platforms — that's $2,400/year. At a conservative 4x multiple, your catalog has a lump-sum value of $9,600. At 8x, it's $19,200. At 10x (achievable for catalogs with growing streams and diversified platform distribution), that's $24,000.\n\nScale this up: an artist earning $500/month ($6,000/year) has a catalog worth $24,000–$60,000. At $1,000/month ($12,000/year), the range is $48,000–$120,000.\n\nWhy would someone pay 8x annual revenue for a music catalog? Because streaming revenue is remarkably predictable and recurring. Unlike most assets, a music catalog doesn't require ongoing work to generate returns. The music is already made, already distributed, and already being consumed. Buyers are essentially purchasing an annuity — a stream of predictable future cash flows — and they're willing to pay a premium for that predictability.\n\nThis reframes the entire conversation. The question isn't 'how do I get more streams?' — it's 'do I want to collect $500/month for the next 10 years, or receive $48,000 today?' Both are rational choices, but most artists never realize the second option exists.",
+    "Calculating your catalog's value requires three inputs: your trailing 12-month streaming revenue, your revenue trend (growing, stable, or declining), and your genre/risk profile.\n\nStep one: aggregate your net streaming revenue from the past 12 months across all platforms. Use your distributor dashboard — services like DistroKid, TuneCore, CD Baby, or LANDR provide consolidated earnings reports. Make sure you're looking at net revenue (after the distributor's cut), not gross platform payouts.\n\nStep two: assess the trend. If your monthly revenue has been growing 5-10% month-over-month, your catalog commands a higher multiple. Stable revenue is the baseline. Declining revenue (common when playlist placements end) reduces the multiple.\n\nStep three: apply the appropriate multiplier. For independent ambient, lo-fi, meditation, and mood music catalogs, typical ranges are: 4-6x for catalogs with declining or flat revenue, 6-8x for stable catalogs with diversified platform distribution, and 8-10x for growing catalogs with strong listener demographics and multiple revenue sources.\n\nFor a quick estimate, SPACE's catalog valuation calculator lets you input your streaming data and receive an instant preliminary valuation. It accounts for platform distribution, genre weighting, trend analysis, and comparable catalog sales to generate a realistic range.\n\nA few factors that increase your catalog's value beyond the base multiple: sync licensing potential (has your music been placed in film, TV, or ads?), geographic diversity of listeners (catalogs with global audiences are more stable), and catalog depth (more tracks = more surface area for discovery and revenue generation).\n\nReady to see what your catalog is worth? Use our free calculator for an instant estimate, or submit an application for a personalized valuation from our team.",
+    "The streaming economy has conditioned artists to obsess over per-stream rates and monthly listener counts. And while those metrics aren't meaningless, they're the wrong frame for making financial decisions about your music.\n\nHere's the reality: at $0.004 per stream, earning $50,000 from streaming alone would require 12.5 million streams. For an independent ambient artist, that could take years — even a decade. And every month you wait, you're exposed to platform risk (rate changes, policy shifts, playlist removals) and opportunity cost (what else you could do with that capital).\n\nCatalog sales aren't about giving up on your music. They're about converting a slow, uncertain revenue stream into immediate capital you can reinvest. Use it to fund your next album, build a studio, pay off debt, or invest in an entirely different venture. Many artists sell a portion of their catalog (say, their first three albums) while retaining full ownership of everything going forward — capturing immediate value from older works while maintaining future upside.\n\nPartial catalog sales are increasingly common and let you balance liquidity with long-term ownership. You can sell the rights to specific tracks, albums, or revenue streams while keeping others. It's not all-or-nothing.\n\nThe per-stream rate conversation is a distraction. The real question is: what is your body of work worth as a whole, and what would you do with that value if you could access it today? That's the question SPACE helps you answer.\n\nGet your free catalog valuation in minutes, or apply directly to work with our team on a personalized offer.",
+    "Here's what 500,000 monthly streams look like across genres — and what that catalog could be worth as a lump sum.",
+    "Enter your monthly streams and see what your catalog could be worth as a lump sum.",
+    "Related content",
+    "Stop counting streams. Start getting paid.",
+    "SPACE buys ambient, lo-fi, and meditation music catalogs."
+  ],
+  "links": [
+    {
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "text": "Streaming Calculator",
+      "href": "/tools/streaming-calculator/"
+    },
+    {
+      "text": "Catalog Value Calculator",
+      "href": "/calculator/"
+    },
+    {
+      "text": "IFPI Global Music Report 2025",
+      "href": "https://www.ifpi.org/resources/"
+    },
+    {
+      "text": "Spotify Loud & Clear — Artist Earnings Transparency",
+      "href": "https://loudandclear.byspotify.com/"
+    },
+    {
+      "text": "Apple Music for Artists — Royalty Rate Disclosure",
+      "href": "https://artists.apple.com/support/1124-apple-music-insights-overview"
+    },
+    {
+      "text": "Music Business Worldwide — Streaming Economics Analysis",
+      "href": "https://www.musicbusinessworldwide.com/"
+    },
+    {
+      "text": "Digital Music News — Per-Stream Rate Tracker",
+      "href": "https://www.digitalmusicnews.com/"
+    },
+    {
+      "text": "Billboard — The State of Music Streaming Revenue",
+      "href": "https://www.billboard.com/business/streaming/"
+    },
+    {
+      "text": "Spotify",
+      "href": "/streaming-rates/spotify-2026/"
+    },
+    {
+      "text": "Apple Music",
+      "href": "/streaming-rates/apple-music-2026/"
+    },
+    {
+      "text": "YouTube Music",
+      "href": "/streaming-rates/youtube-music-2026/"
+    },
+    {
+      "text": "Amazon Music",
+      "href": "/streaming-rates/amazon-music-2026/"
+    },
+    {
+      "text": "Tidal",
+      "href": "/streaming-rates/tidal-2026/"
+    },
+    {
+      "text": "Deezer",
+      "href": "/streaming-rates/deezer-2026/"
+    },
+    {
+      "text": "SoundCloud",
+      "href": "/streaming-rates/soundcloud-2026/"
+    },
+    {
+      "text": "Spotify rates",
+      "href": "/streaming-rates/spotify-2026/"
+    },
+    {
+      "text": "Apple Music rates",
+      "href": "/streaming-rates/apple-music-2026/"
+    },
+    {
+      "text": "YouTube Music rates",
+      "href": "/streaming-rates/youtube-music-2026/"
+    },
+    {
+      "text": "Amazon Music rates",
+      "href": "/streaming-rates/amazon-music-2026/"
+    },
+    {
+      "text": "TIDAL rates",
+      "href": "/streaming-rates/tidal-2026/"
+    },
+    {
+      "text": "SoundCloud rates",
+      "href": "/streaming-rates/soundcloud-2026/"
+    },
+    {
+      "text": "Deezer rates",
+      "href": "/streaming-rates/deezer-2026/"
+    },
+    {
+      "text": "Music Catalog Valuation 2026",
+      "href": "/guides/music-catalog-valuation-2026/"
+    },
+    {
+      "text": "Streaming Royalties",
+      "href": "/glossary/streaming-royalties/"
+    },
+    {
+      "text": "Catalog Valuation",
+      "href": "/glossary/catalog-valuation/"
+    },
+    {
+      "text": "Streaming Calculator",
+      "href": "/tools/streaming-calculator/"
+    },
+    {
+      "text": "Catalog Value Calculator",
+      "href": "/calculator/"
+    },
+    {
+      "text": "Request a free catalog review",
+      "href": "/apply/"
+    }
+  ],
+  "text": "Home/GuidesWhat Are Your Streams Actually Worth in 2026? The Complete BreakdownTL;DRSpotify pays $0.003–$0.005 per stream, Apple Music pays $0.007–$0.01, and Tidal leads at $0.008–$0.013. At these rates, an independent ambient or lo-fi artist with 500,000 monthly streams earns roughly $2,000–$5,000 per year. However, your catalog's lump-sum value is typically 4–10x your annual streaming revenue — meaning a catalog earning $5,000/year could be worth $20,000–$50,000 as a one-time payout. Instead of waiting years for streams to trickle in, catalog sales offer immediate liquidity.Every independent artist eventually Googles it: \"How much does Spotify pay per stream?\" The answer — somewhere between $0.003 and $0.005 — usually triggers one of two reactions: disbelief or resignation. But the per-stream number, while technically accurate, tells a deeply incomplete story. What matters isn't how much a single stream is worth. What matters is how much your entire catalog is worth — and whether you're leaving money on the table by collecting streaming royalties one drip at a time instead of unlocking the full value of your music in one move. This guide breaks down actual per-stream rates across every major platform in 2026, explains why ambient and lo-fi artists face unique challenges in the streaming economy, and reveals the catalog valuation math that most artists never learn. Whether you're earning $200/month or $5,000/month from streaming, the real question isn't \"how much per stream\" — it's \"what is all of this worth together?\"How Streaming Payouts Actually WorkMost artists assume streaming platforms pay a fixed rate per play — play a song, earn a penny. The reality is more complex and, frankly, less favorable. The dominant model is pro-rata pooling, used by Spotify, Apple Music, and Amazon Music. Here's how it works: all subscription and ad revenue collected in a given month is pooled together, then divided by the total number of streams across the entire platform. Your share is proportional to your streams relative to everyone else's. This means your per-stream rate isn't fixed — it fluctuates monthly based on how many other artists are being streamed and how much total revenue the platform collected. This system has a critical implication: when a massive pop release drives billions of streams in a single month, your per-stream rate can actually decrease even if your own stream count stays constant. You're competing for a share of a finite pool against every artist on the platform. A newer alternative is the user-centric (or fan-powered) model, used by Tidal, SoundCloud, and Deezer's artist-centric variant. Under this system, each subscriber's monthly fee is distributed only to the artists they personally listened to. If a Tidal subscriber spends their entire month listening to your ambient catalog, the majority of their $10.99 goes to you — not to Drake or Taylor Swift. This model fundamentally benefits niche artists with dedicated listeners, which is why it's gaining traction despite being harder to implement. One more metric to understand: NPS, or net-per-stream, is the amount you actually receive after the platform, your distributor, and any label take their cuts. If Spotify pays $0.004 per stream but your distributor takes 15%, your NPS is $0.0034. Always calculate with NPS, not gross per-stream rates.Per-Stream Rates by Platform in 2026Per-stream rates vary dramatically across platforms, and the difference compounds at scale. Tidal leads at $0.008–$0.013 per stream, meaning a million Tidal streams could earn you $8,000–$13,000. Apple Music follows at $0.007–$0.01 per stream — roughly double Spotify's rate — because every Apple Music listener is a paying subscriber. There's no free tier diluting the pool. Amazon Music sits in the middle at $0.004–$0.008, though rates depend heavily on which tier the listener uses. Amazon Music Unlimited pays competitively, but Prime Music (included free with Prime memberships) pays substantially less. For ambient artists, Amazon's Alexa integration is a wild card — voice-activated plays like 'Alexa, play rain sounds' funnel enormous volume to ambient catalogs. Spotify, despite being the largest platform, pays $0.003–$0.005 per stream. Its massive free tier (380M+ users who don't pay for subscriptions) significantly dilutes the average payout. YouTube Music pays a comparable $0.002–$0.005, though the broader YouTube ecosystem adds Content ID revenue that can meaningfully boost total earnings for ambient artists. Deezer ($0.004–$0.007) and SoundCloud ($0.002–$0.004) round out the field with smaller subscriber bases but innovative payment models. Deezer's artist-centric system boosts payments for intentional listens, while SoundCloud's fan-powered royalties benefit artists with devoted fan bases. See the platform comparison table below for a side-by-side breakdown. The key takeaway: where your listeners are matters as much as how many you have. 10,000 Tidal streams can be worth more than 30,000 Spotify streams.Why Ambient and Lo-Fi Artists Get Hit HardestStreaming economics are fundamentally unfair to ambient, lo-fi, and mood music creators — and it's not a bug, it's a structural feature of how platforms count and pay for streams. First, the length problem. A stream is a stream, regardless of duration (after the 30-second minimum threshold). A 2-minute pop song and a 10-minute ambient soundscape earn identical per-stream payouts. But the ambient artist invested 5x more listening time for the same payment. Measured per minute of content consumed, ambient artists earn a fraction of what pop or hip-hop artists earn. Second, the passive listening problem. Ambient and lo-fi music is overwhelmingly consumed as background audio — during work, study, sleep, or meditation. Listeners press play and walk away for hours. While this drives impressive stream counts, these passive algorithmic plays are increasingly devalued by platforms like Deezer (whose artist-centric model weights intentional listens higher) and potentially future Spotify policy changes. Third, the playlist dependency problem. A significant share of ambient streams come from editorial and algorithmic playlists rather than artist-driven discovery. When a playlist curator rotates your track out, your streams can drop 80% overnight. This volatility makes ambient streaming revenue inherently less predictable than genres where fans follow specific artists. Finally, the catalog depth paradox. Ambient artists often release high volumes of content — albums with 15-20 tracks, each 5-10 minutes long. While a deep catalog generates more total streams, the per-track stream count is diluted, which can push individual tracks below platform minimum thresholds (Spotify now requires 1,000 annual streams per track for monetization). The net effect: ambient catalogs often generate solid aggregate revenue but face structural disadvantages in per-stream economics that make the standard \"grow your streams\" advice less effective than it is for mainstream genres.The Revenue Multiplier: What Nobody Tells YouHere's the insight that changes everything about how you should think about streaming income: your catalog isn't just a monthly revenue stream — it's a financial asset with a calculable lump-sum value. And that lump-sum value is almost always significantly more than you'd guess. In the music industry, catalogs are valued as multiples of annual net revenue. The multiplier depends on the catalog's genre, growth trajectory, listener demographics, and revenue consistency. Mainstream pop and hip-hop catalogs from established artists trade at 15-30x annual revenue. Independent catalogs in stable genres like ambient, lo-fi, and mood music typically trade at 4-10x annual revenue. Let's make this concrete. Say you're an ambient artist earning $200/month across all streaming platforms — that's $2,400/year. At a conservative 4x multiple, your catalog has a lump-sum value of $9,600. At 8x, it's $19,200. At 10x (achievable for catalogs with growing streams and diversified platform distribution), that's $24,000. Scale this up: an artist earning $500/month ($6,000/year) has a catalog worth $24,000–$60,000. At $1,000/month ($12,000/year), the range is $48,000–$120,000. Why would someone pay 8x annual revenue for a music catalog? Because streaming revenue is remarkably predictable and recurring. Unlike most assets, a music catalog doesn't require ongoing work to generate returns. The music is already made, already distributed, and already being consumed. Buyers are essentially purchasing an annuity — a stream of predictable future cash flows — and they're willing to pay a premium for that predictability. This reframes the entire conversation. The question isn't 'how do I get more streams?' — it's 'do I want to collect $500/month for the next 10 years, or receive $48,000 today?' Both are rational choices, but most artists never realize the second option exists.How to Calculate Your True Catalog ValueCalculating your catalog's value requires three inputs: your trailing 12-month streaming revenue, your revenue trend (growing, stable, or declining), and your genre/risk profile. Step one: aggregate your net streaming revenue from the past 12 months across all platforms. Use your distributor dashboard — services like DistroKid, TuneCore, CD Baby, or LANDR provide consolidated earnings reports. Make sure you're looking at net revenue (after the distributor's cut), not gross platform payouts. Step two: assess the trend. If your monthly revenue has been growing 5-10% month-over-month, your catalog commands a higher multiple. Stable revenue is the baseline. Declining revenue (common when playlist placements end) reduces the multiple. Step three: apply the appropriate multiplier. For independent ambient, lo-fi, meditation, and mood music catalogs, typical ranges are: 4-6x for catalogs with declining or flat revenue, 6-8x for stable catalogs with diversified platform distribution, and 8-10x for growing catalogs with strong listener demographics and multiple revenue sources. For a quick estimate, SPACE's catalog valuation calculator lets you input your streaming data and receive an instant preliminary valuation. It accounts for platform distribution, genre weighting, trend analysis, and comparable catalog sales to generate a realistic range. A few factors that increase your catalog's value beyond the base multiple: sync licensing potential (has your music been placed in film, TV, or ads?), geographic diversity of listeners (catalogs with global audiences are more stable), and catalog depth (more tracks = more surface area for discovery and revenue generation). Ready to see what your catalog is worth? Use our free calculator for an instant estimate, or submit an application for a personalized valuation from our team.Stop Counting Streams. Start Thinking About Value.The streaming economy has conditioned artists to obsess over per-stream rates and monthly listener counts. And while those metrics aren't meaningless, they're the wrong frame for making financial decisions about your music. Here's the reality: at $0.004 per stream, earning $50,000 from streaming alone would require 12.5 million streams. For an independent ambient artist, that could take years — even a decade. And every month you wait, you're exposed to platform risk (rate changes, policy shifts, playlist removals) and opportunity cost (what else you could do with that capital). Catalog sales aren't about giving up on your music. They're about converting a slow, uncertain revenue stream into immediate capital you can reinvest. Use it to fund your next album, build a studio, pay off debt, or invest in an entirely different venture. Many artists sell a portion of their catalog (say, their first three albums) while retaining full ownership of everything going forward — capturing immediate value from older works while maintaining future upside. Partial catalog sales are increasingly common and let you balance liquidity with long-term ownership. You can sell the rights to specific tracks, albums, or revenue streams while keeping others. It's not all-or-nothing. The per-stream rate conversation is a distraction. The real question is: what is your body of work worth as a whole, and what would you do with that value if you could access it today? That's the question SPACE helps you answer. Get your free catalog valuation in minutes, or apply directly to work with our team on a personalized offer.Streaming Rates by Platform (2026)PlatformPer StreamPer 1,000Per 1MNotesSpotify$0.003–$0.005$3–$5$3,000–$5,000Largest platform, lowest per-stream rates. Pro-rata model diluted by massive free tier.Apple Music$0.007–$0.01$7–$10$7,000–$10,000Highest-paying major platform. All-paid subscriber base with no free tier.YouTube Music$0.002–$0.005$2–$5$2,000–$5,000Low per-stream but massive reach. Content ID adds significant revenue for ambient artists.Amazon Music$0.004–$0.008$4–$8$4,000–$8,000Alexa-driven discovery is a hidden gem for ambient/sleep music. Rates vary by tier.Tidal$0.008–$0.013$8–$13$8,000–$13,000Best per-stream rates in the industry. User-centric model benefits niche artists.Deezer$0.004–$0.007$4–$7$4,000–$7,000Artist-centric model rewards intentional listens. Strong in France and Europe.SoundCloud$0.002–$0.004$2–$4$2,000–$4,000Fan-powered royalties benefit niche artists. Best for community building.From Streams to Catalog Value by GenreHere's what 500,000 monthly streams look like across genres — and what that catalog could be worth as a lump sum.GenreAvg TrackEffective RPMAnnual at 500K/moCatalog Value (8x)Ambient6 min$2.80$2,400$19,200Lo-Fi2.5 min$3.60$3,000$24,000Meditation15 min$1.90$2,000$16,000Nature Soundscapes30 min$1.40$1,800$14,400Focus4 min$3.20$2,800$22,400Try it yourselfCalculate your streaming earnings and catalog valueEnter your monthly streams and see what your catalog could be worth as a lump sum.Streaming CalculatorCatalog Value CalculatorFrequently Asked QuestionsHow much does Spotify pay per stream in 2026?What is a music stream worth?How much do artists get paid per 1,000 streams?How much does Apple Music pay per stream compared to Spotify?Can I sell my streaming royalties?How much is my music catalog worth?Which streaming platform pays artists the most?Why do ambient and lo-fi artists earn less per minute from streaming?What is the difference between pro-rata and user-centric streaming payments?How do I increase my streaming revenue as an independent artist?SourcesIFPI Global Music Report 2025Spotify Loud & Clear — Artist Earnings TransparencyApple Music for Artists — Royalty Rate DisclosureMusic Business Worldwide — Streaming Economics AnalysisDigital Music News — Per-Stream Rate TrackerBillboard — The State of Music Streaming RevenueDetailed platform guidesSpotifyApple MusicYouTube MusicAmazon MusicTidalDeezerSoundCloudRelated contentPlatform pagesSpotify ratesApple Music ratesYouTube Music ratesAmazon Music ratesTIDAL ratesSoundCloud ratesDeezer ratesGuides and glossaryMusic Catalog Valuation 2026Streaming RoyaltiesCatalog ValuationToolsStreaming CalculatorCatalog Value CalculatorStop counting streams. Start getting paid.SPACE buys ambient, lo-fi, and meditation music catalogs.Request a free catalog review"
+}

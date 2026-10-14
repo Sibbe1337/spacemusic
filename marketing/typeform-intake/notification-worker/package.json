@@ -1,0 +1,15 @@
+{
+  "name": "space-intake-notifications",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test worker.test.mjs runtime.test.mjs configure-secrets.test.mjs rotate-webhook-secret.test.mjs",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.132.0"
+  },
+  "dependencies": {
+    "@typeform/embed": "6.0.0"
+  }
+}

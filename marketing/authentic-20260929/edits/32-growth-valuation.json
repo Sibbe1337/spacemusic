@@ -1,0 +1,19 @@
+{
+ "area": "Growth 4: valuation guide answers the multiples queries",
+ "edits": [
+  {
+   "find": "Documented earnings and transferable rights are the starting point for an individual review.",
+   "replace": "Documented earnings and transferable rights are the starting point for an individual review. Publicly stated multiples vary widely: Hipgnosis Songs Fund reported a blended 15.32x acquisition multiple in 2021, Reservoir Media an average of 14.7x in 2023, and Duetti's Music Finance Index put catalogs older than ten years at 10.2x for masters and 12.1x for publishing in H2 2026.",
+   "modules": [
+    "ValuationGuidePage"
+   ],
+   "pages": [
+    "guides/music-catalog-valuation-2026/"
+   ],
+   "reason": "answer the 'valuation multiples 2025 2026' queries on the first screen with named sources (Jev landing review)",
+   "sources": [
+    "marketing/growth-20260930/data/multiples.json"
+   ]
+  }
+ ]
+}

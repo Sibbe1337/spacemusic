@@ -1,0 +1,1271 @@
+{
+ "area": "guides-data",
+ "edits": [
+  {
+   "find": "Comprehensive data on the $4.68B music rights market \u2014 catalog valuations, streaming trends, genre breakdowns, and acquisition activity through 2026. Updated quarterly.",
+   "replace": "Sourced data on the music catalog market in 2026: IFPI revenue figures, named catalog deals, genre demand drivers, and what shapes catalog valuations.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The global music rights market is valued at $4.68B in 2024 and projected to hit $16.33B by 2034 (19.8% CAGR). The ambient/wellness segment alone is $1.18B growing at 23.7%. Catalog acquisition activity has expanded from ~10 active buyers to 100+ in two decades. Average valuation multiples range from 3x for emerging genres to 15x for proven mainstream catalogs.",
+   "replace": "The music catalog market in 2026 rests on royalty income from a recorded music business that reached $31.7 billion in 2025, according to IFPI's Global Music Report 2026, with streaming making up 69.6% of that. Goldman Sachs' Music in the Air 2025 report puts global music revenues at $104.9 billion in 2024 and forecasts $196.8 billion by 2035. Named deals show the scale of catalog buying, such as Blackstone's $1.584 billion bid for Hipgnosis Songs Fund in 2024. There is no reliable published multiple for small or niche catalogs, so valuations come from individual review.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/",
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/",
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "This report aggregates publicly available data from IFPI, RIAA, Allied Market Research, Billboard, Music Business Worldwide, and other industry sources to provide a comprehensive snapshot",
+   "replace": "This report aggregates publicly available data from IFPI, CISAC, Goldman Sachs, Music Business Worldwide, and other sources named next to each figure to provide a snapshot",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The global music rights market reached an estimated $4.68 billion in 2024, according to Allied Market Research. This figure encompasses publishing rights, master recording rights, neighboring rights, and sync licensing revenue across all territories. Allied projects this market to grow to $16.33 billion by 2034, representing a compound annual growth rate (CAGR) of 19.8% \u2014 one of the highest sustained growth rates of any asset class in the creative economy.",
+   "replace": "Global recorded music revenues reached $31.7 billion in 2025, up 6.4%, according to IFPI's Global Music Report 2026. Songwriters and publishers collect a separate stream: CISAC reports that its member societies collected \u20ac12.59 billion for music creators in 2024. Across recorded music, publishing, and live, Goldman Sachs' Music in the Air 2025 report puts global music revenues at $104.9 billion in 2024 and forecasts $196.8 billion by 2035.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/",
+    "https://www.cisac.org/Newsroom/news-releases/cisac-global-collections-report-2025",
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ]
+  },
+  {
+   "find": "The IFPI reported global streaming revenue of $19.3 billion in 2023, up 10.2% year-over-year.",
+   "replace": "IFPI reported total streaming revenues of over $22 billion in 2025, or 69.6% of recorded music income.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "Second, synchronization licensing \u2014 the use of music in film, TV, advertising, video games, and social media \u2014 has become a major growth vector, with sync revenue reaching $1.08 billion in 2023 according to Citigroup estimates.",
+   "replace": "Second, synchronization licensing, the use of music in film, TV, advertising, and games, adds licensing income on top of streaming. IFPI puts recorded music sync revenue at $641 million in 2025, down 2.0% after four years of growth.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/10-quick-and-crucial-takeaways-from-ifpis-global-music-report-2026/"
+   ]
+  },
+  {
+   "find": "Third, the sheer volume of catalog acquisition activity has created a self-reinforcing cycle: more buyers in the market means higher valuations, which attracts more capital, which brings more buyers. The net result is a market that has tripled in transaction volume since 2018 and shows no signs of decelerating.",
+   "replace": "Third, more capital has entered catalog buying, which gives sellers more potential buyers to approach.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "for $47.5 million. At the time, the deal was considered eccentric. Today, it is widely regarded as one of the shrewdest investments in entertainment history, with the combined Sony/ATV catalog valued at well over $4 billion.",
+   "replace": "for $47.5 million, according to Billboard. Jackson later merged ATV with Sony's publishing business to form Sony/ATV, and in 2016 Sony agreed to buy the Jackson estate's 50% stake for $750 million, as reported by Variety.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.billboard.com/music/rock/beatles-catalog-paul-mccartney-brief-history-ownership-7662519/",
+    "https://variety.com/2016/music/news/sony-michael-jackson-estate-deal-1201729859/"
+   ]
+  },
+  {
+   "find": "Hipgnosis introduced an institutional-grade investment thesis for music catalogs and deployed over $2 billion in capital, acquiring rights from artists including Shakira, Neil Young, and Fleetwood Mac.",
+   "replace": "Hipgnosis pitched song catalogs to investors as a financial asset class. In January 2021 it bought all 145 songs in Shakira's publishing catalog and 50% of Neil Young's catalog, as reported by Music Business Worldwide, and it later bought the catalogs of Fleetwood Mac's Lindsey Buckingham and Christine McVie, as reported by Variety. By 2024 it held 138 catalogs with more than 40,000 songs, and shareholders approved Blackstone's $1.584 billion bid for the company's equity.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/hipgnosis-acquires-shakiras-publishing-catalog-spanning-145-songs/",
+    "https://variety.com/2021/music/news/fleetwood-mac-christine-mcvie-sells-catalog-hipgnosis-1235037170/",
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "By 2024, the number of active catalog buyers had grown from roughly 10 institutional players to over 100, according to Music Business Worldwide. New entrants include Duetti (which raised $635 million), Lyric Capital Group, Influence Media Partners (backed by BlackRock and Warner Music), and dozens of smaller funds. This crowded field has compressed returns but expanded the addressable market, making it viable for mid-tier and niche catalog owners \u2014 not just superstar estates \u2014 to find competitive offers. The bottom line: if you own music rights today, there has never been a deeper pool of potential buyers.",
+   "replace": "The number of buyers has grown too. New entrants include Duetti, which has raised over $635 million in debt and equity since 2022 according to Music Business Worldwide, Lyric Capital Group, and Influence Media Partners, which launched a $750 million fund with Warner Music Group and BlackRock in 2022, as reported by Variety. With more types of buyers, mid-tier and niche catalog owners, not just superstar estates, now have buyers to approach.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/duetti-secures-200m-in-fresh-financing-led-by-50m-series-c-equity-investment-from-the-raine-group/",
+    "https://variety.com/2022/music/news/warner-music-blackrock-invest-influence-media-1235189325/"
+   ]
+  },
+  {
+   "find": "While headlines focus on blockbuster pop and hip-hop catalog deals, one of the most compelling growth stories in the music rights market is happening in ambient, meditation, and wellness music. Industry estimates place this segment at approximately $1.18 billion in 2024, with a projected CAGR of 23.7% through 2030 \u2014 significantly outpacing the broader music rights market.",
+   "replace": "While headlines focus on large pop and hip-hop catalog deals, ambient, meditation, and wellness music has its own steady demand. No verified public source sizes this segment on its own, so this page does not give a figure for it.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The demand is being pulled forward by several adjacent markets that have exploded in size. The global meditation app market is worth an estimated $15.3 billion and growing, led by platforms like Calm, Headspace, and Insight Timer that license or commission large volumes of ambient and functional music. The sleep aids market exceeds $100 billion globally, with audio-based sleep solutions representing a fast-growing subsegment. Corporate wellness programs, now a $60+ billion market, increasingly incorporate soundscapes, focus music, and guided audio into employee wellness platforms.",
+   "replace": "The demand comes from adjacent markets. Grand View Research estimates the meditation management apps market at $2.20 billion in 2025, and apps like Calm, Headspace, and Insight Timer use ambient and functional music. The Global Wellness Institute puts the global wellness economy at $6.8 trillion in 2024. Sleep, focus, and workplace wellness products also use soundscapes, focus music, and guided audio.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.grandviewresearch.com/industry-analysis/meditation-management-apps-market-report",
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ]
+  },
+  {
+   "find": "a segment underserved by traditional buyers but experiencing outsized demand growth.",
+   "replace": "a segment many larger buyers do not focus on.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Global recorded music streaming revenue reached $19.3 billion in 2023, according to the IFPI's Global Music Report \u2014 accounting for 67% of total recorded music revenue worldwide.",
+   "replace": "Total streaming revenues passed $22 billion in 2025, according to IFPI's Global Music Report 2026, accounting for 69.6% of recorded music revenue worldwide.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "Within streaming, ambient and mood-based music is growing roughly twice as fast as the overall market. Spotify alone hosts over 4 billion streams per year across its curated mood playlists \u2014 categories like \"Deep Focus,\" \"Sleep,\" \"Peaceful Piano,\" and \"Lo-Fi Beats\" \u2014 and these playlists have become primary discovery channels for ambient and functional music creators.",
+   "replace": "Within streaming, Spotify mood playlists such as \"Deep Focus,\" \"Sleep,\" \"Peaceful Piano,\" and \"Lo-Fi Beats\" are an important discovery channel for ambient and functional music creators.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "This predictability is exactly what institutional investors prize, which is why functional and ambient catalogs are increasingly attracting multiples that rival or exceed those of mid-tier pop catalogs.",
+   "replace": "This predictability is what income-focused investors look for, and it is one of the factors a catalog review weighs.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "In 2018, a typical catalog might trade at 8\u201310x NPS. By 2024, proven mainstream catalogs routinely commanded 15\u201320x, with marquee assets occasionally exceeding 25x. Even niche and emerging-genre catalogs have seen multiples rise from 2\u20133x to 5\u20138x over the same period.",
+   "replace": "There is no official index of catalog multiples. Most deal prices are private, and the multiples that do get reported mostly describe large, well-known catalogs, so they say little about a small or niche catalog.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Four structural forces explain this expansion. First, the buyer pool has grown dramatically. When only three or four major labels were bidding, price competition was limited. Today, with 100+ active buyers, auctions are more competitive and sellers have genuine leverage. Second, streaming data has proven that music catalogs are durable assets. Unlike initial fears that streaming would cannibalize catalog value, data from the past decade shows that older catalogs maintain and often grow their streaming revenue year over year. Third, institutional capital \u2014 from private equity firms, sovereign wealth funds, and pension funds \u2014 has entered the market in size. These investors are accustomed to paying premium multiples for predictable cash flows, and music royalties fit their mandate. Fourth, despite the explosion of AI-generated music, human-created catalogs have not lost value. If anything, the proliferation of AI content has increased the premium on authentic, human-authored music with clear provenance and established streaming history.",
+   "replace": "Four structural forces shape what buyers pay. First, the buyer pool has grown. Funds, tech-enabled platforms, and niche specialists now compete with the major music companies, which gives sellers more options. Second, streaming has given buyers years of usage data, which makes it easier to judge how durable a catalog's income is. Third, institutional capital has entered the market, for example Blackstone's acquisition of Hipgnosis Songs Fund and BlackRock's backing of Influence Media Partners. These investors look for predictable cash flows, and music royalties can fit that mandate. Fourth, as AI-generated music spreads, buyers pay closer attention to clear human authorship, provenance, and streaming history.",
+   "reason": "multiple removed",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/",
+    "https://variety.com/2022/music/news/warner-music-blackrock-invest-influence-media-1235189325/"
+   ]
+  },
+  {
+   "find": "For sellers, the practical implication is that the current window of elevated multiples may persist for several more years, but it is not guaranteed to last indefinitely. Rising interest rates and potential market saturation could eventually compress multiples back toward historical norms.",
+   "replace": "For sellers, the practical point is that market conditions change. Interest rates and competition among buyers affect what buyers will pay, and neither is guaranteed to stay where it is.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "While AI tools are already capable of producing functional and ambient tracks at near-zero marginal cost, they have not yet disrupted the economics of human-created catalogs in meaningful ways.",
+   "replace": "AI tools can already produce functional and ambient tracks at low cost, and their long-term effect on human-created catalogs is not yet clear.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Today, platforms and buyers are emerging that serve mid-tier and indie creators \u2014 artists with catalogs generating $5,000 to $500,000 per year in royalties.",
+   "replace": "Today, platforms and buyers such as Duetti and SPACE serve mid-tier and independent creators.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The music catalog market in 2026 is larger, more liquid, and more accessible than at any point in history.",
+   "replace": "The music catalog market in 2026 has more types of buyers and more routes to a sale than it did a decade ago.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Record-low interest rates and pandemic-driven streaming surges triggered an unprecedented wave of catalog acquisitions. Hipgnosis, Primary Wave, and KKR-backed BMG led bidding wars that pushed mainstream multiples above 20x NPS for marquee catalogs.",
+   "replace": "Low interest rates and pandemic-era streaming growth came with a wave of catalog acquisitions. In January 2021, Hipgnosis Songs Fund bought all 145 songs in Shakira's publishing catalog and 50% of Neil Young's catalog, as reported by Music Business Worldwide.",
+   "reason": "multiple removed",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/hipgnosis-acquires-shakiras-publishing-catalog-spanning-145-songs/"
+   ]
+  },
+  {
+   "find": "Rising interest rates cooled the hottest end of the market. Some leveraged buyers paused acquisitions, but well-capitalized firms like Concord and Primary Wave continued deploying. Average multiples for mid-tier catalogs held steady at 10\u201314x NPS.",
+   "replace": "Interest rates rose, which made debt-funded buying more expensive. New capital still arrived: Warner Music Group and BlackRock launched a $750 million fund with Influence Media Partners, as reported by Variety.",
+   "reason": "multiple removed",
+   "sources": [
+    "https://variety.com/2022/music/news/warner-music-blackrock-invest-influence-media-1235189325/"
+   ]
+  },
+  {
+   "find": "The market bifurcated: premium catalogs maintained elevated multiples while lower-tier catalogs saw slight compression. New entrants like Duetti and Influence Media Partners raised significant capital, signaling continued institutional appetite.",
+   "replace": "New buyers kept building. Duetti, founded in 2022, focused on buying catalogs from independent artists, and genre-specific buyers focused on narrower segments.",
+   "reason": "multiple removed",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/duetti-secures-200m-in-fresh-financing-led-by-50m-series-c-equity-investment-from-the-raine-group/"
+   ]
+  },
+  {
+   "find": "Stabilization. Transaction volume rebounded as buyers adapted to higher rate environments. Niche and genre-specific buyers gained market share, expanding the addressable market to include ambient, electronic, and functional music catalogs previously overlooked.",
+   "replace": "Hipgnosis Songs Fund shareholders approved Blackstone's $1.584 billion bid for the company's equity in July 2024, according to Music Business Worldwide. Smaller direct buyers such as SPACE review catalogs across all genres, including ambient, electronic, and functional music.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "Partial rights sales gained mainstream acceptance. Several high-profile deals involved 50% ownership stakes rather than full buyouts, allowing artists to retain creative control while accessing liquidity. AI-related due diligence became standard practice.",
+   "replace": "Partial rights sales remained a common structure: a buyer acquires a share, such as 50%, and the artist keeps the rest of the income. SPACE, for example, reviews offers for 50%, 75%, or 100% of defined catalog rights.",
+   "reason": "policy"
+  },
+  {
+   "find": "Agent-assisted deal sourcing emerged as a trend, with AI tools being used to identify undervalued catalogs, model future royalty streams, and match sellers with buyers. Transaction costs began falling as a result, making smaller deals economically viable.",
+   "replace": "Duetti announced $200 million in new financing in January 2026, bringing its total raised since 2022 to over $635 million, according to Music Business Worldwide. Software for modeling royalty streams is more common, but each deal still depends on reviewing rights and documentation.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/duetti-secures-200m-in-fresh-financing-led-by-50m-series-c-equity-investment-from-the-raine-group/"
+   ]
+  },
+  {
+   "find": "Fastest-growing mainstream genre by streaming share, expanding global audience, reggaeton and Latin pop crossover hits.",
+   "replace": "Expanding global audience and reggaeton and Latin pop crossover hits. Latin America was the fastest-growing region in IFPI's 2025 data.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "The market is currently favorable for sellers. With 100+ active buyers competing for catalogs, valuation multiples remain near historical highs across most genres. However, 'good timing' depends on your specific situation",
+   "replace": "It depends mostly on your specific situation",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Catalogs with stable or growing streaming revenue are commanding the strongest multiples. If you're considering a sale, getting a professional valuation from multiple buyers is the best way to understand your position.",
+   "replace": "Catalogs with stable or growing streaming revenue are easier to value. If you're considering a sale, getting offers from more than one buyer is the best way to understand your position.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Mainstream pop catalogs with proven longevity might command 15\u201320x NPS, while niche or emerging-genre catalogs typically trade at 3\u20138x NPS.",
+   "replace": "There is no reliable published multiple for niche or independent catalogs, so the figure comes from reviewing the catalog itself.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "So far, AI-generated music has not reduced the value of human-created catalogs. If anything, the proliferation of AI content has increased the premium on authentic, human-authored music with clear copyright ownership and established streaming history. Buyers are increasingly performing AI-related due diligence to confirm that catalogs contain 100% human-created content.",
+   "replace": "So far there is no public data showing that AI-generated music has reduced the value of human-created catalogs. Buyers look for clear human authorship, copyright ownership, and an established streaming history, so expect due diligence questions about whether any tracks used AI tools.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "A typical catalog sale takes 3\u20136 months from initial valuation to closing, though complex deals involving multiple rights holders or cross-border rights can take longer. The process generally involves: initial valuation and market sounding (2\u20134 weeks), buyer outreach and NDA execution (2\u20133 weeks), due diligence including royalty audits and rights verification (4\u20138 weeks), negotiation and deal structuring (2\u20134 weeks), and closing and rights transfer (2\u20134 weeks). Working with experienced advisors can significantly accelerate the timeline.",
+   "replace": "It depends on the buyer and on how complete your documents are. Complex deals involving multiple rights holders or cross-border rights take longer. The process generally involves valuation, due diligence including royalty audits and rights verification, negotiation, and closing with the rights transfer. At SPACE, an initial offer typically follows 5-7 business days after the relevant catalog information is received, and payment is by bank transfer after the agreement is complete and the rights transfer requirements are satisfied.",
+   "reason": "policy"
+  },
+  {
+   "find": "Ambient and wellness music catalogs are attractive because they sit at the intersection of several fast-growing adjacent markets: meditation apps ($15.3B), sleep aids ($100B+), and corporate wellness ($60B+).",
+   "replace": "Ambient and wellness music catalogs are attractive because they serve adjacent markets such as meditation apps, sleep products, and workplace wellness.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": " Additionally, the ambient segment is growing at 23.7% CAGR, nearly double the broader music rights market's growth rate.",
+   "replace": "",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Free instant estimate based on current multiples.",
+   "replace": "Free instant estimate. Any offer depends on individual review.",
+   "reason": "policy"
+  },
+  {
+   "find": "Ambient and Wellness Music: The Fastest-Growing Segment",
+   "replace": "Ambient and Wellness Music: Demand and Buyers",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "What's Driving Valuation Multiples Up?",
+   "replace": "What Drives Valuation Multiples?",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "IFPI Global Music Report 2024",
+   "replace": "IFPI Global Music Report 2026",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "This comprehensive guide covers catalog valuation (3\u201315x multiples), the step-by-step sale process",
+   "replace": "This comprehensive guide covers catalog valuation, the step-by-step sale process",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "The process typically takes two to twelve weeks depending on whether you work with a direct buyer or an auction marketplace. Catalogs are valued at 3 to 15 times their net annual royalty income, with the multiple driven by genre, revenue trajectory, metadata quality, and sync potential. The buyer landscape in 2026 includes over 100 active acquirers ranging from institutional funds like Hipgnosis and Primary Wave to tech-enabled platforms",
+   "replace": "Timing depends on the buyer, the sale channel, and how quickly your documents are ready. Catalogs are usually valued as a multiple of net annual royalty income, and the multiple depends on genre, revenue trajectory, metadata quality, and sync potential. The buyer landscape in 2026 ranges from institutional investors like Primary Wave and Blackstone, which bought Hipgnosis Songs Fund in 2024, to tech-enabled platforms",
+   "reason": "multiple removed",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "has become a liquid, competitive marketplace with over 100 active buyers vying for quality catalogs. Streaming revenue, which now accounts for more than 67% of global recorded-music income according to the IFPI, has made catalogs predictable income-producing assets \u2014 and investors have taken notice. Goldman Sachs projects the global music market will reach $131 billion by 2030, and much of that growth will flow through catalog acquisitions.",
+   "replace": "has become a competitive marketplace with many more types of buyers. Streaming revenue, which accounted for 69.6% of global recorded-music income in 2025 according to IFPI's Global Music Report 2026, has made catalogs more predictable income-producing assets, and investors have taken notice. Goldman Sachs' Music in the Air 2025 report forecasts global music revenues of $196.8 billion by 2035, up from $104.9 billion in 2024.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/",
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ]
+  },
+  {
+   "find": "Today, there are more than 100 active buyers, and the competition has pushed valuations higher and given sellers more leverage than ever.",
+   "replace": "Today, investment funds, tech-enabled platforms, niche specialists, and auction marketplaces all buy catalogs, which gives sellers more options.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "**Institutional investment funds** represent the largest buyers by deal volume. Hipgnosis Songs Fund, founded in 2018, pioneered the model of acquiring song catalogs as alternative financial assets, building a portfolio valued at over $2 billion.",
+   "replace": "**Institutional investment funds** are among the most visible buyers. Hipgnosis Songs Fund, launched in 2018, helped popularize the model of acquiring song catalogs as alternative financial assets. By 2024 it held 138 catalogs with more than 40,000 songs, and its shareholders approved Blackstone's $1.584 billion bid for the company's equity, according to Music Business Worldwide.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "These buyers typically focus on catalogs generating $100,000 or more in annual revenue and pay multiples of 10 to 20x or higher for proven, diversified assets.",
+   "replace": "These buyers usually focus on larger, established catalogs with long earnings histories.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Duetti, backed by significant venture capital, uses data analytics and proprietary valuation models to make fast, competitive offers on catalogs of all sizes. Their technology-first approach means faster turnaround times and more transparent pricing. Other platforms in this category include Stem and various fintech-adjacent startups exploring music as a tokenizable asset class.",
+   "replace": "Duetti, which has raised over $635 million in debt and equity since 2022 according to Music Business Worldwide, uses data analytics and its own valuation models to make offers to independent artists. Other startups in this category are exploring music as a tokenizable asset class.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/duetti-secures-200m-in-fresh-financing-led-by-50m-series-c-equity-investment-from-the-raine-group/"
+   ]
+  },
+  {
+   "find": "However, auctions also involve listing fees, platform commissions, and less certainty about the final sale price.",
+   "replace": "Auction terms, including any fees or commissions, are set by each marketplace, and the final sale price is less certain.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "If your catalog generates $10,000 per year in NPS and a buyer offers a 10x multiple, the purchase price is $100,000.",
+   "replace": "With hypothetical numbers: if your catalog generates $10,000 per year in NPS and a buyer applies a multiple of 10, the purchase price is $100,000. The multiple itself comes from the buyer's review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "In 2026, independent catalogs typically trade at **3x to 15x NPS**, with the range reflecting a set of factors that buyers weigh carefully.",
+   "replace": "There is no reliable published multiple for independent catalogs in 2026. The multiple reflects a set of factors that buyers weigh carefully.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "A catalog whose earnings have grown 10\u201320% annually over the past three years will command a higher multiple than one that has been flat or declining.",
+   "replace": "A catalog whose earnings have grown steadily over the past three years will usually command a higher multiple than one that has been flat or declining.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Ambient, lo-fi, cinematic, and instrumental catalogs tend to earn higher multiples because they have strong sync licensing potential",
+   "replace": "Ambient, lo-fi, cinematic, and instrumental catalogs can appeal to buyers because they have sync licensing potential",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Poor metadata can reduce a multiple by 1\u20133x because of the risk that revenue is being lost or misattributed.",
+   "replace": "Poor metadata can lower an offer because of the risk that revenue is being lost or misattributed.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "As a rough framework: catalogs with declining revenue, limited track count, and metadata issues might trade at 3\u20135x. Solid, stable catalogs with clean data trade at 6\u201310x. Growing catalogs with sync activity, strong metadata, and diversified revenue can reach 12\u201315x or higher for exceptional assets.",
+   "replace": "As a rough guide: declining revenue, a small track count, and metadata issues pull a valuation down. Stable revenue and clean data support it. Growth, sync activity, strong metadata, and diversified revenue push it higher. The actual figure comes from individual review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "For most independent catalogs under $500,000 in value, working with a direct buyer or a specialized platform is the most efficient path.",
+   "replace": "For many independent catalogs, working with a direct buyer or a specialized platform is the most efficient path.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Having a music attorney review this document is strongly recommended \u2014 the cost of legal review ($500\u2013$2,000) is negligible relative to the deal value.",
+   "replace": "Having a music attorney review this document is strongly recommended. The cost of a legal review is usually small relative to the deal value.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "You receive payment according to the agreed schedule \u2014 most direct buyers pay within 7 to 14 days of contract execution. Auctions may take longer due to escrow processes.",
+   "replace": "You receive payment according to the agreed schedule. At SPACE, payment is by bank transfer after the agreement is complete and the rights transfer requirements are satisfied. Auctions may take longer due to escrow processes.",
+   "reason": "policy"
+  },
+  {
+   "find": "**Typical timelines:** Direct buyer transactions typically close in 2 to 8 weeks from first contact. Auction processes run 4 to 12 weeks including the listing period, bidding, and settlement.",
+   "replace": "**Typical timelines:** Timelines vary by buyer and channel. At SPACE, an initial offer typically follows 5-7 business days after the relevant catalog information is received. Auctions add a listing period, bidding, and settlement.",
+   "reason": "policy"
+  },
+  {
+   "find": "If your catalog qualifies as a capital asset held for more than one year (which it almost always does for creators who have owned their rights since creation), the proceeds from a sale may be taxed",
+   "replace": "If your catalog qualifies as a capital asset held for more than one year, the proceeds from a sale may be taxed",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "In the United States, the long-term capital gains rate ranges from 0% to 20% depending on your taxable income, compared to ordinary income rates that can reach 37%. The difference on a $200,000 sale could be $20,000 to $34,000 in additional tax if proceeds are characterized as ordinary income instead of capital gains.",
+   "replace": "In the United States, the IRS lists long-term capital gains rates of 0%, 15%, and 20% depending on your taxable income, while the top ordinary income rate is 37%. On a hypothetical $200,000 gain, the gap between a 20% and a 37% rate is $34,000 in federal tax.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.irs.gov/taxtopics/tc409",
+    "https://www.irs.gov/filing/federal-income-tax-rates-and-brackets"
+   ]
+  },
+  {
+   "find": "However, the Tax Cuts and Jobs Act of 2017 changed this for tax years beginning after 2017, allowing self-created musical compositions to be treated as capital assets if the taxpayer elects to do so.",
+   "replace": "However, section 1221(b)(3) of the Internal Revenue Code lets a songwriter elect to treat the sale of self-created musical compositions, or copyrights in musical works, as the sale of a capital asset.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/26/1221"
+   ]
+  },
+  {
+   "find": "**Net Investment Income Tax (NIIT)** of 3.8% applies to investment income (including capital gains) for individuals with modified adjusted gross income above $200,000 ($250,000 for married couples filing jointly).",
+   "replace": "**Net Investment Income Tax (NIIT)** of 3.8% applies to investment income (including capital gains) for individuals with modified adjusted gross income above $200,000 ($250,000 for married couples filing jointly), according to the IRS.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.irs.gov/taxtopics/tc559"
+   ]
+  },
+  {
+   "find": "A catalog with pristine metadata can command 1 to 3 additional multiple points over an identical catalog with sloppy records.",
+   "replace": "A catalog with clean metadata is easier to review and can support a stronger offer than an identical catalog with sloppy records.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "The incremental effort is minimal and the financial upside can be substantial \u2014 it's not uncommon for competing offers to differ by 20 to 30%.",
+   "replace": "The incremental effort is minimal, and competing offers can differ noticeably.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The difference between capital gains and ordinary income treatment on a $100,000 sale can be $15,000 or more.",
+   "replace": "On a hypothetical $100,000 gain, the gap between a 20% capital gains rate and a 37% ordinary rate is $17,000 in federal tax.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.irs.gov/taxtopics/tc409",
+    "https://www.irs.gov/filing/federal-income-tax-rates-and-brackets"
+   ]
+  },
+  {
+   "find": "A music attorney costs $500 to $2,000 to review a purchase agreement, a fraction of the deal value.",
+   "replace": "A music attorney's review of a purchase agreement usually costs a fraction of the deal value.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Selling a catalog that earns $10,000 per year at 8x nets you $80,000. But if that catalog grows to $15,000 per year in two years and sells at 10x, you'd receive $150,000 \u2014 nearly double \u2014 plus you'd have earned $25,000 in royalties during the wait.",
+   "replace": "Hypothetical example: if a catalog earning $10,000 a year grows to $15,000 a year over two years, any offer is calculated on a revenue base 50% larger, and you would have collected about $25,000 in royalties during the wait.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "**The market context matters too.** In 2026, buyer competition is high, multiples are strong, and interest rates have stabilized \u2014 all of which favor sellers. There's no guarantee these conditions persist indefinitely. If you've been considering a sale, the current market environment is as favorable as it's been in the past decade.",
+   "replace": "**The market context matters too.** Buyer competition, interest rates, and streaming growth all affect what buyers will pay, and none of them is guaranteed to stay where it is. IFPI reported an eleventh consecutive year of recorded music revenue growth in 2025.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "Direct buyer transactions typically close in 2 to 8 weeks from first contact, including due diligence and paperwork. Auction marketplaces run 4 to 12 weeks because of the listing period and bidding process.",
+   "replace": "Direct buyers are usually faster than auctions because there is no listing period or bidding process. At SPACE, an initial offer typically follows 5-7 business days after the relevant catalog information is received.",
+   "reason": "policy"
+  },
+  {
+   "find": "The cost \u2014 typically $500 to $2,000 for a contract review \u2014 is trivial relative to the deal value and can prevent costly mistakes.",
+   "replace": "The cost of a contract review is usually small relative to the deal value and can prevent costly mistakes.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "If three independent buyers each value your catalog at 8 to 10x NPS, you can be confident the market rate is in that range. You should also compare your multiple against published benchmarks: independent catalogs typically trade at 3 to 15x depending on genre, revenue trajectory, and metadata quality.",
+   "replace": "If several independent buyers arrive at similar valuations, that tells you where the market is for your catalog. There is no reliable published multiple for independent catalogs, so competing offers are the better benchmark.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "There is typically a transition period of 30 to 90 days during which some payments may still be directed to you",
+   "replace": "There is typically a transition period during which some payments may still be directed to you",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The music industry generates over $28 billion in recorded-music revenue globally each year, and a growing share of that money flows to independent artists who understand their rights.",
+   "replace": "Global recorded music revenues reached $31.7 billion in 2025, according to IFPI's Global Music Report 2026, and independent artists who understand their rights are better placed to collect their share.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "Sync fees are negotiated deal by deal and can range from a few hundred dollars for a small YouTube project to six figures for a national ad campaign.",
+   "replace": "Sync fees are negotiated deal by deal, and a small online project usually pays far less than a national ad campaign.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The per-stream rate varies by platform, country, and subscription tier, but typically falls between $0.003 and $0.005 on Spotify.",
+   "replace": "There is no fixed per-stream rate. Spotify's Loud & Clear site explains that artists are paid based on their share of total streams, so the effective amount per stream varies by platform, country, subscription tier, and month.",
+   "reason": "unsourced figure removed",
+   "sources": [
+    "https://loudandclear.byspotify.com/process/"
+   ]
+  },
+  {
+   "find": "Each link in the chain introduces a delay \u2014 often 60 to 90 days \u2014 and a potential point of leakage",
+   "replace": "Each link in the chain introduces a delay, often of several months, and a potential point of leakage",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "However, these cross-border transfers can take six months or longer.",
+   "replace": "However, these cross-border transfers can add many months.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "A small indie film might pay $500 to $2,000. A network television placement typically ranges from $5,000 to $25,000. A national advertising campaign can command $50,000 to $500,000 or more, depending on the track's profile and the campaign's reach.",
+   "replace": "A small indie film usually pays far less than a network television placement, and national advertising campaigns tend to pay the most, depending on the track's profile and the campaign's reach.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "can earn hundreds or even thousands of dollars monthly from Content ID alone, entirely passively.",
+   "replace": "can earn meaningful passive income from Content ID alone.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The statute of limitations for copyright infringement is three years from discovery, not from the date of release \u2014 meaning a rights holder can sue years after your track comes out if they only recently became aware of it.",
+   "replace": "Under US law, a civil copyright claim must be brought within three years after it accrues, and most federal courts count from when the rights holder discovered the infringement, so a rights holder can sue years after your track comes out.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/17/507"
+   ]
+  },
+  {
+   "find": "Simple clearances might cost a flat fee of $1,000 to $10,000.",
+   "replace": "Simple clearances might be settled with a one-time flat fee.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Industry standards suggest a **30 to 50 percent discount** on the value of affected tracks, and some buyers will exclude those tracks from the acquisition entirely.",
+   "replace": "Buyers typically **discount the value of affected tracks**, and some will exclude those tracks from the acquisition entirely.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "In a global music industry that processes billions of transactions daily, your songs need unique identifiers",
+   "replace": "In a global music industry that processes huge volumes of usage data, your songs need unique identifiers",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Missing or incorrect codes are the leading cause of unmatched royalties \u2014 an estimated $2.5 billion in global music royalties go uncollected each year, largely due to metadata gaps.",
+   "replace": "Missing or incorrect codes are a common cause of unmatched royalties, which can end up in black box pools that are later paid out to other rights holders.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "eligibility for statutory damages (up to $150,000 per work for willful infringement), and a public record of your claim. Registration costs $65 per work online and can cover a collection of unpublished tracks in a single filing.",
+   "replace": "eligibility for statutory damages (up to $150,000 per work for willful infringement under 17 U.S.C. \u00a7 504(c)), and a public record of your claim. The Copyright Office's online fees are $45 for a single-author application and $65 for a standard application, and a group of unpublished works can be registered together for $85.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/17/504",
+    "https://www.copyright.gov/about/fees.html"
+   ]
+  },
+  {
+   "find": "for a commission (typically 10\u201315%).",
+   "replace": "for a commission set by each service.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "Entertainment attorneys typically charge $250 to $500 per hour, but the cost is trivial compared to the value of a single bad deal.",
+   "replace": "Entertainment attorneys usually bill by the hour or charge a flat fee, and the cost is small compared to the value of a single bad deal.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "That clarity is exactly what platforms like Nova Bloom are designed to help you act on.",
+   "replace": "That clarity is exactly what platforms like SPACE are designed to help you act on.",
+   "reason": "policy"
+  },
+  {
+   "find": "Independent catalogs generally sell for 5 to 15 times annual net royalties, depending on factors like genre, revenue trend, catalog age, metadata quality, and whether the catalog includes both master and publishing rights. A catalog earning $10,000 per year might sell for $50,000 to $150,000.",
+   "replace": "The multiple depends on factors like genre, revenue trend, catalog age, metadata quality, and whether the catalog includes both master and publishing rights. There is no reliable published multiple for independent catalogs, so the figure comes from reviewing the catalog.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "tracks with uncleared samples are typically discounted by 30 to 50 percent or excluded from the deal altogether.",
+   "replace": "tracks with uncleared samples are typically discounted or excluded from the deal altogether.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Global music rights market",
+   "replace": "Global music revenues (recorded, publishing, live), 2024",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ]
+  },
+  {
+   "find": "$4.68 billion",
+   "replace": "$104.9 billion",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Projected global music rights market",
+   "replace": "Forecast global music revenues, 2035",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ]
+  },
+  {
+   "find": "$16.33 billion by 2034",
+   "replace": "$196.8 billion",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ]
+  },
+  {
+   "find": "Music rights market CAGR",
+   "replace": "Forecast recorded music revenue growth",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ]
+  },
+  {
+   "find": "19.8%",
+   "replace": "6.6%",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "2024\u20132034",
+   "replace": "2026",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Allied Market Research",
+   "replace": "Goldman Sachs, Music in the Air 2025",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/emerging-markets-superfans-and-price-rises-7-takeaways-from-goldman-sachs-new-music-in-the-air-report/"
+   ]
+  },
+  {
+   "find": "$19.3 billion",
+   "replace": "Over $22 billion (2025)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "67%",
+   "replace": "69.6% (2025)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Year-over-year streaming revenue growth",
+   "replace": "Paid subscription streaming revenue growth",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "10.2%",
+   "replace": "8.8% (2025)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Global synchronization licensing revenue",
+   "replace": "Recorded music sync revenue",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/10-quick-and-crucial-takeaways-from-ifpis-global-music-report-2026/"
+   ]
+  },
+  {
+   "find": "$1.08 billion",
+   "replace": "$641 million (2025)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/10-quick-and-crucial-takeaways-from-ifpis-global-music-report-2026/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Citigroup / GPS: Music to Our Ears",
+   "replace": "IFPI Global Music Report 2026",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/10-quick-and-crucial-takeaways-from-ifpis-global-music-report-2026/"
+   ]
+  },
+  {
+   "find": "$1.18 billion",
+   "replace": "Not separately reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Industry estimates",
+   "replace": "No verified public source",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Ambient/wellness segment CAGR",
+   "replace": "Ambient/wellness segment growth rate",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "2024\u20132030",
+   "replace": "no public series",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Global meditation app market",
+   "replace": "Meditation management apps market, 2025",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.grandviewresearch.com/industry-analysis/meditation-management-apps-market-report"
+   ]
+  },
+  {
+   "find": "$15.3 billion",
+   "replace": "$2.20 billion",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.grandviewresearch.com/industry-analysis/meditation-management-apps-market-report"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Global sleep aids market",
+   "replace": "Sleep-focused music market",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "$100+ billion",
+   "replace": "Not separately reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Fortune Business Insights",
+   "replace": "No verified public source",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Corporate wellness market",
+   "replace": "Global wellness economy, 2024",
+   "reason": "figure sourced",
+   "sources": [
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ]
+  },
+  {
+   "find": "$60+ billion",
+   "replace": "$6.8 trillion",
+   "reason": "figure sourced",
+   "sources": [
+    "https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Active music catalog buyers",
+   "replace": "Catalogs in Hipgnosis Songs Fund at sale (2024)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "Hipgnosis total deployed capital",
+   "replace": "Blackstone bid for Hipgnosis Songs Fund equity (2024)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "$2+ billion",
+   "replace": "$1.584 billion",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Hipgnosis Songs Fund Annual Report",
+   "replace": "Music Business Worldwide",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-blackstone-the-new-owner-of-hipgnosis-songs-fund-as-investment-giants-bid-wins-shareholder-approval/"
+   ]
+  },
+  {
+   "find": "Duetti total funding raised",
+   "replace": "Duetti total capital raised since 2022 (debt and equity)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/duetti-secures-200m-in-fresh-financing-led-by-50m-series-c-equity-investment-from-the-raine-group/"
+   ]
+  },
+  {
+   "find": "Mainstream catalog valuation multiple (high)",
+   "replace": "Sony deal for the Jackson estate's 50% of Sony/ATV (2016)",
+   "reason": "multiple removed",
+   "sources": [
+    "https://variety.com/2016/music/news/sony-michael-jackson-estate-deal-1201729859/"
+   ]
+  },
+  {
+   "find": "15\u201320x NPS",
+   "replace": "$750 million",
+   "reason": "figure sourced",
+   "sources": [
+    "https://variety.com/2016/music/news/sony-michael-jackson-estate-deal-1201729859/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Shot Tower Capital / Billboard",
+   "replace": "Variety",
+   "reason": "figure sourced",
+   "sources": [
+    "https://variety.com/2016/music/news/sony-michael-jackson-estate-deal-1201729859/"
+   ]
+  },
+  {
+   "find": "3\u20138x NPS",
+   "replace": "No published benchmark",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$28.6 billion",
+   "replace": "$31.7 billion (2025)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ],
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$1.4B",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$1.1B",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$850M",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$420M",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$380M",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$1.18B",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$620M",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "$210M",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "8.5%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "9.2%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "5.1%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "7.3%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "11.4%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "23.7%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "14.8%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "4.2%",
+   "replace": "Not reported",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "12\u201315x NPS",
+   "replace": "Individual review",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "10\u201314x NPS",
+   "replace": "Individual review",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "10\u201318x NPS",
+   "replace": "Individual review",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "8\u201312x NPS",
+   "replace": "Individual review",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "6\u201310x NPS",
+   "replace": "Individual review",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "4\u20138x NPS",
+   "replace": "Individual review",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "3\u20136x NPS",
+   "replace": "Individual review",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  },
+  {
+   "find": "Avg Multiple",
+   "replace": "Valuation",
+   "reason": "multiple removed",
+   "modules": [
+    "MarketDataPage",
+    "PillarGuidePage"
+   ],
+   "pages": [
+    "data/",
+    "guides/"
+   ]
+  }
+ ]
+}

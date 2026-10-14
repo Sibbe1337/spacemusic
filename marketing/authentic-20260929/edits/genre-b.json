@@ -1,0 +1,419 @@
+{
+ "area": "genre-b",
+ "edits": [
+  {
+   "find": "3-7x annual revenue depending on catalog consistency, rights clarity, and licensing readiness",
+   "replace": "No fixed multiple, weighing catalog consistency, rights clarity, and licensing readiness",
+   "reason": "multiple removed",
+   "sources": []
+  },
+  {
+   "find": "A producer collective with multiple aliases consolidated their masters into one acquisition-ready entity.",
+   "replace": "Illustrative example, not a SPACE transaction: a producer collective releases under several aliases and wants to sell all its masters as one catalog.",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "163 tracks across electronic substyles",
+   "replace": "Hypothetical: 160 tracks across electronic substyles",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "2.1M streams across DSPs",
+   "replace": "Hypothetical: 2 million streams a month across DSPs",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "$61,000 combined (streaming + creator usage + micro-sync)",
+   "replace": "Hypothetical: $60,000 a year in documented royalties (streaming, creator usage, small sync fees)",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "SPACE positioned the catalog as a licensing-ready electronic library and secured a 4.9x outcome with clean rights and stem availability as key value drivers.",
+   "replace": "A review would confirm who owns the masters under each alias, check sample and collaborator clearances, stems, metadata, and how evenly revenue is spread across tracks. Any offer depends on individual review.",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "3-6x annual revenue for consistent house catalogs, with premium upside for licensing-ready catalogs",
+   "replace": "No fixed multiple, with consistent and licensing-ready house catalogs in a stronger position",
+   "reason": "multiple removed",
+   "sources": []
+  },
+  {
+   "find": "A house producer moved from release-first strategy to catalog optimization with alternate versions and rights cleanup.",
+   "replace": "Illustrative example, not a SPACE transaction: a house producer owns the masters to a catalog with alternate versions and wants to sell it.",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "97 house tracks with edit variants",
+   "replace": "Hypothetical: 100 house tracks with edit variants",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "1.3M streams",
+   "replace": "Hypothetical: 1 million streams a month",
+   "reason": "fabricated case",
+   "sources": [],
+   "modules": [
+    "commercialGenrePages"
+   ],
+   "pages": [
+    "sell/"
+   ]
+  },
+  {
+   "find": "$38,400",
+   "replace": "Hypothetical: $35,000 a year in documented royalties",
+   "reason": "fabricated case",
+   "sources": [],
+   "modules": [
+    "commercialGenrePages"
+   ],
+   "pages": [
+    "sell/"
+   ]
+  },
+  {
+   "find": "After packaging the catalog for licensing utility, the producer received a buyer offer above prior expectations due to deployability and rights certainty.",
+   "replace": "A review would check master ownership, vocal and sample clearances, which edits are included, metadata, revenue history, and how much income comes from the top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "3-6x annual revenue, with stronger outcomes for rights-clean, placement-ready tropical catalogs",
+   "replace": "No fixed multiple, with rights-clean, placement-ready tropical catalogs in a stronger position",
+   "reason": "multiple removed",
+   "sources": []
+  },
+  {
+   "find": "An independent creator with tropical releases across multiple distributors consolidated rights and metadata for a buyer process.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent creator has tropical house releases spread across several distributors and wants to sell the masters.",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "74 tropical house tracks",
+   "replace": "Hypothetical: 75 tropical house tracks",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "980k streams",
+   "replace": "Hypothetical: 1 million streams a month",
+   "reason": "fabricated case",
+   "sources": [],
+   "modules": [
+    "commercialGenrePages"
+   ],
+   "pages": [
+    "sell/"
+   ]
+  },
+  {
+   "find": "$29,200",
+   "replace": "Hypothetical: $30,000 a year in documented royalties",
+   "reason": "fabricated case",
+   "sources": [],
+   "modules": [
+    "commercialGenrePages"
+   ],
+   "pages": [
+    "sell/"
+   ]
+  },
+  {
+   "find": "With cleaner rights docs and stronger packaging, the catalog moved from uncertain interest to multiple qualified conversations within weeks.",
+   "replace": "A review would check that rights line up across distributors, vocal hook and sample clearances, metadata, revenue consistency, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "80-180 tracks, packaged by substyle and use-case",
+   "replace": "Hypothetical: 120 tracks, grouped by substyle and use case",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "800k-2.4M monthly streams across DSPs",
+   "replace": "Hypothetical: 1 million monthly streams across DSPs",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "$30,000-$80,000 mixed revenue profile",
+   "replace": "Hypothetical: $40,000 a year in documented royalties from streaming and licensing",
+   "reason": "fabricated case",
+   "sources": []
+  },
+  {
+   "find": "3-7x annual revenue",
+   "replace": "No fixed multiple",
+   "reason": "multiple removed",
+   "sources": [],
+   "modules": [
+    "commercialGenrePages"
+   ],
+   "pages": [
+    "sell/"
+   ]
+  },
+  {
+   "find": "3-6x annual revenue",
+   "replace": "No fixed multiple",
+   "reason": "multiple removed",
+   "sources": [],
+   "modules": [
+    "commercialGenrePages"
+   ],
+   "pages": [
+    "sell/"
+   ]
+  },
+  {
+   "find": "An independent afro house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent afro house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the afro house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this afro house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent bass house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent bass house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the bass house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this bass house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent breakbeat producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent breakbeat producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the breakbeat catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this breakbeat catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent dance pop producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent dance pop producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the dance pop catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this dance pop catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent deep house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent deep house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the deep house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this deep house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent drum and bass producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent drum and bass producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the drum and bass catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this drum and bass catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent electro house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent electro house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the electro house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this electro house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent future house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent future house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the future house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this future house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent garage house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent garage house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the garage house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this garage house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent indie dance producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent indie dance producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the indie dance catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this indie dance catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent melodic house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent melodic house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the melodic house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this melodic house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent melodic techno producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent melodic techno producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the melodic techno catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this melodic techno catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent organic house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent organic house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the organic house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this organic house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent progressive house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent progressive house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the progressive house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this progressive house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent psytrance producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent psytrance producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the psytrance catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this psytrance catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent synthwave producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent synthwave producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the synthwave catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this synthwave catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent tech house producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent tech house producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the tech house catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this tech house catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent techno producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent techno producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the techno catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this techno catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent trance producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent trance producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the trance catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this trance catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "An independent uk garage producer reorganized their catalog around rights clarity and commercial utility before entering buyer conversations.",
+   "replace": "Illustrative example, not a SPACE transaction: an independent uk garage producer owns the masters to a catalog and wants to sell it.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  },
+  {
+   "find": "After catalog cleanup and buyer-ready packaging, the uk garage catalog secured materially stronger interest and faster negotiation cycles.",
+   "replace": "A review of this uk garage catalog would check rights ownership, sample and collaborator clearances, revenue consistency, metadata, and concentration in top tracks. Any offer depends on individual review.",
+   "reason": "fabricated case (HTML; JS template literal needs source change)",
+   "sources": []
+  }
+ ]
+}

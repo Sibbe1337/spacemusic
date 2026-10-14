@@ -1,0 +1,25 @@
+{
+  "requested": "/apply/",
+  "url": "https://spacemusic.io/apply/",
+  "status": 200,
+  "fetched": "2026-09-08T12:43:57.875Z",
+  "contentType": "text/html; charset=utf-8",
+  "title": "Apply to Sell Your Music Catalog — Free Evaluation (2026) — SPACE",
+  "description": "Request a free music catalog review. Start with your email and artist or label name; we follow up privately for income and rights documents. No obligation.",
+  "canonical": "https://spacemusic.io/apply/",
+  "headings": [
+    "We buy your music catalog."
+  ],
+  "paragraphs": [
+    "For independent catalog owners",
+    "SPACE reviews revenue-generating catalogs directly across genres. Ambient, sleep, focus, meditation, wellness, lo-fi and electronic music are examples. Every catalog is assessed individually.",
+    "Start with your email and artist or label name. We request the relevant income and rights documents privately by email after you apply. No upload is needed now."
+  ],
+  "links": [
+    {
+      "text": "SPACE",
+      "href": "/"
+    }
+  ],
+  "text": "SPACE For independent catalog owners We buy your music catalog. SPACE reviews revenue-generating catalogs directly across genres. Ambient, sleep, focus, meditation, wellness, lo-fi and electronic music are examples. Every catalog is assessed individually. Start with your email and artist or label name. We request the relevant income and rights documents privately by email after you apply. No upload is needed now."
+}

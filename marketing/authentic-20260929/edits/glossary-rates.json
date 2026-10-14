@@ -1,0 +1,1255 @@
+{
+ "area": "glossary-rates",
+ "edits": [
+  {
+   "find": "Master rights are governed by copyright law and typically last for 70 years after the death of the author (or 95 years from publication for works made for hire) in the United States under the Copyright Act.",
+   "replace": "Master rights are governed by copyright law. In the United States, under 17 U.S.C. \u00a7 302, copyright generally lasts for the life of the author plus 70 years, or, for works made for hire, 95 years from publication or 120 years from creation, whichever ends first.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/17/302"
+   ]
+  },
+  {
+   "find": "In a standard record deal, the label owns the masters and the artist receives a royalty rate typically between 15-25% of net revenue.",
+   "replace": "In a standard record deal, the label owns the masters and the artist receives a royalty rate set in the contract, usually a percentage of net revenue that varies from deal to deal.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "In the US, the mechanical royalty rate for physical and permanent digital downloads is set by the Copyright Royalty Board at 9.1 cents per copy for songs under 5 minutes.",
+   "replace": "In the US, the mechanical royalty rate for physical and permanent digital downloads is set by the Copyright Royalty Board. For 2026 it is 13.1 cents per copy for songs of 5 minutes or less, or 2.52 cents per minute for longer songs, according to the Board's cost-of-living adjustment published in the Federal Register.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.federalregister.gov/documents/2025/12/01/2025-21695/cost-of-living-adjustment-to-royalty-rates-and-terms-for-making-and-distributing-phonorecords",
+    "https://www.digitalmusicnews.com/2025/12/08/mechanical-royalty-rate-2026-adjustment-crb/"
+   ]
+  },
+  {
+   "find": "Publishing administration deals typically take 10-25% of publishing revenue, while traditional publishing deals may take 50% of the publisher's share in exchange for more active pitching and administration.",
+   "replace": "Publishing administration deals charge a negotiated fee on the revenue collected, while traditional publishing deals give the publisher the publisher's share in exchange for more active pitching and administration.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "As of 2023, the rate for physical and permanent digital downloads is 12 cents per unit for songs over 5 minutes, or 9.1 cents for songs 5 minutes or under.",
+   "replace": "For 2026, according to the Board's cost-of-living adjustment published in the Federal Register, the rate for physical and permanent digital downloads is 13.1 cents per unit for songs of 5 minutes or less, or 2.52 cents per minute for songs over 5 minutes.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.federalregister.gov/documents/2025/12/01/2025-21695/cost-of-living-adjustment-to-royalty-rates-and-terms-for-making-and-distributing-phonorecords",
+    "https://www.digitalmusicnews.com/2025/12/08/mechanical-royalty-rate-2026-adjustment-crb/"
+   ]
+  },
+  {
+   "find": "Mechanical royalties per stream vary by platform and territory but typically range from $0.001 to $0.004 per stream in the US. The exact rate depends on the platform's total revenue, subscriber count, and the total pool of streams.",
+   "replace": "There is no fixed per-stream mechanical rate. In the US, streaming mechanicals are calculated from a share of each service's revenue, with per-subscriber minimums, under the Phonorecords IV rates, and the result is divided across all the streams on that service. The amount per stream therefore varies by platform, territory, and month.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "PRO distribution cycles typically occur quarterly, with a 6-9 month lag from the date of performance to payment.",
+   "replace": "US PROs such as ASCAP and BMI distribute royalties quarterly, and payment usually arrives several months after the quarter in which the performance took place; each PRO publishes its own distribution schedule.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "ASCAP and BMI are non-profit organizations, while SESAC is a for-profit company. PROs typically distribute royalties quarterly, with a processing delay of 6-9 months.",
+   "replace": "ASCAP operates on a non-profit basis, SESAC is a for-profit company, and BMI became a for-profit company whose sale to a group led by New Mountain Capital was completed in 2024. PROs typically distribute royalties quarterly, and payment usually arrives several months after the performance period.",
+   "reason": "company fact sourced",
+   "sources": [
+    "https://www.billboard.com/business/business-news/bmi-sale-new-mountain-capital-complete-pro-sold-finalized-1235602941/"
+   ]
+  },
+  {
+   "find": "BMI is free to join as a writer; ASCAP charges a one-time $50 fee.",
+   "replace": "BMI is free to join as a writer, and ASCAP's help pages state that joining is free for new writer members.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ascap.com/help/my-ascap-membership"
+   ]
+  },
+  {
+   "find": "Most PROs require you to wait until the end of your current membership term before switching. ASCAP membership terms are typically one year, while BMI terms are two years.",
+   "replace": "Most PROs require you to wait until the end of your current membership term before switching, and each PRO sets its own term and notice period in its membership agreement.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "A new ISRC is required when a recording is remixed, remastered, or re-edited in a way that creates a materially different sound recording.",
+   "replace": "A new ISRC is required when a recording is remixed or edited, including changes in playing time of more than 10 seconds; according to the US ISRC Agency, a remaster needs a new code only when the remastering involves significant new creative input.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://usisrc.org/guidance-support/"
+   ]
+  },
+  {
+   "find": "Yes. If the audio has been materially altered (remastered, remixed, re-edited), a new ISRC is required.",
+   "replace": "Not always. The US ISRC Agency's guidance says remixes and edits need a new ISRC, while a remaster needs one only if the remastering involves significant new creative input.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://usisrc.org/guidance-support/"
+   ]
+  },
+  {
+   "find": "Music catalogs have become highly valued financial assets, particularly since 2020, when major acquisitions like Hipgnosis Songs Fund and investment firms like KKR began purchasing catalogs from legendary artists for hundreds of millions of dollars.",
+   "replace": "Music catalogs have become recognized financial assets, particularly since the late 2010s, when buyers such as Hipgnosis Songs Fund and investment firms such as KKR began purchasing catalogs from well-known artists.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Catalog valuation is typically performed using a revenue multiple methodology, where the catalog's average annual net revenue over the past 2-3 years is multiplied by a factor that reflects growth trends, genre stability, revenue diversification, and market conditions. Multiples for independent catalogs typically range from 5x to 15x annual net revenue, while premium catalogs from iconic artists have traded at 20x-30x+.",
+   "replace": "Catalog valuation is often performed using a revenue multiple methodology, where the catalog's average annual net revenue over recent years is multiplied by a factor that reflects growth trends, genre stability, revenue diversification, and market conditions. The factor differs widely between catalogs and is set in each individual review, so no standard multiple applies to every catalog.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Even small catalogs earning $500-$5,000 per year can be attractive to buyers if the revenue is stable and the rights are clean.",
+   "replace": "Even small catalogs can be of interest to buyers if the revenue is stable and the rights are clean.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "For example, a catalog earning $10,000 per year with a 10x multiple would be valued at $100,000.",
+   "replace": "For example, with purely hypothetical numbers, a catalog earning $10,000 per year and a multiple of 10 would be valued at $100,000; the multiple actually used depends on the individual review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Ambient and meditation music catalogs often receive favorable valuations because their revenue tends to be remarkably stable \u2014 listener behavior in these genres is habitual rather than trend-driven, meaning revenue is less susceptible to the peaks and valleys seen in pop or hip-hop catalogs.",
+   "replace": "Ambient and meditation music catalogs can be valued favorably when their revenue is stable, because listening in these genres is often habitual rather than trend-driven, which makes revenue less exposed to the peaks and valleys seen in pop or hip-hop catalogs.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Professional catalog valuations typically analyze 3-5 years of historical revenue data",
+   "replace": "Professional catalog valuations typically analyze several years of historical revenue data",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The valuation model projects future cash flows using a discounted cash flow (DCF) analysis, adjusting for streaming market growth rates (typically 5-10% annually), potential catalog decay rates (1-3% per year for non-evergreen content), and discount rates reflecting the risk profile of the asset (typically 8-15%).",
+   "replace": "The valuation model projects future cash flows using a discounted cash flow (DCF) analysis, adjusting for expected streaming market growth, the rate at which the catalog's earnings decline over time, and a discount rate reflecting the risk profile of the asset.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Independent catalogs typically sell at 5x-15x annual net revenue.",
+   "replace": "There is no standard multiple for independent catalogs; it is set in an individual review of each catalog.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "If a catalog earns $20,000 per year and sells at a 10x multiple, the purchase price would be $200,000.",
+   "replace": "In a purely hypothetical example, if a catalog earns $20,000 per year and sells at a multiple of 10, the purchase price would be $200,000.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Revenue multiples in the music industry have fluctuated significantly over the past decade. During the peak of the catalog acquisition boom (2020-2022), multiples for top-tier catalogs reached 25x-30x annual revenue, driven by institutional investors and low interest rates. As interest rates rose and the market matured, multiples for premium catalogs settled back to 15x-20x, while independent and mid-tier catalogs typically trade at 8x-15x.",
+   "replace": "Revenue multiples in the music industry have changed over the past decade. Demand from institutional investors and low interest rates pushed prices for high-profile catalogs up in the early 2020s, and higher interest rates later made buyers more selective. Multiples differ between high-profile, mid-tier and independent catalogs, and each catalog is priced on its own review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "For ambient and meditation music catalogs, multiples tend to be favorable because these genres demonstrate exceptional revenue stability, minimal seasonal fluctuation, and strong growth aligned with the expanding wellness industry.",
+   "replace": "For ambient and meditation music catalogs, the same factors apply, and stable revenue with little seasonal fluctuation supports a stronger valuation.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "These royalties have become the dominant revenue source for the recorded music industry, accounting for over 65% of global recorded music revenue.",
+   "replace": "These royalties have become the dominant revenue source for the recorded music industry: according to the IFPI Global Music Report 2026, streaming accounted for 69.6% of global recorded music revenues in 2025.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.ifpi.org/global-music-report-2026-global-recorded-music-revenues-grow-6-4-as-record-companies-drive-innovation/"
+   ]
+  },
+  {
+   "find": "As a rough guide, Spotify pays approximately $0.003-$0.005 per stream, Apple Music pays $0.007-$0.01, and Tidal pays $0.006-$0.01.",
+   "replace": "Platforms do not publish a fixed per-stream rate. Spotify states that no major streaming service pays a fixed rate per stream, and Apple reported an average of $0.01 per play for Apple Music individual paid plans in 2020, including label and publisher royalties.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide",
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "A user who plays a 2-hour ambient playlist while working or sleeping may generate 20-40 individual track streams in a single session.",
+   "replace": "A user who plays a 2-hour ambient playlist while working or sleeping can generate many individual track streams in a single session.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Streaming royalty calculations use a pro-rata model on most platforms: the platform's total royalty pool (typically 65-70% of gross revenue) is divided among all streams proportionally.",
+   "replace": "Streaming royalty calculations use a pro-rata model on most platforms: the platform's royalty pool is divided among rights holders by their share of total streams. Spotify, for example, states that roughly two-thirds of its music revenue is allocated to recording and publishing royalties.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "The royalty is split between the sound recording side (paid to labels/distributors at approximately 52-55% of the royalty pool) and the composition side (paid as mechanical and performance royalties at approximately 15-16% of the pool).",
+   "replace": "The royalty is split between the sound recording side (paid to labels and distributors) and the composition side (paid as mechanical and performance royalties); Spotify states that around four-fifths of its royalty allocation goes to recording and one-fifth to publishing.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "Deezer implemented a partial user-centric model in 2024. Spotify introduced a minimum stream threshold of 1,000 annual streams per track for monetization in 2024.",
+   "replace": "Deezer and Universal Music Group launched an artist-centric model in France in late 2023 that gives extra weight to professional artists and to streams listeners actively seek out. Since April 2024, Spotify has required a track to reach at least 1,000 streams in the previous 12 months before it earns recorded music royalties.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/universal-music-group-and-deezer-to-launch-the-first-comprehensive-artist-centric-music-streaming-model-301918974.html",
+    "https://www.deezer.com/explore/en-us/artist-remuneration/",
+    "https://support.spotify.com/us/artists/article/track-monetization-eligibility/"
+   ]
+  },
+  {
+   "find": "Spotify's per-stream rate fluctuates but generally falls between $0.003-$0.005. The actual amount depends on",
+   "replace": "Spotify does not pay a fixed per-stream rate; it pays rights holders by their share of total streams each month. The actual amount per stream depends on",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "may take a percentage of revenue (typically 15-30%) but offer",
+   "replace": "may take a negotiated percentage of revenue but offer",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "the term (1-3 years with auto-renewal, or in perpetuity for some DIY platforms)",
+   "replace": "the term (a fixed period with auto-renewal, or open-ended for some DIY platforms)",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Revenue is typically reported and paid monthly or quarterly, with a 2-3 month lag from the date of streaming.",
+   "replace": "Revenue is typically reported and paid monthly or quarterly, usually some months after the streams took place, because platforms report to distributors in arrears.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The statutory rate as of 2023 is 12 cents per copy for songs over 5 minutes or 9.1 cents per copy for songs 5 minutes or under (for physical/download).",
+   "replace": "For physical copies and downloads, the statutory rate for 2026 is 13.1 cents per copy for songs of 5 minutes or less, or 2.52 cents per minute for longer songs, according to the Copyright Royalty Board's cost-of-living adjustment published in the Federal Register.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.federalregister.gov/documents/2025/12/01/2025-21695/cost-of-living-adjustment-to-royalty-rates-and-terms-for-making-and-distributing-phonorecords",
+    "https://www.digitalmusicnews.com/2025/12/08/mechanical-royalty-rate-2026-adjustment-crb/"
+   ]
+  },
+  {
+   "find": "The payment is typically split 50/50 between the performer and the producer/label.",
+   "replace": "How the payment is divided between performers and the producer or label is set by national law or by each collecting society's rules.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The distribution split for SoundExchange payments is 45% to the featured artist, 50% to the rights owner (label), and 5% to a fund for non-featured musicians and vocalists.",
+   "replace": "Under 17 U.S.C. \u00a7 114(g), SoundExchange distributes these payments 50% to the rights owner (label), 45% to the featured artist, and 5% to funds for non-featured musicians and vocalists.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/17/114"
+   ]
+  },
+  {
+   "find": "Each has a different business model: some charge flat annual fees (DistroKid), some charge per-release fees (TuneCore, CD Baby), and some take a percentage of revenue in exchange for free distribution (Amuse, RouteNote's free tier).",
+   "replace": "Each has a different business model: some charge annual subscription fees, some charge one-time fees per release, and some take a percentage of revenue in exchange for free distribution. Plans change, so check each service's current pricing page.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "An ambient producer might release 50-100+ tracks per year across multiple albums and singles, making unlimited distribution models more cost-effective than per-release pricing.",
+   "replace": "An ambient producer might release dozens of tracks per year across multiple albums and singles, which can make unlimited distribution models more cost-effective than per-release pricing.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Payment schedules vary \u2014 some aggregators pay monthly, others quarterly, with reporting delays of 1-3 months.",
+   "replace": "Payment schedules vary: some aggregators pay monthly, others quarterly, and reports usually arrive some months after the streams took place.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "DistroKid is popular for prolific artists due to unlimited uploads for a flat annual fee. CD Baby is good for single releases with its one-time fee model. TuneCore offers robust features but charges annually per release.",
+   "replace": "Services differ in pricing: DistroKid's model is unlimited uploads for an annual fee, which suits prolific artists, while other services charge per release or offer tiered subscriptions. Plans change, so check each service's current pricing page.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "Revenue from Content ID claims is split between YouTube (which retains approximately 45% of ad revenue) and the rights holder (who receives approximately 55%).",
+   "replace": "When a claim is monetized, the rights holder's share of the ad revenue on the matched video goes to the claimant, and any aggregator or Content ID partner deducts its own fee under its contract.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The system handles over 800 million reference files and generates billions of dollars annually for rights holders.",
+   "replace": "YouTube publishes figures on Content ID claims and payouts to rights holders in its Copyright Transparency Report.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Some ambient and lo-fi producers report that Content ID revenue equals or exceeds their streaming royalties, especially if their music is popular for background use in study or meditation videos.",
+   "replace": "For ambient and lo-fi producers whose music is popular for background use in study or meditation videos, Content ID can be a meaningful share of income.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Billions of dollars in music royalties go unmatched every year due to metadata issues.",
+   "replace": "Large amounts of music royalties go unmatched because of metadata issues.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "which is usually 50% of total publishing revenue in a traditional co-publishing deal, though this can vary",
+   "replace": "which is 50% of total publishing revenue in a traditional publishing deal and a smaller share in a co-publishing deal",
+   "reason": "policy"
+  },
+  {
+   "find": "for a lower fee of 10-20%)",
+   "replace": "for a lower, negotiated fee)",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Administration deals typically charge 10-25% of gross collections.",
+   "replace": "Administration deals charge a negotiated percentage of gross collections.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "In exchange, the label owns the master recordings and pays the artist a royalty on sales and streams \u2014 typically 15-25% of net revenue in a traditional deal.",
+   "replace": "In exchange, the label owns the master recordings and pays the artist a royalty on sales and streams, set in the contract as a percentage of net revenue.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Record label deal structures include: traditional deals (label owns masters, 15-25% artist royalty), profit-sharing deals (50/50 or similar split of net profits after costs), licensing deals (artist owns masters, licenses to label for a term with a higher royalty rate of 25-50%), distribution deals (label handles distribution for a fee of 15-30%), and 360 deals",
+   "replace": "Record label deal structures include: traditional deals (label owns masters, artist receives a royalty), profit-sharing deals (a negotiated split of net profits after costs), licensing deals (artist owns masters, licenses to label for a term, usually at a higher royalty rate than a traditional deal), distribution deals (label handles distribution for a fee), and 360 deals",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The independent music sector accounts for approximately 35-40% of global recorded music market share, including both truly independent artists and artists on independent labels.",
+   "replace": "The independent music sector, including both self-releasing artists and artists on independent labels, holds a substantial share of the global recorded music market.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Independent artists typically retain 80-100% of recording revenue (after distributor fees) compared to 15-25% under a traditional label deal.",
+   "replace": "Independent artists who own their masters keep the recording revenue left after distributor fees, while artists on a traditional label deal receive only their contractual royalty share.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "High-profile acquisitions include Bob Dylan selling his publishing to Universal Music for an estimated $300-400 million, Bruce Springsteen selling masters and publishing to Sony for approximately $500 million, and numerous catalog deals by investment firms like Hipgnosis Song Management, Primary Wave, Round Hill Music, and KKR.",
+   "replace": "High-profile acquisitions include Universal Music Publishing Group's purchase of Bob Dylan's song catalog, announced in December 2020, Sony Music Group's acquisition of Bruce Springsteen's recorded music and songwriting catalogs, announced in December 2021, and numerous catalog deals by investment firms like Hipgnosis Song Management, Primary Wave, Round Hill Music, and KKR.",
+   "reason": "figure removed; deals sourced",
+   "sources": [
+    "https://www.universalmusic.ca/2020/12/07/universal-music-publishing-group-acquires-bob-dylans-entire-catalogue-of-songs/",
+    "https://www.musicweek.com/publishing/read/sony-music-group-confirms-huge-bruce-springsteen-catalogue-deal/084872"
+   ]
+  },
+  {
+   "find": "Companies and platforms like Royalty Exchange, Catalog, and various independent music investors actively acquire catalogs from independent artists and small catalog owners.",
+   "replace": "Marketplaces such as Royalty Exchange, direct buyers, and independent music investors also handle catalogs from independent artists and small catalog owners.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "Ambient, lo-fi, and meditation music catalogs are increasingly attractive acquisition targets because they exhibit stable, growing revenue profiles tied to the expanding wellness and mindfulness market. These catalogs often trade at favorable multiples due to their evergreen nature \u2014 ambient music doesn't go \"out of style\" the way trend-driven genres can.",
+   "replace": "Ambient, lo-fi, and meditation music catalogs can be attractive to buyers when their revenue is stable and well documented, because this music is less tied to trends than many other genres.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "The buyer's return model typically targets 8-15% annual yield on invested capital, with upside from",
+   "replace": "The buyer's return model weighs the expected annual yield on invested capital against risk, with upside from",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Buyers range from large investment funds (Hipgnosis, Primary Wave, Round Hill) and major music companies (Universal, Sony, Warner) to smaller independent investors and platforms like Royalty Exchange.",
+   "replace": "Buyers range from investment-backed music companies (such as Primary Wave and Concord) and major music companies (Universal, Sony, Warner) to smaller independent investors, direct buyers such as SPACE, and marketplaces like Royalty Exchange.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "Tax treatment of a catalog sale depends on jurisdiction but generally qualifies as a capital gains event (long-term if the catalog was held for more than one year), which is typically taxed at a lower rate than ordinary income.",
+   "replace": "Tax treatment of a catalog sale depends on jurisdiction and on what is sold. In the US, songwriters can elect to treat the sale of musical compositions they created as the sale of a capital asset under 26 U.S.C. \u00a7 1221(b)(3); sellers should get tax advice for their own case.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/26/1221"
+   ]
+  },
+  {
+   "find": "Label advances are recouped from the artist's royalty share at the contractual royalty rate (typically 15-25% of net revenue).",
+   "replace": "Label advances are recouped from the artist's royalty share at the contractual royalty rate.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Distribution advances are recouped from streaming revenue at 100% until recouped.",
+   "replace": "Distribution advances are recouped from the artist's streaming revenue at the rate set in the contract, which can be all of it until the advance is repaid.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The advance amount is typically calculated as a percentage (50-80%) of projected earnings over the deal term.",
+   "replace": "The advance amount is usually calculated as a share of projected earnings over the deal term, set in negotiation.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Labels and publishers usually offer 50-80% of projected earnings as the advance.",
+   "replace": "Labels and publishers usually offer a portion of projected earnings as the advance, not the full amount.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "a distribution advance from platforms like DistroKid or CD Baby (which offer advance programs based on historical streaming data), or a catalog advance/loan from companies like Royalty Exchange or Beatbread that provide funding against existing catalog revenue.",
+   "replace": "a distribution advance from distributors that offer advance programs based on historical streaming data, or a catalog advance or loan from specialist companies that provide funding against existing catalog revenue.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "The Music Modernization Act provisions and direct licensing initiatives have made recoupment accounting more transparent, but artists should still request detailed royalty statements and audit rights in their contracts.",
+   "replace": "Artists should request detailed royalty statements and audit rights in their contracts.",
+   "reason": "policy"
+  },
+  {
+   "find": "The sub-publisher typically retains a percentage of the royalties collected (usually 15-25%) and remits the remainder to the original publisher.",
+   "replace": "The sub-publisher retains a negotiated percentage of the royalties collected and remits the remainder to the original publisher.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "the term (typically 3-5 years with an option to renew), the commission retained by the sub-publisher (15-25%),",
+   "replace": "the term (a fixed number of years, often with an option to renew), the commission retained by the sub-publisher,",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "At-source accounting means the sub-publisher deducts their commission before remitting to the original publisher. Receipts-based accounting means the sub-publisher remits gross collections and the original publisher pays the commission \u2014 at-source is more common and generally more favorable for the sub-publisher.",
+   "replace": "At-source accounting means the commission is calculated on the royalties as earned in the territory, before other intermediaries take deductions. Receipts-based accounting means it is calculated on the amounts the sub-publisher actually receives. At-source terms are generally more favorable for the original publisher and its writers.",
+   "reason": "policy"
+  },
+  {
+   "find": "Terms vary widely: a well-known sample might cost $10,000-$100,000+ upfront plus 25-50% of publishing, while an obscure sample might clear for a few hundred dollars.",
+   "replace": "Terms vary widely: a well-known sample can require a large upfront fee plus a share of the new work's publishing, while an obscure sample may clear for a small fee.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Sync licensing is one of the most lucrative revenue streams in the music industry because fees are negotiated on a case-by-case basis and can range from a few hundred dollars for a small indie project to hundreds of thousands of dollars for a major film or national commercial placement.",
+   "replace": "Sync licensing can be a valuable revenue stream because fees are negotiated case by case, from small fees for independent projects to much larger fees for a major film or national commercial placement.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "The wellness industry is booming, and meditation apps like Calm, Headspace, and Insight Timer are constantly seeking high-quality ambient soundscapes.",
+   "replace": "Wellness brands and meditation apps such as Calm, Headspace, and Insight Timer use ambient soundscapes in their content.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Sync fees vary enormously. A small YouTube video might pay $50-$500, an indie film $1,000-$10,000, a TV show $5,000-$50,000, and a national commercial $50,000-$500,000+. Ambient and meditation music typically commands moderate fees but benefits from high volume of placements.",
+   "replace": "Sync fees vary enormously. They depend on the medium, how prominent the music is, the territory, the term, and exclusivity, so a small online video usually pays far less than a national commercial or a major film. Ambient and meditation music is often licensed for background use, where fees are lower but placements can be more frequent.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "use type code (BI = background instrumental, BV = background vocal, VF = visual feature, MT = main title, ET = end title)",
+   "replace": "use type code (BI = background instrumental, BV = background vocal, VI = visual instrumental, VV = visual vocal, MT = main title, ET = end title)",
+   "reason": "policy",
+   "sources": [
+    "https://www.ascap.com/news-events/articles/2016/07/rapidcue-new-template"
+   ]
+  },
+  {
+   "find": "Cue sheets are submitted electronically through PRO portals (ASCAP's ACE system, BMI's repertoire system) or via standardized electronic file formats (CWR - Common Works Registration format).",
+   "replace": "Cue sheets are submitted electronically through PRO portals or through RapidCue, the standardized cue sheet system announced by ASCAP and BMI, which sends the data to both PROs.",
+   "reason": "policy",
+   "sources": [
+    "https://www.ascap.com/news-events/articles/2016/07/rapidcue-new-template"
+   ]
+  },
+  {
+   "find": "For example, selling 50% of a catalog valued at $100,000 would generate approximately $50,000 in immediate capital while the seller continues to earn 50% of all future revenue.",
+   "replace": "In a hypothetical example, selling 50% of a catalog valued at $100,000 would generate about $50,000 in immediate capital while the seller continues to earn 50% of all future revenue.",
+   "reason": "policy"
+  },
+  {
+   "find": "Partial sales have become increasingly popular thanks to platforms like Royalty Exchange and new financial models that allow fractional ownership of music rights.",
+   "replace": "Partial sales are available through marketplaces such as Royalty Exchange, through direct buyers, and through financial models that allow fractional ownership of music rights.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "partial sales can be especially attractive because these catalogs tend to appreciate over time as the wellness market grows. Selling 20-50% of a growing catalog",
+   "replace": "partial sales can be attractive when the catalog's revenue is stable or growing. Selling part of a growing catalog",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Common approaches include selling 20-30% to raise capital while retaining majority control and upside, selling 50% for a balanced approach, or selling 100% for maximum immediate payout.",
+   "replace": "Common approaches include selling a minority share to raise capital while retaining majority control and upside, selling 50% for a balanced approach, or selling 100% for maximum immediate payout. SPACE, for example, can review sales of 50%, 75%, or 100% of defined catalog rights.",
+   "reason": "policy"
+  },
+  {
+   "find": "Companies like Sound Royalties, Lyric Financial, and various traditional banks with entertainment lending divisions offer these products.",
+   "replace": "Specialist royalty-finance companies and some banks with entertainment lending divisions offer these products.",
+   "reason": "competitor fact sourced"
+  },
+  {
+   "find": "The loan amount is typically based on a multiple of the catalog's annual revenue, similar to a catalog valuation but usually more conservative (3x-8x annual revenue versus 8x-15x for a sale).",
+   "replace": "The loan amount is typically based on the catalog's annual revenue, similar to a catalog valuation but usually more conservative than a sale price.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Key terms include: loan-to-value ratio (typically 50-80% of the catalog's appraised value), interest rate (usually 8-15% depending on the catalog's risk profile and size), amortization schedule (typically 3-7 years), debt service coverage ratio requirements (usually 1.25x-1.50x \u2014 the catalog's annual revenue must exceed annual debt service by this factor),",
+   "replace": "Key terms include: loan-to-value ratio (the loan amount as a share of the catalog's appraised value), interest rate (which depends on the catalog's risk profile and size), amortization schedule (the repayment period), debt service coverage ratio requirements (how far the catalog's annual revenue must exceed annual debt service),",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "626M+ (including 246M+ premium)",
+   "replace": "777M monthly active users, including 300M Premium subscribers (Spotify Q2 2026 report)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001639920/000114036126031044/ef20078867_ex99-1.htm"
+   ]
+  },
+  {
+   "find": "~31% of global streaming",
+   "replace": "Not published by the platform",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Its massive user base makes it the default distribution channel for most artists, though its per-stream rates remain among the lowest of premium services.",
+   "replace": "Its large user base makes it a standard distribution channel for most artists. Spotify does not pay a fixed rate per stream.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "Pro-rata model \u2014 total subscriber revenue is pooled and divided by total streams across the platform.",
+   "replace": "Streamshare model: according to Spotify, roughly two-thirds of its music revenue goes to recording and publishing royalties, and rights holders are paid by their share of total streams each month.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "Dominant platform for ambient and lo-fi discovery via editorial playlists like Deep Focus (5M+ followers) and Peaceful Piano (7M+ followers).",
+   "replace": "Important platform for ambient and lo-fi discovery through editorial playlists such as Deep Focus and Peaceful Piano.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Largest user base of any streaming platform with unmatched global reach",
+   "replace": "777M monthly active users as of Q2 2026, according to Spotify",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001639920/000114036126031044/ef20078867_ex99-1.htm"
+   ]
+  },
+  {
+   "find": "Lowest per-stream rates among premium streaming services",
+   "replace": "No fixed per-stream rate; payouts depend on streamshare each month",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "Recent minimum stream threshold (1,000 streams/year) cuts off long-tail catalog revenue",
+   "replace": "Since April 2024, tracks need at least 1,000 streams in the previous 12 months to earn recorded music royalties",
+   "reason": "figure sourced",
+   "sources": [
+    "https://support.spotify.com/us/artists/article/track-monetization-eligibility/"
+   ]
+  },
+  {
+   "find": "Spotify pays between $0.003 and $0.005 per stream on average. The exact rate depends on the listener's country, whether they're on a free or premium plan, and total platform activity.",
+   "replace": "Spotify does not pay a fixed rate per stream; it pays rights holders by their share of total streams each month, from a pool that Spotify says is roughly two-thirds of its music revenue. The amount per stream depends on the listener's country, whether they're on a free or premium plan, and total platform activity.",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "At an average rate of $0.004 per stream, you'd need approximately 250,000 streams to earn $1,000 from Spotify alone.",
+   "replace": "There is no fixed answer, because the amount per stream changes with listener country, plan type and monthly totals. Divide your recent Spotify net receipts by your Spotify streams for the same period to get your own average, then divide $1,000 by that average.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "98M+ subscribers (all paid, no free tier)",
+   "replace": "Subscriber numbers not published by Apple (paid plans only, no free tier)",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "~15% of global streaming",
+   "replace": "Not published by the platform",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Apple Music is the second-largest subscription streaming service and the highest-paying major platform on a per-stream basis.",
+   "replace": "Apple Music is a major subscription streaming service, and Apple reported an average per-play rate of $0.01 for its individual paid plans in 2020.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Apple pays publishers and labels separately and has been transparent about paying roughly a penny per stream on average.",
+   "replace": "Apple pays publishers and labels separately and reported an average per-play rate of $0.01 for Apple Music individual paid plans in 2020, including label and publisher royalties.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Higher per-stream rates make each Apple Music listener roughly 2x more valuable than a Spotify listener for ambient artists.",
+   "replace": "Apple's reported average of $0.01 per play (individual paid plans, 2020) is a useful reference, but compare your own net receipts per platform before assuming one listener is worth more than another.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Highest per-stream rates among major streaming platforms",
+   "replace": "Apple reported an average per-play rate of $0.01 for individual paid plans in 2020",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Apple Music pays between $0.007 and $0.01 per stream, making it the highest-paying major streaming platform. Apple has publicly stated they pay roughly one cent per stream on average, though actual rates vary by country and other factors.",
+   "replace": "Apple does not publish a fixed rate. It reported an average per-play rate of $0.01 for Apple Music individual paid plans in 2020, including label and publisher royalties, and says the value varies by subscription plan and country or region. What you receive after label and distributor deductions is lower than this gross figure.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Apple Music has no free tier \u2014 every listener is a paying subscriber contributing $10.99+/month to the revenue pool.",
+   "replace": "Apple Music has no ad-supported free tier, so every listener is on a paid plan or a trial that contributes to the revenue pool.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Additionally, Apple Music has a higher concentration of listeners in premium markets.",
+   "replace": "Where listeners live and which plan they use also affect the average.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Per listener, yes \u2014 each stream is worth roughly 2x more on Apple Music.",
+   "replace": "Per stream, it can be: Apple reported an average of $0.01 per play for individual paid plans in 2020, while Spotify does not publish an average.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "~10% music streaming (YouTube Music), but YouTube overall is the largest music platform globally",
+   "replace": "Not published by the platform",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "100M+ YouTube Music subscribers, 2B+ YouTube monthly users",
+   "replace": "125M YouTube Music and Premium subscribers, including trials (YouTube, March 2025)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://blog.youtube/inside-youtube/20-years-125-million-subscribers-lyor-cohen/"
+   ]
+  },
+  {
+   "find": "Standard YouTube pays through AdSense revenue sharing (55% to creators).",
+   "replace": "Standard YouTube pays channel owners through the YouTube Partner Program, which gives creators 55% of net revenue from ads on long-form videos, according to YouTube Help.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://support.google.com/youtube/answer/72902?hl=en"
+   ]
+  },
+  {
+   "find": "Videos titled '8 Hours of Rain Sounds' or '12-Hour Deep Sleep Music' regularly accumulate 10M+ views.",
+   "replace": "Long videos such as '8 Hours of Rain Sounds' or '12-Hour Deep Sleep Music' are a common format on the platform.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "YouTube Music pays between $0.002 and $0.005 per stream for music-specific plays. However, the total YouTube ecosystem",
+   "replace": "YouTube does not publish a fixed per-stream rate for YouTube Music; payouts depend on ad and subscription revenue, listener country, and plan type. The wider YouTube ecosystem",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "For ambient artists, Content ID revenue can sometimes exceed direct streaming revenue.",
+   "replace": "For some ambient artists, Content ID revenue is a meaningful share of total YouTube income.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "An 8-hour ambient video with 1M views can generate significantly more ad revenue than 1M individual track streams on YouTube Music.",
+   "replace": "Long ambient videos can carry more ads than a single track stream, so compare your own YouTube and YouTube Music reports.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "105M+ subscribers",
+   "replace": "Subscriber numbers not published by Amazon",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "streamingRates",
+    "glossary"
+   ],
+   "pages": [
+    "streaming-rates/",
+    "glossary/",
+    "guides/what-are-your-streams-worth"
+   ]
+  },
+  {
+   "find": "~13% of global streaming",
+   "replace": "Not published by the platform",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Amazon Music is the third-largest streaming platform globally, powered by deep integration",
+   "replace": "Amazon Music is a major streaming service with deep integration",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Per-stream rates vary significantly between tiers, with Unlimited subscribers generating 3-4x the per-stream revenue of Free tier listeners.",
+   "replace": "Per-stream payouts vary between tiers, and paid Unlimited listening generally contributes more revenue than ad-supported listening.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Alexa voice commands are a massive, often underappreciated driver of ambient and nature soundscape streams. Commands like 'Alexa, play relaxing music,' 'Alexa, play rain sounds,' and 'Alexa, play sleep music' funnel millions of streams to ambient catalogs. Amazon is arguably the single best platform for passive ambient listening discovery.",
+   "replace": "Alexa voice commands can drive ambient and nature soundscape streams. Generic requests like 'Alexa, play relaxing music,' 'Alexa, play rain sounds,' and 'Alexa, play sleep music' send listeners to mood playlists rather than to a named artist, which makes Amazon relevant for passive ambient listening.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Competitive per-stream rates, especially on the Unlimited tier",
+   "replace": "Paid Unlimited tier alongside Prime and ad-supported listening",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Growing global subscriber base with deep ecosystem integration",
+   "replace": "Deep integration with Amazon devices and Prime",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Amazon Music pays between $0.004 and $0.008 per stream on average, though rates vary significantly by tier. Amazon Music Unlimited streams pay the most (~$0.007-$0.008), while Prime Music and Free tier streams pay considerably less (~$0.002-$0.004).",
+   "replace": "Amazon does not publish a fixed per-stream rate. What a stream pays depends on the tier (Unlimited, Prime, or the free ad-supported tier), the listener's country, and the month's revenue and streams; paid Unlimited listening generally pays more than ad-supported listening. Your distributor statements show your own average.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Yes. Voice-activated requests like 'play relaxing music' or 'play rain sounds for sleeping' are among the most common Alexa commands. These generic, mood-based requests funnel streams to curated ambient playlists, making Amazon Music one of the highest-volume platforms for passive ambient listening.",
+   "replace": "It can. Voice requests like 'play relaxing music' or 'play rain sounds for sleeping' do not name an artist, so they send listeners to curated mood playlists. If your tracks are on those playlists, Alexa can be a steady source of passive ambient listening.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Absolutely. The combination of competitive per-stream rates and Alexa-driven ambient discovery makes Amazon Music disproportionately valuable for ambient, lo-fi, and nature soundscape artists. Some ambient catalogs earn more per stream on Amazon than on any platform except Tidal.",
+   "replace": "It can be. Paid Unlimited listening and Alexa-driven discovery make Amazon Music worth tracking for ambient, lo-fi, and nature soundscape artists. Compare your net receipts per stream across platforms in your distributor statements before deciding where to focus.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "For per-stream value, Tidal is unmatched. However, with only ~5M subscribers, the total revenue ceiling is lower than platforms like Spotify or Apple Music. For ambient artists, Tidal is most valuable as part of a multi-platform strategy \u2014 its high per-stream rates add meaningful revenue even with a smaller listener base.",
+   "replace": "Tidal's user base is smaller than Spotify's or Apple Music's, so its total revenue ceiling is lower for most artists. For ambient artists, Tidal is most useful as part of a multi-platform strategy, especially for listeners who value high-fidelity audio.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "~5M subscribers",
+   "replace": "Subscriber numbers not published by Tidal",
+   "reason": "unsourced figure removed",
+   "modules": [
+    "streamingRates",
+    "glossary"
+   ],
+   "pages": [
+    "streaming-rates/",
+    "glossary/",
+    "guides/what-are-your-streams-worth"
+   ]
+  },
+  {
+   "find": "~1-2% of global streaming",
+   "replace": "Not published by the platform",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Tidal is a premium-focused streaming platform known for the highest per-stream rates in the industry and its commitment to high-fidelity audio. While its market share is small, its user-centric payment model and audiophile positioning make each Tidal stream significantly more valuable than streams on larger platforms.",
+   "replace": "Tidal is a premium-focused streaming platform known for its commitment to high-fidelity audio. It has a smaller user base than the largest services and does not publish a fixed per-stream rate.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "User-centric payment model (UCPS) \u2014 each subscriber's monthly fee is distributed only to the artists they actually listened to, rather than pooled across all platform activity. This fundamentally benefits niche artists with dedicated listeners. If a subscriber listens exclusively to your ambient catalog, a larger share of their $10.99/month goes directly to you.",
+   "replace": "Tidal announced a fan-centered royalty approach in 2021 and ran a Direct Artist Payouts program, but it closed that program in 2023, according to Music Ally. What a Tidal stream pays depends on subscription revenue, listener country, and your label or distributor deal; your distributor statements show your actual Tidal receipts per stream.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "Smallest reach but the highest per-stream payout of any major platform. The user-centric model particularly benefits ambient artists with dedicated listeners who play their music for extended sessions. Tidal's HiFi and Master quality tiers appeal to audiophile ambient listeners who value sonic detail in soundscapes and textured compositions.",
+   "replace": "Smaller reach than the largest platforms. Tidal's high-fidelity streaming appeals to audiophile ambient listeners who value sonic detail in soundscapes and textured compositions.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Highest per-stream rates of any major streaming platform",
+   "replace": "High-fidelity audio positioning that suits detailed ambient recordings",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "User-centric payment model directly rewards niche artists with dedicated listeners",
+   "replace": "Audience of listeners who choose a service for audio quality",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "HiFi and Master audio quality tiers appeal to audiophile ambient listeners",
+   "replace": "High-fidelity streaming appeals to audiophile ambient listeners",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Very small market share limits total revenue potential",
+   "replace": "Smaller user base limits total revenue potential",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Tidal pays between $0.008 and $0.013 per stream, making it the highest-paying major streaming platform. Its user-centric payment model means rates can be even higher for artists with dedicated listener bases, as each subscriber's fee flows directly to the artists they listen to.",
+   "replace": "Tidal does not publish a fixed per-stream rate. What a stream pays depends on subscription revenue, the listener's country, and your label or distributor deal. To find your own average, divide your Tidal receipts by your Tidal streams for the same period.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "What is Tidal's user-centric payment model and why does it matter?",
+   "replace": "Does Tidal use a user-centric payment model?",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "Unlike the pro-rata model used by Spotify and Apple Music (where all revenue is pooled and divided by total streams), Tidal's user-centric model sends each subscriber's payment directly to the artists they listened to. If someone pays $10.99/month and listens only to your music, most of that fee goes to you \u2014 not to mainstream pop artists with billions of streams.",
+   "replace": "Tidal announced a fan-centered royalty plan in 2021 and paid part of some subscribers' fees to their most-streamed artist through a Direct Artist Payouts program. According to Music Ally, Tidal closed that program in 2023. Under a user-centric model, each subscriber's payment goes only to the artists they listened to; under the pro-rata model used by Spotify and Apple Music, all revenue is pooled and divided by total streams.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "~16M subscribers",
+   "replace": "8.9M subscribers as of June 30, 2026 (Deezer H1 2026 results)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://newsroom-deezer.com/2026/07/deezer-h1-2026-results-direct-growth-profitability/"
+   ],
+   "modules": [
+    "streamingRates",
+    "glossary"
+   ],
+   "pages": [
+    "streaming-rates/",
+    "glossary/",
+    "guides/what-are-your-streams-worth"
+   ]
+  },
+  {
+   "find": "~2% of global streaming",
+   "replace": "Not published by the platform",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Deezer is a France-based streaming platform that pioneered the artist-centric payment system (ACPS), fundamentally rethinking how streaming revenue is distributed. While smaller than the top-tier platforms, Deezer's payment model innovation makes it an important player \u2014 particularly for professional artists creating original content.",
+   "replace": "Deezer is a France-based streaming platform that launched an artist-centric payment system with Universal Music Group in France in late 2023, changing how its royalty pool is distributed. Deezer reported 8.9 million subscribers as of June 30, 2026. Plan prices vary by country: viewed from Sweden in September 2026, Deezer's offers page listed Premium at 119 kr a month, Duo at 159 kr, Family at 209 kr and Student at 59 kr.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/universal-music-group-and-deezer-to-launch-the-first-comprehensive-artist-centric-music-streaming-model-301918974.html",
+    "https://newsroom-deezer.com/2026/07/deezer-h1-2026-results-direct-growth-profitability/",
+    "https://www.deezer.com/us/offers"
+   ]
+  },
+  {
+   "find": "Deezer's artist-centric payment system (ACPS) weights payments toward artists that listeners actively seek out rather than passively consume. Streams are 'boosted' when the listener searched for the artist, saved their music, or added it to a personal playlist. Algorithmic and background plays receive standard weighting. Artists must achieve at least 1,000 streams from 500 unique listeners per month to qualify for boosted payments.",
+   "replace": "Deezer's artist-centric payment system still pays from a pool funded by subscriptions, but weights streams differently. According to Deezer, artists with more than 1,000 streams a month from at least 500 unique listeners count double, streams the listener actively searched for or found on Deezer's own playlists count double, and the two boosts can combine to four times a standard stream. Each user counts for at most 1,000 streams a month, and Deezer replaces non-artist noise content such as rain and white noise with its own content that earns no royalties.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/",
+    "https://www.prnewswire.com/news-releases/universal-music-group-and-deezer-to-launch-the-first-comprehensive-artist-centric-music-streaming-model-301918974.html"
+   ]
+  },
+  {
+   "find": "The artist-centric model can benefit ambient artists who build intentional listener bases \u2014 fans who actively search for and save their music rather than passively hearing it on algorithmic playlists. Deezer has a strong presence in France and other European markets, making it particularly relevant for artists with European audiences.",
+   "replace": "The artist-centric model can benefit ambient artists whose fans actively search for their music. Deezer says it replaces non-artist noise content such as rain and white noise with its own non-royalty content, so functional sound tracks may earn less there than artist-made ambient music. France is Deezer's largest market: 3.9 million of its 5.8 million direct subscribers were in France at June 30, 2026, according to Deezer's H1 2026 results.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/",
+    "https://newsroom-deezer.com/2026/07/deezer-h1-2026-results-direct-growth-profitability/"
+   ]
+  },
+  {
+   "find": "Competitive per-stream rates in the $0.004-$0.007 range",
+   "replace": "Premium, Duo, Family and Student plans; prices vary by country (Premium was listed at 119 kr a month on Deezer's offers page viewed from Sweden in September 2026)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/us/offers"
+   ]
+  },
+  {
+   "find": "Transparent about payment methodology with public reporting",
+   "replace": "Explains its payment model publicly on its artist remuneration page",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/"
+   ]
+  },
+  {
+   "find": "Small global market share concentrated primarily in European markets",
+   "replace": "Smaller user base than the largest platforms, concentrated in France",
+   "reason": "figure sourced",
+   "sources": [
+    "https://newsroom-deezer.com/2026/07/deezer-h1-2026-results-direct-growth-profitability/"
+   ]
+  },
+  {
+   "find": "Minimum threshold of 1,000 streams and 500 unique listeners to qualify for boosted rates",
+   "replace": "Artists need more than 1,000 streams a month from at least 500 unique listeners to get the professional-artist boost",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/"
+   ]
+  },
+  {
+   "find": "Deezer pays between $0.004 and $0.007 per stream under its artist-centric payment system. The exact rate depends on whether the stream was an 'active' listen (searched, saved, playlisted by the user) or a passive/algorithmic play, with active listens receiving boosted payments.",
+   "replace": "Deezer does not publish a fixed payout per stream. Under its artist-centric payment system, the amount depends on the subscription pool, the listener's country, and how each stream is weighted: according to Deezer, streams from artists with more than 1,000 monthly streams by at least 500 unique listeners count double, and streams the listener actively searched for count double again. Divide your Deezer receipts by your Deezer streams to get your own 2026 average.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/"
+   ]
+  },
+  {
+   "find": "Deezer's ACPS distinguishes between active and passive listening. When a listener intentionally searches for, saves, or playlists your music, those streams receive a payment boost. This is designed to reward artists who build genuine fan relationships rather than those who game algorithmic playlists with short, repetitive tracks.",
+   "replace": "Deezer's artist-centric payment system, launched in France in late 2023 with Universal Music Group, weights streams instead of counting them all equally. Professional artists (more than 1,000 streams a month from at least 500 unique listeners) get a double boost, and streams from active searches get a further boost. Deezer says the aim is to direct more money to artists that fans actively choose.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/",
+    "https://www.prnewswire.com/news-releases/universal-music-group-and-deezer-to-launch-the-first-comprehensive-artist-centric-music-streaming-model-301918974.html"
+   ]
+  },
+  {
+   "find": "Deezer's subscriber base is concentrated in France, Brazil, and parts of Africa and Europe.",
+   "replace": "Deezer's subscriber base is concentrated in France, which accounted for 3.9 million of its 5.8 million direct subscribers at June 30, 2026, according to Deezer.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://newsroom-deezer.com/2026/07/deezer-h1-2026-results-direct-growth-profitability/"
+   ]
+  },
+  {
+   "find": "~5% (unique position as a creator-first platform)",
+   "replace": "Not published by the platform",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "320M+ monthly listeners, ~40K monetizing artists on SoundCloud Premier",
+   "replace": "Listener and subscriber numbers not listed here; see SoundCloud's own reporting",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "While its per-stream rates are among the lowest, its fan-powered royalties model and massive indie community make it",
+   "replace": "Its fan-powered royalties model and large indie community make it",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Only artists accepted into SoundCloud Premier (or using SoundCloud's distribution) can monetize streams.",
+   "replace": "Only eligible artists enrolled in SoundCloud's monetization programs can earn from streams.",
+   "reason": "policy"
+  },
+  {
+   "find": "Lower overall per-stream rates compared to premium-focused platforms",
+   "replace": "Large ad-supported free tier pays less per play than paid listening",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "SoundCloud pays between $0.002 and $0.004 per stream through its fan-powered royalties system. Rates vary based on whether the listener is a paying subscriber (higher per-stream) or a free-tier user (ad-supported, lower per-stream). Only artists enrolled in SoundCloud Premier can monetize their plays.",
+   "replace": "SoundCloud does not publish a fixed per-stream rate. Under fan-powered royalties, what you earn depends on which listeners play your music and whether they are paying subscribers or ad-supported free listeners. Only eligible artists enrolled in SoundCloud's monetization programs can earn from their plays.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "If a listener pays $9.99/month and spends 50% of their listening time on your ambient tracks, roughly half their fee goes to you \u2014 rather than being diluted across the entire platform's stream pool.",
+   "replace": "In a hypothetical example, if a paying listener spends half of their listening time on your ambient tracks, you receive half of the royalty share of that listener's fee, rather than a share of the entire platform's stream pool.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Spotify pays $0.003\u2013$0.005 per stream, Apple Music pays $0.007\u2013$0.01, and Tidal leads at $0.008\u2013$0.013. At these rates, an independent ambient or lo-fi artist with 500,000 monthly streams earns roughly $2,000\u2013$5,000 per year. However, your catalog's lump-sum value is typically 4\u201310x your annual streaming revenue \u2014 meaning a catalog earning $5,000/year could be worth $20,000\u2013$50,000 as a one-time payout.",
+   "replace": "Spotify, Apple Music, Tidal and the other major platforms do not pay a fixed rate per stream. Spotify pays rights holders by their share of total monthly streams, and Apple reported an average of $0.01 per play for Apple Music individual paid plans in 2020. Your own rate depends on where your listeners are, which plans they use, and your distributor or label deal. A catalog's lump-sum value is a separate question: a buyer reviews annual net revenue, its consistency and trend, rights ownership, and documentation, and any offer depends on that individual review.",
+   "reason": "multiple removed",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide",
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "The answer \u2014 somewhere between $0.003 and $0.005 \u2014 usually triggers one of two reactions: disbelief or resignation. But the per-stream number, while technically accurate, tells a deeply incomplete story.",
+   "replace": "There is no single answer: Spotify, like other major services, does not pay a fixed rate per stream, and the per-stream figures that circulate online are estimates. Those numbers tell an incomplete story.",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "This guide breaks down actual per-stream rates across every major platform in 2026, explains why ambient and lo-fi artists face unique challenges in the streaming economy, and reveals the catalog valuation math that most artists never learn.",
+   "replace": "This guide explains how per-stream payouts are calculated on every major platform in 2026, why ambient and lo-fi artists face particular challenges in the streaming economy, and which factors a catalog valuation looks at.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Most artists assume streaming platforms pay a fixed rate per play \u2014 play a song, earn a penny. The reality is more complex and, frankly, less favorable.",
+   "replace": "Many artists assume streaming platforms pay a fixed rate per play. They don't, and Spotify states that no major streaming service does.",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "A newer alternative is the user-centric (or fan-powered) model, used by Tidal, SoundCloud, and Deezer's artist-centric variant. Under this system, each subscriber's monthly fee is distributed only to the artists they personally listened to. If a Tidal subscriber spends their entire month listening to your ambient catalog, the majority of their $10.99 goes to you \u2014 not to Drake or Taylor Swift. This model fundamentally benefits niche artists with dedicated listeners, which is why it's gaining traction despite being harder to implement.",
+   "replace": "A newer alternative is the user-centric (or fan-powered) model, used by SoundCloud. Under this system, the royalty share of each subscriber's fee is distributed only to the artists they personally listened to. If a subscriber spends their entire month listening to your ambient catalog, that royalty share goes to you rather than into a platform-wide pool. Deezer uses a different approach, an artist-centric model that keeps the pool but gives extra weight to professional artists and to streams listeners actively search for. These models can benefit niche artists with dedicated listeners.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/",
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "If Spotify pays $0.004 per stream but your distributor takes 15%, your NPS is $0.0034.",
+   "replace": "In a hypothetical example, if a stream earns $0.004 gross and your distributor takes 15%, your NPS is $0.0034.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Per-stream rates vary dramatically across platforms, and the difference compounds at scale. Tidal leads at $0.008\u2013$0.013 per stream, meaning a million Tidal streams could earn you $8,000\u2013$13,000. Apple Music follows at $0.007\u2013$0.01 per stream \u2014 roughly double Spotify's rate \u2014 because every Apple Music listener is a paying subscriber. There's no free tier diluting the pool.",
+   "replace": "No major platform publishes a fixed per-stream rate, so every per-stream figure is an estimate. The one official average comes from Apple, which reported $0.01 per play for Apple Music individual paid plans in 2020, including label and publisher royalties. Apple Music has no ad-supported free tier, which keeps its average higher than on services where many listeners use free plans.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Amazon Music sits in the middle at $0.004\u2013$0.008, though rates depend heavily on which tier the listener uses. Amazon Music Unlimited pays competitively, but Prime Music (included free with Prime memberships) pays substantially less. For ambient artists, Amazon's Alexa integration is a wild card \u2014 voice-activated plays like 'Alexa, play rain sounds' funnel enormous volume to ambient catalogs.",
+   "replace": "Amazon Music payouts depend heavily on which tier the listener uses: paid Unlimited listening generally pays more than listening through Prime or the free ad-supported tier. For ambient artists, Amazon's Alexa integration matters, because voice requests like 'Alexa, play rain sounds' send listeners to mood playlists rather than to a named artist.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Spotify, despite being the largest platform, pays $0.003\u2013$0.005 per stream. Its massive free tier (380M+ users who don't pay for subscriptions) significantly dilutes the average payout. YouTube Music pays a comparable $0.002\u2013$0.005, though the broader YouTube ecosystem adds Content ID revenue that can meaningfully boost total earnings for ambient artists.",
+   "replace": "Spotify pays rights holders by streamshare, their share of total streams each month, from a pool it says is roughly two-thirds of its music revenue. Spotify reported 494 million ad-supported monthly active users and 300 million Premium subscribers in Q2 2026, and ad-supported listening brings in less revenue per stream than Premium. YouTube Music also has no fixed rate, and the broader YouTube ecosystem adds Content ID revenue that can add to total earnings for ambient artists.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide",
+    "https://www.sec.gov/Archives/edgar/data/0001639920/000114036126031044/ef20078867_ex99-1.htm"
+   ]
+  },
+  {
+   "find": "Deezer ($0.004\u2013$0.007) and SoundCloud ($0.002\u2013$0.004) round out the field with smaller subscriber bases but innovative payment models. Deezer's artist-centric system boosts payments for intentional listens, while SoundCloud's fan-powered royalties benefit artists with devoted fan bases.",
+   "replace": "Deezer and SoundCloud have smaller subscriber bases and different payment models. Deezer's artist-centric system boosts professional artists and streams listeners actively search for, while SoundCloud's fan-powered royalties benefit artists with devoted fan bases. Tidal, also smaller, closed its Direct Artist Payouts program in 2023.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/",
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "10,000 Tidal streams can be worth more than 30,000 Spotify streams.",
+   "replace": "Your distributor statements show your real average per stream on each platform.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "A stream is a stream, regardless of duration (after the 30-second minimum threshold).",
+   "replace": "On Spotify, a stream counts after 30 seconds of listening, regardless of the track's length.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://support.spotify.com/us/artists/article/how-we-count-streams/"
+   ]
+  },
+  {
+   "find": "When a playlist curator rotates your track out, your streams can drop 80% overnight.",
+   "replace": "When a playlist curator rotates your track out, your streams can drop sharply overnight.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Ambient artists often release high volumes of content \u2014 albums with 15-20 tracks, each 5-10 minutes long.",
+   "replace": "Ambient artists often release high volumes of content, such as long albums made of long tracks.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "(Spotify now requires 1,000 annual streams per track for monetization)",
+   "replace": "(since April 2024, Spotify requires at least 1,000 streams in the previous 12 months for a track to earn recorded music royalties)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://support.spotify.com/us/artists/article/track-monetization-eligibility/"
+   ]
+  },
+  {
+   "find": "And that lump-sum value is almost always significantly more than you'd guess.",
+   "replace": "That value depends on the revenue history and rights behind it.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "In the music industry, catalogs are valued as multiples of annual net revenue. The multiplier depends on the catalog's genre, growth trajectory, listener demographics, and revenue consistency. Mainstream pop and hip-hop catalogs from established artists trade at 15-30x annual revenue. Independent catalogs in stable genres like ambient, lo-fi, and mood music typically trade at 4-10x annual revenue.",
+   "replace": "In the music industry, catalogs are often valued as a multiple of annual net revenue. The multiple depends on the catalog's genre, growth trajectory, revenue consistency, rights ownership, metadata, and concentration in top tracks, and it differs widely from one catalog to another. There is no standard multiple for a genre; each catalog is priced on an individual review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Let's make this concrete. Say you're an ambient artist earning $200/month across all streaming platforms \u2014 that's $2,400/year. At a conservative 4x multiple, your catalog has a lump-sum value of $9,600. At 8x, it's $19,200. At 10x (achievable for catalogs with growing streams and diversified platform distribution), that's $24,000.",
+   "replace": "Illustrative example, not a SPACE transaction: say you're an ambient artist earning $200/month across all streaming platforms, or $2,400 a year in documented royalties. A review would check who owns the masters and publishing, how consistent those royalties have been over recent years, how much comes from your top few tracks, which platforms and countries the money comes from, and whether your metadata and distributor statements are complete. Those answers, not the genre alone, decide whether an offer is made and at what level.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Scale this up: an artist earning $500/month ($6,000/year) has a catalog worth $24,000\u2013$60,000. At $1,000/month ($12,000/year), the range is $48,000\u2013$120,000.",
+   "replace": "The same checks apply at $500/month ($6,000/year) or $1,000/month ($12,000/year). Higher revenue changes the size of what is reviewed, not the factors.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Why would someone pay 8x annual revenue for a music catalog? Because streaming revenue is remarkably predictable and recurring.",
+   "replace": "Why would someone pay several years of revenue upfront for a music catalog? Because documented streaming revenue can be predictable and recurring.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "The question isn't 'how do I get more streams?' \u2014 it's 'do I want to collect $500/month for the next 10 years, or receive $48,000 today?' Both are rational choices, but most artists never realize the second option exists.",
+   "replace": "Besides 'how do I get more streams?', you can ask 'do I want to keep collecting $500/month, or receive a lump sum today?' Both are rational choices, and many artists don't realize the second option exists.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "If your monthly revenue has been growing 5-10% month-over-month, your catalog commands a higher multiple.",
+   "replace": "If your monthly revenue has been growing steadily, that supports a higher valuation.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Step three: apply the appropriate multiplier. For independent ambient, lo-fi, meditation, and mood music catalogs, typical ranges are: 4-6x for catalogs with declining or flat revenue, 6-8x for stable catalogs with diversified platform distribution, and 8-10x for growing catalogs with strong listener demographics and multiple revenue sources.",
+   "replace": "Step three: look at the other factors a review weighs: rights ownership (masters, publishing, or both), metadata and documentation quality, concentration in your top tracks, and platform mix. Declining revenue, heavy dependence on a few tracks, or gaps in documentation lower a valuation; stable, diversified, well-documented revenue supports it. The actual figure depends on an individual review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "For a quick estimate, SPACE's catalog valuation calculator lets you input your streaming data and receive an instant preliminary valuation. It accounts for platform distribution, genre weighting, trend analysis, and comparable catalog sales to generate a realistic range.",
+   "replace": "For a quick estimate, SPACE's catalog valuation calculator lets you input your streaming data and see an indicative range. Reference ranges are indicative only and are not guaranteed offers; the actual offer depends on the catalog reviewed, the rights included, and the supporting documentation.",
+   "reason": "policy"
+  },
+  {
+   "find": "Here's the reality: at $0.004 per stream, earning $50,000 from streaming alone would require 12.5 million streams.",
+   "replace": "Here's the arithmetic: at a hypothetical average of $0.004 per stream, earning $50,000 from streaming alone would require 12.5 million streams.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Partial catalog sales are increasingly common and let you balance",
+   "replace": "Partial catalog sales let you balance",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Get your free catalog valuation in minutes, or apply directly to work with our team on a personalized offer.",
+   "replace": "Get a free estimate with the calculator, or apply for a free catalog review; SPACE typically sends an initial offer 5-7 business days after receiving the relevant catalog information.",
+   "reason": "policy"
+  },
+  {
+   "find": "Largest platform, lowest per-stream rates. Pro-rata model diluted by massive free tier.",
+   "replace": "Largest user base. Streamshare model; ad-supported listening pays less.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Highest-paying major platform. All-paid subscriber base with no free tier.",
+   "replace": "Apple reported a $0.01 average per play (individual plans, 2020). No free tier.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Low per-stream but massive reach. Content ID adds significant revenue for ambient artists.",
+   "replace": "Large reach. Content ID can add revenue for ambient artists.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "Alexa-driven discovery is a hidden gem for ambient/sleep music. Rates vary by tier.",
+   "replace": "Alexa-driven discovery matters for ambient and sleep music. Payouts vary by tier.",
+   "reason": "unsourced figure removed"
+  },
+  {
+   "find": "Best per-stream rates in the industry. User-centric model benefits niche artists.",
+   "replace": "High-fidelity focus. Smaller user base; no published per-stream rate.",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "Artist-centric model rewards intentional listens. Strong in France and Europe.",
+   "replace": "Artist-centric model boosts professional artists and active listens. Largest market is France.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/",
+    "https://newsroom-deezer.com/2026/07/deezer-h1-2026-results-direct-growth-profitability/"
+   ]
+  },
+  {
+   "find": "Spotify pays between $0.003 and $0.005 per stream in 2026. The exact rate depends on the listener's country, whether they use the free or premium tier, and total platform-wide streaming volume that month. At the midpoint of $0.004 per stream, you'd need 250,000 streams to earn $1,000.",
+   "replace": "Spotify does not pay a fixed rate per stream in 2026. It pays rights holders by streamshare, their share of total streams in a month, from a pool that Spotify says is roughly two-thirds of its music revenue. The amount per stream depends on the listener's country, whether they use the free or premium tier, and total platform-wide streaming volume that month. To find your own rate, divide your Spotify net receipts by your Spotify streams for the same period.",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "A single music stream is worth between $0.002 (SoundCloud/YouTube) and $0.013 (Tidal) depending on the platform. However, the true value of your streams lies in what they say about your catalog's worth as an asset. Predictable, recurring streaming revenue can be valued at 4-10x annual earnings, meaning a catalog earning $5,000/year could have a lump-sum value of $20,000\u2013$50,000.",
+   "replace": "A single stream has no fixed value: platforms pay from revenue pools, so the amount varies by platform, country, plan type, and month. Apple is the only major platform in this guide that has published an average, $0.01 per play for Apple Music individual paid plans in 2020. The more useful measure is what your streams say about your catalog as an asset: predictable, recurring, well-documented revenue is what a buyer reviews when deciding on an offer.",
+   "reason": "multiple removed",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Per 1,000 streams: Spotify pays $3\u2013$5, Apple Music pays $7\u2013$10, Amazon Music pays $4\u2013$8, Tidal pays $8\u2013$13, YouTube Music pays $2\u2013$5, Deezer pays $4\u2013$7, and SoundCloud pays $2\u2013$4. These are gross platform rates before your distributor takes their cut (typically 10-20%).",
+   "replace": "There is no fixed amount per 1,000 streams on any major platform. Payouts come from revenue pools and vary by platform, listener country, plan type, and month. Apple's reported average of $0.01 per play for individual paid plans in 2020 works out to about $10 per 1,000 plays before label and distributor deductions. Your own figure is your net receipts divided by your streams, multiplied by 1,000.",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Apple Music pays roughly 2x more per stream than Spotify \u2014 $0.007\u2013$0.01 vs $0.003\u2013$0.005. The difference is because Apple Music has no free tier; every listener pays for a subscription. However, Spotify's much larger user base (626M vs 98M) means most artists earn more total revenue from Spotify despite the lower per-stream rate.",
+   "replace": "Neither pays a fixed rate. Apple reported an average of $0.01 per play for Apple Music individual paid plans in 2020; Spotify does not publish an average and pays by streamshare. Apple Music has no ad-supported free tier, while Spotify had 494 million ad-supported users alongside 300 million Premium subscribers in Q2 2026. Because Spotify's audience is much larger, many artists earn more total revenue there even if an Apple Music stream pays more on average.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate",
+    "https://www.sec.gov/Archives/edgar/data/0001639920/000114036126031044/ef20078867_ex99-1.htm",
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "Buyers like SPACE acquire catalogs at multiples of annual streaming revenue (typically 4-10x for independent artists).",
+   "replace": "Buyers like SPACE review each catalog individually, looking at annualized revenue, its consistency and trend, rights ownership, and documentation.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Your catalog's value is typically calculated as a multiple of your trailing 12-month net streaming revenue. For independent ambient, lo-fi, and mood music catalogs, multiples range from 4x (declining revenue) to 10x (growing revenue with diverse platform distribution). A catalog earning $6,000/year is typically worth $24,000\u2013$60,000 as a lump-sum sale. Use SPACE's free calculator for a personalized estimate.",
+   "replace": "Your catalog's value is usually based on your annualized net revenue, adjusted for revenue consistency and trend, platform mix, genre demand, rights ownership, metadata quality, and concentration in top tracks. There is no fixed multiple for a genre. Use SPACE's free calculator for an indicative estimate; reference ranges are not guaranteed offers, and the actual offer depends on an individual review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Tidal pays the most per stream at $0.008\u2013$0.013, followed by Apple Music at $0.007\u2013$0.01. However, 'most' depends on whether you're measuring per-stream rate or total revenue. Spotify pays the least per stream but generates the most total revenue for most artists due to its massive user base.",
+   "replace": "No platform publishes a fixed per-stream rate, so the rankings you see online are estimates. Apple is the only major service here with a published average ($0.01 per play for individual paid plans in 2020). 'Most' also depends on whether you measure per stream or total revenue: Spotify's large user base means it generates the most total streaming revenue for many artists.",
+   "reason": "per-stream figure removed",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "User-centric (used by Tidal, SoundCloud) distributes each subscriber's fee only to the artists they listened to.",
+   "replace": "User-centric (used by SoundCloud's fan-powered royalties) distributes the royalty share of each subscriber's fee only to the artists they listened to.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://musically.com/2023/03/01/tidal-shuts-direct-artist-payouts-scheme-after-paying-500k/"
+   ]
+  },
+  {
+   "find": "Apple Music pays 2x more per stream, and Amazon's Alexa drives ambient streams.",
+   "replace": "Each platform's audience and payout model differ, and Amazon's Alexa sends listeners to ambient playlists.",
+   "reason": "per-stream figure removed"
+  },
+  {
+   "find": "a catalog sale can unlock the full value of your music immediately at 4-10x annual revenue.",
+   "replace": "a catalog sale can turn future royalties into immediate capital, with any offer based on an individual review.",
+   "reason": "multiple removed"
+  },
+  {
+   "find": "Apple Music for Artists \u2014 Royalty Rate Disclosure",
+   "replace": "Apple Music for Artists \u2014 Apple Music Insights: Royalties",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "https://artists.apple.com/support/1124-apple-music-insights-overview",
+   "replace": "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.apple.com/support/1124-apple-music-insights-royalty-rate"
+   ]
+  },
+  {
+   "find": "Digital Music News \u2014 Per-Stream Rate Tracker",
+   "replace": "Spotify for Artists \u2014 Royalties guide",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "https://www.digitalmusicnews.com/",
+   "replace": "https://artists.spotify.com/en/royalties-guide",
+   "reason": "figure sourced",
+   "sources": [
+    "https://artists.spotify.com/en/royalties-guide"
+   ]
+  },
+  {
+   "find": "Billboard \u2014 The State of Music Streaming Revenue",
+   "replace": "Deezer \u2014 Artist remuneration",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/"
+   ]
+  },
+  {
+   "find": "https://www.billboard.com/business/streaming/",
+   "replace": "https://www.deezer.com/explore/en-us/artist-remuneration/",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.deezer.com/explore/en-us/artist-remuneration/"
+   ]
+  }
+ ]
+}

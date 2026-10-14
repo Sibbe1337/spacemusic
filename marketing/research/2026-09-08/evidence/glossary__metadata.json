@@ -1,0 +1,109 @@
+{
+  "requested": "/glossary/metadata/",
+  "url": "https://spacemusic.io/glossary/metadata/",
+  "status": 200,
+  "fetched": "2026-09-08T12:43:58.729Z",
+  "contentType": "text/html; charset=utf-8",
+  "title": "Metadata — Music Rights Glossary — SPACE",
+  "description": "The descriptive information embedded in or associated with a music file that identifies the work and its rights holders.",
+  "canonical": "https://spacemusic.io/glossary/metadata/",
+  "headings": [
+    "Metadata",
+    "What it means",
+    "Technical details",
+    "Frequently asked questions",
+    "What metadata should I include with every release?",
+    "How does bad metadata affect my royalties?",
+    "Related terms",
+    "Related terms",
+    "Where to go next"
+  ],
+  "paragraphs": [
+    "The descriptive information embedded in or associated with a music file that identifies the work and its rights holders.",
+    "Metadata in the music industry refers to all the descriptive and administrative information associated with a sound recording and its underlying composition. This includes basic identifiers (song title, artist name, album title, track number), technical information (ISRC, ISWC, UPC/EAN, duration, BPM, key), rights information (songwriter credits, publisher information, producer credits, PRO affiliations), and descriptive tags (genre, mood, instrumentation, era). Metadata is the backbone of the modern music industry — it is how streaming platforms, collection societies, and rights organizations identify music, attribute it to the correct rights holders, and ensure royalties are paid accurately. Poor or incomplete metadata is one of the biggest causes of lost royalties in the music industry. When metadata is missing, incorrect, or inconsistent across platforms, royalties can end up in \"black box\" funds — pools of unmatched money that eventually get distributed pro-rata to major rights holders rather than to the creators who earned them. For ambient and meditation music producers, metadata quality is particularly important because these genres often have similar-sounding titles (variations of \"Peaceful Morning,\" \"Deep Meditation,\" \"Ocean Waves\") and may not have distinctive artist names. Accurate and complete metadata — including proper ISRC codes, songwriter information, and publisher details — is essential to distinguish your tracks from others and ensure your royalties reach you.",
+    "Music metadata exists at multiple levels: file-level metadata (ID3 tags embedded in audio files), release-level metadata (submitted through distributors in DDEX format), and registration-level metadata (submitted to PROs, the MLC, and sound recording databases). Key metadata standards include: DDEX (Digital Data Exchange) for digital supply chain, CWR (Common Works Registration) for composition registration, ID3v2 for embedded audio file tags, and ISNI (International Standard Name Identifier) for person/organization identification. The Music Modernization Act's creation of the MLC has improved metadata matching in the US, but significant gaps remain globally. Industry initiatives like the Credits Due campaign and the development of the International Music Registry aim to create a comprehensive, linked database connecting recordings to compositions to rights holders. Best practices include maintaining a personal metadata database, using consistent naming conventions, registering ISRCs and ISWCs, and auditing metadata across platforms regularly.",
+    "Full guide",
+    "Related content",
+    "Want to monetize your catalog?",
+    "SPACE buys music catalogs in ambient, lo-fi, and meditation genres."
+  ],
+  "links": [
+    {
+      "text": "Glossary",
+      "href": "/glossary/"
+    },
+    {
+      "text": "ISRC (International Standard Recording Code)",
+      "href": "/glossary/isrc/"
+    },
+    {
+      "text": "ISWC (International Standard Musical Work Code)",
+      "href": "/glossary/iswc/"
+    },
+    {
+      "text": "Digital Aggregator",
+      "href": "/glossary/digital-aggregator/"
+    },
+    {
+      "text": "Content ID",
+      "href": "/glossary/content-id/"
+    },
+    {
+      "text": "PRO (Performing Rights Organization)",
+      "href": "/glossary/pro/"
+    },
+    {
+      "text": "Music Publisher",
+      "href": "/glossary/music-publisher/"
+    },
+    {
+      "text": "Music catalog sale documents: a seller checklist",
+      "href": "/blog/music-catalog-sale-documents-checklist/"
+    },
+    {
+      "text": "ISRC (International Standard Recording Code)",
+      "href": "/glossary/isrc/"
+    },
+    {
+      "text": "ISWC (International Standard Musical Work Code)",
+      "href": "/glossary/iswc/"
+    },
+    {
+      "text": "Digital Aggregator",
+      "href": "/glossary/digital-aggregator/"
+    },
+    {
+      "text": "Content ID",
+      "href": "/glossary/content-id/"
+    },
+    {
+      "text": "PRO (Performing Rights Organization)",
+      "href": "/glossary/pro/"
+    },
+    {
+      "text": "Music Publisher",
+      "href": "/glossary/music-publisher/"
+    },
+    {
+      "text": "Guide: next steps",
+      "href": "/guides/how-to-sell-music-rights/"
+    },
+    {
+      "text": "Genre landing",
+      "href": "/sell/sell-electronic-music-catalog/"
+    },
+    {
+      "text": "DistroKid vs. TuneCore: The Best Distributor for Ambient Music Creators",
+      "href": "/compare/distrokid-vs-tunecore/"
+    },
+    {
+      "text": "Catalog Value Calculator",
+      "href": "/calculator/"
+    },
+    {
+      "text": "Request a free catalog review",
+      "href": "/apply/"
+    }
+  ],
+  "text": "Glossary/MetadataproductionMetadataThe descriptive information embedded in or associated with a music file that identifies the work and its rights holders.What it meansMetadata in the music industry refers to all the descriptive and administrative information associated with a sound recording and its underlying composition. This includes basic identifiers (song title, artist name, album title, track number), technical information (ISRC, ISWC, UPC/EAN, duration, BPM, key), rights information (songwriter credits, publisher information, producer credits, PRO affiliations), and descriptive tags (genre, mood, instrumentation, era). Metadata is the backbone of the modern music industry — it is how streaming platforms, collection societies, and rights organizations identify music, attribute it to the correct rights holders, and ensure royalties are paid accurately. Poor or incomplete metadata is one of the biggest causes of lost royalties in the music industry. When metadata is missing, incorrect, or inconsistent across platforms, royalties can end up in \"black box\" funds — pools of unmatched money that eventually get distributed pro-rata to major rights holders rather than to the creators who earned them. For ambient and meditation music producers, metadata quality is particularly important because these genres often have similar-sounding titles (variations of \"Peaceful Morning,\" \"Deep Meditation,\" \"Ocean Waves\") and may not have distinctive artist names. Accurate and complete metadata — including proper ISRC codes, songwriter information, and publisher details — is essential to distinguish your tracks from others and ensure your royalties reach you.Technical detailsMusic metadata exists at multiple levels: file-level metadata (ID3 tags embedded in audio files), release-level metadata (submitted through distributors in DDEX format), and registration-level metadata (submitted to PROs, the MLC, and sound recording databases). Key metadata standards include: DDEX (Digital Data Exchange) for digital supply chain, CWR (Common Works Registration) for composition registration, ID3v2 for embedded audio file tags, and ISNI (International Standard Name Identifier) for person/organization identification. The Music Modernization Act's creation of the MLC has improved metadata matching in the US, but significant gaps remain globally. Industry initiatives like the Credits Due campaign and the development of the International Music Registry aim to create a comprehensive, linked database connecting recordings to compositions to rights holders. Best practices include maintaining a personal metadata database, using consistent naming conventions, registering ISRCs and ISWCs, and auditing metadata across platforms regularly.Frequently asked questionsWhat metadata should I include with every release?How does bad metadata affect my royalties?Related termsISRC (International Standard Recording Code)ISWC (International Standard Musical Work Code)Digital AggregatorContent IDPRO (Performing Rights Organization)Music PublisherFull guideMusic catalog sale documents: a seller checklistRelated contentRelated termsISRC (International Standard Recording Code)ISWC (International Standard Musical Work Code)Digital AggregatorContent IDPRO (Performing Rights Organization)Music PublisherWhere to go nextGuide: next stepsGenre landingDistroKid vs. TuneCore: The Best Distributor for Ambient Music CreatorsCatalog Value CalculatorWant to monetize your catalog?SPACE buys music catalogs in ambient, lo-fi, and meditation genres.Request a free catalog review"
+}

@@ -1,0 +1,2402 @@
+{
+  "source": "tmp/quiet-site-seo-v4-20260916",
+  "output": "tmp/buyer-intent-v1-20260916",
+  "revision": "0bd4ba2915f3",
+  "entry": "index-article-360c41838159-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js",
+  "sitemapUrls": 140,
+  "copyPages": [
+    "compare/catalog-sale-vs-catalog-loan/index.html",
+    "compare/distrokid-vs-tunecore/index.html",
+    "compare/exclusive-vs-non-exclusive-license/index.html",
+    "compare/full-buyout-vs-revenue-split/index.html",
+    "compare/index.html",
+    "compare/major-label-vs-independent/index.html",
+    "compare/partial-sale-vs-full-sale/index.html",
+    "compare/self-publishing-vs-publishing-deal/index.html",
+    "compare/selling-masters-vs-selling-publishing/index.html",
+    "compare/spotify-vs-apple-music-royalties/index.html",
+    "compare/sync-licensing-vs-streaming-revenue/index.html",
+    "for/ambient-music-producer/index.html",
+    "for/independent-artist-catalog-owner/index.html",
+    "for/lo-fi-beat-maker/index.html",
+    "for/meditation-music-creator/index.html",
+    "for/music-producer-ready-to-retire/index.html",
+    "for/side-project-musician/index.html",
+    "for/sync-licensing-composer/index.html",
+    "for/wellness-app-soundtrack-creator/index.html",
+    "glossary/advance/index.html",
+    "glossary/blanket-license/index.html",
+    "glossary/buyout-deal/index.html",
+    "glossary/catalog-acquisition/index.html",
+    "glossary/catalog-loan/index.html",
+    "glossary/catalog-valuation/index.html",
+    "glossary/compulsory-license/index.html",
+    "glossary/content-id/index.html",
+    "glossary/cue-sheet/index.html",
+    "glossary/digital-aggregator/index.html",
+    "glossary/distribution-deal/index.html",
+    "glossary/exclusive-vs-non-exclusive-license/index.html",
+    "glossary/independent-artist/index.html",
+    "glossary/isrc/index.html",
+    "glossary/iswc/index.html",
+    "glossary/master-rights/index.html",
+    "glossary/mechanical-royalties/index.html",
+    "glossary/metadata/index.html",
+    "glossary/music-catalog/index.html",
+    "glossary/music-publisher/index.html",
+    "glossary/neighboring-rights/index.html",
+    "glossary/partial-sale-vs-full-sale/index.html",
+    "glossary/performance-royalties/index.html",
+    "glossary/pro/index.html",
+    "glossary/publishing-rights/index.html",
+    "glossary/record-label/index.html",
+    "glossary/recoupment/index.html",
+    "glossary/revenue-multiple/index.html",
+    "glossary/royalty-split/index.html",
+    "glossary/sample-clearance/index.html",
+    "glossary/streaming-royalties/index.html",
+    "glossary/sub-publishing/index.html",
+    "glossary/sync-licensing/index.html",
+    "sell/sell-ambient-music-catalog/index.html",
+    "sell/sell-focus-music-catalog/index.html",
+    "sell/sell-house-music-catalog/index.html",
+    "sell/sell-study-beats-catalog/index.html"
+  ],
+  "pageEdits": {
+    "compare/catalog-sale-vs-catalog-loan/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      },
+      {
+        "before": "Compare selling your music catalog outright versus taking a catalog-backed loan. Understand the pros, cons, and financial implications of each approach for music creators.",
+        "after": "Compare a music catalog sale, a catalog-backed loan and a royalty advance. Understand rights, retained income, repayment and the questions to ask before signing."
+      },
+      {
+        "before": "Yes, companies like Sound Royalties and Lyric Financial offer loans based on verified royalty income streams, even for smaller catalogs. The minimum thresholds vary, but some providers work with catalogs generating as little as $1,000-$5,000 per year.",
+        "after": "Eligibility depends on the provider, documented income, the rights available and the proposed structure. This page does not establish a minimum revenue level or a lender approval. A royalty advance may not be a loan. SPACE does not offer catalog loans; its free application is for a potential catalog purchase."
+      },
+      {
+        "before": "Interest rates for catalog loans typically range from 8-15%, depending on the catalog's revenue consistency, the loan-to-value ratio, the term, and the borrower's overall financial profile. Rates are higher than traditional bank loans because of the asset's specialized nature.",
+        "after": "No verified market-wide rate range is established here. Ask a lender for the total repayment amount, fees, payment schedule, security, guarantees and default terms. For an advance, examine the recoupment amount and end conditions rather than assuming that a product with no stated interest has no economic cost."
+      },
+      {
+        "before": "Music creators looking to monetize their catalog assets face a fundamental choice: sell the catalog outright for a lump sum, or use the catalog as collateral for a loan while retaining ownership. Both approaches convert your music's value into immediate capital, but they differ dramatically in terms of ownership, risk, long-term financial implications, and tax treatment. Catalog sales have dominated the music industry conversation thanks to headline deals involving artists like Bob Dylan and Bruce Springsteen, but catalog loans have emerged as a compelling alternative for creators who need capital but aren't ready to permanently part with their rights. For ambient and meditation music creators — whose catalogs are often in early-to-mid growth stages driven by the expanding wellness market — this decision is especially consequential because selling a growing asset means missing the upside, while a loan preserves ownership but introduces debt obligations.",
+        "after": "A catalog sale exchanges defined rights or royalty interests for a purchase price. A catalog-backed loan creates a repayment obligation secured under the agreement. A royalty advance can use a different structure again: do not assume every upfront payment is a loan. For independent artists and labels in any genre, compare the rights committed, net cash available, future income retained and consequences if royalties fall. SPACE considers direct catalog purchases; it does not offer a loan or royalty-advance product."
+      },
+      {
+        "before": "A catalog sale involves permanently transferring ownership of your music rights (masters, publishing, or both) to a buyer in exchange for a one-time purchase price. The buyer receives all future revenue from the catalog.",
+        "after": "A catalog sale transfers the interests specified in the agreement. It can cover selected recordings, a defined share or all of the seller's interest in the included catalog. The buyer receives the income attached to the interest purchased, not automatically every royalty the artist or label earns."
+      },
+      {
+        "before": "Maximum upfront capital — typically 8-15x annual net revenue",
+        "after": "An agreed purchase price for the interests included, rather than an assumed market multiple"
+      },
+      {
+        "before": "Zero ongoing risk — buyer assumes all future revenue uncertainty",
+        "after": "Future income performance on the sold interest passes economically to the buyer, subject to the contract"
+      },
+      {
+        "before": "No debt obligations or repayment requirements",
+        "after": "An outright sale is not a loan repayment schedule; continuing contractual duties still need review"
+      },
+      {
+        "before": "Clean break — no ongoing relationship or reporting obligations",
+        "after": "The parties can define which administration and reporting duties transfer"
+      },
+      {
+        "before": "Capital gains tax treatment (potentially lower rates than ordinary income)",
+        "after": "Tax consequences can be evaluated before committing, with jurisdiction-specific advice"
+      },
+      {
+        "before": "No interest payments eating into your returns",
+        "after": "No loan interest on an outright purchase, although transaction costs and deductions may apply"
+      },
+      {
+        "before": "Freedom to focus entirely on new creative projects",
+        "after": "Existing recordings can be separated from future creative work in the agreed scope"
+      },
+      {
+        "before": "Permanent loss of ownership and all future revenue",
+        "after": "You give up the rights and future income included in the sale for its agreed duration"
+      },
+      {
+        "before": "Missing the upside if the catalog grows in value (common for ambient music)",
+        "after": "Growth in the sold interest benefits the buyer; genre alone does not establish a growth forecast"
+      },
+      {
+        "before": "Emotional difficulty of selling your creative work",
+        "after": "The personal significance of parting with your work is a separate consideration from price"
+      },
+      {
+        "before": "Buyer may make licensing decisions you disagree with",
+        "after": "Licensing and approval rights depend on the agreement and any rights you reserve"
+      },
+      {
+        "before": "One-time capital must be managed wisely — there's no ongoing income from the catalog",
+        "after": "An upfront payment may replace income you need for future operating costs"
+      },
+      {
+        "before": "Transaction costs (legal, valuation, due diligence) can be significant",
+        "after": "Legal, valuation and other transaction costs reduce the cash available to you"
+      },
+      {
+        "before": "Tax burden is concentrated in a single event",
+        "after": "Taxes, payment timing and withholding require advice specific to the seller and transaction"
+      },
+      {
+        "before": "Creators who are confident the upfront payment exceeds the present value of projected future earnings, those approaching retirement or a major life transition, and artists with catalogs that have plateaued in revenue growth.",
+        "after": "Owners willing to explore transferring a clearly defined interest and compare a written offer with the income and rights they would retain. This is not a recommendation to sell, and choosing not to transact remains an option."
+      },
+      {
+        "before": "A catalog loan (royalty-backed financing) allows you to borrow money using your catalog's future royalties as collateral. You retain ownership of the catalog and repay the loan from future royalty income plus interest.",
+        "after": "A catalog-backed loan involves borrowing under a lender's agreement, potentially secured against rights or royalty income. Ownership, collection arrangements, guarantees, repayment obligations and default remedies must be checked in the actual documents. Retaining legal title does not mean retaining unrestricted use of all royalties."
+      },
+      {
+        "before": "Retain full ownership of your music rights and future revenue",
+        "after": "Ownership may remain with you, subject to security and default provisions"
+      },
+      {
+        "before": "Access capital without permanently divesting from your creative work",
+        "after": "Capital can be available without an outright sale, if a lender approves the application"
+      },
+      {
+        "before": "Loan proceeds are not taxable income (unlike sale proceeds)",
+        "after": "A loan and a sale have different tax questions; obtain advice rather than assuming either is tax-free"
+      },
+      {
+        "before": "Interest payments may be tax-deductible as business expenses",
+        "after": "Compare the total repayment cost, including interest and fees, before selecting an offer"
+      },
+      {
+        "before": "Benefit from future catalog growth (especially important for ambient music in the wellness market)",
+        "after": "You may retain exposure to future growth as well as the risk of lower income"
+      },
+      {
+        "before": "Can refinance or pay off early if your financial situation improves",
+        "after": "Early repayment or refinancing may be possible if the agreement permits it"
+      },
+      {
+        "before": "Catalog reverts to unencumbered ownership once the loan is repaid",
+        "after": "Release of security and collection instructions should be documented when obligations are satisfied"
+      },
+      {
+        "before": "Smaller access to capital — typically 3-8x annual revenue (vs. 8-15x for a sale)",
+        "after": "Available capital is lender- and catalog-specific; no universal revenue multiple is established here"
+      },
+      {
+        "before": "Interest payments increase the total cost of capital",
+        "after": "Interest, fees and other charges can increase the total repayment cost"
+      },
+      {
+        "before": "Ongoing debt obligation with fixed repayment schedule",
+        "after": "Payment schedules and obligations can continue even when royalty receipts fall"
+      },
+      {
+        "before": "Risk of foreclosure if revenue drops and you can't make payments",
+        "after": "Default can put pledged rights or other collateral at risk, depending on the agreement"
+      },
+      {
+        "before": "Royalty income is diverted to loan repayment during the term",
+        "after": "Some royalty income may be redirected to meet repayment obligations"
+      },
+      {
+        "before": "More complex financial management and reporting requirements",
+        "after": "Reporting and financial-management duties can continue through the arrangement"
+      },
+      {
+        "before": "Lender may impose covenants restricting licensing or administration decisions",
+        "after": "Covenants or security arrangements may limit licensing, transfers or administration changes"
+      },
+      {
+        "before": "Ambient and meditation music creators with growing catalogs who need capital for new projects, equipment, or personal needs but don't want to sell a growing asset. Ideal for creators who believe their catalog's future value exceeds the current sale price.",
+        "after": "Owners comparing the cost and obligations of borrowing with a sale or retaining their catalog. Affordability under lower-income scenarios and the consequences of default need independent assessment; a growing genre is not evidence that borrowing is suitable."
+      },
+      {
+        "before": "8-15x annual net revenue",
+        "after": "Individually negotiated purchase price"
+      },
+      {
+        "before": "3-8x annual net revenue",
+        "after": "Individual lender assessment and terms"
+      },
+      {
+        "before": "Permanently transferred",
+        "after": "Only the interests defined in the sale transfer"
+      },
+      {
+        "before": "Retained — catalog returned after repayment",
+        "after": "Depends on security and default provisions"
+      },
+      {
+        "before": "None — all goes to buyer",
+        "after": "Income from excluded or retained interests can remain"
+      },
+      {
+        "before": "Excess above debt service may pass through",
+        "after": "Collection and available cash depend on repayment terms"
+      },
+      {
+        "before": "No ongoing risk — clean break",
+        "after": "Lost income and continuing warranties or other duties"
+      },
+      {
+        "before": "Foreclosure risk if revenue drops",
+        "after": "Repayment, covenant and collateral risks"
+      },
+      {
+        "before": "Capital gains event",
+        "after": "Seller-, asset- and jurisdiction-specific advice required"
+      },
+      {
+        "before": "Loan proceeds not taxable; interest may be deductible",
+        "after": "Seller-, instrument- and jurisdiction-specific advice required"
+      },
+      {
+        "before": "Lost — buyer benefits from growth",
+        "after": "Buyer benefits on the sold interest; retained interests remain exposed"
+      },
+      {
+        "before": "Retained — you benefit after loan repayment",
+        "after": "May remain with the owner subject to agreement performance"
+      },
+      {
+        "before": "Foregone future revenue",
+        "after": "Future income given up plus transaction costs and deductions"
+      },
+      {
+        "before": "Interest payments over loan term",
+        "after": "Principal, interest, fees and other agreed charges"
+      },
+      {
+        "before": "One-time transaction",
+        "after": "Closing plus any continuing duties in the agreement"
+      },
+      {
+        "before": "Ongoing relationship over loan term (3-7 years)",
+        "after": "Agreed term and any extension or default provisions"
+      },
+      {
+        "before": "For ambient and meditation music creators with catalogs in growth mode, a catalog loan is often the smarter financial move. The wellness music market is expanding, which means your catalog's value is likely increasing over time. Selling a growing asset means the buyer captures all the upside you've built toward. A loan lets you access capital now while preserving the long-term value of your catalog. However, be conservative with the loan amount — don't borrow more than 50-60% of what you'd expect to earn over the loan term, and ensure your projected revenue comfortably exceeds the debt service requirements. If your catalog has plateaued or is declining, a sale may be the better option since the loan's interest costs would eat into diminishing returns.",
+        "after": "There is no universal winner. Put the same catalog scope and income assumptions beside each written proposal, then compare net proceeds, retained cash flow, control, total obligations and downside scenarios. A label must account for money owed to artists and producers before treating royalty receipts as spendable income. Keeping the catalog and reducing or delaying the project is also a valid option. SPACE is a potential buyer, not an independent adviser or lender; seek independent legal, financial and tax advice."
+      },
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/distrokid-vs-tunecore/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/exclusive-vs-non-exclusive-license/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/full-buyout-vs-revenue-split/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      },
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      }
+    ],
+    "compare/major-label-vs-independent/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/partial-sale-vs-full-sale/index.html": [
+      {
+        "before": "A partial sale is typically priced as a proportional fraction of the full catalog value, sometimes with a minority discount (5-15%) since the buyer doesn't get full control. A full sale may include a control premium. For example, if a catalog is worth $100,000, a 50% share might sell for $45,000-$50,000 rather than exactly $50,000.",
+        "after": "A partial offer is negotiated for the actual interest, including its control, duration, restrictions and expected income. It is not necessarily a proportional slice of a full offer. No standard discount, premium or sale multiple is promised. Compare written offers on the same net-income and rights basis."
+      },
+      {
+        "before": "This is possible if your purchase agreement includes a buyback option or right of first refusal. Without such provisions, you would need to negotiate a repurchase from the current owner at the then-current market value, which may be higher than what you originally sold it for.",
+        "after": "Only if the agreement gives you an applicable repurchase right or the owner later agrees to sell. A right of first refusal usually concerns a proposed sale to someone else; it is not automatically an option to buy back whenever you choose. Have an independent lawyer explain the actual clause, trigger, price and time limit."
+      },
+      {
+        "before": "When monetizing a music catalog through a sale, the question isn't just whether to sell — it's how much to sell. A full sale (100% of rights) provides maximum capital but eliminates your future income and ownership stake. A partial sale (selling 20%, 50%, or any fraction of your rights) provides some capital while preserving ongoing income and potential upside. Partial sales have become increasingly accessible through platforms like Royalty Exchange and through direct negotiations with investors. For ambient and meditation music creators, partial sales offer a particularly attractive middle ground: access capital for new productions, equipment, or personal needs while retaining majority ownership of a catalog that's likely to grow in value as the wellness market expands. This comparison examines both approaches to help you determine the right selling strategy for your specific situation.",
+        "after": "A partial catalog sale can mean selected recordings or a defined share of the rights or royalties you control. A full sale means all of your interest in the agreed catalog, not necessarily every right in every song, and not automatically your future releases. For independent artists and labels across genres, the useful comparison is net cash now versus income, rights and responsibilities retained. Neither route is always better, and keeping a majority percentage does not by itself guarantee licensing or creative control."
+      },
+      {
+        "before": "A partial sale involves selling a percentage of your music rights (e.g., 20%, 30%, or 50%) to an investor while retaining the remainder. Revenue is split according to the ownership percentages, and both parties co-own the asset.",
+        "after": "A partial transaction may cover a subset of recordings, a percentage of an owned interest, or a defined royalty-income interest. Co-ownership is not the structure of every deal. Specify tracks, rights, shares, income streams, territory and duration before comparing prices."
+      },
+      {
+        "before": "Access capital while retaining ongoing income from the retained portion",
+        "after": "Raise capital while retaining the income attributable to interests outside the sale"
+      },
+      {
+        "before": "Preserve upside potential if the catalog grows in value",
+        "after": "Keep exposure to future growth on the retained interest, with no guarantee of growth"
+      },
+      {
+        "before": "Maintain creative and administrative control if you retain the majority stake",
+        "after": "Negotiate reserved approvals and administration rights instead of relying on ownership percentage alone"
+      },
+      {
+        "before": "Lower emotional impact — you don't fully give up ownership of your work",
+        "after": "Retain a connection to part of the catalog if that matters to your plans"
+      },
+      {
+        "before": "Can sell additional portions later as your financial needs change",
+        "after": "A later sale may be possible, subject to the original agreement and required consents"
+      },
+      {
+        "before": "Investor's capital and expertise may help grow the overall catalog value",
+        "after": "Evaluate any promised buyer services separately and require them to be documented"
+      },
+      {
+        "before": "Flexible deal structures — sell 10%, 30%, 50%, or any amount",
+        "after": "Propose the selected recordings or share that matches the scope you want reviewed"
+      },
+      {
+        "before": "Smaller upfront payment compared to a full sale",
+        "after": "The price need not be a simple percentage of a hypothetical whole-catalog valuation"
+      },
+      {
+        "before": "Ongoing co-ownership requires relationship management and shared decision-making",
+        "after": "Ongoing collection, reporting or co-ownership arrangements need clear responsibilities"
+      },
+      {
+        "before": "Administrative complexity — revenue splits must be managed accurately",
+        "after": "Revenue splits, deductions and payment instructions need accurate administration"
+      },
+      {
+        "before": "Minority interest discounts may reduce the effective per-unit price",
+        "after": "Control, transfer restrictions and scope can affect the price of the interest"
+      },
+      {
+        "before": "Potential for disagreements with the co-owner on licensing and management decisions",
+        "after": "Approval or licensing disputes are possible if responsibilities are unclear"
+      },
+      {
+        "before": "Future sale of the remaining interest may be complicated by existing co-ownership",
+        "after": "The first agreement may restrict a later sale of the remaining interest"
+      },
+      {
+        "before": "Legal costs for structuring a partial sale can be proportionally higher",
+        "after": "Professional costs must be considered relative to the actual net proceeds"
+      },
+      {
+        "before": "Ambient and meditation music creators who need capital but believe their catalog will grow significantly. Ideal for creators with catalogs in the early-to-mid growth phase of the wellness music market who want to raise funds without fully divesting from a valuable asset.",
+        "after": "Owners who want to examine retaining selected rights or income while accessing capital. The proposed retained cash flow, contractual control and transaction costs matter more than a standard percentage recommendation."
+      },
+      {
+        "before": "A full sale transfers 100% of your music rights to the buyer. You receive the maximum upfront payment and have no further ownership, revenue share, or decision-making authority over the sold catalog.",
+        "after": "A full sale transfers all of the seller's interest in the specifically included catalog. Third-party shares, excluded recordings and separately held publishing do not become yours to sell. Payment, licensing powers and continuing obligations are determined by the agreement."
+      },
+      {
+        "before": "Maximum capital — the full valuation of your catalog as an upfront payment",
+        "after": "Compare a written offer for the complete interest with a narrower proposal"
+      },
+      {
+        "before": "Clean, simple transaction with no ongoing obligations",
+        "after": "Collection and administration of the sold interest can be transferred where agreed"
+      },
+      {
+        "before": "Complete separation from the sold catalog — focus on the future",
+        "after": "Define a boundary between the sold back catalog and excluded future work"
+      },
+      {
+        "before": "No co-ownership complications or shared decision-making",
+        "after": "Avoid retaining an ownership share in the sold interest, while checking other continuing duties"
+      },
+      {
+        "before": "Buyer is more motivated (and may pay a premium) for full control",
+        "after": "A buyer can evaluate the complete scope; a premium is not guaranteed"
+      },
+      {
+        "before": "Simplest tax treatment — single capital gains event",
+        "after": "Plan the transaction with independent tax advice before committing"
+      },
+      {
+        "before": "No risk of co-owner disputes or misalignment",
+        "after": "Clarify who makes decisions for the transferred interest after closing"
+      },
+      {
+        "before": "Permanent loss of all future revenue from the catalog",
+        "after": "Future income on the sold interest is no longer yours for the agreed duration"
+      },
+      {
+        "before": "No benefit from future growth in streaming, sync, or the wellness market",
+        "after": "Future growth of that sold interest benefits the buyer"
+      },
+      {
+        "before": "Emotional finality of completely separating from your creative work",
+        "after": "Parting with all of the included interest can be difficult to reverse"
+      },
+      {
+        "before": "One-time cash influx requires careful financial management",
+        "after": "The net payment needs to cover your plans without relying on income already sold"
+      },
+      {
+        "before": "May undervalue catalogs with strong growth trajectories",
+        "after": "Forecasts are uncertain; compare scenarios rather than assuming a peak price"
+      },
+      {
+        "before": "Loss of all creative control — buyer can license your music however they choose",
+        "after": "Approval rights may transfer unless protections or exclusions are agreed"
+      },
+      {
+        "before": "Cannot reverse the decision if the catalog's value increases dramatically",
+        "after": "There is no automatic right to repurchase because your circumstances change"
+      },
+      {
+        "before": "Creators who are confident the catalog has reached peak or stable valuation, those who need maximum capital for a major financial goal, and artists transitioning out of music who want a clean break.",
+        "after": "Owners prepared to consider transferring the complete defined interest after assessing the written price, exclusions, income replacement and continuing obligations. This is not a prediction of a catalog's future peak value."
+      },
+      {
+        "before": "Proportional to percentage sold",
+        "after": "Price for the specific share or recordings offered"
+      },
+      {
+        "before": "Full catalog valuation",
+        "after": "Price for all of the defined seller interest"
+      },
+      {
+        "before": "Yes — from retained percentage",
+        "after": "Income attributable to retained or excluded interests"
+      },
+      {
+        "before": "None",
+        "after": "No income from the sold interest; excluded income can remain"
+      },
+      {
+        "before": "Yes — you retain what you don't sell",
+        "after": "Only the rights explicitly kept outside the transfer"
+      },
+      {
+        "before": "None — full transfer",
+        "after": "No ownership in the transferred interest"
+      },
+      {
+        "before": "Preserved on retained portion",
+        "after": "Possible on the retained interest, not guaranteed"
+      },
+      {
+        "before": "Completely forfeited",
+        "after": "Passes to buyer on the transferred interest"
+      },
+      {
+        "before": "Higher — co-ownership management",
+        "after": "Collection, splits and approvals require a clear arrangement"
+      },
+      {
+        "before": "Lower — clean transfer",
+        "after": "Transfer and any continuing duties still need documentation"
+      },
+      {
+        "before": "Shared with co-owner",
+        "after": "Set by the agreement, not percentage alone"
+      },
+      {
+        "before": "Fully transferred to buyer",
+        "after": "Set by transferred and reserved rights"
+      },
+      {
+        "before": "Can sell more later, or buy back",
+        "after": "Later sales or repurchase subject to agreed rights and consents"
+      },
+      {
+        "before": "No flexibility — final transaction",
+        "after": "No automatic repurchase; check any negotiated provisions"
+      },
+      {
+        "before": "Possible minority discount",
+        "after": "No universal minority discount is established here"
+      },
+      {
+        "before": "May include control premium",
+        "after": "No universal control premium is established here"
+      },
+      {
+        "before": "For ambient and meditation music creators with catalogs in growth mode, a partial sale is almost always the better strategy. Selling 20-40% of your catalog provides meaningful capital while preserving the majority of your future revenue stream and ownership stake. The wellness music market is expanding, and your catalog's value is likely increasing — selling 100% today means the buyer captures all that future growth. A common smart approach: sell a minority interest (20-30%) to raise capital for new productions and marketing that accelerate the catalog's growth, then benefit from the increased value of your retained 70-80% stake. Reserve a full sale for when you're confident the catalog has reached its maximum value or when you're ready for a complete career transition.",
+        "after": "Compare a partial offer and a full offer using the same rights schedule, income definition and payment assumptions. Do not presume a minority sale is always better, or that a full sale removes every obligation. List what you keep, what income remains after costs, who controls licensing and what would happen if revenue falls. SPACE can consider a defined share or selected recordings, subject to review and agreement. Use independent advisers and retain the option not to sell."
+      },
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      },
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/self-publishing-vs-publishing-deal/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/selling-masters-vs-selling-publishing/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/spotify-vs-apple-music-royalties/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "compare/sync-licensing-vs-streaming-revenue/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "for/ambient-music-producer/index.html": [
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "for/independent-artist-catalog-owner/index.html": [
+      {
+        "before": "Independent artists own their masters and publishing — that means your catalog is yours to sell. SpaceMusic.io provides fair valuations and connects you with buyers.",
+        "after": "Considering selling an independent music catalog? Define your rights, prepare royalty records and request a free review from SPACE, a direct catalog buyer."
+      },
+      {
+        "before": "From initial valuation to completed sale, the typical timeline is 4-8 weeks. This includes the valuation and metadata audit (1-2 weeks), listing and buyer matching (1-3 weeks), negotiation and legal review (1-2 weeks), and closing and rights transfer (1 week). Complex catalogs or deals may take longer.",
+        "after": "SPACE's published initial-offer timeframe is typically 5-7 business days after relevant catalog information is received, subject to review. It is not a guaranteed deadline or a payment promise. Closing depends on the agreement, documentation and satisfied transfer conditions."
+      },
+      {
+        "before": "Key documents include: proof of ownership (distributor agreements, PRO registrations), revenue documentation (streaming reports, royalty statements), a complete track listing with metadata (ISRCs, songwriter credits), and any existing licensing agreements. We guide you through gathering everything during the listing process.",
+        "after": "Prepare a track list, royalty statements, a schedule of the interests you control, collaborator splits and relevant distribution, artist, producer and licensing agreements. Flag missing records, outstanding advances and consent requirements. A distributor account or PRO registration alone does not prove every right is transferable."
+      },
+      {
+        "before": "What if I'm not ready to sell but want to know my catalog's value?",
+        "after": "What if I am not ready to sell but want to understand my options?"
+      },
+      {
+        "before": "That's completely fine. Many artists get a valuation simply to understand their financial position. There's no obligation to list or sell. Knowing your catalog's value is useful for estate planning, tax purposes, and making informed decisions about your music career.",
+        "after": "The initial catalog-review application is free and does not oblige you to sell. The calculator is an assumptions-based scenario, not an appraisal or purchase offer. A potential buyer's review is not an independent valuation for tax, estate or litigation purposes."
+      },
+      {
+        "before": "You've been releasing music independently for years — maybe a decade or more. You own your masters, you own your publishing, and you've built a catalog that generates consistent streaming revenue. You distribute through DistroKid, TuneCore, or CD Baby, collect your own royalties, and manage your own rights. Independence has given you full ownership, but it's also given you full responsibility. You handle metadata, registrations, Content ID disputes, distributor issues, and tax accounting — on top of actually creating music. Your catalog may include 50, 200, or 500+ tracks across multiple albums, EPs, and singles. You know this catalog has real financial value, but you've never had it professionally valued, and you don't know where to begin exploring a sale or partial monetization.",
+        "after": "An independently released catalog can generate income without a major-label agreement, but distributing your own music does not prove you own every master or composition. Start with the rights and royalty interests you actually control. Your catalog may span one release or years of work, across any genre. If you are exploring a sale, identify the recordings, collaborators, existing agreements and net income before comparing an upfront payment with the income you would retain. SPACE offers a free initial review for a potential direct purchase, not a buyer-listing marketplace."
+      },
+      {
+        "before": "Free, transparent catalog valuation that shows you exactly how your catalog's value is calculated",
+        "after": "A free initial catalog review based on the information and evidence you provide"
+      },
+      {
+        "before": "Educational resources explaining every step of the catalog sale process — no surprises",
+        "after": "Educational resources to prepare for the review and understand questions before signing"
+      },
+      {
+        "before": "Vetted buyer network ensures you're dealing with legitimate, experienced music industry buyers",
+        "after": "A conversation with SPACE as a potential direct buyer, rather than a promise of buyer matching"
+      },
+      {
+        "before": "Deal structure options ranging from partial sales (retain some ownership) to full buyouts",
+        "after": "Consideration of selected recordings or a defined share, subject to review and agreement"
+      },
+      {
+        "before": "Legal review support to ensure contract terms are fair and protect your interests",
+        "after": "A clear reminder to obtain independent legal review; SPACE is not your legal adviser"
+      },
+      {
+        "before": "Tax guidance resources to help you understand the financial implications of different deal structures",
+        "after": "Preparation questions for your own tax adviser, not personalized tax advice from SPACE"
+      },
+      {
+        "before": "No-pressure exploration — get a valuation and learn about your options with no obligation to sell",
+        "after": "No obligation to accept an offer or proceed with a sale"
+      },
+      {
+        "before": "Finally understand the financial value of the catalog you've built over years of independent work",
+        "after": "Understand which rights and income need to be assessed before an offer can be meaningful"
+      },
+      {
+        "before": "Access professional buyers and investors without needing industry connections",
+        "after": "Approach a direct buyer without listing your catalog in an auction"
+      },
+      {
+        "before": "Negotiate from a position of knowledge with a clear, transparent valuation as your foundation",
+        "after": "Prepare a documented scope so competing proposals can be compared on a like-for-like basis"
+      },
+      {
+        "before": "Choose the deal structure that fits your life — full sale, partial sale, or catalog loan",
+        "after": "Explore full or partial sale scope; SPACE does not offer catalog loans"
+      },
+      {
+        "before": "Reduce the administrative burden that comes with managing an extensive independent catalog",
+        "after": "Clarify which administration duties would transfer and which could remain"
+      },
+      {
+        "before": "Receive fair market value for your music — protected by transparent valuation methodology and buyer vetting",
+        "after": "Evaluate an actual written offer without treating a scenario calculator as market value"
+      },
+      {
+        "before": "Make an informed financial decision with support at every step of the process",
+        "after": "Decide whether to continue, seek independent advice or keep your catalog"
+      },
+      {
+        "before": "An independent artist with a 350-track catalog spanning 12 years of releases was generating $15,000/year through DistroKid distribution, ASCAP performance royalties, and a handful of small sync placements. The artist had never had the catalog valued and was spending 10+ hours per week on administrative tasks. After listing on SpaceMusic.io, a metadata audit uncovered $4,500 in uncollected international mechanical royalties, which boosted the catalog's effective annual revenue to $19,500. At an 11x multiple, the catalog was valued at $214,500. The artist chose a full buyout and used the proceeds to pay off a mortgage and fund a year of full-time music creation, starting a new catalog with zero administrative baggage.",
+        "after": "Hypothetical illustration, not a SPACE customer result: an independent owner documents $12,000 in annual net income attributable to the rights being considered. If a transaction covered 50% of that income interest, unchanged future receipts would allocate $6,000 annually to the buyer and leave $6,000 before other costs and taxes. This does not establish a purchase price, predict future receipts or show that such a deal would be suitable or available. The owner would still need a rights schedule, an actual offer and independent advice. No royalty recovery, completed purchase or payout is claimed."
+      },
+      {
+        "before": "Get Your Free Catalog Valuation — No Strings Attached",
+        "after": "Explore a sale of the rights you control"
+      },
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "for/lo-fi-beat-maker/index.html": [
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "for/meditation-music-creator/index.html": [
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "for/music-producer-ready-to-retire/index.html": [
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "for/side-project-musician/index.html": [
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "for/sync-licensing-composer/index.html": [
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "for/wellness-app-soundtrack-creator/index.html": [
+      {
+        "before": "Submit your catalog and get a valuation from SPACE.",
+        "after": "Request a free initial review for a potential purchase. No obligation to sell."
+      }
+    ],
+    "glossary/advance/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/blanket-license/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/buyout-deal/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/catalog-acquisition/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/catalog-loan/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      },
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/catalog-valuation/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/compulsory-license/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/content-id/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/cue-sheet/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/digital-aggregator/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/distribution-deal/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/exclusive-vs-non-exclusive-license/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/independent-artist/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/isrc/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/iswc/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/master-rights/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/mechanical-royalties/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/metadata/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/music-catalog/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      },
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/music-publisher/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/neighboring-rights/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/partial-sale-vs-full-sale/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/performance-royalties/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/pro/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/publishing-rights/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/record-label/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/recoupment/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/revenue-multiple/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/royalty-split/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/sample-clearance/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/streaming-royalties/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/sub-publishing/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "glossary/sync-licensing/index.html": [
+      {
+        "before": "SPACE buys music catalogs in ambient, lo-fi, and meditation genres.",
+        "after": "SPACE considers revenue-generating catalogs across genres. Free initial review; any purchase is subject to assessment and agreement."
+      }
+    ],
+    "sell/sell-ambient-music-catalog/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      }
+    ],
+    "sell/sell-focus-music-catalog/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      }
+    ],
+    "sell/sell-house-music-catalog/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      }
+    ],
+    "sell/sell-study-beats-catalog/index.html": [
+      {
+        "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+        "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+      }
+    ]
+  },
+  "modules": [
+    [
+      "comparisons-OFVO5GNZ.js",
+      "comparisons-OFVO5GNZ-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "personas-poXD4ezC.js",
+      "personas-poXD4ezC-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "GlossaryTerm-article-bafaef98cff6-quietseo-fd17485db4c3.js",
+      "GlossaryTerm-article-bafaef98cff6-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "index-article-360c41838159-quietseo-fd17485db4c3.js",
+      "index-article-360c41838159-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "RelatedContent-BT4Ol14S-quietseo-fd17485db4c3.js",
+      "RelatedContent-BT4Ol14S-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ],
+    [
+      "StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js",
+      "StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-intent-0bd4ba2915f3.js"
+    ]
+  ],
+  "records": [
+    {
+      "route": "/compare/catalog-sale-vs-catalog-loan/",
+      "slug": "catalog-sale-vs-catalog-loan",
+      "family": "comparisons",
+      "edits": [
+        {
+          "key": ".title",
+          "before": "Catalog Sale vs. Catalog Loan: Monetizing Your Music Without Losing It",
+          "after": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs"
+        },
+        {
+          "key": ".metaDescription",
+          "before": "Compare selling your music catalog outright versus taking a catalog-backed loan. Understand the pros, cons, and financial implications of each approach for music creators.",
+          "after": "Compare a music catalog sale, a catalog-backed loan and a royalty advance. Understand rights, retained income, repayment and the questions to ask before signing."
+        },
+        {
+          "key": ".introduction",
+          "before": "Music creators looking to monetize their catalog assets face a fundamental choice: sell the catalog outright for a lump sum, or use the catalog as collateral for a loan while retaining ownership. Both approaches convert your music's value into immediate capital, but they differ dramatically in terms of ownership, risk, long-term financial implications, and tax treatment. Catalog sales have dominated the music industry conversation thanks to headline deals involving artists like Bob Dylan and Bruce Springsteen, but catalog loans have emerged as a compelling alternative for creators who need capital but aren't ready to permanently part with their rights. For ambient and meditation music creators — whose catalogs are often in early-to-mid growth stages driven by the expanding wellness market — this decision is especially consequential because selling a growing asset means missing the upside, while a loan preserves ownership but introduces debt obligations.",
+          "after": "A catalog sale exchanges defined rights or royalty interests for a purchase price. A catalog-backed loan creates a repayment obligation secured under the agreement. A royalty advance can use a different structure again: do not assume every upfront payment is a loan. For independent artists and labels in any genre, compare the rights committed, net cash available, future income retained and consequences if royalties fall. SPACE considers direct catalog purchases; it does not offer a loan or royalty-advance product."
+        },
+        {
+          "key": ".optionA.description",
+          "before": "A catalog sale involves permanently transferring ownership of your music rights (masters, publishing, or both) to a buyer in exchange for a one-time purchase price. The buyer receives all future revenue from the catalog.",
+          "after": "A catalog sale transfers the interests specified in the agreement. It can cover selected recordings, a defined share or all of the seller's interest in the included catalog. The buyer receives the income attached to the interest purchased, not automatically every royalty the artist or label earns."
+        },
+        {
+          "key": ".optionA.pros.0",
+          "before": "Maximum upfront capital — typically 8-15x annual net revenue",
+          "after": "An agreed purchase price for the interests included, rather than an assumed market multiple"
+        },
+        {
+          "key": ".optionA.pros.1",
+          "before": "Zero ongoing risk — buyer assumes all future revenue uncertainty",
+          "after": "Future income performance on the sold interest passes economically to the buyer, subject to the contract"
+        },
+        {
+          "key": ".optionA.pros.2",
+          "before": "No debt obligations or repayment requirements",
+          "after": "An outright sale is not a loan repayment schedule; continuing contractual duties still need review"
+        },
+        {
+          "key": ".optionA.pros.3",
+          "before": "Clean break — no ongoing relationship or reporting obligations",
+          "after": "The parties can define which administration and reporting duties transfer"
+        },
+        {
+          "key": ".optionA.pros.4",
+          "before": "Capital gains tax treatment (potentially lower rates than ordinary income)",
+          "after": "Tax consequences can be evaluated before committing, with jurisdiction-specific advice"
+        },
+        {
+          "key": ".optionA.pros.5",
+          "before": "No interest payments eating into your returns",
+          "after": "No loan interest on an outright purchase, although transaction costs and deductions may apply"
+        },
+        {
+          "key": ".optionA.pros.6",
+          "before": "Freedom to focus entirely on new creative projects",
+          "after": "Existing recordings can be separated from future creative work in the agreed scope"
+        },
+        {
+          "key": ".optionA.cons.0",
+          "before": "Permanent loss of ownership and all future revenue",
+          "after": "You give up the rights and future income included in the sale for its agreed duration"
+        },
+        {
+          "key": ".optionA.cons.1",
+          "before": "Missing the upside if the catalog grows in value (common for ambient music)",
+          "after": "Growth in the sold interest benefits the buyer; genre alone does not establish a growth forecast"
+        },
+        {
+          "key": ".optionA.cons.2",
+          "before": "Emotional difficulty of selling your creative work",
+          "after": "The personal significance of parting with your work is a separate consideration from price"
+        },
+        {
+          "key": ".optionA.cons.3",
+          "before": "Buyer may make licensing decisions you disagree with",
+          "after": "Licensing and approval rights depend on the agreement and any rights you reserve"
+        },
+        {
+          "key": ".optionA.cons.4",
+          "before": "One-time capital must be managed wisely — there's no ongoing income from the catalog",
+          "after": "An upfront payment may replace income you need for future operating costs"
+        },
+        {
+          "key": ".optionA.cons.5",
+          "before": "Transaction costs (legal, valuation, due diligence) can be significant",
+          "after": "Legal, valuation and other transaction costs reduce the cash available to you"
+        },
+        {
+          "key": ".optionA.cons.6",
+          "before": "Tax burden is concentrated in a single event",
+          "after": "Taxes, payment timing and withholding require advice specific to the seller and transaction"
+        },
+        {
+          "key": ".optionA.bestFor",
+          "before": "Creators who are confident the upfront payment exceeds the present value of projected future earnings, those approaching retirement or a major life transition, and artists with catalogs that have plateaued in revenue growth.",
+          "after": "Owners willing to explore transferring a clearly defined interest and compare a written offer with the income and rights they would retain. This is not a recommendation to sell, and choosing not to transact remains an option."
+        },
+        {
+          "key": ".optionB.description",
+          "before": "A catalog loan (royalty-backed financing) allows you to borrow money using your catalog's future royalties as collateral. You retain ownership of the catalog and repay the loan from future royalty income plus interest.",
+          "after": "A catalog-backed loan involves borrowing under a lender's agreement, potentially secured against rights or royalty income. Ownership, collection arrangements, guarantees, repayment obligations and default remedies must be checked in the actual documents. Retaining legal title does not mean retaining unrestricted use of all royalties."
+        },
+        {
+          "key": ".optionB.pros.0",
+          "before": "Retain full ownership of your music rights and future revenue",
+          "after": "Ownership may remain with you, subject to security and default provisions"
+        },
+        {
+          "key": ".optionB.pros.1",
+          "before": "Access capital without permanently divesting from your creative work",
+          "after": "Capital can be available without an outright sale, if a lender approves the application"
+        },
+        {
+          "key": ".optionB.pros.2",
+          "before": "Loan proceeds are not taxable income (unlike sale proceeds)",
+          "after": "A loan and a sale have different tax questions; obtain advice rather than assuming either is tax-free"
+        },
+        {
+          "key": ".optionB.pros.3",
+          "before": "Interest payments may be tax-deductible as business expenses",
+          "after": "Compare the total repayment cost, including interest and fees, before selecting an offer"
+        },
+        {
+          "key": ".optionB.pros.4",
+          "before": "Benefit from future catalog growth (especially important for ambient music in the wellness market)",
+          "after": "You may retain exposure to future growth as well as the risk of lower income"
+        },
+        {
+          "key": ".optionB.pros.5",
+          "before": "Can refinance or pay off early if your financial situation improves",
+          "after": "Early repayment or refinancing may be possible if the agreement permits it"
+        },
+        {
+          "key": ".optionB.pros.6",
+          "before": "Catalog reverts to unencumbered ownership once the loan is repaid",
+          "after": "Release of security and collection instructions should be documented when obligations are satisfied"
+        },
+        {
+          "key": ".optionB.cons.0",
+          "before": "Smaller access to capital — typically 3-8x annual revenue (vs. 8-15x for a sale)",
+          "after": "Available capital is lender- and catalog-specific; no universal revenue multiple is established here"
+        },
+        {
+          "key": ".optionB.cons.1",
+          "before": "Interest payments increase the total cost of capital",
+          "after": "Interest, fees and other charges can increase the total repayment cost"
+        },
+        {
+          "key": ".optionB.cons.2",
+          "before": "Ongoing debt obligation with fixed repayment schedule",
+          "after": "Payment schedules and obligations can continue even when royalty receipts fall"
+        },
+        {
+          "key": ".optionB.cons.3",
+          "before": "Risk of foreclosure if revenue drops and you can't make payments",
+          "after": "Default can put pledged rights or other collateral at risk, depending on the agreement"
+        },
+        {
+          "key": ".optionB.cons.4",
+          "before": "Royalty income is diverted to loan repayment during the term",
+          "after": "Some royalty income may be redirected to meet repayment obligations"
+        },
+        {
+          "key": ".optionB.cons.5",
+          "before": "More complex financial management and reporting requirements",
+          "after": "Reporting and financial-management duties can continue through the arrangement"
+        },
+        {
+          "key": ".optionB.cons.6",
+          "before": "Lender may impose covenants restricting licensing or administration decisions",
+          "after": "Covenants or security arrangements may limit licensing, transfers or administration changes"
+        },
+        {
+          "key": ".optionB.bestFor",
+          "before": "Ambient and meditation music creators with growing catalogs who need capital for new projects, equipment, or personal needs but don't want to sell a growing asset. Ideal for creators who believe their catalog's future value exceeds the current sale price.",
+          "after": "Owners comparing the cost and obligations of borrowing with a sale or retaining their catalog. Affordability under lower-income scenarios and the consequences of default need independent assessment; a growing genre is not evidence that borrowing is suitable."
+        },
+        {
+          "key": ".features.0.optionA",
+          "before": "8-15x annual net revenue",
+          "after": "Individually negotiated purchase price"
+        },
+        {
+          "key": ".features.0.optionB",
+          "before": "3-8x annual net revenue",
+          "after": "Individual lender assessment and terms"
+        },
+        {
+          "key": ".features.1.optionA",
+          "before": "Permanently transferred",
+          "after": "Only the interests defined in the sale transfer"
+        },
+        {
+          "key": ".features.1.optionB",
+          "before": "Retained — catalog returned after repayment",
+          "after": "Depends on security and default provisions"
+        },
+        {
+          "key": ".features.2.optionA",
+          "before": "None — all goes to buyer",
+          "after": "Income from excluded or retained interests can remain"
+        },
+        {
+          "key": ".features.2.optionB",
+          "before": "Excess above debt service may pass through",
+          "after": "Collection and available cash depend on repayment terms"
+        },
+        {
+          "key": ".features.3.optionA",
+          "before": "No ongoing risk — clean break",
+          "after": "Lost income and continuing warranties or other duties"
+        },
+        {
+          "key": ".features.3.optionB",
+          "before": "Foreclosure risk if revenue drops",
+          "after": "Repayment, covenant and collateral risks"
+        },
+        {
+          "key": ".features.4.optionA",
+          "before": "Capital gains event",
+          "after": "Seller-, asset- and jurisdiction-specific advice required"
+        },
+        {
+          "key": ".features.4.optionB",
+          "before": "Loan proceeds not taxable; interest may be deductible",
+          "after": "Seller-, instrument- and jurisdiction-specific advice required"
+        },
+        {
+          "key": ".features.5.optionA",
+          "before": "Lost — buyer benefits from growth",
+          "after": "Buyer benefits on the sold interest; retained interests remain exposed"
+        },
+        {
+          "key": ".features.5.optionB",
+          "before": "Retained — you benefit after loan repayment",
+          "after": "May remain with the owner subject to agreement performance"
+        },
+        {
+          "key": ".features.6.optionA",
+          "before": "Foregone future revenue",
+          "after": "Future income given up plus transaction costs and deductions"
+        },
+        {
+          "key": ".features.6.optionB",
+          "before": "Interest payments over loan term",
+          "after": "Principal, interest, fees and other agreed charges"
+        },
+        {
+          "key": ".features.7.optionA",
+          "before": "One-time transaction",
+          "after": "Closing plus any continuing duties in the agreement"
+        },
+        {
+          "key": ".features.7.optionB",
+          "before": "Ongoing relationship over loan term (3-7 years)",
+          "after": "Agreed term and any extension or default provisions"
+        },
+        {
+          "key": ".verdict",
+          "before": "For ambient and meditation music creators with catalogs in growth mode, a catalog loan is often the smarter financial move. The wellness music market is expanding, which means your catalog's value is likely increasing over time. Selling a growing asset means the buyer captures all the upside you've built toward. A loan lets you access capital now while preserving the long-term value of your catalog. However, be conservative with the loan amount — don't borrow more than 50-60% of what you'd expect to earn over the loan term, and ensure your projected revenue comfortably exceeds the debt service requirements. If your catalog has plateaued or is declining, a sale may be the better option since the loan's interest costs would eat into diminishing returns.",
+          "after": "There is no universal winner. Put the same catalog scope and income assumptions beside each written proposal, then compare net proceeds, retained cash flow, control, total obligations and downside scenarios. A label must account for money owed to artists and producers before treating royalty receipts as spendable income. Keeping the catalog and reducing or delaying the project is also a valid option. SPACE is a potential buyer, not an independent adviser or lender; seek independent legal, financial and tax advice."
+        },
+        {
+          "key": ".faq.0.answer",
+          "before": "Yes, companies like Sound Royalties and Lyric Financial offer loans based on verified royalty income streams, even for smaller catalogs. The minimum thresholds vary, but some providers work with catalogs generating as little as $1,000-$5,000 per year.",
+          "after": "Eligibility depends on the provider, documented income, the rights available and the proposed structure. This page does not establish a minimum revenue level or a lender approval. A royalty advance may not be a loan. SPACE does not offer catalog loans; its free application is for a potential catalog purchase."
+        },
+        {
+          "key": ".faq.1.answer",
+          "before": "Interest rates for catalog loans typically range from 8-15%, depending on the catalog's revenue consistency, the loan-to-value ratio, the term, and the borrower's overall financial profile. Rates are higher than traditional bank loans because of the asset's specialized nature.",
+          "after": "No verified market-wide rate range is established here. Ask a lender for the total repayment amount, fees, payment schedule, security, guarantees and default terms. For an advance, examine the recoupment amount and end conditions rather than assuming that a product with no stated interest has no economic cost."
+        }
+      ],
+      "next": {
+        "slug": "catalog-sale-vs-catalog-loan",
+        "title": "Catalog Sale vs. Catalog Loan: Rights, Costs and Trade-Offs",
+        "metaDescription": "Compare a music catalog sale, a catalog-backed loan and a royalty advance. Understand rights, retained income, repayment and the questions to ask before signing.",
+        "primaryKeyword": "sell music catalog vs catalog loan",
+        "introduction": "A catalog sale exchanges defined rights or royalty interests for a purchase price. A catalog-backed loan creates a repayment obligation secured under the agreement. A royalty advance can use a different structure again: do not assume every upfront payment is a loan. For independent artists and labels in any genre, compare the rights committed, net cash available, future income retained and consequences if royalties fall. SPACE considers direct catalog purchases; it does not offer a loan or royalty-advance product.",
+        "optionA": {
+          "name": "Catalog Sale",
+          "description": "A catalog sale transfers the interests specified in the agreement. It can cover selected recordings, a defined share or all of the seller's interest in the included catalog. The buyer receives the income attached to the interest purchased, not automatically every royalty the artist or label earns.",
+          "pros": [
+            "An agreed purchase price for the interests included, rather than an assumed market multiple",
+            "Future income performance on the sold interest passes economically to the buyer, subject to the contract",
+            "An outright sale is not a loan repayment schedule; continuing contractual duties still need review",
+            "The parties can define which administration and reporting duties transfer",
+            "Tax consequences can be evaluated before committing, with jurisdiction-specific advice",
+            "No loan interest on an outright purchase, although transaction costs and deductions may apply",
+            "Existing recordings can be separated from future creative work in the agreed scope"
+          ],
+          "cons": [
+            "You give up the rights and future income included in the sale for its agreed duration",
+            "Growth in the sold interest benefits the buyer; genre alone does not establish a growth forecast",
+            "The personal significance of parting with your work is a separate consideration from price",
+            "Licensing and approval rights depend on the agreement and any rights you reserve",
+            "An upfront payment may replace income you need for future operating costs",
+            "Legal, valuation and other transaction costs reduce the cash available to you",
+            "Taxes, payment timing and withholding require advice specific to the seller and transaction"
+          ],
+          "bestFor": "Owners willing to explore transferring a clearly defined interest and compare a written offer with the income and rights they would retain. This is not a recommendation to sell, and choosing not to transact remains an option."
+        },
+        "optionB": {
+          "name": "Catalog Loan",
+          "description": "A catalog-backed loan involves borrowing under a lender's agreement, potentially secured against rights or royalty income. Ownership, collection arrangements, guarantees, repayment obligations and default remedies must be checked in the actual documents. Retaining legal title does not mean retaining unrestricted use of all royalties.",
+          "pros": [
+            "Ownership may remain with you, subject to security and default provisions",
+            "Capital can be available without an outright sale, if a lender approves the application",
+            "A loan and a sale have different tax questions; obtain advice rather than assuming either is tax-free",
+            "Compare the total repayment cost, including interest and fees, before selecting an offer",
+            "You may retain exposure to future growth as well as the risk of lower income",
+            "Early repayment or refinancing may be possible if the agreement permits it",
+            "Release of security and collection instructions should be documented when obligations are satisfied"
+          ],
+          "cons": [
+            "Available capital is lender- and catalog-specific; no universal revenue multiple is established here",
+            "Interest, fees and other charges can increase the total repayment cost",
+            "Payment schedules and obligations can continue even when royalty receipts fall",
+            "Default can put pledged rights or other collateral at risk, depending on the agreement",
+            "Some royalty income may be redirected to meet repayment obligations",
+            "Reporting and financial-management duties can continue through the arrangement",
+            "Covenants or security arrangements may limit licensing, transfers or administration changes"
+          ],
+          "bestFor": "Owners comparing the cost and obligations of borrowing with a sale or retaining their catalog. Affordability under lower-income scenarios and the consequences of default need independent assessment; a growing genre is not evidence that borrowing is suitable."
+        },
+        "features": [
+          {
+            "feature": "Capital Access",
+            "optionA": "Individually negotiated purchase price",
+            "optionB": "Individual lender assessment and terms"
+          },
+          {
+            "feature": "Ownership",
+            "optionA": "Only the interests defined in the sale transfer",
+            "optionB": "Depends on security and default provisions"
+          },
+          {
+            "feature": "Ongoing Revenue",
+            "optionA": "Income from excluded or retained interests can remain",
+            "optionB": "Collection and available cash depend on repayment terms"
+          },
+          {
+            "feature": "Risk",
+            "optionA": "Lost income and continuing warranties or other duties",
+            "optionB": "Repayment, covenant and collateral risks"
+          },
+          {
+            "feature": "Tax Treatment",
+            "optionA": "Seller-, asset- and jurisdiction-specific advice required",
+            "optionB": "Seller-, instrument- and jurisdiction-specific advice required"
+          },
+          {
+            "feature": "Future Upside",
+            "optionA": "Buyer benefits on the sold interest; retained interests remain exposed",
+            "optionB": "May remain with the owner subject to agreement performance"
+          },
+          {
+            "feature": "Total Cost",
+            "optionA": "Future income given up plus transaction costs and deductions",
+            "optionB": "Principal, interest, fees and other agreed charges"
+          },
+          {
+            "feature": "Time Commitment",
+            "optionA": "Closing plus any continuing duties in the agreement",
+            "optionB": "Agreed term and any extension or default provisions"
+          }
+        ],
+        "verdict": "There is no universal winner. Put the same catalog scope and income assumptions beside each written proposal, then compare net proceeds, retained cash flow, control, total obligations and downside scenarios. A label must account for money owed to artists and producers before treating royalty receipts as spendable income. Keeping the catalog and reducing or delaying the project is also a valid option. SPACE is a potential buyer, not an independent adviser or lender; seek independent legal, financial and tax advice.",
+        "faq": [
+          {
+            "question": "Can I get a catalog loan on a small catalog?",
+            "answer": "Eligibility depends on the provider, documented income, the rights available and the proposed structure. This page does not establish a minimum revenue level or a lender approval. A royalty advance may not be a loan. SPACE does not offer catalog loans; its free application is for a potential catalog purchase."
+          },
+          {
+            "question": "What interest rates do catalog loans typically carry?",
+            "answer": "No verified market-wide rate range is established here. Ask a lender for the total repayment amount, fees, payment schedule, security, guarantees and default terms. For an advance, examine the recoupment amount and end conditions rather than assuming that a product with no stated interest has no economic cost."
+          }
+        ],
+        "relatedComparisons": [
+          "full-buyout-vs-revenue-split",
+          "partial-sale-vs-full-sale",
+          "selling-masters-vs-selling-publishing"
+        ],
+        "relatedGlossaryTerms": [
+          "catalog-loan",
+          "catalog-valuation",
+          "music-catalog",
+          "buyout-deal",
+          "revenue-multiple",
+          "advance"
+        ],
+        "buyerGuidanceHtml": "<h2>Is a royalty advance the same as a catalog loan?</h2>\n<p>Not necessarily. A product called an advance can be structured as a purchase of specified future receipts rather than a loan. For example, <a href=\"https://www.beatbread.com/faq\">beatBread describes its advances</a> as limited revenue purchases, and publishes a separate <a href=\"https://www.beatbread.com/label\">label-funding offering</a>. Those are that provider&#39;s descriptions, not SPACE products. Read the recoupment, duration, underperformance and collection provisions of the actual offer.</p>\n<h2>A label funding decision starts with retained cash flow</h2>\n<p>For a release campaign, artist signing or operating budget, identify the cash shortfall and payment dates first. Then distinguish the label&#39;s income from money owed to artists and producers. Selling the label&#39;s interest is not permission to sell another rights holder&#39;s share.</p>\n<p>Hypothetical example: a selected catalog produces $2,000 a month for the label after attributable deductions and third-party payouts. A sale of 50% of that label income interest would leave $1,000 a month if receipts stayed unchanged. Whether the purchase price meets a release budget is a separate question. This is not a valuation, offer or forecast.</p>\n<p>For the complete preparation workflow, see <a href=\"/blog/independent-record-label-funding-options/\">independent label funding options</a>. If selling part of the existing catalog is worth considering, <a href=\"/apply/\">request a free review</a>. SPACE does not provide a loan or guarantee that a sale will cover your budget.</p>\n<h2>Compare these points in each written proposal</h2>\n<ul>\n<li>Rights and recordings included, ownership share, territory, duration and future-release exclusions.</li>\n<li>Cash payable after fees, outstanding balances and closing conditions.</li>\n<li>Future royalty collections, income retained and obligations if earnings are lower than expected.</li>\n<li>Security, guarantees, recoupment, repayment, early-exit terms and any continuing reporting duties.</li>\n<li>Consents, artist payments, warranties, reserved approvals and independent professional costs.</li>\n</ul>\n<p>Use the <a href=\"/blog/music-catalog-offer-checklist/\">offer checklist</a> before signing. No single multiple, interest rate or percentage establishes which route is suitable.</p>\n<h2>Sources and scope</h2>\n<p>Reviewed September 16, 2026. This educational comparison is published by SPACE, a potential catalog buyer, not an independent lender comparison service or professional advice.</p>\n<p><a href=\"https://www.wipo.int/en/web/business/ip-valuation\">WIPO&#39;s valuation guidance</a> distinguishes an asset&#39;s valuation from the price a buyer agrees to pay and discusses separately identifiable assets and income. <a href=\"/pricing.md\">SPACE&#39;s offer policy</a> defines the direct-purchase process. Provider eligibility, pricing and terms require individual confirmation.</p>\n<section aria-labelledby=\"buyer-faq\"><h2 id=\"buyer-faq\">FAQ</h2><details class=\"border-b border-black/10 py-4\"><summary class=\"cursor-pointer font-medium\">Can I get a catalog loan on a small catalog?</summary><p>Eligibility depends on the provider, documented income, the rights available and the proposed structure. This page does not establish a minimum revenue level or a lender approval. A royalty advance may not be a loan. SPACE does not offer catalog loans; its free application is for a potential catalog purchase.</p></details><details class=\"border-b border-black/10 py-4\"><summary class=\"cursor-pointer font-medium\">What interest rates do catalog loans typically carry?</summary><p>No verified market-wide rate range is established here. Ask a lender for the total repayment amount, fees, payment schedule, security, guarantees and default terms. For an advance, examine the recoupment amount and end conditions rather than assuming that a product with no stated interest has no economic cost.</p></details></section>"
+      }
+    },
+    {
+      "route": "/compare/partial-sale-vs-full-sale/",
+      "slug": "partial-sale-vs-full-sale",
+      "family": "comparisons",
+      "edits": [
+        {
+          "key": ".introduction",
+          "before": "When monetizing a music catalog through a sale, the question isn't just whether to sell — it's how much to sell. A full sale (100% of rights) provides maximum capital but eliminates your future income and ownership stake. A partial sale (selling 20%, 50%, or any fraction of your rights) provides some capital while preserving ongoing income and potential upside. Partial sales have become increasingly accessible through platforms like Royalty Exchange and through direct negotiations with investors. For ambient and meditation music creators, partial sales offer a particularly attractive middle ground: access capital for new productions, equipment, or personal needs while retaining majority ownership of a catalog that's likely to grow in value as the wellness market expands. This comparison examines both approaches to help you determine the right selling strategy for your specific situation.",
+          "after": "A partial catalog sale can mean selected recordings or a defined share of the rights or royalties you control. A full sale means all of your interest in the agreed catalog, not necessarily every right in every song, and not automatically your future releases. For independent artists and labels across genres, the useful comparison is net cash now versus income, rights and responsibilities retained. Neither route is always better, and keeping a majority percentage does not by itself guarantee licensing or creative control."
+        },
+        {
+          "key": ".optionA.description",
+          "before": "A partial sale involves selling a percentage of your music rights (e.g., 20%, 30%, or 50%) to an investor while retaining the remainder. Revenue is split according to the ownership percentages, and both parties co-own the asset.",
+          "after": "A partial transaction may cover a subset of recordings, a percentage of an owned interest, or a defined royalty-income interest. Co-ownership is not the structure of every deal. Specify tracks, rights, shares, income streams, territory and duration before comparing prices."
+        },
+        {
+          "key": ".optionA.pros.0",
+          "before": "Access capital while retaining ongoing income from the retained portion",
+          "after": "Raise capital while retaining the income attributable to interests outside the sale"
+        },
+        {
+          "key": ".optionA.pros.1",
+          "before": "Preserve upside potential if the catalog grows in value",
+          "after": "Keep exposure to future growth on the retained interest, with no guarantee of growth"
+        },
+        {
+          "key": ".optionA.pros.2",
+          "before": "Maintain creative and administrative control if you retain the majority stake",
+          "after": "Negotiate reserved approvals and administration rights instead of relying on ownership percentage alone"
+        },
+        {
+          "key": ".optionA.pros.3",
+          "before": "Lower emotional impact — you don't fully give up ownership of your work",
+          "after": "Retain a connection to part of the catalog if that matters to your plans"
+        },
+        {
+          "key": ".optionA.pros.4",
+          "before": "Can sell additional portions later as your financial needs change",
+          "after": "A later sale may be possible, subject to the original agreement and required consents"
+        },
+        {
+          "key": ".optionA.pros.5",
+          "before": "Investor's capital and expertise may help grow the overall catalog value",
+          "after": "Evaluate any promised buyer services separately and require them to be documented"
+        },
+        {
+          "key": ".optionA.pros.6",
+          "before": "Flexible deal structures — sell 10%, 30%, 50%, or any amount",
+          "after": "Propose the selected recordings or share that matches the scope you want reviewed"
+        },
+        {
+          "key": ".optionA.cons.0",
+          "before": "Smaller upfront payment compared to a full sale",
+          "after": "The price need not be a simple percentage of a hypothetical whole-catalog valuation"
+        },
+        {
+          "key": ".optionA.cons.1",
+          "before": "Ongoing co-ownership requires relationship management and shared decision-making",
+          "after": "Ongoing collection, reporting or co-ownership arrangements need clear responsibilities"
+        },
+        {
+          "key": ".optionA.cons.2",
+          "before": "Administrative complexity — revenue splits must be managed accurately",
+          "after": "Revenue splits, deductions and payment instructions need accurate administration"
+        },
+        {
+          "key": ".optionA.cons.3",
+          "before": "Minority interest discounts may reduce the effective per-unit price",
+          "after": "Control, transfer restrictions and scope can affect the price of the interest"
+        },
+        {
+          "key": ".optionA.cons.4",
+          "before": "Potential for disagreements with the co-owner on licensing and management decisions",
+          "after": "Approval or licensing disputes are possible if responsibilities are unclear"
+        },
+        {
+          "key": ".optionA.cons.5",
+          "before": "Future sale of the remaining interest may be complicated by existing co-ownership",
+          "after": "The first agreement may restrict a later sale of the remaining interest"
+        },
+        {
+          "key": ".optionA.cons.6",
+          "before": "Legal costs for structuring a partial sale can be proportionally higher",
+          "after": "Professional costs must be considered relative to the actual net proceeds"
+        },
+        {
+          "key": ".optionA.bestFor",
+          "before": "Ambient and meditation music creators who need capital but believe their catalog will grow significantly. Ideal for creators with catalogs in the early-to-mid growth phase of the wellness music market who want to raise funds without fully divesting from a valuable asset.",
+          "after": "Owners who want to examine retaining selected rights or income while accessing capital. The proposed retained cash flow, contractual control and transaction costs matter more than a standard percentage recommendation."
+        },
+        {
+          "key": ".optionB.description",
+          "before": "A full sale transfers 100% of your music rights to the buyer. You receive the maximum upfront payment and have no further ownership, revenue share, or decision-making authority over the sold catalog.",
+          "after": "A full sale transfers all of the seller's interest in the specifically included catalog. Third-party shares, excluded recordings and separately held publishing do not become yours to sell. Payment, licensing powers and continuing obligations are determined by the agreement."
+        },
+        {
+          "key": ".optionB.pros.0",
+          "before": "Maximum capital — the full valuation of your catalog as an upfront payment",
+          "after": "Compare a written offer for the complete interest with a narrower proposal"
+        },
+        {
+          "key": ".optionB.pros.1",
+          "before": "Clean, simple transaction with no ongoing obligations",
+          "after": "Collection and administration of the sold interest can be transferred where agreed"
+        },
+        {
+          "key": ".optionB.pros.2",
+          "before": "Complete separation from the sold catalog — focus on the future",
+          "after": "Define a boundary between the sold back catalog and excluded future work"
+        },
+        {
+          "key": ".optionB.pros.3",
+          "before": "No co-ownership complications or shared decision-making",
+          "after": "Avoid retaining an ownership share in the sold interest, while checking other continuing duties"
+        },
+        {
+          "key": ".optionB.pros.4",
+          "before": "Buyer is more motivated (and may pay a premium) for full control",
+          "after": "A buyer can evaluate the complete scope; a premium is not guaranteed"
+        },
+        {
+          "key": ".optionB.pros.5",
+          "before": "Simplest tax treatment — single capital gains event",
+          "after": "Plan the transaction with independent tax advice before committing"
+        },
+        {
+          "key": ".optionB.pros.6",
+          "before": "No risk of co-owner disputes or misalignment",
+          "after": "Clarify who makes decisions for the transferred interest after closing"
+        },
+        {
+          "key": ".optionB.cons.0",
+          "before": "Permanent loss of all future revenue from the catalog",
+          "after": "Future income on the sold interest is no longer yours for the agreed duration"
+        },
+        {
+          "key": ".optionB.cons.1",
+          "before": "No benefit from future growth in streaming, sync, or the wellness market",
+          "after": "Future growth of that sold interest benefits the buyer"
+        },
+        {
+          "key": ".optionB.cons.2",
+          "before": "Emotional finality of completely separating from your creative work",
+          "after": "Parting with all of the included interest can be difficult to reverse"
+        },
+        {
+          "key": ".optionB.cons.3",
+          "before": "One-time cash influx requires careful financial management",
+          "after": "The net payment needs to cover your plans without relying on income already sold"
+        },
+        {
+          "key": ".optionB.cons.4",
+          "before": "May undervalue catalogs with strong growth trajectories",
+          "after": "Forecasts are uncertain; compare scenarios rather than assuming a peak price"
+        },
+        {
+          "key": ".optionB.cons.5",
+          "before": "Loss of all creative control — buyer can license your music however they choose",
+          "after": "Approval rights may transfer unless protections or exclusions are agreed"
+        },
+        {
+          "key": ".optionB.cons.6",
+          "before": "Cannot reverse the decision if the catalog's value increases dramatically",
+          "after": "There is no automatic right to repurchase because your circumstances change"
+        },
+        {
+          "key": ".optionB.bestFor",
+          "before": "Creators who are confident the catalog has reached peak or stable valuation, those who need maximum capital for a major financial goal, and artists transitioning out of music who want a clean break.",
+          "after": "Owners prepared to consider transferring the complete defined interest after assessing the written price, exclusions, income replacement and continuing obligations. This is not a prediction of a catalog's future peak value."
+        },
+        {
+          "key": ".features.0.optionA",
+          "before": "Proportional to percentage sold",
+          "after": "Price for the specific share or recordings offered"
+        },
+        {
+          "key": ".features.0.optionB",
+          "before": "Full catalog valuation",
+          "after": "Price for all of the defined seller interest"
+        },
+        {
+          "key": ".features.1.optionA",
+          "before": "Yes — from retained percentage",
+          "after": "Income attributable to retained or excluded interests"
+        },
+        {
+          "key": ".features.1.optionB",
+          "before": "None",
+          "after": "No income from the sold interest; excluded income can remain"
+        },
+        {
+          "key": ".features.2.optionA",
+          "before": "Yes — you retain what you don't sell",
+          "after": "Only the rights explicitly kept outside the transfer"
+        },
+        {
+          "key": ".features.2.optionB",
+          "before": "None — full transfer",
+          "after": "No ownership in the transferred interest"
+        },
+        {
+          "key": ".features.3.optionA",
+          "before": "Preserved on retained portion",
+          "after": "Possible on the retained interest, not guaranteed"
+        },
+        {
+          "key": ".features.3.optionB",
+          "before": "Completely forfeited",
+          "after": "Passes to buyer on the transferred interest"
+        },
+        {
+          "key": ".features.4.optionA",
+          "before": "Higher — co-ownership management",
+          "after": "Collection, splits and approvals require a clear arrangement"
+        },
+        {
+          "key": ".features.4.optionB",
+          "before": "Lower — clean transfer",
+          "after": "Transfer and any continuing duties still need documentation"
+        },
+        {
+          "key": ".features.5.optionA",
+          "before": "Shared with co-owner",
+          "after": "Set by the agreement, not percentage alone"
+        },
+        {
+          "key": ".features.5.optionB",
+          "before": "Fully transferred to buyer",
+          "after": "Set by transferred and reserved rights"
+        },
+        {
+          "key": ".features.6.optionA",
+          "before": "Can sell more later, or buy back",
+          "after": "Later sales or repurchase subject to agreed rights and consents"
+        },
+        {
+          "key": ".features.6.optionB",
+          "before": "No flexibility — final transaction",
+          "after": "No automatic repurchase; check any negotiated provisions"
+        },
+        {
+          "key": ".features.7.optionA",
+          "before": "Possible minority discount",
+          "after": "No universal minority discount is established here"
+        },
+        {
+          "key": ".features.7.optionB",
+          "before": "May include control premium",
+          "after": "No universal control premium is established here"
+        },
+        {
+          "key": ".verdict",
+          "before": "For ambient and meditation music creators with catalogs in growth mode, a partial sale is almost always the better strategy. Selling 20-40% of your catalog provides meaningful capital while preserving the majority of your future revenue stream and ownership stake. The wellness music market is expanding, and your catalog's value is likely increasing — selling 100% today means the buyer captures all that future growth. A common smart approach: sell a minority interest (20-30%) to raise capital for new productions and marketing that accelerate the catalog's growth, then benefit from the increased value of your retained 70-80% stake. Reserve a full sale for when you're confident the catalog has reached its maximum value or when you're ready for a complete career transition.",
+          "after": "Compare a partial offer and a full offer using the same rights schedule, income definition and payment assumptions. Do not presume a minority sale is always better, or that a full sale removes every obligation. List what you keep, what income remains after costs, who controls licensing and what would happen if revenue falls. SPACE can consider a defined share or selected recordings, subject to review and agreement. Use independent advisers and retain the option not to sell."
+        },
+        {
+          "key": ".faq.0.answer",
+          "before": "A partial sale is typically priced as a proportional fraction of the full catalog value, sometimes with a minority discount (5-15%) since the buyer doesn't get full control. A full sale may include a control premium. For example, if a catalog is worth $100,000, a 50% share might sell for $45,000-$50,000 rather than exactly $50,000.",
+          "after": "A partial offer is negotiated for the actual interest, including its control, duration, restrictions and expected income. It is not necessarily a proportional slice of a full offer. No standard discount, premium or sale multiple is promised. Compare written offers on the same net-income and rights basis."
+        },
+        {
+          "key": ".faq.1.answer",
+          "before": "This is possible if your purchase agreement includes a buyback option or right of first refusal. Without such provisions, you would need to negotiate a repurchase from the current owner at the then-current market value, which may be higher than what you originally sold it for.",
+          "after": "Only if the agreement gives you an applicable repurchase right or the owner later agrees to sell. A right of first refusal usually concerns a proposed sale to someone else; it is not automatically an option to buy back whenever you choose. Have an independent lawyer explain the actual clause, trigger, price and time limit."
+        }
+      ],
+      "next": {
+        "slug": "partial-sale-vs-full-sale",
+        "title": "Partial Sale vs. Full Sale: How Much of Your Catalog Should You Sell?",
+        "metaDescription": "Compare selling a partial interest in your music catalog versus selling 100% of your rights. Understand the strategic, financial, and creative implications of each approach.",
+        "primaryKeyword": "partial catalog sale vs full catalog sale music",
+        "introduction": "A partial catalog sale can mean selected recordings or a defined share of the rights or royalties you control. A full sale means all of your interest in the agreed catalog, not necessarily every right in every song, and not automatically your future releases. For independent artists and labels across genres, the useful comparison is net cash now versus income, rights and responsibilities retained. Neither route is always better, and keeping a majority percentage does not by itself guarantee licensing or creative control.",
+        "optionA": {
+          "name": "Partial Sale",
+          "description": "A partial transaction may cover a subset of recordings, a percentage of an owned interest, or a defined royalty-income interest. Co-ownership is not the structure of every deal. Specify tracks, rights, shares, income streams, territory and duration before comparing prices.",
+          "pros": [
+            "Raise capital while retaining the income attributable to interests outside the sale",
+            "Keep exposure to future growth on the retained interest, with no guarantee of growth",
+            "Negotiate reserved approvals and administration rights instead of relying on ownership percentage alone",
+            "Retain a connection to part of the catalog if that matters to your plans",
+            "A later sale may be possible, subject to the original agreement and required consents",
+            "Evaluate any promised buyer services separately and require them to be documented",
+            "Propose the selected recordings or share that matches the scope you want reviewed"
+          ],
+          "cons": [
+            "The price need not be a simple percentage of a hypothetical whole-catalog valuation",
+            "Ongoing collection, reporting or co-ownership arrangements need clear responsibilities",
+            "Revenue splits, deductions and payment instructions need accurate administration",
+            "Control, transfer restrictions and scope can affect the price of the interest",
+            "Approval or licensing disputes are possible if responsibilities are unclear",
+            "The first agreement may restrict a later sale of the remaining interest",
+            "Professional costs must be considered relative to the actual net proceeds"
+          ],
+          "bestFor": "Owners who want to examine retaining selected rights or income while accessing capital. The proposed retained cash flow, contractual control and transaction costs matter more than a standard percentage recommendation."
+        },
+        "optionB": {
+          "name": "Full Sale",
+          "description": "A full sale transfers all of the seller's interest in the specifically included catalog. Third-party shares, excluded recordings and separately held publishing do not become yours to sell. Payment, licensing powers and continuing obligations are determined by the agreement.",
+          "pros": [
+            "Compare a written offer for the complete interest with a narrower proposal",
+            "Collection and administration of the sold interest can be transferred where agreed",
+            "Define a boundary between the sold back catalog and excluded future work",
+            "Avoid retaining an ownership share in the sold interest, while checking other continuing duties",
+            "A buyer can evaluate the complete scope; a premium is not guaranteed",
+            "Plan the transaction with independent tax advice before committing",
+            "Clarify who makes decisions for the transferred interest after closing"
+          ],
+          "cons": [
+            "Future income on the sold interest is no longer yours for the agreed duration",
+            "Future growth of that sold interest benefits the buyer",
+            "Parting with all of the included interest can be difficult to reverse",
+            "The net payment needs to cover your plans without relying on income already sold",
+            "Forecasts are uncertain; compare scenarios rather than assuming a peak price",
+            "Approval rights may transfer unless protections or exclusions are agreed",
+            "There is no automatic right to repurchase because your circumstances change"
+          ],
+          "bestFor": "Owners prepared to consider transferring the complete defined interest after assessing the written price, exclusions, income replacement and continuing obligations. This is not a prediction of a catalog's future peak value."
+        },
+        "features": [
+          {
+            "feature": "Upfront Capital",
+            "optionA": "Price for the specific share or recordings offered",
+            "optionB": "Price for all of the defined seller interest"
+          },
+          {
+            "feature": "Ongoing Revenue",
+            "optionA": "Income attributable to retained or excluded interests",
+            "optionB": "No income from the sold interest; excluded income can remain"
+          },
+          {
+            "feature": "Ownership Retained",
+            "optionA": "Only the rights explicitly kept outside the transfer",
+            "optionB": "No ownership in the transferred interest"
+          },
+          {
+            "feature": "Future Upside",
+            "optionA": "Possible on the retained interest, not guaranteed",
+            "optionB": "Passes to buyer on the transferred interest"
+          },
+          {
+            "feature": "Administrative Complexity",
+            "optionA": "Collection, splits and approvals require a clear arrangement",
+            "optionB": "Transfer and any continuing duties still need documentation"
+          },
+          {
+            "feature": "Control",
+            "optionA": "Set by the agreement, not percentage alone",
+            "optionB": "Set by transferred and reserved rights"
+          },
+          {
+            "feature": "Flexibility",
+            "optionA": "Later sales or repurchase subject to agreed rights and consents",
+            "optionB": "No automatic repurchase; check any negotiated provisions"
+          },
+          {
+            "feature": "Buyer Premium",
+            "optionA": "No universal minority discount is established here",
+            "optionB": "No universal control premium is established here"
+          }
+        ],
+        "verdict": "Compare a partial offer and a full offer using the same rights schedule, income definition and payment assumptions. Do not presume a minority sale is always better, or that a full sale removes every obligation. List what you keep, what income remains after costs, who controls licensing and what would happen if revenue falls. SPACE can consider a defined share or selected recordings, subject to review and agreement. Use independent advisers and retain the option not to sell.",
+        "faq": [
+          {
+            "question": "How does pricing work for a partial sale vs. a full sale?",
+            "answer": "A partial offer is negotiated for the actual interest, including its control, duration, restrictions and expected income. It is not necessarily a proportional slice of a full offer. No standard discount, premium or sale multiple is promised. Compare written offers on the same net-income and rights basis."
+          },
+          {
+            "question": "Can I buy back the sold portion later?",
+            "answer": "Only if the agreement gives you an applicable repurchase right or the owner later agrees to sell. A right of first refusal usually concerns a proposed sale to someone else; it is not automatically an option to buy back whenever you choose. Have an independent lawyer explain the actual clause, trigger, price and time limit."
+          }
+        ],
+        "relatedComparisons": [
+          "full-buyout-vs-revenue-split",
+          "catalog-sale-vs-catalog-loan",
+          "selling-masters-vs-selling-publishing"
+        ],
+        "relatedGlossaryTerms": [
+          "catalog-acquisition",
+          "catalog-valuation",
+          "buyout-deal",
+          "revenue-multiple",
+          "royalty-split",
+          "partial-sale-vs-full-sale"
+        ],
+        "buyerGuidanceHtml": "<h2>Selling half of your share is not selling half of the whole song</h2>\n<p>Suppose you control an income interest producing $1,000 a month after the relevant deductions and payments to other rights holders. Selling 50% of <strong>your interest</strong> would allocate $500 a month to the purchaser and leave $500 if future income stayed unchanged. It does not transfer a collaborator&#39;s share. This is a hypothetical allocation, not a forecast or purchase price.</p>\n<p>A sale of royalties also need not transfer the underlying copyright. <a href=\"https://royaltyexchange.com/resources/creators/frequently-asked-questions-about-selling-royalties\">Royalty Exchange&#39;s seller FAQ</a> describes transactions in a share of royalty income and different durations. That is an example of why the contract matters, not a description of every SPACE offer.</p>\n<h2>Can I keep future releases and publishing outside the sale?</h2>\n<p>Define the included recordings and any release cutoff, rather than relying on the phrase &quot;my catalog.&quot; Identify excluded future work, publishing, remixes and alternate versions. Have an adviser check whether an existing agreement already commits future deliveries or requires consent.</p>\n<p>Master recordings and compositions are different copyright interests, as explained by the <a href=\"https://www.copyright.gov/register/pa-sr.html\">U.S. Copyright Office</a>. Do not assume selling one means selling the other, or that you own either simply because you distribute the release.</p>\n<h2>A practical next step</h2>\n<p>Write down the interest you would consider selling and the income you need to retain. Use your own assumptions in the <a href=\"/calculator/\">catalog scenario calculator</a>, then assemble the <a href=\"/blog/music-catalog-sale-documents-checklist/\">seller document checklist</a>. An assumed multiple is not an offer.</p>\n<p><a href=\"/apply/\">Ask SPACE to review the defined interest</a> if you want to explore a sale. Selected recordings and partial interests are considered individually; no percentage, genre or submission guarantees a purchase. Labels planning a release can also use the <a href=\"/blog/independent-record-label-funding-options/\">label funding guide</a>.</p>\n<h2>Sources and scope</h2>\n<p>Reviewed September 16, 2026. The <a href=\"/pricing.md\">SPACE offer policy</a>, Royalty Exchange seller FAQ and U.S. Copyright Office source above support the distinctions discussed here. SPACE has a commercial interest in catalog purchases. Obtain independent legal, tax and financial advice before agreeing terms.</p>\n<section aria-labelledby=\"buyer-faq\"><h2 id=\"buyer-faq\">FAQ</h2><details class=\"border-b border-black/10 py-4\"><summary class=\"cursor-pointer font-medium\">How does pricing work for a partial sale vs. a full sale?</summary><p>A partial offer is negotiated for the actual interest, including its control, duration, restrictions and expected income. It is not necessarily a proportional slice of a full offer. No standard discount, premium or sale multiple is promised. Compare written offers on the same net-income and rights basis.</p></details><details class=\"border-b border-black/10 py-4\"><summary class=\"cursor-pointer font-medium\">Can I buy back the sold portion later?</summary><p>Only if the agreement gives you an applicable repurchase right or the owner later agrees to sell. A right of first refusal usually concerns a proposed sale to someone else; it is not automatically an option to buy back whenever you choose. Have an independent lawyer explain the actual clause, trigger, price and time limit.</p></details></section>"
+      }
+    },
+    {
+      "route": "/for/independent-artist-catalog-owner/",
+      "slug": "independent-artist-catalog-owner",
+      "family": "personas",
+      "edits": [
+        {
+          "key": ".metaDescription",
+          "before": "Independent artists own their masters and publishing — that means your catalog is yours to sell. SpaceMusic.io provides fair valuations and connects you with buyers.",
+          "after": "Considering selling an independent music catalog? Define your rights, prepare royalty records and request a free review from SPACE, a direct catalog buyer."
+        },
+        {
+          "key": ".description",
+          "before": "You've been releasing music independently for years — maybe a decade or more. You own your masters, you own your publishing, and you've built a catalog that generates consistent streaming revenue. You distribute through DistroKid, TuneCore, or CD Baby, collect your own royalties, and manage your own rights. Independence has given you full ownership, but it's also given you full responsibility. You handle metadata, registrations, Content ID disputes, distributor issues, and tax accounting — on top of actually creating music. Your catalog may include 50, 200, or 500+ tracks across multiple albums, EPs, and singles. You know this catalog has real financial value, but you've never had it professionally valued, and you don't know where to begin exploring a sale or partial monetization.",
+          "after": "An independently released catalog can generate income without a major-label agreement, but distributing your own music does not prove you own every master or composition. Start with the rights and royalty interests you actually control. Your catalog may span one release or years of work, across any genre. If you are exploring a sale, identify the recordings, collaborators, existing agreements and net income before comparing an upfront payment with the income you would retain. SPACE offers a free initial review for a potential direct purchase, not a buyer-listing marketplace."
+        },
+        {
+          "key": ".solutions.0",
+          "before": "Free, transparent catalog valuation that shows you exactly how your catalog's value is calculated",
+          "after": "A free initial catalog review based on the information and evidence you provide"
+        },
+        {
+          "key": ".solutions.1",
+          "before": "Educational resources explaining every step of the catalog sale process — no surprises",
+          "after": "Educational resources to prepare for the review and understand questions before signing"
+        },
+        {
+          "key": ".solutions.2",
+          "before": "Vetted buyer network ensures you're dealing with legitimate, experienced music industry buyers",
+          "after": "A conversation with SPACE as a potential direct buyer, rather than a promise of buyer matching"
+        },
+        {
+          "key": ".solutions.3",
+          "before": "Deal structure options ranging from partial sales (retain some ownership) to full buyouts",
+          "after": "Consideration of selected recordings or a defined share, subject to review and agreement"
+        },
+        {
+          "key": ".solutions.4",
+          "before": "Legal review support to ensure contract terms are fair and protect your interests",
+          "after": "A clear reminder to obtain independent legal review; SPACE is not your legal adviser"
+        },
+        {
+          "key": ".solutions.5",
+          "before": "Tax guidance resources to help you understand the financial implications of different deal structures",
+          "after": "Preparation questions for your own tax adviser, not personalized tax advice from SPACE"
+        },
+        {
+          "key": ".solutions.6",
+          "before": "No-pressure exploration — get a valuation and learn about your options with no obligation to sell",
+          "after": "No obligation to accept an offer or proceed with a sale"
+        },
+        {
+          "key": ".benefits.0",
+          "before": "Finally understand the financial value of the catalog you've built over years of independent work",
+          "after": "Understand which rights and income need to be assessed before an offer can be meaningful"
+        },
+        {
+          "key": ".benefits.1",
+          "before": "Access professional buyers and investors without needing industry connections",
+          "after": "Approach a direct buyer without listing your catalog in an auction"
+        },
+        {
+          "key": ".benefits.2",
+          "before": "Negotiate from a position of knowledge with a clear, transparent valuation as your foundation",
+          "after": "Prepare a documented scope so competing proposals can be compared on a like-for-like basis"
+        },
+        {
+          "key": ".benefits.3",
+          "before": "Choose the deal structure that fits your life — full sale, partial sale, or catalog loan",
+          "after": "Explore full or partial sale scope; SPACE does not offer catalog loans"
+        },
+        {
+          "key": ".benefits.4",
+          "before": "Reduce the administrative burden that comes with managing an extensive independent catalog",
+          "after": "Clarify which administration duties would transfer and which could remain"
+        },
+        {
+          "key": ".benefits.5",
+          "before": "Receive fair market value for your music — protected by transparent valuation methodology and buyer vetting",
+          "after": "Evaluate an actual written offer without treating a scenario calculator as market value"
+        },
+        {
+          "key": ".benefits.6",
+          "before": "Make an informed financial decision with support at every step of the process",
+          "after": "Decide whether to continue, seek independent advice or keep your catalog"
+        },
+        {
+          "key": ".caseStudySnippet",
+          "before": "An independent artist with a 350-track catalog spanning 12 years of releases was generating $15,000/year through DistroKid distribution, ASCAP performance royalties, and a handful of small sync placements. The artist had never had the catalog valued and was spending 10+ hours per week on administrative tasks. After listing on SpaceMusic.io, a metadata audit uncovered $4,500 in uncollected international mechanical royalties, which boosted the catalog's effective annual revenue to $19,500. At an 11x multiple, the catalog was valued at $214,500. The artist chose a full buyout and used the proceeds to pay off a mortgage and fund a year of full-time music creation, starting a new catalog with zero administrative baggage.",
+          "after": "Hypothetical illustration, not a SPACE customer result: an independent owner documents $12,000 in annual net income attributable to the rights being considered. If a transaction covered 50% of that income interest, unchanged future receipts would allocate $6,000 annually to the buyer and leave $6,000 before other costs and taxes. This does not establish a purchase price, predict future receipts or show that such a deal would be suitable or available. The owner would still need a rights schedule, an actual offer and independent advice. No royalty recovery, completed purchase or payout is claimed."
+        },
+        {
+          "key": ".ctaText",
+          "before": "Get Your Free Catalog Valuation — No Strings Attached",
+          "after": "Explore a sale of the rights you control"
+        },
+        {
+          "key": ".faq.0.answer",
+          "before": "From initial valuation to completed sale, the typical timeline is 4-8 weeks. This includes the valuation and metadata audit (1-2 weeks), listing and buyer matching (1-3 weeks), negotiation and legal review (1-2 weeks), and closing and rights transfer (1 week). Complex catalogs or deals may take longer.",
+          "after": "SPACE's published initial-offer timeframe is typically 5-7 business days after relevant catalog information is received, subject to review. It is not a guaranteed deadline or a payment promise. Closing depends on the agreement, documentation and satisfied transfer conditions."
+        },
+        {
+          "key": ".faq.1.answer",
+          "before": "Key documents include: proof of ownership (distributor agreements, PRO registrations), revenue documentation (streaming reports, royalty statements), a complete track listing with metadata (ISRCs, songwriter credits), and any existing licensing agreements. We guide you through gathering everything during the listing process.",
+          "after": "Prepare a track list, royalty statements, a schedule of the interests you control, collaborator splits and relevant distribution, artist, producer and licensing agreements. Flag missing records, outstanding advances and consent requirements. A distributor account or PRO registration alone does not prove every right is transferable."
+        },
+        {
+          "key": ".faq.2.question",
+          "before": "What if I'm not ready to sell but want to know my catalog's value?",
+          "after": "What if I am not ready to sell but want to understand my options?"
+        },
+        {
+          "key": ".faq.2.answer",
+          "before": "That's completely fine. Many artists get a valuation simply to understand their financial position. There's no obligation to list or sell. Knowing your catalog's value is useful for estate planning, tax purposes, and making informed decisions about your music career.",
+          "after": "The initial catalog-review application is free and does not oblige you to sell. The calculator is an assumptions-based scenario, not an appraisal or purchase offer. A potential buyer's review is not an independent valuation for tax, estate or litigation purposes."
+        }
+      ],
+      "next": {
+        "slug": "independent-artist-catalog-owner",
+        "title": "Independent Artists: Your Catalog Is Your Most Valuable Asset",
+        "metaDescription": "Considering selling an independent music catalog? Define your rights, prepare royalty records and request a free review from SPACE, a direct catalog buyer.",
+        "personaName": "The Independent Artist & Catalog Owner",
+        "description": "An independently released catalog can generate income without a major-label agreement, but distributing your own music does not prove you own every master or composition. Start with the rights and royalty interests you actually control. Your catalog may span one release or years of work, across any genre. If you are exploring a sale, identify the recordings, collaborators, existing agreements and net income before comparing an upfront payment with the income you would retain. SPACE offers a free initial review for a potential direct purchase, not a buyer-listing marketplace.",
+        "painPoints": [
+          "No idea what your catalog is actually worth in today's market",
+          "Administrative burden of managing rights, royalties, and metadata across multiple platforms is overwhelming",
+          "No professional network of music industry buyers or investors",
+          "Uncertain about the process of selling — what does a catalog transaction actually involve?",
+          "Worried about being taken advantage of by buyers with more industry experience",
+          "Tax implications of a catalog sale are unclear and potentially significant",
+          "Emotional attachment to music you've created over years makes the idea of selling daunting"
+        ],
+        "solutions": [
+          "A free initial catalog review based on the information and evidence you provide",
+          "Educational resources to prepare for the review and understand questions before signing",
+          "A conversation with SPACE as a potential direct buyer, rather than a promise of buyer matching",
+          "Consideration of selected recordings or a defined share, subject to review and agreement",
+          "A clear reminder to obtain independent legal review; SPACE is not your legal adviser",
+          "Preparation questions for your own tax adviser, not personalized tax advice from SPACE",
+          "No obligation to accept an offer or proceed with a sale"
+        ],
+        "benefits": [
+          "Understand which rights and income need to be assessed before an offer can be meaningful",
+          "Approach a direct buyer without listing your catalog in an auction",
+          "Prepare a documented scope so competing proposals can be compared on a like-for-like basis",
+          "Explore full or partial sale scope; SPACE does not offer catalog loans",
+          "Clarify which administration duties would transfer and which could remain",
+          "Evaluate an actual written offer without treating a scenario calculator as market value",
+          "Decide whether to continue, seek independent advice or keep your catalog"
+        ],
+        "caseStudySnippet": "Hypothetical illustration, not a SPACE customer result: an independent owner documents $12,000 in annual net income attributable to the rights being considered. If a transaction covered 50% of that income interest, unchanged future receipts would allocate $6,000 annually to the buyer and leave $6,000 before other costs and taxes. This does not establish a purchase price, predict future receipts or show that such a deal would be suitable or available. The owner would still need a rights schedule, an actual offer and independent advice. No royalty recovery, completed purchase or payout is claimed.",
+        "ctaText": "Explore a sale of the rights you control",
+        "faq": [
+          {
+            "question": "How long does the catalog sale process take?",
+            "answer": "SPACE's published initial-offer timeframe is typically 5-7 business days after relevant catalog information is received, subject to review. It is not a guaranteed deadline or a payment promise. Closing depends on the agreement, documentation and satisfied transfer conditions."
+          },
+          {
+            "question": "What documents do I need to sell my catalog?",
+            "answer": "Prepare a track list, royalty statements, a schedule of the interests you control, collaborator splits and relevant distribution, artist, producer and licensing agreements. Flag missing records, outstanding advances and consent requirements. A distributor account or PRO registration alone does not prove every right is transferable."
+          },
+          {
+            "question": "What if I am not ready to sell but want to understand my options?",
+            "answer": "The initial catalog-review application is free and does not oblige you to sell. The calculator is an assumptions-based scenario, not an appraisal or purchase offer. A potential buyer's review is not an independent valuation for tax, estate or litigation purposes."
+          }
+        ],
+        "relatedPersonas": [
+          "music-producer-ready-to-retire",
+          "side-project-musician",
+          "ambient-music-producer"
+        ],
+        "relatedGlossaryTerms": [
+          "independent-artist",
+          "master-rights",
+          "publishing-rights",
+          "catalog-valuation",
+          "digital-aggregator",
+          "metadata"
+        ],
+        "buyerGuidanceHtml": "<h2>Can I sell an independent catalog in any genre?</h2>\n<p>SPACE considers revenue-generating catalogs from independent artists, producers, labels and owners across genres. Hip-hop, R&amp;B, pop, rock, jazz and other genres can be reviewed alongside ambient, lo-fi and electronic music. The relevant questions are what interest you control, what income it generates and what can be transferred, not whether the genre appears in a directory.</p>\n<p><a href=\"/apply/\">Start an individual catalog review</a> when you are ready to describe that scope. No genre, track count or application guarantees an offer. Check the <a href=\"/pricing.md\">published offer policy</a> for the free initial review and conditional process.</p>\n<h2>Prepare the catalog you want reviewed</h2>\n<ol>\n<li>List the included recordings with artist, title, ISRC and release date. Mark future work and other exclusions separately.</li>\n<li>Reconcile statements by source and currency. Identify your own receipts after relevant deductions and third-party obligations.</li>\n<li>Gather agreements and splits. Flag outstanding advances, exclusive licenses, disputed ownership, samples and consent requirements.</li>\n<li>State whether you are considering selected recordings, a share or all of your defined interest. You do not need to guess a purchase price first.</li>\n</ol>\n<p>The <a href=\"/blog/music-catalog-sale-documents-checklist/\">seller document checklist</a> explains the records. The <a href=\"/compare/partial-sale-vs-full-sale/\">partial versus full sale comparison</a> explains why a percentage alone does not define control.</p>\n<h2>If you operate a label</h2>\n<p>Separate the label&#39;s contractual interest from the artists&#39; interests and the company itself. A catalog transaction does not automatically include the label brand, company shares, roster or future recordings. Those would require explicit agreement. Check assignment restrictions and who remains responsible for paying and reporting to artists.</p>\n<p>For example, a label planning its next release can compare the cash it needs with the income it would retain after selling selected back-catalog interests. This is not a promise that SPACE will finance the next release. Use the <a href=\"/blog/independent-record-label-funding-options/\">independent label funding guide</a> to compare a catalog sale with advances, loans or retaining the catalog.</p>\n<h2>Sources and review scope</h2>\n<p>Reviewed September 16, 2026. The <a href=\"https://www.copyright.gov/register/pa-sr.html\">U.S. Copyright Office</a> distinguishes sound recordings from musical compositions. <a href=\"https://www.wipo.int/en/web/business/ip-valuation\">WIPO</a> explains why separately identifiable rights, evidence and income matter to valuation. The SPACE offer policy above establishes our service scope. These resources do not replace advice about your contracts or jurisdiction.</p>\n<section aria-labelledby=\"buyer-faq\"><h2 id=\"buyer-faq\">FAQ</h2><details class=\"border-b border-black/10 py-4\"><summary class=\"cursor-pointer font-medium\">How long does the catalog sale process take?</summary><p>SPACE's published initial-offer timeframe is typically 5-7 business days after relevant catalog information is received, subject to review. It is not a guaranteed deadline or a payment promise. Closing depends on the agreement, documentation and satisfied transfer conditions.</p></details><details class=\"border-b border-black/10 py-4\"><summary class=\"cursor-pointer font-medium\">What documents do I need to sell my catalog?</summary><p>Prepare a track list, royalty statements, a schedule of the interests you control, collaborator splits and relevant distribution, artist, producer and licensing agreements. Flag missing records, outstanding advances and consent requirements. A distributor account or PRO registration alone does not prove every right is transferable.</p></details><details class=\"border-b border-black/10 py-4\"><summary class=\"cursor-pointer font-medium\">What if I am not ready to sell but want to understand my options?</summary><p>The initial catalog-review application is free and does not oblige you to sell. The calculator is an assumptions-based scenario, not an appraisal or purchase offer. A potential buyer's review is not an independent valuation for tax, estate or litigation purposes.</p></details></section>"
+      }
+    }
+  ],
+  "sourceHashes": {
+    ".well-known/brand-facts.json": "b6b076ce10b63e67a167066262bf367143471b1c199e43930a2ff6e09d37f74c",
+    "_headers": "63e457f8873000fe4569a25fc87c3d7b7bff0ed64293a6d7658e1e922efdb70d",
+    "_redirects": "92b2160dabfa411f8f3d3a0113bd3a9660c7ebed46f0bd05b75b4af1c3911fa4",
+    "about/index.html": "945010898bb823653fea8d4b6bd3cca889fe34111911835fb65501c204613754",
+    "apply/assets/index-1Mu13qxd.js": "10d63b7fdd4e5a7af7e0f015f8a35d0e9272f1c4d4cafb78bad1bed7794eec24",
+    "apply/assets/index-5BYcXjBi.js": "0975e70644ceab9818949c22d67b1e52d9e4e0eb2b43be93c4e88ffef9e8d74e",
+    "apply/assets/index-B1pNjteW.js": "d8d7db72346d0611e7f3c37caadf220fcdb410fad51c795e4ceabc5ab02596d2",
+    "apply/assets/index-BK3T0J9j.js": "b873b24eb6c2208b125acec56ea5e57e83e879c156e89c59c3b99205e4b8f3d7",
+    "apply/assets/index-BLFmiXep.js": "e9d3823504a3ffa8408879f107b9bbed0897223042a75c14d27f4ba65720ce39",
+    "apply/assets/index-B__1VwK8.css": "7e8dbc1db8dea41cf0935ae5262199bd960635c2d22777de2bc21d71ede158e7",
+    "apply/assets/index-BkZRW9dH.js": "880ced059a7ad73f3fbc80f0669a945e812c1b08bc34ce0b18551c4d517326ef",
+    "apply/assets/index-DcTnRmbS.css": "0def958371836f95003627799b67d2ef4065de7a14c721e253f6407935031521",
+    "apply/assets/intake-6242837e53af.js": "6242837e53af1658f8152721f8d76e51549ea6e0d4108e2d0aebaff915a11045",
+    "apply/assets/intake-86de0bb0053b.css": "86de0bb0053b3c77914b44d48a9971ef851963c6068e6026e3593dd400f37b6c",
+    "apply/assets/typeform-sdk-6.0.0-b08faae17abf.js": "b08faae17abf78b775de86827e7db3d14913ba7f49c5279221f22880172c284c",
+    "apply/favicon.svg": "b0a330401e5e53cb33df25129a6aa96cf27f7e94bfb80eb3500012b0b9bd3ab5",
+    "apply/index.html": "488c73a0bea26a3706aed8f2c71b87ac6602f013578bac9d1ed8fb1ce2ac8766",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "66dad611374ea8360a06e45e5b2629a5db5bdf201fa5fa0354546efb5d6028a3",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "e83bfb1e68fa13afa96242ad18f910382a27ac04960dcbc2ca90bca353b5d5af",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9-review-51e10d24b4de.js": "f3b9ed498cc8fd057704f56c58ee30c83b78e63e0ae3e28eef6653ad2c23f631",
+    "assets/AboutPage-DsfQzfae-journey-396b323aebc9.js": "6556342563b35b614aa2e9826868ab05abff3f56e436078a009c13fc4dd14464",
+    "assets/AboutPage-DsfQzfae.js": "cfefc6e3e7bb3a36ebed036a479480eba865613cba56d45ab2f96d6473d7ec33",
+    "assets/ApplicationForm-DRjdd2L1.js": "6bc4133c2033954845e67f30941f0a07ffbc1317c44c20adfdf6756533df5b17",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "760f6c9e4a5c3d7fdcf8f3c0dbba6acf07a751fa1a3c648aa5a7c2104d363b48",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "36946fdcebb49c6299596f503e99c882df4ca7c101076639cff0ce3d4f48609b",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9-review-51e10d24b4de.js": "751cf713e096433ddbe6c6b2af3d626797c709227fc04c9baa48134fbc0569fc",
+    "assets/BlogPost-G1IBKFnh-journey-396b323aebc9.js": "c1f3cf284bfa6b65c25d8d187e076e35697acc078f27133923d8397219bc3244",
+    "assets/BlogPost-G1IBKFnh.js": "9f57abd54d09f6e7e61508f873ed7057284ff13ed11d90ae37332c6ba6a533ab",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "f56eb52405eb34991b6310af7e63692f03276400eb37a1a148899a75e755c011",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "c797ec211ac98a2a0adee878fdd415aecd24185d693a6c5dc10207c5cb46e785",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9-review-51e10d24b4de.js": "5f7b85466a25829b0e184481096ea2cdf8111daf0d07708a7c7251d7b155139e",
+    "assets/BlogPost-article-07d34f58788e-journey-396b323aebc9.js": "9a29947202d1ebd40f995347244fb1a28829aca790bdc3a955f681359c6ded4c",
+    "assets/BlogPost-article-07d34f58788e.js": "07d34f58788e232a5338fc6a738242b89e533563feece2a97cdae77d53f6b9f3",
+    "assets/BlogPost-article-3275da0ae018.js": "3275da0ae018b488c6ceabe0c101a39489f0fd38660ac0eb79e743f3f52e3e78",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "1dd131d2f0dc66a902c999dc1412d83379d32cc40f927b963e97000cb050c489",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "eb1a901eb667060ae56f9cdecbf0feab448a0cf45a961ed8d1078c0b87955a36",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9-review-51e10d24b4de.js": "4422bc28badcf587298c1ce5b488c7b2ad24118f1a70cf12c8cbc745d3c76d2d",
+    "assets/BlogPost-article-437699c15ad1-journey-396b323aebc9.js": "e5605805f1b1c11ce2f252e13d329f5597a0af3bde238b1a88d2269e518cff8e",
+    "assets/BlogPost-article-437699c15ad1.js": "437699c15ad1cdbebea72bf5fe40ad07577c07ae852eaa2dbc5caf092caeb7bc",
+    "assets/BlogPost-article-62bb6a10eadf.js": "62bb6a10eadfb3d9e6b41cdffce04eb6c93214347102f762c18237f8503d33e6",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a85c701117f3fa0d3a6686eceb253bb0ded80ea97df5da1fbeac8ea846d30e56",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "e29fb9a9551ed7a27b2b830f698ed015356cd17e9b0facb95ce6a9144893a827",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9-review-51e10d24b4de.js": "5e396e0c06c154b12134582f2a0997ec95757da33ba8388e7e643a5f6f14f24c",
+    "assets/BlogPost-article-a30c92800e27-journey-396b323aebc9.js": "a691890246881d161f6f24e41557f772d369a2af51bdde4cfc43e43ec6fcdf42",
+    "assets/BlogPost-article-a30c92800e27.js": "a30c92800e275e889bfdc25581ef042f41d695fa9f9e84cef5094466d555d324",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "e09c72704943f0ecd95cf03e5320d13c3f3d58e906c0ed1bbbcefec9fad44fb0",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "190cb7cfcb1ff7741e2e8bde0cb0a4529692e42b808f09a146e82917a0320593",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9-review-51e10d24b4de.js": "7178a948eb8aca7dbd399b910640585451e2d9b6d1c75933dc60c84451217fd8",
+    "assets/BlogPost-article-c16281d23f03-journey-396b323aebc9.js": "ac048a76fd7f93edb5c5ee9321df411279b567fa640680c0443465aecd0d17e5",
+    "assets/BlogPost-article-c16281d23f03.js": "c16281d23f032c0e2b862c1ffd51d7aa6c87259e00be4496444d34507cd02625",
+    "assets/BlogPost-article-c31cc299fe21.js": "c31cc299fe214f082b1d8e49403ed6434ef7cf50e256b31ffe4bb4672916bfd0",
+    "assets/BlogPost-article-dc0202e1b5df.js": "dc0202e1b5df59fe34b914e858c0f16da31ce0d5bf2b8b5e22327d4a201b888d",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "0575b300220aa0201104f4c740003f298cd68dd4acfd1e20aa67371b538f0d44",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "2d34f25d39c9deba69848d133eddbb81a8fae0fdeb47f8132259968b68614ed9",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9-review-51e10d24b4de.js": "95b78c2329852ab97ced6061b6921dd016c4143f44d9b98db59b59b478dc36b7",
+    "assets/BlogPost-article-ef1dc3562c07-journey-396b323aebc9.js": "8371213d4076bf478f54b92ee436625de535fc89f5ca5d59bd2e2e8aa7a26914",
+    "assets/BlogPost-article-ef1dc3562c07.js": "ef1dc3562c07a4dbfbe9be4333573a89c66457375eb353235e7a02ce25c6f6b6",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "c70ad6b9d2db83a7bf0622ffb7a7bfb48a5177c308b141c98d8005b62c69b3e9",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "d50efe82ad161c536842b13e24f19979555b0fab2e4a5de82c8c0d89e73aba1d",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9-review-51e10d24b4de.js": "ffb201471b15596eb3e06c1c40c329b303b1dbda92e7b8b8197b303239c7f184",
+    "assets/BlogPost-article-f1c64c21fe43-journey-396b323aebc9.js": "da2a7f575a5907fd887d3508891c3773d21be99e1371cbbfbbae5bbca1fee9a3",
+    "assets/BlogPost-article-f1c64c21fe43.js": "f1c64c21fe43d0b3937026f4cc37e3c3b1d92582213e2a03b08fc4488929415b",
+    "assets/BlogPost-article-fcc8ce257955-quietseo-fd17485db4c3.js": "9409ad03fafdef1bdba508e2d16a6746528d46004889bd962d804881f8703336",
+    "assets/BlogPost-article-fcc8ce257955.js": "fcc8ce257955b1482e0f3a05772d0543a6f540a3baea94458f6f2ebf1ca714df",
+    "assets/BlogPost-article-fecc12715f4f.js": "fecc12715f4f7c25a4b4da3e9def34d0134b111ea19b08d7199725f24865bff0",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "e6b6b52bcdb8ef9899e9ba6ef777458c62fbd748ea9857727ca21c209909ec60",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "390db178cba4fd6f753be8b97e691b310e9153ee6ddf348414bc5e951be84543",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9-review-51e10d24b4de.js": "0d5cf0343ff13a8057bcdd3926281bef3a0f3474d08e7aa5935f829da4acc0a6",
+    "assets/BlogPost-blanket-3a06fa5a441b-journey-396b323aebc9.js": "51c7dcb425f74ac353105ae27ad18744ded30f69c19a5f6af33c81ebdc4492d8",
+    "assets/BlogPost-blanket-3a06fa5a441b.js": "3a06fa5a441b97942aba4a4062afbe7818b2bb829e9be4efd2d43ba0ef4ae286",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a9f14df04506e11c62cd40e7b7ece48bb932e886d1840dbd4263c3b37066bb2a",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "5a273179a06917aef2fb1c68a46aad8c5cf9aa29c580286d1d0108cafb677879",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9-review-51e10d24b4de.js": "172f80ecf3173a626557bac3b2e8eeed3ac6b882adf374e544bedcaa1d0ad75a",
+    "assets/BrandFacts-C8AGFe30-journey-396b323aebc9.js": "ff59ebfa2893ec7dd83f1dac866bd0910da85cf6497c0ec9e72020c6bc9e050d",
+    "assets/BrandFacts-C8AGFe30.js": "8fe74e64aeb43cb61ca2b3854074e3653fa2b3414773c01e0c8e0e0f1f18a517",
+    "assets/Calculator-LQUD5H9x.js": "3426e258dca3a0e169ab1c687ea611a9c7ca56eebb46c702ada79b392dea34f6",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "659e8f04980530cc319fe90592e9ca6fc917840a07d4e00a1d6fceb08cbbd4a5",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "dbfc63eb2676124fb77cc7e7365199082904f07e13386fcb4eb7cff7ccf92c84",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9-review-51e10d24b4de.js": "5a47719e25c15dd06097d3b332d9bb75f4ce2d7d4737e9f53d768768b24beb0a",
+    "assets/Calculator-scenario-a3cd3270b5bd-journey-396b323aebc9.js": "e29ad828959f0530752795805e2e00b3e4ae74b690abae5f47da68d4c0af5440",
+    "assets/Calculator-scenario-a3cd3270b5bd.js": "a3cd3270b5bd5b0d0a0fcad89ab0c40e6ecc92fe713979d80736aa41a73e187e",
+    "assets/CanonicalApplication-3b3108140369.js": "3b3108140369076364e6966bc14bd2e590684d962cd27009181a539ef3d43193",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "668bb2270177f5bfa7097c3d964280c0bb8c0b04fdd75acb8ae6b7fe15c7722e",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "2be4dfb6bcacb123827bf3e9f6a9540a48c545ea947399ec558bc8d405400beb",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9-review-51e10d24b4de.js": "0b6face98f007980ef9e9056fbe5054c900c77cca26cfadb11e6d2b814c1feb1",
+    "assets/ComparisonIndex-3O4JKCOr-journey-396b323aebc9.js": "8f4d3be006aed1da3e5ee08e70ca4651becbcef75ea676bd0ddab13e63f05adc",
+    "assets/ComparisonIndex-3O4JKCOr.js": "b2a9646a1b4b7444d4d02e959a16f0e2ce678715fbf09e648006309d6a470bc7",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "69e045eb3b858469002fd317d0e2715a663c9e56a2655ec3496675df21bef760",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "e140c1266c9fba9f8be77feb3c980c8a5d976ac8ff79d793ac5ab2094a460e66",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9-review-51e10d24b4de.js": "ff7a4719b926455530bb563a46d9d839ad7b5ae574f80183a7c873bf046f2f11",
+    "assets/ComparisonPage-CJny3OeB-journey-396b323aebc9.js": "13672d41356630a55cbf60414a81b1f6c6b962f270131a9f804203a7b41a0d35",
+    "assets/ComparisonPage-CJny3OeB.js": "e6f18957e1be1e21958bfb2bafd299b8f4de79133e55b36a9a83b71b56536ed7",
+    "assets/CompetitorComparisonPage-nqD8Tapv.js": "f8e9430538d2d6f32e1320ea110df6885125540cdb3210a2d0945652c992ef63",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "3f4d1f07291e0a74f14ea8edd0fe7e694f633f0f85721ee4115aff4d59851c3b",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "a961b865d7acf4f9e2ff122ec1081ceed2ac7fb8ed5408aa6cbaf49f45ac5565",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9-review-51e10d24b4de.js": "1942629235fc3edd5c013de1c09b46537ec8d372a7528adc7d454a83fee1976c",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd-journey-396b323aebc9.js": "5983510d5703c39d680c729a4b2338367706606a073666074d67d99085482433",
+    "assets/CompetitorComparisonPage-primary-wave-35f2ec92f2bd.js": "35f2ec92f2bd1789b33f87c04a6eb4440eb1718051bb6d736afc4f279291a880",
+    "assets/ConversionAnalyticsPage-2arjwYU--journey-396b323aebc9.js": "c714a9f22b898309988144e5998edbe7a73ec8c6bc8fc7a22edbe560b2f31cf8",
+    "assets/ConversionAnalyticsPage-2arjwYU-.js": "64c81d5bdc12c7b0d600b0d74dcc28b47ed40e082041bf2ff6fdaf9949b599e4",
+    "assets/CookieBanner-BhC_lodR.js": "80f074a61b9890d4b164166f8cba3c5f9e2a2914fa6adddfc3e1edb37f12e2df",
+    "assets/Footer-CiCbq8u0-journey-396b323aebc9.js": "658126da82b5a4bc16ab4ec425b4f1e14766880f1022b501b3dc8b4663c2ed01",
+    "assets/Footer-CiCbq8u0.js": "b8164bbf815c24d4988a2a5960f5d66aeeb2f5e851b81fcbc30eb699c145b780",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "0110da722b44dfc05a9e4a176a3890e0b2e987ef5c1fe22d341da01742c0639e",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "fcb8ce323b73bf36850cb5415583de64e10dba609206449be01575c37fa9869d",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9-review-51e10d24b4de.js": "e14c61f6056efde0847d52c82a538fd859ff02f67aaca77da9b270497902e43e",
+    "assets/GenreIndex-nzzjt_go-journey-396b323aebc9.js": "91efdbd4ae55901d15ae249d58e32fa458a884ef2c795af080766c2b359ef893",
+    "assets/GenreIndex-nzzjt_go.js": "eac1aa337046b51822f1e2d83cfcf72624b0b2e0094268a3e39e5a27cacb9c91",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "ccdf7be0a4ac59e5e34fc218d6834678f1fd3192fab3929920cdf2032ead2ad9",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "8bc2624cf42f95d6505b4d9a45be81ea33b5321f575fc96be56ba0585e5cfcb1",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9-review-51e10d24b4de.js": "7c913b97381c4a58e83a07601ceab24cb36c5f9246f55f301b89031ce8060483",
+    "assets/GenreLandingPage-DbglrrCT-journey-396b323aebc9.js": "cd63b953ac40a4f2ba0a3720c7f6ea55b927942033bf71d968791f6f60e88568",
+    "assets/GenreLandingPage-DbglrrCT.js": "23ac34f2ec884474782b57321dda28b9250d79fff54e83800262e410b6f65d49",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "e1b15b65a4a1ac3fc7d070e235950759b554b92ef3f27ec71c2f71a4334bfb13",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "3dfe3326495235be0a5466de484194e92454aafe68ad68efa4f8c5a8ea46efc8",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9-review-51e10d24b4de.js": "5a3ff67f81e8f31de90a3d2169e4b581edecbcb8225d3f16a9508ad15dbb5f97",
+    "assets/GlossaryIndex-DVh5_Wjv-journey-396b323aebc9.js": "efa0fa0fa01b10b19131c240a80403fb385e6d6656d15ae2c1e68acfdeeb6ce6",
+    "assets/GlossaryIndex-DVh5_Wjv.js": "b2bec8a81e265972212be7247a9349002ec07e5b827594e9b124ddcb4c788c45",
+    "assets/GlossaryTerm-CI-gCv5q.js": "d0eaad0991bac6ed0352bc5a3f656aa7d4b87ee270cdfa4698b6b5fab02df1b1",
+    "assets/GlossaryTerm-article-12805570752d.js": "12805570752dbfcc26a1f2a989c53090a010dc7ff8dd9cd19aaf4daf490b41bb",
+    "assets/GlossaryTerm-article-7a4dd79fe682.js": "7a4dd79fe682d43b65c5df52db7dca2608d480033170135fdb1eb805930a9ac2",
+    "assets/GlossaryTerm-article-9f01eacb62b7.js": "9f01eacb62b735b438269d26671b12eb77f701b074cb35761da8742c2e794c92",
+    "assets/GlossaryTerm-article-b5addb3dd0c1-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "34dc1e37f364e7a48238179e114a8abf22804bc671f6ee1ff39fa5c5953e699b",
+    "assets/GlossaryTerm-article-b5addb3dd0c1-journey-396b323aebc9-review-51e10d24b4de.js": "c6c8d8f1549594e305d4f10bd6e539771e8239a416ad507e64582a3d0f7052d9",
+    "assets/GlossaryTerm-article-b5addb3dd0c1-journey-396b323aebc9.js": "061855154096f5cb547e08ec2ce2bc6dde372bda8628e0a97385b5bc5e268678",
+    "assets/GlossaryTerm-article-b5addb3dd0c1.js": "b5addb3dd0c1d9ef6a84f4948a897199c389396db1139f94440e2ed4bc5f96e9",
+    "assets/GlossaryTerm-article-bafaef98cff6-quietseo-fd17485db4c3.js": "ca85bb620507e0578828dd6a9f075885a681b44d8d99c9fa1428300eb8fab6b4",
+    "assets/GlossaryTerm-article-bafaef98cff6.js": "bafaef98cff6a20eac9ec9d2901e7f7c1fa605e9e0ea4a955278cc0fb5afbb0f",
+    "assets/GlossaryTerm-article-bfc6dca1bd48.js": "bfc6dca1bd483919fcc6694f691d10bbbc302b19170920176514ebe6b8b7cfeb",
+    "assets/GlossaryTerm-article-c20db1c28db6.js": "c20db1c28db6a1a83ad23db72a46011bfeadf73707e9967e49fb1d52c4b78c42",
+    "assets/GlossaryTerm-blanket-6c4b34b1694b.js": "6c4b34b1694b822bc6dd8a22981e0942a512a0ccbebc4ee24381e2d2e7dad41b",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a34614e30876ec90d153d15f0f13a3e8caffb24b5b8c287d7cc7fcbd6ab4267d",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "767f73dbf95c9f0c6c7283d86fcc0b993e6ff484ee5a5c6be351448920ccdc8b",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9-review-51e10d24b4de.js": "5afc6917bc4747a7acb09583b080fd434deaf824c47d7104cc17d6cd58352c1f",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ--journey-396b323aebc9.js": "6d88c12a2754606fc96c5d5e80deb6d5433281deca15507072db56d47d91622f",
+    "assets/GuideBestMusicRightsBuyers-CDdeLAQ-.js": "1fe92cb922c68569605a1aa1c4df42179d7a121b1e05d3ac69903fe11e36d119",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "f56097e22a574665b7389d3f546dfb8ef76a42418185ac9cdb85611591789e7e",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "8e5673296c6a18f007ad13f38cf9bf69a9200b9a654bc0b55e226a036f509312",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9-review-51e10d24b4de.js": "f83db9bba0e04a71f3fba626e1564c96670764b4156b9908c1f05ba43052b9c3",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW-journey-396b323aebc9.js": "e37f8dc58fc0fa15bcb061fa9f587b6108a182b7d6511e5ec6395b614d728f34",
+    "assets/GuideCatalogSaleTimelinePage-oZpLmOjW.js": "c2c5a153252db66abf431d47b7d9cc09a42eb9d8b637fd9a11311231df679ef5",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "eedf57b2dea988480c843fe48b38334caa605bc8371749af62c34c787b9d7c54",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "eb253ea4aa15a2cd73453e61221b04c42afa55b7e4098e9f7e3aea5dffe5d1c0",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9-review-51e10d24b4de.js": "6204464bb60868a128a399b018afd61e0afaaf638c4e7b0581d739cb8e0b2a5b",
+    "assets/HowItWorksPage-Br1vbw7A-journey-396b323aebc9.js": "2b8601cef23919fd8899cd870128aed61e80ec60e916a1d9ae546e46831e7d13",
+    "assets/HowItWorksPage-Br1vbw7A.js": "98c2b5ecfe819183ac4d1f0be5eaf35081b0265e656b68525bd758eec8f74605",
+    "assets/Index-DtVciBUY.js": "0ba759efcf67f8f59d7f423bc78e4bc3891860dbe8d745c17977f9688a674116",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quiet-10a8b6d4e02b-quietseo-fd17485db4c3.js": "adebc9029652f070ca46d7806e57d9724a9c9654b26a325230cbd78bcdf13bfb",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quiet-10a8b6d4e02b.js": "313a8aa72c781d3b371dcf5cecd2b8c0909744c966ce4d157d1ed2729f90d991",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "bf41525302d148cc802ad6c3fee16bd5a80423433d439e14a014958dbf63c7e4",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9-review-51e10d24b4de.js": "2f7dfabac74f07927edba70cc674096b23a2ae304c2474f2aea418fc8c12c971",
+    "assets/Index-og-type-32d4337373ff-journey-396b323aebc9.js": "3b52e5c2c3d7e055a0cd0ea80c91a415392c5f43d843b7fc39ba0540b133e919",
+    "assets/Index-og-type-32d4337373ff.js": "32d4337373ff014426b0f5668fc2611c3114b93201d9e915a5bc3d120495104a",
+    "assets/Index-social-38be1f8b9b02.js": "38be1f8b9b02a375b72c79232f2b2ce992c0a0a155909f2d6e55c74773cfc63b",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "44e8c8795189b005607725a1106601eaa6d4087410d87e47b8809a461b8f1484",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "0a93711386dabc07b067b71b884b0a7db4afb8ac68e6380dd87b62d70ee1d0b8",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9-review-51e10d24b4de.js": "7fed42e2bcfd6d51eb3bb4135842417f4b66f355be6e2d4ca2eb917ed2e8ad3c",
+    "assets/MarketDataPage-DVgckm8v-journey-396b323aebc9.js": "3a07fca6d525959172ac7ab156fd46b40e09973b003bec65b6971c713dd87b85",
+    "assets/MarketDataPage-DVgckm8v.js": "3e1e18b6c4ab24e0bde24447232f05291d7ef619e45f17c4d6fd1f595ae951ef",
+    "assets/MarketIndexPage-BwChy8dR-journey-396b323aebc9.js": "8cdaeb778dc6aa79c3c42070b50fb844318771481f4e753cb2fd83b712194967",
+    "assets/MarketIndexPage-BwChy8dR.js": "900c8f22385ea40c4fffd05c1f1804fa8afbf556f76f71a525830613de591458",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "2c8424dc6db165e8c679c344449185f8a0baae6c3fff82b4191ab21792654250",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "978edc0865db67155b138121ca30f5d9de31aa4f23b0a62e7ef6dcb088759d56",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9-review-51e10d24b4de.js": "a87e00b27b0a1ec5a21228ae139fde03c1ce11b5c8dec4c19783a48bdb20983d",
+    "assets/Navbar-DK5bZPep-journey-396b323aebc9.js": "6d7c7c280dda2ed0a545d7520ee9d10d1361dbfa22b7eed78c87dbc543c7cbc5",
+    "assets/Navbar-DK5bZPep.js": "8974dddd51dfccfe1fd468285c3aaad11c3777c6a802ad4051e595421bbc4d0f",
+    "assets/NotFound-7UqaHOXk.js": "8f7550930fcf40248a9e0899f1bdae895e4e380019a77192625b254ecf4e4443",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "a0ff861a20265f050b80012b179e3e877070b3303165287d14623298eb963149",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "b1667730bd677f1e7314006ce957aea6eeb25f0a5a8ff591e830ddaa8ff937b2",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9-review-51e10d24b4de.js": "863be7b659c0fc35392a7971ceb0115ff6e973e8396a283b110b3764bf36f89d",
+    "assets/PersonaIndex-Cx7Tq99Z-journey-396b323aebc9.js": "57b04b90fd00f4d35e413490a16283128a17659cdf736e188c9c6f1f0229d32b",
+    "assets/PersonaIndex-Cx7Tq99Z.js": "4a90f35b38768aa66d7af0f2ed987edae73aac8edce1143fe02e446068fa87e3",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "84b2d8b7ade131ac6e126b9788a9afd7233a6ccc7f9d15c741c29a8b1a764414",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "ee59307c7c8446035fb37a51595cdc2a38a871ec4f3998dc1463a4d78b6f6a1a",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9-review-51e10d24b4de.js": "0d3caceb7384d3a09ca6e29cbbf6476904c9f9baa1120112858cfb6895474e15",
+    "assets/PersonaPage-BoYmt9tR-journey-396b323aebc9.js": "ca0273591c9aa750efeed925d0745c9b69134f67385a7f6cae5825023d9d14da",
+    "assets/PersonaPage-BoYmt9tR.js": "180db423ffc8ddc32f18c6fa506c76f1916741c388a600a74e8a3b7b91ee6e89",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "9a1935e50f77dbec2226a793219ed5582d28fc539a96a924a1ef14f7a40b3a85",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "f02c9ae871f8f4041fd4007552a54b0956225c14e923faab4f38b7bbcd7863c4",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9-review-51e10d24b4de.js": "213b5a058c5fbf92a09d4291d736447c4bcd85d16adc43d7a049cf465b730504",
+    "assets/PillarGuidePage-C957L0vZ-journey-396b323aebc9.js": "c80c537f86cc7a5fb5df67547ada21c49c518e54dda0f5ef819c6621d9a2f8f9",
+    "assets/PillarGuidePage-C957L0vZ.js": "2324d6ef0734370afb5fac60c69acc855228ac6370b139a1f703e1e52c8c39ee",
+    "assets/PlatformLogo-2tAWwfS3.js": "047b9cde877a03ee93153557f22313fa69cc82e3289d19404717cd22909957d4",
+    "assets/PrivacyPage-nphbg5_k-journey-396b323aebc9-review-51e10d24b4de.js": "3be06ff9d7aab7594008792c1555409489c9f75115365855797023f8741af3a6",
+    "assets/PrivacyPage-nphbg5_k-journey-396b323aebc9.js": "db5ff08a0ed561ad70f278edd7c00b6111aae768cd1abb71e0fd3d5666862ddf",
+    "assets/PrivacyPage-nphbg5_k.js": "23b64259edda7af62b7ca5d85692340246970fd8ea8893eec336222b7e661806",
+    "assets/PrivacyPage-typeform-18a2f3fdfec1-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "28b6c02a09866323f5f51126cca1e50656d639654937d4b4b39ff4ec18c14c87",
+    "assets/PrivacyPage-typeform-18a2f3fdfec1-growth-52842f5a03ff.js": "c1c12a74f9302b1e99f183c4ace9fa9432e24876d45ff690819f85648d9c135f",
+    "assets/PrivacyPage-typeform-18a2f3fdfec1.js": "18a2f3fdfec179e88137697af202fe62894e242256093f10f2a2ab31f6c45dff",
+    "assets/RelatedContent-BT4Ol14S-quietseo-fd17485db4c3.js": "9b48bed92b4ac21bb9af3849d2bff80b3306fd6b837a893c4c3e9a748a1e3093",
+    "assets/RelatedContent-BT4Ol14S.js": "3f4bb485a311bc408b8e47b2b1f3999bb0df7be7b4cf3d926d0c9a1535b53680",
+    "assets/SEOHead-C4J8_WVH.js": "c7e97d02db082771494c7cf684da4059b645b31603eab0321365b13e6d0fe2c7",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "0fbaee228049b1e2901d6fd593cf2dc33d01ec408c7ed1487e3c0a72f9bf0cdf",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "a2955719ad67ba52184629fd6c2543effa03ebd531257a963b58ac1da21e8016",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9-review-51e10d24b4de.js": "377e419e9113f3eca8bd9073c0443b264f64ac598a6b09185a5f0dfa92f57575",
+    "assets/StreamGuidePage-Bj-CUdUa-journey-396b323aebc9.js": "63ca5970367dd4e22a300f90ece0caf49bd217bcdba0a0745459b15f578b6756",
+    "assets/StreamGuidePage-Bj-CUdUa.js": "f2cc82c2b00a22e790a03068edc288fa8b20730ad9919888672c308d734f1b2f",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "891e68260e603a80ae8ce3f6c035786a39cbd0af126b628b0e62069e782f0cc8",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "305e1ce39b7b1dcc62f948519bd1e18bd001db6cd1de8029afd8853a8410aa80",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9-review-51e10d24b4de.js": "76a524df4bc8380937a63f1c453588780339d1bb3dca761e319fb4fbcef7f3ca",
+    "assets/StreamingCalculator-BmaIiv3O-journey-396b323aebc9.js": "bddf50a392392c3e8423ea5919645d6c7a9c4f40739cc034371faf3a053fa744",
+    "assets/StreamingCalculator-BmaIiv3O.js": "b887dd513a48672abf3e0f9729c5aec1c476ce3b1b9f08a5dfc75c3424188f6d",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "684560f41b088837cec1eed2287d5293312c928119b9b9bf109f6729d46d9070",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "3d5172861f4277af7f06742937caa0109328980a5f64ff3b0cbdc071e36a7dd7",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9-review-51e10d24b4de.js": "694c0adb183b2fc9485a5c22df255bf3612044d95c3f3a648a33cfa56e8f027c",
+    "assets/StreamingRatePage-Dx_E9vup-journey-396b323aebc9.js": "e8b4fdc4c3a6bb8b36b4c7560fdd972860d74ff1e49892de40853ec5a596ee99",
+    "assets/StreamingRatePage-Dx_E9vup.js": "3b60571836c2e01577b6a0cb6f85442c75d1601c0a8f935f495d9c8034a880c6",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "41054e3e4b9f0b85a0c1a1f16a22257205a33090bdec2483ae2ecb1216095a7f",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "ec26064f7bcece02e9c9fe268fc3161be5b4e3af8be222396cc1065a5539200a",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9-review-51e10d24b4de.js": "6398acbfa9a8c3d2b0a1a7065be92056159bc613498f9bdbdf9f51693571705a",
+    "assets/StreamingRatesHubPage-DOmrAiAa-journey-396b323aebc9.js": "4beba8f2699a3e7e36ccd65624f1063d3e29dc611d1bb55ad1657fbc4df008e3",
+    "assets/StreamingRatesHubPage-DOmrAiAa.js": "af00225596170b7e782237807103f47647935f85b3ce9f447657fc7c16698493",
+    "assets/ValuationGuidePage-Bs86RCS2.js": "450375cbfc0deb4e7ce16c3de36e22097b64d36d5dc337ddbc796c31363da651",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3.js": "aab326f48480795035b8656d5f6aa3072a864a40ebd100ab3ec72a51fe14b1cc",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff.js": "ef1d300d24d48c59168ab617cabc8d0461d8f6b49b2f76ae92153b9b2db5a3a5",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9-review-51e10d24b4de.js": "057ada9fbac694e6b407e97b3ce64276fae8bd4ad79fe3fcffa3cdfb122e7c04",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9-journey-396b323aebc9.js": "681950b1e8acfc777bc05096dbbac7f3f99e9b2e73645e199812b09c74fa04a0",
+    "assets/ValuationGuidePage-reviewed-2a90eac661c9.js": "2a90eac661c9a1cf66a8527aa1dfeeaeddb967f6f68f4125366cb126d68627e9",
+    "assets/ValuationGuidePage-reviewed-2c5cfb6de9e9.js": "2c5cfb6de9e9979c6d496c64dff4d6a5eeb4adcdaef199d989e0ca37da4bae48",
+    "assets/ValuationGuidePage-reviewed-3f4508478677.js": "3f45084786770a160ef1cfa736216c64f79b3ed80e5e39d62e3825cecdf09b2f",
+    "assets/accordion-DNmmZSWQ.js": "60e4ab498028885df013f138a94e2ab68aa6eb2275fbad1339bf6ec561bb121a",
+    "assets/breadcrumbSchema-ClfraVQe.js": "2ca4699e2e2cbb91301d9728e9dffb1b5d6e2ec850337adcaa3beddda8ec95d7",
+    "assets/button-Kc_XA-7I.js": "e093007ea83519a721951391cf79193242cead6361839a8903c38f5c012fdd85",
+    "assets/commercialGenrePages-DCv6f_Bz.js": "ea914a0a15e5514f31a80c7a5200afcc3b85ff8ac191b4d6820a17e188e3a317",
+    "assets/comparisons-OFVO5GNZ.js": "43c62e276937240defb385ce3874e03bff53ff01d69fe4141c96864e87b9b0e7",
+    "assets/competitorComparisons-primary-wave-11caed4cdd0f-quietseo-fd17485db4c3.js": "8b21619bac47aa529490f79f531b63cb4a20a20b2e0ed3aed9ed86a36305716f",
+    "assets/competitorComparisons-primary-wave-11caed4cdd0f.js": "11caed4cdd0fa540ee19ecabfbcf1669ca7321742297c4dbfef436483376ec87",
+    "assets/competitorComparisonsExpanded-D0DJzCdV-quietseo-fd17485db4c3.js": "a00b80562847dc05df436c7621ad12deaafbaf914581607c2a9973fd6b720be4",
+    "assets/competitorComparisonsExpanded-D0DJzCdV.js": "1bc4c8e349e90d117f6851db39ede67257e15a4bb1c108068bba0d233ee1f4e2",
+    "assets/glossary-osNbpTze.js": "62e702270faf3270900c113248732efddc8309e0ee25add4b402cbaff0cf0888",
+    "assets/growth-c2581618659c.css": "c2581618659c92051757e960b290f018367bfaecc53f50f92836e89ee76d47c6",
+    "assets/index-CdURxxep.css": "2101d210e4f984108db9d5d612158b43bd342fa22e69f915050de623d79d58d1",
+    "assets/index-Cu12htIi.js": "f64197f6796589bbf0fd65a37e6e8b59b4c6375b26545eb24932dcb6dc0b4a67",
+    "assets/index-apply-navigation-a80fae372370.js": "a80fae3723701abb452639f5daeafb53deaf8e85f9e9d99f4d8857c3ee6769c4",
+    "assets/index-article-0f351c3163d8.js": "0f351c3163d81d4ccc6d018f3b4cab6a931d828f82e47f10a01737b4486b80e7",
+    "assets/index-article-106aa515e0d0.js": "106aa515e0d01e7f1e0a0ed958e1068070eb79b1c6238c47d261164bd099c273",
+    "assets/index-article-360c41838159-quietseo-fd17485db4c3.js": "b285e7a2bc1dce9d140951c4be6290c7aaefa52e11564a7c8dc26ba6f932646c",
+    "assets/index-article-360c41838159.js": "360c418381590dfd55a3e042623172bf289e32bf67f5515eccd1d4817d284089",
+    "assets/index-article-72530f860335.js": "72530f860335ab8201a68f0dfdd87ead901e865fb7731c4ca0d7ca49b1c74b46",
+    "assets/index-article-78efc048ebfa.js": "78efc048ebfaad92e1adc7e7f2fbc07e0b49bfa4724cf4582be9b5801fd72a26",
+    "assets/index-article-8da2f241ed06.js": "8da2f241ed06acaa0bc541f2ee531fe943470a9dfb3e194e7f765bc41819ca80",
+    "assets/index-article-a510d9fd099f.js": "a510d9fd099fae50974e80f5340828e3fff533e9ad56c496e8d6122d2893b454",
+    "assets/index-article-d9f46e1ca318.js": "d9f46e1ca31822d14721ba25156289870a5bb48a38cf2c224bbcf5ddcbd12f56",
+    "assets/index-article-f387b88293f2.js": "f387b88293f2aaa1fcb80ae665897c099fea9297cb1f03ffa27f9b7931ec5e6d",
+    "assets/index-blanket-22fc13e5e2be.js": "22fc13e5e2be1dfa521f0fa15608222d94a9368f09bd797d350755be8f2aa10b",
+    "assets/index-funnel-24b85d23cd2a.js": "24b85d23cd2a5c94b0c5eb937fd60c2592b9055341eb0c9bfd05e031762d4455",
+    "assets/index-guide-36708b151164.js": "36708b1511643e35e1310504ed17885f1fbfa40ab4aa8be2f13b0cf44782b391",
+    "assets/index-guide-e66c64405e6c-journey-396b323aebc9-review-51e10d24b4de.js": "ebbd15e60f19a08017e285473789fb1b5328aec1a7a3f24df2d2feeacd2fc708",
+    "assets/index-guide-e66c64405e6c-journey-396b323aebc9.js": "9413767099c298d208cbbfbec08b70079032bccd15250d3930ed762cff2a96c4",
+    "assets/index-guide-e66c64405e6c.js": "e66c64405e6c47d8e0bd8e8a2f7d62479292ad62311401179267a71dcdb2e508",
+    "assets/index-guide-f2960345f6e9.js": "f2960345f6e9efab63af7df70bcdfac05e693be80fc3022ca2dbac9b7b58dcb7",
+    "assets/index-local-fonts-25c7a65a524b.css": "25c7a65a524b62b62a4673d1a712dada46fa2a01d3e656a0402bee8e58ee3964",
+    "assets/index-og-type-d8b819cc2ac9.js": "d8b819cc2ac9374c28a6aadf45c985666f547a2d02baea505342f77613e3fdd7",
+    "assets/index-primary-wave-2520ec9f5f7b.js": "2520ec9f5f7b1ff0bb95a6f38c5d3f40eca9ab8900dc65ae2ed901ffadf00be2",
+    "assets/index-social-77ca88e8ba4b.js": "77ca88e8ba4bd54b358f39dffaa7781a0473abad53915dac8948cbda5d25a04e",
+    "assets/index-typeform-45ce7e3ed34b-growth-52842f5a03ff-quiet-10a8b6d4e02b.js": "b2d6a77aad74446f18ae006bc5655c16a3b2094021447dd79571fad4bb6a3ac3",
+    "assets/index-typeform-45ce7e3ed34b-growth-52842f5a03ff.js": "0f90a1e87284c09d9590c3214aa522c5574e2ea0fbe95b95e22685f394535ddd",
+    "assets/index-typeform-45ce7e3ed34b.js": "45ce7e3ed34b94b1977cfdeaf6bbec87babe1978d5e4733f89bbf7ad981c15a0",
+    "assets/journey-cta-632796e93c26.css": "632796e93c261e3e471a37bfc9e5997a4b4a2fe91f368e3353767d11d99b6464",
+    "assets/personas-poXD4ezC.js": "9f6e2acf154fcce729945f7848563f4950de6be177e2ced68f979a42a72c8107",
+    "assets/preload-helper-D1teU4R_.js": "fbabb599d4b3ccf54e39c358a4f361ffceb4e42c8ef7be414588924210341317",
+    "assets/quiet-9a6ada9924fd.css": "9a6ada9924fd7519ddbf5279f8df028d2c550715f617e815b73ba56db25bf81d",
+    "assets/quiet-site-97dedc0e1b45.css": "97dedc0e1b45c1f6a7cd23ad0a5bd42bbcd0d9b77e5e1d972961a017eb09d643",
+    "assets/streamingRates-D0lrxoIa.js": "6f10347a4fc57127aef67754a3861c67fed999be74babb3c93f375e56b4028f7",
+    "assets/vendor-DhPEFgb5.js": "c9ca51efcd0ff1503f63b9e8be4e694c380a740cf1c2fa920027f0382327f70e",
+    "assets/vendor-charts-CzCimo7o.js": "15e6701f171be0d4e91db70b55736524ff4f4b25113a3a106423f69e2ad62724",
+    "assets/vendor-query-ByDhhwTy.js": "1429681d8b79a923c357ae7443b3dd9f421e33d61140e4cc13b825659eb71fea",
+    "assets/vendor-router-D1jo5eb_.js": "c24491baf42f92ed5c8b3bd40780a68317eda1bea0dd284c1e18a368ff4641cd",
+    "assets/vendor-ui-DsGNjII5.js": "a054b3d91526c4dbfe7c62dc165a98a7daf091303dae5eb97de68cb0e587843a",
+    "blog/ambient-lo-fi-music-catalog-buyers/index.html": "a0d19f68016dc69f230bad16d97ea880d472be85db5408d4887be44b1d4e0489",
+    "blog/beatbread-vs-catalog-buyers/index.html": "115cd718a8eeda043647e0e5c2df51be3275d66c8799b8510928890cbce41b64",
+    "blog/case-study-ambient-producer-catalog-sale/index.html": "b35c3f66ad75343ffbc8fe5db332982096bccdeccd55d815e670c2a2be3a0265",
+    "blog/future-of-ai-in-ambient-music/index.html": "c61ed3956e01565de3a2146a40135f3e50bd998e388f79396469aad155d8d908",
+    "blog/how-to-register-your-ambient-music-with-pros/index.html": "7db2da3e68ee78bdd8b7c8bdf59f7a9bd014fcacd0a712ef6137ee788e9914ac",
+    "blog/independent-record-label-funding-options/index.html": "7763b169390760efa433a49ee95fe1c7d2c07040828f1d70c20c936ddc382985",
+    "blog/maximizing-your-lo-fi-catalog-value/index.html": "3f2214ee1501b22d38f442d4ca6d3d2ff042f01b4e4003ede6a69e853d6963e0",
+    "blog/music-catalog-offer-checklist/index.html": "45e60262523fe0ddb15dded64e738010cc5156295acc1d7a0c355a245f976c80",
+    "blog/music-catalog-sale-documents-checklist/index.html": "7ab6b5788d9e740f7a2c52a76155af37103bc33f40def43e0ee214b7da733cfe",
+    "blog/royalty-exchange-alternatives/index.html": "2bc2d63b6e3e506b8d128921ae0ef04e1f2fa28846d942e207e8f8d55208a090",
+    "blog/sell-music-catalog-lump-sum-2026/index.html": "421268f0f38f1b193d8549a6b51cfa4ec2e0b17d924e538b0f1e0266ff0e8625",
+    "blog/streaming-royalties-guide-for-ambient-music/index.html": "39230a55e0ba143048ea26b0a070fcdc80cba96bfa41bf0ffd4d16f45d50e282",
+    "blog/what-is-a-blanket-license/index.html": "834d86bfb27d1cfd0dc9891d5b64b2c1becfe8af0ba5af810ba4444827dbfcc8",
+    "blog/why-selling-partial-rights-makes-sense/index.html": "e581d35f8b31b8ee3cd0271d3ce8ee5d6d1729324b8ffcb150431118f9ed5788",
+    "brand-facts/index.html": "51a22ef8372716ef9929fa5573df4660cfb9cc3d9d10e7c7c56e5a6654db7fda",
+    "calculator/index.html": "4a30bb9de02a1b89b9fcf1f651690bd41074176e1a28d18b510bf94cec4ffde7",
+    "compare/catalog-sale-vs-catalog-loan/index.html": "0e1af9ff172a03db9bb3574a0472622688a989a2e70631c5318ca640fa3d0833",
+    "compare/distrokid-vs-tunecore/index.html": "da826bf0c6e1ad68abe06c6968b1c2b287ef3de394eca85d29b1a18bc059abfa",
+    "compare/exclusive-vs-non-exclusive-license/index.html": "630276a717a125222dbb6d9c4c86c09ec419982f625498d62c4e2ca2304c1b31",
+    "compare/full-buyout-vs-revenue-split/index.html": "b5c14a5b94add0055769dbc02a7b7cf5254a4e47076076e6f79e45142153ee47",
+    "compare/index.html": "9233468e3cf097d783be851d65daf81a60a615d3b2db46dfb8323f18cde98de1",
+    "compare/major-label-vs-independent/index.html": "84b93c02896e4b2087e8bd7d43c3cd08683f36deea976f69477dc38d36c27ae0",
+    "compare/partial-sale-vs-full-sale/index.html": "9b5d783e3d4409d38dee0a6676acb138c3c97384d4db0196b6da59746cac9357",
+    "compare/self-publishing-vs-publishing-deal/index.html": "25ecb5b8bc61e3067cb2ea173547e74c8b114d82edcc87f95325b50b79cefde5",
+    "compare/selling-masters-vs-selling-publishing/index.html": "d95890e07a09f05da16d2926391626d629dc669eb9b642edf9c5a9c0096464f5",
+    "compare/space-vs-duetti/index.html": "9bf7c01e871e9865369d62cf07dce8b217535172a5d4863b7bce23996018e50f",
+    "compare/space-vs-hipgnosis/index.html": "f0bc422e30417fc19369ca7fa96ae4cc082ae4b915573855e3f70bbb3e7b4b38",
+    "compare/space-vs-primary-wave/index.html": "d8783cd9934c77309cb18f053d53b17de12d2dec095dd6ba88a75ef57f7882a1",
+    "compare/space-vs-reservoir/index.html": "7876399aebc496bc5576921fea1bfd1f16e689fcaa13ffd3469523e4605f78f2",
+    "compare/space-vs-round-hill/index.html": "d29f31e3c0f1ad881eba2b778accc0cd5848695d649b6e3efa3923bb2f08396e",
+    "compare/space-vs-royalty-exchange/index.html": "d60eec6d92986336724e2ebf58441c05656f57fb42ea3f1fab88423516c1fd4e",
+    "compare/spotify-vs-apple-music-royalties/index.html": "179ae11b4bcb840a063bf5880e5a82ef2d800d4897a797ff6cef96de4e346a92",
+    "compare/sync-licensing-vs-streaming-revenue/index.html": "aefe8b8d69ce95b3dae2dc0c60d6b5c17e106830fd13af3ecdfd778722a2a592",
+    "data/conversion-intelligence/index.html": "e1e49f76bec325e0bda856ac0cec7e5b9e3d234e576c3606926e018f8b6b4bac",
+    "data/music-catalog-market-2026/index.html": "09939efd636d17053f01f7fcfb0b06bcc4f4101cc242e4354f077342c52d4295",
+    "data/space-market-index/index.html": "83682db45f7747e3f9ea3f98bab1329e926497acff73cef20434fdb1aa3fc93a",
+    "favicon.svg": "b0a330401e5e53cb33df25129a6aa96cf27f7e94bfb80eb3500012b0b9bd3ab5",
+    "fonts/fraunces-OFL.txt": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+    "fonts/fraunces-latin-48282a415ec2.woff2": "48282a415ec22e31beaf0a0666e6fae0c8cbddcd0b1f6e729f27c3ade8a64e43",
+    "fonts/fraunces-latin-ext-f120089b9440.woff2": "f120089b9440f3e35a980a2137347b1851ad46ee4b8ad5c63b6c07e053fa40e2",
+    "fonts/fraunces-vietnamese-7e3c04662669.woff2": "7e3c04662669cd2b8ee672e4e5d63146d21f6aa36654b211718af5fe0bb3bd51",
+    "fonts/inter-OFL.txt": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+    "fonts/inter-cyrillic-aebf2ab4a4ce.woff2": "aebf2ab4a4ce6810d73c1ac7be7cafb4e5ec4cee2d6db5fb3e09691747ec4bd6",
+    "fonts/inter-cyrillic-ext-fccca918fea4.woff2": "fccca918fea40089dacadc7045861314d1a6bc91f1f323cc1eeb22ebcdb321b5",
+    "fonts/inter-greek-46dd4cdca58c.woff2": "46dd4cdca58c26ae87cc6927657bf83b2e8abfc39ffd0ab176e301a8d28d22bf",
+    "fonts/inter-greek-ext-a2e2c783ca6f.woff2": "a2e2c783ca6f9c20486e81e72a279203e86730bbf8f01ff6a5ee9dbd09e1c271",
+    "fonts/inter-latin-c940764593d0.woff2": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+    "fonts/inter-latin-ext-a28eb6d3ccb5.woff2": "a28eb6d3ccb534ae0c94ca999371df024aab60b08c3c8a5720ee9e32fa0faaa2",
+    "fonts/inter-vietnamese-8db00ff46c67.woff2": "8db00ff46c67b22cda8bed865acf7077651cac8d2841d5b40980556b48961931",
+    "fonts/manifest.json": "d5c4fb740707eeb06b2065f7a1893449dcf89b0eb0c89de5f96265cb993fc504",
+    "fonts/plus-jakarta-sans-OFL.txt": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99",
+    "fonts/plus-jakarta-sans-cyrillic-ext-a16f29d7d2a2.woff2": "a16f29d7d2a21a4f9b3249a82eb2725ed5bdb91500dfb5c4758977de27477f20",
+    "fonts/plus-jakarta-sans-latin-cd8db90cd950.woff2": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+    "fonts/plus-jakarta-sans-latin-ext-0303e02b53b0.woff2": "0303e02b53b0298fb26a0193941a2e8754f0f9a9fce50d90b178d8da3424873f",
+    "fonts/plus-jakarta-sans-vietnamese-5c913fc1b1f8.woff2": "5c913fc1b1f86f4b475e5df45a796aa480d1f7f0891ed6f1a5991d6d1be887c3",
+    "fonts/provider.css": "0ca27ebf738dd4b2129f7273c8850261b6263e14204831a64cc9322dd8a21ffe",
+    "for/ambient-music-producer/index.html": "737d615a2a999ddd11a36f039cd1dc36738154a5dd81e091f18c3e745af8ac79",
+    "for/independent-artist-catalog-owner/index.html": "98a84769c82c9d892d80efbaac0895dcabff4d3b0a60ebadbc4cdfa43f9227a7",
+    "for/index.html": "d5dab07c3be0199f6b7746faab50a87fa08bc6996b06ced697c9365c6f9d79ea",
+    "for/lo-fi-beat-maker/index.html": "6b7da8eb9908f5758e74a2e0f7ba113ac52d2207d3be117c289186e9fd189756",
+    "for/meditation-music-creator/index.html": "8e137cc649728293e128cb96d29a48b2d179b4d6d642d4addb7074fe15264b91",
+    "for/music-producer-ready-to-retire/index.html": "ab70722067b5631b0e01e3aafeb9036efab63f4dac91185c86e98864121b1544",
+    "for/side-project-musician/index.html": "9d0b82007cfd400647f978b7efbc98be03a570d80a58458c6df34022b3c3ee38",
+    "for/sync-licensing-composer/index.html": "ccef32589d8b0853dc80d856bdda07fcbc4847ace051dce2967e0356d7422c9b",
+    "for/wellness-app-soundtrack-creator/index.html": "533181228286dc59d6966209972e425d02a88de9768af1b4ddedd019a5649b7c",
+    "glossary/advance/index.html": "8126ecb1b11cd07ebda2d119129c50cb4dcb96f70217a6c043b774470d578d9d",
+    "glossary/blanket-license/index.html": "40c37d236a465996c1c05cc8b6acad99df8300261321b7b5c78d04735d276d53",
+    "glossary/buyout-deal/index.html": "a58627a2a317002fb49c97b7e233c146d473d0fe40a9ed586d67104cbda008f6",
+    "glossary/catalog-acquisition/index.html": "f6a2ee48c0cfd50480406109ae921b34f65b29f3a85678712f043551c950026a",
+    "glossary/catalog-loan/index.html": "fb2133ab6dd63026eb05ab96e133bd6e0ee85f7314b15c94850280336bb5922e",
+    "glossary/catalog-valuation/index.html": "24f543ca900af818ce0a18da5be703bfb855327d820dba3e61fcc8788491bada",
+    "glossary/compulsory-license/index.html": "a6f320ee9722a9e0e045e1a7954da699cfb9ea3032425168d956615ff707666e",
+    "glossary/content-id/index.html": "506bf3f0bff23c3af5fa142ccd58374cf723aeb73a98cc8cbf02b69c8df7748d",
+    "glossary/cue-sheet/index.html": "ab37bb17139a8d64bf830b50d6dae79ef69580d0b2f27c258a47e7adf728d79d",
+    "glossary/digital-aggregator/index.html": "42e9ab68a906b4401200b1b15e6ed4877da84ca1bbb71215664e6e3a9123a374",
+    "glossary/distribution-deal/index.html": "b370426fb690bc413c29cbb2488b88ebc0cd9b729a0ed3174607c85a99ca170d",
+    "glossary/exclusive-vs-non-exclusive-license/index.html": "eee49a4a2cfd30168764f1b775af825b09568a441b30b3903c53200ac7b2d3b6",
+    "glossary/independent-artist/index.html": "b47dd15331a45f3bb0ec690a7b6d000094b7aeaf41e62f900a8bcebe7b62f738",
+    "glossary/index.html": "b25af2e2d71c66a1e44c46580c9d5246f8b94a2947dec53777ad6cd1f547bccd",
+    "glossary/isrc/index.html": "35f9325d33b9d59a8a3a47b201e55b58e277fe6005c0b37de66879fcbe382ad1",
+    "glossary/iswc/index.html": "6b03ef70216897d590ce840aed254cad926444a04083f85061a3a8e15ae0c653",
+    "glossary/master-rights/index.html": "ec58a0dd09d61a5018215c348ed54c606893e84106cd60cacfaf4a4f20822a5d",
+    "glossary/mechanical-royalties/index.html": "2f5e0a380a8875ff2a88b15ad189fe25f55de16ca1e8904f6401230dfc67cc37",
+    "glossary/metadata/index.html": "ccce9110dc46b98f92e0140ca837250700c5c1d2928235bb3daa5be3282b9e29",
+    "glossary/music-catalog/index.html": "7d2890055fff79be15b9e68f36281c19103505ce35c6bce2fbe44764feb5421a",
+    "glossary/music-publisher/index.html": "98c21ebec1bc30e8cb018e55b9371f021bd11669539b9dfc1cf70e310d542b99",
+    "glossary/neighboring-rights/index.html": "93f28646d209429e9168374464afe05f3939ff3e04289ca6eb1cf32d62f4c6a5",
+    "glossary/partial-sale-vs-full-sale/index.html": "af9dfb13166245e218b3f2386a80b3e894c27c947a0c01bafe7e930ac96c854d",
+    "glossary/performance-royalties/index.html": "9eb1792c1bd83dca0bf4cc061555fd66cf583bb54f5df6f1150a0614a19ca997",
+    "glossary/pro/index.html": "25ec79b27ea34f12aebfcdc1ef57673be86b2bd6b9a05b5ade428b3f7b58b4ab",
+    "glossary/publishing-rights/index.html": "994dcf3ac59ba690bc18835d54a803091b65368ad3636bf1b8e8d4537eecbafd",
+    "glossary/record-label/index.html": "8b20e31e5f12d5c6410927e266f49b9016451584db90d9e6133364efad8a5182",
+    "glossary/recoupment/index.html": "760945ee3d5ce2ce3a93eccf1c321f8f4b61a24dfa2aceac59efdeba13e5f725",
+    "glossary/revenue-multiple/index.html": "98f04a1036dfabc6550b71e562e45915615a3198cadff9a74cd77682b40ce83b",
+    "glossary/royalty-split/index.html": "ea14017e4fc2af5510a82e72b22c570ed9c3922ba198619afbe89d97e1c06326",
+    "glossary/sample-clearance/index.html": "de03b1c549e5b7ef5f7d7a511991133a89c1abad6dd766bd6f923026312cf8a4",
+    "glossary/streaming-royalties/index.html": "9d8c6d5467f1acfee2ce6043f0d4d594ae80e49936306dc9c24f0509531288f5",
+    "glossary/sub-publishing/index.html": "5d97d3ac28d3f9e209da97163b5826859642400f1ad0c1e5c660c1c9d83e4848",
+    "glossary/sync-licensing/index.html": "f8af87eebbafd2fa2072c511d4de2d95cdafbe783a540ee77387e1b2b359e82a",
+    "guides/best-music-rights-buyers-2026/index.html": "183c98666815307b2636d95ffd4954a8719f17708017b7f33ddae5f3766d8272",
+    "guides/how-long-does-it-take-to-sell-a-music-catalog/index.html": "59b9ead1f5b67fce650c24d82566eb902d15f59fbb9ad5afe98ac8147e386dc5",
+    "guides/how-to-sell-music-rights/index.html": "680be7974cdcccbbab98eafb214ee1b8026574c5f5069f8b49aa8c9b29f3c710",
+    "guides/music-catalog-valuation-2026/index.html": "85bcff105374e728139f9a78846630494d8cb5d9e4db8995fce3992e3a79c95d",
+    "guides/music-rights-101/index.html": "0660879933f8d0987a0b2480ab5e074ecce877489b5261e84c38601174764ea3",
+    "guides/what-are-your-streams-worth-2026/index.html": "78ab325d5001ee65011eac926b5ec9865341b01e2325177fdf9d977ad7adde84",
+    "how-it-works/index.html": "40279ff6fed400039160e837adb7f9c7ec7b82e43698cb65a798d550d377089c",
+    "index.html": "454d9c2244d3e923ed42e3b90fcc23d5a0973990d872a8a046630112fb7ff230",
+    "llms.txt": "eefed396e5dc425171db0000a10150b7dc39cd5c5a6f4747f2c74b1eab308e86",
+    "lovable-uploads/4d6d6265-96f2-4576-9913-83d4dbbb0cbb.png": "87bf47559362114c19f464fcc595db16d7ce558b573edba11a956e42774598ab",
+    "pricing.md": "91fecfde2b93c066eaf7d2734fb7776bf238cf3b65102b89d35f1d968090383d",
+    "privacy/index.html": "d76d5247d1262085978107468fcc38b5c62815fb29c4298a797c558bc9326dc7",
+    "robots.txt": "f5f851c91eb25dc109310927aaaec9065d7d65e8b940c15764a5e5d939ca7a96",
+    "sell/index.html": "57ec26f7f2d660b8b308f3172272eb0eeca8c30f23dedb7441701ebde370ebb2",
+    "sell/sell-afro-house-catalog/index.html": "f18828650f75373673905f62b9de9bd29221edb1cd7afba7abbf489e93fb4db4",
+    "sell/sell-ambient-music-catalog/index.html": "e6a7b7ad1f82412730069d4ca71499f9082e8930e8d16dc87c962848d7b120c5",
+    "sell/sell-bass-house-catalog/index.html": "26f5dc7fe34829a0d17ef1a48d7d9610480faac1af741c2d970d9c5e86e74dc6",
+    "sell/sell-breakbeat-catalog/index.html": "1bfa920d9151d7337460b2925c1c3fcb4c84abe4c2424b12bc91b2a0a4771a7e",
+    "sell/sell-chillhop-catalog/index.html": "75e35c0e9036d90326e5973ad647deca501e7577b2d3080a7463e221bf1d3ab8",
+    "sell/sell-chillout-catalog/index.html": "d05a780d12389ad35e3563abe217ca3782eebcd7b6e288194ca28a9b66002f1f",
+    "sell/sell-cinematic-ambient-catalog/index.html": "09b95e02ac22117f3531ae1a973286ba395f2804303f1364be31bb2ce99f5115",
+    "sell/sell-dance-pop-catalog/index.html": "261aa9b5bc4aa77fd2d2a9905353233f3450023853b427f75875d3ac4c453168",
+    "sell/sell-deep-house-catalog/index.html": "3c2e6eb05bf1cc2f7733c9d2183ee49240823b6ff8bfb9d2c173ff8d2a159c92",
+    "sell/sell-downtempo-catalog/index.html": "9026ec95716e0e3ee0f87e2c04a92acecf7452767fb914316a257b3e42b570c1",
+    "sell/sell-drone-music-catalog/index.html": "0bbd391e2a3d613d81e22964b9d19fed32240a9843cc5a6540465552c5773c56",
+    "sell/sell-drum-and-bass-catalog/index.html": "adc657ea7d676c58585105d9ff9ad36859fa9a4c047eaae2031d3d88f03badb9",
+    "sell/sell-electro-house-catalog/index.html": "33441a2fb80363eb79a970edb3dc45fb08480324cbc8b6c282aa4b983a909c9e",
+    "sell/sell-electronic-music-catalog/index.html": "ae009747c1b6edb14ff06b7af47b193d4d34a9725eb6f20286d26b97ed4a4b5c",
+    "sell/sell-electronica-catalog/index.html": "4ec705e13cb3e2792be2df02b8d00b32260d67676bfcd0a94651e8e81219a241",
+    "sell/sell-focus-music-catalog/index.html": "fe1ed29e94248e455190b9aacd4f90c27b7d3d252ead0c46ed26d38a1f2f79be",
+    "sell/sell-future-house-catalog/index.html": "2bda054da044a3bf4a63fba3c8165f0466d623a51b23970dfdad71cfaa9b7d53",
+    "sell/sell-garage-house-catalog/index.html": "2a3eadbd037be3a4e942232c814a38c1d44513fd3afbfb9cc87ce6291bd53259",
+    "sell/sell-house-music-catalog/index.html": "76d595359efd959b9c6876673aa7af40dd52c61e1da6844631aed2eff5470f21",
+    "sell/sell-indie-dance-catalog/index.html": "85a0aae4e1e884019c2010d1e9afdc1096212e028e030b8a8f79c94fdba56e05",
+    "sell/sell-lo-fi-beats-catalog/index.html": "df511f17ba0aec0bcee9f9fc765e3419c477db556c4ded32144e4c4287becaf4",
+    "sell/sell-meditation-music-rights/index.html": "b8e6b8558d05e10d73955a37bc5f997ee2674967fdaeaafda5cb7eeaeea5f45f",
+    "sell/sell-melodic-house-catalog/index.html": "f2fe040d918faad4d8db8cbbf27cbdc9521bd848e4d108cdd074b31a71d9ddf3",
+    "sell/sell-melodic-techno-catalog/index.html": "97eff066acda75bfc0f473e06edd23c6707449ce648c48113d001bfee9cc902b",
+    "sell/sell-nature-soundscape-catalog/index.html": "e58a770929eebb200e814e5bb5a5c521075e10fb66b8f330a9dcf051b00ee4cc",
+    "sell/sell-new-age-music-catalog/index.html": "43a29b75c2a5e6827613c43b4c3b0f478137ccfaf491d4137fbd48874c0b536a",
+    "sell/sell-organic-house-catalog/index.html": "61ae9832ea982f95f33fe8fea983efe6170b2b187522984d2f44a43085b459e7",
+    "sell/sell-progressive-house-catalog/index.html": "17dfce8f3b03ea2e5bd0cb6f6ed4cbb8f3b4f25ac7fffab2d1a1a8d6d53c2c4b",
+    "sell/sell-psytrance-catalog/index.html": "c8dd9a26b3427fe679fb65b1cfa6768270c930c9bcdfc88b732459b0a3256b43",
+    "sell/sell-sleep-music-catalog/index.html": "bd18fd0203adfefff615c0cf717e7ab71f9aa78f9568fa1951887d92e3a8fc3b",
+    "sell/sell-study-beats-catalog/index.html": "0bca034984bed807ac68b156c6d0ee9a2405d73ee5849b07fb9a3c065aeca807",
+    "sell/sell-synthwave-catalog/index.html": "1a1be229bb13f3c1ee77796146a1781b243c66757a36a9f94ba65cd9a33637f9",
+    "sell/sell-tech-house-catalog/index.html": "6c67c2c59654190a8dbea0eeddf9cab4d8245a56f329f7f43e178a7c98145e28",
+    "sell/sell-techno-catalog/index.html": "a3034bca48893df0c05b080c42d17d317e4225e5d228550544b051c202ffca13",
+    "sell/sell-trance-catalog/index.html": "35c6e24041d9d6498caf5de2d20117c940147b47ff79ad02e41579084da35426",
+    "sell/sell-tropical-house-catalog/index.html": "dfebca6cfb0381f1fefb4448e02d801436ade7a34d849257c00fe2c8f6b96007",
+    "sell/sell-uk-garage-catalog/index.html": "74e6fa0c3d0932407336364ab6575831786b013eeb85d2d90651eb18703e991d",
+    "sell/sell-wellness-music-catalog/index.html": "279f5744bea5fe7030c1903da457b143be94b9772a3d7a2b684299432b834aec",
+    "sitemap.xml": "92264843442cfd5791e06118c8342b0850b6493693fb51be2cc623c1a0f51080",
+    "social/space-catalog-v1.png": "d4f7886a3cdc1487d888b1a85975ce8e5684a8d65a99512c8f0baa9f48550453",
+    "streaming-rates/amazon-music-2026/index.html": "0c9adfe8f067a0fe169130eed1962b5b25bfb20488417f7f5c4a736f446d1a81",
+    "streaming-rates/apple-music-2026/index.html": "216e3b1b359abc1abda399694b1f03ba1fa3100cd4051f6c87b4b2242f1463cc",
+    "streaming-rates/deezer-2026/index.html": "418e25b913274f2b2a4e1e110aea173099bd12bb6f656fa7c9832bb29ac11b4f",
+    "streaming-rates/index.html": "bf48a55de1aa16b4d6df6dea9cb71a8baa11f484e792eb135bcccc2e103255a7",
+    "streaming-rates/soundcloud-2026/index.html": "59a0865aed1dbb19a5ae8c22d916f8adda586b0d598ce456e325a7dcefd20445",
+    "streaming-rates/spotify-2026/index.html": "8835ff7ed7b7166c4c65cfebc480496f1f50753ced916f9a01d0985b54205b15",
+    "streaming-rates/tidal-2026/index.html": "f8a2ea4c44cf9ed1feb89939dd11adf4c0c52e87d043ed1af603feb3601dc2a9",
+    "streaming-rates/youtube-music-2026/index.html": "61a524a5726c9015b9de34b4d88c8112831532634a070793eaff5a6f00fb0bba",
+    "tools/streaming-calculator/index.html": "a06dcf2b9d272274b3c316d390ed5d318c1cb203ad895ab81a8b12d99535e506"
+  },
+  "status": "PREVIEW ONLY; not a production release"
+}

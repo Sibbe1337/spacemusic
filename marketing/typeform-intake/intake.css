@@ -1,0 +1,11 @@
+[hidden] { display: none !important; }
+#typeform-container { height: 600px; width: 100%; margin: 20px 0; scroll-margin-top: 16px; }
+#typeform-container iframe { width: 100%; height: 100%; border: 0; border-radius: 10px; }
+#short-form-details { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 18px; }
+#short-form-details summary { cursor: pointer; font-size: 14px; line-height: 1.5; font-weight: 700; padding: 8px 0; }
+#short-form-details summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 4px; }
+#embed-status:empty { display: none; }
+#intake-card { overflow-wrap: anywhere; }
+#short-form-error a { display: inline; }
+@media (max-width: 820px) { #typeform-container { height: 580px; } }
+@media (max-width: 500px) { #typeform-container { height: min(640px, 80svh); min-height: 480px; } }

@@ -1,0 +1,79 @@
+{
+  "fetchedAt": "2026-09-07T07:52:31.103Z",
+  "userAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+  "families": [
+    {
+      "name": "Fraunces",
+      "cssUrl": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&display=swap",
+      "cssSha256": "7cae6c8460cfe590ca8465dd310a45f67932a17c653bcca011683a021683548b",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/OFL.txt"
+    },
+    {
+      "name": "Plus Jakarta Sans",
+      "cssUrl": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300..700&display=swap",
+      "cssSha256": "e57fdc10b2a7f8fe886e33174632e1519ae370ef5bb8bafa57a76e713a36d90b",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/plusjakartasans/OFL.txt"
+    }
+  ],
+  "files": [
+    {
+      "path": "fonts/fraunces-vietnamese-7e3c04662669.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCBTeP2Xz5fU8w.woff2",
+      "sha256": "7e3c04662669cd2b8ee672e4e5d63146d21f6aa36654b211718af5fe0bb3bd51",
+      "bytes": 19748
+    },
+    {
+      "path": "fonts/fraunces-latin-ext-f120089b9440.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2",
+      "sha256": "f120089b9440f3e35a980a2137347b1851ad46ee4b8ad5c63b6c07e053fa40e2",
+      "bytes": 59540
+    },
+    {
+      "path": "fonts/fraunces-latin-48282a415ec2.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2",
+      "sha256": "48282a415ec22e31beaf0a0666e6fae0c8cbddcd0b1f6e729f27c3ade8a64e43",
+      "bytes": 67388
+    },
+    {
+      "path": "fonts/fraunces-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/OFL.txt",
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+      "bytes": 4391
+    },
+    {
+      "path": "fonts/plus-jakarta-sans-cyrillic-ext-a16f29d7d2a2.woff2",
+      "source": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2",
+      "sha256": "a16f29d7d2a21a4f9b3249a82eb2725ed5bdb91500dfb5c4758977de27477f20",
+      "bytes": 1716
+    },
+    {
+      "path": "fonts/plus-jakarta-sans-vietnamese-5c913fc1b1f8.woff2",
+      "source": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2",
+      "sha256": "5c913fc1b1f86f4b475e5df45a796aa480d1f7f0891ed6f1a5991d6d1be887c3",
+      "bytes": 8292
+    },
+    {
+      "path": "fonts/plus-jakarta-sans-latin-ext-0303e02b53b0.woff2",
+      "source": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko40yygg_vbd-E.woff2",
+      "sha256": "0303e02b53b0298fb26a0193941a2e8754f0f9a9fce50d90b178d8da3424873f",
+      "bytes": 21688
+    },
+    {
+      "path": "fonts/plus-jakarta-sans-latin-cd8db90cd950.woff2",
+      "source": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2",
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "bytes": 27272
+    },
+    {
+      "path": "fonts/plus-jakarta-sans-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/plusjakartasans/OFL.txt",
+      "sha256": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99",
+      "bytes": 4402
+    }
+  ],
+  "preloads": [
+    "fonts/fraunces-latin-48282a415ec2.woff2",
+    "fonts/plus-jakarta-sans-latin-cd8db90cd950.woff2"
+  ],
+  "cssSha256": "a0ddd235f20937ad6908c4b7664aa48c1bd3a37402249f02b7dc98beb7b89a96"
+}

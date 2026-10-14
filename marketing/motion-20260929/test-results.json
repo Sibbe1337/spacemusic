@@ -1,0 +1,20 @@
+{
+  "manifest": "marketing/motion-20260929/manifest-v3.json",
+  "checks": 1267,
+  "changedHtml": 138,
+  "modules": 2,
+  "shots": [
+    "marketing/motion-20260929/shot-desktop-1-enter.png",
+    "marketing/motion-20260929/shot-desktop-2-collapsing.png",
+    "marketing/motion-20260929/shot-desktop-3-late.png",
+    "marketing/motion-20260929/shot-desktop-4-settled.png",
+    "marketing/motion-20260929/shot-mobile-1-enter.png",
+    "marketing/motion-20260929/shot-mobile-2-collapsing.png",
+    "marketing/motion-20260929/shot-mobile-3-late.png",
+    "marketing/motion-20260929/shot-mobile-4-settled.png",
+    "marketing/motion-20260929/shot-narrow-1-enter.png",
+    "marketing/motion-20260929/shot-narrow-2-collapsing.png",
+    "marketing/motion-20260929/shot-narrow-3-late.png",
+    "marketing/motion-20260929/shot-narrow-4-settled.png"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "checks": 3061,
+  "source": "tmp/growth-preview-v1-20260930",
+  "output": "tmp/serp-preview-v3-20261008",
+  "sitemapUrls": 144,
+  "changedPages": [
+    "guides/music-catalog-valuation-2026/index.html",
+    "calculator/index.html",
+    "compare/space-vs-royalty-exchange/index.html",
+    "guides/how-to-sell-music-rights/index.html",
+    "blog/independent-record-label-funding-options/index.html"
+  ],
+  "jsAndNoJs": true,
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "applyUnchanged": true,
+  "realSubmissions": 0,
+  "analyticsSent": 0,
+  "blockedRequests": 107,
+  "errors": []
+}

@@ -1,0 +1,58 @@
+checked_on: "2026-09-07"
+scope: "Public product descriptions for catalog buyer, beatBread upfront-cash and Royalty Exchange alternatives guides, plus the existing Primary Wave comparison; not private offer testing."
+companies:
+  space:
+    model: "Direct catalog buyer; individualized review."
+    source: "https://spacemusic.io/pricing.md"
+    caution: "Review timeline is not a payment guarantee."
+  duetti:
+    model: "Acquires master, publishing and royalty interests."
+    source: "https://www.duetti.co/what-we-do"
+    published_eligibility: "Public offer page addresses independent creators, annual rights income from $2,000 and tracks as young as six months; not guaranteed acceptance."
+    caution: "Confirm qualifying interests and contractual services; do not infer inferior niche valuation or service quality."
+  limbo:
+    model: "Catalog sales with investor partners; advances for distribution clients."
+    sources:
+      - "https://www.limbomusic.com/funding"
+      - "https://www.limbomusic.com/sell-your-music-catalog"
+      - "https://www.limbomusic.com/royalty-advances"
+    caution: "Separate the two products; confirm purchaser and distribution conditions."
+  royalty_exchange:
+    model: "Marketplace with auction and non-auction formats described in its public guidance."
+    sources:
+      - "https://royaltyexchange.com/how-auctions-work-sellers"
+      - "https://royaltyexchange.com/blog/introducing-direct-listings-giving-artists-more-control-over-their-catalog"
+      - "https://royaltyexchange.com/blog/about-the-exchange"
+      - "https://royaltyexchange.com/blog/how-royalty-exchange-works-for-artists"
+    caution: "Confirm current eligibility, disclosures, fees and commitments; winning auction bids are described as binding."
+  beatbread:
+    model: "Advances as limited revenue purchases, not loans; fees but no interest."
+    sources:
+      - "https://www.beatbread.com/faq"
+      - "https://www.beatbread.com/artist-funding"
+    published_fee: "$278 plus 2.8% of the advance, added to recoupment from future revenues, not an upfront access fee; reconfirm in the agreement."
+    example: "A hypothetical $10,000 advance gives $558 under that fee formula and $10,558 advance-plus-fee recoupment; not an offer or total lifetime collection estimate."
+    caution: "Full income returns after both recoupment and the term; collections can extend beyond the term if unrecouped. Retained income and new-release scope affect the arrangement."
+  primary_wave:
+    model: "Catalog acquisitions and artist or estate partnerships."
+    source: "https://primarywave.com/about/"
+    services_source: "https://primarywave.com/services/"
+    contemporary_creators: "The services page explicitly describes contemporary songwriters and artists; it is not exclusively a legacy-catalog business. This does not establish automatic small-catalog acquisition eligibility."
+    caution: "No universal minimum or blanket exclusion of independent catalogs verified."
+  sell_your_music_rights:
+    model: "Valuation calculator and educational content; potential search-content competitor."
+    sources:
+      - "https://sellyourmusicrights.com/"
+      - "https://sellyourmusicrights.com/blog"
+    caution: "Brokerage or direct acquisition operations were not established by the pages reviewed; ranking overlap is not measured."
+editorial_exclusions:
+  - "Unsupported genre-wide acquisition multiples and valuation premiums."
+  - "Unverified investor counts, transaction totals and celebrity deal values."
+  - "Claims that functional listening guarantees durable cash flow."
+  - "Claims of universally faster, higher-paying or obligation-free direct sales."
+  - "Claims that Royalty Exchange offers only auctions or that sellers can always decline a winning bid."
+  - "Mislabeling beatBread's percentage fee as interest or subtracting future-collected fees as upfront deductions."
+  - "Claims that advances withhold all income, or that a higher headline amount establishes higher lifetime value."
+  - "Claims that SPACE alone serves small catalogs or offers partial sales; Duetti and other providers publish relevant options."
+  - "Inferring minimum catalog size from a worked example, or superior genre valuation from a marketing niche."
+internal_review: "competitor-profiles/_summary.md (2026-09-07); not public website content."

@@ -1,0 +1,104 @@
+{
+  "updated": "2026-09-30",
+  "platforms": [
+    {
+      "name": "Spotify",
+      "catalog": "over 100 million tracks",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "Spotify For the Record, Company Info page",
+      "catalogUrl": "https://newsroom.spotify.com/company-info/",
+      "users": "777 million monthly active users and 300 million Premium subscribers (quarter ended June 30, 2026)",
+      "usersSource": "Spotify Q2 2026 shareholder update, Form 6-K exhibit 99.1 (SEC)",
+      "usersUrl": "https://www.sec.gov/Archives/edgar/data/0001639920/000114036126031044/ef20078867_ex99-1.htm",
+      "notes": "Company Info page also lists 7 million podcast titles and 700,000 audiobooks."
+    },
+    {
+      "name": "Apple Music",
+      "catalog": "over 100 million songs",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "apple.com Apple Music product page",
+      "catalogUrl": "https://www.apple.com/apple-music/",
+      "users": null,
+      "usersSource": null,
+      "usersUrl": null,
+      "notes": "Apple announced the 100 million song milestone in its Newsroom on Oct 3, 2022 (https://www.apple.com/newsroom/2022/10/celebrating-100-million-songs/). Apple does not publish current Apple Music subscriber numbers."
+    },
+    {
+      "name": "Amazon Music",
+      "catalog": "100 million songs",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "Amazon Music Unlimited landing page (US): '100 million songs ad-free and on demand'",
+      "catalogUrl": "https://www.amazon.com/music/unlimited",
+      "users": null,
+      "usersSource": null,
+      "usersUrl": null,
+      "notes": "Figure refers to the Amazon Music Unlimited catalog. Amazon does not publish Amazon Music subscriber numbers."
+    },
+    {
+      "name": "YouTube Music",
+      "catalog": "over 100M songs, videos, live performances, and more",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "YouTube Music Premium page (US)",
+      "catalogUrl": "https://www.youtube.com/musicpremium",
+      "users": "125 million YouTube Music and Premium subscribers globally, including trials (announced Mar 5, 2025)",
+      "usersSource": "YouTube Official Blog, Lyor Cohen",
+      "usersUrl": "https://blog.youtube/inside-youtube/20-years-125-million-subscribers-lyor-cohen/",
+      "notes": "The 100M figure mixes songs with videos and live performances, so it is not a pure track count. The subscriber figure combines YouTube Music Premium and YouTube Premium and includes trials. No newer official total was found."
+    },
+    {
+      "name": "Deezer",
+      "catalog": "over 120 million tracks",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "Deezer offers page, 'Compare all plans' table",
+      "catalogUrl": "https://www.deezer.com/us/offers",
+      "users": "9.1 million total subscribers (Dec 31, 2025); 8.9 million total and 5.8 million direct subscribers (H1 2026, to June 30, 2026)",
+      "usersSource": "Deezer investor relations key figures page (9.1M); Music Business Worldwide reporting Deezer's H1 2026 results of July 28, 2026 (8.9M / 5.8M)",
+      "usersUrl": "https://www.deezer-investors.com/",
+      "notes": "H1 2026 subscriber source: https://www.musicbusinessworldwide.com/deezers-direct-subscribers-grow-to-5-8m-in-h1-2026-but-total-subscriber-base-falls-to-8-9m/ . Daily deliveries (Deezer Newsroom): about 90,000 fully AI-generated tracks delivered per day, more than 50% of all daily uploads at peak in June 2026 (Jul 21, 2026, https://newsroom-deezer.com/2026/07/ai-music-exceeds-50-percent-daily-uploads-deezer/). Earlier: nearly 75,000 AI tracks per day, 44% of daily uploads, and 13.4 million AI tracks detected in 2025 (Apr 20, 2026, https://newsroom-deezer.com/2026/04/ai-generated-tracks-represent-44-of-new-uploaded-music/). Deezer does not state a total tracks-delivered-per-day number; the 50% share implies roughly 180,000 at peak, but that is our arithmetic, not a Deezer figure. AI tracks are 1-3% of streams."
+    },
+    {
+      "name": "TIDAL",
+      "catalog": "over 180 million tracks",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "TIDAL About page: 'over 180+ million tracks'; site footer: 'over 180 million songs'",
+      "catalogUrl": "https://tidal.com/about",
+      "users": null,
+      "usersSource": null,
+      "usersUrl": null,
+      "notes": "TIDAL does not publish subscriber numbers."
+    },
+    {
+      "name": "SoundCloud",
+      "catalog": "over 400 million tracks",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "SoundCloud guide 'How to Promote Music on SoundCloud' (soundcloud.com)",
+      "catalogUrl": "https://soundcloud.com/topic/category/how-to-promote-music-on-soundcloud",
+      "users": "40 million active creators and 40 million active listeners (as stated on page in Sep 2026, undated)",
+      "usersSource": "Same SoundCloud page",
+      "usersUrl": "https://soundcloud.com/topic/category/how-to-promote-music-on-soundcloud",
+      "notes": "Includes user uploads (DJ sets, demos, remixes), so not comparable with licensed-catalog counts. The soundcloud.com/company page states no numbers."
+    },
+    {
+      "name": "Qobuz",
+      "catalog": "over 100 million songs",
+      "catalogAsOf": "as stated on page in Sep 2026",
+      "catalogSource": "Qobuz Discover page (US)",
+      "catalogUrl": "https://www.qobuz.com/us-en/discover",
+      "users": "1.2 million monthly active users (FY2025, published Jun 16, 2026)",
+      "usersSource": "Qobuz press release, 'Qobuz Delivers 45.7% Revenue Growth in 2025'",
+      "usersUrl": "https://community.qobuz.com/press-en/qobuz-delivers-457-revenue-growth-in-2025-in-a-paid-music-streaming-market-growing-at-88",
+      "notes": null
+    },
+    {
+      "name": "Pandora",
+      "catalog": null,
+      "catalogAsOf": null,
+      "catalogSource": null,
+      "catalogUrl": "https://www.pandora.com/about",
+      "users": "39.8 million monthly active users; about 5.6 million self-pay subscribers, Pandora Plus and Premium (June 30, 2026)",
+      "usersSource": "SiriusXM Q2 2026 earnings release (Form 8-K, SEC)",
+      "usersUrl": "https://www.sec.gov/Archives/edgar/data/908937/000090893726000020/siriq22026earningsrelease.htm",
+      "notes": "Pandora's About page (checked Sep 2026) states no catalog size, and no official current track count was found. MAUs fell 7% year over year, from 42.7M."
+    }
+  ]
+}

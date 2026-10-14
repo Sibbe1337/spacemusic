@@ -1,0 +1,109 @@
+# Music Catalog Offer Checklist: Questions Before You Sign
+
+Before accepting a music catalog offer, compare the rights transferred, the term, the money available at closing, the payment conditions and the obligations that remain yours. A larger headline price is not necessarily the better offer if it covers more rights, lasts longer or depends on uncertain future payments.
+
+Use this checklist to prepare questions, not as a substitute for advice on your contract. SPACE is a direct buyer and has a commercial interest in an acquisition. Get independent legal advice from a qualified music lawyer and tax advice appropriate to your circumstances before signing. No universal fair price, tax outcome or best deal structure is assumed here.
+
+## Put each offer on the same comparison sheet
+
+Compare like with like before discussing which buyer pays more. Ask for a written description of the proposed assets and commercial terms. Treat missing information as an open question, not as a favorable assumption.
+
+| Compare | Question to answer in writing |
+| --- | --- |
+| Assets and share | Which recordings, compositions, rights, territories and percentage interests are included? |
+| Term | Is this a permanent assignment, a fixed-term license or a defined income interest? |
+| Cash at closing | What amount is payable when the transaction closes, and what deductions apply? |
+| Later payments | Are amounts deferred, conditional, held back or tied to performance? |
+| Conditions | What evidence, consents, transfers and approvals must be completed before payment? |
+| Retained position | What royalties, approvals, reporting rights and obligations remain with you? |
+| Legal review | Which documents are binding, what law applies and what happens if the deal does not close? |
+
+Keep the version and date of each offer. If the buyer changes the asset scope, income period or share, update the comparison rather than carrying forward an old price comparison.
+
+## Confirm exactly which rights transfer
+
+Ask for a schedule of the recordings and works, with the rights and shares clearly identified. Include territories, excluded tracks, retained interests and whether future works appear anywhere in the agreement. Do not assume that the words "catalog," "all rights" or "royalties" describe the same thing in every offer.
+
+Composition rights and rights in a particular recording are separate. [US Copyright Office Circular 56A](https://www.copyright.gov/circs/circ56a.pdf) explains the distinction. If you need a refresher, read our [master rights](/glossary/master-rights/) and [publishing rights](/glossary/publishing-rights/) explanations before comparing the agreement's definitions.
+
+Check whether the percentage is of the entire copyright, your owned share, your publisher interest or a defined income stream. Also identify any approvals retained over licensing, distribution, edits, attribution or uses you do not want. Ask your lawyer whether the actual clauses support the commercial summary; a retained credit is not necessarily a retained approval right.
+
+## Understand the term and any return of rights
+
+Ask when the buyer's rights begin, when they end if at all, and what happens at expiry or termination. A permanent assignment, a fixed-term license and an advance recouped from income have different consequences. A calculator's annual-income multiple is not the term of any of these agreements.
+
+For a time-limited arrangement, ask how rights and collection instructions return, whether existing licenses can continue and who accounts for royalties reported after the end date. For a proposed permanent sale, do not assume you can simply buy the rights back later.
+
+US law has specific statutory termination provisions for certain author grants, with conditions and exceptions. [17 USC Section 203](https://www.copyright.gov/title17/92chap2.html#203) is not a simple automatic cancellation rule for every catalog sale. Ask your independent lawyer how governing law, existing grants and any relevant termination or reversion rights affect your particular transaction.
+
+## Separate the headline price from net proceeds
+
+Request a closing statement or written breakdown that distinguishes unconditional cash at closing, deferred consideration, holdbacks and performance-based payments. Identify every proposed deduction and who pays it. Ask about existing advances, recoupment balances, broker or adviser fees, transfer costs, currency conversion and withholding where relevant.
+
+**Hypothetical comparison:** an offer described as $30,000 might include $5,000 payable only if a future condition is met and $2,000 used to settle a disclosed balance. In that invented example, $23,000 is the cash at closing before any other applicable costs or taxes, not $30,000. The example is arithmetic only, not a SPACE offer or a statement of standard deal terms.
+
+Keep gross sale proceeds, cash at closing and after-tax proceeds separate. The tax result depends on the seller, jurisdiction and structure; this article supplies no tax estimate. Likewise, "no buyer commission" does not mean a seller can never incur independent legal, accounting or other transaction costs.
+
+To understand an income-based illustration, use the [music catalog valuation guide](/guides/music-catalog-valuation-2026/) and [scenario calculator](/calculator/). Neither establishes whether an actual offer is fair.
+
+## Check payment conditions and closing responsibilities
+
+Ask who must do what before funds are released. Identify the responsible party and required evidence for each step, including ownership verification, co-owner consents, releases of existing claims, executed documents and collection or distribution transfer instructions where applicable.
+
+- Is the quoted amount binding, or subject to further due diligence and agreement?
+- Which conditions must be satisfied before payment, and how is satisfaction confirmed?
+- Who receives funds, in which currency and by which agreed payment method?
+- Are any amounts held in escrow or retained after closing? If so, when and under what conditions are they released?
+- What happens if a consent cannot be obtained or a party misses a closing deadline?
+- Who receives royalties earned before closing but reported or paid afterward?
+- What evidence confirms completion, and who updates the relevant records and collection instructions?
+
+Verify payment instructions through the agreed trusted channel. Do not send login credentials or authorize a rushed change of banking details based solely on an unexpected message. Resolve ambiguity before signing rather than relying on a verbal expectation of immediate payment.
+
+For US documents, the [Copyright Office's recordation overview](https://www.copyright.gov/recordation/) distinguishes recording transfer documents from other copyright processes. Ask your lawyer which filings or notices are appropriate. A filed document does not replace completing the transaction's contractual requirements.
+
+## Read the obligations that survive the sale
+
+A sale can leave the seller with duties after receiving money. Ask your lawyer to explain warranties, indemnities, liability limits, claim procedures and the duration of any continuing commitments. In particular, do not give an unqualified ownership promise about an issue you have already identified as uncertain.
+
+Review continuing royalty accounting, audit access, delivery duties, cooperation requirements, third-party payouts and restrictions on competing releases or future work if any are included. For a partial sale, confirm how retained income is calculated, who collects it, which expenses may be deducted and what reporting you receive.
+
+Ask what happens if the buyer later transfers the acquired interest to someone else. Identify whether approvals, reporting duties or other negotiated protections continue. These are contract-review questions, not a claim that every buyer includes the same clauses. See [buyout deals](/glossary/buyout-deal/) for the basic terminology.
+
+## Get independent review before committing
+
+Ask which parts of a letter of intent, term sheet or offer are binding. Exclusivity, confidentiality, costs or dispute clauses may matter even where the final acquisition is not yet agreed. Give your adviser the schedules, earlier agreements and relevant correspondence as well as the headline offer.
+
+Use the [seller's document checklist](/blog/music-catalog-sale-documents-checklist/) to organize the evidence. Make a written list of unresolved questions and request revised wording where necessary. Do not treat silence, an attractive multiple or a short acceptance deadline as a substitute for clarity.
+
+SPACE's [pricing and offer policy](/pricing.md) states that applications and initial reviews are free, with no listing fee, auction commission or obligation to accept. An initial offer typically follows within 5-7 business days after relevant information is received if the catalog is a fit. Payment follows a completed agreement and satisfied rights-transfer requirements, not an unconditional promise of cash a fixed number of days after application.
+
+## Frequently asked questions
+
+### Is the highest upfront offer always the best choice?
+
+No. Compare the same rights, share, term, deductions and conditions. Also consider retained income and obligations with independent advice. This checklist does not recommend accepting or rejecting a specific transaction.
+
+### Does selling 50% mean I keep half of every royalty?
+
+Not necessarily. The agreement may cover only specified rights, tracks, territories or income. Check the defined income base, your existing ownership and the contractual treatment of costs and retained receipts.
+
+### Is a multiple the number of years I am selling?
+
+No. A multiple relates a price or scenario amount to an annual-income base. The agreement separately determines how long rights are transferred and what happens at expiry or termination.
+
+### Can I accept an offer before the documents are complete?
+
+Ask your lawyer what acceptance would bind you to and which conditions remain open. Do not assume an email acceptance or term sheet has no legal effect simply because more documents are expected later.
+
+### Does a free review mean I must sell?
+
+SPACE's initial catalog review carries no obligation to accept an offer. Obtain and review the terms of any later document separately, especially exclusivity or other binding commitments.
+
+## Request a review without skipping the checks
+
+If you want SPACE to assess your catalog, [request a free catalog review](/apply/). Keep this checklist for any subsequent offer, including one from SPACE. Clear scope, documented income and independent advice matter more than an unsupported promise about the price you will receive.
+
+## Sources and scope
+
+Primary sources are linked beside the legal and rights distinctions they support. The offer-comparison questions and invented arithmetic example are educational guidance, not legal standards or reports of completed transactions. US-specific references do not establish the law of another country. Have a qualified independent professional review the actual agreement and your circumstances.

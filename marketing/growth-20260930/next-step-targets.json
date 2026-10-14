@@ -1,0 +1,15 @@
+{
+ "/calculator/": {"label": "Catalog value calculator", "description": "Model a hypothetical sale from your own net income."},
+ "/guides/music-catalog-valuation-2026/": {"label": "How much is a catalog worth?", "description": "How catalog value is set, with a worked example."},
+ "/how-it-works/": {"label": "How a sale works", "description": "From a free review to payment, step by step."},
+ "/guides/how-to-sell-music-rights/": {"label": "How to sell music rights", "description": "The complete guide to selling a catalog."},
+ "/guides/music-rights-101/": {"label": "Music rights 101", "description": "Masters, publishing and who owns what."},
+ "/guides/what-are-your-streams-worth-2026/": {"label": "What are your streams worth?", "description": "How platforms pay and how to estimate your income."},
+ "/tools/streaming-calculator/": {"label": "Streaming income calculator", "description": "Estimate income from your own statements."},
+ "/compare/partial-sale-vs-full-sale/": {"label": "Partial or full sale?", "description": "What changes when you sell 50%, 75% or 100%."},
+ "/guides/how-long-does-it-take-to-sell-a-music-catalog/": {"label": "How long does a sale take?", "description": "The timeline from review to payment."},
+ "/guides/best-music-rights-buyers-2026/": {"label": "Music rights buyers compared", "description": "Who buys catalogs and how they differ."},
+ "/data/music-catalog-market-2026/": {"label": "Catalog market data", "description": "Sourced market figures and deal trends."},
+ "/streaming-rates/": {"label": "How each platform pays", "description": "Spotify, Apple Music, Deezer and more."},
+ "/glossary/": {"label": "Rights glossary", "description": "Plain definitions of music rights terms."}
+}

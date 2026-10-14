@@ -1,0 +1,23 @@
+[
+  {
+    "from": "When you use our catalog valuation calculator, catalog grade tool, or application form, we collect the information you provide — such as your name, email address, monthly revenue figures, and music catalog details. We also collect basic analytics data (page visits, referral source) via Plausible Analytics, which is privacy-friendly and does not use cookies or track individuals.",
+    "to": "When you submit a review request or inquiry, we collect the information you provide, such as your name, email address, role, music links, rights details and any royalty income you choose to supply. Calculator scenario inputs are processed in your browser and are not sent to Plausible. Our website analytics use page paths and allowlisted source paths, not names, email addresses, form answers, documents or financial amounts. The form may include the public page path where your visit began and the page that led you to Apply; query strings and fragments are not forwarded."
+  },
+  {
+    "from": "We use your information solely to evaluate your music catalog for potential acquisition, communicate our offer, and respond to your inquiries. We do not sell, rent, or share your information with third parties except where required by law or necessary to process payments (Stripe).",
+    "to": "We use your information to evaluate your music catalog for potential acquisition, communicate about a review or offer, and respond to your inquiries. We do not sell or rent your personal information. Service providers process information for form storage, hosting, email delivery and, where applicable, payments. Marketing updates require a separate opt-in; leaving that question blank or choosing No is not consent."
+  },
+  {
+    "from": "We retain application and valuation data for up to 24 months to support ongoing conversations about potential acquisitions. Newsletter subscriber data is retained until you unsubscribe. You may request deletion of your data at any time by contacting us.",
+    "to": "We retain application and valuation data for up to 24 months to support ongoing conversations about potential acquisitions. Newsletter subscriber data is retained until you unsubscribe. Completed guided-form responses remain in Typeform for review. Our notification queue temporarily encrypts the reply email address and removes it after the email provider accepts the alert, or within two days if sending fails. Notification references and technical status are retained for up to 30 days. Email messages and provider logs have separate retention settings. You may request deletion of your data at any time by contacting us."
+  },
+  {
+    "from": "We use Plausible Analytics, which is cookieless and GDPR-compliant by design. We do not use Google Analytics, Facebook Pixel, or any other tracking cookies. If you dismiss the cookie notice, a single preference cookie is stored locally in your browser.",
+    "to": "Our website uses cookieless Plausible Analytics and optional session storage for public source paths. A local preference may remember dismissal of the cookie notice. The guided form loads Typeform only after you choose to start it. We disable tracking in the embedded form and do not connect it to Google Analytics or Facebook Pixel. Typeform may process technical information required to operate its service; see its privacy notice for details. Blocking website analytics does not prevent a request."
+  },
+  {
+    "from": "We use Stripe for payment processing (for premium reports), Formspree for form submissions, and Cloudflare for hosting and security. Each of these services has its own privacy policy governing how they handle data.",
+    "to": "We use Typeform to collect and store guided review requests and inquiries; Formspree remains the receiver for the short-form alternative and earlier submissions. Cloudflare provides website hosting and a signed-webhook notification service. That service receives the Typeform response, discards the other answers, and uses the supplied email address as Reply-To for an internal alert sent by Resend to hello@spacemusic.io. The alert links to our authenticated Typeform response inbox and does not include royalty figures or documents. Our correspondence uses Google Workspace. Stripe processes payments where a separate paid service is offered; this initial review request has no payment question. These providers may process data in countries outside your own. We do not promise EU-only processing across this flow. Their privacy notices and processing terms describe their respective handling of data."
+  },
+  { "from": "Last updated: February 2026", "to": "Last updated: September 15, 2026" }
+]

@@ -1,0 +1,1486 @@
+{
+ "area": "compare",
+ "edits": [
+  {
+   "find": "Creators with catalogs showing strong growth trajectories (especially ambient/meditation music in the expanding wellness market), those who want",
+   "replace": "Creators with catalogs showing strong growth trajectories (including ambient and meditation music with steady listening), those who want",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Large lump sum (8-15x annual revenue)",
+   "replace": "Larger lump sum; the amount depends on individual review",
+   "reason": "multiple removed",
+   "sources": []
+  },
+  {
+   "find": "Smaller advance (2-5x annual revenue) or none",
+   "replace": "Smaller advance, or none",
+   "reason": "multiple removed",
+   "sources": []
+  },
+  {
+   "find": "The wellness music market is expanding rapidly, which means catalogs in this space often have significant unrealized future value \u2014 a buyout today might undervalue what the catalog could earn over the next 10-20 years.",
+   "replace": "If you expect a catalog's income to keep growing, a buyout today might pay less than the catalog could earn over the next 10-20 years.",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Get a professional catalog valuation that analyzes your historical revenue, growth trends, genre stability, and metadata quality. For buyouts, expect 8-15x annual net revenue. For revenue splits,",
+   "replace": "Get a professional catalog valuation that analyzes your historical revenue, growth trends, genre stability, and metadata quality. For buyouts, the price depends on revenue history, rights and documentation, so request an individual review rather than applying a multiple. For revenue splits,",
+   "reason": "multiple removed",
+   "sources": []
+  },
+  {
+   "find": "Masters often represent the larger share of streaming revenue (52-55% of the royalty pool)",
+   "replace": "Masters usually receive the larger share of streaming payouts (Apple said in 2021 that it pays labels a 52% headline rate)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://9to5mac.com/2021/04/16/apples-full-letter-to-artists-on-apple-music-streaming-payouts/"
+   ]
+  },
+  {
+   "find": "~$0.003-0.004 (master share)",
+   "replace": "Larger share of each stream's payout",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "~$0.001-0.002 (publishing share)",
+   "replace": "Smaller share of each stream's payout",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Masters currently generate more revenue per stream (about 3x more than the publishing share), so they often carry higher valuations.",
+   "replace": "Masters currently generate more revenue per stream than the publishing share, so they often carry higher valuations.",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Loss of master recording ownership \u2014 typically for 15-35+ years or perpetuity",
+   "replace": "Loss of master recording ownership, often for long terms or in perpetuity",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Low royalty rates (15-25% of net revenue vs. 80-100% as independent)",
+   "replace": "Lower royalty rates than independent release, where you keep most or all revenue after distributor fees",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Keep 80-100% of all revenue (after distributor fees)",
+   "replace": "Keep your revenue after distributor fees",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "80-100% of net revenue",
+   "replace": "Most or all net revenue, depending on the distributor",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "The long-term value of owning your catalog \u2014 especially in the growing wellness music market \u2014 typically outweighs the short-term benefits of a label deal. The math is compelling: at 100% ownership with a distributor, your streaming income is 4-6x higher per stream than a typical label deal. Over a career, this difference compounds dramatically.",
+   "replace": "The long-term value of owning your catalog often outweighs the short-term benefits of a label deal. The arithmetic is simple: with a distributor that passes royalties through, you keep the share a label would otherwise retain. Over a career, this difference adds up.",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "These typically offer more favorable terms than major labels, including licensing deals where you retain ownership.",
+   "replace": "Terms vary by label; some offer licensing deals where you retain ownership.",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "DistroKid operates on a flat annual subscription model, allowing artists to upload unlimited music to major streaming platforms for a fixed yearly fee. Founded in 2013, it has become one of the most popular distributors for independent artists due to its speed, simplicity, and unlimited upload model.",
+   "replace": "DistroKid operates on a flat annual subscription model, allowing artists to upload unlimited music to major streaming platforms for a fixed yearly fee. It is widely used by independent artists for its speed, simplicity, and unlimited upload model.",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Unlimited uploads for a flat annual fee ($22.99/year for the basic plan)",
+   "replace": "Unlimited uploads for a flat annual fee ($24.99/year for the Musician plan, per DistroKid's pricing page)",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://distrokid.com/pricing/"
+   ]
+  },
+  {
+   "find": "Extremely fast delivery to streaming platforms (often within 1-2 days)",
+   "replace": "Fast delivery to streaming platforms",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Limited customer support \u2014 primarily email-based",
+   "replace": "Support is handled mainly through its help center",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://support.distrokid.com/hc/en-us/articles/360013649233-If-I-Don-t-Renew-My-DistroKid-Subscription-Will-My-Music-Stay-Live-in-Streaming-Services"
+   ]
+  },
+  {
+   "find": "Basic analytics compared to some competitors",
+   "replace": "Analytics features vary by plan",
+   "reason": "policy",
+   "sources": [
+    "https://distrokid.com/pricing/"
+   ]
+  },
+  {
+   "find": "TuneCore charges per-release fees and has recently introduced subscription tiers. It was one of the first major DIY distributors, founded in 2005, and has distributed music for artists like Nine Inch Nails and Jay-Z. TuneCore offers additional services including publishing administration and sync licensing.",
+   "replace": "TuneCore offers annual plans with unlimited releases (Rising Artist, Breakout Artist and Professional, per its pricing page) as well as per-release pricing. It is one of the longest-running DIY distributors. TuneCore offers additional services including publishing administration and sync licensing.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.tunecore.com/pricing"
+   ]
+  },
+  {
+   "find": "Music stays in stores even if you cancel (on newer plans)",
+   "replace": "Per-release pricing available for artists who release rarely",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.tunecore.com/pricing"
+   ]
+  },
+  {
+   "find": "More expensive for prolific artists \u2014 fees per release add up",
+   "replace": "Per-release fees add up for prolific artists who do not choose an annual plan",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.tunecore.com/pricing"
+   ]
+  },
+  {
+   "find": "Newer unlimited plans take a revenue commission (typically 10-20%)",
+   "replace": "A 20% fee applies to social platform revenue (TikTok, Facebook, Instagram, YouTube), per its pricing page",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.tunecore.com/pricing"
+   ]
+  },
+  {
+   "find": "Slower delivery times compared to DistroKid",
+   "replace": "Delivery times vary by store",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Flat annual fee ($22.99-$49.99/year)",
+   "replace": "Annual plans from $24.99/year (Musician) to $89.99/year (Ultimate)",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://distrokid.com/pricing/"
+   ]
+  },
+  {
+   "find": "Per-release or subscription with revenue share",
+   "replace": "Annual plans from $24.99/year, or per-release pricing",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.tunecore.com/pricing"
+   ]
+  },
+  {
+   "find": "Only on higher-tier plans (with revenue share)",
+   "replace": "Yes, on all annual plans",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.tunecore.com/pricing"
+   ]
+  },
+  {
+   "find": "0% \u2014 keep 100% of royalties",
+   "replace": "0%. DistroKid states artists keep 100% of earnings",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://distrokid.com/pricing/"
+   ]
+  },
+  {
+   "find": "0-20% depending on plan tier",
+   "replace": "20% fee on social platform revenue, per its pricing page",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.tunecore.com/pricing"
+   ]
+  },
+  {
+   "find": "Very fast (1-2 business days typical)",
+   "replace": "Fast; varies by store",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Moderate (3-5 business days typical)",
+   "replace": "Varies by store",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Stays in stores on newer plans",
+   "replace": "Check the current plan terms before cancelling",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Email only, slower response",
+   "replace": "Help center and support requests",
+   "reason": "unsourced figure removed",
+   "sources": [
+    "https://support.distrokid.com/hc/en-us/articles/360013649233-If-I-Don-t-Renew-My-DistroKid-Subscription-Will-My-Music-Stay-Live-in-Streaming-Services"
+   ]
+  },
+  {
+   "find": "Email and phone, generally faster",
+   "replace": "Check the support channels for your plan",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "At $22.99/year for unlimited uploads, a prolific producer releasing 10+ albums per year saves hundreds of dollars compared to per-release pricing.",
+   "replace": "At $24.99/year for unlimited uploads on DistroKid's Musician plan, a prolific producer releasing 10+ albums per year pays one annual fee instead of paying per release.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://distrokid.com/pricing/"
+   ]
+  },
+  {
+   "find": "You can add the \"Leave a Legacy\" feature ($29.99 one-time fee per release) to keep specific releases in stores permanently, regardless of subscription status.",
+   "replace": "You can add the \"Leave a Legacy\" feature (a one-time fee per release; see DistroKid's help center for the current price) to keep specific releases in stores permanently, regardless of subscription status.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://support.distrokid.com/hc/en-us/articles/360013649233-If-I-Don-t-Renew-My-DistroKid-Subscription-Will-My-Music-Stay-Live-in-Streaming-Services"
+   ]
+  },
+  {
+   "find": "Spotify is the world's largest music streaming platform with over 600 million users (including over 220 million premium subscribers).",
+   "replace": "Spotify is the world's largest music streaming platform, with 777 million monthly active users and 300 million Premium subscribers as of June 30, 2026, according to Spotify's Q2 2026 report.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001639920/000162828026052543/spot-20260630x6xk.htm",
+    "https://www.musicbusinessworldwide.com/spotify-hits-300-million-premium-subscribers-in-q2-202/"
+   ]
+  },
+  {
+   "find": "Lower per-stream rate ($0.003-$0.005) due to large free-tier user base",
+   "replace": "No fixed per-stream rate; free-tier streams generate less revenue than Premium streams",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Recent policy requires minimum 1,000 annual streams to monetize a track",
+   "replace": "Since 2024, a track needs at least 1,000 streams in the previous 12 months to earn recorded-music royalties, per Spotify for Artists",
+   "reason": "figure sourced",
+   "sources": [
+    "https://support.spotify.com/us/artists/article/track-monetization-eligibility/"
+   ]
+  },
+  {
+   "find": "tracks that perform well in focus/sleep/meditation playlists can generate massive stream counts that offset the lower per-stream rate.",
+   "replace": "tracks that perform well in focus/sleep/meditation playlists can generate high stream counts that offset the lower per-stream payout.",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Apple Music has over 100 million subscribers with no free ad-supported tier (only a limited free trial). It pays a per-stream rate that is generally higher than Spotify due to the absence of free-tier users diluting the royalty pool.",
+   "replace": "Apple Music has no free ad-supported tier (only a limited free trial), and Apple does not publish regular subscriber counts. In a 2021 letter to artists, Apple said its average per-play rate on individual paid plans was about one cent, higher than typical Spotify payouts because no free-tier listening dilutes the royalty pool.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://9to5mac.com/2021/04/16/apples-full-letter-to-artists-on-apple-music-streaming-payouts/"
+   ]
+  },
+  {
+   "find": "Higher per-stream rate ($0.007-$0.01) \u2014 roughly 2x Spotify's rate",
+   "replace": "Higher average per-play rate (about one cent on individual plans, per Apple's 2021 letter)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://9to5mac.com/2021/04/16/apples-full-letter-to-artists-on-apple-music-streaming-payouts/"
+   ]
+  },
+  {
+   "find": "Significantly smaller user base than Spotify (approximately 1/3 the size)",
+   "replace": "Smaller audience than Spotify's reported user base; Apple does not publish regular subscriber counts",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "600M+ (220M+ premium)",
+   "replace": "777M monthly users (300M Premium), Q2 2026",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001639920/000162828026052543/spot-20260630x6xk.htm"
+   ],
+   "modules": [
+    "comparisons",
+    "competitorComparisons",
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "compare/",
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "100M+ (all premium)",
+   "replace": "Not published (paid plans only)",
+   "reason": "unsourced figure removed",
+   "sources": [],
+   "modules": [
+    "comparisons",
+    "competitorComparisons",
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "compare/",
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "Up to 320kbps OGG (no lossless)",
+   "replace": "Lossless (up to 24-bit/44.1 kHz FLAC) on Premium since 2025",
+   "reason": "figure sourced",
+   "sources": [
+    "https://newsroom.spotify.com/2025-09-10/lossless-listening-arrives-on-spotify-premium-with-a-richer-more-detailed-listening-experience/"
+   ]
+  },
+  {
+   "find": "A track placed on a major Spotify focus or meditation playlist can generate millions of streams.",
+   "replace": "A track placed on a major Spotify focus or meditation playlist can generate a large number of streams.",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Spotify continues to grow its overall user base faster, particularly in developing markets. Apple Music has slower but steady growth, primarily in markets with strong Apple ecosystem penetration. Both platforms are investing in wellness and focus categories, which benefits ambient music creators.",
+   "replace": "Spotify reported 12% year-over-year growth in monthly active users in Q2 2026. Apple does not publish regular Apple Music subscriber figures, so a direct growth comparison is not possible. Both platforms offer focus and relaxation playlists, which matter to ambient music creators.",
+   "reason": "figure sourced",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001639920/000162828026052543/spot-20260630x6xk.htm",
+    "https://www.musicbusinessworldwide.com/spotify-hits-300-million-premium-subscribers-in-q2-202/"
+   ]
+  },
+  {
+   "find": "Individual placement fees can be substantial ($500-$500,000+ depending on usage)",
+   "replace": "Individual placement fees can be substantial, depending on usage, media and term",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Music supervisors and sync agents take commissions (typically 25-50%)",
+   "replace": "Sync agents and libraries take a commission or revenue share set in their agreement",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Ambient music benefits from long listening sessions (20-40 streams per session)",
+   "replace": "Ambient music benefits from long listening sessions with many consecutive streams",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Per-stream rates are very low ($0.003-$0.01 per stream)",
+   "replace": "Per-stream payouts are small (Apple reported an average of about one cent per play in 2021)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://9to5mac.com/2021/04/16/apples-full-letter-to-artists-on-apple-music-streaming-payouts/"
+   ]
+  },
+  {
+   "find": "Streaming market growth is slowing in developed markets",
+   "replace": "Subscriber growth can slow as streaming markets mature",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "High ($500-$500,000+ per placement)",
+   "replace": "Higher per placement; varies by usage",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Very low ($0.003-$0.01 per stream)",
+   "replace": "Small per stream (fractions of a cent to about a cent)",
+   "reason": "figure sourced",
+   "sources": [
+    "https://9to5mac.com/2021/04/16/apples-full-letter-to-artists-on-apple-music-streaming-payouts/"
+   ]
+  },
+  {
+   "find": "High ($1,000-$100,000+ per deal)",
+   "replace": "Higher per deal",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Low to moderate ($50-$5,000 per deal)",
+   "replace": "Lower per deal",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Revenue share \u2014 publisher takes 10-50% of publishing income depending on deal type",
+   "replace": "Revenue share: the publisher takes a share of publishing income that depends on the deal type",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "50-90% depending on deal type",
+   "replace": "The share left after the publisher's cut, set by the deal",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "For early-career ambient music creators with small catalogs, self-publishing (or using a lightweight admin service like Songtrust at 15% commission) is the best starting point.",
+   "replace": "For early-career ambient music creators with small catalogs, self-publishing (or using a lightweight admin service like Songtrust, which lists a 15% commission on performance royalties, 20% on mechanicals and a one-time setup fee) is the best starting point.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.songtrust.com/pricing"
+   ]
+  },
+  {
+   "find": "consider transitioning to an admin deal (10-20% commission, you retain ownership) rather than",
+   "replace": "consider transitioning to an admin deal (a commission on collections, you retain ownership) rather than",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "the publisher provides administration and collection services for a lower commission (10-20%) but typically no advance",
+   "replace": "the publisher provides administration and collection services for a lower commission but typically no advance",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Royalty Exchange runs an auction-style marketplace where investors bid on your royalties, typically charging around 15% commission. SPACE buys catalogs directly with no auction or commission, specializing in ambient, lo-fi, and wellness music. Choose Royalty Exchange if you want competitive bidding on a mainstream catalog; choose SPACE for a fast, direct sale of ambient or meditation music.",
+   "replace": "Royalty Exchange runs an auction-style marketplace where investors bid on your royalties; its commission is set before listing and collected after the auction ends. SPACE buys catalogs directly with no auction, listing fee or commission, and reviews catalogs including ambient, lo-fi, and wellness music. Choose Royalty Exchange if you want competitive bidding; choose SPACE for a direct offer on ambient, meditation or other music.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/faq",
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Royalty Exchange is an established auction marketplace founded in 2011 with over 2,300 completed transactions, connecting creators with investors who bid on royalty streams. SPACE, on the other hand, is a direct buyer that specializes in ambient, lo-fi, and wellness music \u2014 offering creators a straightforward sale without the uncertainty of an auction.",
+   "replace": "Royalty Exchange is an established auction marketplace that, according to its website, has completed more than 2,500 deals, connecting creators with investors who bid on royalty streams. SPACE is a direct buyer that reviews catalogs including ambient, lo-fi, and wellness music and makes offers without an auction.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/"
+   ]
+  },
+  {
+   "find": "SPACE (spacemusic.io) is a music rights buyer that focuses exclusively on ambient, lo-fi, meditation, and wellness genres. Rather than listing your catalog on a marketplace, SPACE evaluates your music and makes a direct offer. The process is designed to be fast and transparent, with payouts typically arriving within days of accepting an offer. SPACE also supports partial rights sales, allowing creators to sell a share of their royalties while retaining ownership and creative control.",
+   "replace": "SPACE (spacemusic.io) is a music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. Rather than listing your catalog on a marketplace, SPACE reviews your catalog and makes a direct offer. An initial offer typically follows 5-7 business days after the relevant catalog information is received; payment is by bank transfer after the agreement is complete and the rights transfer requirements are met. SPACE also supports partial sales, such as 50% or 75% of defined catalog rights, so creators keep the share they do not sell.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Deep expertise in ambient, lo-fi, and wellness music valuation",
+   "replace": "Reviews ambient, lo-fi, and wellness catalogs individually",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Fast turnaround from submission to payout",
+   "replace": "Initial offer typically 5-7 business days after catalog information is received",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Creators retain creative control over their music",
+   "replace": "Retained rights are defined in the agreement",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Focused on ambient, lo-fi, and wellness genres \u2014 not suitable for all music styles",
+   "replace": "Individual review; not every catalog receives an offer",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Royalty Exchange is an online marketplace founded in 2011 where music creators list their royalty streams for auction. Investors browse available listings and place competitive bids, with the highest bidder winning the rights. The platform has facilitated over 2,300 transactions across all genres and royalty types. Royalty Exchange charges a commission (typically around 15%) on completed sales.",
+   "replace": "Royalty Exchange is an online marketplace where music creators list their royalty streams for auction. Investors browse available listings and place competitive bids; its seller guide states that the winning bid is a binding contract. According to its website, the platform has completed more than 2,500 deals. Royalty Exchange's FAQ states there is no charge to list and that it collects a commission after the auction ends, at a rate set before listing.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/",
+    "https://royaltyexchange.com/faq",
+    "https://royaltyexchange.com/how-auctions-work-sellers"
+   ]
+  },
+  {
+   "find": "Over a decade of operational track record",
+   "replace": "Long operating track record as a royalty marketplace",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Commission of approximately 15% reduces the seller's net proceeds",
+   "replace": "A commission, set before listing, reduces the seller's net proceeds",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/faq"
+   ]
+  },
+  {
+   "find": "The auction process typically takes several weeks to complete",
+   "replace": "Listing preparation and post-auction transfer add time beyond the auction itself",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/how-auctions-work-sellers"
+   ]
+  },
+  {
+   "find": "Less personalized evaluation for niche genres like ambient or meditation",
+   "replace": "Price depends on investor demand for each listing",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "~15% commission on completed sales",
+   "replace": "Commission after the auction, rate set before listing",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/faq"
+   ]
+  },
+  {
+   "find": "Typically within days of acceptance",
+   "replace": "After the agreement is complete and rights transfer requirements are met",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Weeks (auction duration + settlement)",
+   "replace": "Most auctions run under a week; escrow and transfer follow",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/how-auctions-work-sellers"
+   ]
+  },
+  {
+   "find": "Limited \u2014 most deals transfer full royalty streams",
+   "replace": "Depends on the listing; a share of royalty income can be offered",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "No strict minimum; welcomes smaller catalogs",
+   "replace": "No fixed earnings floor in SPACE's offer policy; individual review",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Retained by the creator",
+   "replace": "Defined in the agreement",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Human evaluation with mood-music expertise",
+   "replace": "Individual review of documented income and rights",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "2,300+ transactions since 2011",
+   "replace": "2,500+ deals completed, per its website",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/"
+   ]
+  },
+  {
+   "find": "Royalty Exchange is a strong choice if you have a catalog with broad appeal and consistent earnings \u2014 competitive bidding from multiple investors can maximize your sale price, though you'll pay a commission and wait longer for the process to complete. SPACE is the better fit if you create ambient, lo-fi, or wellness music and want a fast, straightforward sale with no fees. The direct-offer model removes auction uncertainty, and partial rights options give you flexibility that's harder to find on marketplace platforms.",
+   "replace": "Royalty Exchange is a strong choice if you have a catalog with broad appeal and consistent earnings. Competitive bidding from multiple investors can lift the sale price, and you pay a commission on a completed sale. SPACE fits if you want a direct offer with no listing fee or commission, including for ambient, lo-fi, or wellness music. The direct-offer model removes auction uncertainty, and SPACE's policy allows partial sales of defined catalog rights.",
+   "reason": "policy",
+   "sources": [
+    "https://royaltyexchange.com/faq",
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Indie creators in the ambient, lo-fi, and wellness space who want a quick, direct sale with no commission and the option to retain partial ownership.",
+   "replace": "Indie creators, including in the ambient, lo-fi, and wellness space, who want a direct offer with no commission and the option to sell only part of their rights.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Yes. SPACE offers partial rights sales, meaning you can sell a percentage of your future royalties while retaining ownership and creative control of your music. This is useful if you want upfront capital without giving up your entire catalog.",
+   "replace": "Yes. SPACE offers partial sales, such as 50% or 75% of defined catalog rights, so you keep the share you do not sell. The rights and approvals you keep are set in the agreement. This is useful if you want upfront capital without giving up your entire catalog.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "A typical auction on Royalty Exchange runs for about 30 days, though the total process \u2014 including documentation, listing review, and post-auction settlement \u2014 can take several weeks longer.",
+   "replace": "Royalty Exchange's seller guide says most auctions run for less than one week. Documentation and listing review come before the auction; after it closes, the buyer wires funds to escrow and the transfer process begins, which varies by transaction.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/how-auctions-work-sellers"
+   ]
+  },
+  {
+   "find": "SPACE specializes in ambient, lo-fi, meditation, and wellness music. If your catalog falls outside these genres, Royalty Exchange or other generalist platforms may be a better fit.",
+   "replace": "No. SPACE reviews revenue-generating catalogs across genres, including ambient, lo-fi, meditation, and wellness music. Genre alone does not guarantee or exclude an offer; each catalog is reviewed individually.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Hipgnosis Songs Fund is a publicly traded investment vehicle that acquires proven hit catalogs from major artists, with deal sizes typically starting at $1M+. SPACE works with indie creators in ambient, lo-fi, and wellness genres, accepting catalogs worth as little as $2K+. These two buyers serve very different market segments \u2014 if you're an indie creator, SPACE is the accessible option.",
+   "replace": "Hipgnosis Songs Fund was a London-listed fund that bought hit catalogs from major artists. Blackstone took it private in 2024, it was renamed Recognition Music Group in 2025, and Sony Music Publishing acquired its catalog in 2026. SPACE reviews catalogs from indie creators, including ambient, lo-fi, and wellness music, with no fixed earnings floor in its offer policy. If you're an indie creator, SPACE is a buyer you can apply to today.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/",
+    "https://www.billboard.com/pro/hipgnosis-name-change-music-catalog-company-recognition/",
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Hipgnosis Songs Fund and SPACE both buy music catalogs, but that's about where the similarities end. Hipgnosis, founded by Merck Mercuriadis and backed by billions in investment capital, focuses on acquiring catalogs from major established artists \u2014 names like Shakira, Neil Young, and Lindsey Buckingham.",
+   "replace": "Hipgnosis Songs Fund no longer buys catalogs under that name, since Sony Music Publishing acquired its catalog in 2026, according to Music Business Worldwide, while SPACE is an active buyer that reviews catalogs from independent creators across all genres. Hipgnosis Songs Fund and SPACE both bought music catalogs, but that's about where the similarities end. Hipgnosis, founded by Merck Mercuriadis, acquired catalogs from major established artists such as Shakira, Neil Young, and Lindsey Buckingham. It no longer buys under that name: its catalog now belongs to Sony Music Publishing.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "SPACE is a direct music rights buyer that focuses on ambient, lo-fi, meditation, and wellness genres. Built for independent creators, SPACE accepts catalogs at a much lower threshold than institutional buyers and offers a streamlined process from submission to payout. Creators can sell full or partial rights while maintaining creative control over their work.",
+   "replace": "SPACE is a direct music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. Built for independent creators, SPACE's offer policy sets no fixed earnings floor, and the application and initial review are free. Creators can sell full or partial rights; the rights they keep are defined in the agreement.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Accepts deals starting from approximately $2K in catalog value",
+   "replace": "No fixed earnings floor in SPACE's offer policy; individual review",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Specializes in ambient, lo-fi, and wellness music valuation",
+   "replace": "Reviews ambient, lo-fi, and wellness catalogs individually",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Simple, transparent process without lengthy negotiations",
+   "replace": "Free application and review, with no obligation to accept an offer",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Creators retain creative control over their work",
+   "replace": "Retained rights are defined in the agreement",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Creators retain creative control",
+   "replace": "Retained rights are defined in the agreement",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Limited to ambient, lo-fi, and wellness genres",
+   "replace": "Individual review; not every catalog receives an offer",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Hipgnosis Songs Fund is a London-listed investment company founded in 2018 by Merck Mercuriadis, former manager of artists like Beyonc\u00e9 and Elton John. The fund has raised over $2 billion to acquire music catalogs from established songwriters and artists. Hipgnosis focuses on proven hit songs with strong streaming performance and sync potential, managing a portfolio of over 65,000 songs including works by some of the most recognized names in popular music.",
+   "replace": "Hipgnosis Songs Fund was a London-listed investment company launched in 2018 by Merck Mercuriadis to acquire catalogs from established songwriters and artists. Blackstone took the fund private in July 2024, and in March 2025 the business was renamed Recognition Music Group. Sony Music Publishing completed its acquisition of the catalog, more than 45,000 songs, in July 2026, according to Music Business Worldwide. Hipgnosis focused on proven hit songs with strong streaming performance and sync potential.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/",
+    "https://www.billboard.com/pro/hipgnosis-name-change-music-catalog-company-recognition/"
+   ]
+  },
+  {
+   "find": "Massive investment capital \u2014 over $2B deployed in catalog acquisitions",
+   "replace": "Large-scale capital; the catalog grew to more than 45,000 songs",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "Publicly traded, providing transparency and regulatory oversight",
+   "replace": "Was publicly listed from 2018 to 2024, with public reporting",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "Minimum deal sizes typically start at $1M+, excluding most indie creators",
+   "replace": "Focused on high-value hit catalogs rather than small independent ones",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Recent market volatility has raised questions about fund valuation strategy",
+   "replace": "No longer acquiring as Hipgnosis; the catalog now belongs to Sony Music Publishing",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "~$2K+ catalog value",
+   "replace": "No fixed floor; individual review",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ],
+   "modules": [
+    "comparisons",
+    "competitorComparisons",
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "compare/",
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "Typically $1M+ institutional-scale deals",
+   "replace": "Institutional-scale deals; no public minimum",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Typically $1M+",
+   "replace": "High-value hit catalogs",
+   "reason": "unsourced figure removed",
+   "sources": [],
+   "modules": [
+    "comparisons",
+    "competitorComparisons",
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "compare/",
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "Days after acceptance",
+   "replace": "After the agreement and rights transfer are complete",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ],
+   "modules": [
+    "comparisons",
+    "competitorComparisons",
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "compare/",
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "Weeks to months (extensive due diligence)",
+   "replace": "Negotiated deal by deal",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Retained by creator",
+   "replace": "Defined in the agreement",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ],
+   "modules": [
+    "comparisons",
+    "competitorComparisons",
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "compare/",
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "Transferred to Hipgnosis for active management",
+   "replace": "Transferred with the rights sold",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Mood-music specialist evaluation",
+   "replace": "Individual review of documented income and rights",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Publicly traded fund (LSE: SONG)",
+   "replace": "Formerly LSE-listed (SONG); taken private in 2024",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "65,000+ songs from major artists",
+   "replace": "45,000+ songs, now owned by Sony Music Publishing",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "Hipgnosis and SPACE are not really competitors \u2014 they operate in entirely different segments of the music rights market. Hipgnosis is an institutional buyer pursuing multi-million dollar deals with established hitmakers; if you're an indie ambient producer, you're simply not in their addressable market. SPACE exists specifically for the creators that institutional funds overlook: independent artists in the ambient, lo-fi, and wellness space who want to monetize their catalogs without needing a chart-topping track record.",
+   "replace": "Hipgnosis and SPACE were never really competitors. They served different segments of the music rights market. Hipgnosis was an institutional buyer pursuing large deals with established hitmakers, and its catalog now belongs to Sony Music Publishing. SPACE reviews catalogs from independent artists, including in the ambient, lo-fi, and wellness space, who want to sell rights without a chart-topping track record.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "If you're a major artist with a proven catalog generating significant royalties, Hipgnosis (or a similar fund) is worth exploring. If you're an independent creator in a niche genre looking for a fast, accessible way to sell some or all of your rights, SPACE is built for you.",
+   "replace": "If you're a major artist with a proven catalog generating significant royalties, a large institutional buyer is worth exploring. If you're an independent creator looking for a free, no-obligation review to sell some or all of your rights, SPACE is built for you.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Independent ambient, lo-fi, and wellness creators who want an accessible buyer, fast payouts, and the ability to sell partial rights regardless of catalog size.",
+   "replace": "Independent creators, including ambient, lo-fi, and wellness artists, who want a free review and the option to sell a defined partial interest.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Established artists and songwriters with proven hit catalogs generating substantial royalties, who are looking for a major institutional buyer.",
+   "replace": "Established artists and songwriters with proven hit catalogs generating substantial royalties. Hipgnosis itself no longer acquires; its catalog now belongs to Sony Music Publishing.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "In practice, no. Hipgnosis focuses on acquiring catalogs from established artists with significant streaming numbers and earnings history. Their typical deal sizes start at $1M or more, which puts them out of reach for most independent creators.",
+   "replace": "No. Hipgnosis Songs Fund no longer operates as a buyer. Blackstone took it private in 2024, it was renamed Recognition Music Group in 2025, and Sony Music Publishing acquired the catalog in 2026. When it was active, it bought catalogs from established artists with significant streaming numbers and earnings history.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/",
+    "https://www.billboard.com/pro/hipgnosis-name-change-music-catalog-company-recognition/"
+   ]
+  },
+  {
+   "find": "Hipgnosis has primarily focused on mainstream genres",
+   "replace": "Hipgnosis primarily focused on mainstream genres",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "Ambient and lo-fi catalogs are generally outside their acquisition strategy.",
+   "replace": "Ambient and lo-fi catalogs were generally outside that strategy.",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Hipgnosis actively manages acquired catalogs, pitching songs for sync placements in film, TV, and advertising, and working to increase streaming performance. The creator typically transfers full ownership and management rights as part of the deal.",
+   "replace": "Hipgnosis actively managed acquired catalogs, pitching songs for sync placements in film, TV, and advertising. Those catalogs passed to Blackstone and then, in 2026, to Sony Music Publishing. In a full sale the creator transfers the rights and income included in the deal.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": "SPACE accepts catalogs at much lower value thresholds and offers partial rights sales, making it a practical choice for indie creators.",
+   "replace": "SPACE's offer policy sets no fixed earnings floor and allows partial sales of defined rights, which makes it a practical option for indie creators.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Reservoir Media (NASDAQ: RSVR) is a publicly traded music rights company that has deployed approximately $1 billion across 55+ deals per year, acquiring publishing and master rights from a mix of established and emerging artists \u2014 though primarily mainstream. SPACE focuses exclusively on indie creators in ambient, lo-fi, and wellness genres with no minimum catalog size.",
+   "replace": "Reservoir Media (NASDAQ: RSVR) is a publicly traded independent music company that acquires publishing and master rights from a mix of established and emerging artists, primarily in mainstream genres. SPACE reviews catalogs from indie creators, including ambient, lo-fi, and wellness music, with no fixed earnings floor in its offer policy.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://reservoir-media.com/about-us/",
+    "https://www.sec.gov/Archives/edgar/data/1824403/000110465924074819/tm2417695-1_def14a.htm",
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Reservoir, founded in 2007 by Golnar Khosrowshahi and publicly traded on NASDAQ since 2021, has built a portfolio of over 150,000 copyrights through approximately $1 billion in deployed capital, completing 55+ deals per year.",
+   "replace": "Reservoir, founded in 2007 by Golnar Khosrowshahi and publicly traded on NASDAQ since 2021, has built a catalog of copyrights and master recordings with titles dating back to 1900, according to its website.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://reservoir-media.com/about-us/",
+    "https://www.sec.gov/Archives/edgar/data/1824403/000110465924074819/tm2417695-1_def14a.htm"
+   ]
+  },
+  {
+   "find": "SPACE operates in a different market segment entirely, focusing on independent creators in the ambient, lo-fi, and wellness space with a direct, commission-free purchasing model.",
+   "replace": "SPACE operates in a different market segment, reviewing catalogs from independent creators, including in the ambient, lo-fi, and wellness space, with a direct, commission-free purchasing model.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "SPACE is a direct music rights buyer that specializes in ambient, lo-fi, meditation, and wellness genres. The platform is built for independent creators, offering a streamlined submission-to-payout process with no commission or fees. SPACE evaluates catalogs using human evaluators with expertise in mood music economics, and supports both full and partial rights purchases. The focus on a specific genre niche allows SPACE to offer valuations informed by deep understanding of wellness app licensing, meditation playlist economics, and functional music demand drivers.",
+   "replace": "SPACE is a direct music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. It is built for independent creators, with a free application and initial review and no listing fee or commission. SPACE reviews each catalog individually and supports both full and partial rights purchases. A review considers annualized revenue, consistency and trend, platform mix, genre demand and licensing utility, rights ownership, metadata quality and concentration in top tracks.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "No minimum catalog size \u2014 accessible to all independent creators",
+   "replace": "No fixed earnings floor in SPACE's offer policy; individual review",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Deep specialization in ambient, lo-fi, and wellness music valuation",
+   "replace": "Reviews ambient, lo-fi, and wellness catalogs individually",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Fast, transparent process with payouts within days",
+   "replace": "Initial offer typically 5-7 business days after catalog information is received",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Reservoir Media (NASDAQ: RSVR) is a publicly traded independent music company founded in 2007 by Golnar Khosrowshahi, who serves as CEO. The company has deployed approximately $1 billion acquiring music publishing and master recording rights, building a portfolio of over 150,000 copyrights. Reservoir completes 55+ acquisitions per year and maintains a global team handling publishing administration, sync licensing, creative services, and artist development. The company works with a range of artists from legacy catalogs (Joni Mitchell, Phil Collins) to newer talent, though its focus is primarily on commercially established artists and songwriters in mainstream genres.",
+   "replace": "Reservoir Media (NASDAQ: RSVR) is a publicly traded independent music company founded in 2007 by Golnar Khosrowshahi, who serves as CEO. The company acquires music publishing and master recording rights and describes itself as the first female-founded and led publicly traded independent music company in the U.S. Its business covers publishing, recorded music through labels such as Chrysalis Records and Tommy Boy, and artist management. Its website names artists from Joni Mitchell to newer talent, though its focus is primarily on commercially established artists and songwriters.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://reservoir-media.com/about-us/",
+    "https://www.sec.gov/Archives/edgar/data/1824403/000110465924074819/tm2417695-1_def14a.htm"
+   ]
+  },
+  {
+   "find": "~$1 billion deployed with 55+ deals per year demonstrating consistent acquisition capacity",
+   "replace": "Ongoing acquisition program reported in its public filings",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1824403/000110465924074819/tm2417695-1_def14a.htm"
+   ]
+  },
+  {
+   "find": "As a public company, acquisition decisions are driven by shareholder return metrics that may not align with niche-genre economics",
+   "replace": "As a public company, it reports acquisition performance to shareholders",
+   "reason": "policy",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1824403/000110465924074819/tm2417695-1_def14a.htm"
+   ]
+  },
+  {
+   "find": "Privately funded, niche-focused",
+   "replace": "Private company",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "~$1 billion across 55+ deals per year",
+   "replace": "Public company; see its SEC filings",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1824403/000110465924074819/tm2417695-1_def14a.htm"
+   ]
+  },
+  {
+   "find": "they complete over 55 deals per year and their acquisitions are driven by the financial performance expectations of a publicly traded company.",
+   "replace": "their acquisitions are shaped by the financial performance expectations of a publicly traded company.",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "SPACE is purpose-built for this segment: no minimum size, no commission, fast payouts, and deep understanding of mood music economics.",
+   "replace": "SPACE is built for this segment: a free review, no fixed earnings floor in its offer policy, no listing fee or commission, and an initial offer typically 5-7 business days after catalog information is received.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Independent ambient, lo-fi, and wellness creators seeking a fast, commission-free sale with no minimum catalog size and the option to sell partial rights while retaining creative control.",
+   "replace": "Independent creators, including ambient, lo-fi, and wellness artists, seeking a commission-free direct offer, individual review and the option to sell a defined partial interest.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "While they're more accessible than some institutional buyers, their focus is primarily on mainstream genres with proven revenue streams. Independent creators in niche genres like ambient or wellness are generally outside their target acquisition profile.",
+   "replace": "Their focus is primarily on mainstream genres with proven revenue streams. We did not find a published rule on genre or catalog size, so ask Reservoir directly about your catalog.",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "For small partial rights sales in niche genres, SPACE's purpose-built partial rights offering is more accessible and straightforward.",
+   "replace": "For small partial sales, SPACE's offer policy allows sales of defined shares, such as 50% or 75% of catalog rights.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Understand how Round Hill's merger with Concord, its classic rock focus, and deal sizes differ from SPACE's indie-focused approach.",
+   "replace": "Understand how Round Hill's 2023 fund sale to Concord, its classic rock focus, and deal sizes differ from SPACE's indie-focused approach.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/"
+   ]
+  },
+  {
+   "find": "Round Hill Music managed over $700 million in music assets focused on classic rock, country, and pop before merging with Concord Music in 2023 for $469 million. Round Hill targeted established legacy catalogs with significant revenue. SPACE works with indie creators in ambient, lo-fi, and wellness genres at any scale. Following the Concord merger, Round Hill no longer operates independently, but the comparison illustrates the difference between institutional and indie-focused catalog buyers.",
+   "replace": "Round Hill Music is a catalog investor focused on established pop, rock and country songs. In 2023 it sold its London-listed fund, Round Hill Music Royalty Fund, to Concord for $468.8 million, and it continues to manage private funds with over $1.1 billion in catalog value, according to Round Hill. SPACE reviews catalogs from indie creators, including ambient, lo-fi, and wellness music. The comparison shows the difference between institutional and indie-focused catalog buyers.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Round Hill, founded in 2010, built a portfolio of over $700 million in music assets focused primarily on classic rock, country, and mainstream pop catalogs \u2014 managing rights from artists and songwriters across decades of popular music history. In 2023, Round Hill merged with Concord Music Group in a deal valued at $469 million, consolidating its catalog into one of the largest independent music companies in the world. SPACE operates in a completely different segment, serving independent creators in the ambient, lo-fi, and wellness space with direct, commission-free purchases. While Round Hill no longer operates independently, this comparison provides useful context for understanding the landscape of music catalog buyers and where indie creators fit in.",
+   "replace": "Round Hill, founded in 2010, built a portfolio focused primarily on classic rock, country, and mainstream pop catalogs, managing rights from artists and songwriters across decades of popular music history. In 2023, Concord acquired Round Hill's UK-listed fund, with over 150,000 songs in 51 catalogs, for $468.8 million, according to Music Business Worldwide. Round Hill kept operating: it reported over $1.1 billion in catalog value under management in May 2025. SPACE operates in a different segment, reviewing catalogs from independent creators, including in the ambient, lo-fi, and wellness space, with direct, commission-free purchases. This comparison shows where indie creators fit in the landscape of music catalog buyers.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "SPACE is a direct music rights buyer focusing exclusively on ambient, lo-fi, meditation, and wellness genres. Built for independent creators, SPACE provides a simple submission-to-offer process with no auction, commission, or hidden fees. The platform supports both full and partial rights purchases, allowing creators to monetize their catalogs while maintaining ownership flexibility and creative control. SPACE's human evaluation team brings specialized expertise in mood music economics, wellness app licensing, and functional music demand drivers.",
+   "replace": "SPACE is a direct music rights buyer that reviews catalogs including ambient, lo-fi, meditation, and wellness music. Built for independent creators, SPACE provides a simple submission-to-offer process with no auction, listing fee or commission. It supports both full and partial rights purchases, such as 50% or 75% of defined catalog rights. Each catalog is reviewed individually, looking at revenue history, rights ownership, metadata and documentation.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Accessible to independent creators at any catalog size",
+   "replace": "No fixed earnings floor in SPACE's offer policy; individual review",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Focused on ambient, lo-fi, and wellness genres only",
+   "replace": "Individual review; not every catalog receives an offer",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Round Hill Music (now part of Concord)",
+   "replace": "Round Hill Music",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Round Hill Music was founded in 2010 as a music rights investment company that managed over $700 million in music assets, including publishing and master recording rights. The company focused on acquiring legacy catalogs in classic rock, country, and mainstream pop, building a portfolio that included songs from artists across multiple decades of popular music. Round Hill operated a fund structure that attracted institutional investors seeking stable returns from music royalties. In 2023, Round Hill merged with Concord Music Group in a transaction valued at $469 million, consolidating its portfolio into Concord's broader catalog of over 1 million songs. Round Hill no longer operates as an independent entity.",
+   "replace": "Round Hill Music was founded in 2010 as a music rights investment company that acquires publishing and master recording rights. The company focuses on legacy catalogs in classic rock, country, and mainstream pop, with songs from artists across multiple decades of popular music. Round Hill uses a fund structure backed by institutional investors. In 2023, Concord acquired Round Hill's UK-listed fund, Round Hill Music Royalty Fund, for $468.8 million. Round Hill continues to operate under CEO Josh Gruss and manages five private funds, with over $1.1 billion in catalog value under management as of May 2025, according to Round Hill.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Managed over $700 million in music assets before the Concord merger",
+   "replace": "Over $1.1 billion in catalog value under management (May 2025)",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Deep expertise in classic rock, country, and legacy mainstream catalog valuation",
+   "replace": "Long focus on classic rock, country, and legacy mainstream catalogs",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Fund structure attracted institutional capital and provided stable returns",
+   "replace": "Fund structure backed by institutional capital",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Portfolio now managed by Concord, one of the largest independent music companies globally",
+   "replace": "Continued acquiring catalogs after the 2023 fund sale",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "No longer operates independently following the 2023 Concord merger",
+   "replace": "Its UK-listed fund was sold to Concord in 2023",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/"
+   ]
+  },
+  {
+   "find": "Focused exclusively on legacy mainstream catalogs \u2014 never served indie or niche-genre creators",
+   "replace": "Focused on established mainstream catalogs rather than small indie catalogs",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Institutional deal sizes excluded smaller catalogs (typically $1M+ minimum)",
+   "replace": "Institutional deal sizes; no public minimum found",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Fund structure prioritized investor returns over creator-friendly deal terms",
+   "replace": "Fund structure is built around returns for its investors",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Classic rock and country focus left modern genres and functional music entirely unaddressed",
+   "replace": "Catalog focus is on established pop, rock and country songs",
+   "reason": "policy",
+   "sources": [
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Merged with Concord Music Group in 2023 \u2014 no longer independent",
+   "replace": "Active; sold its UK-listed fund to Concord in 2023",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "$700M+ in assets (now part of Concord's portfolio)",
+   "replace": "Over $1.1B under management (May 2025)",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Full catalog acquisition through fund-based structure",
+   "replace": "Catalog acquisitions through private funds",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Active catalog management (now handled by Concord)",
+   "replace": "Active catalog management by Round Hill",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Months (institutional due diligence, fund-level approvals)",
+   "replace": "Negotiated deal by deal",
+   "reason": "unsourced figure removed",
+   "sources": []
+  },
+  {
+   "find": "Transferred to Round Hill / Concord for portfolio management",
+   "replace": "Transferred with the rights sold",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Not accessible \u2014 institutional minimums and mainstream genre focus",
+   "replace": "Focused on established catalogs; confirm eligibility directly",
+   "reason": "policy",
+   "sources": []
+  },
+  {
+   "find": "Round Hill Music and SPACE operated in entirely different market segments, and following Round Hill's 2023 merger with Concord, the comparison is primarily instructive rather than actionable. Round Hill was an institutional fund manager acquiring proven legacy catalogs \u2014 classic rock standards, country hits, and mainstream pop songwriting catalogs \u2014 with deal sizes starting in the millions. Independent creators in niche genres were never part of their acquisition strategy. SPACE exists precisely for the creators that institutional buyers like Round Hill never served: indie artists in the ambient, lo-fi, and wellness space who want to monetize their catalogs through a fast, direct, commission-free process. For indie creators, the key takeaway is that the music rights acquisition market has historically been dominated by institutional buyers focused on mainstream legacy catalogs, leaving a significant gap for niche-genre independent artists. SPACE fills that gap. If you're an indie creator with an ambient or wellness catalog, SPACE is a relevant and accessible buyer today.",
+   "replace": "Round Hill Music and SPACE operate in different market segments. Round Hill is an institutional fund manager acquiring proven legacy catalogs: classic rock standards, country hits, and mainstream pop songwriting catalogs. In 2023 it sold its UK-listed fund to Concord, and it continues to buy through its private funds. SPACE reviews catalogs from indie artists, including in the ambient, lo-fi, and wellness space, who want a direct, commission-free offer. For indie creators, the key takeaway is that many large buyers focus on mainstream legacy catalogs. If you're an indie creator with an ambient, wellness or other revenue-generating catalog, SPACE is a buyer you can apply to for a free review.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions",
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Independent ambient, lo-fi, and wellness creators seeking an active, accessible buyer with no minimum catalog size, no commission, fast payouts, and the option to sell partial rights.",
+   "replace": "Independent creators, including ambient, lo-fi, and wellness artists, seeking a direct buyer with a free review, no fixed earnings floor, no commission, and the option to sell partial rights.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "No longer relevant as an independent buyer. Legacy mainstream catalog owners should explore Concord Music Group (which absorbed Round Hill's portfolio) or other institutional buyers like Hipgnosis, Primary Wave, or Reservoir.",
+   "replace": "Owners of established legacy catalogs in pop, rock and country. Round Hill still operates; its former UK-listed fund now belongs to Concord. Other institutional buyers include Primary Wave and Reservoir.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "No. Round Hill Music merged with Concord Music Group in 2023 in a deal valued at $469 million. Round Hill no longer operates as an independent entity. If you were considering Round Hill as a buyer, your options would now include Concord (for major legacy catalogs) or alternative buyers appropriate to your genre and catalog size.",
+   "replace": "Possibly. Round Hill Music still operates. In 2023 it sold only its UK-listed fund, Round Hill Music Royalty Fund, to Concord for $468.8 million, and it has continued to acquire catalogs through its private funds. Its focus is on established catalogs, so confirm eligibility directly, and compare other buyers appropriate to your genre and catalog size.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "What happened to catalogs that Round Hill owned before the merger?",
+   "replace": "What happened to the catalogs in Round Hill's listed fund?",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/"
+   ]
+  },
+  {
+   "find": "All catalogs previously managed by Round Hill Music are now part of Concord Music Group's portfolio. Concord manages over 1 million songs and continues to administer the rights, collect royalties, and pursue sync and licensing opportunities for the former Round Hill catalog. The transition was structured to maintain continuity for rights holders and revenue collection.",
+   "replace": "The catalogs in Round Hill Music Royalty Fund, over 150,000 songs in 51 catalogs according to Music Business Worldwide, became part of Concord's portfolio when the acquisition closed in 2023. Catalogs held in Round Hill's private funds were not part of that sale.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Why did Round Hill merge with Concord?",
+   "replace": "Why did Round Hill sell its listed fund to Concord?",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/"
+   ]
+  },
+  {
+   "find": "The merger was driven by consolidation dynamics in the music rights industry. Round Hill's fund structure required delivering returns to institutional investors, and the Concord merger provided liquidity for those investors while giving the catalog a permanent, well-resourced home. The $469 million transaction reflected the value of Round Hill's curated portfolio of legacy mainstream catalogs. This kind of institutional consolidation is common in the music rights space and illustrates why indie creators need purpose-built platforms like SPACE rather than relying on institutional fund managers.",
+   "replace": "The fund's shareholders approved Concord's $468.8 million offer in October 2023, which gave them a cash exit from the listed fund. Round Hill Music itself was not sold and continued to manage its private funds. For indie creators, the practical point is to compare buyers that review catalogs of your size and genre.",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/",
+    "https://www.roundhillmusic.com/news/round-hill-with-1-1bn-music-portfolio-strikes-flurry-of-catalog-acquisitions"
+   ]
+  },
+  {
+   "find": "Music Business Worldwide \u2014 Concord Acquires Round Hill Music for $469M",
+   "replace": "Music Business Worldwide \u2014 Concord acquires Round Hill's UK-listed fund for $469M",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/"
+   ]
+  },
+  {
+   "find": "Billboard \u2014 Round Hill Music and Concord Merger Details",
+   "replace": "Billboard \u2014 Round Hill Music and Concord fund sale",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://www.musicbusinessworldwide.com/concord-acquires-round-hills-uk-listed-music-fund/"
+   ]
+  },
+  {
+   "find": "Independent creators in mood & soundscape genres who want fast cash offers and retained creative control",
+   "replace": "Independent creators in any genre who want a direct offer with no listing fee or commission",
+   "reason": "policy (followup 29 Sep: SPACE reviews catalogs across all genres)",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Initial review in 5-7 business days",
+   "replace": "Initial offer typically 5-7 business days after information is received",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Yes (any percentage)",
+   "replace": "Yes (defined shares, e.g. 50% or 75%)",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ],
+   "modules": [
+    "comparisons",
+    "competitorComparisons",
+    "GuideBestMusicRightsBuyers"
+   ],
+   "pages": [
+    "compare/",
+    "guides/best-music-rights-buyers"
+   ]
+  },
+  {
+   "find": "Large pop, rock, and hip-hop catalogs",
+   "replace": "Masters, publishing and royalty shares from independent creators",
+   "reason": "competitor fact sourced (followup 29 Sep: Duetti replaces Hipgnosis in the best-buyers guide)",
+   "sources": [
+    "https://www.duetti.co/what-we-do",
+    "https://www.billboard.com/pro/duetti-200-million-fund-indie-music-catalog-acquisitions/"
+   ]
+  },
+  {
+   "find": "Varies (weeks to months)",
+   "replace": "As little as 30 days, per Duetti's website",
+   "reason": "competitor fact sourced (followup 29 Sep: Duetti replaces Hipgnosis)",
+   "sources": [
+    "https://www.duetti.co/what-we-do"
+   ]
+  },
+  {
+   "find": "Established songwriters with high-value, multi-genre catalogs generating $500K+ annually",
+   "replace": "Independent creators earning at least $2,000 a year from their music rights, per Duetti's website",
+   "reason": "competitor fact sourced (followup 29 Sep: Duetti replaces Hipgnosis)",
+   "sources": [
+    "https://www.duetti.co/what-we-do"
+   ]
+  },
+  {
+   "find": "After auction closes (1\u20134 weeks)",
+   "replace": "After the auction closes; most auctions run under a week",
+   "reason": "competitor fact sourced",
+   "sources": [
+    "https://royaltyexchange.com/how-auctions-work-sellers"
+   ]
+  },
+  {
+   "find": "Most catalogs sell for 5\u201315x their annual revenue, depending on genre, growth trend, streaming consistency, and rights clarity. Ambient and lo-fi catalogs with consistent streaming history typically see multiples of 8\u201312x.",
+   "replace": "Value depends on genre, growth trend, streaming consistency, rights clarity, metadata and concentration in top tracks. There is no reliable single multiple; ambient and lo-fi catalogs with consistent streaming history are assessed on the same factors in an individual review.",
+   "reason": "multiple removed",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Yes. Many buyers, including SPACE, allow partial rights sales \u2014 for example, selling 50% or 75% of your master rights while retaining the rest.",
+   "replace": "Yes. Many buyers, including SPACE, allow partial rights sales, for example selling 50% or 75% of defined catalog rights while retaining the rest.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "End-to-end timelines vary. SPACE reviews qualified catalogs in 5-7 business days before making an initial offer if the fit is strong. Larger firms and auction platforms may take weeks to months.",
+   "replace": "End-to-end timelines vary. SPACE's initial offer typically follows 5-7 business days after the relevant catalog information is received, and payment follows a completed agreement and rights transfer. Timelines at other buyers and auction platforms depend on their own processes.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Not necessarily. Buyers like SPACE let creators retain creative control even after a full or partial sale. However, this varies by buyer \u2014 always confirm before signing.",
+   "replace": "It depends on the agreement. In a sale, control over the rights sold usually passes to the buyer, and any approvals you keep must be written into the contract. This varies by buyer, so always confirm before signing.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "Mood and functional music genres \u2014 ambient, lo-fi, meditation, focus \u2014 have seen strong valuation growth due to rising use in wellness apps, study playlists, and commercial environments. Pop and hip-hop command the highest absolute prices but require much larger catalogs.",
+   "replace": "Genre is one factor among several. Mood and functional music (ambient, lo-fi, meditation, focus) is used in wellness apps, study playlists, and commercial environments, which a review weighs as licensing utility. Pop and hip-hop hits command the highest absolute prices but usually come from much larger catalogs.",
+   "reason": "unsourced figure removed",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "For independent artists in ambient, lo-fi, or wellness genres, SPACE is our top pick because it buys directly, charges no auction or listing commission, supports partial rights sales, and lets you keep creative control over future music. For large pop or rock catalogs, Hipgnosis and Reservoir handle higher-value deals.",
+   "replace": "For independent artists in ambient, lo-fi, or wellness genres, SPACE (the publisher of this guide) is our top pick because it buys directly, charges no auction or listing commission, supports partial rights sales, and does not buy your future music unless it is included in the agreement. For large pop or rock catalogs, Reservoir and Round Hill handle higher-value deals; Hipgnosis's catalog now belongs to Sony Music Publishing.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md",
+    "https://www.musicbusinessworldwide.com/done-deal-sony-music-publishing-completes-acquisition-of-recognition-music-groups-catalog/"
+   ]
+  },
+  {
+   "find": " pick a buyer that specializes in your genre \u2014 valuation multiples are higher when the buyer understands your market.",
+   "replace": " pick a buyer that reviews your genre and understands how your catalog earns.",
+   "reason": "multiple removed",
+   "sources": []
+  },
+  {
+   "find": " if you need fast liquidity, prioritize buyers with clear review and closing timelines. SPACE reviews qualified catalogs in 5-7 business days.",
+   "replace": " if you need fast liquidity, prioritize buyers with clear review and closing timelines. SPACE's initial offer typically follows 5-7 business days after catalog information is received.",
+   "reason": "policy",
+   "sources": [
+    "https://spacemusic.io/pricing.md"
+   ]
+  },
+  {
+   "find": "15-25% of net revenue",
+   "replace": "A royalty rate set in the label contract",
+   "reason": "unsourced figure removed (table cell)",
+   "modules": [
+    "comparisons"
+   ],
+   "pages": [
+    "compare/"
+   ]
+  }
+ ]
+}

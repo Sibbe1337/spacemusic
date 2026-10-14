@@ -1,0 +1,57 @@
+<div id="root">
+  <main class="shell landing-shell">
+    <header class="masthead"><a class="wordmark" href="/" aria-label="SPACE home">SPACE</a><div class="eyebrow">CATALOG ACQUISITIONS</div></header>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">For independent catalog owners</p>
+        <h1>We buy your music catalog.</h1>
+        <p class="hero-lede">SPACE reviews revenue-generating catalogs directly across genres. Ambient, sleep, focus, meditation, wellness, lo-fi and electronic music are examples. Every catalog is assessed individually.</p>
+        <div class="proof-row"><span>Direct buyer</span><span>Free evaluation</span><span>No obligation</span></div>
+      </div>
+      <div class="intake-column">
+        <section class="intake-card" aria-labelledby="intake-heading" id="intake-card">
+          <div class="card-label">Start a confidential review</div>
+          <h2 id="intake-heading">Tell us what you own.</h2>
+          <p class="muted">Start with your email and artist or label name. We request the relevant income and rights documents privately by email after you apply. No upload is needed now.</p>
+          <p class="muted">The guided form asks about your role, rights and any royalty income you know. You can also contact us about a partnership. Unknown income is welcome; no estimate or document is required to start.</p>
+          <button class="primary wide" type="button" id="start-intake" hidden>Start your free review <span aria-hidden="true">&#8594;</span></button>
+          <p id="embed-status" class="tiny" role="status" aria-live="polite"></p>
+          <div id="typeform-container" hidden></div>
+          <noscript><p>The guided review form needs JavaScript. Use the short form below or contact <a href="mailto:hello@spacemusic.io">hello@spacemusic.io</a>. Do not send passwords or publish private documents.</p></noscript>
+          <p class="tiny">Submitting requests a free review, not a sale. Read our <a href="/pricing.md" target="_blank" rel="noopener noreferrer">pricing and offer policy (new tab)</a> and <a href="/privacy/" target="_blank" rel="noopener noreferrer">privacy notice (new tab)</a>. The guided form uses Typeform.</p>
+          <details id="short-form-details">
+            <summary>Having trouble? Use the short form instead</summary>
+            <p class="tiny">This alternative uses our existing Formspree receiver. Send only one request. If you already saw a confirmation, email us with corrections rather than submitting again.</p>
+            <form id="short-form" action="https://formspree.io/f/mpwdnokz" method="POST">
+              <div class="alert error" id="short-form-error" role="alert" hidden></div>
+              <label>Email<input required name="email" autocomplete="email" type="email" placeholder="you@example.com"></label>
+              <label>Artist or label<input required name="artistLabel" placeholder="Catalog name"></label>
+              <label>Your name <span class="optional">optional</span><input name="firstName" autocomplete="name" placeholder="Name"></label>
+              <label>Referral ID <span class="optional">optional</span><input name="referralId" placeholder="If a partner referred you"></label>
+              <label class="check"><input type="checkbox" name="consentMarketing" value="true"> Send me occasional SPACE updates</label>
+              <input type="hidden" name="source" value="SpaceMusic seller review - short form fallback">
+              <input type="hidden" name="_subject" value="New SpaceMusic review - short form">
+              <button class="primary wide" type="submit">Request a free catalog review <span aria-hidden="true">&#8594;</span></button>
+            </form>
+          </details>
+          <p class="tiny">Need help? <a href="mailto:hello@spacemusic.io">hello@spacemusic.io</a></p>
+        </section>
+        <section class="intake-card confirmation" id="intake-confirmation" tabindex="-1" aria-labelledby="review-sent" hidden>
+          <div class="card-label">Your next step</div>
+          <h2 id="review-sent">Request received.</h2>
+          <p>We will follow up at the email address you provided to confirm the information needed for your catalog review or to respond to your inquiry.</p>
+          <p class="muted">If your catalog is a fit, an initial offer typically follows within 5-7 business days after we receive the relevant information. This request is not an offer or a commitment to sell.</p>
+          <h3>Prepare while you wait</h3>
+          <p class="muted">Keep your royalty statements, track list and rights agreements together. Do not send passwords or publish private documents.</p>
+          <p><a href="/blog/music-catalog-sale-documents-checklist/">Read the seller document checklist</a></p>
+          <p class="muted">Need to correct something? Contact <a href="mailto:hello@spacemusic.io">hello@spacemusic.io</a> rather than submitting the same catalog again.</p>
+        </section>
+      </div>
+    </section>
+    <section class="three-up">
+      <article><b>01</b><h3>Tell us about your catalog</h3><p>Share the basics about the music and rights you own. It takes a few minutes.</p></article>
+      <article><b>02</b><h3>We review the evidence</h3><p>We check ownership, rights, metadata, and royalty history through a private process.</p></article>
+      <article><b>03</b><h3>Get a clear next move</h3><p>If the catalog is a fit, we return a structured offer with no obligation to accept.</p></article>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": 2063,
+  "articles": 14,
+  "legacy": 6,
+  "removedImages": 57,
+  "links": {
+    "pages": 139,
+    "sitemap": 141,
+    "internalLinks": 6653,
+    "issues": {},
+    "orphans": [
+      "/data/conversion-intelligence/",
+      "/data/space-market-index/"
+    ],
+    "unreachable": [
+      "/data/conversion-intelligence/",
+      "/data/space-market-index/"
+    ],
+    "maxDepth": 3
+  }
+}
