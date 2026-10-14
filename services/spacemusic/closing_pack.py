@@ -78,6 +78,10 @@ class ClosingDocumentPack(BaseModel):
     space_origination_fee_eur: float
     space_spread_eur: float
     space_total_take_eur: float
+    carried_tail_pct: float = 0.075
+    space_carried_tail_year1_eur: float = 0.0
+    space_carried_tail_10y_projected_eur: float = 0.0
+    space_total_10y_comp_eur: float = 0.0
     blind_teaser: BlindDealTeaser
     ncnd_fee_agreement_markdown: str
     letter_of_direction_markdown: str
@@ -208,6 +212,7 @@ def generate_closing_document_pack(
     buyer_gross_funding_eur: Optional[float] = None,
     origination_fee_pct: float = 0.06,
     holdback_pct: float = 0.20,
+    carried_tail_pct: float = 0.075,
     space_iban: str = "SE00 0000 0000 0000 0000 0000 (SPACE Corporate Treasury)",
 ) -> ClosingDocumentPack:
     """
@@ -238,6 +243,16 @@ def generate_closing_document_pack(
     seller_holdback = round(seller_price * holdback_pct, 2)
     seller_closing_wire = round(seller_price - seller_holdback, 2)
 
+    projected_cfs = list(valuation.yearly_projected_cashflows_p50_eur or [])
+    cf0_fallback = max(0.0, float(valuation.baseline.effective_cf0_eur or 0.0))
+    yr1_cf = projected_cfs[0] if projected_cfs else cf0_fallback
+    ten_yr_cf_sum = sum(projected_cfs) if projected_cfs else (cf0_fallback * 6.5)
+
+    tail_pct = max(0.0, float(carried_tail_pct))
+    space_tail_yr1 = round(yr1_cf * tail_pct, 2)
+    space_tail_10y = round(ten_yr_cf_sum * tail_pct, 2)
+    space_total_10y_comp = round(space_total_take + space_tail_10y, 2)
+
     today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     dist_name = app.distributor_or_admin or "Designated Digital Distributor"
 
@@ -249,10 +264,12 @@ def generate_closing_document_pack(
         f"and seller contact details for Deal `{deal_code}`, `{buyer_entity_name}` (\"Buyer\") agrees not to "
         f"contact, solicit, or consummate any financing, licensing, or acquisition transaction with the "
         f"Seller (`{app.artist_or_label_name}`) outside of Arranger for twenty-four (24) months.\n"
-        f"2. **Origination Fee & Settlement:** Upon closing of any transaction involving the Catalog, "
-        f"Buyer shall disburse Arranger's compensation (**€{space_total_take:,.2f} EUR**, comprising "
+        f"2. **Origination Fee & Carried Royalty Tail:** Upon closing of any transaction involving the Catalog, "
+        f"Buyer shall disburse Arranger's closing cash compensation (**€{space_total_take:,.2f} EUR**, comprising "
         f"a {origination_fee_pct * 100:.1f}% Origination Fee of €{fee_eur:,.2f} EUR plus any agreed syndication spread "
-        f"of €{spread_eur:,.2f} EUR) directly to Arranger's designated bank account concurrently with the Seller closing wire.\n"
+        f"of €{spread_eur:,.2f} EUR) directly to Arranger's designated bank account concurrently with the Seller closing wire, "
+        f"and allocate Arranger a **{tail_pct * 100:.1f}% Carried Royalty Tail** (projected at **€{space_tail_yr1:,.2f}/yr** Year 1 "
+        f"and **€{space_tail_10y:,.2f} EUR** cumulative over 10 years) remitted automatically via the Virtual Lockbox.\n"
         f"3. **No Principal Liability on Arranger:** Arranger acts solely as origination and underwriting desk "
         f"and assumes zero principal payment obligation to Seller."
     )
@@ -269,7 +286,8 @@ def generate_closing_document_pack(
         f"to **{buyer_entity_name}**.\n\n"
         f"You are hereby irrevocably instructed and authorized to:\n"
         f"1. Transfer all catalog releases, ISRCs, and associated metadata under account `{app.contact_email}` to Assignee's designated account; and\n"
-        f"2. Remit 100% of all unpaid prior-period and future royalties accrued from the Effective Date directly to Assignee.\n\n"
+        f"2. Remit 100% of all unpaid prior-period and future royalties accrued from the Effective Date directly to the designated Deal Lockbox "
+        f"(allocating {100.0 - tail_pct * 100:.1f}% to Assignee and {tail_pct * 100:.1f}% Carried Royalty Tail to SpaceMusic `{space_iban}`).\n\n"
         f"**Signed by Assignor (Seller):** ___________________________ ({seller_legal_name})\n"
         f"**Acknowledged by Assignee (Buyer):** ___________________________ ({buyer_entity_name})"
     )
@@ -282,8 +300,10 @@ def generate_closing_document_pack(
         f"| **Gross Institutional Funding** | Funded by `{buyer_entity_name}` | **€{gross_funding:,.2f}** | At Closing |\n"
         f"| **Wire 1: Seller Upfront Proceeds (80%)** | `{seller_legal_name}` ({seller_address}) | **€{seller_closing_wire:,.2f}** | At Closing upon LOD |\n"
         f"| **Wire 2: SPACE Origination & Spread** | **SpaceMusic (`{space_iban}`)** | **€{space_total_take:,.2f}** | **Paid Directly to SPACE at Closing** |\n"
-        f"| **Escrow / Performance Holdback (20%)** | Held by Buyer for `{seller_legal_name}` | **€{seller_holdback:,.2f}** | Released 12M Post-Closing |\n\n"
-        f"**Summary of SPACE Net Cash Take at Closing:** **€{space_total_take:,.2f} EUR** (Zero capital deployed by SPACE)."
+        f"| **Escrow / Performance Holdback (20%)** | Held by Buyer for `{seller_legal_name}` | **€{seller_holdback:,.2f}** | Released 12M Post-Closing |\n"
+        f"| **SPACE Carried Royalty Tail ({tail_pct * 100:.1f}%)** | **SpaceMusic (`{space_iban}`)** | **€{space_tail_10y:,.2f}** *(10Y Est.)* | **Monthly Passive Lockbox Waterfall** |\n\n"
+        f"**Summary of SPACE Net Cash Take at Closing:** **€{space_total_take:,.2f} EUR** + **€{space_tail_10y:,.2f} EUR** 10Y Carried Tail "
+        f"(**€{space_total_10y_comp:,.2f} EUR** Total Expected SPACE Value | Zero capital deployed by SPACE)."
     )
 
     return ClosingDocumentPack(
@@ -299,6 +319,10 @@ def generate_closing_document_pack(
         space_origination_fee_eur=fee_eur,
         space_spread_eur=spread_eur,
         space_total_take_eur=space_total_take,
+        carried_tail_pct=tail_pct,
+        space_carried_tail_year1_eur=space_tail_yr1,
+        space_carried_tail_10y_projected_eur=space_tail_10y,
+        space_total_10y_comp_eur=space_total_10y_comp,
         blind_teaser=teaser,
         ncnd_fee_agreement_markdown=ncnd_md,
         letter_of_direction_markdown=lod_md,

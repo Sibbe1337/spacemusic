@@ -1065,8 +1065,312 @@ def test_closing_document_pack_and_cross_catalog_isrc_fraud_detector(
     assert pack.space_origination_fee_eur == 1110.0
     assert pack.space_spread_eur == 2390.0
     assert pack.space_total_take_eur == 3500.0
+    assert pack.carried_tail_pct == 0.075
+    assert pack.space_carried_tail_10y_projected_eur > 2000.0
+    assert pack.space_total_10y_comp_eur == round(
+        pack.space_total_take_eur + pack.space_carried_tail_10y_projected_eur, 2
+    )
+    assert "Carried Royalty Tail" in pack.ncnd_fee_agreement_markdown
     assert "IRREVOCABLE LETTER OF DIRECTION" in pack.letter_of_direction_markdown
     assert "CLOSING SETTLEMENT STATEMENT" in pack.settlement_statement_markdown
+
+
+def test_phase2_typeform_direct_upload_instant_status_and_scrive_engine():
+    """
+    Verifies Phase 2 (Automation & Typeform 2.0 + Scrive E-Signature Engine):
+    1. `POST /webhooks/typeform` with embedded `statement_attachments` upgrades immediately
+       to `STAGE_2_STATEMENT_VERIFIED` (`STAGE_2_INSTANT_UNDERWRITING_COMPLETE`) in a single call.
+    2. `GET /catalog-review/{id}/instant-status` returns the live valuation range, integrity score,
+       monetization plan, and Scrive e-signature envelopes.
+    3. `ScriveExecutionEngine` enforces deterministic party order (`SELLER` -> `BUYER` -> `COMPLETED_LOCKED`),
+       SHA-256 document hash verification, and HMAC-SHA256 webhook verification.
+    """
+    import json
+    from fastapi import FastAPI
+    from fastapi.testclient import TestClient
+
+    from services.spacemusic.routes import router
+    from services.spacemusic.scrive_signer import (
+        ScriveEnvelopeStatus,
+        SignatoryRole,
+        compute_scrive_webhook_signature,
+    )
+
+    app = FastAPI()
+    app.include_router(router)
+    client = TestClient(app)
+
+    distro_csv = (
+        "Sale Month,Store,Artist,Title,ISRC,Quantity,Earnings (USD),Country of Sale,Release Date\n"
+        + "\n".join(
+            f"2025-{m:02d},Spotify,Nordic Pulse,Midnight Fjord,SEABC2300111,160000,620.00,SE,2023-04-01"
+            for m in range(1, 13)
+        )
+    )
+
+    tf_payload = {
+        "event_id": "tf_direct_upload_001",
+        "inquiry_route": "My own catalog",
+        "contact_name": "Erik Lindqvist",
+        "contact_email": "erik@nordicpulse.se",
+        "artist_or_label_name": "Nordic Pulse",
+        "listen_url": "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb",
+        "rights_scope": "Master recordings",
+        "owner_authorized": "Yes",
+        "knows_ltm_royalties": "I can provide an approximate figure",
+        "declared_ltm_amount": 7440,
+        "declared_currency": "USD",
+        "royalty_basis": "Net royalties payable to the rights holder",
+        "distributor_or_admin": "DistroKid",
+        "statement_attachments": [
+            {
+                "filename": "nordic_pulse_distrokid.csv",
+                "content_text": distro_csv,
+            }
+        ],
+    }
+
+    resp = client.post("/webhooks/typeform", json=tf_payload)
+    assert resp.status_code == 201
+    data = resp.json()
+    app_id = data["application_id"]
+    assert data["valuation_stage"] == "STAGE_2_STATEMENT_VERIFIED"
+    assert data["autonomous_decision"] == "STAGE_2_INSTANT_UNDERWRITING_COMPLETE"
+    assert data["blind_deal_teaser"] is not None
+    assert data["monetization_plan"] is not None
+
+    # Create a Scrive Closing Envelope for this application
+    env_resp = client.post(
+        f"/catalog-review/{app_id}/scrive/envelope",
+        json={
+            "seller_legal_name": "Erik Lindqvist Musik AB",
+            "seller_address": "Sveavägen 44, 111 34 Stockholm, Sweden",
+            "buyer_entity_name": "Duetti Master Acquisitions LP",
+            "buyer_email": "closings@duetti.co",
+            "seller_agreed_price_eur": 35000.0,
+            "carried_tail_pct": 0.075,
+        },
+    )
+    assert env_resp.status_code == 201
+    env_data = env_resp.json()
+    envelope_id = env_data["envelope_id"]
+    doc_sha256 = env_data["document_sha256"]
+    assert env_data["status"] == ScriveEnvelopeStatus.SENT_FOR_SIGNATURE.value
+
+    # Out-of-order signing attempt (Buyer trying to sign before Seller) must be rejected (HTTP 400)
+    bad_order = client.post(
+        f"/catalog-review/scrive/{envelope_id}/sign",
+        json={"signer_role": SignatoryRole.BUYER.value},
+    )
+    assert bad_order.status_code == 400
+    assert "Signing order violation" in bad_order.json()["detail"]
+
+    # Seller signs via Scrive HMAC-verified webhook
+    webhook_body = {
+        "envelope_id": envelope_id,
+        "signer_role": "SELLER",
+        "signer_email": "erik@nordicpulse.se",
+        "ip_address": "192.0.2.10",
+        "document_sha256": doc_sha256,
+    }
+    canonical_json = json.dumps(webhook_body, sort_keys=True, separators=(",", ":"))
+    valid_hmac = compute_scrive_webhook_signature(canonical_json)
+
+    # Invalid HMAC must be rejected
+    bad_hmac_resp = client.post(
+        "/webhooks/scrive",
+        json=webhook_body,
+        headers={"X-Scrive-Signature": "sha256=deadbeef"},
+    )
+    assert bad_hmac_resp.status_code == 400
+
+    # Valid HMAC transitions to SELLER_SIGNED
+    ok_hmac_resp = client.post(
+        "/webhooks/scrive",
+        json=webhook_body,
+        headers={"X-Scrive-Signature": f"sha256={valid_hmac}"},
+    )
+    assert ok_hmac_resp.status_code == 200
+    assert ok_hmac_resp.json()["status"] == ScriveEnvelopeStatus.SELLER_SIGNED.value
+
+    # Buyer countersigns -> transitions to COMPLETED_LOCKED
+    buyer_sign_resp = client.post(
+        f"/catalog-review/scrive/{envelope_id}/sign",
+        json={
+            "signer_role": SignatoryRole.BUYER.value,
+            "signer_email": "closings@duetti.co",
+            "expected_document_sha256": doc_sha256,
+        },
+    )
+    assert buyer_sign_resp.status_code == 200
+    locked_env = buyer_sign_resp.json()
+    assert locked_env["status"] == ScriveEnvelopeStatus.COMPLETED_LOCKED.value
+    assert locked_env["completed_at"] is not None
+
+    # Instant status endpoint returns the completed envelope and monetization plan
+    status_resp = client.get(f"/catalog-review/{app_id}/instant-status")
+    assert status_resp.status_code == 200
+    st = status_resp.json()
+    assert st["statements_verified"] is True
+    assert len(st["scrive_envelopes"]) == 1
+    assert st["scrive_envelopes"][0]["status"] == "COMPLETED_LOCKED"
+
+
+def test_phase3_sov_plus_down_funnel_monetization_and_audit_certificate(
+    engine: SpaceValuationEngine,
+):
+    """
+    Verifies Phase 3 ("Sov+" Passive Monetization & Down-Funnel Router):
+    1. Sub-threshold catalog (€1,200/yr) is routed to `MICRO_ADVANCE_REFERRAL` (beatBread / Sound Royalties)
+       with a 4% referral bounty + `MANAGED_SUBLABEL_CONTENT_ID` (15% override) + `$299` Certificate.
+    2. Unreleased / €0 catalog (like Aydın Polat) is routed to `MANAGED_SUBLABEL_CONTENT_ID`
+       with a 15% ongoing Content ID / distribution override.
+    3. `generate_forensic_audit_certificate` produces a SHA-256-sealed certificate (`CERT-SPC-...`).
+    """
+    from services.spacemusic.models import CatalogApplication
+    from services.spacemusic.monetization_engine import (
+        MonetizationTrackType,
+        build_down_funnel_monetization_plan,
+        generate_forensic_audit_certificate,
+    )
+    from services.spacemusic.typeform_adapter import application_to_valuation_input
+
+    # Case A: Sub-threshold artist (€1,200/yr)
+    sub_app = CatalogApplication(
+        contact_name="Indie Producer",
+        contact_email="indie@beats.io",
+        artist_or_label_name="LoFi Cloud",
+        declared_ltm_amount=1200.0,
+        declared_currency="EUR",
+        distributor_or_admin="DistroKid",
+    )
+    sub_val = engine.evaluate(application_to_valuation_input(sub_app), reference_date=date(2026, 10, 14))
+    sub_plan = build_down_funnel_monetization_plan(sub_app, sub_val)
+    assert sub_plan.primary_track == MonetizationTrackType.MICRO_ADVANCE_REFERRAL
+    assert sub_plan.total_expected_space_10y_value_eur > 0
+    assert any(o.track_type == MonetizationTrackType.FORENSIC_AUDIT_CERTIFICATE for o in sub_plan.options)
+
+    # Case B: Unreleased library (€0 LTM, like Aydın Polat)
+    unrel_app = CatalogApplication(
+        contact_name="Aydin Polat",
+        contact_email="theaydinpolat@gmail.com",
+        artist_or_label_name="Aydin Polat Unreleased Library",
+        declared_ltm_amount=0.0,
+        declared_currency="USD",
+        distributor_or_admin="Independent",
+    )
+    unrel_val = engine.evaluate(application_to_valuation_input(unrel_app), reference_date=date(2026, 10, 14))
+    unrel_plan = build_down_funnel_monetization_plan(unrel_app, unrel_val)
+    assert unrel_plan.primary_track == MonetizationTrackType.MANAGED_SUBLABEL_CONTENT_ID
+    sublabel_opt = next(
+        o for o in unrel_plan.options if o.track_type == MonetizationTrackType.MANAGED_SUBLABEL_CONTENT_ID
+    )
+    assert sublabel_opt.space_take_rate_pct == 15.0
+    assert sublabel_opt.estimated_space_annual_passive_eur == 525.0
+
+    # Case C: Official $299 Forensic Audit Certificate
+    cert = generate_forensic_audit_certificate(sub_app, sub_val)
+    assert cert.certificate_id.startswith("CERT-SPC-")
+    assert len(cert.sha256_verification_seal) == 64
+    assert cert.certificate_fee_usd == 299.0
+    assert "OFFICIAL SPACE FORENSIC VALUATION" in cert.certificate_markdown
+
+
+def test_phase4_fintech_split_escrow_cent_exactness_and_lockbox_waterfall():
+    """
+    Verifies Phase 4 (Fintech Multi-Currency Split-Escrow & Virtual Lockbox Ledger):
+    1. Cent-exact `Decimal` precision across tricky fractional amounts (`€18,543.37`, `USD`, `SEK`)
+       so `invariant_balanced_to_exact_cent` is 100% True with 0.00 cent drift.
+    2. Idempotency protection: repeating the same `idempotency_key` with identical parameters
+       returns the exact same instruction, whereas mutating the price under the same key raises `ValueError`.
+    3. Monthly Virtual Lockbox waterfall splits incoming royalties into SPACE's 7.5% Carried Royalty Tail
+       and Buyer's 92.5% share to the exact cent, and releases 100% of the Seller Holdback at Month 12
+       when cumulative royalties reach >= 90% of $CF_0$.
+    """
+    import pytest
+    from services.spacemusic.fintech_escrow import (
+        EscrowProviderRail,
+        FintechEscrowLedger,
+    )
+
+    ledger = FintechEscrowLedger()
+
+    inst = ledger.compute_split_escrow_instruction(
+        deal_code="SPC-PHX01",
+        application_id="app-phx-001",
+        seller_legal_name="Mohammed Belmokhtar",
+        seller_iban="MA64011519000001205000534921",
+        buyer_entity_name="Create Music Group Acquisitions LLC",
+        seller_agreed_price_eur="18543.37",
+        buyer_gross_funding_eur="21999.99",
+        origination_fee_pct="0.06",
+        holdback_pct="0.20",
+        carried_tail_pct="0.075",
+        settlement_currency="USD",
+        provider_rail=EscrowProviderRail.AIRWALLEX_VIRTUAL_LOCKBOX,
+        idempotency_key="idem_phx_closing_01",
+    )
+    assert inst.invariant_balanced_to_exact_cent is True
+    assert sum(leg.amount_cents for leg in inst.wire_legs) == int(
+        float(inst.gross_buyer_funding) * 100
+    )
+
+    # Idempotent replay returns exact same instruction_id
+    inst_replay = ledger.compute_split_escrow_instruction(
+        deal_code="SPC-PHX01",
+        application_id="app-phx-001",
+        seller_legal_name="Mohammed Belmokhtar",
+        seller_iban="MA64011519000001205000534921",
+        buyer_entity_name="Create Music Group Acquisitions LLC",
+        seller_agreed_price_eur="18543.37",
+        buyer_gross_funding_eur="21999.99",
+        origination_fee_pct="0.06",
+        holdback_pct="0.20",
+        carried_tail_pct="0.075",
+        settlement_currency="USD",
+        provider_rail=EscrowProviderRail.AIRWALLEX_VIRTUAL_LOCKBOX,
+        idempotency_key="idem_phx_closing_01",
+    )
+    assert inst_replay.instruction_id == inst.instruction_id
+
+    # Parameter tampering with same idempotency_key must raise ValueError
+    with pytest.raises(ValueError, match="Idempotency conflict"):
+        ledger.compute_split_escrow_instruction(
+            deal_code="SPC-PHX01",
+            application_id="app-phx-001",
+            seller_legal_name="Mohammed Belmokhtar",
+            seller_iban="MA64011519000001205000534921",
+            buyer_entity_name="Create Music Group Acquisitions LLC",
+            seller_agreed_price_eur="25000.00",
+            buyer_gross_funding_eur="29000.00",
+            settlement_currency="USD",
+            idempotency_key="idem_phx_closing_01",
+        )
+
+    # Simulate 12 months of Virtual Lockbox royalty inflows (€650.13/mo -> €7,801.56/yr vs €7,790.00 CF0)
+    last_dist = None
+    for m in range(1, 13):
+        last_dist = ledger.distribute_monthly_lockbox_royalties(
+            deal_code="SPC-PHX01",
+            period_month=f"2026-{m:02d}",
+            gross_royalty_inflow="650.13",
+            target_12m_baseline_cf0="7790.00",
+            seller_holdback_escrow="3700.00",
+            carried_tail_pct="0.075",
+            is_month_12_holdback_check=(m == 12),
+            currency="EUR",
+        )
+        assert last_dist.invariant_balanced_to_exact_cent is True
+        # 650.13 * 0.075 = 48.75975 -> 48.76 SPACE tail + 601.37 Buyer share == 650.13 exact
+        assert last_dist.space_carried_tail_payout == "48.76"
+        assert last_dist.buyer_royalty_payout == "601.37"
+
+    assert last_dist is not None
+    assert last_dist.cumulative_royalties_collected == "7801.56"
+    assert last_dist.performance_coverage_ratio >= 1.0
+    assert last_dist.holdback_release_status == "RELEASED_100_PCT_TO_SELLER"
+    assert last_dist.holdback_released_to_seller == "3700.00"
+
 
 
 

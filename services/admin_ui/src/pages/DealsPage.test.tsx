@@ -46,7 +46,7 @@ const mockAuth0ContextValue = {
   // One more missing? The linter will tell us if these are not the correct "2 more".
   // The error message from the linter is the source of truth for missing non-optional properties.
 
-} as Auth0ContextInterface<User>; // Single cast of the whole object at the end.
+} as unknown as Auth0ContextInterface<User>; // Single cast of the whole object at the end.
 
 // Helper to render with necessary providers
 const renderDealsPage = () => {

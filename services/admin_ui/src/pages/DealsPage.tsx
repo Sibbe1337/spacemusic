@@ -23,7 +23,7 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 // Define an interface for the Deal object based on expected data
 interface Deal {
@@ -137,14 +137,14 @@ const DealDetailsDrawer: React.FC<{
         <div className="grid gap-2 px-4 py-2 text-sm">
           <p><strong>Full ID:</strong> {deal.id}</p>
           <p><strong>Title:</strong> {deal.title || 'N/A'}</p>
-          <p><strong>Price (Median):</strong> {deal.price_eur !== undefined ? deal.price_eur.toFixed(2) : 'N/A'} EUR</p>
+          <p>Price: {deal.price_eur !== undefined ? deal.price_eur.toFixed(2) : 'N/A'} EUR</p>
           {deal.price_low_eur !== undefined && <p><strong>Price Low:</strong> {deal.price_low_eur.toFixed(2)} EUR</p>}
           {deal.price_high_eur !== undefined && <p><strong>Price High:</strong> {deal.price_high_eur.toFixed(2)} EUR</p>}
-          <p><strong>Status:</strong> <Badge>{deal.status}</Badge></p>
+          <div><strong>Status:</strong> <Badge>{deal.status}</Badge></div>
           <p><strong>Created:</strong> {deal.created_at ? format(parseISO(deal.created_at), 'PPpp') : 'N/A'}</p>
           {deal.valuation_confidence !== undefined && <p><strong>Valuation Confidence:</strong> {deal.valuation_confidence.toFixed(2)}</p>}
           {deal.pdf_url && (
-            <p><strong>Termsheet:</strong> <a href={deal.pdf_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">View Termsheet PDF</a></p>
+            <p>Termsheet: <a href={deal.pdf_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">View Termsheet PDF</a></p>
           )}
           {deal.receipt_pdf_url && (
             <p><strong>Receipt:</strong> <a href={deal.receipt_pdf_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">View Receipt PDF</a></p>
@@ -188,8 +188,12 @@ const DealsPage = () => {
       const fetchedDeals = rawDeals.map((d: RawApiDeal): Deal => ({
         id: d.id, 
         email: (d.creator?.email as string) || (d.email as string) || 'N/A',
-        // Konvertera från cent till Euro, hantera om price_median_eur eller amount_cents används
-        price_eur: d.price_median_eur !== undefined ? d.price_median_eur / 100 : (d.amount_cents !== undefined ? d.amount_cents / 100 : 0),
+        // Konvertera från cent till Euro, hantera om price_median_eur, amount_cents eller price_eur används
+        price_eur: d.price_median_eur !== undefined
+          ? d.price_median_eur / 100
+          : (d.amount_cents !== undefined
+              ? d.amount_cents / 100
+              : (typeof d.price_eur === 'number' ? d.price_eur : 0)),
         status: (d.status as string) || "UNKNOWN",
         created_at: (d.created_at as string) || new Date().toISOString(),
         pdf_url: d.pdf_url as string | undefined,
@@ -341,7 +345,7 @@ const DealsPage = () => {
         }
       );
       if (response.status === 202) {
-        toast.success(`Payout retry initiated successfully for offer ID: ${offerId.substring(0,8)}...`);
+        toast.success(response.data?.message || `Payout retry initiated successfully for offer ID: ${offerId.substring(0,8)}...`);
         fetchDeals(); 
       } else {
         toast.error(`Failed to initiate payout retry. Status: ${response.status}, Message: ${response.data?.detail || response.data?.message || 'Unknown error'}`);
@@ -403,6 +407,7 @@ const DealsPage = () => {
           onClose={() => setIsDrawerOpen(false)} 
           onRetryPayout={handleRetryPayout}
         />
+        <Toaster />
       </div>
     </DateFnsContext.Provider>
   );

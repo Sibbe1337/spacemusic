@@ -7,15 +7,15 @@ const mockDeals = [
 ];
 
 export const handlers = [
-  // Mock for fetching deals
-  http.get('/internal/deals', ({ request }) => {
+  // Mock for fetching deals (matches both relative and http://localhost:8001 URLs)
+  http.get('*/internal/deals', ({ request }) => {
     const url = new URL(request.url);
     const limit = parseInt(url.searchParams.get('limit') || '10');
     return HttpResponse.json({ deals: mockDeals.slice(0, limit) });
   }),
 
   // Mock for retrying payout
-  http.post('/internal/payouts/offers/:offerId/retry_payout', ({ params }) => {
+  http.post('*/internal/payouts/offers/:offerId/retry_payout', ({ params }) => {
     console.log(`MSW: Mocked retry payout for offer ID: ${params.offerId}`);
     // Simulate a successful response
     return HttpResponse.json(

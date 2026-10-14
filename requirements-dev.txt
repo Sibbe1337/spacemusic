@@ -8,6 +8,7 @@ fastapi
 pydantic
 PyYAML
 structlog
+numpy
 httpx # For making HTTP requests in tests and application code
 respx # For mocking HTTPX requests
 

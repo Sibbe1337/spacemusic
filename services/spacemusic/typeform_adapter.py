@@ -41,6 +41,7 @@ TYPEFORM_FIELD_IDS = {
     "zmUSKFsE4iRz": "partnership_topic",
     "vMbAcO69sEXP": "referral_source",
     "ZUo7UF5L5nP0": "newsletter_opt_in",
+    "fUploadCsv01": "statement_file_url",
 }
 
 
@@ -63,14 +64,14 @@ def _extract_answer_value(ans: Dict[str, Any]) -> Any:
     if ans_type == "choices":
         labels = ans.get("choices", {}).get("labels", [])
         return ", ".join(labels)
-    if ans_type in {"text", "email", "url"}:
+    if ans_type in {"text", "email", "url", "file_url"}:
         return ans.get(ans_type)
     if ans_type == "number":
         return ans.get("number")
     if ans_type == "boolean":
         return ans.get("boolean")
     # Fallback
-    for k in ("text", "email", "url", "number", "boolean"):
+    for k in ("text", "email", "url", "file_url", "number", "boolean"):
         if k in ans:
             return ans[k]
     return None

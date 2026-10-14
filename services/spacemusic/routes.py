@@ -3,12 +3,26 @@ FastAPI Routes for SPACE Catalog Review (`services/spacemusic/routes.py`)
 
 Endpoints:
 - `POST /webhooks/typeform`: Ingests Typeform `xzx5SBJb` ("SPACE catalog review") payloads,
-  runs Stage 1 valuation & DD triage, generates reply draft, and stores in DB.
+  runs Stage 1 valuation & DD triage (or immediately executes Stage 2 if `statement_attachments` /
+  `raw_statement_csv` are uploaded directly inside Typeform 2.0), generates reply draft, and stores in DB.
+- `GET /catalog-review/{application_id}/instant-status`: Typeform 2.0 Redirect / Instant Valuation
+  Status endpoint returning indicative/verified valuation range, forensic integrity score,
+  cohort decay tier, distributor export guide, Down-Funnel monetization options, and Scrive e-sign status.
 - `POST /catalog-review/evaluate`: Direct Stage 1 or Stage 2 evaluation endpoint accepting
   structured catalog data + optional raw distributor CSV/TSV statement text.
 - `POST /catalog-review/{application_id}/statements`: Attaches raw distributor CSV/TSV statements
   to an existing Typeform application, upgrading it to `STAGE_2_STATEMENT_VERIFIED` and
   storing empirical RPM benchmarks in SPACE's proprietary database.
+- `POST /catalog-review/{application_id}/closing-pack`: Generates the 4-part Closing Document Pack
+  including SPACE's 5%–10% Carried Royalty Tail (`carried_tail_pct`).
+- `POST /catalog-review/{application_id}/scrive/envelope` & `POST /webhooks/scrive`:
+  Creates and executes Scrive e-signature envelopes with cryptographic SHA-256 & HMAC verification.
+- `GET /catalog-review/{application_id}/monetization-plan` &
+  `POST /catalog-review/{application_id}/forensic-certificate`:
+  "Sov+" Down-Funnel Monetization Router & $299 Forensic Audit Certificate generator.
+- `POST /catalog-review/{application_id}/fintech/split-escrow` &
+  `POST /catalog-review/{application_id}/fintech/lockbox-distribution`:
+  Cent-exact Multi-Currency Split-Escrow & Virtual Lockbox Monthly Waterfall Ledger.
 - `GET /catalog-review/applications`: Lists evaluated catalog applications with pipeline status.
 - `GET /catalog-review/benchmarks`: Returns aggregated empirical RPM benchmarks across DSPs & countries.
 """
@@ -20,8 +34,8 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 import structlog
-from fastapi import APIRouter, Body, HTTPException, status
-from pydantic import BaseModel
+from fastapi import APIRouter, Body, Header, HTTPException, status
+from pydantic import BaseModel, Field
 
 from services.valuation.engine import (
     CatalogValuationInput,
@@ -45,12 +59,32 @@ from .closing_pack import (
     generate_blind_deal_teaser,
     generate_closing_document_pack,
 )
+from .fintech_escrow import (
+    EscrowProviderRail,
+    FintechEscrowLedger,
+    MonthlyLockboxDistribution,
+    SplitEscrowSettlementInstruction,
+)
 from .inbox_ingestor import (
     AutonomousStage2UnderwritingResult,
+    InboundAttachmentPayload,
     InboundEmailStatementWebhook,
+    _extract_csv_texts_from_attachments,
     ingest_inbound_email_statements,
+    parse_multi_attachment_statements,
 )
 from .models import CatalogApplication, ProprietaryBenchmarkRecord, ReplyDraft
+from .monetization_engine import (
+    DownFunnelMonetizationPlan,
+    ForensicAuditCertificate,
+    build_down_funnel_monetization_plan,
+    generate_forensic_audit_certificate,
+)
+from .scrive_signer import (
+    ScriveExecutionEngine,
+    ScriveSignatureEnvelope,
+    SignatoryRole,
+)
 from .typeform_adapter import (
     application_to_valuation_input,
     generate_reply_draft,
@@ -61,6 +95,7 @@ from .zero_touch_stage1 import (
     ImpliedRevenueCrossCheck,
     LiveSpotifyArtistSnapshot,
     execute_zero_touch_stage1,
+    get_distributor_export_guide,
 )
 
 router = APIRouter()
@@ -70,6 +105,8 @@ logger = structlog.get_logger(__name__)
 _APPLICATIONS_STORE: Dict[uuid.UUID, CatalogApplication] = {}
 _BENCHMARKS_STORE: List[ProprietaryBenchmarkRecord] = []
 _deal_lake = DealLakeRepository()
+_scrive_engine = ScriveExecutionEngine()
+_fintech_ledger = FintechEscrowLedger()
 
 _engine = SpaceValuationEngine()
 
@@ -82,7 +119,70 @@ class ClosingPackRequest(BaseModel):
     buyer_gross_funding_eur: Optional[float] = None
     origination_fee_pct: float = 0.06
     holdback_pct: float = 0.20
+    carried_tail_pct: float = 0.075
     space_iban: str = "SE00 0000 0000 0000 0000 0000 (SPACE Corporate Treasury)"
+
+
+class ScriveEnvelopeRequest(BaseModel):
+    seller_legal_name: str
+    seller_address: str
+    buyer_entity_name: str = "Designated Institutional Buyer Affiliate"
+    buyer_email: str = "acquisitions@institutional-buyer.io"
+    seller_agreed_price_eur: Optional[float] = None
+    origination_fee_pct: float = 0.06
+    holdback_pct: float = 0.20
+    carried_tail_pct: float = 0.075
+
+
+class ScriveSignActionRequest(BaseModel):
+    signer_role: SignatoryRole = SignatoryRole.SELLER
+    signer_email: Optional[str] = None
+    ip_address: str = "127.0.0.1"
+    expected_document_sha256: Optional[str] = None
+
+
+class SplitEscrowRequest(BaseModel):
+    seller_legal_name: str
+    seller_iban: str
+    buyer_entity_name: str = "Designated Institutional Buyer Affiliate"
+    seller_agreed_price_eur: Optional[float] = None
+    buyer_gross_funding_eur: Optional[float] = None
+    origination_fee_pct: float = 0.06
+    holdback_pct: float = 0.20
+    carried_tail_pct: float = 0.075
+    settlement_currency: str = "EUR"
+    provider_rail: EscrowProviderRail = EscrowProviderRail.AIRWALLEX_VIRTUAL_LOCKBOX
+    space_treasury_iban: str = "SE00 0000 0000 0000 0000 0000 (SPACE Corporate Treasury)"
+    idempotency_key: Optional[str] = None
+
+
+class LockboxMonthlyDistributionRequest(BaseModel):
+    period_month: str
+    gross_royalty_inflow: float
+    seller_holdback_escrow: float = 0.0
+    carried_tail_pct: float = 0.075
+    is_month_12_holdback_check: bool = False
+    currency: str = "EUR"
+    idempotency_key: Optional[str] = None
+
+
+class InstantValuationStatusResponse(BaseModel):
+    application_id: uuid.UUID
+    deal_code: str
+    artist_or_label_name: str
+    pipeline_status: str
+    valuation_stage: str
+    statements_verified: bool
+    effective_cf0_eur: float
+    price_low_eur: float
+    price_median_eur: float
+    price_high_eur: float
+    implied_multiple_median: float
+    integrity_score: float
+    valuation_confidence: float
+    distributor_export_guide: str
+    monetization_plan: DownFunnelMonetizationPlan
+    scrive_envelopes: List[ScriveSignatureEnvelope] = Field(default_factory=list)
 
 
 class DirectEvaluationRequest(BaseModel):
@@ -114,7 +214,8 @@ class ApplicationEvaluationResponse(BaseModel):
     distributor_export_guide: Optional[str] = None
     institutional_routing: Optional[InstitutionalRoutingReport] = None
     blind_deal_teaser: Optional[BlindDealTeaser] = None
-    isrc_collision_alerts: List[IsrcCollisionAlert] = []
+    isrc_collision_alerts: List[IsrcCollisionAlert] = Field(default_factory=list)
+    monetization_plan: Optional[DownFunnelMonetizationPlan] = None
 
 
 @router.post(
@@ -124,11 +225,14 @@ class ApplicationEvaluationResponse(BaseModel):
 )
 async def handle_typeform_webhook(payload: Dict[str, Any] = Body(...)):
     """
-    Receives a Typeform webhook (`xzx5SBJb` - SPACE catalog review), parses all 19 fields,
-    executes the Zero-Touch Stage 1 pipeline (optional embedded `spotify_snapshot` or
-    `raw_spotify_payload`, mathematical stream-to-revenue cross-check, 8-genre DCF,
-    AI/fake profile forensics, and distributor-specific export guide injection),
-    and stores the evaluated application.
+    Receives a Typeform webhook (`xzx5SBJb` - SPACE catalog review), parses all fields,
+    and executes either:
+    - **Typeform 2.0 Direct Statement Upload (`STAGE_2_STATEMENT_VERIFIED`)** when the payload
+      includes `raw_statement_csv` or `statement_attachments` (`.csv` / `.tsv` / `.xlsx` / `.zip`),
+      running all 11 forensics checks, cross-catalog ISRC collision checks, and institutional routing
+      in a single atomic request; OR
+    - **Zero-Touch Stage 1 Pipeline (`STAGE_1_INDICATIVE`)** with live Spotify enrichment,
+      mathematical stream-to-revenue cross-check, and distributor-specific export guide injection.
     """
     app_row = parse_typeform_webhook_payload(payload)
     raw_spotify = payload.get("raw_spotify_payload")
@@ -142,25 +246,156 @@ async def handle_typeform_webhook(payload: Dict[str, Any] = Body(...)):
         raw_spotify_payload=raw_spotify if isinstance(raw_spotify, dict) else None,
     )
 
+    # Check if Typeform 2.0 submission includes direct statement files
+    direct_csv_text = payload.get("raw_statement_csv")
+    raw_attachments = payload.get("statement_attachments") or []
+    parsed_attachments: List[InboundAttachmentPayload] = []
+    if isinstance(raw_attachments, list):
+        for item in raw_attachments:
+            if isinstance(item, dict):
+                parsed_attachments.append(InboundAttachmentPayload(**item))
+
+    if direct_csv_text and isinstance(direct_csv_text, str) and direct_csv_text.strip():
+        parsed_attachments.append(
+            InboundAttachmentPayload(filename="typeform_upload.csv", content_text=direct_csv_text)
+        )
+
+    stmt_summary: Optional[ParsedStatementSummary] = None
+    routing: Optional[InstitutionalRoutingReport] = None
+    blind_teaser: Optional[BlindDealTeaser] = None
+    collision_alerts: List[IsrcCollisionAlert] = []
+    final_valuation = zt_res.valuation
+    final_reply = zt_res.reply_draft
+    final_decision = zt_res.autonomous_decision
+
+    if parsed_attachments:
+        file_pairs = _extract_csv_texts_from_attachments(parsed_attachments)
+        stmt_summary = parse_multi_attachment_statements(
+            file_pairs, default_currency=app_row.declared_currency
+        )
+        if stmt_summary.row_count > 0:
+            app_row.statements_verified = True
+            if not app_row.distributor_or_admin or app_row.distributor_or_admin == "Standard CSV":
+                app_row.distributor_or_admin = stmt_summary.detected_distributor
+
+            val_input = application_to_valuation_input(app_row)
+            val_input.statements_verified = True
+            val_input.monthly_history = stmt_summary.monthly_history
+            val_input.tracks = stmt_summary.tracks
+            val_input.dsp_share = stmt_summary.dsp_share
+            val_input.country_share = stmt_summary.country_share
+
+            final_valuation = _engine.evaluate(val_input)
+            final_reply = generate_reply_draft(app_row, final_valuation)
+            final_decision = "STAGE_2_INSTANT_UNDERWRITING_COMPLETE"
+
+            app_row.pipeline_status = final_valuation.pipeline_status
+            app_row.valuation_stage = final_valuation.valuation_stage
+            app_row.effective_cf0_eur = final_valuation.baseline.effective_cf0_eur
+            app_row.price_low_eur = final_valuation.price_low_eur
+            app_row.price_median_eur = final_valuation.price_median_eur
+            app_row.price_high_eur = final_valuation.price_high_eur
+            app_row.implied_multiple_median = final_valuation.implied_ltm_multiple_median
+            app_row.discount_rate = final_valuation.discount_rate.total_discount_rate
+            app_row.integrity_score = final_valuation.integrity_score
+            app_row.valuation_confidence = final_valuation.valuation_confidence
+            app_row.valuation_report_json = (
+                final_valuation.model_dump()
+                if hasattr(final_valuation, "model_dump")
+                else final_valuation.dict()
+            )
+            app_row.draft_reply_subject = final_reply.subject
+            app_row.draft_reply_body = final_reply.body
+
+            for b in stmt_summary.benchmarks:
+                _BENCHMARKS_STORE.append(
+                    ProprietaryBenchmarkRecord(
+                        source_application_id=app_row.id,
+                        distributor=stmt_summary.detected_distributor,
+                        genre_family=final_valuation.genre_family.value,
+                        dsp_store=b.dsp_store,
+                        country_code=b.country_code,
+                        total_streams=b.total_streams,
+                        total_net_royalty_eur=b.total_net_royalty_eur,
+                        observed_rpm_eur=b.observed_rpm_eur,
+                        observed_rpm_usd=b.observed_rpm_usd,
+                    )
+                )
+
+            routing = route_catalog_to_institutional_buyers(app_row, final_valuation)
+            blind_teaser = generate_blind_deal_teaser(app_row, final_valuation, routing=routing)
+            collision_alerts = _deal_lake.register_and_check_isrc_collisions(app_row, stmt_summary)
+
+    monetization_plan = build_down_funnel_monetization_plan(app_row, final_valuation)
     _APPLICATIONS_STORE[app_row.id] = app_row
+    _deal_lake.save_application(app_row)
+
     logger.info(
         "typeform_application_evaluated",
         application_id=str(app_row.id),
         artist=app_row.artist_or_label_name,
         pipeline_status=app_row.pipeline_status,
-        autonomous_decision=zt_res.autonomous_decision,
+        valuation_stage=app_row.valuation_stage,
+        autonomous_decision=final_decision,
         price_median_eur=app_row.price_median_eur,
     )
 
     return ApplicationEvaluationResponse(
         application_id=app_row.id,
-        pipeline_status=zt_res.pipeline_status,
-        valuation_stage=zt_res.valuation.valuation_stage,
-        autonomous_decision=zt_res.autonomous_decision,
-        valuation=zt_res.valuation,
-        reply_draft=zt_res.reply_draft,
+        pipeline_status=app_row.pipeline_status,
+        valuation_stage=app_row.valuation_stage,
+        autonomous_decision=final_decision,
+        valuation=final_valuation,
+        reply_draft=final_reply,
+        statement_summary=stmt_summary,
         implied_revenue_crosscheck=zt_res.implied_revenue_crosscheck,
         distributor_export_guide=zt_res.distributor_export_guide,
+        institutional_routing=routing,
+        blind_deal_teaser=blind_teaser,
+        isrc_collision_alerts=collision_alerts,
+        monetization_plan=monetization_plan,
+    )
+
+
+@router.get(
+    "/catalog-review/{application_id}/instant-status",
+    response_model=InstantValuationStatusResponse,
+)
+async def get_instant_valuation_status(application_id: uuid.UUID):
+    """
+    Typeform 2.0 Redirect / Instant Valuation Status endpoint:
+    Returns the real-time underwriting status, indicative or verified valuation range,
+    forensic integrity score, distributor export guide, Down-Funnel monetization plan,
+    and active Scrive e-signature envelopes for the seller's instant dashboard.
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    mon_plan = build_down_funnel_monetization_plan(app_row, valuation)
+    envelopes = _scrive_engine.list_envelopes_for_application(str(app_row.id))
+
+    return InstantValuationStatusResponse(
+        application_id=app_row.id,
+        deal_code=mon_plan.deal_code,
+        artist_or_label_name=app_row.artist_or_label_name,
+        pipeline_status=app_row.pipeline_status,
+        valuation_stage=app_row.valuation_stage,
+        statements_verified=app_row.statements_verified,
+        effective_cf0_eur=round(float(app_row.effective_cf0_eur or valuation.baseline.effective_cf0_eur), 2),
+        price_low_eur=round(float(app_row.price_low_eur or valuation.price_low_eur), 2),
+        price_median_eur=round(float(app_row.price_median_eur or valuation.price_median_eur), 2),
+        price_high_eur=round(float(app_row.price_high_eur or valuation.price_high_eur), 2),
+        implied_multiple_median=round(
+            float(app_row.implied_multiple_median or valuation.implied_ltm_multiple_median), 2
+        ),
+        integrity_score=round(float(app_row.integrity_score or valuation.integrity_score), 1),
+        valuation_confidence=round(float(app_row.valuation_confidence or valuation.valuation_confidence), 2),
+        distributor_export_guide=get_distributor_export_guide(app_row.distributor_or_admin),
+        monetization_plan=mon_plan,
+        scrive_envelopes=envelopes,
     )
 
 
@@ -225,6 +460,7 @@ async def evaluate_catalog_direct(req: DirectEvaluationRequest):
     app_row.draft_reply_subject = reply_draft.subject
     app_row.draft_reply_body = reply_draft.body
     _APPLICATIONS_STORE[app_row.id] = app_row
+    _deal_lake.save_application(app_row)
 
     if stmt_summary and stmt_summary.benchmarks:
         for b in stmt_summary.benchmarks:
@@ -242,6 +478,8 @@ async def evaluate_catalog_direct(req: DirectEvaluationRequest):
                 )
             )
 
+    mon_plan = build_down_funnel_monetization_plan(app_row, valuation)
+
     return ApplicationEvaluationResponse(
         application_id=app_row.id,
         pipeline_status=valuation.pipeline_status,
@@ -249,6 +487,7 @@ async def evaluate_catalog_direct(req: DirectEvaluationRequest):
         valuation=valuation,
         reply_draft=reply_draft,
         statement_summary=stmt_summary,
+        monetization_plan=mon_plan,
     )
 
 
@@ -327,6 +566,7 @@ async def attach_statements_to_application(
     routing = route_catalog_to_institutional_buyers(app_row, valuation)
     blind_teaser = generate_blind_deal_teaser(app_row, valuation, routing=routing)
     collision_alerts = _deal_lake.register_and_check_isrc_collisions(app_row, stmt_summary)
+    mon_plan = build_down_funnel_monetization_plan(app_row, valuation)
     _deal_lake.save_application(app_row)
 
     return ApplicationEvaluationResponse(
@@ -339,6 +579,7 @@ async def attach_statements_to_application(
         institutional_routing=routing,
         blind_deal_teaser=blind_teaser,
         isrc_collision_alerts=collision_alerts,
+        monetization_plan=mon_plan,
     )
 
 
@@ -404,7 +645,7 @@ async def create_application_closing_pack(
     """
     Generates the 4-part Closing Document Pack for an evaluated catalog:
     1. Blind Deal Teaser (`SPC-XXXXXX`)
-    2. Institutional Non-Circumvention & Origination Fee Agreement (`NCND`)
+    2. Institutional Non-Circumvention & Origination Fee Agreement (`NCND`) + Carried Royalty Tail
     3. Irrevocable Distributor Letter of Direction (`LOD`)
     4. Closing Settlement Statement & Split-Wire Instructions
     """
@@ -423,8 +664,222 @@ async def create_application_closing_pack(
         buyer_gross_funding_eur=req.buyer_gross_funding_eur,
         origination_fee_pct=req.origination_fee_pct,
         holdback_pct=req.holdback_pct,
+        carried_tail_pct=req.carried_tail_pct,
         space_iban=req.space_iban,
     )
+
+
+@router.post(
+    "/catalog-review/{application_id}/scrive/envelope",
+    response_model=ScriveSignatureEnvelope,
+    status_code=status.HTTP_201_CREATED,
+)
+async def create_scrive_closing_envelope(
+    application_id: uuid.UUID,
+    req: ScriveEnvelopeRequest,
+):
+    """
+    Generates the Closing Document Pack for an application and dispatches a multi-party
+    Scrive e-signature envelope (`SENT_FOR_SIGNATURE`) with a locked SHA-256 document hash.
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    pack = generate_closing_document_pack(
+        app_row,
+        valuation,
+        seller_legal_name=req.seller_legal_name,
+        seller_address=req.seller_address,
+        buyer_entity_name=req.buyer_entity_name,
+        seller_agreed_price_eur=req.seller_agreed_price_eur,
+        origination_fee_pct=req.origination_fee_pct,
+        holdback_pct=req.holdback_pct,
+        carried_tail_pct=req.carried_tail_pct,
+    )
+    combined_doc = (
+        f"{pack.ncnd_fee_agreement_markdown}\n\n---\n\n"
+        f"{pack.letter_of_direction_markdown}\n\n---\n\n"
+        f"{pack.settlement_statement_markdown}"
+    )
+    return _scrive_engine.create_and_send_closing_envelope(
+        deal_code=pack.deal_code,
+        application_id=str(app_row.id),
+        title=f"SPACE Catalog Acquisition & LOD Pack — {app_row.artist_or_label_name}",
+        document_markdown=combined_doc,
+        seller_name=req.seller_legal_name,
+        seller_email=app_row.contact_email,
+        buyer_name=req.buyer_entity_name,
+        buyer_email=req.buyer_email,
+        buyer_company=req.buyer_entity_name,
+    )
+
+
+@router.post(
+    "/catalog-review/scrive/{envelope_id}/sign",
+    response_model=ScriveSignatureEnvelope,
+)
+async def sign_scrive_envelope_endpoint(
+    envelope_id: str,
+    req: ScriveSignActionRequest,
+):
+    """
+    Records a party signature (`SELLER` or `BUYER`) on an active Scrive envelope,
+    enforcing party order and SHA-256 integrity checks.
+    """
+    try:
+        return _scrive_engine.record_signature(
+            envelope_id,
+            signer_role=req.signer_role,
+            signer_email=req.signer_email,
+            ip_address=req.ip_address,
+            expected_document_sha256=req.expected_document_sha256,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
+
+
+@router.post(
+    "/webhooks/scrive",
+    response_model=ScriveSignatureEnvelope,
+)
+async def handle_scrive_webhook(
+    payload: Dict[str, Any] = Body(...),
+    x_scrive_signature: Optional[str] = Header(default=None),
+):
+    """
+    Webhook callback receiver for Scrive e-signature events (`SELLER_SIGNED`, `COMPLETED_LOCKED`).
+    Verifies HMAC-SHA256 signature (`X-Scrive-Signature`).
+    """
+    try:
+        return _scrive_engine.process_webhook_callback(
+            payload,
+            signature_header=x_scrive_signature,
+            require_hmac=True,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
+
+
+@router.get(
+    "/catalog-review/{application_id}/monetization-plan",
+    response_model=DownFunnelMonetizationPlan,
+)
+async def get_application_monetization_plan(application_id: uuid.UUID):
+    """
+    Returns the "Sov+" Down-Funnel Monetization Plan for any evaluated catalog
+    (Direct M&A Syndication + Carried Tail, Automated Micro-Advance Referral,
+    SPACE Managed Sub-Label & 15% Content ID Override, and $299 Forensic Audit Certificate).
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    return build_down_funnel_monetization_plan(app_row, valuation)
+
+
+@router.post(
+    "/catalog-review/{application_id}/forensic-certificate",
+    response_model=ForensicAuditCertificate,
+)
+async def create_forensic_audit_certificate(application_id: uuid.UUID):
+    """
+    Generates a SHA-256-sealed Official SPACE 11-Point Forensic Valuation & Chain-of-Title
+    Audit Certificate (`$299 / €275`).
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    return generate_forensic_audit_certificate(app_row, valuation)
+
+
+@router.post(
+    "/catalog-review/{application_id}/fintech/split-escrow",
+    response_model=SplitEscrowSettlementInstruction,
+)
+async def create_fintech_split_escrow_instruction(
+    application_id: uuid.UUID,
+    req: SplitEscrowRequest,
+):
+    """
+    Generates a cent-exact (`Decimal` + `ROUND_HALF_UP`) Multi-Currency Split-Escrow
+    Settlement Instruction with idempotency protection.
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    teaser = generate_blind_deal_teaser(app_row, valuation)
+
+    seller_price = (
+        req.seller_agreed_price_eur
+        if req.seller_agreed_price_eur is not None
+        else (app_row.price_median_eur or valuation.price_median_eur)
+    )
+    try:
+        return _fintech_ledger.compute_split_escrow_instruction(
+            deal_code=teaser.deal_code,
+            application_id=str(app_row.id),
+            seller_legal_name=req.seller_legal_name,
+            seller_iban=req.seller_iban,
+            buyer_entity_name=req.buyer_entity_name,
+            seller_agreed_price_eur=seller_price,
+            buyer_gross_funding_eur=req.buyer_gross_funding_eur,
+            origination_fee_pct=req.origination_fee_pct,
+            holdback_pct=req.holdback_pct,
+            carried_tail_pct=req.carried_tail_pct,
+            settlement_currency=req.settlement_currency,
+            provider_rail=req.provider_rail,
+            space_treasury_iban=req.space_treasury_iban,
+            idempotency_key=req.idempotency_key,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
+
+
+@router.post(
+    "/catalog-review/{application_id}/fintech/lockbox-distribution",
+    response_model=MonthlyLockboxDistribution,
+)
+async def execute_fintech_lockbox_distribution(
+    application_id: uuid.UUID,
+    req: LockboxMonthlyDistributionRequest,
+):
+    """
+    Executes a cent-exact monthly Virtual Lockbox royalty waterfall distribution,
+    splitting incoming DSP royalties between SPACE's Carried Royalty Tail and the
+    Institutional Buyer, and evaluating the 12-month Seller Performance Holdback release.
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    teaser = generate_blind_deal_teaser(app_row, valuation)
+    cf0 = app_row.effective_cf0_eur or valuation.baseline.effective_cf0_eur or 1.0
+
+    try:
+        return _fintech_ledger.distribute_monthly_lockbox_royalties(
+            deal_code=teaser.deal_code,
+            period_month=req.period_month,
+            gross_royalty_inflow=req.gross_royalty_inflow,
+            target_12m_baseline_cf0=cf0,
+            seller_holdback_escrow=req.seller_holdback_escrow,
+            carried_tail_pct=req.carried_tail_pct,
+            is_month_12_holdback_check=req.is_month_12_holdback_check,
+            currency=req.currency,
+            idempotency_key=req.idempotency_key,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
 
 
 @router.post("/catalog-review/import-csv")
@@ -449,6 +904,7 @@ async def import_typeform_csv(req: TypeformCsvImportRequest):
                 reply_draft=zt_res.reply_draft,
                 implied_revenue_crosscheck=zt_res.implied_revenue_crosscheck,
                 distributor_export_guide=zt_res.distributor_export_guide,
+                monetization_plan=build_down_funnel_monetization_plan(app_row, zt_res.valuation),
             )
         )
     return results
