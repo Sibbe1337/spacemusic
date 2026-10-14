@@ -121,3 +121,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+launchdarkly:
+  secretName: launchdarkly-sdk-key
+  secretKey: sdk-key
+

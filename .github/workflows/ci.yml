@@ -81,7 +81,7 @@ jobs:
           echo "Linting Helm charts..."
           cd infra/helm
           for chart_dir in offers payouts docgen event-consumer valuation api-gateway; do
-            if [ -d "$chart_dir" ]; then
+            if [ -f "$chart_dir/Chart.yaml" ]; then
               echo "Linting chart in $chart_dir..."
               helm lint "$chart_dir"
             else
