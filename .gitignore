@@ -156,3 +156,19 @@ Thumbs.db
 
 # Werkzeug
 *.sess
+
+# Disposable lint cache
+.ruff_cache/
+
+# Customer/operator files and provider-local state (retained on disk)
+/private/
+.wrangler/
+.vercel/
+.railway/
+.dev.vars
+.dev.vars.*
+
+# Local browser output, not application source
+/.playwright-mcp/
+
+# Do NOT ignore or clean all of tmp/: it holds production/rollback snapshots.

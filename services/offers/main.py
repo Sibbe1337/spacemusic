@@ -1,23 +1,20 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI
 import structlog # Assuming structlog is in requirements.txt
-from sqlmodel import SQLModel # For potential route response models
-from typing import List # For list responses
 from libs.py_common.flags import LaunchDarklyClient, close_ld_client
 from libs.py_common.logging import setup_logging # Import setup_logging
 
 # Prometheus metrics
-from starlette_prometheus import PrometheusMiddleware, metrics as starlette_metrics # Corrected import
+from starlette_prometheus import PrometheusMiddleware # Corrected import
 # from . import metrics # Your custom metrics, if you plan to expose them via the same endpoint manually or use them in routes
 
 # Assuming db.py and models.py are in the same directory (services/offers)
-from .db import get_session, init_db # init_db might be called on startup
-from .models import OfferRead, OfferCreate, CreatorRead, CreatorCreate # Example models
 # Import other specific models as needed for routes
 
 import time # Added for middleware
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint # Added for middleware
 from starlette.requests import Request # Added for middleware
 from starlette.responses import Response # Added for middleware
+from .routes import router as offers_router
 
 app = FastAPI(
     title="Offers Service",
@@ -49,11 +46,11 @@ class StructlogRequestLoggingMiddleware(BaseHTTPMiddleware):
         try:
             response = await call_next(request)
             status_code = response.status_code
-        except Exception as exc:
+        except Exception:
             # Log unhandled exceptions before they are re-raised or handled by FastAPI's default.
             logger.error(
-                "unhandled_exception_during_request", 
-                exc_info=True, 
+                "unhandled_exception_during_request",
+                exc_info=True,
                 path=str(request.url.path),
                 method=request.method,
                 client_host=request.client.host
@@ -61,7 +58,7 @@ class StructlogRequestLoggingMiddleware(BaseHTTPMiddleware):
             raise # Re-raise the exception to be handled by FastAPI or other exception handlers
         finally:
             process_time = time.time() - start_time
-            
+
             # Prepare log event common to success and handled exceptions that might set a status code
             log_event = {
                 "http": {
@@ -81,10 +78,11 @@ class StructlogRequestLoggingMiddleware(BaseHTTPMiddleware):
                 "method": request.method      # Explicitly log method for easier filtering
             }
             logger.info("http_request_completed", **log_event)
-        
+
         return response
 
 app.add_middleware(StructlogRequestLoggingMiddleware)
+app.include_router(offers_router)
 
 @app.on_event("startup")
 async def on_startup():
@@ -126,4 +124,4 @@ if __name__ == "__main__":
     # It's good practice to load .env file here if not using a system-wide env manager for local dev
     # from dotenv import load_dotenv
     # load_dotenv()
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True) 
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)

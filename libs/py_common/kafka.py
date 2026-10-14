@@ -1,8 +1,7 @@
 # libs/py_common/kafka.py
 import os
-import socket
 import structlog
-from confluent_kafka import Producer, Consumer, KafkaError, KafkaException
+from confluent_kafka import Consumer, KafkaError, KafkaException, Producer  # noqa: F401
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer, AvroDeserializer
 from confluent_kafka.serialization import StringSerializer, StringDeserializer
@@ -22,7 +21,7 @@ kafka_common_config = {
     "bootstrap.servers": KAFKA_BOOTSTRAP_SERVERS,
     # "client.id": socket.gethostname(), # Useful for server-side logging
     # SSL/TLS configuration (example for MSK IAM or standard TLS)
-    # "security.protocol": os.getenv("KAFKA_SECURITY_PROTOCOL", "PLAINTEXT"), 
+    # "security.protocol": os.getenv("KAFKA_SECURITY_PROTOCOL", "PLAINTEXT"),
     # "ssl.ca.location": os.getenv("KAFKA_SSL_CA_LOCATION"),
     # "ssl.certificate.location": os.getenv("KAFKA_SSL_CERTIFICATE_LOCATION"),
     # "ssl.key.location": os.getenv("KAFKA_SSL_KEY_LOCATION"),
@@ -53,23 +52,23 @@ def create_producer(config_overrides: dict = None) -> Producer:
     producer_config = kafka_config.copy()
     if config_overrides:
         producer_config.update(config_overrides)
-    
+
     logger.info("Creating Kafka Producer", config=producer_config)
     return Producer(producer_config)
 
 def create_avro_producer(value_schema_str: str, key_schema_str: str = None, config_overrides: dict = None) -> Producer:
     sr_client = get_schema_registry_client()
-    
+
     avro_serializer_config = {
         'auto.register.schemas': True # Consider False for production for more control
     }
     value_avro_serializer = AvroSerializer(sr_client, value_schema_str, conf=avro_serializer_config)
-    
+
     key_serializer = StringSerializer('utf_8')
     if key_schema_str: # If key is also Avro
         key_avro_serializer = AvroSerializer(sr_client, key_schema_str, conf=avro_serializer_config)
         key_serializer = key_avro_serializer
-        
+
     producer_config = kafka_config.copy()
     producer_config.update({
         'key.serializer': key_serializer,
@@ -92,26 +91,26 @@ def create_consumer(group_id: str, topics: list[str], config_overrides: dict = N
     })
     if config_overrides:
         consumer_config.update(config_overrides)
-    
+
     logger.info("Creating Kafka Consumer", config=consumer_config, topics=topics)
     consumer = Consumer(consumer_config)
     consumer.subscribe(topics)
     return consumer
 
 def create_avro_consumer(
-    group_id: str, 
-    topics: list[str], 
+    group_id: str,
+    topics: list[str],
     value_schema_str: str = None, # Made optional
-    key_schema_str: str = None, 
-    config_overrides: dict = None, 
+    key_schema_str: str = None,
+    config_overrides: dict = None,
     auto_offset_reset='earliest'
 ) -> Consumer:
     sr_client = get_schema_registry_client()
-    
+
     # If value_schema_str is None, AvroDeserializer will attempt to resolve schema using embedded schema ID
     # from the consumed message, fetching it from Schema Registry.
     value_avro_deserializer = AvroDeserializer(schema_registry_client=sr_client, schema_str=value_schema_str if value_schema_str else None)
-    
+
     key_deserializer = StringDeserializer('utf_8') # Default key deserializer
     if key_schema_str:
         # If a key schema is provided, use Avro for the key as well
@@ -143,4 +142,4 @@ def delivery_report(err, msg):
     else:
         logger.debug('Message delivered', topic=msg.topic(), partition=msg.partition(), offset=msg.offset())
 
-logger.info("Kafka common library loaded.", bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS, schema_registry_url=SCHEMA_REGISTRY_URL) 
+logger.info("Kafka common library loaded.", bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS, schema_registry_url=SCHEMA_REGISTRY_URL)

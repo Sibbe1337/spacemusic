@@ -1,77 +1,70 @@
-# SpaceMusic Projektet
+# SPACE Music
 
-Välkommen till SpaceMusic-projektet! Detta är en plattform för [kort beskrivning av vad SpaceMusic gör, t.ex. "hantering och validering av musikerbjudanden"].
+Website, private catalog-review portal and isolated research previews.
+This is a multi-part repository, not one application that can be deployed from
+the root. Read the relevant component's guide before running or publishing it.
 
-## Översikt
+## Start here
 
-Detta monorepo innehåller flera mikrotjänster, delade bibliotek, infrastrukturkod (Terraform, Helm) och dokumentation. För en detaljerad mappstruktur, se [`folderstructure.md`](./folderstructure.md).
+| What you want to work on | Entry point | Status |
+| --- | --- | --- |
+| Public website, content, SEO and Apply | [Marketing release](marketing/RELEASE.md) | Published website; release approval is separate from portal work |
+| Customer documents, staff review and intake | [Catalog Review](services/catalog_review/README.md) | Implemented pilot code; customer launch remains gated |
+| Customer and reviewer interface | [Portal UI](services/catalog_review_ui/README.md) | Same-origin interface for Catalog Review |
+| Seller-approved brokerage preparation | [Dealflow preview](experiments/dealflow-preview/README.md) | Local fictional-data demo; sharing and payment disabled |
+| Hosted Railway/Vercel design preview | [Cloud preview](services/catalog_review_cloud_preview/README.md) | Read-only synthetic preview, not a customer backend |
+| Jev research | [Evaluation lab](experiments/jev-catalog-review/README.md) | Synthetic-only; no customer-data integration |
 
-För en komplett lista över återstående uppgifter för att färdigställa projektet, se [`PROJECT_COMPLETION_TODO.md`](./PROJECT_COMPLETION_TODO.md).
+For all other directories, see the [project map](docs/PROJECT-MAP.md).
+For business and operations documents, see the [documentation index](docs/README.md).
 
-## Komma Igång (Lokal Utveckling)
+## Important boundaries
 
-### Förutsättningar
+- `marketing/RELEASE.md` identifies the recorded website release, rollback and
+  unapproved candidate. It is not a fresh observation of the live site.
+- **`tmp/` contains irreplaceable local release snapshots and regression inputs.**
+  Do not delete it, even though its name suggests temporary files.
+- `web/` is an unpopulated Git link, not the current website build. Do not
+  substitute an unrelated frontend for the published static artifact.
+- Catalog Review, the older seller application and design previews are distinct.
+  The root Docker Compose stack is for the older services, not the portal pilot.
+- Do not deploy the repository root. Use a component's explicit build allowlist.
+- Never commit customer files, database copies, credentials or vendor-local state.
+  `private/` is excluded from Git; ignore rules are not an access-control system.
+- Existing uncommitted work is not backed up by Git. A cleanup is not permission
+  to discard it, publish it or remove migrations, release assets or test fixtures.
 
-*   Docker & Docker Compose
-*   Python 3.12+ (eller den version som används för att skapa `.venv`)
-*   Node.js (för `services/admin_ui`, se dess `README.md` för specifik version, t.ex. v18.x) och `pnpm`
-*   `make` eller `just` (om `Justfile` eller `Makefile` används för kommandon - *lägg till om relevant*)
-*   Helm CLI (för att hantera Kubernetes-paket)
-*   `kubectl` (för interaktion med Kubernetes)
-*   AWS CLI (konfigurerad för åtkomst till ditt AWS-konto för Terraform)
-*   Terraform CLI
+## Everyday commands
 
-### Sätta upp den virtuella Python-miljön
+Run from the repository root. These commands do not deploy anything or send leads.
+Node 22+ is used for the JavaScript tooling. Python/DB test setup is documented in
+the [portal verification guide](services/catalog_review/PILOT-VERIFICATION.md).
 
-Från projektets rotkatalog:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate  # För macOS/Linux. För Windows: .venv\Scripts\activate
-pip install -r requirements-dev.txt 
-# Installera även tjänstespecifika dependencies om du ska arbeta med en specifik tjänst, t.ex.:
-# pip install -r services/offers/requirements.txt
+```sh
+npm run project:check       # Verify important local entry points and release files
+npm run clean:check         # List strictly allowlisted disposable caches; no deletion
+npm run clean:caches        # Remove only those caches, never tmp/ or node_modules/
+npm run test:maintenance    # Verify cleanup safety and project documentation
+npm run test:funnel         # Calculator, attribution and intake mock-response tests
+npm run test:portal:ui      # Portal interface tests; optional browser gates remain
+npm run preview:dealflow    # Local synthetic preview at http://127.0.0.1:4208/
 ```
-Se till att din IDE (t.ex. VS Code) använder Python-interpretatorn från `.venv/`.
 
-### Köra Projektet Lokalt med Docker Compose
+Portal backend tests: `python3 -m pytest tests/catalog_review -q` in the configured
+portal test environment. A host-only run does not replace Linux scanner/parser,
+PostgreSQL 17, image-build or actual provider/restore checks.
 
-De flesta backend-tjänster och deras beroenden (PostgreSQL, Redis, Kafka etc.) kan startas lokalt med Docker Compose:
-```bash
-docker-compose up -d
-```
-Detta kommer att starta de tjänster som definieras i `docker-compose.yml`. Individuella Python-tjänster (som `offers-api`) körs ofta med `uvicorn --reload` inuti sina containers för live-uppdatering av kod.
+For website preservation tests and component dependencies, see the
+[script index](scripts/README.md). Do not install or run the older entire stack
+just to work on website copy or the portal interface.
 
-Se `docker-compose.yml` för detaljer om vilka tjänster och portar som exponeras.
+## What is retained, not active scope
 
-### Köra Admin UI Lokalt
+The older seller/valuation/payout stack remains in `services/`, `libs/`, `schema/`
+and `infra/` because its code, CI and tests still reference it. It is not the
+current document-pilot architecture and is not safe to delete by age alone.
+Original plans are preserved in the [historical archive](docs/archive/README.md),
+clearly separated from current instructions.
 
-Navigera till `services/admin_ui` och följ instruktionerna i dess `README.md` (vanligtvis `pnpm install` följt av `pnpm dev`).
-
-### Databasmigreringar (Alembic)
-
-För tjänster som använder databaser (t.ex. `offers`), körs migreringar med Alembic:
-1.  Se till att relevant databastjänst körs (via Docker Compose, t.ex. `docker-compose up -d offers-db`).
-2.  Aktivera din Python venv (`source .venv/bin/activate`).
-3.  Navigera till tjänstens katalog (t.ex. `cd services/offers`).
-4.  Kör migreringar:
-    ```bash
-    alembic upgrade head
-    ```
-
-## Testning
-
-*   **Python-tester:** Körs med Pytest från projektets rot (med aktivt venv):
-    ```bash
-    pytest
-    ```
-*   **Admin UI-tester:** Körs från `services/admin_ui`-katalogen (se dess `package.json` för test-skript, oftast `pnpm test`).
-
-## Infrastruktur & Deployment
-
-*   **Terraform:** Hanterar molninfrastruktur (AWS). Se `infra/tf/envs/` för staging och produktion.
-*   **Helm:** Används för att paketera och deploya applikationer till Kubernetes. Charts finns under `infra/helm/`.
-*   **Linkerd:** Används som service mesh. Applikationer annoteras för Linkerd-injektion.
-
-## Bidra
-
-[Information om hur man bidrar, kodstandarder, PR-process etc. kan läggas till här.] 
+See [cleanup scope and verification](docs/maintenance/20260928-cleanup.md) for
+what changed and what deliberately did not.

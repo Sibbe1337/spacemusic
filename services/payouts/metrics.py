@@ -69,6 +69,18 @@ APP_ERRORS_TOTAL = Counter(
     ["component", "error_type"] # component: 'api', 'worker', 'stripe_call', 'wise_call'
 )
 
+KAFKA_MESSAGES_CONSUMED_TOTAL = Counter(
+    "payouts_kafka_messages_consumed_total",
+    "Kafka messages consumed by the payouts service.",
+    ["topic", "group_id", "status"],
+)
+
+KAFKA_MESSAGES_PRODUCED_TOTAL = Counter(
+    "payouts_kafka_messages_produced_total",
+    "Kafka messages produced by the payouts service.",
+    ["topic", "status"],
+)
+
 def start_worker_metrics_server(port: int = 8003, addr: str = '0.0.0.0'): # Different default port for worker
     metrics_port = int(os.getenv("PAYOUTS_WORKER_METRICS_PORT", str(port)))
     try:
@@ -78,4 +90,4 @@ def start_worker_metrics_server(port: int = 8003, addr: str = '0.0.0.0'): # Diff
         print(f"Payouts Worker Prometheus metrics server failed to start on port {metrics_port}: {e}")
 
 # Note: The Payouts API (FastAPI part) will use starlette-prometheus middleware to expose its HTTP metrics on /metrics.
-# The Payouts Worker (Celery part) needs to call start_worker_metrics_server(). 
+# The Payouts Worker (Celery part) needs to call start_worker_metrics_server().

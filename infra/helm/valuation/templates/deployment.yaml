@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "valuation.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.replicaCount | default 1 }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       {{- include "valuation.selectorLabels" . | nindent 6 }}
@@ -18,29 +18,39 @@ spec:
         {{- end }}
       labels:
         {{- include "valuation.selectorLabels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
     spec:
       serviceAccountName: {{ include "valuation.serviceAccountName" . }}
+      {{- with .Values.podSecurityContext }}
+      securityContext:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: valuation-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent" }}
-          ports:
-            - name: http # Placeholder, anpassa om tjänsten inte är HTTP eller har annan port
-              containerPort: {{ .Values.service.port | default 8000 }} # Common port for Python services
-              protocol: TCP
-          # TODO: Define livenessProbe, readinessProbe, and resources
-          # livenessProbe:
-          #   httpGet:
-          #     path: /healthz # Exempel
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /readyz # Exempel
-          #     port: http
-          # resources:
-          #   limits:
-          #     cpu: 100m
-          #     memory: 128Mi
-          #   requests:
-          #     cpu: 50m
-          #     memory: 64Mi 
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["celery", "-A", "services.valuation.worker.celery_app", "worker", "-l", "INFO", "-Q", "valuation"]
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          {{- with .Values.env }}
+          env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

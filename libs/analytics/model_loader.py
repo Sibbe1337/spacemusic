@@ -1,20 +1,28 @@
-# libs/analytics/model_loader.py
+"""Versioned model interface for analytics consumers.
 
-# Placeholder for ML model loading logic
-# This might load models from S3, a model registry, or local files.
+Commercial valuation is implemented in ``libs.catalog.valuation``. This module
+only provides a small, explicit interface for consumers that need a model object;
+it does not load arbitrary pickle files.
+"""
 
-class Model:
-    def __init__(self, name: str):
+from __future__ import annotations
+
+from typing import Any, Mapping
+
+from .feature_pipeline import process_data_for_features
+
+
+class EvidenceFeatureModel:
+    """Stable feature model used when a caller needs a model-like interface."""
+
+    def __init__(self, name: str, version: str = "evidence-features-v1") -> None:
         self.name = name
-        print(f"Model '{self.name}' initialized (placeholder).")
+        self.version = version
 
-    def predict(self, input_data: dict) -> dict:
-        print(f"Model '{self.name}' predicting with data (placeholder): {input_data}")
-        # Example prediction
-        return {"prediction": "some_value", "confidence": 0.9}
+    def predict(self, input_data: Mapping[str, Any]) -> dict[str, Any]:
+        return {"version": self.version, "features": process_data_for_features(input_data)}
 
-def load_model(model_name: str) -> Model:
-    print(f"Loading model '{model_name}' (placeholder).")
-    # In a real scenario, this would involve deserializing a model file
-    # or fetching from a registry.
-    return Model(model_name) 
+
+def load_model(model_name: str, *, version: str = "evidence-features-v1") -> EvidenceFeatureModel:
+    """Load the explicit built-in evidence feature model."""
+    return EvidenceFeatureModel(model_name, version)

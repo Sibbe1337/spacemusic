@@ -1,5 +1,6 @@
-# Stage 1: Build stage
-FROM python:3.12-slim as builder
+# Stage 1: Build stage. The repository root is the Docker build context so
+# package imports such as services.offers and libs remain valid in the image.
+FROM python:3.12-slim AS builder
 
 WORKDIR /app
 
@@ -7,12 +8,14 @@ WORKDIR /app
 # RUN apt-get update && apt-get install -y --no-install-recommends build-essential libpq-dev
 
 # Copy requirements and install dependencies
-COPY requirements.txt .
+COPY services/offers/requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copy repository packages used by the API.
+COPY libs ./libs
+COPY services ./services
+COPY schema ./schema
 
 # Stage 2: Final stage
 FROM python:3.12-slim
@@ -26,9 +29,9 @@ RUN addgroup --system app && adduser --system --group app
 # Copy installed dependencies from builder stage
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 COPY --from=builder /app/requirements.txt .
-
-# Copy application code (ensure this is after changing user if you do that early)
-COPY . .
+COPY --from=builder /app/libs ./libs
+COPY --from=builder /app/services ./services
+COPY --from=builder /app/schema ./schema
 
 USER app # Switch to non-root user before setting CMD
 
@@ -38,4 +41,4 @@ EXPOSE 8000
 # Command to run the application (handled by docker-compose.yml command for now)
 # If docker-compose did not have a command, this would be the default:
 # CMD ["sh", "-c", "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"]
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"] 
+CMD ["uvicorn", "services.offers.main:app", "--host", "0.0.0.0", "--port", "8000"]

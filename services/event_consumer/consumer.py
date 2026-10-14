@@ -1,5 +1,4 @@
 # services/event_consumer/consumer.py
-import os
 import signal
 import time
 import structlog

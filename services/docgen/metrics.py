@@ -1,4 +1,4 @@
-from prometheus_client import Counter, Histogram, Gauge, start_http_server
+from prometheus_client import Counter, Histogram, start_http_server
 import os
 
 # --- Celery Task Metrics ---
@@ -47,6 +47,18 @@ APP_ERRORS_TOTAL = Counter(
     ["error_type", "component"] # e.g., 's3_upload', 'db_update', 'pdf_render'
 )
 
+KAFKA_MESSAGES_CONSUMED_TOTAL = Counter(
+    "docgen_kafka_messages_consumed_total",
+    "Kafka messages consumed by the document worker.",
+    ["topic", "group_id", "status"],
+)
+
+KAFKA_MESSAGES_PRODUCED_TOTAL = Counter(
+    "docgen_kafka_messages_produced_total",
+    "Kafka messages produced by the document worker.",
+    ["topic", "status"],
+)
+
 def start_metrics_server(port: int = 8002, addr: str = '0.0.0.0'): # Different default port
     """Starts an HTTP server for Prometheus to scrape metrics."""
     metrics_port = int(os.getenv("DOCGEN_METRICS_PORT", str(port)))
@@ -57,4 +69,4 @@ def start_metrics_server(port: int = 8002, addr: str = '0.0.0.0'): # Different d
         print(f"Docgen Prometheus metrics server failed to start on port {metrics_port}: {e}")
         # Handle case where port might be in use if running multiple workers locally without proper port management
 
-# Called when the Celery worker starts. 
+# Called when the Celery worker starts.

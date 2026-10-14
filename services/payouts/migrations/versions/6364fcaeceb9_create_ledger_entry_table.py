@@ -1,7 +1,7 @@
 """create_ledger_entry_table
 
 Revision ID: 6364fcaeceb9
-Revises: 
+Revises:
 Create Date: 2025-05-22 09:26:18.121994
 
 """

@@ -1,1 +1,1 @@
-# services/docgen/__init__.py 
+"""Document generation worker."""

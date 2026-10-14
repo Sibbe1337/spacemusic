@@ -1,4 +1,4 @@
-from prometheus_client import Counter, Histogram, Gauge
+from prometheus_client import Counter, Histogram
 
 # --- HTTP Metrics (for FastAPI) ---
 HTTP_REQUESTS_TOTAL = Counter(
@@ -60,7 +60,13 @@ OFFER_STATUS_UPDATES_TOTAL = Counter(
     ["old_status", "new_status"]
 )
 
+KAFKA_MESSAGES_CONSUMED_TOTAL = Counter(
+    "offers_kafka_messages_consumed_total",
+    "Kafka messages consumed by the offers service.",
+    ["topic", "group_id", "status"],
+)
+
 # Note: For starlette-prometheus, many HTTP metrics are auto-instrumented.
 # These custom HTTP_ metrics can be used if you need more specific labeling or control,
 # or if you are instrumenting parts not covered by the middleware.
-# starlette-prometheus typically exposes /metrics endpoint automatically. 
+# starlette-prometheus typically exposes /metrics endpoint automatically.

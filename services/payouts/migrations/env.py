@@ -12,7 +12,9 @@ from pathlib import Path
 
 # Add project root to sys.path to allow absolute-like imports for services
 # Assuming this env.py is in services/payouts/migrations/
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent # Adjust if structure differs
+PROJECT_ROOT = (
+    Path(__file__).resolve().parent.parent.parent.parent
+)  # Adjust if structure differs
 sys.path.append(str(PROJECT_ROOT))
 
 # this is the Alembic Config object, which provides
@@ -26,7 +28,8 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-from services.payouts.models import SQLModel  # Import SQLModel from your models file
+from services.payouts.models import SQLModel  # noqa: E402
+
 target_metadata = SQLModel.metadata
 
 # other values from the config, defined by the needs of env.py,
@@ -35,6 +38,7 @@ target_metadata = SQLModel.metadata
 # ... etc.
 
 PAYOUTS_DB_ENV_VAR = "PAYOUTS_DB_CONNECTION_STRING"
+
 
 def get_url():
     # Prioritize environment variable, fall back to alembic.ini if not set (though ini is now a placeholder)
@@ -81,19 +85,19 @@ def run_migrations_online() -> None:
     configuration = config.get_section(config.config_ini_section, {})
     db_url_for_online = get_url()
     if not db_url_for_online:
-        raise ValueError(f"Database URL not configured. Set {PAYOUTS_DB_ENV_VAR} or sqlalchemy.url in alembic.ini")
+        raise ValueError(
+            f"Database URL not configured. Set {PAYOUTS_DB_ENV_VAR} or sqlalchemy.url in alembic.ini"
+        )
     configuration["sqlalchemy.url"] = db_url_for_online
 
     connectable = engine_from_config(
-        configuration, # Use the modified configuration
+        configuration,  # Use the modified configuration
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()

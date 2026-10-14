@@ -1,5 +1,7 @@
 import os
+import sys
 from logging.config import fileConfig
+from pathlib import Path
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
@@ -12,7 +14,7 @@ config = context.config
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
-if config.attributes.get('configure_logger', True):
+if config.attributes.get("configure_logger", True):
     fileConfig(config.config_file_name)
 
 # add your model's MetaData object here
@@ -21,17 +23,12 @@ if config.attributes.get('configure_logger', True):
 # target_metadata = mymodel.Base.metadata
 # target_metadata = None
 
-# Adjust the import path to your SQLModel models
-# This assumes your models.py is in the same directory or accessible via Python path
-import sys
-from pathlib import Path
-# Add the parent directory (services/offers) to sys.path to find models.py
-# This is a common pattern when running alembic from within the service directory
-current_script_path = Path(__file__).resolve().parent
-service_root_path = current_script_path.parent # This should be services/offers
-sys.path.append(str(service_root_path))
+project_root_path = Path(__file__).resolve().parents[3]
+if str(project_root_path) not in sys.path:
+    sys.path.insert(0, str(project_root_path))
 
-from models import SQLModel  # Import SQLModel base from your models file
+from services.offers.models import SQLModel  # noqa: E402
+
 target_metadata = SQLModel.metadata
 
 
@@ -40,8 +37,12 @@ target_metadata = SQLModel.metadata
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
 
+
 def get_url():
-    return os.getenv("DB_CONNECTION_STRING", "postgresql://user:password@localhost/default_db")
+    return os.getenv(
+        "DB_CONNECTION_STRING", "postgresql://user:password@localhost/default_db"
+    )
+
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.
@@ -83,9 +84,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
@@ -94,4 +93,4 @@ def run_migrations_online() -> None:
 if context.is_offline_mode():
     run_migrations_offline()
 else:
-    run_migrations_online() 
+    run_migrations_online()

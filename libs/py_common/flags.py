@@ -1,7 +1,12 @@
-import ldclient
-from ldclient.config import Config
 import os
 import logging
+
+try:
+    import ldclient
+    from ldclient.config import Config
+except ImportError:  # LaunchDarkly is optional in local tests and test mode.
+    ldclient = None
+    Config = None
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +17,7 @@ class LaunchDarklyClient:
     def get_client(cls):
         if cls._client is None:
             sdk_key = os.environ.get("LAUNCHDARKLY_SDK_KEY")
-            if not sdk_key:
+            if not sdk_key or ldclient is None:
                 logger.warning("LAUNCHDARKLY_SDK_KEY not set. Feature flags will default to False.")
                 # Return a mock client that always returns False
                 class MockClient:
@@ -24,10 +29,8 @@ class LaunchDarklyClient:
             else:
                 try:
                     # Initialize the client only once
-                    ld_config = Config(sdk_key)
+                    ld_config = Config(sdk_key) if Config is not None else None
                     cls._client = ldclient.set_config(ld_config)
-                    # Test connection by requesting a dummy flag. This helps catch init errors early.
-                    cls._client.variation("startup-test-flag", {"key": "system"}, False)
                     logger.info("LaunchDarkly client initialized successfully.")
                 except Exception as e:
                     logger.error(f"Failed to initialize LaunchDarkly client: {e}. Feature flags will default to False.")
@@ -57,4 +60,4 @@ def close_ld_client():
             logger.info("LaunchDarkly client closed.")
         except Exception as e:
             logger.error(f"Error closing LaunchDarkly client: {e}")
-    LaunchDarklyClient._client = None # Reset for potential re-initialization if app restarts 
+    LaunchDarklyClient._client = None # Reset for potential re-initialization if app restarts

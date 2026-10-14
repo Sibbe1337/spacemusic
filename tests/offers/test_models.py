@@ -1,10 +1,9 @@
 import pytest
 from sqlalchemy import create_engine, inspect
-from sqlmodel import SQLModel, Session
+from sqlmodel import SQLModel
 
 # Adjust import to your actual models file location if needed
 # This assumes that services/offers is in PYTHONPATH or tests are run from project root
-from services.offers.models import Creator, Offer
 
 # In-memory SQLite database for testing
 DATABASE_URL = "sqlite:///:memory:"
@@ -38,7 +37,7 @@ def test_creator_table_exists_and_columns(setup_db):
     indexes = inspector.get_indexes('creator')
     platform_id_index = next((idx for idx in indexes if idx['column_names'] == ['platform_id']), None)
     assert platform_id_index is not None
-    assert platform_id_index['unique'] == True # SQLModel creates unique=True for sa.Column(unique=True)
+    assert platform_id_index['unique'] # SQLModel creates unique=True for sa.Column(unique=True)
 
 def test_offer_table_exists_and_columns(setup_db):
     inspector = inspect(engine)
@@ -65,4 +64,4 @@ def test_offer_table_exists_and_columns(setup_db):
     assert creator_fk['referred_table'] == 'creator'
     assert creator_fk['referred_columns'] == ['id']
 
-# You can add more tests here, e.g. creating instances and checking relationships 
+# You can add more tests here, e.g. creating instances and checking relationships

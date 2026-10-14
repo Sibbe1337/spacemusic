@@ -25,22 +25,12 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent" }}
           ports:
-            - name: http # Placeholder, anpassa om tjänsten inte är HTTP eller har annan port
-              containerPort: {{ .Values.service.port | default 8000 }} # Common port for Python services
+            - name: http
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
-          # TODO: Define livenessProbe, readinessProbe, and resources
-          # livenessProbe:
-          #   httpGet:
-          #     path: /healthz # Exempel
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /readyz # Exempel
-          #     port: http
-          # resources:
-          #   limits:
-          #     cpu: 100m
-          #     memory: 128Mi
-          #   requests:
-          #     cpu: 50m
-          #     memory: 64Mi 
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

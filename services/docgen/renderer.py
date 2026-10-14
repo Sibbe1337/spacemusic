@@ -1,22 +1,22 @@
+from __future__ import annotations
+
 import os
 import uuid
-from datetime import datetime
 import hashlib
+from datetime import datetime
 from pathlib import Path
-import time # For duration measurement
+import time
 
-from jinja2 import Environment, FileSystemLoader
-from weasyprint import HTML
 import boto3
-from botocore.exceptions import NoCredentialsError, PartialCredentialsError, ClientError
+from jinja2 import Environment, FileSystemLoader
 import structlog
 
-# Assuming services/offers/models.py contains the Offer model definition
-# This creates a dependency. Adjust path if your structure is different or models are in libs.
-import sys
-PROJECT_ROOT_DOCGEN = Path(__file__).resolve().parent.parent.parent
-sys.path.append(str(PROJECT_ROOT_DOCGEN))
-from services.offers.models import Offer # This import style relies on PYTHONPATH setup
+try:
+    from weasyprint import HTML
+except (ImportError, OSError):
+    HTML = None
+from botocore.exceptions import NoCredentialsError, PartialCredentialsError, ClientError
+from services.offers.models import Offer
 
 # Import metrics
 from .metrics import (
@@ -61,13 +61,15 @@ def generate_pdf_from_html(html_content: str, offer_id: uuid.UUID) -> tuple[str 
     # In a containerized environment, /tmp is usually fine.
     # For serverless/lambda, ensure /tmp is writable and has enough space.
     local_pdf_path = f"/tmp/{pdf_filename}"
-    
+
     logger.info("Generating PDF", offer_id=str(offer_id), path=local_pdf_path)
-    
+
     start_time = time.monotonic()
     outcome = "failure_render"
     pdf_bytes = None
     try:
+        if HTML is None:
+            raise RuntimeError("PDF renderer dependencies are not installed")
         pdf_bytes = HTML(string=html_content).write_pdf()
         with open(local_pdf_path, "wb") as f:
             f.write(pdf_bytes)
@@ -90,14 +92,14 @@ def upload_to_s3(pdf_bytes: bytes, offer_id: uuid.UUID) -> str | None:
         S3_UPLOADS_TOTAL.labels(outcome="failure_config").inc()
         return None
 
-    s3_key = f"termsheets/{str(offer_id)}/termsheet_{datetime.utcnow().strftime("%Y%m%d%H%M%S")}.pdf"
+    s3_key = f"termsheets/{str(offer_id)}/termsheet_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}.pdf"
     logger.info("Uploading PDF to S3", bucket=S3_BUCKET_NAME, key=s3_key, offer_id=str(offer_id))
-    
+
     start_time = time.monotonic()
     outcome = "failure_unknown"
     try:
         s3_client.put_object(Bucket=S3_BUCKET_NAME, Key=s3_key, Body=pdf_bytes, ContentType='application/pdf')
-        
+
         # Generate a presigned URL (valid for 24 hours)
         presigned_url = s3_client.generate_presigned_url(
             'get_object',
@@ -140,7 +142,7 @@ def render_termsheet_pdf(offer: Offer) -> tuple[str | None, str | None]:
     try:
         # 1. Render HTML from Jinja2 template
         html_content = render_html(offer)
-        
+
         # 2. Generate PDF from HTML
         # generate_pdf_from_html now returns (local_path, pdf_bytes)
         _local_pdf_path, pdf_bytes = generate_pdf_from_html(html_content, offer.id)
@@ -170,14 +172,14 @@ def render_termsheet_pdf(offer: Offer) -> tuple[str | None, str | None]:
 def _render_html_for_receipt(event_data: dict) -> str:
     """Renders the receipt HTML using Jinja2 and receipt_template.html."""
     template = jinja_env.get_template("receipt_template.html")
-    
+
     # Format timestamps from event_data (which are in micros)
     completed_at_micros = event_data.get("completed_at_micros", int(time.time() * 1_000_000))
     completed_at_dt = datetime.utcfromtimestamp(completed_at_micros / 1_000_000)
     completed_at_formatted = completed_at_dt.strftime("%Y-%m-%d %H:%M:%S UTC")
-    
+
     generation_timestamp_formatted = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-    
+
     context = {
         "event_data": event_data,
         "offer_id": event_data.get("offer_id"), # Pass separately if template uses it directly
@@ -196,9 +198,9 @@ def upload_to_s3_v2(pdf_bytes: bytes, object_id: str, s3_prefix: str, filename_p
         S3_UPLOADS_TOTAL.labels(outcome="failure_config").inc() # Consider adding prefix to metric label
         return None
 
-    s3_key = f"{s3_prefix}/{str(object_id)}/{filename_prefix}_{datetime.utcnow().strftime("%Y%m%d%H%M%S")}.pdf"
+    s3_key = f"{s3_prefix}/{str(object_id)}/{filename_prefix}_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}.pdf"
     logger.info("Uploading PDF to S3", bucket=S3_BUCKET_NAME, key=s3_key, object_id=str(object_id))
-    
+
     start_time = time.monotonic()
     outcome = "failure_unknown"
     try:
@@ -240,7 +242,7 @@ def render_receipt_pdf_and_upload(event_data: dict) -> tuple[str | None, str | N
         logger.error("offer_id missing from event_data for receipt generation.")
         APP_ERRORS_TOTAL.labels(error_type="missing_offer_id", component="render_receipt_pdf_and_upload").inc()
         return None, None
-    
+
     # Convert string UUID back to UUID object if needed by generate_pdf_from_html, though it takes string now
     try:
         offer_id_uuid = uuid.UUID(offer_id_str)
@@ -252,7 +254,7 @@ def render_receipt_pdf_and_upload(event_data: dict) -> tuple[str | None, str | N
     logger.info("Starting receipt generation process for offer", offer_id=offer_id_str)
     try:
         html_content = _render_html_for_receipt(event_data)
-        
+
         _local_pdf_path, pdf_bytes = generate_pdf_from_html(html_content, offer_id_uuid) # Pass UUID
         if not pdf_bytes:
             logger.error("Receipt PDF generation failed, no bytes produced.", offer_id=offer_id_str)
@@ -284,7 +286,7 @@ def render_receipt_pdf_and_upload(event_data: dict) -> tuple[str | None, str | N
 #         # You might need to mock the relationship to prevent DB calls if not using a real session
 #         # For full model, it might be easier to fetch from DB.
 #         # This is a simplified mock.
-        
+
 #         # Override creator to be a simple object for template rendering
 #         # This is a hack for local testing without a DB.
 #         # In real use, offer.creator will be a SQLModel object.
@@ -309,13 +311,13 @@ def render_receipt_pdf_and_upload(event_data: dict) -> tuple[str | None, str | N
 #         "updated_at": datetime.utcnow()
 #     }
 #     # This direct instantiation is tricky due to SQLModel's table=True metaclass.
-#     # test_offer = MockOffer(**mock_offer_data) 
+#     # test_offer = MockOffer(**mock_offer_data)
 #     # For local testing, it's better to create a dummy DB and fetch.
 
 #     # For simplicity in this example, let's assume render_termsheet_pdf can be called with a dict-like object
 #     # if the template is simple enough or the Offer model allows easy dict conversion.
 #     # However, the function expects an Offer instance.
-    
+
 #     # To test properly, you would need to set up a test DB, create an Offer, and pass it.
 #     # print("Local test run would require a proper Offer object.")
-#     pass 
+#     pass

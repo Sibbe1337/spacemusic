@@ -28,9 +28,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
-          # Install service-specific Python dependencies for tests if needed
-          # Example: if services/offers/tests require offers service deps:
-          # pip install -r services/offers/requirements.txt
+          pip install -r services/spacemusic/requirements.txt
+          pip install -r services/offers/requirements.txt
+          pip install -r services/valuation/requirements.txt
+          pip install -r services/payouts/requirements.txt
+          pip install -r services/docgen/requirements.txt
 
       - name: Lint Python with Ruff
         run: ruff check --select E9,F63,F7,F82,F401 services/valuation services/spacemusic tests/valuation/test_engine.py tests/api/test_spacemusic_api.py
@@ -71,6 +73,17 @@ jobs:
           cd services/admin_ui
           pnpm build
 
+      - name: Install seller_ui dependencies
+        run: |
+          cd services/seller_ui
+          npm install
+
+      - name: Test and build seller_ui
+        run: |
+          cd services/seller_ui
+          npm test
+          npm run build
+
       - name: Set up Helm
         uses: azure/setup-helm@v4 # Using a popular action to install Helm
         with:
@@ -87,4 +100,4 @@ jobs:
             else
               echo "Skipping lint for $chart_dir: directory not found or not a chart."
             fi
-          done 
+          done

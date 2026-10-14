@@ -1,14 +1,8 @@
 celery[redis]
-sqlmodel # For LedgerEntry and Offer models
-pydantic<2.0.0 # Explicitly lock pydantic to v1 for now
-psycopg2-binary # For DB access (both offers and payouts DBs)
-stripe # Stripe Python client
-pybreaker # Circuit breaker
+sqlmodel
+pydantic>=2.4,<3.0
 structlog
-python-dotenv # For local .env loading
-fastapi # For the internal API endpoint
-uvicorn[standard] # To run the FastAPI app for the internal endpoint
-uuid # Standard library
-# confluent-kafka-python # If using Kafka
-prometheus-client # Added
-starlette-prometheus # Added 
+fastapi
+uvicorn[standard]
+prometheus-client
+starlette-prometheus

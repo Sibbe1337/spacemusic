@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { directApplicationLinks,replaceLiterals } from './journey-support.mjs';
+const imports='import {L as Link,N as Navigate} from "./vendor-router-D1jo5eb_.js";';
+assert.equal(directApplicationLinks(imports+'e.jsx(Link,{to:"/apply",children:"Review"})'),imports+'e.jsx("a",{href:"/apply/",children:"Review"})');
+assert.equal(directApplicationLinks(imports+'e.jsxs(Link,{to:"/apply/",children:["Review",e.jsx(Icon,{})]})'),imports+'e.jsxs("a",{href:"/apply/",children:["Review",e.jsx(Icon,{})]})');
+for(const code of ['e.jsx(Link,{to:"/calculator",children:"Calculator"})','e.jsx("a",{href:"/apply/",children:"Review"})','e.jsx(Link,{to:destination,children:"Review"})','e.notAComponent(Link,{to:"/apply"})','e.jsx(Navigate,{to:"/apply",replace:true})']) assert.equal(directApplicationLinks(imports+code),imports+code);
+assert.equal(directApplicationLinks('e.jsx(UnknownComponent,{to:"/apply"})'),'e.jsx(UnknownComponent,{to:"/apply"})');
+assert.equal(replaceLiterals('const a="Apply";const b="Apply to sell";', [['Apply','Review']]),'const a="Review";const b="Apply to sell";');
+assert.throws(()=>replaceLiterals('const a="Other";',[['Apply','Review']],true));
+console.log('Exact copy replacements and direct application link transformations passed');

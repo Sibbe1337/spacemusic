@@ -4,8 +4,9 @@
   "namespace": "com.space.events.offers",
   "doc": "Event produced when a new offer is created.",
   "fields": [
+    {"name": "event_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique event identifier"},
     {"name": "offer_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID of the offer"},
-    {"name": "creator_id", "type": {"type": "string", "logicalType": "uuid"}, "doc": "Unique ID of the creator (assuming Creator.id is UUID)"},
+    {"name": "creator_id", "type": "string", "doc": "Creator database ID serialized as a string at the event boundary"},
     {"name": "title", "type": "string", "doc": "Title of the offer"},
     {"name": "description", "type": ["null", "string"], "default": null, "doc": "Optional description of the offer"},
     {"name": "amount_cents", "type": "long", "doc": "Offer amount in cents"},
@@ -16,6 +17,5 @@
       "type": {"type": "long", "logicalType": "timestamp-micros"}, 
       "doc": "UTC timestamp of when the offer was created (microseconds)"
     }
-    // Add other relevant fields from the Offer model as needed
   ]
-} 
+}

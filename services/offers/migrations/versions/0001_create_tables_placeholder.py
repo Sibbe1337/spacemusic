@@ -1,19 +1,18 @@
-"""create_creator_and_offer_tables
+"""Create creator and offer tables.
 
-Revision ID: <dynamic_id>
-Revises: 
-Create Date: <dynamic_date>
+Revision ID: 0001_create_tables
+Revises:
+Create Date: 2025-05-22
 
 """
 from typing import Sequence, Union
 
 from alembic import op
 import sqlalchemy as sa
-import sqlmodel # Ensure sqlmodel is imported if its types are used directly in migrations (often not needed)
 
 
 # revision identifiers, used by Alembic.
-revision: str = '<dynamic_id>' # Will be replaced by actual ID
+revision: str = '0001_create_tables'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -59,4 +58,4 @@ def downgrade() -> None:
     op.drop_index(op.f('ix_creator_username'), table_name='creator')
     op.drop_index(op.f('ix_creator_platform_id'), table_name='creator')
     op.drop_table('creator')
-    # ### end Alembic commands ### 
+    # ### end Alembic commands ###

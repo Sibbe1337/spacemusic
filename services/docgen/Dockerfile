@@ -1,5 +1,5 @@
 # Stage 1: Build stage - Install WeasyPrint dependencies and Python packages
-FROM python:3.12-slim as builder
+FROM python:3.12-slim AS builder
 
 WORKDIR /app
 
@@ -24,11 +24,13 @@ RUN apt-get update && \
     # For specific font support, you might need to install font packages, e.g., fonts-noto
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY services/docgen/requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY libs ./libs
+COPY services ./services
+COPY schema ./schema
 
 # Stage 2: Final stage - Copy artifacts to a clean image
 FROM python:3.12-slim
@@ -59,9 +61,11 @@ RUN addgroup --system app && adduser --system --group app
 # Copy installed Python dependencies from builder stage
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 # Copy application code (including templates folder)
-COPY --from=builder /app . 
+COPY --from=builder /app/libs ./libs
+COPY --from=builder /app/services ./services
+COPY --from=builder /app/schema ./schema
 
 USER app
 
 # Command to run the Celery worker for docgen
-CMD ["celery", "-A", "services.docgen.tasks.celery_app", "worker", "-l", "INFO", "-Q", "docgen"] # Specific queue for docgen 
+CMD ["celery", "-A", "services.docgen.tasks.celery_app", "worker", "-l", "INFO", "-Q", "docgen"]
