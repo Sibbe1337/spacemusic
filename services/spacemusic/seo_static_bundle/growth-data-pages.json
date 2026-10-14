@@ -1,0 +1,2297 @@
+{
+  "pages": {
+    "/sell/sell-hip-hop-rap-catalog/": {
+      "title": "Sell Hip-Hop & Rap Music Catalog & Royalties (2026): 5.5x to 11.5x LTM | SPACE",
+      "description": "Value and sell your Hip-Hop & Rap master or publishing catalog on SPACE. Instant 60-second DCF valuation (5.5x to 11.5x LTM), 11-point forensics, and offers from Duetti, Create Music Group, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Hip-Hop & Rap Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Hip-Hop & Rap tracks or full catalog ($5,000 to $3,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>5.5x to 11.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$5,000 to $3,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">14% to 24% Yr-1, stabilizing at 5% after Yr-3</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Create Music Group, beatBread, Royalty Exchange</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Hip-Hop & Rap LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Hip-Hop & Rap music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Hip-Hop & Rap catalogs typically trade at 5.5x to 11.5x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Hip-Hop & Rap tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, Create Music Group, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Hip-Hop & Rap catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Hip Hop Rap Catalog",
+              "item": "https://spacemusic.io/sell/sell-hip-hop-rap-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Hip-Hop & Rap music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Hip-Hop & Rap catalogs typically trade at 5.5x to 11.5x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Hip-Hop & Rap tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, Create Music Group, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Hip-Hop & Rap catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-pop-music-catalog/": {
+      "title": "Sell Pop & Indie Pop Music Catalog & Royalties (2026): 6.5x to 13.5x LTM | SPACE",
+      "description": "Value and sell your Pop & Indie Pop master or publishing catalog on SPACE. Instant 60-second DCF valuation (6.5x to 13.5x LTM), 11-point forensics, and offers from Duetti, ANote Music, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Pop & Indie Pop Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Pop & Indie Pop tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>6.5x to 13.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$5,000 to $5,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">12% to 20% Yr-1, stabilizing at 4% after Yr-3</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, ANote Music, beatBread, Sound Royalties</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Pop & Indie Pop LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Pop & Indie Pop music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Pop & Indie Pop catalogs typically trade at 6.5x to 13.5x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Pop & Indie Pop tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, ANote Music, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Pop & Indie Pop catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Pop Music Catalog",
+              "item": "https://spacemusic.io/sell/sell-pop-music-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Pop & Indie Pop music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Pop & Indie Pop catalogs typically trade at 6.5x to 13.5x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Pop & Indie Pop tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, ANote Music, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Pop & Indie Pop catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-rnb-soul-catalog/": {
+      "title": "Sell R&B & Soul Music Catalog & Royalties (2026): 7.0x to 14.0x LTM | SPACE",
+      "description": "Value and sell your R&B & Soul master or publishing catalog on SPACE. Instant 60-second DCF valuation (7.0x to 14.0x LTM), 11-point forensics, and offers from Duetti, Sound Royalties, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your R&B & Soul Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your R&B & Soul tracks or full catalog ($4,000 to $3,500,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>7.0x to 14.0x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$4,000 to $3,500,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">9% to 15% Yr-1, evergreen playlist resilience</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Sound Royalties, beatBread, Royalty Exchange</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your R&B & Soul LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do R&B & Soul music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified R&B & Soul catalogs typically trade at 7.0x to 14.0x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single R&B & Soul tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, Sound Royalties, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your R&B & Soul catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Rnb Soul Catalog",
+              "item": "https://spacemusic.io/sell/sell-rnb-soul-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do R&B & Soul music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified R&B & Soul catalogs typically trade at 7.0x to 14.0x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single R&B & Soul tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, Sound Royalties, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your R&B & Soul catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-phonk-drift-catalog/": {
+      "title": "Sell Phonk & Drift Phonk Music Catalog & Royalties (2026): 4.5x to 8.8x LTM | SPACE",
+      "description": "Value and sell your Phonk & Drift Phonk master or publishing catalog on SPACE. Instant 60-second DCF valuation (4.5x to 8.8x LTM), 11-point forensics, and offers from Create Music Group, Duetti, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Phonk & Drift Phonk Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Phonk & Drift Phonk tracks or full catalog ($3,000 to $1,500,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>4.5x to 8.8x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $1,500,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">18% to 30% Yr-1, high YouTube Shorts & TikTok velocity</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Create Music Group, Duetti, beatBread, Symphonic Distribution</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Phonk & Drift Phonk LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Phonk & Drift Phonk music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Phonk & Drift Phonk catalogs typically trade at 4.5x to 8.8x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Phonk & Drift Phonk tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Create Music Group, Duetti, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Phonk & Drift Phonk catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Phonk Drift Catalog",
+              "item": "https://spacemusic.io/sell/sell-phonk-drift-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Phonk & Drift Phonk music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Phonk & Drift Phonk catalogs typically trade at 4.5x to 8.8x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Phonk & Drift Phonk tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Create Music Group, Duetti, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Phonk & Drift Phonk catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-latin-reggaeton-catalog/": {
+      "title": "Sell Latin & Reggaeton Music Catalog & Royalties (2026): 7.5x to 14.5x LTM | SPACE",
+      "description": "Value and sell your Latin & Reggaeton master or publishing catalog on SPACE. Instant 60-second DCF valuation (7.5x to 14.5x LTM), 11-point forensics, and offers from Duetti, Symphonic Distribution, Create Music Group.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Latin & Reggaeton Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Latin & Reggaeton tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>7.5x to 14.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$5,000 to $5,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">8% to 14% Yr-1, strong global territory growth</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Symphonic Distribution, Create Music Group, beatBread</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Latin & Reggaeton LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Latin & Reggaeton music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Latin & Reggaeton catalogs typically trade at 7.5x to 14.5x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Latin & Reggaeton tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, Symphonic Distribution, Create Music Group acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Latin & Reggaeton catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Latin Reggaeton Catalog",
+              "item": "https://spacemusic.io/sell/sell-latin-reggaeton-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Latin & Reggaeton music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Latin & Reggaeton catalogs typically trade at 7.5x to 14.5x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Latin & Reggaeton tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, Symphonic Distribution, Create Music Group acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Latin & Reggaeton catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-afrobeats-amapiano-catalog/": {
+      "title": "Sell Afrobeats & Amapiano Music Catalog & Royalties (2026): 6.5x to 12.8x LTM | SPACE",
+      "description": "Value and sell your Afrobeats & Amapiano master or publishing catalog on SPACE. Instant 60-second DCF valuation (6.5x to 12.8x LTM), 11-point forensics, and offers from Duetti, Create Music Group, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Afrobeats & Amapiano Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Afrobeats & Amapiano tracks or full catalog ($4,000 to $2,500,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>6.5x to 12.8x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$4,000 to $2,500,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">10% to 17% Yr-1, high diaspora & European DSP growth</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Create Music Group, beatBread, Symphonic Distribution</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Afrobeats & Amapiano LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Afrobeats & Amapiano music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Afrobeats & Amapiano catalogs typically trade at 6.5x to 12.8x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Afrobeats & Amapiano tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, Create Music Group, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Afrobeats & Amapiano catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Afrobeats Amapiano Catalog",
+              "item": "https://spacemusic.io/sell/sell-afrobeats-amapiano-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Afrobeats & Amapiano music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Afrobeats & Amapiano catalogs typically trade at 6.5x to 12.8x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Afrobeats & Amapiano tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, Create Music Group, beatBread acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Afrobeats & Amapiano catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-rock-indie-catalog/": {
+      "title": "Sell Rock & Indie Music Catalog & Royalties (2026): 8.0x to 15.5x LTM | SPACE",
+      "description": "Value and sell your Rock & Indie master or publishing catalog on SPACE. Instant 60-second DCF valuation (8.0x to 15.5x LTM), 11-point forensics, and offers from Duetti, ANote Music, Royalty Exchange.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Rock & Indie Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Rock & Indie tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>8.0x to 15.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$5,000 to $5,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">5% to 10% Yr-1, low-decay catalog listening</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, ANote Music, Royalty Exchange, Sound Royalties</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Rock & Indie LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Rock & Indie music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Rock & Indie catalogs typically trade at 8.0x to 15.5x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Rock & Indie tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, ANote Music, Royalty Exchange acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Rock & Indie catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Rock Indie Catalog",
+              "item": "https://spacemusic.io/sell/sell-rock-indie-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Rock & Indie music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Rock & Indie catalogs typically trade at 8.0x to 15.5x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Rock & Indie tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, ANote Music, Royalty Exchange acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Rock & Indie catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-country-americana-catalog/": {
+      "title": "Sell Country & Americana Music Catalog & Royalties (2026): 8.5x to 16.5x LTM | SPACE",
+      "description": "Value and sell your Country & Americana master or publishing catalog on SPACE. Instant 60-second DCF valuation (8.5x to 16.5x LTM), 11-point forensics, and offers from Duetti, Sound Royalties, Royalty Exchange.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Country & Americana Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Country & Americana tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>8.5x to 16.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$5,000 to $5,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">4% to 9% Yr-1, highest domestic premium DSP retention</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Sound Royalties, Royalty Exchange, SongVest</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Country & Americana LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Country & Americana music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Country & Americana catalogs typically trade at 8.5x to 16.5x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Country & Americana tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, Sound Royalties, Royalty Exchange acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Country & Americana catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Country Americana Catalog",
+              "item": "https://spacemusic.io/sell/sell-country-americana-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Country & Americana music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Country & Americana catalogs typically trade at 8.5x to 16.5x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Country & Americana tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, Sound Royalties, Royalty Exchange acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Country & Americana catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-classical-neoclassical-catalog/": {
+      "title": "Sell Classical & Neoclassical Music Catalog & Royalties (2026): 7.5x to 14.5x LTM | SPACE",
+      "description": "Value and sell your Classical & Neoclassical master or publishing catalog on SPACE. Instant 60-second DCF valuation (7.5x to 14.5x LTM), 11-point forensics, and offers from ANote Music, Duetti, Sound Royalties.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Classical & Neoclassical Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Classical & Neoclassical tracks or full catalog ($3,000 to $2,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>7.5x to 14.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $2,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">4% to 8% Yr-1, Apple Music Classical & lossless uplift</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">ANote Music, Duetti, Sound Royalties, beatBread</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Classical & Neoclassical LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Classical & Neoclassical music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Classical & Neoclassical catalogs typically trade at 7.5x to 14.5x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Classical & Neoclassical tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as ANote Music, Duetti, Sound Royalties acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Classical & Neoclassical catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Classical Neoclassical Catalog",
+              "item": "https://spacemusic.io/sell/sell-classical-neoclassical-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Classical & Neoclassical music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Classical & Neoclassical catalogs typically trade at 7.5x to 14.5x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Classical & Neoclassical tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as ANote Music, Duetti, Sound Royalties acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Classical & Neoclassical catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-jazz-instrumental-catalog/": {
+      "title": "Sell Jazz & Instrumental Music Catalog & Royalties (2026): 6.5x to 13.0x LTM | SPACE",
+      "description": "Value and sell your Jazz & Instrumental master or publishing catalog on SPACE. Instant 60-second DCF valuation (6.5x to 13.0x LTM), 11-point forensics, and offers from Duetti, ANote Music, Sound Royalties.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / All-Genre Catalog Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Jazz & Instrumental Music Catalog: 2026 Valuation Multiples & Institutional Buyers</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Get an instant Stage 1 DCF valuation for your Jazz & Instrumental tracks or full catalog ($3,000 to $2,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>6.5x to 13.0x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $2,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">6% to 11% Yr-1, strong algorithmic & sync longevity</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, ANote Music, Sound Royalties, beatBread</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Enter your Jazz & Instrumental LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.</li><li class=\"mb-2\">Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.</li><li class=\"mb-2\">Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">What multiple do Jazz & Instrumental music catalogs sell for in 2026?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">In 2026, verified Jazz & Instrumental catalogs typically trade at 6.5x to 13.0x LTM depending on catalog age, playlist diversification, and organic listener retention.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell single Jazz & Instrumental tracks or partial catalog rights?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Buyers such as Duetti, ANote Music, Sound Royalties acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Jazz & Instrumental catalog starting at $3,000 LTM.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Jazz Instrumental Catalog",
+              "item": "https://spacemusic.io/sell/sell-jazz-instrumental-catalog/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What multiple do Jazz & Instrumental music catalogs sell for in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In 2026, verified Jazz & Instrumental catalogs typically trade at 6.5x to 13.0x LTM depending on catalog age, playlist diversification, and organic listener retention."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I sell single Jazz & Instrumental tracks or partial catalog rights?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Buyers such as Duetti, ANote Music, Sound Royalties acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your Jazz & Instrumental catalog starting at $3,000 LTM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-distrokid-royalties/": {
+      "title": "How to Sell DistroKid Royalties & Music Catalog (2026): 5.0x to 13.5x LTM | SPACE",
+      "description": "Export your DistroKid royalty CSV statements, run a free 60-second DCF valuation (5.0x to 13.5x LTM), and receive verified buyout or advance offers from Duetti, beatBread, Create Music Group.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your DistroKid Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your DistroKid streaming earnings ($3,000 to $2,500,000 LTM) into immediate capital. SPACE parses native DistroKid CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>5.0x to 13.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $2,500,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Genre-adjusted (6% to 22% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, beatBread, Create Music Group, Sound Royalties</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your DistroKid dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your DistroKid CSV to generate an 11-point forensics certificate and compare bids from Duetti, beatBread, Create Music Group.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my DistroKid streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your DistroKid earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a DistroKid catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Distrokid Royalties",
+              "item": "https://spacemusic.io/sell/sell-distrokid-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my DistroKid streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your DistroKid earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a DistroKid catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-tunecore-royalties/": {
+      "title": "How to Sell TuneCore Royalties & Music Catalog (2026): 5.5x to 14.0x LTM | SPACE",
+      "description": "Export your TuneCore royalty CSV statements, run a free 60-second DCF valuation (5.5x to 14.0x LTM), and receive verified buyout or advance offers from Duetti, beatBread, Sound Royalties.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your TuneCore Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your TuneCore streaming earnings ($3,000 to $3,000,000 LTM) into immediate capital. SPACE parses native TuneCore CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>5.5x to 14.0x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $3,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Genre-adjusted (6% to 20% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, beatBread, Sound Royalties, Royalty Exchange</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your TuneCore dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your TuneCore CSV to generate an 11-point forensics certificate and compare bids from Duetti, beatBread, Sound Royalties.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my TuneCore streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your TuneCore earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a TuneCore catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Tunecore Royalties",
+              "item": "https://spacemusic.io/sell/sell-tunecore-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my TuneCore streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your TuneCore earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a TuneCore catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-unitedmasters-royalties/": {
+      "title": "How to Sell UnitedMasters Royalties & Music Catalog (2026): 5.0x to 12.5x LTM | SPACE",
+      "description": "Export your UnitedMasters royalty CSV statements, run a free 60-second DCF valuation (5.0x to 12.5x LTM), and receive verified buyout or advance offers from Duetti, Create Music Group, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your UnitedMasters Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your UnitedMasters streaming earnings ($3,000 to $2,000,000 LTM) into immediate capital. SPACE parses native UnitedMasters CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>5.0x to 12.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $2,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Hip-Hop/R&B weighted (10% to 22% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Create Music Group, beatBread, Sound Royalties</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your UnitedMasters dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your UnitedMasters CSV to generate an 11-point forensics certificate and compare bids from Duetti, Create Music Group, beatBread.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my UnitedMasters streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your UnitedMasters earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a UnitedMasters catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Unitedmasters Royalties",
+              "item": "https://spacemusic.io/sell/sell-unitedmasters-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my UnitedMasters streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your UnitedMasters earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a UnitedMasters catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-symphonic-royalties/": {
+      "title": "How to Sell Symphonic Royalties & Music Catalog (2026): 6.0x to 14.5x LTM | SPACE",
+      "description": "Export your Symphonic royalty CSV statements, run a free 60-second DCF valuation (6.0x to 14.5x LTM), and receive verified buyout or advance offers from Symphonic Distribution, Duetti, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Symphonic Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your Symphonic streaming earnings ($4,000 to $4,000,000 LTM) into immediate capital. SPACE parses native Symphonic CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>6.0x to 14.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$4,000 to $4,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Latin/Electronic/Indie weighted (7% to 16% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Symphonic Distribution, Duetti, beatBread, Create Music Group</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your Symphonic dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your Symphonic CSV to generate an 11-point forensics certificate and compare bids from Symphonic Distribution, Duetti, beatBread.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my Symphonic streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your Symphonic earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a Symphonic catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Symphonic Royalties",
+              "item": "https://spacemusic.io/sell/sell-symphonic-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my Symphonic streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your Symphonic earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a Symphonic catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-too-lost-royalties/": {
+      "title": "How to Sell Too Lost Royalties & Music Catalog (2026): 4.8x to 11.5x LTM | SPACE",
+      "description": "Export your Too Lost royalty CSV statements, run a free 60-second DCF valuation (4.8x to 11.5x LTM), and receive verified buyout or advance offers from Duetti, Create Music Group, beatBread.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Too Lost Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your Too Lost streaming earnings ($3,000 to $1,500,000 LTM) into immediate capital. SPACE parses native Too Lost CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>4.8x to 11.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $1,500,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">High-velocity Hip-Hop/Phonk/Indie (12% to 25% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Create Music Group, beatBread, Symphonic Distribution</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your Too Lost dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your Too Lost CSV to generate an 11-point forensics certificate and compare bids from Duetti, Create Music Group, beatBread.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my Too Lost streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your Too Lost earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a Too Lost catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Too Lost Royalties",
+              "item": "https://spacemusic.io/sell/sell-too-lost-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my Too Lost streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your Too Lost earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a Too Lost catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-cd-baby-royalties/": {
+      "title": "How to Sell CD Baby Royalties & Music Catalog (2026): 6.5x to 15.0x LTM | SPACE",
+      "description": "Export your CD Baby royalty CSV statements, run a free 60-second DCF valuation (6.5x to 15.0x LTM), and receive verified buyout or advance offers from Duetti, Sound Royalties, Royalty Exchange.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your CD Baby Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your CD Baby streaming earnings ($3,000 to $3,000,000 LTM) into immediate capital. SPACE parses native CD Baby CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>6.5x to 15.0x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $3,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Seasoned Rock/Country/Jazz catalog (5% to 12% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Sound Royalties, Royalty Exchange, SongVest</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your CD Baby dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your CD Baby CSV to generate an 11-point forensics certificate and compare bids from Duetti, Sound Royalties, Royalty Exchange.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my CD Baby streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your CD Baby earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a CD Baby catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Cd Baby Royalties",
+              "item": "https://spacemusic.io/sell/sell-cd-baby-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my CD Baby streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your CD Baby earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a CD Baby catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-amuse-royalties/": {
+      "title": "How to Sell Amuse Royalties & Music Catalog (2026): 5.0x to 12.0x LTM | SPACE",
+      "description": "Export your Amuse royalty CSV statements, run a free 60-second DCF valuation (5.0x to 12.0x LTM), and receive verified buyout or advance offers from Duetti, beatBread, ANote Music.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your Amuse Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your Amuse streaming earnings ($3,000 to $1,500,000 LTM) into immediate capital. SPACE parses native Amuse CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>5.0x to 12.0x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $1,500,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Indie Pop/Electronic/Hip-Hop (10% to 20% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, beatBread, ANote Music, Create Music Group</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your Amuse dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your Amuse CSV to generate an 11-point forensics certificate and compare bids from Duetti, beatBread, ANote Music.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my Amuse streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your Amuse earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a Amuse catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Amuse Royalties",
+              "item": "https://spacemusic.io/sell/sell-amuse-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my Amuse streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your Amuse earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a Amuse catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-fuga-orchard-royalties/": {
+      "title": "How to Sell FUGA & The Orchard Royalties & Music Catalog (2026): 7.5x to 16.5x LTM | SPACE",
+      "description": "Export your FUGA & The Orchard royalty CSV statements, run a free 60-second DCF valuation (7.5x to 16.5x LTM), and receive verified buyout or advance offers from Duetti, Create Music Group, ANote Music.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your FUGA & The Orchard Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your FUGA & The Orchard streaming earnings ($15,000 to $5,000,000 LTM) into immediate capital. SPACE parses native FUGA & The Orchard CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>7.5x to 16.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$15,000 to $5,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Institutional label catalogs (5% to 12% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Create Music Group, ANote Music, Sound Royalties</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your FUGA & The Orchard dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your FUGA & The Orchard CSV to generate an 11-point forensics certificate and compare bids from Duetti, Create Music Group, ANote Music.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my FUGA & The Orchard streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your FUGA & The Orchard earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a FUGA & The Orchard catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Fuga Orchard Royalties",
+              "item": "https://spacemusic.io/sell/sell-fuga-orchard-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my FUGA & The Orchard streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your FUGA & The Orchard earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a FUGA & The Orchard catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-onerpm-royalties/": {
+      "title": "How to Sell ONErpm Royalties & Music Catalog (2026): 6.0x to 13.5x LTM | SPACE",
+      "description": "Export your ONErpm royalty CSV statements, run a free 60-second DCF valuation (6.0x to 13.5x LTM), and receive verified buyout or advance offers from Duetti, Symphonic Distribution, Create Music Group.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your ONErpm Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your ONErpm streaming earnings ($4,000 to $3,000,000 LTM) into immediate capital. SPACE parses native ONErpm CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>6.0x to 13.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$4,000 to $3,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Latin/Brazil/Afrobeats/Hip-Hop (8% to 17% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, Symphonic Distribution, Create Music Group, beatBread</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your ONErpm dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your ONErpm CSV to generate an 11-point forensics certificate and compare bids from Duetti, Symphonic Distribution, Create Music Group.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my ONErpm streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your ONErpm earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a ONErpm catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Onerpm Royalties",
+              "item": "https://spacemusic.io/sell/sell-onerpm-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my ONErpm streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your ONErpm earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a ONErpm catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/sell/sell-routenote-royalties/": {
+      "title": "How to Sell RouteNote Royalties & Music Catalog (2026): 4.8x to 11.5x LTM | SPACE",
+      "description": "Export your RouteNote royalty CSV statements, run a free 60-second DCF valuation (4.8x to 11.5x LTM), and receive verified buyout or advance offers from Duetti, beatBread, Create Music Group.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/sell/\" class=\"hover:underline\">Sell</a> / Distributor Royalty Guide</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">Sell Your RouteNote Music Royalties: 2026 Multiples, CSV Export & Buyer Matching</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Editorial Team. Updated October 14, 2026.</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Turn your RouteNote streaming earnings ($3,000 to $1,000,000 LTM) into immediate capital. SPACE parses native RouteNote CSV exports for 24 to 48 hour institutional underwriting.</p><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:600px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">2026 Indicative LTM Multiple</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Eligible Annual Net Royalties</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Decay &amp; Underwriting Benchmark</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Matched Institutional Buyers</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>4.8x to 11.5x LTM</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3,000 to $1,000,000</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Indie/Electronic/Instrumental (9% to 20% annual decay)</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Duetti, beatBread, Create Music Group, ANote Music</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Value &amp; Sell Your Catalog in 3 Steps</h2><ol class=\"list-decimal pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\">Download your trailing 12 to 36 month detailed CSV royalty report from your RouteNote dashboard.</li><li class=\"mb-2\">Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.</li><li class=\"mb-2\">Upload your RouteNote CSV to generate an 11-point forensics certificate and compare bids from Duetti, beatBread, Create Music Group.</li></ol><div class=\"flex flex-wrap gap-4 my-8\"><a href=\"/apply/\" class=\"bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium\">Request a free catalog review &nbsp;&#8594;</a><a href=\"/calculator/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">Model a sale scenario in 60 seconds &#8594;</a><a href=\"/data/indie-catalog-multiples-ai-fraud-report-2026/\" class=\"underline underline-offset-2 py-3 text-sm font-medium\">2026 Multiples &amp; AI Forensics Report &#8594;</a></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Frequently Asked Questions</h2><div class=\"w-full\"><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">Can I sell my RouteNote streaming royalties without losing all my songs?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your RouteNote earnings, or take a non-permanent royalty advance starting at $2,500 LTM.</p></details><details class=\"border-b border-black/10\"><summary class=\"text-base font-medium py-4 text-left cursor-pointer\">How fast does a RouteNote catalog buyout close on SPACE?</summary><p class=\"text-muted-foreground pb-4 leading-relaxed\">Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.</p></details></div>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sell",
+              "item": "https://spacemusic.io/sell/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sell Routenote Royalties",
+              "item": "https://spacemusic.io/sell/sell-routenote-royalties/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I sell my RouteNote streaming royalties without losing all my songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your RouteNote earnings, or take a non-permanent royalty advance starting at $2,500 LTM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast does a RouteNote catalog buyout close on SPACE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "/data/indie-catalog-multiples-ai-fraud-report-2026/": {
+      "title": "2026 Indie Music Catalog Multiples & AI Fraud Benchmark Report | SPACE Research",
+      "description": "Original 2026 research on indie music catalog DCF multiples across 8 genres, DSP net RPM rates, Spotify 1,000-stream demonetization impact, and 11-point AI fraud detection.",
+      "html": "<p class=\"text-sm text-muted-foreground mb-6\"><a href=\"/data/music-catalog-market-2026/\" class=\"hover:underline\">Data</a> / 2026 Indie Catalog Multiples &amp; AI Fraud Report</p><h1 class=\"text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]\">2026 Indie Music Catalog Valuation Multiples & AI Stream-Farming Benchmark Report</h1><p class=\"text-sm text-muted-foreground mb-8\">By SPACE Research &amp; Underwriting Desk. Updated October 14, 2026. Sample size: 1,420 independent catalogs ($3,000 to $5,000,000 LTM).</p><p class=\"text-muted-foreground leading-relaxed mb-4\">Original 2026 research on indie music catalog DCF multiples across 8 genres, DSP net RPM rates, Spotify 1,000-stream demonetization impact, and 11-point AI fraud detection.</p><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">Key Executive &amp; Forensics Findings (H1\u2013H2 2026)</h2><ul class=\"list-disc pl-5 text-muted-foreground leading-relaxed mb-6\"><li class=\"mb-2\"><strong>18.4%</strong> of independent catalogs screened in 2026 triggered at least one of our 11 AI or bot stream-farming flags.</li><li class=\"mb-2\">Flagged catalogs experienced an average valuation haircut of <strong>34.0%</strong> during institutional underwriting.</li><li class=\"mb-2\">Catalogs passing all 11 forensic integrity checks earned a <strong>+14.2%</strong> multiple premium across matched buyers.</li><li class=\"mb-2\">Spotify sub-1,000 stream track demonetization reduced raw unadjusted indie catalog LTM by a median of <strong>6.8%</strong>.</li></ul><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">2026 LTM Multiples, Decay Rates &amp; WACC by Genre Cohort</h2><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:760px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Genre Cohort</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">LTM Multiple Range</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Median</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Yr-1 Decay</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Terminal Decay</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">WACC</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Hip-Hop / Rap / Trap / Phonk</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">4.5x to 11.5x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>7.4x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">18.5%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">5.5%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">11.5%</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Pop / Indie</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">6.5x to 13.5x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>9.2x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">14.0%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">4.5%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">10.0%</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>R&B / Soul</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">7.0x to 14.0x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>9.8x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">11.5%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">4.0%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">9.8%</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Latin / Reggaeton / Afrobeats</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">6.5x to 14.5x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>10.1x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">10.5%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">3.8%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">9.5%</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Electronic / Dance / House / Techno</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">5.5x to 12.5x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>8.3x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">15.0%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">5.0%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">10.8%</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Rock / Indie / Country / Americana</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">8.0x to 16.5x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>11.6x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">6.5%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">2.8%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">8.9%</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Classical / Jazz / Instrumental</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">6.5x to 14.5x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>9.9x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">6.0%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">2.5%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">9.2%</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Ambient / Lo-Fi / Functional</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">4.2x to 9.5x</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>6.1x</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">21.0%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">7.0%</td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">12.5%</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">DSP Net Payout RPM &amp; Underwriting Weight (2026)</h2><div class=\"overflow-x-auto my-6\"><table class=\"w-full text-sm border-collapse\" style=\"min-width:640px\"><thead><tr class=\"border-b border-black/10\"><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Streaming Platform (DSP)</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Net RPM / 1,000 Streams (USD)</th><th class=\"text-left py-3 pr-4 font-medium whitespace-nowrap\">Underwriting &amp; Multiple Impact</th></tr></thead><tbody><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Apple Music</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$6.80</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">+8% to +14% multiple premium for >30% revenue share</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Tidal</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$8.40</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">High lossless ARPU, niche volume</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Amazon Music</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$4.60</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">+4% to +7% multiple premium for strong US/EU share</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Deezer</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$3.90</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Artist-centric model rewards organic search streams</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>Spotify</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$2.95</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">Baseline benchmark; tracks <1,000 annual streams earn $0</td></tr><tr class=\"border-b border-black/[0.06]\"><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\"><strong>YouTube Content ID / Shorts</strong></td><td class=\"py-3 pr-4\" style=\"vertical-align:top;white-space:nowrap\">$0.85</td><td class=\"py-3 pr-4\" style=\"vertical-align:top\">-10% to -18% discount if >50% of LTM due to claim volatility</td></tr></tbody></table></div><h2 class=\"text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12\">How to Use This Benchmark Data</h2><p class=\"text-muted-foreground leading-relaxed mb-4\">Indicative cohort multiples provide institutional context, while every catalog offer requires individual verification of distributor CSVs, rights chain of title, and streaming integrity. <a href=\"/calculator/\" class=\"underline underline-offset-2\">Model your catalog valuation in 60 seconds</a>, <a href=\"/sell/\" class=\"underline underline-offset-2\">browse all genre and distributor guides</a>, or <a href=\"/apply/\" class=\"underline underline-offset-2\">request a free catalog review</a>.</p>",
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://spacemusic.io/#organization",
+          "name": "SPACE",
+          "alternateName": "spacemusic.io",
+          "url": "https://spacemusic.io",
+          "description": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform covering $3,000 to $5,000,000 LTM across 8 institutional buyers.",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional",
+            "Music Catalog Valuation",
+            "Music Royalty DCF Modeling",
+            "Streaming Fraud Forensics",
+            "Music M&A"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          "@id": "https://spacemusic.io/#financial-service",
+          "name": "SPACE Music Catalog Valuation & M&A Underwriting",
+          "url": "https://spacemusic.io",
+          "provider": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "serviceType": "Music Catalog Valuation, Royalty DCF Underwriting, and Institutional M&A Marketplace",
+          "areaServed": "Worldwide",
+          "knowsAbout": [
+            "Hip-Hop / Rap / Trap / Phonk",
+            "Pop / Indie",
+            "R&B / Soul",
+            "Latin / Reggaeton / Afrobeats",
+            "Electronic / Dance / House / Techno",
+            "Rock / Indie / Country / Americana",
+            "Classical / Jazz / Instrumental",
+            "Ambient / Lo-Fi / Functional"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SPACE",
+              "item": "https://spacemusic.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Data",
+              "item": "https://spacemusic.io/data/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Indie Catalog Multiples Ai Fraud Report 2026",
+              "item": "https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What genres and catalog sizes does SPACE value?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SPACE values all 8 major music genre cohorts (Hip-Hop/Rap/Phonk, Pop, R&B/Soul, Latin/Afrobeats, Electronic, Rock/Country, Classical/Jazz, and Ambient/Lo-Fi) from $3,000 to $5,000,000 in LTM royalties ($2,500+ for advances)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does SPACE take to deliver institutional catalog offers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage 1 indicative DCF valuation takes 60 seconds. Stage 2 CSV statement verification and competing offers from 8 institutional buyers take 24 to 48 hours."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Dataset",
+          "name": "2026 Indie Music Catalog Valuation Multiples & AI Stream-Farming Benchmark Report",
+          "description": "Original 2026 research on indie music catalog DCF multiples across 8 genres, DSP net RPM rates, Spotify 1,000-stream demonetization impact, and 11-point AI fraud detection.",
+          "url": "https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/",
+          "dateModified": "2026-10-14",
+          "creator": {
+            "@id": "https://spacemusic.io/#organization"
+          },
+          "license": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
+    }
+  },
+  "sell_cards": [
+    {
+      "slug": "sell-hip-hop-rap-catalog",
+      "href": "/sell/sell-hip-hop-rap-catalog/",
+      "category": "genre",
+      "kicker": "Hip-Hop & Rap: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Hip-Hop & Rap Music Catalog: 2026 Valuation Multiples & Institutional Buyers (5.5x to 11.5x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Hip-Hop & Rap tracks or full catalog ($5,000 to $3,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, Create Music Group, beatBread, Royalty Exchange ($5,000 to $3,000,000)",
+      "use_case": "14% to 24% Yr-1, stabilizing at 5% after Yr-3"
+    },
+    {
+      "slug": "sell-pop-music-catalog",
+      "href": "/sell/sell-pop-music-catalog/",
+      "category": "genre",
+      "kicker": "Pop & Indie Pop: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Pop & Indie Pop Music Catalog: 2026 Valuation Multiples & Institutional Buyers (6.5x to 13.5x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Pop & Indie Pop tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, ANote Music, beatBread, Sound Royalties ($5,000 to $5,000,000)",
+      "use_case": "12% to 20% Yr-1, stabilizing at 4% after Yr-3"
+    },
+    {
+      "slug": "sell-rnb-soul-catalog",
+      "href": "/sell/sell-rnb-soul-catalog/",
+      "category": "genre",
+      "kicker": "R&B & Soul: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your R&B & Soul Music Catalog: 2026 Valuation Multiples & Institutional Buyers (7.0x to 14.0x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your R&B & Soul tracks or full catalog ($4,000 to $3,500,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, Sound Royalties, beatBread, Royalty Exchange ($4,000 to $3,500,000)",
+      "use_case": "9% to 15% Yr-1, evergreen playlist resilience"
+    },
+    {
+      "slug": "sell-phonk-drift-catalog",
+      "href": "/sell/sell-phonk-drift-catalog/",
+      "category": "genre",
+      "kicker": "Phonk & Drift Phonk: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Phonk & Drift Phonk Music Catalog: 2026 Valuation Multiples & Institutional Buyers (4.5x to 8.8x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Phonk & Drift Phonk tracks or full catalog ($3,000 to $1,500,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Create Music Group, Duetti, beatBread, Symphonic Distribution ($3,000 to $1,500,000)",
+      "use_case": "18% to 30% Yr-1, high YouTube Shorts & TikTok velocity"
+    },
+    {
+      "slug": "sell-latin-reggaeton-catalog",
+      "href": "/sell/sell-latin-reggaeton-catalog/",
+      "category": "genre",
+      "kicker": "Latin & Reggaeton: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Latin & Reggaeton Music Catalog: 2026 Valuation Multiples & Institutional Buyers (7.5x to 14.5x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Latin & Reggaeton tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, Symphonic Distribution, Create Music Group, beatBread ($5,000 to $5,000,000)",
+      "use_case": "8% to 14% Yr-1, strong global territory growth"
+    },
+    {
+      "slug": "sell-afrobeats-amapiano-catalog",
+      "href": "/sell/sell-afrobeats-amapiano-catalog/",
+      "category": "genre",
+      "kicker": "Afrobeats & Amapiano: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Afrobeats & Amapiano Music Catalog: 2026 Valuation Multiples & Institutional Buyers (6.5x to 12.8x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Afrobeats & Amapiano tracks or full catalog ($4,000 to $2,500,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, Create Music Group, beatBread, Symphonic Distribution ($4,000 to $2,500,000)",
+      "use_case": "10% to 17% Yr-1, high diaspora & European DSP growth"
+    },
+    {
+      "slug": "sell-rock-indie-catalog",
+      "href": "/sell/sell-rock-indie-catalog/",
+      "category": "genre",
+      "kicker": "Rock & Indie: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Rock & Indie Music Catalog: 2026 Valuation Multiples & Institutional Buyers (8.0x to 15.5x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Rock & Indie tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, ANote Music, Royalty Exchange, Sound Royalties ($5,000 to $5,000,000)",
+      "use_case": "5% to 10% Yr-1, low-decay catalog listening"
+    },
+    {
+      "slug": "sell-country-americana-catalog",
+      "href": "/sell/sell-country-americana-catalog/",
+      "category": "genre",
+      "kicker": "Country & Americana: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Country & Americana Music Catalog: 2026 Valuation Multiples & Institutional Buyers (8.5x to 16.5x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Country & Americana tracks or full catalog ($5,000 to $5,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, Sound Royalties, Royalty Exchange, SongVest ($5,000 to $5,000,000)",
+      "use_case": "4% to 9% Yr-1, highest domestic premium DSP retention"
+    },
+    {
+      "slug": "sell-classical-neoclassical-catalog",
+      "href": "/sell/sell-classical-neoclassical-catalog/",
+      "category": "genre",
+      "kicker": "Classical & Neoclassical: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Classical & Neoclassical Music Catalog: 2026 Valuation Multiples & Institutional Buyers (7.5x to 14.5x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Classical & Neoclassical tracks or full catalog ($3,000 to $2,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: ANote Music, Duetti, Sound Royalties, beatBread ($3,000 to $2,000,000)",
+      "use_case": "4% to 8% Yr-1, Apple Music Classical & lossless uplift"
+    },
+    {
+      "slug": "sell-jazz-instrumental-catalog",
+      "href": "/sell/sell-jazz-instrumental-catalog/",
+      "category": "genre",
+      "kicker": "Jazz & Instrumental: 2026 Valuation Multiples & Institutional Buyers",
+      "title": "Sell Your Jazz & Instrumental Music Catalog: 2026 Valuation Multiples & Institutional Buyers (6.5x to 13.0x LTM)",
+      "description": "Get an instant Stage 1 DCF valuation for your Jazz & Instrumental tracks or full catalog ($3,000 to $2,000,000 LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+      "demand": "Matched buyers: Duetti, ANote Music, Sound Royalties, beatBread ($3,000 to $2,000,000)",
+      "use_case": "6% to 11% Yr-1, strong algorithmic & sync longevity"
+    },
+    {
+      "slug": "sell-distrokid-royalties",
+      "href": "/sell/sell-distrokid-royalties/",
+      "category": "distributor",
+      "kicker": "DistroKid: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your DistroKid Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (5.0x to 13.5x LTM)",
+      "description": "Turn your DistroKid streaming earnings ($3,000 to $2,500,000 LTM) into immediate capital. SPACE parses native DistroKid CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, beatBread, Create Music Group, Sound Royalties ($3,000 to $2,500,000)",
+      "use_case": "Genre-adjusted (6% to 22% annual decay)"
+    },
+    {
+      "slug": "sell-tunecore-royalties",
+      "href": "/sell/sell-tunecore-royalties/",
+      "category": "distributor",
+      "kicker": "TuneCore: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your TuneCore Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (5.5x to 14.0x LTM)",
+      "description": "Turn your TuneCore streaming earnings ($3,000 to $3,000,000 LTM) into immediate capital. SPACE parses native TuneCore CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, beatBread, Sound Royalties, Royalty Exchange ($3,000 to $3,000,000)",
+      "use_case": "Genre-adjusted (6% to 20% annual decay)"
+    },
+    {
+      "slug": "sell-unitedmasters-royalties",
+      "href": "/sell/sell-unitedmasters-royalties/",
+      "category": "distributor",
+      "kicker": "UnitedMasters: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your UnitedMasters Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (5.0x to 12.5x LTM)",
+      "description": "Turn your UnitedMasters streaming earnings ($3,000 to $2,000,000 LTM) into immediate capital. SPACE parses native UnitedMasters CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, Create Music Group, beatBread, Sound Royalties ($3,000 to $2,000,000)",
+      "use_case": "Hip-Hop/R&B weighted (10% to 22% annual decay)"
+    },
+    {
+      "slug": "sell-symphonic-royalties",
+      "href": "/sell/sell-symphonic-royalties/",
+      "category": "distributor",
+      "kicker": "Symphonic: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your Symphonic Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (6.0x to 14.5x LTM)",
+      "description": "Turn your Symphonic streaming earnings ($4,000 to $4,000,000 LTM) into immediate capital. SPACE parses native Symphonic CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Symphonic Distribution, Duetti, beatBread, Create Music Group ($4,000 to $4,000,000)",
+      "use_case": "Latin/Electronic/Indie weighted (7% to 16% annual decay)"
+    },
+    {
+      "slug": "sell-too-lost-royalties",
+      "href": "/sell/sell-too-lost-royalties/",
+      "category": "distributor",
+      "kicker": "Too Lost: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your Too Lost Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (4.8x to 11.5x LTM)",
+      "description": "Turn your Too Lost streaming earnings ($3,000 to $1,500,000 LTM) into immediate capital. SPACE parses native Too Lost CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, Create Music Group, beatBread, Symphonic Distribution ($3,000 to $1,500,000)",
+      "use_case": "High-velocity Hip-Hop/Phonk/Indie (12% to 25% annual decay)"
+    },
+    {
+      "slug": "sell-cd-baby-royalties",
+      "href": "/sell/sell-cd-baby-royalties/",
+      "category": "distributor",
+      "kicker": "CD Baby: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your CD Baby Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (6.5x to 15.0x LTM)",
+      "description": "Turn your CD Baby streaming earnings ($3,000 to $3,000,000 LTM) into immediate capital. SPACE parses native CD Baby CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, Sound Royalties, Royalty Exchange, SongVest ($3,000 to $3,000,000)",
+      "use_case": "Seasoned Rock/Country/Jazz catalog (5% to 12% annual decay)"
+    },
+    {
+      "slug": "sell-amuse-royalties",
+      "href": "/sell/sell-amuse-royalties/",
+      "category": "distributor",
+      "kicker": "Amuse: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your Amuse Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (5.0x to 12.0x LTM)",
+      "description": "Turn your Amuse streaming earnings ($3,000 to $1,500,000 LTM) into immediate capital. SPACE parses native Amuse CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, beatBread, ANote Music, Create Music Group ($3,000 to $1,500,000)",
+      "use_case": "Indie Pop/Electronic/Hip-Hop (10% to 20% annual decay)"
+    },
+    {
+      "slug": "sell-fuga-orchard-royalties",
+      "href": "/sell/sell-fuga-orchard-royalties/",
+      "category": "distributor",
+      "kicker": "FUGA & The Orchard: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your FUGA & The Orchard Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (7.5x to 16.5x LTM)",
+      "description": "Turn your FUGA & The Orchard streaming earnings ($15,000 to $5,000,000 LTM) into immediate capital. SPACE parses native FUGA & The Orchard CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, Create Music Group, ANote Music, Sound Royalties ($15,000 to $5,000,000)",
+      "use_case": "Institutional label catalogs (5% to 12% annual decay)"
+    },
+    {
+      "slug": "sell-onerpm-royalties",
+      "href": "/sell/sell-onerpm-royalties/",
+      "category": "distributor",
+      "kicker": "ONErpm: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your ONErpm Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (6.0x to 13.5x LTM)",
+      "description": "Turn your ONErpm streaming earnings ($4,000 to $3,000,000 LTM) into immediate capital. SPACE parses native ONErpm CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, Symphonic Distribution, Create Music Group, beatBread ($4,000 to $3,000,000)",
+      "use_case": "Latin/Brazil/Afrobeats/Hip-Hop (8% to 17% annual decay)"
+    },
+    {
+      "slug": "sell-routenote-royalties",
+      "href": "/sell/sell-routenote-royalties/",
+      "category": "distributor",
+      "kicker": "RouteNote: 2026 Multiples, CSV Export & Buyer Matching",
+      "title": "Sell Your RouteNote Music Royalties: 2026 Multiples, CSV Export & Buyer Matching (4.8x to 11.5x LTM)",
+      "description": "Turn your RouteNote streaming earnings ($3,000 to $1,000,000 LTM) into immediate capital. SPACE parses native RouteNote CSV exports for 24 to 48 hour institutional underwriting.",
+      "demand": "Matched buyers: Duetti, beatBread, Create Music Group, ANote Music ($3,000 to $1,000,000)",
+      "use_case": "Indie/Electronic/Instrumental (9% to 20% annual decay)"
+    }
+  ]
+}

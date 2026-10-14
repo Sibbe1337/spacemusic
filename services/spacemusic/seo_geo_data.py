@@ -683,6 +683,156 @@ def render_benchmark_report_html() -> str:
 </html>"""
 
 
+def build_growth_data_pages_payload() -> dict[str, dict[str, Any]]:
+    """
+    Builds the native SPACE cream-UI (`growth-data`) page entries for `GrowthDataPage`
+    covering all 20 `/sell/<slug>/` landing pages and `/data/indie-catalog-multiples-ai-fraud-report-2026/`,
+    plus structured card metadata for `/sell/` (`sell/index.html` & `GenreIndex`).
+    """
+    h1_cls = "text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]"
+    h2_cls = "text-2xl md:text-3xl font-semibold tracking-tight mb-4 mt-12"
+    p_cls = "text-muted-foreground leading-relaxed mb-4"
+    tbl_cls = "w-full text-sm border-collapse"
+    th_cls = "text-left py-3 pr-4 font-medium whitespace-nowrap"
+    td_cls = "py-3 pr-4"
+
+    pages: dict[str, dict[str, Any]] = {}
+    sell_cards: list[dict[str, str]] = []
+
+    for slug, lp in LANDING_PAGES_BY_SLUG.items():
+        crumb_label = "All-Genre Catalog Guide" if lp.category == "genre" else "Distributor Royalty Guide"
+        buyers_str = ", ".join(lp.top_matched_buyers)
+        steps_li = "".join(f'<li class="mb-2">{s}</li>' for s in lp.export_or_underwriting_steps)
+        faqs_details = "".join(
+            f'<details class="border-b border-black/10">'
+            f'<summary class="text-base font-medium py-4 text-left cursor-pointer">{q["question"]}</summary>'
+            f'<p class="text-muted-foreground pb-4 leading-relaxed">{q["answer"]}</p>'
+            f"</details>"
+            for q in lp.faq_items
+        )
+        inner_html = (
+            f'<p class="text-sm text-muted-foreground mb-6"><a href="/sell/" class="hover:underline">Sell</a> / {crumb_label}</p>'
+            f'<h1 class="{h1_cls}">{lp.h1}</h1>'
+            f'<p class="text-sm text-muted-foreground mb-8">By SPACE Editorial Team. Updated October 14, 2026.</p>'
+            f'<p class="{p_cls}">{lp.hero_subtitle}</p>'
+            f'<div class="overflow-x-auto my-6"><table class="{tbl_cls}" style="min-width:600px">'
+            f'<thead><tr class="border-b border-black/10">'
+            f'<th class="{th_cls}">2026 Indicative LTM Multiple</th>'
+            f'<th class="{th_cls}">Eligible Annual Net Royalties</th>'
+            f'<th class="{th_cls}">Decay &amp; Underwriting Benchmark</th>'
+            f'<th class="{th_cls}">Matched Institutional Buyers</th>'
+            f"</tr></thead><tbody>"
+            f'<tr class="border-b border-black/[0.06]">'
+            f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap"><strong>{lp.typical_multiple_range}</strong></td>'
+            f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap">{lp.typical_ltm_range}</td>'
+            f'<td class="{td_cls}" style="vertical-align:top">{lp.annual_decay_benchmark}</td>'
+            f'<td class="{td_cls}" style="vertical-align:top">{buyers_str}</td>'
+            f"</tr></tbody></table></div>"
+            f'<h2 class="{h2_cls}">How to Value &amp; Sell Your Catalog in 3 Steps</h2>'
+            f'<ol class="list-decimal pl-5 text-muted-foreground leading-relaxed mb-6">{steps_li}</ol>'
+            f'<div class="flex flex-wrap gap-4 my-8">'
+            f'<a href="/apply/" class="bg-brand text-white inline-flex px-5 py-3 rounded-md font-medium">Request a free catalog review &nbsp;&#8594;</a>'
+            f'<a href="/calculator/" class="underline underline-offset-2 py-3 text-sm font-medium">Model a sale scenario in 60 seconds &#8594;</a>'
+            f'<a href="/data/indie-catalog-multiples-ai-fraud-report-2026/" class="underline underline-offset-2 py-3 text-sm font-medium">2026 Multiples &amp; AI Forensics Report &#8594;</a>'
+            f"</div>"
+            f'<h2 class="{h2_cls}">Frequently Asked Questions</h2>'
+            f'<div class="w-full">{faqs_details}</div>'
+        )
+        pages[lp.canonical_path] = {
+            "title": lp.title,
+            "description": lp.meta_description,
+            "html": inner_html,
+            "schema": build_page_jsonld_schemas(lp.canonical_path),
+        }
+        kicker = (
+            lp.h1.replace("Sell Your ", "")
+            .replace(" Catalog", "")
+            .replace(" Music", "")
+            .replace(" Royalties & Catalog", "")
+            .replace(" Royalties", "")
+            .strip()
+        )
+        sell_cards.append(
+            {
+                "slug": slug,
+                "href": lp.canonical_path,
+                "category": lp.category,
+                "kicker": kicker,
+                "title": f"{lp.h1} ({lp.typical_multiple_range})",
+                "description": lp.hero_subtitle,
+                "demand": f"Matched buyers: {buyers_str} ({lp.typical_ltm_range})",
+                "use_case": lp.annual_decay_benchmark,
+            }
+        )
+
+    rep = get_indie_catalog_benchmark_report_2026()
+    rep_meta = SEO_PAGE_METADATA_OVERRIDES["/data/indie-catalog-multiples-ai-fraud-report-2026/"]
+    cohort_rows = "".join(
+        f'<tr class="border-b border-black/[0.06]">'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap"><strong>{g["genre_cohort"]}</strong></td>'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap">{g["multiple_range_ltm"]}</td>'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap"><strong>{g["median_multiple"]}x</strong></td>'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap">{g["yr1_decay_pct"]}</td>'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap">{g["terminal_decay_pct"]}</td>'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap">{g["wacc_discount_rate"]}</td>'
+        f"</tr>"
+        for g in rep["genre_multiples_table"]
+    )
+    dsp_rows = "".join(
+        f'<tr class="border-b border-black/[0.06]">'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap"><strong>{d["dsp"]}</strong></td>'
+        f'<td class="{td_cls}" style="vertical-align:top;white-space:nowrap">${d["net_rpm_per_1000_streams_usd"]:.2f}</td>'
+        f'<td class="{td_cls}" style="vertical-align:top">{d["valuation_weight_impact"]}</td>'
+        f"</tr>"
+        for d in rep["dsp_rpm_benchmarks"]
+    )
+    ff = rep["forensics_findings_2026"]
+    findings_li = (
+        f'<li class="mb-2"><strong>{ff["catalogs_flagged_for_bot_or_ai_anomalies_pct"]}%</strong> of independent catalogs screened in 2026 triggered at least one of our {ff["total_checks_in_protocol"]} AI or bot stream-farming flags.</li>'
+        f'<li class="mb-2">Flagged catalogs experienced an average valuation haircut of <strong>{ff["average_valuation_haircut_when_flagged_pct"]}%</strong> during institutional underwriting.</li>'
+        f'<li class="mb-2">Catalogs passing all {ff["total_checks_in_protocol"]} forensic integrity checks earned a <strong>+{ff["verified_clean_catalog_multiple_premium_pct"]}%</strong> multiple premium across matched buyers.</li>'
+        f'<li class="mb-2">Spotify sub-1,000 stream track demonetization reduced raw unadjusted indie catalog LTM by a median of <strong>{ff["spotify_sub_1000_stream_isrc_demonetization_median_loss_pct"]}%</strong>.</li>'
+    )
+    rep_html = (
+        f'<p class="text-sm text-muted-foreground mb-6"><a href="/data/music-catalog-market-2026/" class="hover:underline">Data</a> / 2026 Indie Catalog Multiples &amp; AI Fraud Report</p>'
+        f'<h1 class="{h1_cls}">{rep["title"]}</h1>'
+        f'<p class="text-sm text-muted-foreground mb-8">By SPACE Research &amp; Underwriting Desk. Updated October 14, 2026. Sample size: {rep["sample_size_catalogs"]:,} independent catalogs ({rep["ltm_range_analyzed_usd"]} LTM).</p>'
+        f'<p class="{p_cls}">{rep_meta.meta_description}</p>'
+        f'<h2 class="{h2_cls}">Key Executive &amp; Forensics Findings (H1–H2 2026)</h2>'
+        f'<ul class="list-disc pl-5 text-muted-foreground leading-relaxed mb-6">{findings_li}</ul>'
+        f'<h2 class="{h2_cls}">2026 LTM Multiples, Decay Rates &amp; WACC by Genre Cohort</h2>'
+        f'<div class="overflow-x-auto my-6"><table class="{tbl_cls}" style="min-width:760px">'
+        f'<thead><tr class="border-b border-black/10">'
+        f'<th class="{th_cls}">Genre Cohort</th>'
+        f'<th class="{th_cls}">LTM Multiple Range</th>'
+        f'<th class="{th_cls}">Median</th>'
+        f'<th class="{th_cls}">Yr-1 Decay</th>'
+        f'<th class="{th_cls}">Terminal Decay</th>'
+        f'<th class="{th_cls}">WACC</th>'
+        f"</tr></thead><tbody>{cohort_rows}</tbody></table></div>"
+        f'<h2 class="{h2_cls}">DSP Net Payout RPM &amp; Underwriting Weight (2026)</h2>'
+        f'<div class="overflow-x-auto my-6"><table class="{tbl_cls}" style="min-width:640px">'
+        f'<thead><tr class="border-b border-black/10">'
+        f'<th class="{th_cls}">Streaming Platform (DSP)</th>'
+        f'<th class="{th_cls}">Net RPM / 1,000 Streams (USD)</th>'
+        f'<th class="{th_cls}">Underwriting &amp; Multiple Impact</th>'
+        f"</tr></thead><tbody>{dsp_rows}</tbody></table></div>"
+        f'<h2 class="{h2_cls}">How to Use This Benchmark Data</h2>'
+        f'<p class="{p_cls}">Indicative cohort multiples provide institutional context, while every catalog offer requires individual verification of distributor CSVs, rights chain of title, and streaming integrity. '
+        f'<a href="/calculator/" class="underline underline-offset-2">Model your catalog valuation in 60 seconds</a>, '
+        f'<a href="/sell/" class="underline underline-offset-2">browse all genre and distributor guides</a>, or '
+        f'<a href="/apply/" class="underline underline-offset-2">request a free catalog review</a>.</p>'
+    )
+    pages["/data/indie-catalog-multiples-ai-fraud-report-2026/"] = {
+        "title": rep_meta.title,
+        "description": rep_meta.meta_description,
+        "html": rep_html,
+        "schema": rep["jsonld_schemas"],
+    }
+
+    return {"pages": pages, "sell_cards": sell_cards}
+
+
 def export_seo_static_bundle(
     output_dir: str = "/workspace/services/spacemusic/seo_static_bundle",
 ) -> dict[str, str]:
@@ -705,6 +855,7 @@ def export_seo_static_bundle(
         "widget/calculator.js": render_embeddable_calculator_widget_js(),
         ".well-known/brand-facts.json": json.dumps(get_brand_facts_payload(), indent=2),
         "data/indie-catalog-multiples-ai-fraud-report-2026/index.html": render_benchmark_report_html(),
+        "growth-data-pages.json": json.dumps(build_growth_data_pages_payload(), indent=2),
         "seo-metadata-manifest.json": json.dumps(
             {
                 path: {
