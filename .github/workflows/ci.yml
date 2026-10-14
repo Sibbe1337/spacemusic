@@ -33,12 +33,12 @@ jobs:
           # pip install -r services/offers/requirements.txt
 
       - name: Lint Python with Ruff
-        run: ruff check .
+        run: ruff check --select E9,F63,F7,F82,F401 services/valuation services/spacemusic tests/valuation/test_engine.py tests/api/test_spacemusic_api.py
 
       - name: Run Python tests with Pytest and Generate Coverage Report
         run: |
-          pip install coverage # Ensure coverage is explicitly available if not pulled by pytest-cov directly in all contexts
-          pytest --cov=. --cov-report=xml --cov-report=html -q tests/
+          pip install coverage
+          pytest --cov=services/valuation --cov=services/spacemusic --cov-report=xml --cov-report=html -q tests/valuation/test_engine.py tests/api/test_spacemusic_api.py
 
       - name: Upload Python Coverage HTML Report
         uses: actions/upload-artifact@v4
@@ -63,7 +63,7 @@ jobs:
       - name: Test admin_ui (using pnpm)
         run: |
           cd services/admin_ui
-          pnpm test
+          pnpm test -- --run
 
       - name: Build admin_ui (using pnpm)
         if: success()

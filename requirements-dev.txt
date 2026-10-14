@@ -4,6 +4,10 @@ pytest-cov # For coverage reporting
 mypy
 alembic
 sqlmodel
+fastapi
+pydantic
+PyYAML
+structlog
 httpx # For making HTTP requests in tests and application code
 respx # For mocking HTTPX requests
 

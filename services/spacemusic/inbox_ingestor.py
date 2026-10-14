@@ -48,6 +48,11 @@ from .buyer_router import (
     InstitutionalRoutingReport,
     route_catalog_to_institutional_buyers,
 )
+from .closing_pack import (
+    BlindDealTeaser,
+    IsrcCollisionAlert,
+    generate_blind_deal_teaser,
+)
 from .models import CatalogApplication, ReplyDraft
 from .typeform_adapter import (
     application_to_valuation_input,
@@ -84,6 +89,8 @@ class AutonomousStage2UnderwritingResult(BaseModel):
     valuation: CatalogValuationOutput
     seller_offer_draft: ReplyDraft
     institutional_routing: InstitutionalRoutingReport
+    blind_deal_teaser: Optional[BlindDealTeaser] = None
+    isrc_collision_alerts: List[IsrcCollisionAlert] = Field(default_factory=list)
     slack_deal_card_markdown: str
 
 
@@ -353,6 +360,11 @@ def ingest_inbound_email_statements(
     valuation = eng.evaluate(val_input, reference_date=reference_date)
     seller_offer_draft = generate_reply_draft(matched_app, valuation)
     routing_report = route_catalog_to_institutional_buyers(matched_app, valuation)
+    blind_teaser = generate_blind_deal_teaser(
+        matched_app,
+        valuation,
+        routing=routing_report,
+    )
 
     # Update application state in store
     matched_app.pipeline_status = valuation.pipeline_status
@@ -385,5 +397,6 @@ def ingest_inbound_email_statements(
         valuation=valuation,
         seller_offer_draft=seller_offer_draft,
         institutional_routing=routing_report,
+        blind_deal_teaser=blind_teaser,
         slack_deal_card_markdown=slack_card,
     )

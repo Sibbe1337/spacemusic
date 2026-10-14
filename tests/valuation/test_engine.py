@@ -974,6 +974,100 @@ def test_heterogeneous_symphonic_csv_and_youtube_studio_xlsx_ingestion(engine: S
     assert res.valuation.baseline.effective_cf0_eur > 6000.0
     assert res.valuation.price_median_eur > 12000.0
     assert res.institutional_routing.eligible_for_syndication is True
+    assert res.blind_deal_teaser is not None
+    assert "SPC-" in res.blind_deal_teaser.deal_code
+    assert "phoenix records label" not in res.blind_deal_teaser.teaser_markdown.lower()
+
+
+def test_closing_document_pack_and_cross_catalog_isrc_fraud_detector(
+    engine: SpaceValuationEngine,
+    tmp_path,
+):
+    """
+    Verifies:
+    1. `generate_closing_document_pack` generates the Blind Deal Teaser (redacting artist/ISRC),
+       Institutional NCND & Fee Agreement, Distributor Letter of Direction (LOD), and
+       Split-Wire Settlement Statement (computing SPACE's origination fee + syndication spread).
+    2. `DealLakeRepository.register_and_check_isrc_collisions` persists applications & ISRCs to
+       SQLite and catches a second seller attempting to submit the exact same ISRC (`CROSS_CATALOG_ISRC_COLLISION`).
+    """
+    from services.spacemusic.closing_pack import (
+        DealLakeRepository,
+        generate_closing_document_pack,
+    )
+    from services.spacemusic.models import CatalogApplication
+
+    db_file = tmp_path / "test_deal_lake.sqlite3"
+    lake = DealLakeRepository(db_path=db_file)
+
+    csv_seller_a = (
+        "Sale Month,Store,Artist,Title,ISRC,Quantity,Earnings (USD),Country of Sale,Release Date\n"
+        "2026-01,Spotify,Original Artist,Golden Song,USORG2400999,500000,1800.00,US,2024-01-15\n"
+        "2026-02,Spotify,Original Artist,Golden Song,USORG2400999,490000,1750.00,US,2024-01-15\n"
+    )
+    summary_a = parse_statement_csv(csv_seller_a)
+    app_a = CatalogApplication(
+        contact_name="Legit Owner",
+        contact_email="legit@artist.com",
+        artist_or_label_name="Original Artist",
+        distributor_or_admin="DistroKid",
+        declared_ltm_amount=21000.0,
+        declared_currency="USD",
+        statements_verified=True,
+    )
+    lake.save_application(app_a)
+    alerts_a = lake.register_and_check_isrc_collisions(app_a, summary_a)
+    assert len(alerts_a) == 0
+
+    # Now Seller B tries to submit the same ISRC (`USORG2400999`) under a different email!
+    app_b = CatalogApplication(
+        contact_name="Scam Cloner",
+        contact_email="scammer@clone.org",
+        artist_or_label_name="Clone Uploader",
+        distributor_or_admin="TuneCore",
+        declared_ltm_amount=21000.0,
+        declared_currency="USD",
+        statements_verified=True,
+    )
+    alerts_b = lake.register_and_check_isrc_collisions(app_b, summary_a)
+    assert len(alerts_b) == 1
+    assert alerts_b[0].isrc == "USORG2400999"
+    assert alerts_b[0].prior_seller_email == "legit@artist.com"
+    assert "CROSS_CATALOG_ISRC_COLLISION" in alerts_b[0].message
+
+    # Verify Closing Document Pack math (Seller agreed €18,500, Institutional Buyer funds €22,000)
+    val_out = engine.evaluate(
+        CatalogValuationInput(
+            catalog_title="Phoenix Catalog",
+            artist_or_label_name="phoenix records label",
+            distributor_or_admin="Symphonic",
+            declared_ltm_amount=7790.0,
+            declared_currency="EUR",
+            statements_verified=True,
+            tracks=summary_a.tracks,
+        ),
+        reference_date=date(2026, 10, 14),
+    )
+    pack = generate_closing_document_pack(
+        app_a,
+        val_out,
+        seller_legal_name="Mohammed Belmokhtar",
+        seller_address="Hay Al Qods, Rue Dalia N°10, Oujda, Morocco",
+        buyer_entity_name="Create Music Group Acquisitions LLC",
+        seller_agreed_price_eur=18500.0,
+        buyer_gross_funding_eur=22000.0,
+        origination_fee_pct=0.06,
+        holdback_pct=0.20,
+    )
+    assert pack.seller_total_consideration_eur == 18500.0
+    assert pack.seller_closing_wire_eur == 14800.0
+    assert pack.seller_holdback_eur == 3700.0
+    assert pack.space_origination_fee_eur == 1110.0
+    assert pack.space_spread_eur == 2390.0
+    assert pack.space_total_take_eur == 3500.0
+    assert "IRREVOCABLE LETTER OF DIRECTION" in pack.letter_of_direction_markdown
+    assert "CLOSING SETTLEMENT STATEMENT" in pack.settlement_statement_markdown
+
 
 
 

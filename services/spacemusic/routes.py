@@ -37,6 +37,14 @@ from .buyer_router import (
     InstitutionalRoutingReport,
     route_catalog_to_institutional_buyers,
 )
+from .closing_pack import (
+    BlindDealTeaser,
+    ClosingDocumentPack,
+    DealLakeRepository,
+    IsrcCollisionAlert,
+    generate_blind_deal_teaser,
+    generate_closing_document_pack,
+)
 from .inbox_ingestor import (
     AutonomousStage2UnderwritingResult,
     InboundEmailStatementWebhook,
@@ -58,11 +66,23 @@ from .zero_touch_stage1 import (
 router = APIRouter()
 logger = structlog.get_logger(__name__)
 
-# In-memory store with optional SQLite/Postgres persistence fallback so service works out-of-the-box
+# In-memory store backed by SQLite DealLakeRepository so state persists across restarts
 _APPLICATIONS_STORE: Dict[uuid.UUID, CatalogApplication] = {}
 _BENCHMARKS_STORE: List[ProprietaryBenchmarkRecord] = []
+_deal_lake = DealLakeRepository()
 
 _engine = SpaceValuationEngine()
+
+
+class ClosingPackRequest(BaseModel):
+    seller_legal_name: str
+    seller_address: str
+    buyer_entity_name: str = "Designated Institutional Buyer Affiliate"
+    seller_agreed_price_eur: Optional[float] = None
+    buyer_gross_funding_eur: Optional[float] = None
+    origination_fee_pct: float = 0.06
+    holdback_pct: float = 0.20
+    space_iban: str = "SE00 0000 0000 0000 0000 0000 (SPACE Corporate Treasury)"
 
 
 class DirectEvaluationRequest(BaseModel):
@@ -93,6 +113,8 @@ class ApplicationEvaluationResponse(BaseModel):
     implied_revenue_crosscheck: Optional[ImpliedRevenueCrossCheck] = None
     distributor_export_guide: Optional[str] = None
     institutional_routing: Optional[InstitutionalRoutingReport] = None
+    blind_deal_teaser: Optional[BlindDealTeaser] = None
+    isrc_collision_alerts: List[IsrcCollisionAlert] = []
 
 
 @router.post(
@@ -303,6 +325,9 @@ async def attach_statements_to_application(
         )
 
     routing = route_catalog_to_institutional_buyers(app_row, valuation)
+    blind_teaser = generate_blind_deal_teaser(app_row, valuation, routing=routing)
+    collision_alerts = _deal_lake.register_and_check_isrc_collisions(app_row, stmt_summary)
+    _deal_lake.save_application(app_row)
 
     return ApplicationEvaluationResponse(
         application_id=app_row.id,
@@ -312,6 +337,8 @@ async def attach_statements_to_application(
         reply_draft=reply_draft,
         statement_summary=stmt_summary,
         institutional_routing=routing,
+        blind_deal_teaser=blind_teaser,
+        isrc_collision_alerts=collision_alerts,
     )
 
 
@@ -364,6 +391,40 @@ async def get_application_buyer_routing(application_id: uuid.UUID):
     val_input = application_to_valuation_input(app_row)
     valuation = _engine.evaluate(val_input)
     return route_catalog_to_institutional_buyers(app_row, valuation)
+
+
+@router.post(
+    "/catalog-review/{application_id}/closing-pack",
+    response_model=ClosingDocumentPack,
+)
+async def create_application_closing_pack(
+    application_id: uuid.UUID,
+    req: ClosingPackRequest,
+):
+    """
+    Generates the 4-part Closing Document Pack for an evaluated catalog:
+    1. Blind Deal Teaser (`SPC-XXXXXX`)
+    2. Institutional Non-Circumvention & Origination Fee Agreement (`NCND`)
+    3. Irrevocable Distributor Letter of Direction (`LOD`)
+    4. Closing Settlement Statement & Split-Wire Instructions
+    """
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application not found")
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    return generate_closing_document_pack(
+        app_row,
+        valuation,
+        seller_legal_name=req.seller_legal_name,
+        seller_address=req.seller_address,
+        buyer_entity_name=req.buyer_entity_name,
+        seller_agreed_price_eur=req.seller_agreed_price_eur,
+        buyer_gross_funding_eur=req.buyer_gross_funding_eur,
+        origination_fee_pct=req.origination_fee_pct,
+        holdback_pct=req.holdback_pct,
+        space_iban=req.space_iban,
+    )
 
 
 @router.post("/catalog-review/import-csv")
