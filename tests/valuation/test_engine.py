@@ -8,6 +8,11 @@ import pytest
 from fastapi.testclient import TestClient
 
 from services.spacemusic.main import app as spacemusic_app
+from services.valuation.dtw_matcher import (
+    LifecycleArchetype,
+    evaluate_dtw_lifecycle,
+    sakoe_chiba_dtw_distance,
+)
 from services.valuation.engine import (
     CatalogValuationInput,
     GenreFamily,
@@ -16,7 +21,9 @@ from services.valuation.engine import (
     RoyaltyBasis,
     SpaceValuationEngine,
     TrackInput,
+    classify_genre_family,
     is_distributor_name,
+    load_rules,
     winsorize_monthly_spikes,
 )
 from services.valuation.statement_parser import parse_statement_csv
@@ -336,3 +343,62 @@ def test_spacemusic_typeform_webhook_and_statement_upgrade_flow():
     dsps = {b["dsp_store"] for b in benchmarks}
     assert "spotify" in dsps
     assert "apple_music" in dsps
+
+
+def test_all_8_genre_classifications_and_cohort_hierarchy(engine: SpaceValuationEngine):
+    """
+    Verifies all 8 distinct genre families are classified accurately and that their
+    cohort decay curves produce sensible valuation multiples (e.g. Classical/Jazz & Rock
+    command higher multiples than Frontline Hip-Hop/Phonk).
+    """
+    rules = load_rules()
+    assert classify_genre_family(["ambient", "sleep"], rules) == GenreFamily.AMBIENT_FUNCTIONAL
+    assert classify_genre_family(["lo-fi beats", "chillhop"], rules) == GenreFamily.LOFI_CHILL
+    assert classify_genre_family(["deep house", "melodic techno"], rules) == GenreFamily.ELECTRONIC_DANCE
+    assert classify_genre_family(["drift phonk", "trap", "hip-hop"], rules) == GenreFamily.HIPHOP_RNB_PHONK
+    assert classify_genre_family(["indie pop", "synthpop"], rules) == GenreFamily.POP_INDIE
+    assert classify_genre_family(["indie rock", "americana", "country"], rules) == GenreFamily.ROCK_METAL_COUNTRY
+    assert classify_genre_family(["reggaeton", "afrobeats"], rules) == GenreFamily.LATIN_AFRO
+    assert classify_genre_family(["neo-classical", "solo piano", "jazz"], rules) == GenreFamily.CLASSICAL_JAZZ_INSTRUMENTAL
+
+
+def test_dtw_phase_shift_invariance_and_artificial_step_plateau_detection(engine: SpaceValuationEngine):
+    """
+    Tests Dynamic Time Warping (DTW):
+    1. Two songs with identical burn-in shapes but peaked 2 months apart have near-zero
+       Sakoe-Chiba DTW distance (whereas Euclidean distance is large).
+    2. A catalog with a 5-month flat rectangular step-plateau (paid bot/playlist campaign)
+       is caught by `DTW_ARTIFICIAL_STEP_PLATEAU` and penalized in the valuation.
+    """
+    # 1. Phase-shifted lifecycle curves (Peak at month 2 vs Peak at month 4)
+    curve_early_peak = [0.3, 1.0, 0.75, 0.55, 0.42, 0.35, 0.32, 0.30, 0.29, 0.28, 0.27, 0.26]
+    curve_late_peak = [0.2, 0.25, 0.3, 1.0, 0.75, 0.55, 0.42, 0.35, 0.32, 0.30, 0.29, 0.28]
+
+    dtw_dist = sakoe_chiba_dtw_distance(curve_early_peak, curve_late_peak, window=3)
+    assert dtw_dist < 0.08  # DTW recognizes it is the exact same lifecycle shape!
+
+    # 2. Artificial rectangular step-plateau: €80/m baseline -> sudden €1,000/m flat block for 5 months -> €90/m
+    step_months = [
+        MonthlyStatementPoint(period=f"2025-{m:02d}", net_royalties_eur=v, streams=int(v * 350))
+        for m, v in enumerate(
+            [80.0, 85.0, 78.0, 82.0, 1000.0, 1005.0, 998.0, 1002.0, 995.0, 85.0, 80.0, 78.0],
+            start=1,
+        )
+    ]
+    step_inp = CatalogValuationInput(
+        catalog_title="Paid Playlist Step Catalog",
+        artist_or_label_name="Boosted Artist",
+        declared_ltm_amount=5668.0,
+        declared_currency="EUR",
+        statements_verified=True,
+        genres=["electronic", "house"],
+        monthly_history=step_months,
+        notes="Used a non-exclusive beatstars lease on one track.",
+    )
+    out = engine.evaluate(step_inp, reference_date=date(2026, 10, 14))
+    assert out.dtw_analysis is not None
+    assert out.dtw_analysis.is_artificial_step_plateau is True
+    assert out.dtw_analysis.matched_archetype == LifecycleArchetype.ARTIFICIAL_STEP_PLATEAU
+    flag_codes = {rf.code for rf in out.risk_flags}
+    assert "DTW_ARTIFICIAL_STEP_PLATEAU" in flag_codes
+

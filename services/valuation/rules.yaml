@@ -33,8 +33,8 @@ FUNCTIONAL_NOISE_POLICY:
     - "asmr"
     - "soundscape"
     - "binaural"
-    - "lo-fi"
-    - "lofi"
+    - "drone"
+    - "spa"
   short_track_haircut: 0.85
 
 TRACK_CONCENTRATION_HHI:
@@ -45,27 +45,72 @@ TRACK_CONCENTRATION_HHI:
   max_discount_rate_premium: 0.045
 
 COHORT_DECAY_PRIORS:
-  description: "Empirical annual decay rates by catalog dollar-age cohort and genre family."
+  description: "Empirical annual decay rates across 8 distinct genre families and 4 dollar-age cohorts."
   ambient_functional:
     frontline_0_12m: 0.26
     burn_in_12_24m: 0.14
     mid_catalog_24_48m: 0.06
     evergreen_48m_plus: 0.025
+  lofi_chill:
+    frontline_0_12m: 0.32
+    burn_in_12_24m: 0.17
+    mid_catalog_24_48m: 0.08
+    evergreen_48m_plus: 0.032
+  electronic_dance:
+    frontline_0_12m: 0.42
+    burn_in_12_24m: 0.22
+    mid_catalog_24_48m: 0.11
+    evergreen_48m_plus: 0.040
+  hiphop_rnb_phonk:
+    frontline_0_12m: 0.56
+    burn_in_12_24m: 0.30
+    mid_catalog_24_48m: 0.14
+    evergreen_48m_plus: 0.055
+  pop_indie:
+    frontline_0_12m: 0.46
+    burn_in_12_24m: 0.24
+    mid_catalog_24_48m: 0.115
+    evergreen_48m_plus: 0.042
+  rock_metal_country:
+    frontline_0_12m: 0.34
+    burn_in_12_24m: 0.17
+    mid_catalog_24_48m: 0.075
+    evergreen_48m_plus: 0.025
+  latin_afro:
+    frontline_0_12m: 0.42
+    burn_in_12_24m: 0.21
+    mid_catalog_24_48m: 0.095
+    evergreen_48m_plus: 0.038
+  classical_jazz_instrumental:
+    frontline_0_12m: 0.25
+    burn_in_12_24m: 0.13
+    mid_catalog_24_48m: 0.055
+    evergreen_48m_plus: 0.020
+  # Backward-compatible aliases
   electronic_indie:
     frontline_0_12m: 0.42
     burn_in_12_24m: 0.22
     mid_catalog_24_48m: 0.11
-    evergreen_48m_plus: 0.04
+    evergreen_48m_plus: 0.040
   pop_hiphop_rnb:
     frontline_0_12m: 0.52
     burn_in_12_24m: 0.28
     mid_catalog_24_48m: 0.13
-    evergreen_48m_plus: 0.05
+    evergreen_48m_plus: 0.050
   rock_folk_country:
-    frontline_0_12m: 0.36
-    burn_in_12_24m: 0.18
-    mid_catalog_24_48m: 0.08
-    evergreen_48m_plus: 0.03
+    frontline_0_12m: 0.34
+    burn_in_12_24m: 0.17
+    mid_catalog_24_48m: 0.075
+    evergreen_48m_plus: 0.025
+
+DTW_MODEL:
+  description: "Dynamic Time Warping (DTW) parameters for shape-based lifecycle matching and fraud plateau detection."
+  sakoe_chiba_band_months: 3
+  min_months_for_dtw: 6
+  knn_top_k: 3
+  kernel_bandwidth_sigma: 0.35
+  max_dtw_blend_weight: 0.55
+  step_plateau_distance_threshold: 0.18
 
 DISTRIBUTOR_FEES:
   description: "Default distributor/admin commission rates when applicant reports gross royalties before deductions."
@@ -92,6 +137,7 @@ RPM_BENCHMARKS_USD_PER_STREAM:
     blended_max: 0.0058
     functional_noise_min: 0.0004
     functional_noise_expected: 0.0012
+    latin_afro_min: 0.0009
   apple_music:
     blended_min: 0.0035
     blended_expected: 0.0068

@@ -34,6 +34,13 @@ import numpy as np
 import yaml
 from pydantic import BaseModel, Field
 
+from .dtw_matcher import (
+    DTWMatchResult,
+    LifecycleArchetype,
+    compute_cross_track_dtw_synchrony,
+    evaluate_dtw_lifecycle,
+)
+
 
 RULES_DEFAULT_PATH = Path(__file__).parent / "rules.yaml"
 
@@ -85,6 +92,14 @@ HIGH_BOT_RISK_COUNTRIES = {
 
 class GenreFamily(str, Enum):
     AMBIENT_FUNCTIONAL = "ambient_functional"
+    LOFI_CHILL = "lofi_chill"
+    ELECTRONIC_DANCE = "electronic_dance"
+    HIPHOP_RNB_PHONK = "hiphop_rnb_phonk"
+    POP_INDIE = "pop_indie"
+    ROCK_METAL_COUNTRY = "rock_metal_country"
+    LATIN_AFRO = "latin_afro"
+    CLASSICAL_JAZZ_INSTRUMENTAL = "classical_jazz_instrumental"
+    # Backward-compatible aliases
     ELECTRONIC_INDIE = "electronic_indie"
     POP_HIPHOP_RNB = "pop_hiphop_rnb"
     ROCK_FOLK_COUNTRY = "rock_folk_country"
@@ -253,6 +268,7 @@ class CatalogValuationOutput(BaseModel):
     implied_blended_rpm_usd: Optional[float] = None
 
     risk_flags: List[RiskFlag] = Field(default_factory=list)
+    dtw_analysis: Optional[DTWMatchResult] = None
     deal_structure: DealStructureRecommendation
     yearly_projected_cashflows_p50_eur: List[float] = Field(default_factory=list)
     missing_data_fields: List[str] = Field(default_factory=list)
@@ -278,29 +294,50 @@ def is_distributor_name(candidate: str) -> bool:
 
 def classify_genre_family(genres: List[str], rules: Dict[str, Any]) -> GenreFamily:
     if not genres:
-        return GenreFamily.ELECTRONIC_INDIE
+        return GenreFamily.ELECTRONIC_DANCE
 
     joined = " ".join(g.lower() for g in genres)
+
+    # 1. Check Lo-Fi / Chillhop Beats first (musical beats rather than pure white noise)
+    if any(kw in joined for kw in ["lo-fi", "lofi", "chillhop", "study beats", "chill beats"]):
+        return GenreFamily.LOFI_CHILL
+
+    # 2. Check Ambient / Functional / Sleep / Meditation / White Noise
     func_keywords = rules.get("FUNCTIONAL_NOISE_POLICY", {}).get(
         "functional_genres",
         [
             "ambient", "sleep", "white noise", "rain", "nature",
-            "meditation", "wellness", "asmr", "soundscape", "binaural", "lo-fi", "lofi",
+            "meditation", "wellness", "asmr", "soundscape", "binaural", "drone", "spa",
         ],
     )
     if any(kw in joined for kw in func_keywords):
         return GenreFamily.AMBIENT_FUNCTIONAL
 
-    if any(
-        kw in joined
-        for kw in ["hip hop", "hip-hop", "rap", "trap", "drill", "r&b", "rnb", "pop", "phonk", "reggaeton", "latin"]
-    ):
-        return GenreFamily.POP_HIPHOP_RNB
+    # 3. Classical / Neo-Classical / Jazz / Instrumental Acoustic
+    if any(kw in joined for kw in ["classical", "neo-classical", "neoclassical", "orchestral", "jazz", "bossa", "solo piano", "acoustic instrumental"]):
+        return GenreFamily.CLASSICAL_JAZZ_INSTRUMENTAL
 
-    if any(kw in joined for kw in ["rock", "metal", "folk", "country", "americana", "blues", "jazz", "classical"]):
-        return GenreFamily.ROCK_FOLK_COUNTRY
+    # 4. Latin / Reggaeton / Afrobeats / Brazilian Funk
+    if any(kw in joined for kw in ["reggaeton", "latin", "urbano", "afrobeats", "afropop", "amapiano", "baile funk", "bachata", "salsa", "regional mexicano"]):
+        return GenreFamily.LATIN_AFRO
 
-    return GenreFamily.ELECTRONIC_INDIE
+    # 5. Hip-Hop / R&B / Phonk / Rap / Trap / Drill
+    if any(kw in joined for kw in ["hip hop", "hip-hop", "rap", "trap", "drill", "r&b", "rnb", "phonk", "drift phonk"]):
+        return GenreFamily.HIPHOP_RNB_PHONK
+
+    # 6. Rock / Metal / Folk / Country / Americana
+    if any(kw in joined for kw in ["rock", "metal", "punk", "grunge", "folk", "country", "americana", "blues", "bluegrass"]):
+        return GenreFamily.ROCK_METAL_COUNTRY
+
+    # 7. Electronic / House / Techno / EDM / Drum & Bass
+    if any(kw in joined for kw in ["electronic", "house", "techno", "trance", "edm", "drum and bass", "dnb", "dubstep", "synthwave", "electro", "club"]):
+        return GenreFamily.ELECTRONIC_DANCE
+
+    # 8. Pop / Indie Pop / Singer-Songwriter
+    if any(kw in joined for kw in ["pop", "indie", "singer-songwriter", "alt-pop", "synthpop"]):
+        return GenreFamily.POP_INDIE
+
+    return GenreFamily.ELECTRONIC_DANCE
 
 
 def lookup_distributor_fee(
@@ -605,6 +642,13 @@ class SpaceValuationEngine:
                 else:
                     post_decay = prior_decay
 
+                # DTW shape-based trajectory refinement if track has >=6 monthly points
+                if len(t.monthly_royalties_eur) >= 6:
+                    track_dtw = evaluate_dtw_lifecycle(t.monthly_royalties_eur)
+                    if track_dtw is not None and track_dtw.dtw_blend_weight > 0:
+                        bw = track_dtw.dtw_blend_weight
+                        post_decay = (1.0 - bw) * post_decay + bw * track_dtw.dtw_implied_annual_decay_rate
+
                 track_year1_decays.append(post_decay)
                 # Steady-state (year 4+) decay converges toward evergreen prior
                 steady_prior = float(priors.get("evergreen_48m_plus", 0.04))
@@ -736,11 +780,12 @@ class SpaceValuationEngine:
             implied_rpm_usd = effective_usd / float(total_hist_streams)
 
             rpm_cfg = self.rules.get("RPM_BENCHMARKS_USD_PER_STREAM", {}).get("spotify", {})
-            min_rpm = (
-                float(rpm_cfg.get("functional_noise_min", 0.0004))
-                if genre_family == GenreFamily.AMBIENT_FUNCTIONAL
-                else float(rpm_cfg.get("blended_min", 0.0014))
-            )
+            if genre_family == GenreFamily.AMBIENT_FUNCTIONAL:
+                min_rpm = float(rpm_cfg.get("functional_noise_min", 0.0004))
+            elif genre_family == GenreFamily.LATIN_AFRO:
+                min_rpm = float(rpm_cfg.get("latin_afro_min", 0.0009))
+            else:
+                min_rpm = float(rpm_cfg.get("blended_min", 0.0014))
             max_rpm = float(rpm_cfg.get("blended_max", 0.0058)) * 1.5
 
             if implied_rpm_usd < min_rpm or implied_rpm_usd > max_rpm:
@@ -799,7 +844,7 @@ class SpaceValuationEngine:
             inp.spotify_followers is not None
             and inp.spotify_followers < 250
             and effective_cf0_eur > 15000
-            and genre_family != GenreFamily.AMBIENT_FUNCTIONAL
+            and genre_family not in {GenreFamily.AMBIENT_FUNCTIONAL, GenreFamily.LOFI_CHILL, GenreFamily.CLASSICAL_JAZZ_INSTRUMENTAL}
         ):
             risk_flags.append(
                 RiskFlag(
@@ -813,6 +858,98 @@ class SpaceValuationEngine:
                     discount_rate_bps_impact=175,
                 )
             )
+
+        # Forensics Check 7: Genre-Specific Sample / Beat-Lease Clearance Risk (Hip-Hop / Phonk / R&B)
+        if genre_family in {GenreFamily.HIPHOP_RNB_PHONK, GenreFamily.POP_HIPHOP_RNB}:
+            notes_lower = (inp.notes or "").lower()
+            if any(kw in notes_lower for kw in ["lease", "beatstars", "uncleared", "sample", "type beat", "non-exclusive"]):
+                risk_flags.append(
+                    RiskFlag(
+                        code="BEAT_LEASE_OR_SAMPLE_CLEARANCE_RISK",
+                        severity=RiskSeverity.HIGH,
+                        title="Beat-Lease or Uncleared Sample Exposure",
+                        description=(
+                            "Applicant notes reference beat leases, type beats, or sample usage in a Hip-Hop/Phonk/R&B catalog. "
+                            "Require exclusive master producer agreements and sample clearance documentation before closing."
+                        ),
+                        discount_rate_bps_impact=250,
+                    )
+                )
+
+        # Forensics Check 8: Dynamic Time Warping (DTW) Lifecycle Archetype & Step-Plateau Fraud Detection
+        dtw_result: Optional[DTWMatchResult] = None
+        dtw_cfg = self.rules.get("DTW_MODEL", {})
+        dtw_series: List[float] = []
+        if inp.monthly_history and len(inp.monthly_history) >= int(dtw_cfg.get("min_months_for_dtw", 6)):
+            sorted_mh = sorted(inp.monthly_history, key=lambda m: m.period)
+            dtw_series = [m.net_royalties_eur for m in sorted_mh]
+        elif tracks and any(len(t.monthly_royalties_eur) >= 6 for t in tracks):
+            longest_track = max(tracks, key=lambda t: len(t.monthly_royalties_eur))
+            dtw_series = longest_track.monthly_royalties_eur
+
+        if len(dtw_series) >= 6:
+            dtw_result = evaluate_dtw_lifecycle(
+                dtw_series,
+                window=int(dtw_cfg.get("sakoe_chiba_band_months", 3)),
+                sigma=float(dtw_cfg.get("kernel_bandwidth_sigma", 0.35)),
+                max_blend_weight=float(dtw_cfg.get("max_dtw_blend_weight", 0.55)),
+                step_threshold=float(dtw_cfg.get("step_plateau_distance_threshold", 0.18)),
+            )
+            if dtw_result is not None:
+                # Check cross-track synchrony if multiple tracks have monthly series
+                track_series_list = [t.monthly_royalties_eur for t in tracks if len(t.monthly_royalties_eur) >= 6]
+                sync_score = compute_cross_track_dtw_synchrony(track_series_list)
+                dtw_result.cross_track_synchrony_score = sync_score
+
+                if dtw_result.is_artificial_step_plateau:
+                    risk_flags.append(
+                        RiskFlag(
+                            code="DTW_ARTIFICIAL_STEP_PLATEAU",
+                            severity=RiskSeverity.CRITICAL,
+                            title="DTW Rectangular Step-Plateau Detected (Paid Playlist/Bot Signature)",
+                            description=(
+                                f"Dynamic Time Warping matched the monthly revenue curve to an ARTIFICIAL_STEP_PLATEAU "
+                                f"(DTW distance {dtw_result.dtw_distance:.3f}). The catalog exhibits a sudden flat ceiling "
+                                "with near-zero organic variance typical of fixed-volume paid playlisting or stream farming."
+                            ),
+                            discount_rate_bps_impact=350,
+                        )
+                    )
+                elif dtw_result.matched_archetype == LifecycleArchetype.VIRAL_SPIKE_CRASH and dtw_result.dtw_distance < 0.22:
+                    risk_flags.append(
+                        RiskFlag(
+                            code="DTW_VIRAL_CRASH_TRAJECTORY",
+                            severity=RiskSeverity.MEDIUM,
+                            title="DTW Viral Spike-Crash Lifecycle Shape",
+                            description=(
+                                f"DTW shape analysis classified the catalog trajectory as VIRAL_SPIKE_CRASH "
+                                f"(similarity {dtw_result.similarity_score * 100:.0f}%), projecting steeper post-peak decay."
+                            ),
+                            discount_rate_bps_impact=150,
+                        )
+                    )
+
+                if sync_score is not None and sync_score > 0.88:
+                    risk_flags.append(
+                        RiskFlag(
+                            code="DTW_CROSS_TRACK_SYNCHRONY_ANOMALY",
+                            severity=RiskSeverity.HIGH,
+                            title="Abnormal Cross-Track DTW Synchrony Across Catalog",
+                            description=(
+                                f"Multiple tracks exhibit {sync_score * 100:.1f}% synchronized DTW shape similarity "
+                                "despite independent release histories, indicating catalog-wide promotional playlist injection."
+                            ),
+                            discount_rate_bps_impact=225,
+                        )
+                    )
+
+                # Blend catalog-level DTW decay into track_year1_decays when tracks lacked individual monthly series
+                if not any(len(t.monthly_royalties_eur) >= 6 for t in tracks) and dtw_result.dtw_blend_weight > 0:
+                    bw = dtw_result.dtw_blend_weight
+                    track_year1_decays = [
+                        (1.0 - bw) * d + bw * dtw_result.dtw_implied_annual_decay_rate
+                        for d in track_year1_decays
+                    ]
 
         dollar_weighted_age_months = float(
             sum(a * w for a, w in zip(track_ages_months, track_weights))
@@ -1042,6 +1179,7 @@ class SpaceValuationEngine:
             track_hhi=round(track_hhi, 4),
             implied_blended_rpm_usd=round(implied_rpm_usd, 6) if implied_rpm_usd is not None else None,
             risk_flags=risk_flags,
+            dtw_analysis=dtw_result,
             deal_structure=deal_structure,
             yearly_projected_cashflows_p50_eur=[round(v, 2) for v in yearly_cfs_p50],
             missing_data_fields=missing_fields,
