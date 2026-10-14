@@ -1,33 +1,48 @@
-import os
-import uuid
-import joblib
-import pandas as pd
-import yaml
-import redis
 import json
-from datetime import datetime, timedelta
-import time
+import os
 
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-from sqlmodel import Session, create_engine, select # Using synchronous session for Celery task
-from tenacity import retry, stop_after_attempt, wait_exponential
-import structlog
-
-# Assuming libs is in PYTHONPATH
-from libs.py_common.celery_config import create_celery_app
-from libs.py_common.kafka import create_avro_producer, delivery_report, KafkaException # Added KafkaException
 # Assuming services/offers/models.py contains the Offer model definition
 # This creates a dependency. Ideally, models could be in libs if shared, or use an API.
 # For now, direct import path relative to a common root for services.
 import sys
+import time
+import uuid
+from datetime import datetime, timedelta
 from pathlib import Path
+
+import joblib
+import pandas as pd
+import redis
+import spotipy
+import structlog
+import yaml
+from spotipy.oauth2 import SpotifyClientCredentials
+from sqlmodel import (  # Using synchronous session for Celery task
+    Session,
+    create_engine,
+    select,
+)
+from tenacity import retry, stop_after_attempt, wait_exponential
+
+# Assuming libs is in PYTHONPATH
+from libs.py_common.celery_config import create_celery_app
+from libs.py_common.kafka import (  # Added KafkaException
+    KafkaException,
+    create_avro_producer,
+    delivery_report,
+)
+
 # Add project root to sys.path to allow absolute-like imports for services
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(PROJECT_ROOT))
-from services.offers.models import Offer # Now this should work
-from services.offers.db import DATABASE_URL as OFFERS_DB_URL # Get sync DB URL for offers
-from libs.analytics.feature_pipeline import process_data_for_features # Adjusted based on typical use
+from libs.analytics.feature_pipeline import (
+    process_data_for_features,  # Adjusted based on typical use
+)
+from services.offers.db import (
+    DATABASE_URL as OFFERS_DB_URL,  # Get sync DB URL for offers
+)
+from services.offers.models import Offer  # Now this should work
+
 from .engine import CatalogValuationInput, SpaceValuationEngine
 
 space_valuation_engine = SpaceValuationEngine()
@@ -36,15 +51,15 @@ space_valuation_engine = SpaceValuationEngine()
 
 # Import metrics
 from .metrics import (
-    CELERY_TASKS_PROCESSED_TOTAL,
-    CELERY_TASK_DURATION_SECONDS,
-    SPOTIFY_API_CALLS_TOTAL,
-    SPOTIFY_API_LATENCY_SECONDS,
+    APP_ERRORS_TOTAL,
     CACHE_HITS_TOTAL,
     CACHE_MISSES_TOTAL,
+    CELERY_TASK_DURATION_SECONDS,
+    CELERY_TASKS_PROCESSED_TOTAL,
     MODEL_PREDICTIONS_TOTAL,
-    APP_ERRORS_TOTAL,
-    start_metrics_server
+    SPOTIFY_API_CALLS_TOTAL,
+    SPOTIFY_API_LATENCY_SECONDS,
+    start_metrics_server,
 )
 
 logger = structlog.get_logger(__name__)

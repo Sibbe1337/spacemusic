@@ -18,8 +18,8 @@ from services.valuation.engine import (
     RoyaltyBasis,
     is_distributor_name,
 )
-from .models import CatalogApplication, ReplyDraft
 
+from .models import CatalogApplication, ReplyDraft
 
 # Exact field IDs from Typeform `xzx5SBJb` ("SPACE catalog review")
 TYPEFORM_FIELD_IDS = {

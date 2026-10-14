@@ -25,7 +25,7 @@ Architecture Layers:
 from __future__ import annotations
 
 import math
-from datetime import date, datetime
+from datetime import date
 from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -48,13 +48,11 @@ from .dtw_matcher import (
 )
 from .lead_lag_and_title_forensics import (
     ChainOfTitleAuditReport,
-    ChainOfTitleStatus,
     LeadLagArbitrageReport,
     LeadLagSignalStatus,
     evaluate_chain_of_title,
     evaluate_lead_lag_arbitrage,
 )
-
 
 RULES_DEFAULT_PATH = Path(__file__).parent / "rules.yaml"
 

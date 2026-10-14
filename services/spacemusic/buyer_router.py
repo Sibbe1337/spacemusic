@@ -17,7 +17,7 @@ deal-room sharing.
 
 from __future__ import annotations
 
-from typing import Dict, List, Optional, Sequence, Set
+from typing import List, Optional, Sequence, Set
 
 from pydantic import BaseModel, Field
 
@@ -27,6 +27,7 @@ from services.valuation.engine import (
     GenreFamily,
     RightsScope,
 )
+
 from .models import CatalogApplication
 
 

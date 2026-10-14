@@ -10,9 +10,9 @@ from __future__ import annotations
 
 import re
 from collections import Counter
-from datetime import date, datetime
+from datetime import date
 from enum import Enum
-from typing import Dict, List, Optional, Sequence
+from typing import List, Optional, Sequence
 
 from pydantic import BaseModel, Field
 

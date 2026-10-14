@@ -4,13 +4,13 @@ Statement Parser, and Typeform `xzx5SBJb` Intake Pipeline.
 """
 
 from datetime import date
+
 import pytest
 from fastapi.testclient import TestClient
 
 from services.spacemusic.main import app as spacemusic_app
 from services.valuation.dtw_matcher import (
     LifecycleArchetype,
-    evaluate_dtw_lifecycle,
     sakoe_chiba_dtw_distance,
 )
 from services.valuation.engine import (
@@ -687,7 +687,7 @@ def test_autonomous_inbox_to_underwriting_and_institutional_buyer_router(engine:
     import base64
     import io
     import zipfile
-    from services.spacemusic.buyer_router import route_catalog_to_institutional_buyers
+
     from services.spacemusic.inbox_ingestor import (
         InboundAttachmentPayload,
         InboundEmailStatementWebhook,
@@ -864,6 +864,7 @@ def test_heterogeneous_symphonic_csv_and_youtube_studio_xlsx_ingestion(engine: S
     import base64
     import io
     import zipfile
+
     from services.spacemusic.inbox_ingestor import (
         InboundAttachmentPayload,
         InboundEmailStatementWebhook,

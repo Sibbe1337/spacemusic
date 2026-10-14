@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 import structlog
+from fastapi import FastAPI
 
 app = FastAPI()
 logger = structlog.get_logger(__name__)
@@ -15,6 +15,7 @@ async def read_root():
 
 # Further imports and routes would go into routes.py
 from . import routes
+
 app.include_router(routes.router)
 
 if __name__ == "__main__":

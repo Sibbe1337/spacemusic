@@ -21,19 +21,18 @@ from __future__ import annotations
 import csv
 import io
 import re
-import statistics
 import xml.etree.ElementTree as ET
 import zipfile
 from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from pydantic import BaseModel, Field
 
 from .engine import (
-    MonthlyStatementPoint,
     RULES_DEFAULT_PATH,
+    MonthlyStatementPoint,
     TrackInput,
     compute_empirical_track_Slope,
     convert_to_eur,

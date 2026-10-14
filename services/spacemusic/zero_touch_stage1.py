@@ -24,8 +24,8 @@ webhook (`xzx5SBJb` - SPACE catalog review) or direct application arrives:
 from __future__ import annotations
 
 import re
-from datetime import date, datetime
-from typing import Any, Callable, Dict, List, Optional, Protocol, Sequence, Tuple
+from datetime import date
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from pydantic import BaseModel, Field
 
@@ -43,12 +43,12 @@ from services.valuation.engine import (
     convert_to_eur,
     load_rules,
 )
+
 from .models import CatalogApplication, ReplyDraft
 from .typeform_adapter import (
     application_to_valuation_input,
     generate_reply_draft,
 )
-
 
 # ---------------------------------------------------------------------------
 # 1. URL Extraction Helpers (Artist / Track / Album IDs)

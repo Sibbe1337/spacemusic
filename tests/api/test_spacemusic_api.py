@@ -1,6 +1,6 @@
-import pytest
 from fastapi.testclient import TestClient
-from services.spacemusic.main import app # Assuming spacemusic service is in PYTHONPATH
+
+from services.spacemusic.main import app  # Assuming spacemusic service is in PYTHONPATH
 
 client = TestClient(app)
 
