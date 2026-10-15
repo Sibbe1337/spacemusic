@@ -1953,6 +1953,40 @@ def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
     assert second_order["autumn_credits_remaining"] == 8
     assert second_order["receipt_token"] is not None
 
+    # Verify Autumn customer get_or_create, plans list, and billing portal endpoints
+    cust_res = client.post(
+        "/catalog-review/paid-memo/autumn/customer",
+        json={
+            "customer_id": "info@sagosdistro.com",
+            "name": "Sagos Distro Underwriting",
+            "email": "info@sagosdistro.com",
+        },
+    )
+    assert cust_res.status_code == 200
+    cust_data = cust_res.json()
+    assert cust_data["customer_id"] == "cus_info_sagosdistro.com"
+    assert "free_preview" in cust_data["active_plan_ids"]
+    assert "indicative_catalog_review" in cust_data["balances"]
+    assert cust_data["balances"]["indicative_catalog_review"]["granted_balance"] == 3
+
+    plans_res = client.get(
+        "/catalog-review/paid-memo/autumn/plans?customer_id=info@sagosdistro.com"
+    )
+    assert plans_res.status_code == 200
+    plans_data = plans_res.json()
+    plan_ids = {p["plan_id"] for p in plans_data["plans"]}
+    assert {"free_preview", "desk_pass_499", "single_memo_299"}.issubset(plan_ids)
+
+    portal_res = client.post(
+        "/catalog-review/paid-memo/autumn/portal",
+        json={
+            "customer_id": "info@sagosdistro.com",
+            "return_url": "https://spacemusic.io/valuation-memo",
+        },
+    )
+    assert portal_res.status_code == 200
+    assert "billing.stripe.com" in portal_res.json()["portal_url"]
+
     # 7. Verify Sagos Distro / Solid Gold Global institutional buyer routing for Afro/Caribbean & Hip-Hop/R&B
     from services.spacemusic.buyer_router import route_catalog_to_institutional_buyers
     from services.spacemusic.models import CatalogApplication

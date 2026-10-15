@@ -1,26 +1,31 @@
 {
-  "scripts": {
-    "project:check": "node scripts/maintenance/project-check.mjs",
-    "clean:check": "node scripts/maintenance/clean-caches.mjs",
-    "clean:caches": "node scripts/maintenance/clean-caches.mjs --apply",
-    "test:maintenance": "node --test scripts/maintenance/*.test.mjs",
-    "test:funnel": "node --test marketing/funnel/scenario.test.mjs marketing/funnel/tracking.test.mjs marketing/typeform-intake/intake.test.mjs",
-    "test:portal:ui": "node --test services/catalog_review_ui/*.test.mjs",
-    "preview:dealflow": "python3 experiments/dealflow-preview/serve.py",
-    "preview:chatgpt": "npm --prefix apps/chatgpt-space run dev",
-    "test:chatgpt": "npm --prefix apps/chatgpt-space test"
-  },
-  "dependencies": {
-    "axios": "^1.9.0",
-    "date-fns": "^4.1.0",
-    "lucide-react": "^0.511.0",
-    "react-router-dom": "^7.6.0"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
-    "jsdom": "^26.1.0",
-    "vitest": "^3.1.4"
-  }
+	"scripts": {
+		"project:check": "node scripts/maintenance/project-check.mjs",
+		"clean:check": "node scripts/maintenance/clean-caches.mjs",
+		"clean:caches": "node scripts/maintenance/clean-caches.mjs --apply",
+		"test:maintenance": "node --test scripts/maintenance/*.test.mjs",
+		"test:funnel": "node --test marketing/funnel/scenario.test.mjs marketing/funnel/tracking.test.mjs marketing/typeform-intake/intake.test.mjs",
+		"test:portal:ui": "node --test services/catalog_review_ui/*.test.mjs",
+		"preview:dealflow": "python3 experiments/dealflow-preview/serve.py",
+		"preview:chatgpt": "npm --prefix apps/chatgpt-space run dev",
+		"test:chatgpt": "npm --prefix apps/chatgpt-space test",
+		"atmn": "atmn -c \"autumn/autumn.config.ts\""
+	},
+	"dependencies": {
+		"axios": "^1.9.0",
+		"date-fns": "^4.1.0",
+		"lucide-react": "^0.511.0",
+		"react-router-dom": "^7.6.0",
+		"atmn": "^2.0.142"
+	},
+	"devDependencies": {
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
+		"@testing-library/user-event": "^14.6.1",
+		"jsdom": "^26.1.0",
+		"vitest": "^3.1.4"
+	},
+	"atmn": {
+		"config": "autumn/autumn.config.ts"
+	}
 }

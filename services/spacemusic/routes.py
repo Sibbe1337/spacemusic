@@ -91,6 +91,11 @@ from .paid_memo_service import (
     AUTUMN_FEATURE_MEMO_PDF,
     AutumnBalanceSnapshot,
     AutumnCheckRequest,
+    AutumnCustomerRequest,
+    AutumnCustomerSnapshot,
+    AutumnPlansListResponse,
+    AutumnPortalRequest,
+    AutumnPortalResponse,
     AutumnTrackRequest,
     PaidMemoCheckoutRequest,
     PaidMemoCheckoutResponse,
@@ -1136,6 +1141,51 @@ async def post_paid_memo_checkout(req: PaidMemoCheckoutRequest):
     Slides 01–02 and a Stripe Checkout Session ($299 / €275) to unlock the full 19-slide 16:9 PDF.
     """
     return create_paid_memo_checkout_order(req, store=_paid_memo_store, engine=_engine)
+
+
+@router.post(
+    "/catalog-review/paid-memo/autumn/customer",
+    response_model=AutumnCustomerSnapshot,
+)
+async def post_autumn_customer_get_or_create(req: AutumnCustomerRequest):
+    """
+    Creates or retrieves a customer in Autumn (`POST https://api.useautumn.com/v1/customers.get_or_create`),
+    auto-enabling the `free_preview` plan (`3` `indicative_catalog_review` credits/mo) and returning
+    current plan subscriptions and feature balances.
+    """
+    return _paid_memo_store.autumn.get_or_create_customer(
+        customer_id=req.customer_id,
+        name=req.name,
+        email=req.email,
+        metadata=req.metadata,
+    )
+
+
+@router.get(
+    "/catalog-review/paid-memo/autumn/plans",
+    response_model=AutumnPlansListResponse,
+)
+async def get_autumn_plans_list(customer_id: str | None = Query(default=None)):
+    """
+    Lists all Autumn catalog plans (`free_preview`, `desk_pass_499`, `single_memo_299`)
+    with per-customer eligibility (`attach_action`) via `POST https://api.useautumn.com/v1/plans.list`.
+    """
+    return _paid_memo_store.autumn.list_plans(customer_id=customer_id)
+
+
+@router.post(
+    "/catalog-review/paid-memo/autumn/portal",
+    response_model=AutumnPortalResponse,
+)
+async def post_autumn_customer_portal(req: AutumnPortalRequest):
+    """
+    Opens a Stripe Billing Portal session for a customer via Autumn
+    (`POST https://api.useautumn.com/v1/billing.open_customer_portal`).
+    """
+    return _paid_memo_store.autumn.open_customer_portal(
+        customer_id=req.customer_id,
+        return_url=req.return_url,
+    )
 
 
 @router.post(

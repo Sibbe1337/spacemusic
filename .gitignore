@@ -172,3 +172,4 @@ Thumbs.db
 /.playwright-mcp/
 
 # Do NOT ignore or clean all of tmp/: it holds production/rollback snapshots.
+/autumn/skills/
