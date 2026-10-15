@@ -47,6 +47,10 @@ JEV_CATALOG_QUESTIONS: Dict[str, Dict[str, Any]] = {
                 "The seller quoted ~100% Gross Master Royalties (~$30k-$34k USD) before the ~50% label/distributor split "
                 "(Tribal Trap / Trap Nation), whereas verified net artist payouts are ~$18k-$19k USD."
             ),
+            "seller_extrapolated_recent_l3m_surge_run_rate": (
+                "The seller quoted an annualized figure (~$80k USD) based on recent L3M frontline release momentum "
+                "(~$88.6k/yr run-rate), which is ~20% above trailing 12-month (LTM) verified net earnings (~$66.9k USD)."
+            ),
             "statements_missing_major_distributor": (
                 "An entire primary distributor mentioned in intake is completely absent from the uploaded statements."
             ),
@@ -57,7 +61,7 @@ JEV_CATALOG_QUESTIONS: Dict[str, Dict[str, Any]] = {
                 "Neither gross nor net historical earnings approach the seller's claimed figure."
             ),
             "claims_match_verified_net": (
-                "Verified net artist royalties closely match (within 15%) the seller's claimed annual figure."
+                "Verified net artist royalties closely match (within 10%) the seller's claimed annual figure."
             ),
         },
     },
@@ -157,7 +161,7 @@ JEV_CATALOG_QUESTIONS: Dict[str, Dict[str, Any]] = {
             "0: Seller expectations are already within SPACE's 2.5x-4.5x outright buyout mandate.",
             "1: Modest gap (seller wants ~5x) easily bridged with standard 90/10 upfront/holdback offer.",
             "2: Bridgeable gap — seller targets 6-8x for an outright buyout (and initially anchored on gross royalties), but explicitly stated openness to a combined catalog + earn-out / selected new releases structure.",
-            "3: Wide gap — seller insists strictly on >7x all-cash Day-1 buyout with no structural flexibility.",
+            "3: Wide standalone gap — seller's ask (e.g. $350k-$450k = 5.23x-6.73x LTM, or $300k upfront) is 2.22x-3.34x above our standalone DCF base valuation (~2.02x LTM on a young <12m frontline catalog); impossible as a standalone existing-catalog buyout and bridgeable ONLY by tying $60k-$80k+ to multi-year future-release delivery tranches.",
             "4: Unbridgeable gap — seller demands >10x all-cash upfront and refuses structured alternatives.",
         ],
     },
@@ -523,28 +527,41 @@ def _evaluate_local_calibrated_systemone(
     answers: Dict[str, Dict[str, Any]] = {}
 
     if "gross_vs_net_claim_explanation" in questions:
+        l3m_net_usd = float(vs.get("l3m_annualized_net_usd", ltm_net_usd) or ltm_net_usd)
         if claimed > 0 and abs(cy_gross_usd - claimed) / claimed < 0.25 and ltm_net_usd < claimed * 0.75:
             probs = {
-                "seller_quoted_gross_100pct_master_before_label_split": 0.91 + v_shift,
+                "seller_quoted_gross_100pct_master_before_label_split": 0.90 + v_shift,
+                "seller_extrapolated_recent_l3m_surge_run_rate": 0.02,
                 "statements_missing_major_distributor": 0.04,
-                "severe_recent_streaming_collapse": 0.03 - (v_shift / 2.0),
+                "severe_recent_streaming_collapse": 0.02 - (v_shift / 2.0),
                 "unsubstantiated_overstatement": 0.01 - (v_shift / 2.0),
                 "claims_match_verified_net": 0.01,
             }
-        elif claimed > 0 and abs(ltm_net_usd - claimed) / claimed <= 0.22:
+        elif claimed > 0 and ltm_net_usd * 1.05 < claimed <= l3m_net_usd * 1.05 and abs(ltm_net_usd - claimed) / claimed <= 0.25:
             probs = {
-                "seller_quoted_gross_100pct_master_before_label_split": 0.04,
+                "seller_quoted_gross_100pct_master_before_label_split": 0.03,
+                "seller_extrapolated_recent_l3m_surge_run_rate": 0.87 + v_shift,
                 "statements_missing_major_distributor": 0.02,
-                "severe_recent_streaming_collapse": 0.02 - (v_shift / 2.0),
+                "severe_recent_streaming_collapse": 0.01 - (v_shift / 2.0),
+                "unsubstantiated_overstatement": 0.01 - (v_shift / 2.0),
+                "claims_match_verified_net": 0.06,
+            }
+        elif claimed > 0 and abs(ltm_net_usd - claimed) / claimed <= 0.10:
+            probs = {
+                "seller_quoted_gross_100pct_master_before_label_split": 0.03,
+                "seller_extrapolated_recent_l3m_surge_run_rate": 0.03,
+                "statements_missing_major_distributor": 0.01,
+                "severe_recent_streaming_collapse": 0.01 - (v_shift / 2.0),
                 "unsubstantiated_overstatement": 0.01 - (v_shift / 2.0),
                 "claims_match_verified_net": 0.91 + v_shift,
             }
         else:
             probs = {
-                "seller_quoted_gross_100pct_master_before_label_split": 0.25,
+                "seller_quoted_gross_100pct_master_before_label_split": 0.20,
+                "seller_extrapolated_recent_l3m_surge_run_rate": 0.10,
                 "statements_missing_major_distributor": 0.20,
                 "severe_recent_streaming_collapse": 0.20,
-                "unsubstantiated_overstatement": 0.30,
+                "unsubstantiated_overstatement": 0.25,
                 "claims_match_verified_net": 0.05,
             }
         answers["gross_vs_net_claim_explanation"] = _make_choice_answer(probs)
@@ -627,7 +644,13 @@ def _evaluate_local_calibrated_systemone(
 
     if "seller_multiple_expectation_gap" in questions:
         criteria = questions["seller_multiple_expectation_gap"]["criteria"]
-        p_list = [0.01, 0.06, 0.84 + v_shift, 0.08 - v_shift, 0.01]
+        dcf_val = state.get("dcf_valuation", {})
+        target_mult_ltm = float(dcf_val.get("target_multiple_on_ltm", 3.5) or 3.5)
+        weighted_age_m = float(coh.get("weighted_catalog_age_months", 36.0) or 36.0)
+        if target_mult_ltm < 3.0 or weighted_age_m < 18.0:
+            p_list = [0.0, 0.02, 0.18 - v_shift, 0.77 + v_shift, 0.03]
+        else:
+            p_list = [0.01, 0.06, 0.84 + v_shift, 0.08 - v_shift, 0.01]
         answers["seller_multiple_expectation_gap"] = _make_score_answer(criteria, p_list)
 
     if "recommended_deal_structure" in questions:

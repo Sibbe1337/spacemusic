@@ -1726,6 +1726,8 @@ def test_hmwme_distrokid_amuse_merge_and_jev_frontline_evaluation():
     engine = SpaceValuationEngine(random_seed=42)
     val_report = engine.evaluate(app_input, reference_date=date(2026, 8, 1))
     assert val_report.integrity_score >= 90.0
+    assert round(sum(val_report.yearly_present_values_p50_eur[:5]), 2) == val_report.npv_5y_p50_eur
+    assert round(sum(val_report.yearly_present_values_p50_eur), 2) == val_report.npv_10y_p50_eur
 
     parallel_report = run_parallel_dtw_and_jev_evaluation(
         app_input=app_input,
@@ -1736,6 +1738,11 @@ def test_hmwme_distrokid_amuse_merge_and_jev_frontline_evaluation():
     assert parallel_report.jev_lifecycle_choice == "recent_release_frontloaded_decay"
     assert parallel_report.jev_bot_fraud_noul < 0.05
     assert parallel_report.jev_implied_base_offer_usd > 0
+    assert (
+        parallel_report.jev_primary_run.answers["gross_vs_net_claim_explanation"]["choice"]
+        == "seller_extrapolated_recent_l3m_surge_run_rate"
+    )
+    assert parallel_report.jev_primary_run.answers["seller_multiple_expectation_gap"]["score"] >= 2.5
 
 
 

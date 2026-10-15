@@ -290,7 +290,12 @@ class CatalogValuationOutput(BaseModel):
     lead_lag_arbitrage: Optional[LeadLagArbitrageReport] = None
     chain_of_title: Optional[ChainOfTitleAuditReport] = None
     deal_structure: DealStructureRecommendation
+    yearly_projected_cashflows_p10_eur: List[float] = Field(default_factory=list)
     yearly_projected_cashflows_p50_eur: List[float] = Field(default_factory=list)
+    yearly_projected_cashflows_p90_eur: List[float] = Field(default_factory=list)
+    yearly_present_values_p10_eur: List[float] = Field(default_factory=list)
+    yearly_present_values_p50_eur: List[float] = Field(default_factory=list)
+    yearly_present_values_p90_eur: List[float] = Field(default_factory=list)
     missing_data_fields: List[str] = Field(default_factory=list)
     qlero_bd_lead_score: int = 0
     qlero_bd_reasons: List[str] = Field(default_factory=list)
@@ -1228,7 +1233,12 @@ class SpaceValuationEngine:
             npv_10y_p10,
             npv_10y_p50,
             npv_10y_p90,
+            yearly_cfs_p10,
             yearly_cfs_p50,
+            yearly_cfs_p90,
+            yearly_pvs_p10,
+            yearly_pvs_p50,
+            yearly_pvs_p90,
             payback_months,
         ) = self._run_monte_carlo_dcf(
             cf0_annual_eur=effective_cf0_eur,
@@ -1334,7 +1344,12 @@ class SpaceValuationEngine:
             lead_lag_arbitrage=lead_lag_report,
             chain_of_title=title_report,
             deal_structure=deal_structure,
+            yearly_projected_cashflows_p10_eur=[round(v, 2) for v in yearly_cfs_p10],
             yearly_projected_cashflows_p50_eur=[round(v, 2) for v in yearly_cfs_p50],
+            yearly_projected_cashflows_p90_eur=[round(v, 2) for v in yearly_cfs_p90],
+            yearly_present_values_p10_eur=[round(v, 2) for v in yearly_pvs_p10],
+            yearly_present_values_p50_eur=[round(v, 2) for v in yearly_pvs_p50],
+            yearly_present_values_p90_eur=[round(v, 2) for v in yearly_pvs_p90],
             missing_data_fields=missing_fields,
             qlero_bd_lead_score=qlero_score,
             qlero_bd_reasons=qlero_reasons,
@@ -1350,9 +1365,10 @@ class SpaceValuationEngine:
         annual_discount_rate: float,
         statements_verified: bool,
         n_simulations: int = 1000,
-    ) -> Tuple[float, float, float, float, float, float, List[float], float]:
+    ) -> Tuple[float, float, float, float, float, float, List[float], List[float], List[float], List[float], List[float], List[float], float]:
         if cf0_annual_eur <= 0:
-            return 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, [0.0] * 10, 0.0
+            zeros = [0.0] * 10
+            return 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, zeros, zeros, zeros, zeros, zeros, zeros, 0.0
 
         rng = np.random.default_rng(self.random_seed)
         n_months = 120
@@ -1406,11 +1422,38 @@ class SpaceValuationEngine:
         npv_5y_p10, npv_5y_p50, npv_5y_p90 = np.percentile(npv_5y_samples, [10, 50, 90])
         npv_10y_p10, npv_10y_p50, npv_10y_p90 = np.percentile(npv_10y_samples, [10, 50, 90])
 
-        # Median undiscounted yearly cash flows (Years 1..10) for reporting & payback calculation
-        median_monthly_undiscounted = np.median(sim_cfs, axis=0)
+        # Undiscounted and discounted yearly cash flows (Years 1..10) for P10 / P50 / P90 reporting
+        p10_monthly_undisc, median_monthly_undiscounted, p90_monthly_undisc = np.percentile(sim_cfs, [10, 50, 90], axis=0)
+        yearly_cfs_p10 = [
+            float(np.sum(p10_monthly_undisc[y * 12 : (y + 1) * 12])) for y in range(10)
+        ]
         yearly_cfs_p50 = [
             float(np.sum(median_monthly_undiscounted[y * 12 : (y + 1) * 12])) for y in range(10)
         ]
+        yearly_cfs_p90 = [
+            float(np.sum(p90_monthly_undisc[y * 12 : (y + 1) * 12])) for y in range(10)
+        ]
+
+        # Reconciled annual present values (Years 1..10) so cumulative sums match npv_5y and npv_10y exactly
+        raw_pvs_p10 = [float(np.percentile(np.sum(discounted_cfs[:, y * 12 : (y + 1) * 12], axis=1), 10)) for y in range(10)]
+        raw_pvs_p50 = [float(np.percentile(np.sum(discounted_cfs[:, y * 12 : (y + 1) * 12], axis=1), 50)) for y in range(10)]
+        raw_pvs_p90 = [float(np.percentile(np.sum(discounted_cfs[:, y * 12 : (y + 1) * 12], axis=1), 90)) for y in range(10)]
+
+        def _reconcile_yearly_pvs(raw_pvs: List[float], target_5y: float, target_10y: float) -> List[float]:
+            t5 = round(target_5y, 2)
+            t10 = round(target_10y, 2)
+            sum_1_5 = sum(raw_pvs[:5]) or 1.0
+            sum_6_10 = sum(raw_pvs[5:]) or 1.0
+            tail_target = max(0.0, t10 - t5)
+            first_5 = [round(v * (t5 / sum_1_5), 2) for v in raw_pvs[:5]]
+            first_5[4] = round(first_5[4] + (t5 - sum(first_5)), 2)
+            last_5 = [round(v * (tail_target / sum_6_10), 2) for v in raw_pvs[5:]]
+            last_5[4] = round(last_5[4] + (tail_target - sum(last_5)), 2)
+            return first_5 + last_5
+
+        yearly_pvs_p10 = _reconcile_yearly_pvs(raw_pvs_p10, float(npv_5y_p10), float(npv_10y_p10))
+        yearly_pvs_p50 = _reconcile_yearly_pvs(raw_pvs_p50, float(npv_5y_p50), float(npv_10y_p50))
+        yearly_pvs_p90 = _reconcile_yearly_pvs(raw_pvs_p90, float(npv_5y_p90), float(npv_10y_p90))
 
         # Expected payback period (in months) against recommended offer price
         target_offer = 0.60 * float(npv_5y_p50) + 0.40 * float(npv_10y_p50)
@@ -1428,7 +1471,12 @@ class SpaceValuationEngine:
             float(npv_10y_p10),
             float(npv_10y_p50),
             float(npv_10y_p90),
+            yearly_cfs_p10,
             yearly_cfs_p50,
+            yearly_cfs_p90,
+            yearly_pvs_p10,
+            yearly_pvs_p50,
+            yearly_pvs_p90,
             payback_months,
         )
 

@@ -10,6 +10,310 @@
     "phone": "0768521238",
     "spotify_artist_id": "6iUsKG741oVA0KXtElIpOo"
   },
+  "tier1_territory_reconciliation": {
+    "total_tier1_stream_share_17_markets": 0.8088,
+    "total_tier1_revenue_share_17_markets": 0.8827,
+    "top_6_displayed_tier1_markets": {
+      "US": 0.4093,
+      "DE": 0.1961,
+      "FR": 0.0316,
+      "GB": 0.0295,
+      "AU": 0.0216,
+      "CA": 0.0189,
+      "subtotal_top_6_tier1": 0.707
+    },
+    "other_11_tier1_markets": {
+      "NL": 0.0201,
+      "CH": 0.0183,
+      "AT": 0.0137,
+      "SE": 0.0117,
+      "BE": 0.0116,
+      "NO": 0.009,
+      "DK": 0.0083,
+      "IE": 0.0035,
+      "FI": 0.003,
+      "NZ": 0.0022,
+      "JP": 0.0004,
+      "subtotal_other_11_tier1": 0.1018
+    },
+    "non_tier1_rest_of_world_share": 0.1912
+  },
+  "npv_schedule_reconciliation": {
+    "discounting_convention": "Monthly Weibull cohort simulation (120 months, tau=24m) with monthly discounting (1 + WACC)^(-m/12) at WACC=19.09%",
+    "npv_5y_p10_usd": 104047.98,
+    "npv_5y_p50_usd": 128224.87,
+    "npv_5y_p90_usd": 160532.38,
+    "npv_10y_p10_usd": 117743.58,
+    "npv_10y_p50_usd": 150309.11,
+    "npv_10y_p90_usd": 195925.17,
+    "npv_12y_p50_usd_option_a_horizon": 153070.29,
+    "yearly_schedule": [
+      {
+        "year": 1,
+        "calendar_year": 2026,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 17.65,
+        "effective_monthly_df": 0.916,
+        "eoy_df": 0.8397,
+        "cf_p10_usd": 47603.23,
+        "cf_p50_usd": 55078.14,
+        "cf_p90_usd": 63828.96,
+        "cf_p50_eur": 50671.89,
+        "pv_p50_usd": 50453.78,
+        "pv_p50_eur": 46417.48,
+        "cum_npv_p10_usd": 44821.22,
+        "cum_npv_p50_usd": 50453.78,
+        "cum_npv_p90_usd": 56877.73,
+        "cum_npv_p10_eur": 41235.52,
+        "cum_npv_p50_eur": 46417.48,
+        "cum_npv_p90_eur": 52327.51,
+        "cum_undisc_p50_usd": 55078.14,
+        "cum_undisc_p50_eur": 50671.89
+      },
+      {
+        "year": 2,
+        "calendar_year": 2027,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 25.61,
+        "effective_monthly_df": 0.7668,
+        "eoy_df": 0.7051,
+        "cf_p10_usd": 32704.6,
+        "cf_p50_usd": 40974.37,
+        "cf_p90_usd": 51907.2,
+        "cf_p50_eur": 37696.42,
+        "pv_p50_usd": 31417.54,
+        "pv_p50_eur": 28904.14,
+        "cum_npv_p10_usd": 70190.61,
+        "cum_npv_p50_usd": 81871.33,
+        "cum_npv_p90_usd": 96390.02,
+        "cum_npv_p10_eur": 64575.36,
+        "cum_npv_p50_eur": 75321.62,
+        "cum_npv_p90_eur": 88678.82,
+        "cum_undisc_p50_usd": 96052.51,
+        "cum_undisc_p50_eur": 88368.31
+      },
+      {
+        "year": 3,
+        "calendar_year": 2028,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 20.03,
+        "effective_monthly_df": 0.6467,
+        "eoy_df": 0.5921,
+        "cf_p10_usd": 24572.92,
+        "cf_p50_usd": 32767.46,
+        "cf_p90_usd": 44265.96,
+        "cf_p50_eur": 30146.06,
+        "pv_p50_usd": 21189.16,
+        "pv_p50_eur": 19494.03,
+        "cum_npv_p10_usd": 86227.27,
+        "cum_npv_p50_usd": 103060.49,
+        "cum_npv_p90_usd": 124498.89,
+        "cum_npv_p10_eur": 79329.09,
+        "cum_npv_p50_eur": 94815.65,
+        "cum_npv_p90_eur": 114538.98,
+        "cum_undisc_p50_usd": 128819.97,
+        "cum_undisc_p50_eur": 118514.37
+      },
+      {
+        "year": 4,
+        "calendar_year": 2029,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 17.0,
+        "effective_monthly_df": 0.5415,
+        "eoy_df": 0.4972,
+        "cf_p10_usd": 19344.34,
+        "cf_p50_usd": 27195.36,
+        "cf_p90_usd": 38608.07,
+        "cf_p50_eur": 25019.73,
+        "pv_p50_usd": 14726.78,
+        "pv_p50_eur": 13548.64,
+        "cum_npv_p10_usd": 96830.73,
+        "cum_npv_p50_usd": 117787.27,
+        "cum_npv_p90_usd": 145091.11,
+        "cum_npv_p10_eur": 89084.27,
+        "cum_npv_p50_eur": 108364.29,
+        "cum_npv_p90_eur": 133483.82,
+        "cum_undisc_p50_usd": 156015.33,
+        "cum_undisc_p50_eur": 143534.1
+      },
+      {
+        "year": 5,
+        "calendar_year": 2030,
+        "horizon_tag": "5Y NPV Anchor",
+        "yoy_effective_decay_pct": 15.28,
+        "effective_monthly_df": 0.453,
+        "eoy_df": 0.4175,
+        "cf_p10_usd": 15767.51,
+        "cf_p50_usd": 23038.75,
+        "cf_p90_usd": 34217.51,
+        "cf_p50_eur": 21195.65,
+        "pv_p50_usd": 10437.6,
+        "pv_p50_eur": 9602.59,
+        "cum_npv_p10_usd": 104047.98,
+        "cum_npv_p50_usd": 128224.87,
+        "cum_npv_p90_usd": 160532.38,
+        "cum_npv_p10_eur": 95724.14,
+        "cum_npv_p50_eur": 117966.88,
+        "cum_npv_p90_eur": 147689.79,
+        "cum_undisc_p50_usd": 179054.08,
+        "cum_undisc_p50_eur": 164729.75
+      },
+      {
+        "year": 6,
+        "calendar_year": 2031,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 13.86,
+        "effective_monthly_df": 0.379,
+        "eoy_df": 0.3505,
+        "cf_p10_usd": 13043.14,
+        "cf_p50_usd": 19846.72,
+        "cf_p90_usd": 30541.34,
+        "cf_p50_eur": 18258.98,
+        "pv_p50_usd": 7521.18,
+        "pv_p50_eur": 6919.49,
+        "cum_npv_p10_usd": 108898.63,
+        "cum_npv_p50_usd": 135746.05,
+        "cum_npv_p90_usd": 171973.54,
+        "cum_npv_p10_eur": 100186.74,
+        "cum_npv_p50_eur": 124886.37,
+        "cum_npv_p90_eur": 158215.66,
+        "cum_undisc_p50_usd": 198900.79,
+        "cum_undisc_p50_eur": 182988.73
+      },
+      {
+        "year": 7,
+        "calendar_year": 2032,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 13.61,
+        "effective_monthly_df": 0.3175,
+        "eoy_df": 0.2944,
+        "cf_p10_usd": 10937.34,
+        "cf_p50_usd": 17146.43,
+        "cf_p90_usd": 27425.4,
+        "cf_p50_eur": 15774.72,
+        "pv_p50_usd": 5443.65,
+        "pv_p50_eur": 5008.16,
+        "cum_npv_p10_usd": 112326.04,
+        "cum_npv_p50_usd": 141189.71,
+        "cum_npv_p90_usd": 180616.11,
+        "cum_npv_p10_eur": 103339.96,
+        "cum_npv_p50_eur": 129894.53,
+        "cum_npv_p90_eur": 166166.82,
+        "cum_undisc_p50_usd": 216047.23,
+        "cum_undisc_p50_eur": 198763.45
+      },
+      {
+        "year": 8,
+        "calendar_year": 2033,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 12.78,
+        "effective_monthly_df": 0.2683,
+        "eoy_df": 0.2472,
+        "cf_p10_usd": 9240.23,
+        "cf_p50_usd": 14955.24,
+        "cf_p90_usd": 24775.8,
+        "cf_p50_eur": 13758.82,
+        "pv_p50_usd": 4012.79,
+        "pv_p50_eur": 3691.77,
+        "cum_npv_p10_usd": 114769.43,
+        "cum_npv_p50_usd": 145202.5,
+        "cum_npv_p90_usd": 187163.99,
+        "cum_npv_p10_eur": 105587.88,
+        "cum_npv_p50_eur": 133586.3,
+        "cum_npv_p90_eur": 172190.87,
+        "cum_undisc_p50_usd": 231002.47,
+        "cum_undisc_p50_eur": 212522.27
+      },
+      {
+        "year": 9,
+        "calendar_year": 2034,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 12.24,
+        "effective_monthly_df": 0.224,
+        "eoy_df": 0.2075,
+        "cf_p10_usd": 7787.64,
+        "cf_p50_usd": 13124.95,
+        "cf_p90_usd": 22398.48,
+        "cf_p50_eur": 12074.95,
+        "pv_p50_usd": 2940.24,
+        "pv_p50_eur": 2705.02,
+        "cum_npv_p10_usd": 116499.99,
+        "cum_npv_p50_usd": 148142.74,
+        "cum_npv_p90_usd": 192128.87,
+        "cum_npv_p10_eur": 107179.99,
+        "cum_npv_p50_eur": 136291.32,
+        "cum_npv_p90_eur": 176758.56,
+        "cum_undisc_p50_usd": 244127.41,
+        "cum_undisc_p50_eur": 224597.22
+      },
+      {
+        "year": 10,
+        "calendar_year": 2035,
+        "horizon_tag": "10Y Standalone DCF Anchor",
+        "yoy_effective_decay_pct": 12.34,
+        "effective_monthly_df": 0.1883,
+        "eoy_df": 0.1743,
+        "cf_p10_usd": 6704.77,
+        "cf_p50_usd": 11505.87,
+        "cf_p90_usd": 20375.12,
+        "cf_p50_eur": 10585.4,
+        "pv_p50_usd": 2166.37,
+        "pv_p50_eur": 1993.06,
+        "cum_npv_p10_usd": 117743.58,
+        "cum_npv_p50_usd": 150309.11,
+        "cum_npv_p90_usd": 195925.17,
+        "cum_npv_p10_eur": 108324.09,
+        "cum_npv_p50_eur": 138284.38,
+        "cum_npv_p90_eur": 180251.16,
+        "cum_undisc_p50_usd": 255633.28,
+        "cum_undisc_p50_eur": 235182.62
+      },
+      {
+        "year": 11,
+        "calendar_year": 2036,
+        "horizon_tag": "",
+        "yoy_effective_decay_pct": 12.75,
+        "effective_monthly_df": 0.1587,
+        "eoy_df": 0.1463,
+        "cf_p10_usd": 5849.97,
+        "cf_p50_usd": 10038.97,
+        "cf_p90_usd": 17777.46,
+        "cf_p50_eur": 9235.85,
+        "pv_p50_usd": 1593.62,
+        "pv_p50_eur": 1466.13,
+        "cum_npv_p10_usd": 118672.22,
+        "cum_npv_p50_usd": 151902.73,
+        "cum_npv_p90_usd": 198747.23,
+        "cum_npv_p10_eur": 109178.44,
+        "cum_npv_p50_eur": 139750.51,
+        "cum_npv_p90_eur": 182847.45,
+        "cum_undisc_p50_usd": 265672.25,
+        "cum_undisc_p50_eur": 244418.47
+      },
+      {
+        "year": 12,
+        "calendar_year": 2037,
+        "horizon_tag": "12Y Option A License End",
+        "yoy_effective_decay_pct": 12.75,
+        "effective_monthly_df": 0.1333,
+        "eoy_df": 0.1229,
+        "cf_p10_usd": 5104.14,
+        "cf_p50_usd": 8759.08,
+        "cf_p90_usd": 15510.98,
+        "cf_p50_eur": 8058.35,
+        "pv_p50_usd": 1167.57,
+        "pv_p50_eur": 1074.16,
+        "cum_npv_p10_usd": 119352.59,
+        "cum_npv_p50_usd": 153070.29,
+        "cum_npv_p90_usd": 200814.79,
+        "cum_npv_p10_eur": 109804.38,
+        "cum_npv_p50_eur": 140824.67,
+        "cum_npv_p90_eur": 184749.61,
+        "cum_undisc_p50_usd": 274431.33,
+        "cum_undisc_p50_eur": 252476.82
+      }
+    ]
+  },
   "statement_summary": {
     "detected_distributor": "DistroKid + Amuse",
     "row_count": 84619,
@@ -1446,8 +1750,20 @@
       "holdback_eur": 24812.43,
       "holdback_months": 12,
       "l3m_retention_covenant_pct": 80.0,
-      "rationale": "80% (€99,249.70) payable at closing; 20% (€24,812.43) held in 12-month performance escrow due to young catalog dollar-age (12.0m)."
+      "rationale": "80% (\u20ac99,249.70) payable at closing; 20% (\u20ac24,812.43) held in 12-month performance escrow due to young catalog dollar-age (12.0m)."
     },
+    "yearly_projected_cashflows_p10_eur": [
+      43794.97,
+      30088.23,
+      22607.09,
+      17796.79,
+      14506.11,
+      11999.69,
+      10062.35,
+      8501.01,
+      7164.63,
+      6168.39
+    ],
     "yearly_projected_cashflows_p50_eur": [
       50671.89,
       37696.42,
@@ -1460,11 +1776,57 @@
       12074.95,
       10585.4
     ],
+    "yearly_projected_cashflows_p90_eur": [
+      58722.64,
+      47754.62,
+      40724.68,
+      35519.42,
+      31480.11,
+      28098.03,
+      25231.37,
+      22793.74,
+      20606.6,
+      18745.11
+    ],
+    "yearly_present_values_p10_eur": [
+      41235.52,
+      23339.84,
+      14753.73,
+      9755.18,
+      6639.87,
+      4462.6,
+      3153.22,
+      2247.92,
+      1592.11,
+      1144.1
+    ],
+    "yearly_present_values_p50_eur": [
+      46417.48,
+      28904.14,
+      19494.03,
+      13548.64,
+      9602.59,
+      6919.49,
+      5008.16,
+      3691.77,
+      2705.02,
+      1993.06
+    ],
+    "yearly_present_values_p90_eur": [
+      52327.51,
+      36351.31,
+      25860.16,
+      18944.84,
+      14205.97,
+      10525.87,
+      7951.16,
+      6024.05,
+      4567.69,
+      3492.6
+    ],
     "missing_data_fields": [],
-    "qlero_bd_lead_score": 45,
-    "qlero_bd_reasons": [
-      "Has co-owners/royalty splits requiring automated split accounting"
-    ]
+    "qlero_bd_lead_score": 20,
+    "qlero_bd_reasons": []
   },
   "jev_state_payload": {
     "seller_intake": {
@@ -1477,11 +1839,11 @@
       "claimed_currency": "USD"
     },
     "negotiation_context": {
-      "seller_target_multiple_range": "$350,000-$450,000 USD (5.2x-6.7x LTM) initial ask; counter-requested $300,000 USD upfront under Option A (12-year license + 6-10 future releases)",
+      "seller_target_multiple_range": "$350,000-$450,000 USD (5.23x-6.73x LTM = 2.60x-3.34x SPACE standalone base) initial ask; counter-requested $300,000 USD upfront (4.49x LTM = 2.22x standalone base) under Option A (12-year license + 6-10 future releases)",
       "seller_competing_bids_mentioned": false,
       "seller_open_to_hybrid_or_new_music_structure": true,
       "seller_quote": "Option A is the closest to what we have in mind... Given that the package would include both the existing catalog and a commitment of 6-10 future releases over a 12-year exclusive term, we'd be looking for $300,000 USD upfront, with additional milestone payments and performance upside on top.",
-      "space_mandate_communicated": "Standalone Existing Catalog DCF: $134,850-$183,538 USD (€124,062-€168,855 EUR); Option A (12Y License + 6-10 Future Releases): $275,000-$325,000 USD ($185k-$215k upfront + $60k-$80k delivery tranches + $30k Year-2 retention bonus)."
+      "space_mandate_communicated": "Standalone Existing Catalog DCF: $134,850-$183,538 USD (\u20ac124,062-\u20ac168,855 EUR, 2.02x-2.74x LTM); Option A (12Y License + 6-10 Future Releases): $275,000-$325,000 USD ($185k-$215k upfront + $60k-$80k delivery tranches + $30k Year-2 retention bonus)."
     },
     "verified_statements": {
       "months_covered": 15,
@@ -1817,19 +2179,20 @@
     "jev_primary_run": {
       "model": "jev-1.14.0",
       "execution_mode": "local_calibrated_systemone",
-      "latency_ms": 84.2,
+      "latency_ms": 84.14,
       "answers": {
         "gross_vs_net_claim_explanation": {
           "type": "choice",
-          "choice": "claims_match_verified_net",
+          "choice": "seller_extrapolated_recent_l3m_surge_run_rate",
           "probabilities": {
-            "seller_quoted_gross_100pct_master_before_label_split": 0.04,
+            "seller_quoted_gross_100pct_master_before_label_split": 0.03,
+            "seller_extrapolated_recent_l3m_surge_run_rate": 0.88,
             "statements_missing_major_distributor": 0.02,
-            "severe_recent_streaming_collapse": 0.015,
+            "severe_recent_streaming_collapse": 0.005,
             "unsubstantiated_overstatement": 0.005,
-            "claims_match_verified_net": 0.92
+            "claims_match_verified_net": 0.06
           },
-          "confidence": 0.9
+          "confidence": 0.856
         },
         "social_ugc_inflation_detected": {
           "type": "noul",
@@ -1855,11 +2218,11 @@
           "type": "score",
           "score": 0.1,
           "legend": {
-            "0": "0: Complete 100% match — every promised track is present in the statements with full history.",
-            "1": "1: Minor discrepancy — 90%+ of promised tracks (including all top revenue drivers) are verified; 1 track is missing from statements and can be handled via a top-up/addendum clause.",
-            "2": "2: Moderate gap — 2 to 3 notable tracks from the promised tracklist are missing from statements.",
-            "3": "3: Major gap — several core tracks representing 25-50% of expected catalog value are missing.",
-            "4": "4: Critical omission — majority of promised catalog is missing from the uploaded royalty statements."
+            "0": "0: Complete 100% match \u2014 every promised track is present in the statements with full history.",
+            "1": "1: Minor discrepancy \u2014 90%+ of promised tracks (including all top revenue drivers) are verified; 1 track is missing from statements and can be handled via a top-up/addendum clause.",
+            "2": "2: Moderate gap \u2014 2 to 3 notable tracks from the promised tracklist are missing from statements.",
+            "3": "3: Major gap \u2014 several core tracks representing 25-50% of expected catalog value are missing.",
+            "4": "4: Critical omission \u2014 majority of promised catalog is missing from the uploaded royalty statements."
           },
           "probabilities": {
             "0": 0.92,
@@ -1891,22 +2254,22 @@
         },
         "seller_multiple_expectation_gap": {
           "type": "score",
-          "score": 2.01,
+          "score": 2.82,
           "legend": {
             "0": "0: Seller expectations are already within SPACE's 2.5x-4.5x outright buyout mandate.",
             "1": "1: Modest gap (seller wants ~5x) easily bridged with standard 90/10 upfront/holdback offer.",
-            "2": "2: Bridgeable gap — seller targets 6-8x for an outright buyout (and initially anchored on gross royalties), but explicitly stated openness to a combined catalog + earn-out / selected new releases structure.",
-            "3": "3: Wide gap — seller insists strictly on >7x all-cash Day-1 buyout with no structural flexibility.",
-            "4": "4: Unbridgeable gap — seller demands >10x all-cash upfront and refuses structured alternatives."
+            "2": "2: Bridgeable gap \u2014 seller targets 6-8x for an outright buyout (and initially anchored on gross royalties), but explicitly stated openness to a combined catalog + earn-out / selected new releases structure.",
+            "3": "3: Wide standalone gap \u2014 seller's ask (e.g. $350k-$450k = 5.23x-6.73x LTM, or $300k upfront) is 2.22x-3.34x above our standalone DCF base valuation (~2.02x LTM on a young <12m frontline catalog); impossible as a standalone existing-catalog buyout and bridgeable ONLY by tying $60k-$80k+ to multi-year future-release delivery tranches.",
+            "4": "4: Unbridgeable gap \u2014 seller demands >10x all-cash upfront and refuses structured alternatives."
           },
           "probabilities": {
-            "0": 0.01,
-            "1": 0.06,
-            "2": 0.85,
-            "3": 0.07,
-            "4": 0.01
+            "0": 0.0,
+            "1": 0.02,
+            "2": 0.17,
+            "3": 0.78,
+            "4": 0.03
           },
-          "confidence": 0.8583
+          "confidence": 0.8
         },
         "recommended_deal_structure": {
           "type": "choice",
@@ -1935,27 +2298,28 @@
         }
       },
       "usage": {
-        "input_tokens": 4026,
+        "input_tokens": 4179,
         "output_tokens": 220,
-        "cost_usd": 0.0001691
+        "cost_usd": 0.0001755
       }
     },
     "jev_preview_run": {
       "model": "jev-1.13.0",
       "execution_mode": "local_calibrated_systemone",
-      "latency_ms": 84.14,
+      "latency_ms": 84.13,
       "answers": {
         "gross_vs_net_claim_explanation": {
           "type": "choice",
-          "choice": "claims_match_verified_net",
+          "choice": "seller_extrapolated_recent_l3m_surge_run_rate",
           "probabilities": {
-            "seller_quoted_gross_100pct_master_before_label_split": 0.04,
+            "seller_quoted_gross_100pct_master_before_label_split": 0.03,
+            "seller_extrapolated_recent_l3m_surge_run_rate": 0.87,
             "statements_missing_major_distributor": 0.02,
-            "severe_recent_streaming_collapse": 0.02,
+            "severe_recent_streaming_collapse": 0.01,
             "unsubstantiated_overstatement": 0.01,
-            "claims_match_verified_net": 0.91
+            "claims_match_verified_net": 0.06
           },
-          "confidence": 0.8875
+          "confidence": 0.844
         },
         "social_ugc_inflation_detected": {
           "type": "noul",
@@ -1981,11 +2345,11 @@
           "type": "score",
           "score": 0.1,
           "legend": {
-            "0": "0: Complete 100% match — every promised track is present in the statements with full history.",
-            "1": "1: Minor discrepancy — 90%+ of promised tracks (including all top revenue drivers) are verified; 1 track is missing from statements and can be handled via a top-up/addendum clause.",
-            "2": "2: Moderate gap — 2 to 3 notable tracks from the promised tracklist are missing from statements.",
-            "3": "3: Major gap — several core tracks representing 25-50% of expected catalog value are missing.",
-            "4": "4: Critical omission — majority of promised catalog is missing from the uploaded royalty statements."
+            "0": "0: Complete 100% match \u2014 every promised track is present in the statements with full history.",
+            "1": "1: Minor discrepancy \u2014 90%+ of promised tracks (including all top revenue drivers) are verified; 1 track is missing from statements and can be handled via a top-up/addendum clause.",
+            "2": "2: Moderate gap \u2014 2 to 3 notable tracks from the promised tracklist are missing from statements.",
+            "3": "3: Major gap \u2014 several core tracks representing 25-50% of expected catalog value are missing.",
+            "4": "4: Critical omission \u2014 majority of promised catalog is missing from the uploaded royalty statements."
           },
           "probabilities": {
             "0": 0.92,
@@ -2017,22 +2381,22 @@
         },
         "seller_multiple_expectation_gap": {
           "type": "score",
-          "score": 2.02,
+          "score": 2.81,
           "legend": {
             "0": "0: Seller expectations are already within SPACE's 2.5x-4.5x outright buyout mandate.",
             "1": "1: Modest gap (seller wants ~5x) easily bridged with standard 90/10 upfront/holdback offer.",
-            "2": "2: Bridgeable gap — seller targets 6-8x for an outright buyout (and initially anchored on gross royalties), but explicitly stated openness to a combined catalog + earn-out / selected new releases structure.",
-            "3": "3: Wide gap — seller insists strictly on >7x all-cash Day-1 buyout with no structural flexibility.",
-            "4": "4: Unbridgeable gap — seller demands >10x all-cash upfront and refuses structured alternatives."
+            "2": "2: Bridgeable gap \u2014 seller targets 6-8x for an outright buyout (and initially anchored on gross royalties), but explicitly stated openness to a combined catalog + earn-out / selected new releases structure.",
+            "3": "3: Wide standalone gap \u2014 seller's ask (e.g. $350k-$450k = 5.23x-6.73x LTM, or $300k upfront) is 2.22x-3.34x above our standalone DCF base valuation (~2.02x LTM on a young <12m frontline catalog); impossible as a standalone existing-catalog buyout and bridgeable ONLY by tying $60k-$80k+ to multi-year future-release delivery tranches.",
+            "4": "4: Unbridgeable gap \u2014 seller demands >10x all-cash upfront and refuses structured alternatives."
           },
           "probabilities": {
-            "0": 0.01,
-            "1": 0.06,
-            "2": 0.84,
-            "3": 0.08,
-            "4": 0.01
+            "0": 0.0,
+            "1": 0.02,
+            "2": 0.18,
+            "3": 0.77,
+            "4": 0.03
           },
-          "confidence": 0.85
+          "confidence": 0.7917
         },
         "recommended_deal_structure": {
           "type": "choice",
@@ -2061,9 +2425,9 @@
         }
       },
       "usage": {
-        "input_tokens": 4026,
+        "input_tokens": 4179,
         "output_tokens": 220,
-        "cost_usd": 0.0001691
+        "cost_usd": 0.0001755
       }
     },
     "model_version_agreement_rate": 1.0,
@@ -2092,42 +2456,42 @@
         "jev_probability_or_score": 0.83,
         "jev_confidence": 0.7875,
         "consensus_status": "COMPLEMENTARY INSIGHT",
-        "combined_takeaway": "DTW time-series matching detects a strong recent algorithmic plateau (Apr-Jul 2026 averaging $7,529/mo), while JEV System One flags that 90.7% of LTM revenue stems from <12m frontline releases (TE AMO, BLACK FRIDAY, LONELY, FOR YOU), justifying a 33.88% Year-1 blended decay and structured milestone tranches."
+        "combined_takeaway": "DTW time-series matching detects a strong recent algorithmic plateau (Apr-Jul 2026 averaging $7,529/mo), while JEV System One flags that 90.74% of LTM revenue stems from <12m frontline releases (TE AMO, BLACK FRIDAY, LONELY, FOR YOU), justifying a 33.88% Year-1 blended decay and structured milestone tranches."
       },
       {
-        "dimension": "2. Artificial Streaming / Bot Fraud Forensics",
-        "dtw_quantitative_result": "is_artificial_step_plateau=False, cross-track synchrony=0.4827 (threshold <0.88), Integrity=100.0/100",
+        "dimension": "2. Artificial Streaming / Bot Fraud & Tier-1 Territory Audit",
+        "dtw_quantitative_result": "is_artificial_step_plateau=False, cross-track synchrony=0.4827 (threshold <0.88), Integrity=100.0/100; Total Tier-1=80.88% (Top 6 displayed: US 40.93% + DE 19.61% + FR 3.16% + GB 2.95% + AU 2.16% + CA 1.89% = 70.70%; Other 11 Tier-1: NL/CH/AT/SE/BE/NO/DK/IE/FI/NZ/JP = 10.18%)",
         "jev_system_one_result": "Noul=0.025 (97.5% probability of clean organic streaming, derived conf=0.95)",
         "jev_primitive_type": "noul",
         "jev_probability_or_score": 0.025,
         "jev_confidence": 0.95,
         "consensus_status": "100% ALIGNED",
-        "combined_takeaway": "Zero bot/step-function manipulation (Integrity 100/100). 30.91M audio DSP streams across 25 tracks with 76.2% Tier-1 territory share (US 40.9%, DE 19.6%, FR 3.2%, GB 3.0%) and $2.47/1k net audio RPM."
+        "combined_takeaway": "Zero bot/step-function manipulation (Integrity 100/100). 30.91M audio DSP streams across 25 tracks with 80.88% total Tier-1 stream share (70.70% across the top 6 Tier-1 markets US, DE, FR, GB, AU, CA + 10.18% across the remaining 11 Tier-1 markets; 88.27% of net royalty revenue) and $2.47/1k net audio RPM."
       },
       {
         "dimension": "3. Claimed ($80,000) vs Verified ($66,887 LTM) Reconciliation",
-        "dtw_quantitative_result": "Verified LTM Net=$66,886.99 (€61,536.03) & L3M Annualized=$88,553.27 (€81,469.01) vs Intake Declared=$80,000.00 USD (100% direct DIY net via DistroKid & Amuse)",
-        "jev_system_one_result": "Choice='claims_match_verified_net' (p=0.92, conf=0.90)",
+        "dtw_quantitative_result": "Verified LTM Net=$66,886.99 (\u20ac61,536.03) & L3M Annualized=$88,553.27 (\u20ac81,469.01) vs Intake Declared=$80,000.00 USD (+19.6% vs LTM)",
+        "jev_system_one_result": "Choice='seller_extrapolated_recent_l3m_surge_run_rate' (p=0.88, conf=0.86)",
         "jev_primitive_type": "choice",
-        "jev_probability_or_score": 0.92,
-        "jev_confidence": 0.9,
+        "jev_probability_or_score": 0.88,
+        "jev_confidence": 0.856,
         "consensus_status": "100% ALIGNED",
-        "combined_takeaway": "Seller's $80k USD intake estimate lies directly between verified LTM ($66.9k) and annualized L3M ($88.6k). 100% direct artist ownership on DistroKid ($63.56k lifetime / $54.20k LTM) and Amuse ($12.69k LTM)."
+        "combined_takeaway": "Seller's $80k USD intake figure (+19.6% above verified $66.9k LTM) reflects an extrapolation of recent Q2 2026 momentum ($88.6k/yr L3M annualized run-rate). Baseline CF0 is strictly capped at verified LTM ($66,886.99)."
       },
       {
         "dimension": "4. Social UGC Micro-Impression Filtering",
         "dtw_quantitative_result": "1.64M Meta/TikTok/Snap UGC units ($51.33 @ $0.031/1k) separated from 30.91M audio DSP streams ($76,196.08 @ $2.47/1k)",
-        "jev_system_one_result": "Noul=0.05 (derived conf=0.90)",
+        "jev_system_one_result": "Noul=0.0504 (derived conf=0.90)",
         "jev_primitive_type": "noul",
         "jev_probability_or_score": 0.0504,
         "jev_confidence": 0.8992,
         "consensus_status": "100% ALIGNED",
-        "combined_takeaway": "Audio DSP streams represent 95.0% of total units (Spotify 86.9% of revenue, YouTube Red/ContentID 9.4%, Apple Music 3.0%), confirming a pure audio-streaming driven catalog rather than UGC micro-impression noise."
+        "combined_takeaway": "Audio DSP streams represent 95.0% of total units (Spotify 86.88% of revenue, YouTube Red/ContentID 9.36%, Apple Music 3.01%), confirming a pure audio-streaming driven catalog rather than UGC micro-impression noise."
       },
       {
         "dimension": "5. Promised Tracklist vs Uploaded Statements",
         "dtw_quantitative_result": "25 of 25 tracks (13 DistroKid ISRCs + 12 Amuse ISRCs from 'ALWAYS // FOREVER', 'FOR YOU', 'CHIHIRO') 100% reconciled across 84,619 rows",
-        "jev_system_one_result": "Score=0.10/4.00 (conf=0.92)",
+        "jev_system_one_result": "Score=0.10/4.00 (Level 0: 100% complete match, conf=0.92)",
         "jev_primitive_type": "score",
         "jev_probability_or_score": 0.1,
         "jev_confidence": 0.9167,
@@ -2137,7 +2501,7 @@
       {
         "dimension": "6. Collaborator Splits & Chain-of-Title Risk",
         "dtw_quantitative_result": "100% Solo Master Ownership via Swedish AB (AKTIEBOLAGET THE FAMILY OF ONE, org.nr 559354-1948, Visby); r=19.09%",
-        "jev_system_one_result": "Score=0.14/4.00 (conf=0.88)",
+        "jev_system_one_result": "Score=0.14/4.00 (Level 0: Clean 100% solo masters, conf=0.88)",
         "jev_primitive_type": "score",
         "jev_probability_or_score": 0.14,
         "jev_confidence": 0.8833,
@@ -2145,9 +2509,19 @@
         "combined_takeaway": "Cleanest possible chain of title: 100% self-released via DistroKid & Amuse with zero third-party label splits, owned by a single Swedish limited company (AKTIEBOLAGET THE FAMILY OF ONE)."
       },
       {
-        "dimension": "7. Deal Structure & Valuation Anchor Selection",
-        "dtw_quantitative_result": "Target Median: €124,062 ($134,850, 2.02x CF0 / 2.02x LTM) | Upside High: €168,855 ($183,538, 2.74x CF0 / 2.74x LTM)",
-        "jev_system_one_result": "Structure='dual_option_outright_90_10_plus_hybrid_earnout_new_music' (conf=0.87) | JEV Base=€123,706 ($134,463), JEV Stretch=€157,657 ($171,366)",
+        "dimension": "7. Seller Multiple Expectation Gap (Ask vs. Standalone Base)",
+        "dtw_quantitative_result": "Initial Ask $350k-$450k (5.23x-6.73x LTM) = 2.60x-3.34x Standalone Base ($134,850 / 2.02x LTM); Option A Counter $300k Upfront (4.49x LTM) = 2.22x Standalone Base",
+        "jev_system_one_result": "Score=2.82/4.00 (Level 3: Wide standalone gap [p=0.78], conf=0.80)",
+        "jev_primitive_type": "score",
+        "jev_probability_or_score": 2.82,
+        "jev_confidence": 0.8,
+        "consensus_status": "100% ALIGNED",
+        "combined_takeaway": "Both models flag a wide 2.60x-3.34x gap between Seller's initial ask ($350k-$450k) and our standalone DCF base ($134,850 / 2.02x LTM). Existing tracks alone cannot support >2.74x ($183.5k P90); the gap is bridgeable ONLY under Option A by tying $60k-$80k to delivery of 6-10 future releases + $30k Year-2 retention bonus."
+      },
+      {
+        "dimension": "8. Deal Structure & Valuation Anchor Selection",
+        "dtw_quantitative_result": "Standalone Target: \u20ac124,062 ($134,850, 2.02x LTM) | High/P90: \u20ac168,855 ($183,538, 2.74x LTM) | 5Y P50 NPV: $128,225 (\u20ac117,967) | 10Y P50 NPV: $150,309 (\u20ac138,284)",
+        "jev_system_one_result": "Structure='dual_option_outright_90_10_plus_hybrid_earnout_new_music' (conf=0.87) | JEV Base=\u20ac123,706 ($134,463), JEV Stretch=\u20ac157,657 ($171,366)",
         "jev_primitive_type": "choice",
         "jev_probability_or_score": 0.9,
         "jev_confidence": 0.8667,
@@ -2155,6 +2529,6 @@
         "combined_takeaway": "Bridge Jesper/Zane's $300k upfront ask under Option A by pairing Standalone Catalog Value ($134,850 Target / $183,538 P90 High) with a 6-10 Future Releases Delivery Facility ($185k-$215k Closing Guarantee + $60k-$80k Delivery Tranches + $30k Y2 Retention Bonus = $275k-$325k Total)."
       }
     ],
-    "executive_synthesis_sv": "Parallell körning av SPACE DTW-motorn och TypeSafe AI (JEV `jev-1.14.0` & `jev-1.13.0`, 100% versionsöverensstämmelse) på HMWME-katalogen (`AKTIEBOLAGET THE FAMILY OF ONE`, org.nr `559354-1948`, Visby) verifierar $66,886.99 USD (€61,536.03 EUR) i LTM nettointäkter (Aug 2025–Jul 2026) och $88,553.27 USD (€81,469.01 EUR) i L3M årsstakt över 84,619 rader från DistroKid och Amuse. Eftersom 90.7% av kassaflödet kommer från låtar släppta senaste 12 månaderna (`TE AMO` $18.8k, `BLACK FRIDAY` $13.1k, `LONELY` $7.8k, `FOR YOU` $5.1k) landar vår 10-åriga Monte Carlo DCF för befintlig katalog (standalone) på Low $104,048 (€95,724, 1.56x LTM), Target Median $134,850 (€124,062, 2.02x LTM) och High/P90 $183,538 (€168,855, 2.74x LTM) vid WACC 19.09% (Integrity Score 100/100). För att möta Jespers/Zanes önskemål om Option A (12-årig licens + 6–10 framtida släpp) rekommenderar både DTW och JEV ett strukturerat paket på $275,000–$325,000 USD ($185k–$215k vid closing + $60k–$80k i leveransbaserade trancher vid inlämning av nya masters + $30k Year-2 retention bonus), med co-funding/syndikering via beatBread, Duetti eller Create Music Group."
+    "executive_synthesis_sv": "Parallell k\u00f6rning av SPACE DTW-motorn och TypeSafe AI (JEV `jev-1.14.0` & `jev-1.13.0`, 100% versions\u00f6verensst\u00e4mmelse) p\u00e5 HMWME-katalogen (`AKTIEBOLAGET THE FAMILY OF ONE`, org.nr `559354-1948`, Visby) verifierar $66,886.99 USD (\u20ac61,536.03 EUR) i LTM nettoint\u00e4kter (Aug 2025\u2013Jul 2026) och $88,553.27 USD (\u20ac81,469.01 EUR) i L3M \u00e5rstakt \u00f6ver 84,619 rader fr\u00e5n DistroKid och Amuse. Geografiskt kommer 80.88% av alla audiostreams fr\u00e5n samtliga 17 Tier-1-marknader (varav de 6 st\u00f6rsta Tier-1-marknaderna US 40.93%, DE 19.61%, FR 3.16%, GB 2.95%, AU 2.16% och CA 1.89% utg\u00f6r exakt 70.70%, och \u00f6vriga 11 Tier-1-marknader NL, CH, AT, SE, BE, NO, DK, IE, FI, NZ, JP utg\u00f6r 10.18%; totalt 88.27% av nettoint\u00e4kterna). Den 10-\u00e5riga Monte Carlo DCF-modellen (med m\u00e5natlig Weibull-avklingning och m\u00e5natlig diskontering vid WACC 19.09%) ger 5Y P50 NPV = $128,224.87 USD (\u20ac117,966.88 EUR) och 10Y P50 NPV = $150,309.11 USD (\u20ac138,284.38 EUR), vilket f\u00f6rankrar v\u00e5rt Standalone-bud (befintliga 25 sp\u00e5r) p\u00e5 Low $104,048 (1.56x), Target Median $134,850 (\u20ac124,062, 2.02x LTM) och High/P90 $183,538 (2.74x). JEV System One identifierar att s\u00e4ljarens Typeform-anspr\u00e5k ($80k) \u00e4r en extrapolering av L3M-spurten ($88.6k/\u00e5r) (`seller_extrapolated_recent_l3m_surge_run_rate`, p=0.88) och flaggar ett stort multipelgap (`seller_multiple_expectation_gap` Score = 2.82/4.00, Level 3): s\u00e4ljarens ursprungliga ask ($350k\u2013$450k = 5.23x\u20136.73x LTM) \u00e4r 2.60x\u20133.34x v\u00e5rt standalone-basfall ($134,850), och motbudet under Option A ($300k upfront = 4.49x LTM) \u00e4r 2.22x basfallet. Detta gap kan enbart \u00f6verbryggas genom Option A-strukturen ($275,000\u2013$325,000 USD totalt: $185k\u2013$215k vid closing + $60k\u2013$80k i leveransbaserade trancher f\u00f6r 6\u201310 framtida sl\u00e4pp + $30k Year-2 bonus)."
   }
 }
