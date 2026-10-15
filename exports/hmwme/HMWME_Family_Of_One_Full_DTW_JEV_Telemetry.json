@@ -1,4 +1,9 @@
 {
+  "fixture_provenance": {
+    "is_synthetic_illustrative_fixture": true,
+    "fixture_scope": "illustrative_case_study_benchmark_fixture",
+    "notice": "Synthetic/illustrative underwriting benchmark fixture for repository regression testing — not a public offering."
+  },
   "deal_code": "SPC-HMWME",
   "seller_entity": {
     "legal_name": "AKTIEBOLAGET THE FAMILY OF ONE",
