@@ -1481,7 +1481,10 @@ def render_investment_memo_pdf(
 
     pdf_bytes: Optional[bytes] = None
     if chrome_bin:
-        with tempfile.TemporaryDirectory(prefix="space_memo_") as tmpdir:
+        with tempfile.TemporaryDirectory(
+            prefix="space_memo_",
+            ignore_cleanup_errors=True,
+        ) as tmpdir:
             tmp_html = Path(tmpdir) / "memo.html"
             tmp_pdf = Path(tmpdir) / "memo.pdf"
             tmp_profile = Path(tmpdir) / "chrome_profile"
