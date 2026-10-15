@@ -139,7 +139,8 @@ def _extract_csv_texts_from_attachments(
                             extracted.append((fname, csv_text))
                         continue
                     for member in sorted(names):
-                        if member.endswith("/") or member.startswith("__MACOSX"):
+                        base_member = member.rsplit("/", 1)[-1]
+                        if member.endswith("/") or member.startswith("__MACOSX") or base_member.startswith("._"):
                             continue
                         m_lower = member.lower()
                         if m_lower.endswith(".xlsx"):
@@ -218,7 +219,10 @@ def parse_multi_attachment_statements(
         if not lines:
             continue
         hdr_key = lines[0].strip().lower()
-        if fname.lower().endswith(".xlsx") or "youtube" in text[:400].lower():
+        is_yt_studio_hdr = any(
+            k in hdr_key for k in ("titre de la vidéo", "video title", "vues engagées", "engaged views")
+        )
+        if fname.lower().endswith(".xlsx") or is_yt_studio_hdr:
             individual_summaries.append(
                 parse_statement_csv(text, default_currency=default_currency)
             )

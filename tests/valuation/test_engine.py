@@ -1555,3 +1555,105 @@ def test_geo_seo_steps_1_to_5_end_to_end(tmp_path):
         assert expected_file in written_files
 
 
+def test_tribal_trap_and_trap_nation_parsing_and_parallel_jev_evaluation():
+    from datetime import date
+    from services.spacemusic.inbox_ingestor import parse_multi_attachment_statements
+    from services.valuation.jev_evaluator import (
+        choice_confidence,
+        noul_confidence,
+        run_parallel_dtw_and_jev_evaluation,
+        score_confidence,
+    )
+
+    # 1. Verify exact TypeSafe AI confidence math from docs.typesafe.ai/confidence.md
+    assert abs(choice_confidence([0.85, 0.10, 0.05]) - 0.775) < 1e-4
+    assert abs(choice_confidence([1 / 3, 1 / 3, 1 / 3]) - 0.0) < 1e-4
+    assert abs(score_confidence([0.05, 0.70, 0.25]) - 0.55) < 1e-4
+    assert abs(noul_confidence(0.975) - 0.95) < 1e-4
+    assert abs(noul_confidence(0.50) - 0.0) < 1e-4
+
+    # 2. Build synthetic 14-month Tribal Trap TSV + Trap Nation CSV statements for 2Scratch
+    tribal_lines = [
+        "Label Name\tCatalog\tTrack Artist\tTrack Title\tMix Name\tRelease Artist\tRelease Name\tSales Date\tContract Detail\tBasis\tPrice\tDeal\tSale Type\tQty\tGross\tRoyalty\tPro Rata Share\tPro Rata Total\tISRC\tEAN\tStore Name\tCountry\tProduct Name\tCompilation\tCurrency"
+    ]
+    trapnation_lines = [
+        "Sales Date,Transaction Date,Artist Name,Release Title,Track Title,ISRC,Service,Country,Net Units,Recipient Share (%),Royalty Per Unit ($ USD),Recipient Net Royalty ($ USD)"
+    ]
+
+    months = [
+        "2025-02-28", "2025-03-31", "2025-04-30", "2025-05-31",
+        "2025-06-30", "2025-07-31", "2025-08-31", "2025-09-30",
+        "2025-10-31", "2025-11-30", "2025-12-31", "2026-01-31",
+        "2026-02-28", "2026-03-31",
+    ]
+    for idx, m_end in enumerate(months):
+        decay_factor = 1.0 - idx * 0.006
+        # Audio DSP rows (Spotify & YouTube) + Social UGC row (TikTok with huge impressions and tiny payout)
+        tribal_lines.append(
+            f"Tribal Trap\tTT001\t2Scratch\tAll Night\tOriginal Mix\t2Scratch\tAll Night\t{m_end}\tDigital Sales\tRoyalties\t\t50\tStream\t{int(250000 * decay_factor)}\t{950.0 * decay_factor:.2f}\t{475.0 * decay_factor:.2f}\t1\t1\tTCADW1888484\t123\tSpotify\tUnited States\t\t\tUSD"
+        )
+        tribal_lines.append(
+            f"Tribal Trap\tTT002\t2Scratch\tReminder\tOriginal Mix\t2Scratch\tReminder\t{m_end}\tDigital Sales\tRoyalties\t\t50\tStream\t{int(180000 * decay_factor)}\t{620.0 * decay_factor:.2f}\t{310.0 * decay_factor:.2f}\t1\t1\tTCAED1948789\t124\tYouTube Subscriptions\tGermany\t\t\tUSD"
+        )
+        tribal_lines.append(
+            f"Tribal Trap\tTT001\t2Scratch\tAll Night\tOriginal Mix\t2Scratch\tAll Night\t{m_end}\tDigital Sales\tRoyalties\t\t50\tStream\t5000000\t20.00\t10.00\t1\t1\tTCADW1888484\t123\tTikTok\tUnited Kingdom\t\t\tUSD"
+        )
+        trapnation_lines.append(
+            f"{m_end},{m_end},2Scratch,Ballin,Ballin (feat. TAOG),USA2P1841742,Spotify,United States,{int(120000 * decay_factor)},50%,0.00133,{160.0 * decay_factor:.2f}"
+        )
+
+    stmt_summary = parse_multi_attachment_statements(
+        [
+            ("tribal_trap_q1.tsv", "\n".join(tribal_lines)),
+            ("royalties_2scratch_trapnation.csv", "\n".join(trapnation_lines)),
+        ],
+        default_currency="USD",
+    )
+
+    assert "Tribal Trap" in stmt_summary.detected_distributor
+    assert "Trap Nation" in stmt_summary.detected_distributor
+    assert "US" in stmt_summary.country_share
+    assert "DE" in stmt_summary.country_share
+    assert stmt_summary.ltm_net_royalty_eur > 8000.0
+    # TikTok 5M impressions/month should be zeroed in audio stream count while keeping its €10/mo revenue
+    assert stmt_summary.ltm_streams < 10_000_000
+
+    app_input = CatalogValuationInput(
+        catalog_title="2Scratch Master Catalog",
+        artist_or_label_name="2Scratch (Justin Matysik)",
+        applicant_name="Justin Matysik",
+        applicant_email="2scratch.business@gmail.com",
+        rights_scope=RightsScope.MASTERS,
+        royalty_basis=RoyaltyBasis.NET_PAYABLE,
+        distributor_or_admin=stmt_summary.detected_distributor,
+        ownership_share_pct=100.0,
+        existing_releases_only=True,
+        declared_ltm_amount=30000.0,
+        declared_currency="USD",
+        statements_verified=True,
+        genres=["hip_hop", "trap"],
+        tracks=stmt_summary.tracks,
+        monthly_history=stmt_summary.monthly_history,
+        dsp_share=stmt_summary.dsp_share,
+        country_share=stmt_summary.country_share,
+    )
+
+    engine = SpaceValuationEngine(random_seed=42)
+    val_report = engine.evaluate(app_input, reference_date=date(2026, 4, 1))
+    assert val_report.integrity_score >= 80.0
+    assert val_report.price_median_eur > 20000.0
+
+    parallel_report = run_parallel_dtw_and_jev_evaluation(
+        app_input=app_input,
+        stmt_summary=stmt_summary,
+        valuation_report=val_report,
+    )
+    assert parallel_report.model_version_agreement_rate == 1.0
+    assert parallel_report.jev_lifecycle_choice == "evergreen_algorithmic_plateau"
+    assert parallel_report.jev_bot_fraud_noul < 0.10
+    assert len(parallel_report.parallel_comparison_matrix) == 7
+    assert parallel_report.jev_implied_base_offer_usd > 0
+    assert parallel_report.jev_implied_stretch_offer_usd > parallel_report.jev_implied_base_offer_usd
+
+
+

@@ -793,7 +793,13 @@ class SpaceValuationEngine:
 
         # Forensics Check 4: Implied Net Per-Stream Yield (RPM) & Bot/Geo Risk
         implied_rpm_usd: Optional[float] = None
-        total_hist_streams = sum(m.streams for m in inp.monthly_history) if inp.monthly_history else total_track_streams
+        if inp.monthly_history:
+            sorted_mh_rpm = sorted(inp.monthly_history, key=lambda m: m.period)
+            last_12_rpm = sorted_mh_rpm[-12:]
+            rpm_scale = 12.0 / max(1, len(last_12_rpm))
+            total_hist_streams = int(round(sum(m.streams for m in last_12_rpm) * rpm_scale))
+        else:
+            total_hist_streams = total_track_streams
         if total_hist_streams > 0 and effective_cf0_eur > 0:
             usd_rate = float(self.rules.get("FX_RATES_TO_EUR", {}).get("USD", 0.92))
             effective_usd = effective_cf0_eur / usd_rate
@@ -806,6 +812,13 @@ class SpaceValuationEngine:
                 min_rpm = float(rpm_cfg.get("latin_afro_min", 0.0009))
             else:
                 min_rpm = float(rpm_cfg.get("blended_min", 0.0014))
+            dist_lower = (inp.distributor_or_admin or "").lower()
+            if any(
+                lbl in dist_lower
+                for lbl in ("tribal trap", "trap nation", "labelworx", "label engine")
+            ):
+                # Artist net statements on label split deals (e.g. 50/50 or 60/40) reflect artist's net share per stream
+                min_rpm *= 0.55
             max_rpm = float(rpm_cfg.get("blended_max", 0.0058)) * 1.5
 
             if implied_rpm_usd < min_rpm or implied_rpm_usd > max_rpm:

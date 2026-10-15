@@ -82,6 +82,8 @@ class ParsedStatementSummary(BaseModel):
 HEADER_ALIASES = {
     "sale_month": [
         "sale month",
+        "sales date",
+        "sale date",
         "sales period",
         "reporting month",
         "reporting period",
@@ -134,6 +136,7 @@ HEADER_ALIASES = {
     ],
     "dsp_store": [
         "store",
+        "store name",
         "Music Store",
         "music store",
         "dsp",
@@ -157,6 +160,7 @@ HEADER_ALIASES = {
     ],
     "streams": [
         "quantity",
+        "qty",
         "units",
         "streams",
         "net quantity",
@@ -170,6 +174,11 @@ HEADER_ALIASES = {
         "views",
     ],
     "earnings": [
+        "recipient net royalty ($ usd)",
+        "recipient net royalty",
+        "net royalty ($ usd)",
+        "net royalty (usd)",
+        "net royalty (eur)",
         "earnings (usd)",
         "royalty ($us)",
         "royalty (usd)",
@@ -187,6 +196,7 @@ HEADER_ALIASES = {
         "your revenue",
         "net payout",
         "net share",
+        "gross royalty ($ usd)",
         "revenus estimés (mad)",
         "revenus estimés (eur)",
         "revenus estimés (usd)",
@@ -327,13 +337,122 @@ def _normalize_dsp_name(raw: str) -> str:
         return "deezer"
     if "tidal" in s:
         return "tidal"
-    if "tiktok" in s or "bytedance" in s or "resso" in s:
+    if "tiktok" in s or "bytedance" in s or "resso" in s or "capcut" in s:
         return "tiktok"
+    if any(k in s for k in ("facebook", "instagram", "meta", "threads", "snapchat")):
+        return "meta_social"
     if "pandora" in s:
         return "pandora"
     if "soundcloud" in s:
         return "soundcloud"
+    if "yandex" in s:
+        return "yandex"
     return s or "other"
+
+
+COUNTRY_NAME_TO_ISO2: Dict[str, str] = {
+    "united states": "US",
+    "united states of america": "US",
+    "usa": "US",
+    "united kingdom": "GB",
+    "great britain": "GB",
+    "uk": "GB",
+    "england": "GB",
+    "germany": "DE",
+    "france": "FR",
+    "canada": "CA",
+    "australia": "AU",
+    "italy": "IT",
+    "poland": "PL",
+    "netherlands": "NL",
+    "the netherlands": "NL",
+    "switzerland": "CH",
+    "austria": "AT",
+    "brazil": "BR",
+    "finland": "FI",
+    "sweden": "SE",
+    "norway": "NO",
+    "czech republic": "CZ",
+    "czechia": "CZ",
+    "russia": "RU",
+    "russian federation": "RU",
+    "denmark": "DK",
+    "romania": "RO",
+    "belgium": "BE",
+    "spain": "ES",
+    "ukraine": "UA",
+    "hungary": "HU",
+    "mexico": "MX",
+    "slovakia": "SK",
+    "greece": "GR",
+    "turkey": "TR",
+    "türkiye": "TR",
+    "india": "IN",
+    "israel": "IL",
+    "saudi arabia": "SA",
+    "bulgaria": "BG",
+    "portugal": "PT",
+    "united arab emirates": "AE",
+    "uae": "AE",
+    "new zealand": "NZ",
+    "ireland": "IE",
+    "japan": "JP",
+    "south korea": "KR",
+    "korea, republic of": "KR",
+    "republic of korea": "KR",
+    "china": "CN",
+    "taiwan": "TW",
+    "hong kong": "HK",
+    "singapore": "SG",
+    "malaysia": "MY",
+    "thailand": "TH",
+    "vietnam": "VN",
+    "viet nam": "VN",
+    "indonesia": "ID",
+    "philippines": "PH",
+    "pakistan": "PK",
+    "bangladesh": "BD",
+    "egypt": "EG",
+    "south africa": "ZA",
+    "nigeria": "NG",
+    "morocco": "MA",
+    "algeria": "DZ",
+    "tunisia": "TN",
+    "argentina": "AR",
+    "chile": "CL",
+    "colombia": "CO",
+    "peru": "PE",
+    "croatia": "HR",
+    "serbia": "RS",
+    "slovenia": "SI",
+    "lithuania": "LT",
+    "latvia": "LV",
+    "estonia": "EE",
+    "luxembourg": "LU",
+    "iceland": "IS",
+    "cyprus": "CY",
+    "malta": "MT",
+    "kazakhstan": "KZ",
+    "belarus": "BY",
+    "trinidad and tobago": "TT",
+    "guinea": "GN",
+    "oman": "OM",
+}
+
+
+def _normalize_country_code(raw: Optional[str]) -> str:
+    if not raw:
+        return "US"
+    s = raw.strip()
+    if not s:
+        return "US"
+    if len(s) == 2 and s.isalpha():
+        up = s.upper()
+        return "GB" if up == "UK" else up
+    lower = s.lower()
+    if lower in COUNTRY_NAME_TO_ISO2:
+        return COUNTRY_NAME_TO_ISO2[lower]
+    return s.upper()[:2]
 
 
 def _parse_float(val: Any) -> float:
@@ -387,6 +506,12 @@ def _detect_column_mapping(headers: List[str]) -> Tuple[Dict[str, str], str]:
         or "engaged views" in lower_headers
     ):
         distributor = "YouTube Studio"
+    elif "sales date" in lower_headers and "pro rata share" in lower_headers and "label name" in lower_headers:
+        distributor = "Tribal Trap / LabelWorx"
+    elif "recipient net royalty ($ usd)" in lower_headers or (
+        "recipient share (%)" in lower_headers and "royalty per unit ($ usd)" in lower_headers
+    ):
+        distributor = "Trap Nation / Label Engine"
     elif "asset title" in lower_headers or "royalty period" in lower_headers:
         distributor = "FUGA / Enterprise"
     else:
@@ -458,7 +583,12 @@ def parse_statement_csv(
         sale_month = sale_month or "2026-01"
 
         isrc = (raw_row.get(col_map.get("isrc", ""), "") or "").strip().upper()
-        title = (raw_row.get(col_map.get("track_title", ""), "") or "Untitled Track").strip()
+        title = (
+            raw_row.get(col_map.get("track_title", ""), "")
+            or raw_row.get("Release Name", "")
+            or raw_row.get("Product Name", "")
+            or "Untitled Track"
+        ).strip()
         if isrc.lower() in ("total", "totals", "grand total") or title.lower() in ("total", "totals"):
             continue
         if not isrc:
@@ -469,10 +599,15 @@ def parse_statement_csv(
         artist = (raw_row.get(col_map.get("artist_name", ""), "") or "Unknown Artist").strip()
         default_dsp = "youtube" if detected_distributor == "YouTube Studio" else "spotify"
         dsp = _normalize_dsp_name(raw_row.get(col_map.get("dsp_store", ""), default_dsp))
-        country = (raw_row.get(col_map.get("country_code", ""), "US") or "US").strip().upper()[:2]
+        country = _normalize_country_code(raw_row.get(col_map.get("country_code", ""), "US"))
         streams = max(0, _parse_int(raw_row.get(col_map.get("streams", ""), 0)))
 
         raw_earnings = _parse_float(raw_row.get(col_map.get("earnings", ""), 0.0))
+        # Exclude sub-$0.0001/unit social UGC micro-impressions (Facebook/Instagram/TikTok/Threads/Snapchat)
+        # from audio DSP stream totals so 100M+ $0.000003 social video views do not distort audio RPM or geo stream share,
+        # while retaining 100% of their royalty revenue.
+        if dsp in ("tiktok", "meta_social") and streams > 0 and (raw_earnings / streams) < 0.0001:
+            streams = 0
         row_currency = (
             raw_row.get(col_map.get("currency", ""), "") or inferred_hdr_currency
         ).strip().upper()
@@ -727,14 +862,86 @@ def _summarize_normalized_rows(
     if not rows:
         return ParsedStatementSummary(detected_distributor=detected_distributor, row_count=0)
 
+    # Reconcile rows missing an ISRC (`SPACE...`) when another row has the exact same track title and a real ISRC
+    title_to_real_isrc: Dict[str, str] = {}
+    for r in rows:
+        if not r.isrc.startswith("SPACE") and r.track_title and r.track_title != "Untitled Track":
+            norm_t = r.track_title.strip().lower()
+            if norm_t not in title_to_real_isrc:
+                title_to_real_isrc[norm_t] = r.isrc
+    for r in rows:
+        if r.isrc.startswith("SPACE") and r.track_title:
+            matched_isrc = title_to_real_isrc.get(r.track_title.strip().lower())
+            if matched_isrc:
+                r.isrc = matched_isrc
+
     # Aggregate monthly totals
     monthly_rev: Dict[str, float] = defaultdict(float)
     monthly_streams: Dict[str, int] = defaultdict(int)
+    month_dsp_rev: Dict[str, Dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    dsp_totals_all: Dict[str, float] = defaultdict(float)
     for r in rows:
         monthly_rev[r.sale_month] += r.net_royalty_eur
         monthly_streams[r.sale_month] += r.streams
+        month_dsp_rev[r.sale_month][r.dsp_store] += r.net_royalty_eur
+        dsp_totals_all[r.dsp_store] += r.net_royalty_eur
 
-    sorted_months = sorted(monthly_rev.keys())
+    total_rev_eur = sum(monthly_rev.values())
+    total_streams = sum(monthly_streams.values())
+
+    all_sorted_months = sorted(monthly_rev.keys())
+    complete_months = list(all_sorted_months)
+
+    # When multi-quarter Sales-Date exports span >12 months, trim partial accounting-lag
+    # boundary months at the tail (where the dominant DSP has not yet reported for the latest
+    # usage month) and prior-period catch-up remnants at the head, while always keeping >=12 months.
+    top4_rev_share = (
+        sum(sorted(monthly_rev.values(), reverse=True)[:4]) / total_rev_eur
+        if total_rev_eur > 0
+        else 1.0
+    )
+    if len(complete_months) > 12 and total_rev_eur > 0 and top4_rev_share < 0.55:
+        top_dsp, top_dsp_rev = max(dsp_totals_all.items(), key=lambda kv: kv[1])
+        top_dsp_share = top_dsp_rev / total_rev_eur
+        active_top_dsp_vals = sorted(
+            month_dsp_rev[m][top_dsp] for m in complete_months if month_dsp_rev[m][top_dsp] > 0
+        )
+        median_top_dsp = (
+            active_top_dsp_vals[len(active_top_dsp_vals) // 2] if active_top_dsp_vals else 0.0
+        )
+
+        # 1. Trim up to 2 trailing incomplete DSP-lag months
+        for _ in range(2):
+            if len(complete_months) <= 12:
+                break
+            last_m = complete_months[-1]
+            prev_6 = [monthly_rev[m] for m in complete_months[-7:-1]]
+            prev_6_sorted = sorted(prev_6)
+            med_prev_6 = prev_6_sorted[len(prev_6_sorted) // 2] if prev_6_sorted else 0.0
+            missing_primary_dsp = (
+                top_dsp_share >= 0.30
+                and median_top_dsp > 0
+                and month_dsp_rev[last_m][top_dsp] < 0.15 * median_top_dsp
+            )
+            severe_lag_drop = med_prev_6 > 0 and monthly_rev[last_m] < 0.45 * med_prev_6
+            if missing_primary_dsp or severe_lag_drop:
+                complete_months.pop()
+            else:
+                break
+
+        # 2. Trim leading prior-period catch-up / partial ramp-up months
+        max_m_rev = max((monthly_rev[m] for m in complete_months), default=0.0)
+        core_revs = sorted(monthly_rev[m] for m in complete_months if monthly_rev[m] >= 0.20 * max_m_rev)
+        p75_rev = core_revs[int(0.75 * (len(core_revs) - 1))] if core_revs else 0.0
+        while len(complete_months) > 12:
+            first_m = complete_months[0]
+            threshold = 0.65 * p75_rev if len(complete_months) > 18 else 0.18 * p75_rev
+            if monthly_rev[first_m] < threshold:
+                complete_months.pop(0)
+            else:
+                break
+
+    sorted_months = complete_months
     period_start = sorted_months[0]
     period_end = sorted_months[-1]
     l12_months = set(sorted_months[-12:])
@@ -747,9 +954,6 @@ def _summarize_normalized_rows(
         )
         for m in sorted_months
     ]
-
-    total_rev_eur = sum(monthly_rev.values())
-    total_streams = sum(monthly_streams.values())
 
     raw_ltm_rev_eur = sum(monthly_rev[m] for m in l12_months)
     raw_ltm_streams = sum(monthly_streams[m] for m in l12_months)
@@ -796,6 +1000,21 @@ def _summarize_normalized_rows(
         emp_decay = compute_empirical_track_Slope(active_series)
 
         rel_date = meta["release_date"]
+        if rel_date is None:
+            m_isrc = re.match(r"^[A-Z]{2}[A-Z0-9]{3}(\d{2})\d{5}$", isrc)
+            if m_isrc and not isrc.startswith(("SPACE", "YT")):
+                yy = int(m_isrc.group(1))
+                isrc_year = (2000 + yy) if yy <= 35 else (1900 + yy)
+                if 1960 <= isrc_year <= end_year:
+                    if isrc in track_first_month:
+                        fm_y, fm_m = map(int, track_first_month[isrc].split("-"))
+                        if isrc_year == fm_y and fm_m < 6:
+                            rel_date = date(isrc_year, fm_m, 1)
+                        elif isrc_year <= fm_y:
+                            rel_date = date(isrc_year, 6, 15)
+                    else:
+                        rel_date = date(isrc_year, 6, 15)
+
         if rel_date is None and isrc in track_first_month:
             fm_y, fm_m = map(int, track_first_month[isrc].split("-"))
             obs_span_months = max(1, (end_year - fm_y) * 12 + (end_month - fm_m) + 1)
@@ -942,6 +1161,24 @@ def merge_statement_summaries(
         if len(valid) == 1:
             return valid[0]
 
+    # First consolidate multiple files belonging to the same distributor (e.g. 160 monthly/quarterly
+    # Tribal Trap TSVs + 10 quarterly Trap Nation CSVs) so single-month files are not 12x-annualized
+    # before being summed across a multi-distributor catalog.
+    by_distributor: Dict[str, List[ParsedStatementSummary]] = defaultdict(list)
+    for s in valid:
+        by_distributor[s.detected_distributor].append(s)
+
+    if any(len(grp) > 1 for grp in by_distributor.values()) and len(by_distributor) > 1:
+        consolidated_valid: List[ParsedStatementSummary] = []
+        for dist_name, grp in by_distributor.items():
+            if len(grp) == 1:
+                consolidated_valid.append(grp[0])
+            else:
+                consolidated_valid.append(merge_statement_summaries(grp))
+        valid = consolidated_valid
+        if len(valid) == 1:
+            return valid[0]
+
     dist_names: List[str] = []
     for s in valid:
         if s.detected_distributor not in dist_names:
@@ -959,6 +1196,28 @@ def merge_statement_summaries(
             monthly_streams[pt.period] += pt.streams or 0
 
     sorted_months = sorted(monthly_rev.keys())
+    if same_distributor and len(sorted_months) > 12:
+        for _ in range(2):
+            if len(sorted_months) <= 12:
+                break
+            last_m = sorted_months[-1]
+            prev_6 = sorted(monthly_rev[m] for m in sorted_months[-7:-1])
+            med_prev_6 = prev_6[len(prev_6) // 2] if prev_6 else 0.0
+            if med_prev_6 > 0 and monthly_rev[last_m] < 0.45 * med_prev_6:
+                sorted_months.pop()
+            else:
+                break
+        max_m_rev = max((monthly_rev[m] for m in sorted_months), default=0.0)
+        core_revs = sorted(monthly_rev[m] for m in sorted_months if monthly_rev[m] >= 0.20 * max_m_rev)
+        p75_rev = core_revs[int(0.75 * (len(core_revs) - 1))] if core_revs else 0.0
+        while len(sorted_months) > 12:
+            first_m = sorted_months[0]
+            threshold = 0.65 * p75_rev if len(sorted_months) > 18 else 0.18 * p75_rev
+            if monthly_rev[first_m] < threshold:
+                sorted_months.pop(0)
+            else:
+                break
+
     monthly_history = [
         MonthlyStatementPoint(
             period=m,
@@ -976,6 +1235,29 @@ def merge_statement_summaries(
     else:
         combined_ltm_eur = round(sum(s.ltm_net_royalty_eur for s in valid), 2)
         combined_ltm_streams = sum(s.ltm_streams for s in valid)
+        # If all major distributor summaries have >=12 complete months and share >=12 overlapping
+        # months, restrict monthly_history to their common overlapping window so earlier single-label
+        # months do not create artificial step-jumps when the larger label's export begins.
+        major_month_sets = [
+            {pt.period for pt in s.monthly_history}
+            for s in valid
+            if len(s.monthly_history) >= 12 and s.ltm_net_royalty_eur >= 0.05 * combined_ltm_eur
+        ]
+        if len(major_month_sets) >= 2:
+            common_months = sorted(set.intersection(*major_month_sets))
+            if len(common_months) >= 12:
+                sorted_months = common_months
+                monthly_history = [
+                    MonthlyStatementPoint(
+                        period=m,
+                        net_royalties_eur=round(monthly_rev[m], 4),
+                        streams=monthly_streams[m],
+                    )
+                    for m in sorted_months
+                ]
+                l12 = sorted_months[-12:]
+                combined_ltm_eur = round(sum(monthly_rev[m] for m in l12), 2)
+                combined_ltm_streams = int(round(sum(monthly_streams[m] for m in l12)))
         # Ensure trailing 12 months of monthly_history reflect the combined LTM run-rate
         # when one source only uploaded a partial 1-quarter sample (e.g. Symphonic MAR-26)
         raw_l12_sum = sum(monthly_rev[m] for m in sorted_months[-12:])
@@ -995,20 +1277,76 @@ def merge_statement_summaries(
                 for pt in monthly_history
             ]
 
-    # Combine tracks by ISRC
+    # Combine tracks by ISRC (and reconcile synthetic SPACE... ISRCs by normalized title)
     track_map: Dict[str, TrackInput] = {}
     for s in valid:
+        # If merging multiple files from the same distributor, un-annualize per-file track LTM first
+        rev_scale = (
+            (s.total_net_royalty_eur / s.ltm_net_royalty_eur)
+            if (same_distributor and len(valid) > 1 and s.ltm_net_royalty_eur > 0 and s.total_net_royalty_eur > 0)
+            else 1.0
+        )
+        stream_scale = (
+            (s.total_streams / s.ltm_streams)
+            if (same_distributor and len(valid) > 1 and s.ltm_streams > 0 and s.total_streams > 0)
+            else 1.0
+        )
         for t in s.tracks:
+            t_eur = round((t.ltm_royalties_eur or 0.0) * rev_scale, 4)
+            t_streams = int(round((t.annual_streams or 0) * stream_scale))
             if t.isrc not in track_map:
-                track_map[t.isrc] = t.model_copy(deep=True) if hasattr(t, "model_copy") else t.copy(deep=True)
+                copied = t.model_copy(deep=True) if hasattr(t, "model_copy") else t.copy(deep=True)
+                copied.ltm_royalties_eur = t_eur
+                copied.annual_streams = t_streams
+                if same_distributor and len(valid) > 1:
+                    copied.monthly_royalties_eur = []
+                    copied.empirical_annual_decay_rate = None
+                track_map[t.isrc] = copied
             else:
                 existing = track_map[t.isrc]
+                if existing.release_date is None and t.release_date is not None:
+                    existing.release_date = t.release_date
                 existing.ltm_royalties_eur = round(
-                    (existing.ltm_royalties_eur or 0.0) + (t.ltm_royalties_eur or 0.0), 4
+                    (existing.ltm_royalties_eur or 0.0) + t_eur, 4
                 )
-                existing.annual_streams = (existing.annual_streams or 0) + (t.annual_streams or 0)
+                existing.annual_streams = (existing.annual_streams or 0) + t_streams
+                if same_distributor and len(valid) > 1:
+                    existing.monthly_royalties_eur = []
+                    existing.empirical_annual_decay_rate = None
+
+    # Reconcile any synthetic SPACE... ISRC with a real ISRC that has the same track title
+    title_to_real_isrc: Dict[str, str] = {}
+    for isrc_key, trk in track_map.items():
+        if isrc_key and not isrc_key.startswith("SPACE") and trk.title:
+            norm_t = re.sub(r"\s+", " ", trk.title.strip().lower())
+            if norm_t not in title_to_real_isrc:
+                title_to_real_isrc[norm_t] = isrc_key
+
+    for isrc_key in list(track_map.keys()):
+        if isrc_key and isrc_key.startswith("SPACE"):
+            trk = track_map[isrc_key]
+            norm_t = re.sub(r"\s+", " ", (trk.title or "").strip().lower())
+            real_key = title_to_real_isrc.get(norm_t)
+            if real_key and real_key in track_map and real_key != isrc_key:
+                target = track_map[real_key]
+                target.ltm_royalties_eur = round((target.ltm_royalties_eur or 0.0) + (trk.ltm_royalties_eur or 0.0), 4)
+                target.annual_streams = (target.annual_streams or 0) + (trk.annual_streams or 0)
+                if trk.monthly_royalties_eur:
+                    target.monthly_royalties_eur = (target.monthly_royalties_eur or []) + list(trk.monthly_royalties_eur)
+                del track_map[isrc_key]
 
     tracks_list = list(track_map.values())
+    raw_track_eur_sum = sum(t.ltm_royalties_eur or 0.0 for t in tracks_list)
+    raw_track_stream_sum = sum(t.annual_streams or 0 for t in tracks_list)
+    if same_distributor and len(valid) > 1 and raw_track_eur_sum > 0:
+        ltm_norm_factor = combined_ltm_eur / raw_track_eur_sum
+        stream_norm_factor = (combined_ltm_streams / raw_track_stream_sum) if raw_track_stream_sum > 0 else ltm_norm_factor
+        for t in tracks_list:
+            t.ltm_royalties_eur = round((t.ltm_royalties_eur or 0.0) * ltm_norm_factor, 4)
+            t.annual_streams = int(round((t.annual_streams or 0) * stream_norm_factor))
+            if t.monthly_royalties_eur and len(t.monthly_royalties_eur) >= 6:
+                t.empirical_annual_decay_rate = compute_empirical_track_Slope(t.monthly_royalties_eur)
+
     total_track_ltm = max(1e-6, sum(t.ltm_royalties_eur or 0.0 for t in tracks_list))
     for t in tracks_list:
         t.revenue_share = round((t.ltm_royalties_eur or 0.0) / total_track_ltm, 6)
