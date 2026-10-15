@@ -185,7 +185,8 @@ await writeFile(sellJsPath, sellJs, "utf8");
 const blogRefAnchor =
   '<li><a href="/data/music-catalog-market-2026/"><span>Music catalog market report (2026)</span><span aria-hidden="true">↗</span></a></li>';
 const blogRefAddition =
-  '<li><a href="/data/indie-catalog-multiples-ai-fraud-report-2026/"><span>2026 Indie Catalog Multiples &amp; AI Fraud Benchmark Report</span><span aria-hidden="true">↗</span></a></li>' +
+  '<li><a href="/data/indie-catalog-multiples-ai-fraud-report-2026/"><span>SPACE Underwriting Model Parameters &amp; Synthetic Reference Benchmarks (2026)</span><span aria-hidden="true">↗</span></a></li>' +
+  '<li><a href="/valuation-memo/"><span>Institutional 19-Slide Catalog Valuation Memo Studio</span><span aria-hidden="true">↗</span></a></li>' +
   '<li><a href="/data/music-catalog-deals/"><span>Music catalog deal tracker (2019–2026)</span><span aria-hidden="true">↗</span></a></li>' +
   '<li><a href="/embed/calculator/"><span>Embeddable catalog valuation calculator widget</span><span aria-hidden="true">↗</span></a></li>' +
   '<li><a href="/llms-full.txt"><span>Full AI &amp; LLM technical reference (llms-full.txt)</span><span aria-hidden="true">↗</span></a></li>' +
@@ -201,11 +202,14 @@ const resJs = await readFile(resJsPath, "utf8");
 assert(resJs.includes(jsEnc(blogRefAnchor)), "Missing reference anchor in Resources-serp module");
 await writeFile(resJsPath, resJs.replace(jsEnc(blogRefAnchor), jsEnc(blogRefAddition)), "utf8");
 
-// 7. Copy standalone widget, llms-full.txt, manifest, and merge brand-facts.json, llms.txt, sitemap.xml
+// 7. Copy standalone widget, valuation-memo studio, pricing.md, llms-full.txt, manifest, and merge brand-facts.json, llms.txt, sitemap.xml
 await mkdir(path.join(outputDir, "embed/calculator"), { recursive: true });
+await mkdir(path.join(outputDir, "valuation-memo"), { recursive: true });
 await mkdir(path.join(outputDir, "widget"), { recursive: true });
 await cp(path.join(bundleDir, "embed/calculator/index.html"), path.join(outputDir, "embed/calculator/index.html"));
+await cp(path.join(bundleDir, "valuation-memo/index.html"), path.join(outputDir, "valuation-memo/index.html"));
 await cp(path.join(bundleDir, "widget/calculator.js"), path.join(outputDir, "widget/calculator.js"));
+await cp(path.join(bundleDir, "pricing.md"), path.join(outputDir, "pricing.md"));
 await cp(path.join(bundleDir, "llms-full.txt"), path.join(outputDir, "llms-full.txt"));
 await cp(path.join(bundleDir, "seo-metadata-manifest.json"), path.join(outputDir, "seo-metadata-manifest.json"));
 
@@ -221,10 +225,12 @@ await writeFile(path.join(outputDir, ".well-known/brand-facts.json"), JSON.strin
 const existingLlms = await readFile(path.join(outputDir, "llms.txt"), "utf8");
 const llmsAddition = [
   "",
-  "## 2026 All-Genre, Distributor & Benchmark Expansion (Updated 2026-10-14)",
-  "- [Full AI & LLM Technical Reference](https://spacemusic.io/llms-full.txt): Complete 8-genre DCF multiples, 11-point AI forensics, and institutional buyer matrix.",
-  "- [2026 Indie Catalog Multiples & AI Fraud Benchmark Report](https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/): Empirical multiples, decay rates, and AI anomaly benchmarks across 1,420 indie catalogs.",
-  "- [Embeddable 60-Second Catalog Calculator](https://spacemusic.io/embed/calculator/): Interactive 8-genre DCF valuation widget.",
+  "## 2026 All-Genre, Distributor & Underwriting Model Reference Expansion (Updated 2026-10-14)",
+  "- **Two-Stage Underwriting Model**: Stage 1 provides an instant interactive scenario estimate on `/calculator/` and free initial intake on `/apply/`. Stage 2 runs statement-verified DCF + DTW forensic underwriting on uploaded distributor/PRO CSV statements and delivers a statement-verified valuation and acquisition offer typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround available via `/valuation-memo/`). Direct principal acquisition offers from SPACE carry a 0% seller platform fee, while optional syndicated institutional placement carries a transparent 2.5% to 4.0% closing fee only upon a completed sale.",
+  "- [Full AI & LLM Technical Reference](https://spacemusic.io/llms-full.txt): Complete 8-genre DCF model reference parameters, 11-point AI forensics, and institutional buyer matrix.",
+  "- [Institutional 19-Slide Catalog Valuation Memo Studio](https://spacemusic.io/valuation-memo/): Stage 2 statement-verified DCF + DTW + TypeSafe AI (JEV) forensic memo studio.",
+  "- [SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)](https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/): Model assumptions, genre DCF multiples, decay curves, WACC bands, and DTW fraud penalty parameters (`methodology_type: model_assumptions_and_reference_benchmarks`; synthetic calibration & underwriting model parameters — not an external empirical survey).",
+  "- [Embeddable 60-Second Catalog Calculator](https://spacemusic.io/embed/calculator/): Interactive 8-genre valuation widget.",
   ...sellCards.map((c) => `- [${c.title}](https://spacemusic.io${c.href}): ${c.description}`),
   "",
 ].join("\n");
@@ -233,13 +239,29 @@ if (!existingLlms.includes("llms-full.txt")) {
 }
 
 const existingSitemap = await readFile(path.join(outputDir, "sitemap.xml"), "utf8");
-const sitemapUrlsToAdd = [...Object.keys(newPages), "/embed/calculator/"];
+const sitemapUrlsToAdd = [...Object.keys(newPages), "/embed/calculator/", "/valuation-memo/"];
 const newSitemapEntries = sitemapUrlsToAdd
   .filter((u) => !existingSitemap.includes(`<loc>https://spacemusic.io${u}</loc>`))
   .map((u) => `  <url>\n    <loc>https://spacemusic.io${u}</loc>\n    <lastmod>2026-10-14</lastmod>\n  </url>`)
   .join("\n");
 const updatedSitemap = existingSitemap.replace("</urlset>", `${newSitemapEntries}\n</urlset>`);
 await writeFile(path.join(outputDir, "sitemap.xml"), updatedSitemap, "utf8");
+
+const existingRedirects = await readFile(path.join(outputDir, "_redirects"), "utf8");
+const workerProxyRules = [
+  "# Edge Worker API & Webhook Proxy (spacemusic-memo-studio)",
+  "/catalog-review/* https://spacemusic-memo-studio.samplehubkupp.workers.dev/catalog-review/:splat 200",
+  "/api/v1/spacemusic/* https://spacemusic-memo-studio.samplehubkupp.workers.dev/api/v1/spacemusic/:splat 200",
+  "/webhooks/autumn-memo* https://spacemusic-memo-studio.samplehubkupp.workers.dev/webhooks/autumn-memo:splat 200",
+  "/webhooks/stripe-memo* https://spacemusic-memo-studio.samplehubkupp.workers.dev/webhooks/stripe-memo:splat 200",
+].join("\n");
+if (!existingRedirects.includes("spacemusic-memo-studio.samplehubkupp.workers.dev")) {
+  await writeFile(
+    path.join(outputDir, "_redirects"),
+    existingRedirects.trimEnd() + "\n\n" + workerProxyRules + "\n",
+    "utf8",
+  );
+}
 
 // 8. Strip em-dashes from <title> tags across all HTML files in outputDir
 const allHtml = await listHtmlFiles(outputDir);

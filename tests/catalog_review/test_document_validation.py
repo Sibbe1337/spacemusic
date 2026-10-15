@@ -202,6 +202,10 @@ def test_dependencies_are_exact_and_missing_or_mismatched_fail_closed(monkeypatc
 def parser():
     if not sys.platform.startswith("linux"):
         pytest.skip("Real parser requires Linux resource containment")
+    try:
+        validation.require_network_sandbox()
+    except validation.Unavailable:
+        pytest.skip("Real parser requires network-isolated Linux sandbox")
     return SandboxedDocumentParser(network_isolated=True)
 
 
@@ -354,6 +358,10 @@ def test_csv_resource_dimensions(limit, content):
     )
     if not sys.platform.startswith("linux"):
         pytest.skip("Linux sandbox")
+    try:
+        validation.require_network_sandbox()
+    except validation.Unavailable:
+        pytest.skip("Real parser requires network-isolated Linux sandbox")
     assert parser.inspect(content=content, filename="synthetic.csv") is False
 
 
@@ -799,6 +807,7 @@ def test_resource_limit_installation_failure_never_reads_document():
 
 
 def replace_child(monkeypatch, code):
+    monkeypatch.setattr(validation, "require_network_sandbox", lambda: None)
     real_popen = subprocess.Popen
     processes = []
 
@@ -879,6 +888,8 @@ def test_parent_kills_process_group_including_descendant(monkeypatch, tmp_path):
 
 @LINUX
 def test_spawn_failure_and_tempfile_failure_quarantine(monkeypatch):
+    monkeypatch.setattr(validation, "require_network_sandbox", lambda: None)
+
     def unavailable(*args, **kwargs):
         raise OSError("secret")
 

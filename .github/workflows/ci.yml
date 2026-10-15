@@ -35,12 +35,13 @@ jobs:
           pip install -r services/docgen/requirements.txt
 
       - name: Lint Python with Ruff
-        run: ruff check --select E9,F63,F7,F82,F401 services/valuation services/spacemusic tests/valuation/test_engine.py tests/api/test_spacemusic_api.py
+        run: ruff check --select E9,F63,F7,F82,F401 services/valuation services/spacemusic tests/valuation tests/api
 
       - name: Run Python tests with Pytest and Generate Coverage Report
         run: |
           pip install coverage
-          PYTHONPATH=. python -m pytest --cov=services/valuation --cov=services/spacemusic --cov-report=xml --cov-report=html -q tests/valuation/test_engine.py tests/api/test_spacemusic_api.py
+          PYTHONPATH=. python -m pytest --cov=services/valuation --cov=services/spacemusic --cov-report=xml --cov-report=html -q tests/valuation tests/api/test_spacemusic_api.py
+          PYTHONPATH=. python -m pytest -q tests/
 
       - name: Upload Python Coverage HTML Report
         uses: actions/upload-artifact@v4
@@ -55,6 +56,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           # cache: 'pnpm' # Optional: Caching for pnpm
+
+      - name: Verify project release structure, maintenance, funnel, and portal UI suites
+        run: |
+          npm run project:check
+          npm run test:maintenance
+          npm run test:funnel
+          npm run test:portal:ui
 
       - name: Install admin_ui dependencies (using pnpm)
         run: |

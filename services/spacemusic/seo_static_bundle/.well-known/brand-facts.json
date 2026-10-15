@@ -1,9 +1,16 @@
 {
+  "@context": "https://schema.org",
+  "@type": "Organization",
   "brand_name": "SPACE",
+  "name": "SPACE",
   "legal_domain": "spacemusic.io",
+  "url": "https://spacemusic.io/",
   "canonical_url": "https://spacemusic.io/brand-facts/",
   "last_updated": "2026-10-14",
-  "positioning": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform",
+  "lastUpdated": "2026-10-14",
+  "category": "Direct music rights buyer & institutional catalog underwriting platform",
+  "positioning": "Two-Stage Music Catalog Underwriting, Direct Acquisition (0% Seller Fee) & Institutional Syndicate Placement Platform",
+  "description": "SPACE operates a two-stage music catalog underwriting and acquisition process across all genres. Stage 1 provides an instant interactive scenario estimate on /calculator/ and free initial intake review on /apply/. Stage 2 runs statement-verified DCF + DTW forensic underwriting on uploaded distributor/PRO CSV statements and delivers a statement-verified valuation and acquisition offer typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs). Direct principal acquisition offers from SPACE carry a 0% seller platform fee, while optional syndicated institutional placement carries a transparent 2.5%-4.0% closing fee only upon a completed sale.",
   "supported_genre_cohorts": [
     "Hip-Hop / Rap / Trap / Phonk",
     "Pop / Indie",
@@ -19,9 +26,28 @@
     "catalog_sale_max": 5000000,
     "royalty_advance_min": 2500
   },
+  "service": {
+    "name": "Two-stage music catalog underwriting & acquisition",
+    "applicationUrl": "https://spacemusic.io/apply/",
+    "calculatorUrl": "https://spacemusic.io/calculator/",
+    "valuationMemoStudioUrl": "https://spacemusic.io/valuation-memo/",
+    "freeApplication": true,
+    "listingFee": 0,
+    "auctionCommission": 0,
+    "directPrincipalSellerFeePct": 0.0,
+    "optionalSyndicatedPlacementFeePctRange": "2.5% to 4.0% (only upon completed syndicated sale)",
+    "partialSalesAvailable": true,
+    "availableShares": [
+      50,
+      75,
+      100
+    ],
+    "initialOfferTimeline": "Typically 5-7 business days after distributor/PRO CSV statement verification (expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs)",
+    "paymentMethod": "Bank transfer / Airwallex Split-Escrow with Letter of Direction (LOD)"
+  },
   "two_stage_workflow": {
-    "stage_1": "60-second self-reported indicative DCF valuation and buyer compatibility score (free, no login required)",
-    "stage_2": "24 to 48 hour CSV statement-verified underwriting, 11-point AI and stream-farming forensics, and multi-buyer bid book"
+    "stage_1": "Stage 1 (Initial Intake & Scenario Calculator): Instant indicative range on /calculator/ (interactive scenario calculator where artists explore multiples) and free initial intake review on /apply/.",
+    "stage_2": "Stage 2 (Statement-Verified Underwriting & Acquisition Offer): After uploading distributor/PRO CSV statements, SPACE runs DCF + DTW forensic underwriting and delivers a statement-verified valuation & acquisition offer typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs)."
   },
   "institutional_buyers": [
     "Duetti",
@@ -33,11 +59,20 @@
     "SongVest",
     "Symphonic Distribution"
   ],
-  "forensics_engine": "11-point AI generation & stream-farming fraud audit (Spotify 1,000-stream threshold, repeat-per-listener ratio, geographic anomaly detection)",
-  "closing_infrastructure": "Airwallex Split-Escrow with automated distributor and PRO Letter of Direction (LOD) routing",
+  "forensics_engine": "11-point AI generation, Dynamic Time Warping (DTW) & stream-farming fraud audit (Spotify 1,000-stream threshold, repeat-per-listener ratio, step-plateau & geographic anomaly detection)",
+  "closing_infrastructure": "Direct bank transfer and Airwallex Split-Escrow with automated distributor and PRO Letter of Direction (LOD) routing",
   "fee_structure": {
-    "stage_1_valuation": "$0 (100% free)",
-    "stage_2_forensics_and_bidding": "$0 upfront",
-    "closing_success_fee": "2.5% to 4.0% on closed M&A transaction (or buyer-paid placement fee)"
+    "stage_1_valuation": "$0 (100% free interactive scenario calculator on /calculator/ & initial intake on /apply/)",
+    "stage_2_forensics_and_bidding": "$0 upfront for standard catalog acquisition review ($299 optional self-serve 19-slide forensic memo PDF on /valuation-memo/)",
+    "direct_principal_offer_fee": "0% seller platform fee ($0 listing fee, 0% auction commission)",
+    "closing_success_fee": "0% seller fee on direct principal acquisition offers from SPACE; transparent 2.5% to 4.0% closing fee only on optional syndicated institutional placement upon completed sale"
+  },
+  "benchmark_methodology_disclosure": {
+    "dataset_label": "SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)",
+    "methodology_type": "model_assumptions_and_reference_benchmarks",
+    "sample_basis": "Synthetic calibration & underwriting model parameters \u2014 not an external empirical survey"
+  },
+  "contact": {
+    "email": "hello@spacemusic.io"
   }
 }
