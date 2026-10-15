@@ -82,6 +82,7 @@ class InboundEmailStatementWebhook(BaseModel):
 class AutonomousStage2UnderwritingResult(BaseModel):
     application_id: str
     matched_existing_application: bool
+    statements_verified: bool = False
     sender_verified: bool = True
     quarantined: bool = False
     quarantine_reason: str | None = None
@@ -409,6 +410,7 @@ def ingest_inbound_email_statements(
         return AutonomousStage2UnderwritingResult(
             application_id=str(matched_app.id),
             matched_existing_application=was_existing,
+            statements_verified=False,
             sender_verified=sender_verified,
             quarantined=True,
             quarantine_reason=quarantine_reason,
@@ -467,6 +469,7 @@ def ingest_inbound_email_statements(
     return AutonomousStage2UnderwritingResult(
         application_id=str(matched_app.id),
         matched_existing_application=was_existing,
+        statements_verified=True,
         sender_verified=True,
         quarantined=False,
         quarantine_reason=None,

@@ -320,8 +320,13 @@ def _canonicalize_work_title(raw_title: str) -> str:
     return raw_title.strip()
 
 
+DEFAULT_ZITRON_FIXTURE_XLSX = (
+    Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "michel_zitron_royalty_summary_23_25.xlsx"
+)
+
+
 def audit_and_reconstruct_publishing_workbook(
-    xlsx_path: str | Path,
+    xlsx_path: Optional[str | Path] = None,
     *,
     prior_sold_share_pct: float = 21.0,
     bmg_lod_direct_from_period: str = "06/2025",
@@ -331,7 +336,7 @@ def audit_and_reconstruct_publishing_workbook(
     identifying formula mismatches, out-of-window 2022 rows, and LOD double-deduction traps,
     and reconstructs the true 2023–2025 pro-forma net royalty baseline.
     """
-    path = Path(xlsx_path)
+    path = Path(xlsx_path) if xlsx_path is not None else DEFAULT_ZITRON_FIXTURE_XLSX
     ns = {"main": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
     with zipfile.ZipFile(path, "r") as z:
@@ -1156,7 +1161,7 @@ def detect_cross_society_collection_leakage() -> List[CollectionLeakageAnomaly]:
 
 
 def build_tenet_institutional_valuation_package(
-    xlsx_path: str | Path,
+    xlsx_path: Optional[str | Path] = None,
     *,
     workbook_audit: Optional[PublishingWorkbookAuditReport] = None,
 ) -> TenetInstitutionalValuationPackage:

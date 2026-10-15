@@ -29,7 +29,6 @@ Endpoints:
 
 from __future__ import annotations
 
-import json
 import uuid
 from datetime import UTC, datetime
 from typing import Annotated, Any
@@ -88,7 +87,6 @@ from .monetization_engine import (
     generate_forensic_audit_certificate,
 )
 from .paid_memo_service import (
-    AUTUMN_FEATURE_MEMO_PDF,
     AutumnBalanceSnapshot,
     AutumnCheckRequest,
     AutumnCustomerRequest,
@@ -102,12 +100,10 @@ from .paid_memo_service import (
     PaidMemoStore,
     PaymentStatus,
     create_paid_memo_checkout_order,
-    issue_customer_token,
     render_self_serve_valuation_studio_html,
     validate_and_apply_memo_webhook,
     verify_checkout_return_token,
     verify_customer_token,
-    verify_stripe_webhook_signature,
 )
 from .scrive_signer import (
     ScriveExecutionEngine,

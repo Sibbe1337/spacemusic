@@ -115,7 +115,7 @@ def _default_sqlite_db_path() -> str:
     env_path = os.environ.get("SPACE_MEMO_DB_PATH")
     if env_path and env_path.strip():
         return env_path.strip()
-    data_dir = Path(os.getcwd()) / ".data"
+    data_dir = Path(os.getcwd()) / "private"
     data_dir.mkdir(parents=True, exist_ok=True)
     return str(data_dir / "paid_memo_store.sqlite3")
 
@@ -127,7 +127,7 @@ def _resolve_customer_signing_secret(explicit_secret: Optional[str] = None) -> s
     ):
         if candidate and candidate.strip():
             return candidate.strip()
-    data_dir = Path(os.getcwd()) / ".data"
+    data_dir = Path(os.getcwd()) / "private"
     data_dir.mkdir(parents=True, exist_ok=True)
     secret_file = data_dir / "customer_token_secret.key"
     if secret_file.exists():

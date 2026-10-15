@@ -78,6 +78,10 @@ class ParsedStatementSummary(BaseModel):
     country_share: Dict[str, float] = Field(default_factory=dict)
     benchmarks: List[EmpiricalBenchmarkEntry] = Field(default_factory=list)
 
+    @property
+    def total_net_royalties(self) -> float:
+        return float(self.total_net_royalty_eur)
+
 
 HEADER_ALIASES = {
     "sale_month": [
@@ -181,11 +185,18 @@ HEADER_ALIASES = {
         "net royalty ($ usd)",
         "net royalty (usd)",
         "net royalty (eur)",
+        "net_royalty_eur",
+        "net_royalty_usd",
+        "net royalty eur",
+        "net royalty usd",
         "earnings (usd)",
+        "earnings (eur)",
         "royalty ($us)",
         "royalty (usd)",
+        "royalty (eur)",
         "earnings",
         "net royalty",
+        "net_royalty",
         "net revenue",
         "total payable",
         "amount payable",
@@ -194,6 +205,7 @@ HEADER_ALIASES = {
         "payable",
         "total earned",
         "usd_earnings",
+        "eur_earnings",
         "artist net",
         "your revenue",
         "net payout",
@@ -557,13 +569,26 @@ def _parse_int(val: Any) -> int:
 
 
 def _detect_column_mapping(headers: List[str]) -> Tuple[Dict[str, str], str]:
-    norm_to_orig = {h.strip().lower(): h for h in headers if h}
+    norm_to_orig: Dict[str, str] = {}
+    for h in headers:
+        if not h:
+            continue
+        low = h.strip().lower()
+        norm_to_orig[low] = h
+        spaced = re.sub(r"[_-]+", " ", low).strip()
+        if spaced not in norm_to_orig:
+            norm_to_orig[spaced] = h
     mapping: Dict[str, str] = {}
 
     for canonical, candidates in HEADER_ALIASES.items():
         for cand in candidates:
-            if cand.lower() in norm_to_orig:
-                mapping[canonical] = norm_to_orig[cand.lower()]
+            cand_low = cand.lower()
+            cand_spaced = re.sub(r"[_-]+", " ", cand_low).strip()
+            if cand_low in norm_to_orig:
+                mapping[canonical] = norm_to_orig[cand_low]
+                break
+            if cand_spaced in norm_to_orig:
+                mapping[canonical] = norm_to_orig[cand_spaced]
                 break
 
     # Detect distributor signature from headers
@@ -622,6 +647,9 @@ def _infer_header_currency(earnings_header: str, headers: List[str], fallback: s
         if tok in ("GBP", "£"):
             return "GBP"
         return tok
+    m_suffix = re.search(r"(?:^|[\s_-])(USD|EUR|GBP|SEK|CAD|AUD)(?:$|[\s_-])", eh)
+    if m_suffix:
+        return m_suffix.group(1)
     lower_headers = [h.strip().lower() for h in headers]
     if "earnings (usd)" in lower_headers or "royalty ($us)" in lower_headers:
         return "USD"

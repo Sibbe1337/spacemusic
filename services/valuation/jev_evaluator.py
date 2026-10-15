@@ -285,6 +285,8 @@ class JevSystemOneResponse(BaseModel):
     provenance_notice: str = Field(
         default="Deterministic local cross-check derived from SPACE engine inputs (not an independent external AI API call).",
     )
+    fraud_likelihood_score: float = 0.0
+    manipulation_flags: List[str] = Field(default_factory=list)
     latency_ms: float
     answers: Dict[str, Dict[str, Any]]
     usage: Dict[str, Any]
@@ -335,7 +337,7 @@ class ParallelDtwJevEvaluationReport(BaseModel):
 
 def build_jev_state_payload(
     app_input: CatalogValuationInput,
-    stmt_summary: ParsedStatementSummary,
+    stmt_summary: Optional[ParsedStatementSummary],
     valuation_report: CatalogValuationOutput,
     extra_context: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
@@ -343,6 +345,22 @@ def build_jev_state_payload(
     Constructs the structured JSON `state` sent to TypeSafe AI's `/v1/systemone` endpoint.
     """
     extra = extra_context or {}
+    if stmt_summary is None:
+        stmt_summary = ParsedStatementSummary(
+            detected_distributor=app_input.distributor_or_admin or "Unknown",
+            row_count=len(app_input.monthly_history),
+            months_covered=len(app_input.monthly_history),
+            period_start=app_input.monthly_history[0].period if app_input.monthly_history else None,
+            period_end=app_input.monthly_history[-1].period if app_input.monthly_history else None,
+            total_net_royalty_eur=sum(p.net_royalties_eur for p in app_input.monthly_history),
+            ltm_net_royalty_eur=sum(p.net_royalties_eur for p in app_input.monthly_history[-12:]),
+            total_streams=sum(p.streams for p in app_input.monthly_history),
+            ltm_streams=sum(p.streams for p in app_input.monthly_history[-12:]),
+            monthly_history=list(app_input.monthly_history),
+            tracks=list(app_input.tracks),
+            dsp_share=dict(app_input.dsp_share),
+            country_share=dict(app_input.country_share),
+        )
     base = valuation_report.baseline
     coh = valuation_report.cohorts
     dtw_info = valuation_report.dtw_analysis
@@ -753,6 +771,17 @@ def _evaluate_local_calibrated_systemone(
     elapsed_ms = round((time.perf_counter() - t0) * 1000.0 + 84.0, 2)
 
     resolved_model = "jev-1.14.0" if ("1.14" in model or "preview" in model) else "jev-1.13.0"
+    local_fraud_score = float(answers.get("bot_or_farm_fraud_probability", {}).get("noul", 0.025))
+    local_flags: List[str] = []
+    if is_step:
+        local_flags.append("DTW_ARTIFICIAL_STEP_PLATEAU")
+    if synchrony > 0.85:
+        local_flags.append("DTW_CROSS_TRACK_BOT_SYNCHRONY")
+    if local_fraud_score >= 0.40:
+        local_flags.append("ELEVATED_JEV_BOT_FRAUD_PROBABILITY")
+    for fl in ft_flags:
+        if fl not in local_flags:
+            local_flags.append(fl)
     return JevSystemOneResponse(
         model=resolved_model,
         execution_mode="local_calibrated_systemone",
@@ -762,6 +791,8 @@ def _evaluate_local_calibrated_systemone(
             "Deterministic local cross-check derived from SPACE engine inputs "
             "(not an independent external AI API call)."
         ),
+        fraud_likelihood_score=local_fraud_score,
+        manipulation_flags=local_flags,
         latency_ms=elapsed_ms,
         answers=answers,
         usage={
@@ -835,8 +866,8 @@ def call_typesafe_systemone(
 
 def run_parallel_dtw_and_jev_evaluation(
     app_input: CatalogValuationInput,
-    stmt_summary: ParsedStatementSummary,
-    valuation_report: CatalogValuationOutput,
+    stmt_summary: Optional[ParsedStatementSummary] = None,
+    valuation_report: Optional[CatalogValuationOutput] = None,
     extra_context: Optional[Dict[str, Any]] = None,
 ) -> ParallelDtwJevEvaluationReport:
     """

@@ -1,14 +1,22 @@
 from contextlib import asynccontextmanager
+from typing import Tuple
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import structlog
-
-# Prometheus metrics for FastAPI app
+from starlette.routing import Match
 from starlette_prometheus import PrometheusMiddleware
-# from .metrics import HTTP_REQUESTS_TOTAL, HTTP_REQUEST_LATENCY_SECONDS # Custom HTTP metrics if needed beyond starlette-prometheus
 
 from .routes import router as payout_routes_router
-# from .worker import celery_app # If you wanted to inspect tasks, etc.
+
+
+class SafePrometheusMiddleware(PrometheusMiddleware):
+    @staticmethod
+    def get_path_template(request: Request) -> Tuple[str, bool]:
+        for route in request.app.routes:
+            match, _ = route.matches(request.scope)
+            if match == Match.FULL:
+                return getattr(route, "path", request.url.path), True
+        return request.url.path, False
 
 logger = structlog.get_logger(__name__)
 
@@ -29,7 +37,7 @@ app = FastAPI(
 )
 
 # Add Prometheus middleware to expose /metrics endpoint for FastAPI app
-app.add_middleware(PrometheusMiddleware)
+app.add_middleware(SafePrometheusMiddleware)
 # app.add_route("/metrics", starlette_metrics) # Middleware usually handles this
 
 app.include_router(payout_routes_router)
