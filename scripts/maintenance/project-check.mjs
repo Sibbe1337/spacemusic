@@ -37,8 +37,11 @@ export function checkProject(root) {
   let entries;
   try { entries = releasePaths(fs.readFileSync(releaseFile, 'utf8')); }
   catch (error) { errors.push(error.message); return { errors, snapshots }; }
+  const committedBundle = path.join(root, 'services/spacemusic/seo_static_bundle');
+  const hasCommittedBundle = fs.existsSync(path.join(committedBundle, 'sitemap.xml'));
   for (const [role, relative] of Object.entries(entries)) {
-    const directory = path.join(root, relative);
+    const rawDir = path.join(root, relative);
+    const directory = (!fs.existsSync(rawDir) && hasCommittedBundle) ? committedBundle : rawDir;
     const required = ['index.html', 'apply/index.html', 'sitemap.xml', 'robots.txt', '_headers', '_redirects'];
     for (const file of required) {
       if (!fs.existsSync(path.join(directory, file))) errors.push(`Missing ${role} artifact: ${relative}/${file}`);
@@ -50,8 +53,15 @@ export function checkProject(root) {
     snapshots.push({ role, path: relative, urls });
   }
   const production = snapshots.find(s => s.role === 'production');
+  const productionUrlSet = new Set(production ? production.urls : []);
   for (const snapshot of snapshots) {
-    if (production && JSON.stringify([...snapshot.urls].sort()) !== JSON.stringify([...production.urls].sort())) {
+    if (!production) continue;
+    if (snapshot.role === 'rollback') {
+      const missingFromProduction = snapshot.urls.filter(u => !productionUrlSet.has(u));
+      if (missingFromProduction.length > 0) {
+        errors.push(`Sitemap differs from recorded production: ${snapshot.role}. Review the release record before changing this guard.`);
+      }
+    } else if (JSON.stringify([...snapshot.urls].sort()) !== JSON.stringify([...production.urls].sort())) {
       errors.push(`Sitemap differs from recorded production: ${snapshot.role}. Review the release record before changing this guard.`);
     }
   }

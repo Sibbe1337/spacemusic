@@ -43,6 +43,9 @@ from services.offers.db import (
 )
 from services.offers.models import Offer  # Now this should work
 
+from libs.catalog.models import CatalogPassport, ValuationRequest
+from libs.catalog.offers import build_offer_scenarios
+from libs.catalog.valuation import calculate_valuation
 from .engine import CatalogValuationInput, SpaceValuationEngine
 
 space_valuation_engine = SpaceValuationEngine()
@@ -104,8 +107,8 @@ MODEL_PATH = Path(__file__).parent / "model.pkl"
 try:
     model = joblib.load(MODEL_PATH)
     logger.info("Valuation model loaded successfully.", model_path=str(MODEL_PATH))
-except FileNotFoundError:
-    logger.error("Valuation model model.pkl not found in service folder!", model_path=str(MODEL_PATH))
+except Exception:
+    logger.error("Valuation model model.pkl not found or invalid in service folder!", model_path=str(MODEL_PATH))
     model = None # Worker will fail tasks needing the model
 
 # Load fallback rules
@@ -124,8 +127,27 @@ OFFER_VALUATED_TOPIC = "offer.valuated"
 
 # --- Kafka Producer for offer.valuated ---
 OFFER_VALUATED_SCHEMA_PATH = Path(__file__).resolve().parent.parent.parent / "schema" / "offer_valuated.avsc"
+CATALOG_VALUATED_SCHEMA_PATH = Path(__file__).resolve().parent.parent.parent / "schema" / "catalog_valuated.avsc"
+CATALOG_VALUATED_TOPIC = "catalog.valuated"
 _offer_valuated_producer = None
 _offer_valuated_schema_str = None
+_valuation_producer = None
+_valuation_schema_str = None
+
+
+def get_valuation_producer():
+    global _valuation_producer, _valuation_schema_str
+    if os.getenv("VALUATION_PUBLISH_EVENTS", "").lower() not in {"1", "true", "yes"}:
+        return None
+    if _valuation_producer is None:
+        try:
+            with open(CATALOG_VALUATED_SCHEMA_PATH, "r") as f:
+                _valuation_schema_str = f.read()
+            _valuation_producer = create_avro_producer(value_schema_str=_valuation_schema_str)
+        except Exception as e:
+            logger.error("Failed to initialize catalog.valuated Kafka producer", error=str(e))
+            _valuation_producer = None
+    return _valuation_producer
 
 def get_offer_valuated_producer():
     global _offer_valuated_producer, _offer_valuated_schema_str
@@ -197,7 +219,49 @@ def get_spotify_artist_data(artist_id: str):
         raise
 
 @celery_app.task(name="services.valuation.worker.run_valuation", bind=True)
-def run_valuation(self, offer_id_str: str):
+def run_valuation(self, offer_id_str, request_payload=None):
+    if request_payload is not None or isinstance(offer_id_str, dict):
+        passport = (
+            offer_id_str
+            if isinstance(offer_id_str, CatalogPassport)
+            else CatalogPassport.model_validate(offer_id_str)
+        )
+        request = (
+            request_payload
+            if isinstance(request_payload, ValuationRequest)
+            else ValuationRequest.model_validate(request_payload)
+        )
+        valuation = calculate_valuation(passport, request)
+        offers = build_offer_scenarios(passport.id, passport, valuation, request)
+        event_published = False
+        producer = get_valuation_producer()
+        if producer is not None:
+            event_payload = {
+                "event_id": str(uuid.uuid4()),
+                "application_id": str(passport.id),
+                "valuation_version": valuation.version,
+                "benchmark_version": valuation.benchmark_version,
+                "low_cents": valuation.low_cents,
+                "median_cents": valuation.median_cents,
+                "high_cents": valuation.high_cents,
+                "confidence_score": valuation.confidence_score,
+                "risk_flags": list(valuation.risk_flags),
+                "evaluated_at_micros": int(valuation.calculated_at.timestamp() * 1_000_000),
+            }
+            producer.produce(
+                topic=CATALOG_VALUATED_TOPIC,
+                key=str(passport.id),
+                value=event_payload,
+                on_delivery=delivery_report,
+            )
+            event_published = True
+        return {
+            "status": "success",
+            "event_published": event_published,
+            "valuation": valuation.model_dump(mode="json"),
+            "offers": [offer.model_dump(mode="json") for offer in offers],
+        }
+
     task_start_time = time.monotonic()
     task_name = self.name # or "run_valuation"
     logger.info("Starting valuation for offer", offer_id=str(offer_id_str), task_name=task_name)

@@ -93,11 +93,17 @@ function constantTimeEqual(a, b) {
 }
 
 function getCustomerSigningSecret(env) {
-  return (
-    env.SPACE_CUSTOMER_TOKEN_SECRET ||
-    env.AUTUMN_SECRET_KEY ||
-    "space-edge-worker-customer-hmac-2026-v1"
-  );
+  const secret = env.SPACE_CUSTOMER_TOKEN_SECRET;
+  if (!secret) {
+    throw new SigningSecretMissingError();
+  }
+  return secret;
+}
+
+class SigningSecretMissingError extends Error {
+  constructor() {
+    super("SPACE_CUSTOMER_TOKEN_SECRET is not configured");
+  }
 }
 
 async function issueCustomerToken(customerId, env) {
@@ -1246,6 +1252,19 @@ async function handleMemoWebhook(request, env) {
 
 export default {
   async fetch(request, env) {
+    try {
+      return await routeRequest(request, env);
+    } catch (err) {
+      if (err instanceof SigningSecretMissingError) {
+        return jsonResponse({ detail: "Billing signing secret is not configured" }, 503);
+      }
+      throw err;
+    }
+  },
+};
+
+async function routeRequest(request, env) {
+  {
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: CORS_HEADERS });
     }
@@ -1344,5 +1363,5 @@ export default {
     }
 
     return jsonResponse({ error: "Not found", path: url.pathname }, 404);
-  },
-};
+  }
+}

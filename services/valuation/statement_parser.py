@@ -78,6 +78,10 @@ class ParsedStatementSummary(BaseModel):
     country_share: Dict[str, float] = Field(default_factory=dict)
     benchmarks: List[EmpiricalBenchmarkEntry] = Field(default_factory=list)
 
+    @property
+    def total_net_royalties(self) -> float:
+        return float(self.total_net_royalty_eur)
+
 
 HEADER_ALIASES = {
     "sale_month": [
@@ -181,11 +185,18 @@ HEADER_ALIASES = {
         "net royalty ($ usd)",
         "net royalty (usd)",
         "net royalty (eur)",
+        "net_royalty_eur",
+        "net_royalty_usd",
+        "net royalty eur",
+        "net royalty usd",
         "earnings (usd)",
+        "earnings (eur)",
         "royalty ($us)",
         "royalty (usd)",
+        "royalty (eur)",
         "earnings",
         "net royalty",
+        "net_royalty",
         "net revenue",
         "total payable",
         "amount payable",
@@ -194,6 +205,7 @@ HEADER_ALIASES = {
         "payable",
         "total earned",
         "usd_earnings",
+        "eur_earnings",
         "artist net",
         "your revenue",
         "net payout",
@@ -467,16 +479,89 @@ def _normalize_country_code(raw: Optional[str]) -> str:
     return s.upper()[:2]
 
 
+class StatementParseError(ValueError):
+    """Raised when a royalty statement contains an ambiguous or malformed numeric value."""
+
+
 def _parse_float(val: Any) -> float:
     if val is None:
         return 0.0
-    s = str(val).strip().replace("$", "").replace("€", "").replace("£", "").replace(",", "")
+    if isinstance(val, (int, float)):
+        return float(val)
+    s = str(val).strip()
     if not s:
         return 0.0
-    try:
-        return float(s)
-    except ValueError:
+
+    # Strip currency tokens and whitespace
+    s = re.sub(r"(?i)\b(usd|eur|gbp|sek|nok|dkk|cad|aud|chf|jpy|us\$)\b", "", s)
+    s = s.replace("$", "").replace("€", "").replace("£", "").replace("\u00a0", "").replace(" ", "").strip()
+    if not s or s in ("-", "+", "N/A", "n/a", "null", "None"):
         return 0.0
+
+    # Support accounting parentheses for negatives, e.g. "(1,23)"
+    is_neg = False
+    if s.startswith("(") and s.endswith(")"):
+        is_neg = True
+        s = s[1:-1].strip()
+    elif s.startswith("-"):
+        is_neg = True
+        s = s[1:].strip()
+    elif s.startswith("+"):
+        s = s[1:].strip()
+
+    comma_count = s.count(",")
+    dot_count = s.count(".")
+
+    if comma_count > 0 and dot_count > 0:
+        last_comma = s.rfind(",")
+        last_dot = s.rfind(".")
+        if last_comma > last_dot:
+            # European format: 1.234,56 or 1.234.567,89
+            parts = s.split(",")
+            if len(parts) != 2 or not re.fullmatch(r"\d{1,3}(\.\d{3})+", parts[0]) or not parts[1].isdigit():
+                raise StatementParseError(f"Ambiguous or malformed numeric value: {val!r}")
+            s_norm = parts[0].replace(".", "") + "." + parts[1]
+        else:
+            # US/UK format: 1,234.56 or 1,234,567.89
+            parts = s.split(".")
+            if len(parts) != 2 or not re.fullmatch(r"\d{1,3}(,\d{3})+", parts[0]) or not parts[1].isdigit():
+                raise StatementParseError(f"Ambiguous or malformed numeric value: {val!r}")
+            s_norm = parts[0].replace(",", "") + "." + parts[1]
+    elif comma_count > 0:
+        if comma_count > 1:
+            # Multiple commas with no dot: e.g. "1,23,45" is malformed; "1,234,567" is thousands
+            if re.fullmatch(r"\d{1,3}(,\d{3}){2,}", s):
+                s_norm = s.replace(",", "")
+            else:
+                raise StatementParseError(f"Ambiguous or malformed numeric value: {val!r}")
+        else:
+            # Single comma, no dot
+            parts = s.split(",")
+            left, right = parts[0], parts[1]
+            if not left.isdigit() or not right.isdigit():
+                raise StatementParseError(f"Ambiguous or malformed numeric value: {val!r}")
+            if len(right) in (1, 2):
+                # Explicit European decimal comma: e.g. "1,23" -> 1.23, "0,5" -> 0.5
+                s_norm = f"{left}.{right}"
+            elif len(right) == 3 and left != "0":
+                # Single comma followed by exactly 3 digits (e.g. "1,234") is ambiguous between 1234 and 1.234
+                raise StatementParseError(
+                    f"Ambiguous numeric format {val!r}: single comma with 3 trailing digits cannot be unambiguously "
+                    "distinguished between thousands separator and 3-decimal European value."
+                )
+            else:
+                s_norm = f"{left}.{right}"
+    elif dot_count > 1:
+        raise StatementParseError(f"Ambiguous or malformed numeric value with multiple dots: {val!r}")
+    else:
+        s_norm = s
+
+    try:
+        result = float(s_norm)
+    except ValueError as exc:
+        raise StatementParseError(f"Invalid numeric value: {val!r}") from exc
+
+    return -result if is_neg else result
 
 
 def _parse_int(val: Any) -> int:
@@ -484,13 +569,26 @@ def _parse_int(val: Any) -> int:
 
 
 def _detect_column_mapping(headers: List[str]) -> Tuple[Dict[str, str], str]:
-    norm_to_orig = {h.strip().lower(): h for h in headers if h}
+    norm_to_orig: Dict[str, str] = {}
+    for h in headers:
+        if not h:
+            continue
+        low = h.strip().lower()
+        norm_to_orig[low] = h
+        spaced = re.sub(r"[_-]+", " ", low).strip()
+        if spaced not in norm_to_orig:
+            norm_to_orig[spaced] = h
     mapping: Dict[str, str] = {}
 
     for canonical, candidates in HEADER_ALIASES.items():
         for cand in candidates:
-            if cand.lower() in norm_to_orig:
-                mapping[canonical] = norm_to_orig[cand.lower()]
+            cand_low = cand.lower()
+            cand_spaced = re.sub(r"[_-]+", " ", cand_low).strip()
+            if cand_low in norm_to_orig:
+                mapping[canonical] = norm_to_orig[cand_low]
+                break
+            if cand_spaced in norm_to_orig:
+                mapping[canonical] = norm_to_orig[cand_spaced]
                 break
 
     # Detect distributor signature from headers
@@ -549,6 +647,9 @@ def _infer_header_currency(earnings_header: str, headers: List[str], fallback: s
         if tok in ("GBP", "£"):
             return "GBP"
         return tok
+    m_suffix = re.search(r"(?:^|[\s_-])(USD|EUR|GBP|SEK|CAD|AUD)(?:$|[\s_-])", eh)
+    if m_suffix:
+        return m_suffix.group(1)
     lower_headers = [h.strip().lower() for h in headers]
     if "earnings (usd)" in lower_headers or "royalty ($us)" in lower_headers:
         return "USD"

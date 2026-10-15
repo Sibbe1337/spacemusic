@@ -1,5 +1,28 @@
 # Current Marketing Release
 
+Production: https://e8be09d3.spacemusic-a6n.pages.dev
+
+Public site: https://spacemusic.io/
+
+Cloudflare Pages project `spacemusic`, production branch `main`.
+Cloudflare Worker `spacemusic-memo-studio` (`https://spacemusic-memo-studio.samplehubkupp.workers.dev`, version `774752aa-00b3-4fb2-b48c-b357054a3f42`) routed on `spacemusic.io/valuation-memo*`, `spacemusic.io/catalog-review/paid-memo*`, `spacemusic.io/catalog-review/benchmark*`, and `spacemusic.io/webhooks/*`.
+
+Current verified release directory: `tmp/geo-seo-release-20261014`.
+Committed canonical bundle mirror: `services/spacemusic/seo_static_bundle`.
+Candidate `tmp/geo-seo-release-20261014` is the verified release artifact for the October 15, 2026 release audit remediation.
+
+Published October 15, 2026. Remediates all findings from the October 15, 2026 release audit (`SPACE MUSIC – LÄSANDE RELEASEGRANSKNING` on commit `b8e874e2`):
+- Unified two-stage underwriting & acquisition copy across homepage, `/pricing.md`, `/.well-known/brand-facts.json`, `/llms.txt`, `/llms-full.txt`, and all SEO/GEO hubs (Stage 1 interactive scenario calculator + initial intake vs. Stage 2 statement-verified DCF + DTW forensic underwriting in 5–7 business days with 0% seller fee on direct principal offers and 2.5%–4.0% closing fee on optional syndicated institutional placement).
+- Transparently labeled `/data/indie-catalog-multiples-ai-fraud-report-2026/` as **SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)**.
+- Dedicated `/valuation-memo/index.html` static page and Cloudflare Worker `spacemusic-memo-studio` with server-side slide redaction (Slides 03–19 omitted when locked), HMAC-signed customer/receipt tokens, strict webhook verification, and removal of public fallback secrets and VIP bypass coupons.
+- Preserves all 144 legacy sitemap URLs and adds the 20 verified GEO/SEO + `/valuation-memo/` URLs (164 total sitemap URLs).
+
+Immediate rollback: complete `tmp/serp-preview-v3-20261008`, deployment
+https://2a01bd95.spacemusic-a6n.pages.dev. Redeploy that snapshot to `spacemusic` /
+`main`, retaining `_headers` and `_redirects`.
+
+## Previous SERP release (October 8)
+
 Production: https://2a01bd95.spacemusic-a6n.pages.dev
 
 Public site: https://spacemusic.io/

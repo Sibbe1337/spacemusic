@@ -1,8 +1,26 @@
-# Cloudflare Pages / Workers canonical 301 redirects for SPACE (spacemusic.io)
-/calculator /calculator/ 301
-/brand-facts /brand-facts/ 301
-/guides/:slug /guides/:slug/ 301
-/compare/:slug /compare/:slug/ 301
-/sell/:slug /sell/:slug/ 301
-/data/:slug /data/:slug/ 301
-/advance/:slug /advance/:slug/ 301
+/llms.txt/ /llms.txt 301
+/pricing.md/ /pricing.md 301
+/guides/partial-rights-explained /compare/partial-sale-vs-full-sale/ 301
+/guides/partial-rights-explained/ /compare/partial-sale-vs-full-sale/ 301
+/guides/music-catalog-tax-guide /guides/how-to-sell-music-rights/#tax-implications 301
+/guides/music-catalog-tax-guide/ /guides/how-to-sell-music-rights/#tax-implications 301
+/streaming-rates/spotify /streaming-rates/spotify-2026/ 301
+/streaming-rates/spotify/ /streaming-rates/spotify-2026/ 301
+/streaming-rates/apple-music /streaming-rates/apple-music-2026/ 301
+/streaming-rates/apple-music/ /streaming-rates/apple-music-2026/ 301
+/streaming-rates/youtube-music /streaming-rates/youtube-music-2026/ 301
+/streaming-rates/youtube-music/ /streaming-rates/youtube-music-2026/ 301
+/streaming-rates/amazon-music /streaming-rates/amazon-music-2026/ 301
+/streaming-rates/amazon-music/ /streaming-rates/amazon-music-2026/ 301
+/streaming-rates/tidal /streaming-rates/tidal-2026/ 301
+/streaming-rates/tidal/ /streaming-rates/tidal-2026/ 301
+/streaming-rates/deezer /streaming-rates/deezer-2026/ 301
+/streaming-rates/deezer/ /streaming-rates/deezer-2026/ 301
+/streaming-rates/soundcloud /streaming-rates/soundcloud-2026/ 301
+/streaming-rates/soundcloud/ /streaming-rates/soundcloud-2026/ 301
+
+# Edge Worker API & Webhook Proxy (spacemusic-memo-studio)
+/catalog-review/* https://spacemusic-memo-studio.samplehubkupp.workers.dev/catalog-review/:splat 200
+/api/v1/spacemusic/* https://spacemusic-memo-studio.samplehubkupp.workers.dev/api/v1/spacemusic/:splat 200
+/webhooks/autumn-memo* https://spacemusic-memo-studio.samplehubkupp.workers.dev/webhooks/autumn-memo:splat 200
+/webhooks/stripe-memo* https://spacemusic-memo-studio.samplehubkupp.workers.dev/webhooks/stripe-memo:splat 200

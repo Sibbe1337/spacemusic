@@ -82,6 +82,10 @@ class InboundEmailStatementWebhook(BaseModel):
 class AutonomousStage2UnderwritingResult(BaseModel):
     application_id: str
     matched_existing_application: bool
+    statements_verified: bool = False
+    sender_verified: bool = True
+    quarantined: bool = False
+    quarantine_reason: str | None = None
     artist_or_label_name: str
     contact_email: str
     files_processed: list[str]
@@ -346,8 +350,32 @@ def ingest_inbound_email_statements(
     stmt_summary = parse_multi_attachment_statements(
         file_pairs, default_currency=currency
     )
+    has_valid_statements = bool(
+        stmt_summary.row_count > 0
+        and (stmt_summary.total_net_royalty_eur > 0.0 or stmt_summary.ltm_net_royalty_eur > 0.0)
+    )
 
-    if matched_app is None:
+    clean_inbound_sender = sanitize_email(webhook.sender_email or "").lower().strip()
+    sender_verified = True
+    quarantine_reason: str | None = None
+
+    if matched_app is not None:
+        registered_email = sanitize_email(matched_app.contact_email or "").lower().strip()
+        if not clean_inbound_sender or not registered_email or clean_inbound_sender != registered_email:
+            sender_verified = False
+            quarantine_reason = (
+                f"Inbound sender email '{webhook.sender_email}' does not match registered applicant email "
+                f"'{matched_app.contact_email}'."
+            )
+        elif not has_valid_statements:
+            quarantine_reason = (
+                "No valid royalty statement rows or positive net royalties found in inbound attachments."
+            )
+    else:
+        if not has_valid_statements:
+            quarantine_reason = (
+                "No valid royalty statement rows or positive net royalties found in inbound attachments."
+            )
         inferred_artist = (
             stmt_summary.tracks[0].title
             if stmt_summary.tracks and not webhook.sender_name
@@ -360,9 +388,43 @@ def ingest_inbound_email_statements(
             declared_ltm_amount=stmt_summary.ltm_net_royalty_eur,
             declared_currency="EUR",
             distributor_or_admin=stmt_summary.detected_distributor,
-            statements_verified=True,
+            statements_verified=has_valid_statements,
         )
-        applications_store[matched_app.id] = matched_app
+        if has_valid_statements:
+            applications_store[matched_app.id] = matched_app
+
+    is_quarantined = bool(not sender_verified or not has_valid_statements)
+    if is_quarantined:
+        # Do NOT mutate existing application's statements_verified or overwrite store state!
+        val_input = application_to_valuation_input(matched_app)
+        val_input.statements_verified = bool(was_existing and matched_app.statements_verified)
+        valuation = eng.evaluate(val_input, reference_date=reference_date)
+        seller_offer_draft = generate_reply_draft(matched_app, valuation)
+        routing_report = route_catalog_to_institutional_buyers(matched_app, valuation)
+        slack_card = (
+            f"*:warning: SPACE Inbound Statement Quarantined — {matched_app.artist_or_label_name}*\n"
+            f"> *Reason:* {quarantine_reason}\n"
+            f"> *Inbound Sender:* `{webhook.sender_email}` | *Registered:* `{matched_app.contact_email}`\n"
+            f"> *Parsed Rows:* `{stmt_summary.row_count}`"
+        )
+        return AutonomousStage2UnderwritingResult(
+            application_id=str(matched_app.id),
+            matched_existing_application=was_existing,
+            statements_verified=False,
+            sender_verified=sender_verified,
+            quarantined=True,
+            quarantine_reason=quarantine_reason,
+            artist_or_label_name=matched_app.artist_or_label_name,
+            contact_email=matched_app.contact_email,
+            files_processed=[fp[0] for fp in file_pairs],
+            detected_distributor=stmt_summary.detected_distributor,
+            statement_summary=stmt_summary,
+            valuation=valuation,
+            seller_offer_draft=seller_offer_draft,
+            institutional_routing=routing_report,
+            blind_deal_teaser=None,
+            slack_deal_card_markdown=slack_card,
+        )
 
     matched_app.statements_verified = True
     if not matched_app.distributor_or_admin or matched_app.distributor_or_admin == "Standard CSV":
@@ -407,6 +469,10 @@ def ingest_inbound_email_statements(
     return AutonomousStage2UnderwritingResult(
         application_id=str(matched_app.id),
         matched_existing_application=was_existing,
+        statements_verified=True,
+        sender_verified=True,
+        quarantined=False,
+        quarantine_reason=None,
         artist_or_label_name=matched_app.artist_or_label_name,
         contact_email=matched_app.contact_email,
         files_processed=[fp[0] for fp in file_pairs],

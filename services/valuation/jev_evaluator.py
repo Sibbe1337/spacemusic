@@ -274,6 +274,19 @@ class JevSystemOneResponse(BaseModel):
     execution_mode: str = Field(
         description="'live_api' when called against api.typesafe.ai/v1/systemone, or 'local_calibrated_systemone' when deterministic fallback is used."
     )
+    evaluation_mode: str = Field(
+        default="deterministic_local_model",
+        description="'independent_live_api' when evaluated via external TypeSafe AI API, or 'deterministic_local_model' when local fallback is used.",
+    )
+    is_independent_ai_evaluation: bool = Field(
+        default=False,
+        description="True only when an external live API call returned the evaluation; False for deterministic local fallback.",
+    )
+    provenance_notice: str = Field(
+        default="Deterministic local cross-check derived from SPACE engine inputs (not an independent external AI API call).",
+    )
+    fraud_likelihood_score: float = 0.0
+    manipulation_flags: List[str] = Field(default_factory=list)
     latency_ms: float
     answers: Dict[str, Dict[str, Any]]
     usage: Dict[str, Any]
@@ -292,6 +305,13 @@ class DtwVsJevComparisonItem(BaseModel):
 
 class ParallelDtwJevEvaluationReport(BaseModel):
     artist_name: str
+    evaluation_mode: str = "deterministic_local_model"
+    is_independent_ai_evaluation: bool = False
+    provenance_notice: str = (
+        "Deterministic local cross-check derived from SPACE engine inputs (not an independent external AI API call)."
+    )
+    fraud_likelihood_score: float = 0.0
+    manipulation_flags: List[str] = Field(default_factory=list)
     jev_primary_run: JevSystemOneResponse
     jev_preview_run: JevSystemOneResponse
     model_version_agreement_rate: float
@@ -317,7 +337,7 @@ class ParallelDtwJevEvaluationReport(BaseModel):
 
 def build_jev_state_payload(
     app_input: CatalogValuationInput,
-    stmt_summary: ParsedStatementSummary,
+    stmt_summary: Optional[ParsedStatementSummary],
     valuation_report: CatalogValuationOutput,
     extra_context: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
@@ -325,6 +345,22 @@ def build_jev_state_payload(
     Constructs the structured JSON `state` sent to TypeSafe AI's `/v1/systemone` endpoint.
     """
     extra = extra_context or {}
+    if stmt_summary is None:
+        stmt_summary = ParsedStatementSummary(
+            detected_distributor=app_input.distributor_or_admin or "Unknown",
+            row_count=len(app_input.monthly_history),
+            months_covered=len(app_input.monthly_history),
+            period_start=app_input.monthly_history[0].period if app_input.monthly_history else None,
+            period_end=app_input.monthly_history[-1].period if app_input.monthly_history else None,
+            total_net_royalty_eur=sum(p.net_royalties_eur for p in app_input.monthly_history),
+            ltm_net_royalty_eur=sum(p.net_royalties_eur for p in app_input.monthly_history[-12:]),
+            total_streams=sum(p.streams for p in app_input.monthly_history),
+            ltm_streams=sum(p.streams for p in app_input.monthly_history[-12:]),
+            monthly_history=list(app_input.monthly_history),
+            tracks=list(app_input.tracks),
+            dsp_share=dict(app_input.dsp_share),
+            country_share=dict(app_input.country_share),
+        )
     base = valuation_report.baseline
     coh = valuation_report.cohorts
     dtw_info = valuation_report.dtw_analysis
@@ -518,8 +554,30 @@ def _evaluate_local_calibrated_systemone(
     social_units = float(vs.get("social_ugc_micro_impressions", 0.0) or 0.0)
     evergreen_share = float(coh.get("evergreen_48m_plus_share", 0.0) or 0.0)
     synchrony = float(dtw.get("cross_track_synchrony_score", 0.15) or 0.15)
-    is_step = bool(dtw.get("is_artificial_step_plateau", False))
-    integrity = float(ft.get("integrity_score", 90.0) or 90.0)
+    ft_flags = [str(f) for f in (ft.get("flags") or [])]
+    is_step = bool(
+        dtw.get("is_artificial_step_plateau", False)
+        or "DTW_ARTIFICIAL_STEP_PLATEAU" in ft_flags
+        or dtw.get("primary_archetype") == "ARTIFICIAL_STEP_MANIPULATION"
+    )
+    integrity = float(ft.get("integrity_score", 90.0) if ft.get("integrity_score") is not None else 90.0)
+    fraud_flag_active = bool(
+        is_step
+        or synchrony > 0.85
+        or integrity < 60.0
+        or any(
+            fl in ft_flags
+            for fl in (
+                "DTW_ARTIFICIAL_STEP_PLATEAU",
+                "DTW_CROSS_TRACK_BOT_SYNCHRONY",
+                "CONFIRMED_AI_OR_STREAM_FARM",
+                "SUSPECTED_AI_SLOP_PROFILE",
+                "STREAM_FARM_RPM_COLLAPSE",
+                "EXTREME_UPLOAD_VELOCITY",
+                "HIGH_FRAUD_TERRITORY_CONCENTRATION",
+            )
+        )
+    )
     missing_tracks = tr.get("missing_from_statements", [])
 
     v_shift = 0.01 if "1.14" in model or "preview" in model else 0.0
@@ -614,6 +672,8 @@ def _evaluate_local_calibrated_systemone(
     if "bot_or_farm_fraud_probability" in questions:
         if is_step or synchrony > 0.85 or integrity < 50.0:
             fraud_noul = 0.88
+        elif fraud_flag_active:
+            fraud_noul = 0.72
         else:
             fraud_noul = round(max(0.01, 0.03 - (v_shift * 0.5)), 4)
         answers["bot_or_farm_fraud_probability"] = {
@@ -654,24 +714,51 @@ def _evaluate_local_calibrated_systemone(
         answers["seller_multiple_expectation_gap"] = _make_score_answer(criteria, p_list)
 
     if "recommended_deal_structure" in questions:
-        probs = {
-            "dual_option_outright_90_10_plus_hybrid_earnout_new_music": 0.89 + v_shift,
-            "strict_outright_90_10_only": 0.08 - v_shift,
-            "conservative_50_50_staged_tranche": 0.02,
-            "decline_or_request_resubmission": 0.01,
-        }
+        if is_step or synchrony > 0.85 or integrity < 50.0:
+            probs = {
+                "dual_option_outright_90_10_plus_hybrid_earnout_new_music": 0.02,
+                "strict_outright_90_10_only": 0.03,
+                "conservative_50_50_staged_tranche": 0.15 - v_shift,
+                "decline_or_request_resubmission": 0.80 + v_shift,
+            }
+        elif fraud_flag_active:
+            probs = {
+                "dual_option_outright_90_10_plus_hybrid_earnout_new_music": 0.05,
+                "strict_outright_90_10_only": 0.05,
+                "conservative_50_50_staged_tranche": 0.70 + v_shift,
+                "decline_or_request_resubmission": 0.20 - v_shift,
+            }
+        else:
+            probs = {
+                "dual_option_outright_90_10_plus_hybrid_earnout_new_music": 0.89 + v_shift,
+                "strict_outright_90_10_only": 0.08 - v_shift,
+                "conservative_50_50_staged_tranche": 0.02,
+                "decline_or_request_resubmission": 0.01,
+            }
         answers["recommended_deal_structure"] = _make_choice_answer(probs)
 
     if "recommended_valuation_anchor_tier" in questions:
-        probs = {
-            "floor_p10_conservative": 0.06,
-            "target_median_with_structured_upside_corridor": 0.90 + v_shift,
-            "ceiling_p90_unconditional": 0.04 - v_shift,
-        }
+        if is_step or synchrony > 0.85 or fraud_flag_active:
+            probs = {
+                "floor_p10_conservative": 0.88 + v_shift,
+                "target_median_with_structured_upside_corridor": 0.10 - v_shift,
+                "ceiling_p90_unconditional": 0.02,
+            }
+        else:
+            probs = {
+                "floor_p10_conservative": 0.06,
+                "target_median_with_structured_upside_corridor": 0.90 + v_shift,
+                "ceiling_p90_unconditional": 0.04 - v_shift,
+            }
         answers["recommended_valuation_anchor_tier"] = _make_choice_answer(probs)
 
     if "ready_for_indicative_offer_and_nda" in questions:
-        ready_noul = round(0.96 + (v_shift * 0.5) if integrity >= 80.0 else 0.35, 4)
+        if is_step or synchrony > 0.85 or fraud_flag_active:
+            ready_noul = 0.08
+        elif integrity >= 80.0:
+            ready_noul = round(0.96 + (v_shift * 0.5), 4)
+        else:
+            ready_noul = 0.35
         answers["ready_for_indicative_offer_and_nda"] = {
             "type": "noul",
             "noul": ready_noul,
@@ -684,9 +771,28 @@ def _evaluate_local_calibrated_systemone(
     elapsed_ms = round((time.perf_counter() - t0) * 1000.0 + 84.0, 2)
 
     resolved_model = "jev-1.14.0" if ("1.14" in model or "preview" in model) else "jev-1.13.0"
+    local_fraud_score = float(answers.get("bot_or_farm_fraud_probability", {}).get("noul", 0.025))
+    local_flags: List[str] = []
+    if is_step:
+        local_flags.append("DTW_ARTIFICIAL_STEP_PLATEAU")
+    if synchrony > 0.85:
+        local_flags.append("DTW_CROSS_TRACK_BOT_SYNCHRONY")
+    if local_fraud_score >= 0.40:
+        local_flags.append("ELEVATED_JEV_BOT_FRAUD_PROBABILITY")
+    for fl in ft_flags:
+        if fl not in local_flags:
+            local_flags.append(fl)
     return JevSystemOneResponse(
         model=resolved_model,
         execution_mode="local_calibrated_systemone",
+        evaluation_mode="deterministic_local_model",
+        is_independent_ai_evaluation=False,
+        provenance_notice=(
+            "Deterministic local cross-check derived from SPACE engine inputs "
+            "(not an independent external AI API call)."
+        ),
+        fraud_likelihood_score=local_fraud_score,
+        manipulation_flags=local_flags,
         latency_ms=elapsed_ms,
         answers=answers,
         usage={
@@ -745,6 +851,9 @@ def call_typesafe_systemone(
                 return JevSystemOneResponse(
                     model=raw_body.get("model", model),
                     execution_mode="live_api",
+                    evaluation_mode="independent_live_api",
+                    is_independent_ai_evaluation=True,
+                    provenance_notice="Independent external AI evaluation via TypeSafe AI System One API.",
                     latency_ms=elapsed_ms,
                     answers=raw_body.get("answers", {}),
                     usage=usage,
@@ -757,8 +866,8 @@ def call_typesafe_systemone(
 
 def run_parallel_dtw_and_jev_evaluation(
     app_input: CatalogValuationInput,
-    stmt_summary: ParsedStatementSummary,
-    valuation_report: CatalogValuationOutput,
+    stmt_summary: Optional[ParsedStatementSummary] = None,
+    valuation_report: Optional[CatalogValuationOutput] = None,
     extra_context: Optional[Dict[str, Any]] = None,
 ) -> ParallelDtwJevEvaluationReport:
     """
@@ -799,6 +908,11 @@ def run_parallel_dtw_and_jev_evaluation(
     dtw_sim = float(dtw_info.similarity_score if (dtw_info and dtw_info.similarity_score is not None) else 0.7705)
     dtw_dist = float(dtw_info.dtw_distance if (dtw_info and dtw_info.dtw_distance is not None) else 0.0782)
     dtw_sync = float(dtw_info.cross_track_synchrony_score if (dtw_info and dtw_info.cross_track_synchrony_score is not None) else 0.1735)
+    dtw_is_step = bool(
+        (dtw_info and getattr(dtw_info, "is_artificial_step_plateau", False))
+        or dtw_arch == "ARTIFICIAL_STEP_MANIPULATION"
+        or any(str(f.code) == "DTW_ARTIFICIAL_STEP_PLATEAU" for f in valuation_report.risk_flags)
+    )
 
     ans = jev_114.answers
     lifecycle_ans = ans["catalog_lifecycle_classification"]
@@ -809,6 +923,34 @@ def run_parallel_dtw_and_jev_evaluation(
     split_ans = ans["collaborator_split_chain_of_title_risk"]
     struct_ans = ans["recommended_deal_structure"]
     anchor_ans = ans["recommended_valuation_anchor_tier"]
+
+    fraud_noul_val = float(fraud_ans.get("noul", 0.025))
+    risk_flag_codes = [str(f.code) for f in valuation_report.risk_flags]
+    manipulation_flags: List[str] = []
+    if dtw_is_step:
+        manipulation_flags.append("DTW_ARTIFICIAL_STEP_PLATEAU")
+    if dtw_sync > 0.85:
+        manipulation_flags.append("DTW_CROSS_TRACK_BOT_SYNCHRONY")
+    if fraud_noul_val >= 0.40:
+        manipulation_flags.append("ELEVATED_JEV_BOT_FRAUD_PROBABILITY")
+    for rf in risk_flag_codes:
+        if rf in {
+            "DTW_ARTIFICIAL_STEP_PLATEAU",
+            "DTW_CROSS_TRACK_BOT_SYNCHRONY",
+            "CONFIRMED_AI_OR_STREAM_FARM",
+            "SUSPECTED_AI_SLOP_PROFILE",
+            "STREAM_FARM_RPM_COLLAPSE",
+            "EXTREME_UPLOAD_VELOCITY",
+            "HIGH_FRAUD_TERRITORY_CONCENTRATION",
+        } and rf not in manipulation_flags:
+            manipulation_flags.append(rf)
+
+    has_fraud_or_step = bool(
+        dtw_is_step
+        or fraud_noul_val >= 0.40
+        or float(valuation_report.integrity_score) < 60.0
+        or len(manipulation_flags) > 0
+    )
 
     low_eur = valuation_report.price_low_eur
     target_eur = valuation_report.price_median_eur
@@ -823,16 +965,45 @@ def run_parallel_dtw_and_jev_evaluation(
     p_target = anchor_probs.get("target_median_with_structured_upside_corridor", 0.91)
     p_ceil = anchor_probs.get("ceiling_p90_unconditional", 0.03)
 
-    jev_base_eur = round(
+    raw_jev_base_eur = (
         p_floor * low_eur
         + p_target * target_eur
-        + p_ceil * high_eur,
-        2,
+        + p_ceil * high_eur
     )
-    jev_base_usd = round(jev_base_eur / 0.92, 2)
+    raw_jev_stretch_eur = 0.25 * target_eur + 0.75 * high_eur
 
-    jev_stretch_eur = round(0.25 * target_eur + 0.75 * high_eur, 2)
+    # Penalize JEV valuation multiples when step-function plateau or fraud indicators are active
+    if has_fraud_or_step:
+        fraud_penalty_factor = max(0.35, 1.0 - (0.55 * max(fraud_noul_val, 0.50 if dtw_is_step else 0.40)))
+        jev_base_eur = round(min(low_eur, raw_jev_base_eur * fraud_penalty_factor), 2)
+        jev_stretch_eur = round(min(target_eur, raw_jev_stretch_eur * fraud_penalty_factor), 2)
+    else:
+        jev_base_eur = round(raw_jev_base_eur, 2)
+        jev_stretch_eur = round(raw_jev_stretch_eur, 2)
+
+    jev_base_usd = round(jev_base_eur / 0.92, 2)
     jev_stretch_usd = round(jev_stretch_eur / 0.92, 2)
+
+    is_live_api = bool(jev_114.is_independent_ai_evaluation and jev_114.execution_mode == "live_api")
+    eval_mode_str = "independent_live_api" if is_live_api else "deterministic_local_model"
+    prov_notice_str = (
+        "Independent external AI evaluation via TypeSafe AI System One API."
+        if is_live_api
+        else "Deterministic local cross-check derived from SPACE engine inputs (not an independent external AI API call)."
+    )
+
+    default_takeaway_2 = (
+        (
+            f"FOREVER-HOLD / WARNING: Step-plateau or manipulation anomaly detected "
+            f"(is_artificial_step_plateau={dtw_is_step}, fraud_likelihood_score={fraud_noul_val:.3f}, "
+            f"flags={', '.join(manipulation_flags) or 'ELEVATED_RISK'}). Valuation multiples penalized."
+        )
+        if has_fraud_or_step
+        else (
+            "Zero bot/step-function manipulation. Streams are independently distributed across 20 tracks "
+            "with 64.9% Tier-1 territory share (US #1, DE #2) and $1.44/1k net audio RPM."
+        )
+    )
 
     comparison_matrix: List[DtwVsJevComparisonItem] = extra.get("custom_comparison_matrix") or [
         DtwVsJevComparisonItem(
@@ -854,15 +1025,19 @@ def run_parallel_dtw_and_jev_evaluation(
             combined_takeaway=extra.get(
                 "takeaway_1",
                 (
-                    "Both DTW time-series matching and JEV System One confirm an evergreen 7.7-year catalog "
-                    "in a prolonged algorithmic plateau with low organic decay (~7.5%–11.2%/yr)."
+                    f"CRITICAL ANOMALY: DTW and JEV detect {dtw_arch} / {lifecycle_ans['choice']} step-plateau manipulation."
+                    if has_fraud_or_step
+                    else (
+                        "Both DTW time-series matching and JEV System One confirm an evergreen 7.7-year catalog "
+                        "in a prolonged algorithmic plateau with low organic decay (~7.5%–11.2%/yr)."
+                    )
                 ),
             ),
         ),
         DtwVsJevComparisonItem(
             dimension="2. Artificial Streaming / Bot Fraud Forensics",
             dtw_quantitative_result=(
-                f"is_artificial_step_plateau=False, "
+                f"is_artificial_step_plateau={dtw_is_step}, "
                 f"cross-track synchrony={dtw_sync:.4f} (threshold <0.88), Integrity={valuation_report.integrity_score:.1f}/100"
             ),
             jev_system_one_result=(
@@ -872,14 +1047,8 @@ def run_parallel_dtw_and_jev_evaluation(
             jev_primitive_type="noul",
             jev_probability_or_score=fraud_ans["noul"],
             jev_confidence=noul_confidence(fraud_ans["noul"]),
-            consensus_status="100% ALIGNED",
-            combined_takeaway=extra.get(
-                "takeaway_2",
-                (
-                    "Zero bot/step-function manipulation. Streams are independently distributed across 20 tracks "
-                    "with 64.9% Tier-1 territory share (US #1, DE #2) and $1.44/1k net audio RPM."
-                ),
-            ),
+            consensus_status="FRAUD / STEP-PLATEAU FLAGGED" if has_fraud_or_step else "100% ALIGNED",
+            combined_takeaway=extra.get("takeaway_2", default_takeaway_2),
         ),
         DtwVsJevComparisonItem(
             dimension=f"3. Claimed (${app_input.declared_ltm_amount:,.0f}) vs Verified (${ltm_usd:,.0f} LTM) Reconciliation",
@@ -993,19 +1162,33 @@ def run_parallel_dtw_and_jev_evaluation(
     synthesis_sv = extra.get(
         "executive_synthesis_sv",
         (
-            f"Parallell körning av SPACE DTW-motorn och TypeSafe AI (JEV `jev-1.14.0` & `jev-1.13.0`, 100% versionsöverensstämmelse) "
-            f"bekräftar att Justin Matysiks (2Scratch) katalog har en verifierad LTM nettointäkt (Apr 2025–Mar 2026) på "
-            f"$18,076.82 USD (€16,630.67 EUR) och CY2025 netto på $19,120.71 USD (motsvarande $33,970.73 USD i 100% Gross Master Royalty "
-            f"före Tribal Trap / Trap Nations ~50% label-split). DTW-analysen klassificerar katalogen som `ALGORITHMIC_PROLONGED_PLATEAU` "
-            f"(distans 0.0782, synkroni 0.1735 = 0% bot-manipulation), och JEV System One rekommenderar med hög konfidens (0.88–0.94) "
-            f"ett tvåspårigt indikativt bud: Option A (Outright Buyout) på €60,209 EUR ($65,445 USD, 3.93x CF0 / 3.62x LTM, 90% upfront / 10% escrow) "
-            f"samt Option B (Hybrid Buyout + Performance Earn-Out / Selected New Releases) upp till €76,717 EUR ($83,388 USD, 5.01x CF0 / 4.61x LTM), "
-            f"plus automatisk pro-rata top-up när statements för saknade låten 'Murdas (feat. Marlon Clarke)' skickas in."
+            f"[PROVENANS: {prov_notice_str}] "
+            + (
+                f"VARNING / FORENSISK RISK: DTW-motorn och den lokala JEV-utvärderingen detekterar "
+                f"artificiell step-platå eller manipulationsrisk (`{dtw_arch}`, fraud_likelihood_score={fraud_noul_val:.3f}, "
+                f"flaggor={', '.join(manipulation_flags)}). Värderingsmultiplar har rabatterats kraftigt och affär rekommenderas ej utan full rådatagranskning."
+                if has_fraud_or_step
+                else (
+                    f"Parallell körning av SPACE DTW-motorn och TypeSafe AI (JEV `jev-1.14.0` & `jev-1.13.0`, 100% versionsöverensstämmelse) "
+                    f"bekräftar att Justin Matysiks (2Scratch) katalog har en verifierad LTM nettointäkt (Apr 2025–Mar 2026) på "
+                    f"$18,076.82 USD (€16,630.67 EUR) och CY2025 netto på $19,120.71 USD (motsvarande $33,970.73 USD i 100% Gross Master Royalty "
+                    f"före Tribal Trap / Trap Nations ~50% label-split). DTW-analysen klassificerar katalogen som `ALGORITHMIC_PROLONGED_PLATEAU` "
+                    f"(distans 0.0782, synkroni 0.1735 = 0% bot-manipulation), och JEV System One rekommenderar med hög konfidens (0.88–0.94) "
+                    f"ett tvåspårigt indikativt bud: Option A (Outright Buyout) på €60,209 EUR ($65,445 USD, 3.93x CF0 / 3.62x LTM, 90% upfront / 10% escrow) "
+                    f"samt Option B (Hybrid Buyout + Performance Earn-Out / Selected New Releases) upp till €76,717 EUR ($83,388 USD, 5.01x CF0 / 4.61x LTM), "
+                    f"plus automatisk pro-rata top-up när statements för saknade låten 'Murdas (feat. Marlon Clarke)' skickas in."
+                )
+            )
         ),
     )
 
     return ParallelDtwJevEvaluationReport(
         artist_name=app_input.artist_or_label_name,
+        evaluation_mode=eval_mode_str,
+        is_independent_ai_evaluation=is_live_api,
+        provenance_notice=prov_notice_str,
+        fraud_likelihood_score=fraud_noul_val,
+        manipulation_flags=manipulation_flags,
         jev_primary_run=jev_114,
         jev_preview_run=jev_113,
         model_version_agreement_rate=agreement_rate,
