@@ -163,6 +163,13 @@ class CatalogInvestmentMemoDeck(BaseModel):
     author_engine: str = "claude+space_engine"
     claude_model_used: str = DEFAULT_CLAUDE_MEMO_MODEL
     claude_execution_mode: str = "deterministic_synthesis"
+    verification_status: str = "STATEMENT_VERIFIED"
+    statements_verified: bool = True
+    step_function_detected: bool = False
+    fraud_likelihood_score: float = 0.0
+    forensic_warning_flags: List[str] = Field(default_factory=list)
+    jev_evaluation_mode: str = "deterministic_local_model"
+    jev_is_independent_ai: bool = False
 
     # Slide 01: Cover
     cover_kicker: str
@@ -463,19 +470,46 @@ def generate_catalog_investment_memo_deck(
     and falls back deterministically otherwise.
     """
     extra = extra_context or {}
-    if stmt_summary is None:
-        stmt_summary = ParsedStatementSummary(
-            detected_distributor=app_input.distributor_or_admin or "Independent Distributor",
-            row_count=max(len(app_input.tracks) * 420, 1200),
-            total_net_royalty_eur=float(
-                valuation.baseline.statement_ltm_eur or valuation.baseline.effective_cf0_eur
-            ),
-            total_streams=sum(int(t.annual_streams or 0) for t in app_input.tracks) or 1_000_000,
-            monthly_history=app_input.monthly_history,
-            tracks=app_input.tracks,
-            dsp_share=app_input.dsp_share or {"Spotify": 0.82, "YouTube": 0.10, "Apple Music": 0.06, "Other": 0.02},
-            country_share=app_input.country_share or {"US": 0.40, "DE": 0.16, "GB": 0.08, "FR": 0.05, "CA": 0.04, "AU": 0.04},
+    has_real_statements = bool(
+        app_input.statements_verified
+        and (
+            (stmt_summary is not None and stmt_summary.row_count > 0)
+            or len(app_input.monthly_history) > 0
+            or len(app_input.tracks) > 0
         )
+    )
+    if stmt_summary is None:
+        if has_real_statements:
+            stmt_summary = ParsedStatementSummary(
+                detected_distributor=app_input.distributor_or_admin or "Independent Distributor",
+                row_count=max(len(app_input.tracks), len(app_input.monthly_history)),
+                total_net_royalty_eur=float(
+                    valuation.baseline.statement_ltm_eur or valuation.baseline.effective_cf0_eur
+                ),
+                total_streams=sum(int(t.annual_streams or 0) for t in app_input.tracks),
+                monthly_history=app_input.monthly_history,
+                tracks=app_input.tracks,
+                dsp_share=app_input.dsp_share or {"Spotify": 0.82, "YouTube": 0.10, "Apple Music": 0.06, "Other": 0.02},
+                country_share=app_input.country_share or {"US": 0.40, "DE": 0.16, "GB": 0.08, "FR": 0.05, "CA": 0.04, "AU": 0.04},
+            )
+        else:
+            stmt_summary = ParsedStatementSummary(
+                detected_distributor=app_input.distributor_or_admin or "Unverified Intake (No Statements)",
+                row_count=0,
+                total_net_royalty_eur=0.0,
+                total_streams=sum(int(t.annual_streams or 0) for t in app_input.tracks),
+                monthly_history=app_input.monthly_history,
+                tracks=app_input.tracks,
+                dsp_share=app_input.dsp_share or {},
+                country_share=app_input.country_share or {},
+            )
+    else:
+        has_real_statements = bool(
+            app_input.statements_verified
+            and (stmt_summary.row_count > 0 or len(stmt_summary.monthly_history) > 0 or len(stmt_summary.tracks) > 0)
+        )
+        if not app_input.statements_verified and stmt_summary.row_count == 0:
+            has_real_statements = False
 
     if jev_report is None:
         jev_report = run_parallel_dtw_and_jev_evaluation(
@@ -615,7 +649,7 @@ def generate_catalog_investment_memo_deck(
             )
         )
 
-    # Monthly Momentum Bars
+    # Monthly Momentum Bars — NEVER fabricate monthly history when statements are missing/unverified
     monthly_bars: List[MonthlyMomentumBar] = []
     history = stmt_summary.monthly_history or app_input.monthly_history or []
     if history:
@@ -631,17 +665,6 @@ def generate_catalog_investment_memo_deck(
                     in_ltm_window=(idx >= ltm_start_idx),
                 )
             )
-    else:
-        for idx in range(12):
-            m_num = ((idx + 7) % 12) + 1
-            monthly_bars.append(
-                MonthlyMomentumBar(
-                    period=f"2026-{m_num:02d}",
-                    month_short=f"{m_num:02d}",
-                    amount_usd=round((cf0_usd / 12.0) * (0.85 + 0.03 * idx), 2),
-                    in_ltm_window=True,
-                )
-            )
 
     peak_bar = max(monthly_bars, key=lambda b: b.amount_usd) if monthly_bars else None
     first_bar = monthly_bars[0] if monthly_bars else None
@@ -649,7 +672,7 @@ def generate_catalog_investment_memo_deck(
     growth_mult = (
         round(peak_bar.amount_usd / max(first_bar.amount_usd, 100.0), 1)
         if (peak_bar and first_bar and first_bar.amount_usd > 0)
-        else 2.4
+        else 1.0
     )
 
     # WACC Build-up Segments
@@ -718,8 +741,26 @@ def generate_catalog_investment_memo_deck(
         "evergreen_algorithmic_plateau": "Evergreen algorithmic plateau",
         "mature_steady_back_catalog": "Mature steady back-catalog",
         "viral_spike_crash": "Viral spike, steep burn-in",
+        "artificial_step_manipulation": "Artificial step-plateau manipulation",
     }
     life_post_str = life_label_map.get(life_choice, life_choice.replace("_", " ").title())
+
+    struct_choice = str(struct_q.get("choice", "dual_option_outright_90_10_plus_hybrid_earnout_new_music"))
+    struct_label_map = {
+        "dual_option_outright_90_10_plus_hybrid_earnout_new_music": "Dual option 90/10, hybrid earn-out on new music",
+        "strict_outright_90_10_only": "Strict outright 90/10 only",
+        "conservative_50_50_staged_tranche": "Conservative 50/50 staged tranche (high risk holdback)",
+        "decline_or_request_resubmission": "Decline offer or require raw ledger audit",
+    }
+    struct_post_str = struct_label_map.get(struct_choice, struct_choice.replace("_", " ").title())
+
+    anchor_choice = str(anchor_q.get("choice", "target_median_with_structured_upside_corridor"))
+    anchor_label_map = {
+        "floor_p10_conservative": "Floor P10 conservative (forensic risk discount)",
+        "target_median_with_structured_upside_corridor": "Target median with structured upside corridor",
+        "ceiling_p90_unconditional": "Ceiling P90 unconditional",
+    }
+    anchor_post_str = anchor_label_map.get(anchor_choice, anchor_choice.replace("_", " ").title())
 
     gap_score = float(gap_q.get("score", 2.0))
     gap_desc = (
@@ -728,6 +769,7 @@ def generate_catalog_investment_memo_deck(
         else f"Score {gap_score:.2f} / 4 · manageable expectation gap"
     )
 
+    bot_noul_val = float(bot_q.get("noul", 0.025))
     jev_questions: List[JevQuestionRow] = [
         JevQuestionRow(
             question="Gross vs net claim",
@@ -743,11 +785,13 @@ def generate_catalog_investment_memo_deck(
             question="Catalog lifecycle",
             posterior_answer=life_post_str,
             confidence_pct=int(round(float(life_q.get("confidence", 0.79)) * 100)),
+            highlight=(life_choice == "artificial_step_manipulation"),
         ),
         JevQuestionRow(
             question="Bot or farm fraud",
-            posterior_answer=f"{float(bot_q.get('noul', 0.025)):.3f} · {'low' if float(bot_q.get('noul', 0.025)) < 0.25 else 'elevated'}",
-            confidence_pct=int(round(noul_confidence(float(bot_q.get("noul", 0.025))) * 100)),
+            posterior_answer=f"{bot_noul_val:.3f} · {'low' if bot_noul_val < 0.25 else 'HIGH FRAUD / STEP-PLATEAU RISK'}",
+            confidence_pct=int(round(noul_confidence(bot_noul_val) * 100)),
+            highlight=(bot_noul_val >= 0.40),
         ),
         JevQuestionRow(
             question="Missing promised tracks",
@@ -767,17 +811,17 @@ def generate_catalog_investment_memo_deck(
         ),
         JevQuestionRow(
             question="Deal structure",
-            posterior_answer="Dual option 90/10, hybrid earn-out on new music",
+            posterior_answer=struct_post_str,
             confidence_pct=int(round(float(struct_q.get("confidence", 0.87)) * 100)),
         ),
         JevQuestionRow(
             question="Valuation anchor",
-            posterior_answer="Target median with structured upside corridor",
+            posterior_answer=anchor_post_str,
             confidence_pct=int(round(float(anchor_q.get("confidence", 0.86)) * 100)),
         ),
         JevQuestionRow(
             question="Ready for offer and NDA",
-            posterior_answer=f"{float(ready_q.get('noul', 0.965)):.3f} · {'yes' if float(ready_q.get('noul', 0.965)) >= 0.70 else 'review required'}",
+            posterior_answer=f"{float(ready_q.get('noul', 0.965)):.3f} · {'yes' if float(ready_q.get('noul', 0.965)) >= 0.70 else 'HOLD / FORENSIC AUDIT REQUIRED'}",
             confidence_pct=int(round(noul_confidence(float(ready_q.get("noul", 0.965))) * 100)),
         ),
     ]
@@ -853,17 +897,20 @@ def generate_catalog_investment_memo_deck(
                 is_top3=(idx < 3),
             )
         )
-    if not track_bars:
+    if not track_bars and has_real_statements:
         track_bars = [
             TrackConcentrationBar(title="Primary Catalog Track #1", ltm_usd=round(ltm_usd * 0.28), share_pct=28.0, is_top3=True),
             TrackConcentrationBar(title="Primary Catalog Track #2", ltm_usd=round(ltm_usd * 0.19), share_pct=19.0, is_top3=True),
             TrackConcentrationBar(title="Primary Catalog Track #3", ltm_usd=round(ltm_usd * 0.12), share_pct=12.0, is_top3=True),
         ]
 
-    top1_share = track_bars[0].share_pct if track_bars else 25.0
-    top1_title = track_bars[0].title if track_bars else "Top Track"
-    top3_share = round(sum(t.share_pct for t in track_bars[:3]), 2)
+    top1_share = track_bars[0].share_pct if track_bars else 0.0
+    top1_title = track_bars[0].title if track_bars else "Unverified Intake (No Track Statements)"
+    top3_share = round(sum(t.share_pct for t in track_bars[:3]), 2) if track_bars else 0.0
     hhi_val = round(float(valuation.track_hhi or 0.15), 2)
+    actual_track_count = len(tracks_list)
+    track_count_label = f"{actual_track_count} tracks" if actual_track_count > 0 else "unverified tracklist"
+    isrc_count_label = f"{actual_track_count} ISRCs" if actual_track_count > 0 else "0 verified ISRCs"
 
     # Offer Structures (Option A, B, C)
     opt_a_low = float(extra.get("option_a_low_usd") or round(base_usd * 1.0, 0))
@@ -917,18 +964,36 @@ def generate_catalog_investment_memo_deck(
         ),
     ]
 
-    upfront_pct = int(round(float(valuation.deal_structure.upfront_pct or 0.90) * 100))
-    holdback_pct = 100 - upfront_pct
-    upfront_usd = round(base_usd * (upfront_pct / 100.0))
-    escrow_usd = round(base_usd - upfront_usd)
+    # Normalize deal structure percentages (engine outputs 0..100 scale, e.g. 90.0 and 10.0)
+    raw_upfront = float(
+        valuation.deal_structure.upfront_pct
+        if valuation.deal_structure and valuation.deal_structure.upfront_pct is not None
+        else 90.0
+    )
+    upfront_pct_f = raw_upfront if raw_upfront > 1.0 else raw_upfront * 100.0
+    upfront_pct_f = max(0.0, min(100.0, upfront_pct_f))
+
+    raw_earnout = float(
+        valuation.deal_structure.earnout_pct
+        if valuation.deal_structure and getattr(valuation.deal_structure, "earnout_pct", None) is not None
+        else 0.0
+    )
+    earnout_pct_f = raw_earnout if raw_earnout > 1.0 else raw_earnout * 100.0
+    earnout_pct_f = max(0.0, min(100.0 - upfront_pct_f, earnout_pct_f))
+    holdback_pct_f = round(max(0.0, 100.0 - upfront_pct_f - earnout_pct_f), 1)
+
+    upfront_pct = int(round(upfront_pct_f))
+    holdback_pct = max(0, 100 - upfront_pct - int(round(earnout_pct_f)))
+    upfront_usd = round(base_usd * (upfront_pct_f / 100.0))
+    escrow_usd = max(0, round(base_usd - upfront_usd))
 
     offer_cards: List[OfferStructureCard] = [
         OfferStructureCard(
-            badge="A · RECOMMENDED",
+            badge="A · RECOMMENDED" if has_real_statements else "A · INDICATIVE (SUBJECT TO STATEMENTS)",
             recommended=True,
             price_headline=f"${base_usd:,.0f}",
             description=(
-                f"Standalone acquisition on verified {len(tracks_list) or 20} tracks. "
+                f"Standalone acquisition on {'verified ' + track_count_label if has_real_statements else 'unverified intake (' + track_count_label + ')'}. "
                 f"{mult_base:.2f}x CF0 · {payback_mo}-month payback."
             ),
             breakdown_lines=[
@@ -942,7 +1007,7 @@ def generate_catalog_investment_memo_deck(
             recommended=False,
             price_headline=f"{_fmt_k(opt_b_low)}–{_fmt_k(opt_b_high)}",
             description=(
-                "Catalog acquisition plus milestone tranches tied to verified performance & new releases."
+                "Catalog acquisition plus milestone tranches tied to statement-verified performance & new releases."
             ),
             breakdown_lines=[
                 OfferBreakdownLine(label="Upfront closing", value=f"${base_usd:,.0f}"),
@@ -955,7 +1020,7 @@ def generate_catalog_investment_memo_deck(
             recommended=False,
             price_headline=f"{_fmt_k(opt_c_low)}–{_fmt_k(opt_c_high)}",
             description=(
-                f"10-year exclusive master license on existing {len(tracks_list) or 20} ISRCs. Rights revert after Y10."
+                f"10-year exclusive master license on existing {track_count_label}. Rights revert after Y10."
             ),
             breakdown_lines=[
                 OfferBreakdownLine(label="Term", value="10 years"),
@@ -965,14 +1030,65 @@ def generate_catalog_investment_memo_deck(
         ),
     ]
 
+    # Detect forensic / step-plateau / fraud flags from engine + JEV
+    dtw_info = valuation.dtw_analysis
+    engine_flag_codes = [str(f.code) for f in (valuation.risk_flags or [])]
+    step_function_detected = bool(
+        (dtw_info is not None and getattr(dtw_info, "is_artificial_step_plateau", False))
+        or "DTW_ARTIFICIAL_STEP_PLATEAU" in engine_flag_codes
+        or getattr(jev_report, "dtw_archetype_classification", "") == "ARTIFICIAL_STEP_MANIPULATION"
+        or extra.get("step_function_detected") is True
+    )
+    fraud_likelihood_score = float(
+        extra.get("fraud_likelihood_score")
+        if extra.get("fraud_likelihood_score") is not None
+        else max(
+            float(getattr(jev_report, "fraud_likelihood_score", 0.0) or 0.0),
+            float( getattr(jev_report, "jev_bot_fraud_noul", 0.0) or 0.0),
+            float(bot_q.get("noul", 0.025)),
+        )
+    )
+    auth_status_val = str(
+        getattr(valuation.authenticity_status, "value", valuation.authenticity_status)
+        if getattr(valuation, "authenticity_status", None) is not None
+        else "VERIFIED_ORGANIC"
+    )
+    forensic_warning_flags: List[str] = list(getattr(jev_report, "manipulation_flags", []) or [])
+    for fc in engine_flag_codes:
+        if fc not in forensic_warning_flags:
+            forensic_warning_flags.append(fc)
+    if step_function_detected and "DTW_ARTIFICIAL_STEP_PLATEAU" not in forensic_warning_flags:
+        forensic_warning_flags.insert(0, "DTW_ARTIFICIAL_STEP_PLATEAU")
+
+    has_elevated_fraud_risk = bool(
+        step_function_detected
+        or fraud_likelihood_score >= 0.40
+        or float(valuation.integrity_score) < 60.0
+        or auth_status_val in {"SUSPICIOUS", "FAIL", "CONFIRMED_AI_OR_FARM", "SUSPECTED_AI_OR_FAKE"}
+    )
+
+    jev_is_independent = bool(getattr(jev_report, "is_independent_ai_evaluation", False))
+    jev_eval_mode = str(getattr(jev_report, "evaluation_mode", "deterministic_local_model"))
+    jev_provenance_short = (
+        "Independent external TypeSafe AI evaluation"
+        if jev_is_independent
+        else "Deterministic local cross-check derived from SPACE engine inputs (not an independent external AI API call)"
+    )
+    verification_status = (
+        "STATEMENT_VERIFIED"
+        if has_real_statements
+        else "INDICATIVE / UNVERIFIED INTAKE — NO ROYALTY STATEMENTS PROVIDED"
+    )
+
     # Build quantitative state summary for Claude
     quant_context = {
         "deal_code": resolved_deal_code,
         "artist_or_label_name": artist,
         "distributor": stmt_summary.detected_distributor or app_input.distributor_or_admin,
-        "ledger_rows_verified": stmt_summary.row_count,
-        "track_count": len(tracks_list) or 20,
-        "total_streams": stmt_summary.total_streams,
+        "statements_verified": has_real_statements,
+        "ledger_rows_verified": stmt_summary.row_count if has_real_statements else 0,
+        "track_count": actual_track_count,
+        "total_streams": stmt_summary.total_streams if has_real_statements else 0,
         "claimed_annual_usd": claimed_usd,
         "l3m_annualized_usd": l3m_usd,
         "verified_ltm_net_usd": ltm_usd,
@@ -991,7 +1107,9 @@ def generate_catalog_investment_memo_deck(
         "year1_decay_pct": round(valuation.cohorts.blended_year1_decay_rate * 100.0, 2),
         "steady_decay_pct": round(valuation.cohorts.blended_steady_state_decay_rate * 100.0, 2),
         "integrity_score": round(valuation.integrity_score, 1),
-        "bot_probability_pct": round(float(bot_q.get("noul", 0.025)) * 100.0, 2),
+        "bot_probability_pct": round(fraud_likelihood_score * 100.0, 2),
+        "step_function_detected": step_function_detected,
+        "forensic_warning_flags": forensic_warning_flags,
         "top_dsp": top_dsp_name,
         "top_dsp_pct": top_dsp_pct,
         "tier1_territory_pct": t1_total_pct,
@@ -1006,89 +1124,155 @@ def generate_catalog_investment_memo_deck(
     steady_decay_pct = quant_context["steady_decay_pct"]
     frontline_pct = round(valuation.cohorts.frontline_0_12m_share * 100.0, 0)
 
-    default_narrative: Dict[str, Any] = {
-        "s01_headline": (
+    if has_elevated_fraud_risk:
+        s01_head_default = (
+            f"FORENSIC WARNING: Step-plateau / manipulation anomaly detected (fraud risk {fraud_likelihood_score * 100:.0f}%)."
+        )
+        s01_note_default = (
+            f"Forensic audit flagged {', '.join(forensic_warning_flags) or 'artificial streaming manipulation'} "
+            f"(integrity {valuation.integrity_score:.0f}/100, step_function_detected={step_function_detected}). "
+            f"{jev_provenance_short}."
+        )
+    elif not has_real_statements:
+        s01_head_default = (
+            f"INDICATIVE / UNVERIFIED INTAKE — NO ROYALTY STATEMENTS PROVIDED. Modelled at {mult_base:.2f}x declared CF0."
+        )
+        s01_note_default = (
+            f"Indicative Stage-1 screening based on unverified seller-declared baseline (${cf0_usd:,.0f}/yr). "
+            f"Zero royalty statement rows have been uploaded or verified yet. {jev_provenance_short}."
+        )
+    else:
+        s01_head_default = (
             f"A clean, verified catalog. Priced at {mult_base:.2f}x today, more with structured upside."
-        ),
-        "s01_bottom_note": (
-            f"We underwrite the verified trailing baseline of ${cf0_usd:,.0f}/yr, and both independent engines "
-            f"(Monte Carlo DCF and TypeSafe AI JEV) land within ${jev_diff_usd:,.0f} on the base case."
-        ),
-        "s02_headline": "Every statement, every row verified.",
-        "s02_bottom_note": (
+        )
+        s01_note_default = (
+            f"We underwrite the verified trailing baseline of ${cf0_usd:,.0f}/yr; "
+            f"Monte Carlo DCF and JEV ({jev_provenance_short}) land within ${jev_diff_usd:,.0f} on the base case."
+        )
+
+    if not has_real_statements:
+        s02_head_default = "INDICATIVE / UNVERIFIED INTAKE — NO ROYALTY STATEMENTS PROVIDED."
+        s02_note_default = (
+            "0 ledger rows uploaded. Stage-2 underwriting requires raw CSV/TSV distributor or PRO statements "
+            "before any binding offer or buyer syndication."
+        )
+        s03_head_default = f"Unverified seller claim of {_fmt_k(claimed_usd)} — awaiting statement upload."
+        s03_note_default = (
+            f"Baseline CF0 (${cf0_usd:,.0f}/yr) is currently anchored on unverified intake figures "
+            "pending CSV statement reconciliation."
+        )
+        s04_head_default = "UNVERIFIED / NO STATEMENT HISTORY PROVIDED."
+    else:
+        s02_head_default = (
+            "Statement rows ingested — forensic step-plateau warning flagged."
+            if has_elevated_fraud_risk
+            else "Every statement, every row verified."
+        )
+        s02_note_default = (
             f"Line-level royalty statements from {quant_context['distributor']} across "
-            f"{quant_context['track_count']} ISRCs were reconciled with zero duplicate overlap."
-        ),
-        "s03_headline": (
+            f"{actual_track_count} ISRCs were reconciled ({stmt_summary.row_count:,} rows)."
+            + (
+                f" WARNING: Forensic audit detected {', '.join(forensic_warning_flags)}."
+                if has_elevated_fraud_risk
+                else " Zero duplicate overlap."
+            )
+        )
+        s03_head_default = (
             f"The {_fmt_k(claimed_usd)} claim vs. ${ltm_usd:,.0f} verified LTM net."
             if abs(claimed_usd - ltm_usd) > ltm_usd * 0.08
             else f"Verified net LTM of ${ltm_usd:,.0f} confirms the seller's baseline."
-        ),
-        "s03_bottom_note": (
+        )
+        s03_note_default = (
             f"JEV classifies the claim discrepancy ({claim_post_str}). We underwrite the verified trailing "
             f"net artist cashflow of ${cf0_usd:,.0f}/yr."
-        ),
-        "s04_headline": (
-            f"Royalties grew {growth_mult:.1f}x across the observed window."
-            if growth_mult >= 1.5
-            else "A steady, predictable monthly royalty cadence."
-        ),
-        "s05_headline": (
-            "A young catalog, priced for steep burn-in."
-            if frontline_pct >= 50
-            else "10,000 Monte Carlo paths, modelled track by track."
-        ),
-        "s05_bottom_note": (
-            f"DTW matches {jev_report.dtw_archetype_classification} (similarity {jev_report.dtw_similarity_score:.2f}); "
-            f"JEV classifies lifecycle as {life_post_str.lower()} (conf {jev_report.jev_lifecycle_confidence:.2f})."
-        ),
-        "s06_headline": (
-            f"Youth costs {age_r_pct:.1f} points. Forensic risk adds almost nothing."
-            if age_r_pct >= 2.0
-            else f"Seasoned catalog age keeps WACC tight at {total_wacc_pct:.2f}%."
-        ),
-        "s06_bottom_note": (
-            f"Base discount rate starts at {base_r_pct:.2f}%, plus +{age_r_pct:.2f}% age adjustment and "
-            f"+{other_r_pct:.2f}% concentration/verification adjustments."
-        ),
-        "s07_headline": f"The standalone catalog is worth {_fmt_k(base_usd)}.",
-        "s08_headline": "Most of the value lands in the first five to ten years.",
-        "s09_headline": "One engine, monthly steps, reconciled to the cent.",
-        "s10_headline": "Ten questions. Two independent engines in 100% agreement.",
-        "s11_headline": (
-            "A perfect integrity score."
-            if valuation.integrity_score >= 98.0
-            else "Organic listening, not farmed streams."
-        ),
-        "s11_bottom_note": (
-            f"No artificial step plateau, no mass-upload cadence, and no loop farms. "
-            f"Audio streams earn a healthy ${float(valuation.implied_blended_rpm_usd or 2.15):.2f} per 1,000 net."
-        ),
-        "s12_headline": f"{top_dsp_name}-led, and {t1_total_pct:.0f}% Tier-1 markets.",
-        "s12_bottom_note": (
-            f"Tier-1 markets deliver {t1_total_pct:.1f}% of streams. {top_dsp_name} ({top_dsp_pct:.1f}%) "
-            f"is the primary DSP revenue driver."
-        ),
-        "s13_headline": f"Top three tracks carry {top3_share:.0f}%.",
-        "s14_quote_text": str(
-            extra.get("seller_quote_text")
-            or (
-                f"We are looking for an institutional partner who values the long-term trajectory of "
-                f"{artist} while structuring fair upside on our upcoming releases."
+        )
+        s04_head_default = (
+            "FORENSIC ANOMALY: Artificial step-plateau / synchronized streaming pattern detected."
+            if has_elevated_fraud_risk
+            else (
+                f"Royalties grew {growth_mult:.1f}x across the observed window."
+                if growth_mult >= 1.5
+                else "A steady, predictable monthly royalty cadence."
             )
-        ),
-        "s14_attribution": str(
-            extra.get("seller_quote_attribution")
-            or f"Authorized Representative · {artist}"
-        ),
-        "s15_headline": "Structured options bridge the expectation gap.",
-        "s16_headline": "Three ways in. We lead with Option A.",
-        "s17_headline": "Ready for an indicative offer and NDA.",
-        "s17_steps": [
+        )
+
+    if has_elevated_fraud_risk:
+        s11_head_default = (
+            f"FORENSIC ALERT: Step-plateau anomaly & elevated manipulation risk ({fraud_likelihood_score * 100:.1f}%)."
+        )
+        s11_note_default = (
+            f"WARNING: Artificial step-plateau or streaming manipulation indicators detected "
+            f"(integrity score {valuation.integrity_score:.0f}/100, fraud likelihood {fraud_likelihood_score:.2f}, "
+            f"flags: {', '.join(forensic_warning_flags) or 'STEP_PLATEAU_ANOMALY'}). Do not proceed without raw DSP telemetry audit."
+        )
+        s17_head_default = "HOLD / FORENSIC RISK MATRIX: Step-plateau & manipulation flags require audit."
+        s17_steps_default = [
             {
                 "step_number": "01",
-                "title": "Open at Option A",
-                "description": f"${base_usd:,.0f} standalone anchor ({upfront_pct}% upfront, {holdback_pct}% escrow), with Option B ready as the bridge.",
+                "title": "Forensic Hold",
+                "description": (
+                    f"Place acquisition on hold due to detected step-plateau / manipulation risk "
+                    f"(fraud score {fraud_likelihood_score:.2f}, integrity {valuation.integrity_score:.0f}/100)."
+                ),
+            },
+            {
+                "step_number": "02",
+                "title": "Audit DSP Telemetry",
+                "description": (
+                    f"Require raw Spotify for Artists / Apple Music daily stream-source exports to investigate "
+                    f"flags: {', '.join(forensic_warning_flags) or 'DTW_ARTIFICIAL_STEP_PLATEAU'}."
+                ),
+            },
+            {
+                "step_number": "03",
+                "title": "Protective Holdback",
+                "description": (
+                    f"If cleared on discounted P10 floor (${low_usd:,.0f}), enforce conservative staged escrow "
+                    "and clawback warranties against DSP takedowns or royalty withholds."
+                ),
+            },
+            {
+                "step_number": "04",
+                "title": "Chain of Title & LOD",
+                "description": f"Verify ISRC chain-of-title and distributor standing ({quant_context['distributor']}).",
+            },
+        ]
+        s17_note_default = (
+            f"RISK MATRIX SUMMARY: Elevated manipulation risk ({fraud_likelihood_score * 100:.1f}%) and "
+            f"step-plateau flags ({', '.join(forensic_warning_flags)}) preclude unconditional closing."
+        )
+    else:
+        s11_head_default = (
+            "A perfect integrity score."
+            if (has_real_statements and valuation.integrity_score >= 98.0)
+            else (
+                "Organic listening, not farmed streams."
+                if has_real_statements
+                else "Unverified stream integrity — awaiting distributor statements."
+            )
+        )
+        s11_note_default = (
+            (
+                f"No artificial step plateau, no mass-upload cadence, and no loop farms. "
+                f"Audio streams earn a healthy ${float(valuation.implied_blended_rpm_usd or 2.15):.2f} per 1,000 net."
+            )
+            if has_real_statements
+            else "No royalty statements uploaded yet; forensic DTW and RPM authenticity checks require Stage-2 CSV ingestion."
+        )
+        s17_head_default = (
+            "Ready for an indicative offer and NDA."
+            if has_real_statements
+            else "Stage 1 Indicative Only — Upload CSV statements for Stage 2 underwriting."
+        )
+        s17_steps_default = [
+            {
+                "step_number": "01",
+                "title": "Open at Option A" if has_real_statements else "Upload CSV Statements",
+                "description": (
+                    f"${base_usd:,.0f} standalone anchor ({upfront_pct}% upfront, {holdback_pct}% escrow), with Option B ready as the bridge."
+                    if has_real_statements
+                    else f"Upload 12–36 months of raw CSV exports from {quant_context['distributor']} to verify the ${_fmt_k(claimed_usd)} claim."
+                ),
             },
             {
                 "step_number": "02",
@@ -1105,10 +1289,78 @@ def generate_catalog_investment_memo_deck(
                 "title": "Confirm title & LOD",
                 "description": f"Verify ISRC chain-of-title and execute distributor Letter of Direction ({quant_context['distributor']}).",
             },
-        ],
-        "s17_bottom_note": (
+        ]
+        s17_note_default = (
             "Keep Options B and C in reserve. They fit if the seller wants milestone upside or a 10-year reversion term."
+        )
+
+    default_narrative: Dict[str, Any] = {
+        "s01_headline": s01_head_default,
+        "s01_bottom_note": s01_note_default,
+        "s02_headline": s02_head_default,
+        "s02_bottom_note": s02_note_default,
+        "s03_headline": s03_head_default,
+        "s03_bottom_note": s03_note_default,
+        "s04_headline": s04_head_default,
+        "s05_headline": (
+            "A young catalog, priced for steep burn-in."
+            if frontline_pct >= 50
+            else "10,000 Monte Carlo paths, modelled track by track."
         ),
+        "s05_bottom_note": (
+            f"DTW matches {jev_report.dtw_archetype_classification} (similarity {jev_report.dtw_similarity_score:.2f}); "
+            f"JEV classifies lifecycle as {life_post_str.lower()} (conf {jev_report.jev_lifecycle_confidence:.2f}). "
+            f"[{jev_provenance_short}]"
+        ),
+        "s06_headline": (
+            f"Forensic & age risk raises WACC to {total_wacc_pct:.2f}%."
+            if has_elevated_fraud_risk
+            else (
+                f"Youth costs {age_r_pct:.1f} points. Forensic risk adds almost nothing."
+                if age_r_pct >= 2.0
+                else f"Seasoned catalog age keeps WACC tight at {total_wacc_pct:.2f}%."
+            )
+        ),
+        "s06_bottom_note": (
+            f"Base discount rate starts at {base_r_pct:.2f}%, plus +{age_r_pct:.2f}% age adjustment and "
+            f"+{other_r_pct:.2f}% concentration/verification/forensic adjustments."
+        ),
+        "s07_headline": f"The standalone catalog is worth {_fmt_k(base_usd)}.",
+        "s08_headline": "Most of the value lands in the first five to ten years.",
+        "s09_headline": "One engine, monthly steps, reconciled to the cent.",
+        "s10_headline": (
+            "Ten questions. Independent TypeSafe AI API evaluation."
+            if jev_is_independent
+            else "Ten questions. Deterministic local JEV cross-check derived from engine inputs."
+        ),
+        "s11_headline": s11_head_default,
+        "s11_bottom_note": s11_note_default,
+        "s12_headline": f"{top_dsp_name}-led, and {t1_total_pct:.0f}% Tier-1 markets.",
+        "s12_bottom_note": (
+            f"Tier-1 markets deliver {t1_total_pct:.1f}% of streams. {top_dsp_name} ({top_dsp_pct:.1f}%) "
+            f"is the primary DSP revenue driver."
+        ),
+        "s13_headline": (
+            f"Top three tracks carry {top3_share:.0f}%."
+            if track_bars
+            else "No track-level royalty statements provided."
+        ),
+        "s14_quote_text": str(
+            extra.get("seller_quote_text")
+            or (
+                f"We are looking for an institutional partner who values the long-term trajectory of "
+                f"{artist} while structuring fair upside on our upcoming releases."
+            )
+        ),
+        "s14_attribution": str(
+            extra.get("seller_quote_attribution")
+            or f"Authorized Representative · {artist}"
+        ),
+        "s15_headline": "Structured options bridge the expectation gap.",
+        "s16_headline": "Three ways in. We lead with Option A.",
+        "s17_headline": s17_head_default,
+        "s17_steps": s17_steps_default,
+        "s17_bottom_note": s17_note_default,
     }
 
     resolved_api_key = anthropic_api_key or os.environ.get("ANTHROPIC_API_KEY")
@@ -1130,7 +1382,11 @@ def generate_catalog_investment_memo_deck(
     period_range_label = (
         f"{first_bar.period} to {last_bar.period}, {len(monthly_bars)} months"
         if (first_bar and last_bar)
-        else "Trailing 12–24 months verified"
+        else (
+            "Trailing 12–24 months verified"
+            if has_real_statements
+            else "UNVERIFIED / NO STATEMENT HISTORY PROVIDED"
+        )
     )
 
     return CatalogInvestmentMemoDeck(
@@ -1142,6 +1398,13 @@ def generate_catalog_investment_memo_deck(
         author_engine="claude+space_engine",
         claude_model_used=claude_model,
         claude_execution_mode=execution_mode,
+        verification_status=verification_status,
+        statements_verified=has_real_statements,
+        step_function_detected=step_function_detected,
+        fraud_likelihood_score=round(fraud_likelihood_score, 4),
+        forensic_warning_flags=forensic_warning_flags,
+        jev_evaluation_mode=jev_eval_mode,
+        jev_is_independent_ai=jev_is_independent,
         cover_kicker=f"INVESTMENT MEMO · DEAL #{resolved_deal_code}",
         cover_title=f"{artist}.",
         cover_subtitle=(
@@ -1152,9 +1415,13 @@ def generate_catalog_investment_memo_deck(
         s01_headline=default_narrative["s01_headline"],
         s01_cards=[
             MemoMetricCard(
-                label="LTM net, verified",
+                label="LTM net, verified" if has_real_statements else "Declared LTM (unverified)",
                 value=f"${ltm_usd:,.0f}",
-                detail=f"Normalized CF0 ${cf0_usd:,.0f}/yr. Last 3 months run at ${l3m_usd:,.0f}/yr.",
+                detail=(
+                    f"Normalized CF0 ${cf0_usd:,.0f}/yr. Last 3 months run at ${l3m_usd:,.0f}/yr."
+                    if has_real_statements
+                    else f"UNVERIFIED INTAKE — Declared CF0 ${cf0_usd:,.0f}/yr (no royalty statements)."
+                ),
                 highlight=True,
             ),
             MemoMetricCard(
@@ -1165,7 +1432,7 @@ def generate_catalog_investment_memo_deck(
             MemoMetricCard(
                 label="JEV base / stretch",
                 value=f"${jev_base_usd:,.0f}",
-                detail=f"Stretch ${jev_stretch_usd:,.0f}. Within ${jev_diff_usd:,.0f} of the DCF base.",
+                detail=f"Stretch ${jev_stretch_usd:,.0f}. Within ${jev_diff_usd:,.0f} of the DCF base. ({jev_provenance_short})",
             ),
             MemoMetricCard(
                 label="Option B package",
@@ -1177,24 +1444,36 @@ def generate_catalog_investment_memo_deck(
         # Slide 02
         s02_headline=default_narrative["s02_headline"],
         s02_primary_count=f"{stmt_summary.row_count:,}",
-        s02_primary_label="verified ledger rows",
+        s02_primary_label=(
+            "verified ledger rows"
+            if has_real_statements
+            else "unverified ledger rows (no statements)"
+        ),
         s02_cards=[
             MemoMetricCard(
                 label=str(quant_context["distributor"]),
                 value=f"${ltm_usd / 1000.0:.2f}k LTM",
-                detail="Primary distributor statement verified",
+                detail=(
+                    "Primary distributor statement verified"
+                    if has_real_statements
+                    else "UNVERIFIED — No distributor statement provided"
+                ),
                 highlight=True,
             ),
             MemoMetricCard(
                 label="Baseline CF0",
                 value=f"${cf0_usd / 1000.0:.2f}k / yr",
-                detail="Net artist share, no double count",
+                detail=(
+                    "Net artist share, no double count"
+                    if has_real_statements
+                    else "Indicative unverified baseline"
+                ),
                 highlight=True,
             ),
             MemoMetricCard(
                 label=f"{quant_context['track_count']} ISRCs",
                 value=app_input.rights_scope.value.title(),
-                detail="Verified net payable",
+                detail="Verified net payable" if has_real_statements else "Unverified seller-declared",
             ),
             MemoMetricCard(
                 label=f"{stmt_summary.total_streams / 1_000_000.0:.1f}M streams",
@@ -1219,7 +1498,7 @@ def generate_catalog_investment_memo_deck(
                 variant="muted",
             ),
             ComparisonBarItem(
-                label="Verified LTM net = CF0",
+                label="Verified LTM net = CF0" if has_real_statements else "Indicative unverified CF0",
                 amount_usd=cf0_usd,
                 formatted_value=f"${cf0_usd:,.0f}",
                 variant="blue",
@@ -1233,12 +1512,21 @@ def generate_catalog_investment_memo_deck(
             f"SPACE · Monthly net royalties, USD · {period_range_label} · "
             f"peak ${peak_bar.amount_usd:,.0f} in {peak_bar.period}"
             if peak_bar
-            else "SPACE · Monthly net royalties, USD"
+            else (
+                "SPACE · Monthly net royalties, USD"
+                if has_real_statements
+                else "SPACE · UNVERIFIED / NO STATEMENT HISTORY PROVIDED"
+            )
         ),
         # Slide 05
         s05_headline=default_narrative["s05_headline"],
         s05_cards=[
-            MemoMetricCard(label="Baseline CF0", value=f"${cf0_usd:,.0f}", detail="Verified net annual baseline", highlight=True),
+            MemoMetricCard(
+                label="Baseline CF0",
+                value=f"${cf0_usd:,.0f}",
+                detail="Verified net annual baseline" if has_real_statements else "Indicative unverified annual baseline",
+                highlight=True,
+            ),
             MemoMetricCard(label="Year-1 blended decay", value=f"{y1_decay_pct:.2f}%", detail="Empirical Bayes + DTW blend"),
             MemoMetricCard(label="Steady-state decay", value=f"{steady_decay_pct:.2f}%", detail="Post burn-in annual glide"),
             MemoMetricCard(label="Discount rate (WACC)", value=f"{total_wacc_pct:.2f}%", detail="Risk-adjusted hurdle rate"),
@@ -1274,6 +1562,11 @@ def generate_catalog_investment_memo_deck(
         s07_jev_crosscheck_note=(
             f"JEV CROSS-CHECK: Base ${jev_base_usd:,.0f} and stretch ${jev_stretch_usd:,.0f}. "
             f"Two independent methods land ${jev_diff_usd:,.0f} apart on the base case."
+            if jev_is_independent
+            else (
+                f"JEV CROSS-CHECK ({jev_provenance_short}): Base ${jev_base_usd:,.0f} and stretch ${jev_stretch_usd:,.0f}. "
+                f"Deterministic local model derived from engine inputs lands ${jev_diff_usd:,.0f} from DCF base."
+            )
         ),
         # Slide 08
         s08_headline=default_narrative["s08_headline"],
@@ -1308,20 +1601,32 @@ def generate_catalog_investment_memo_deck(
         s10_headline=default_narrative["s10_headline"],
         s10_agreement_badge=f"{int(round(jev_report.model_version_agreement_rate * 100))}% agreement · jev-1.14.0 & 1.13.0",
         s10_questions=jev_questions,
-        s10_footer_caption="SPACE · TypeSafe AI System One, run in parallel with the DTW engine",
+        s10_footer_caption=(
+            "SPACE · TypeSafe AI System One (live API), run in parallel with the DTW engine"
+            if jev_is_independent
+            else "SPACE · Local deterministic JEV fallback model derived from engine inputs (not an independent external AI API call)"
+        ),
         # Slide 11
         s11_headline=default_narrative["s11_headline"],
         s11_cards=[
             MemoMetricCard(
                 label="Integrity score",
                 value=f"{valuation.integrity_score:.0f}",
-                detail="Integrity score out of 100. Clean organic listening.",
+                detail=(
+                    f"Integrity score out of 100 ({auth_status_val}). ELEVATED FRAUD / MANIPULATION RISK."
+                    if has_elevated_fraud_risk
+                    else "Integrity score out of 100. Clean organic listening."
+                ),
                 highlight=True,
             ),
             MemoMetricCard(
                 label="Bot / farm probability",
                 value=f"{quant_context['bot_probability_pct']:.1f}%",
-                detail="Probability of bot or stream-farm activity per JEV.",
+                detail=(
+                    f"ELEVATED fraud/manipulation score ({fraud_likelihood_score:.2f}). Step plateau: {'YES' if step_function_detected else 'NO'}."
+                    if has_elevated_fraud_risk
+                    else "Probability of bot or stream-farm activity per JEV."
+                ),
             ),
             MemoMetricCard(
                 label="Cross-track sync",
@@ -1329,9 +1634,13 @@ def generate_catalog_investment_memo_deck(
                 detail="DTW synchrony index. Bot flag threshold starts at 0.88.",
             ),
             MemoMetricCard(
-                label="AI profile signals",
-                value="0",
-                detail="Zero synthetic or spoofed label signals detected.",
+                label="Forensic risk flags" if has_elevated_fraud_risk else "AI profile signals",
+                value=str(len(forensic_warning_flags)) if has_elevated_fraud_risk else "0",
+                detail=(
+                    f"Active forensic flags: {', '.join(forensic_warning_flags[:3]) or 'STEP_PLATEAU_OR_FRAUD_RISK'}."
+                    if has_elevated_fraud_risk
+                    else "Zero synthetic or spoofed label signals detected."
+                ),
             ),
         ],
         s11_bottom_note=default_narrative["s11_bottom_note"],
