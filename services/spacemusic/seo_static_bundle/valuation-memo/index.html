@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPACE Institutional Catalog Valuation Memo Studio | Claude + Autumn Billing + DTW DCF</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0D0E11;
+    color: #F5F6F8;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    border-bottom: 1px solid #1E2330;
+  }
+  .brand { font-size: 18px; font-weight: 800; letter-spacing: 0.18em; }
+  .badge {
+    font-family: monospace;
+    font-size: 11px;
+    color: #84B1FF;
+    background: rgba(132, 177, 255, 0.12);
+    border: 1px solid rgba(132, 177, 255, 0.3);
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+  .container {
+    max-width: 1180px;
+    margin: 36px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    gap: 32px;
+  }
+  .panel {
+    background: #141720;
+    border: 1px solid #252A3A;
+    border-radius: 10px;
+    padding: 26px;
+  }
+  h1 { font-size: 26px; margin: 0 0 8px; letter-spacing: -0.02em; }
+  p.lead { font-size: 13.5px; color: #9BA3B8; line-height: 1.5; margin: 0 0 20px; }
+  label { display: block; font-size: 12px; color: #B4BCCF; margin: 12px 0 5px; font-weight: 500; }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: #0D0E11;
+    border: 1px solid #2A3145;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 13px;
+  }
+  .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .btn-primary {
+    margin-top: 18px;
+    width: 100%;
+    padding: 13px;
+    background: #2356C8;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #2D64DF; }
+  .preview-frame {
+    width: 100%;
+    height: 640px;
+    border: 1px solid #252A3A;
+    border-radius: 8px;
+    background: #090A0D;
+  }
+  .action-bar {
+    display: none;
+    margin-bottom: 16px;
+    padding: 14px 18px;
+    background: #171D2B;
+    border: 1px solid #84B1FF;
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .action-links a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .btn-pdf { background: #84B1FF; color: #0D0E11; }
+  .btn-stripe { background: #F99441; color: #0D0E11; }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .plan-card {
+    background: #141720;
+    border: 1px solid #252A3A;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 12px;
+  }
+  .plan-card strong { font-size: 13px; color: #84B1FF; display: block; margin-bottom: 4px; }
+  .plan-price { font-size: 16px; font-weight: 800; color: #FFFFFF; margin: 6px 0; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">SPACE</div>
+    <div class="badge">CLAUDE + AUTUMN BILLING · 19-SLIDE 16:9 INVESTMENT MEMO</div>
+  </div>
+  <div class="container">
+    <div class="panel">
+      <h1>Generate Catalog Investment Memo</h1>
+      <p class="lead">
+        Run our 10,000-path Monte Carlo DCF, Dynamic Time Warping (DTW), and TypeSafe AI (JEV)
+        forensics engine. Preview Slides 01–02 free, or unlock the full 19-slide 16:9 PDF via Autumn + Stripe ($299 single memo or $499/mo Desk Pass).
+      </p>
+      <form id="memoForm">
+        <div class="row-2">
+          <div>
+            <label>Artist or Label Name</label>
+            <input type="text" id="artist_name" value="HMWME" required>
+          </div>
+          <div>
+            <label>Catalog Title</label>
+            <input type="text" id="catalog_title" value="The Family of One">
+          </div>
+        </div>
+        <div class="row-2">
+          <div>
+            <label>Customer Email / Autumn ID</label>
+            <input type="email" id="contact_email" placeholder="mgmt@hmwme.com">
+          </div>
+          <div>
+            <label>Primary Distributor</label>
+            <input type="text" id="distributor" value="DistroKid + Amuse">
+          </div>
+        </div>
+        <div class="row-2">
+          <div>
+            <label>Claimed / Trailing LTM ($ USD)</label>
+            <input type="number" id="ltm_amount" value="80000" step="100">
+          </div>
+          <div>
+            <label>Customer Session Token (Optional)</label>
+            <input type="text" id="customer_token" placeholder="ctok_... (for existing Desk Pass)">
+          </div>
+        </div>
+        <label>Paste Raw Distributor CSV / TSV Rows (Optional — upgrades to Stage 2 Verified)</label>
+        <textarea id="raw_csv" rows="4" placeholder="reporting_month,title,isrc,store,country,quantity,net_royalty_usd..."></textarea>
+        <label>Autumn Plan (`billing.attach` / `balances.check`)</label>
+        <select id="plan_tier">
+          <option value="SINGLE_MEMO_299">single_memo_299 — Single 19-Slide Memo PDF ($299 / €275)</option>
+          <option value="DESK_PASS_499">desk_pass_499 — Label / Manager Desk Pass (10 Memos/mo · $499/mo)</option>
+        </select>
+        <button type="submit" class="btn-primary">Run Engine &amp; Build 19-Slide Memo</button>
+      </form>
+    </div>
+    <div>
+      <div id="autumnPlansGrid" class="plans-grid"></div>
+      <div id="actionBar" class="action-bar">
+        <div id="statusSummary" style="font-size: 13px;"></div>
+        <div class="action-links" id="actionLinks"></div>
+      </div>
+      <iframe id="deckIframe" class="preview-frame" title="SPACE 19-Slide Investment Memo Preview"></iframe>
+    </div>
+  </div>
+<script>
+async function loadAutumnCatalogPlans() {
+  var emailVal = document.getElementById("contact_email").value || "";
+  var qs = emailVal ? "?customer_id=" + encodeURIComponent(emailVal) : "";
+  var res = await fetch("/catalog-review/paid-memo/autumn/plans" + qs);
+  if (!res.ok) return;
+  var data = await res.json();
+  var grid = document.getElementById("autumnPlansGrid");
+  if (!grid || !data.plans) return;
+  grid.innerHTML = data.plans.map(function(p) {
+    var priceStr = p.amount_usd != null ? ("$" + p.amount_usd + (p.interval === "month" ? "/mo" : " one-off")) : "Free (auto-enabled)";
+    var itemsStr = (p.items || []).map(function(i) { return i.primary_text || (i.included + " " + i.feature_id); }).join(" · ");
+    return '<div class="plan-card"><strong>' + p.name + ' (' + p.plan_id + ')</strong><div class="plan-price">' + priceStr + '</div><div style="color:#9BA3B8">' + itemsStr + '</div></div>';
+  }).join("");
+}
+loadAutumnCatalogPlans();
+(async function checkCheckoutReturnParams() {
+  var params = new URLSearchParams(window.location.search);
+  var orderId = params.get("order_id");
+  var returnToken = params.get("return_token");
+  var sessionId = params.get("session_id") || "";
+  if (orderId && returnToken) {
+    var retRes = await fetch("/catalog-review/paid-memo/return?order_id=" + encodeURIComponent(orderId) + "&session_id=" + encodeURIComponent(sessionId) + "&return_token=" + encodeURIComponent(returnToken));
+    if (retRes.ok) {
+      var retData = await retRes.json();
+      var bar = document.getElementById("actionBar");
+      var links = document.getElementById("actionLinks");
+      bar.style.display = "flex";
+      document.getElementById("statusSummary").innerHTML = "<strong>" + retData.order_id + "</strong> · Payment Status: <strong>PAID</strong>";
+      document.getElementById("deckIframe").src = retData.unlocked_html_url;
+      links.innerHTML = '<a class="btn-pdf" href="' + retData.unlocked_pdf_url + '">Download 19-Slide PDF</a>';
+    }
+  }
+})();
+document.getElementById("memoForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  var payload = {
+    artist_or_label_name: document.getElementById("artist_name").value,
+    catalog_title: document.getElementById("catalog_title").value,
+    contact_email: document.getElementById("contact_email").value || null,
+    declared_ltm_amount: parseFloat(document.getElementById("ltm_amount").value || "50000"),
+    distributor: document.getElementById("distributor").value,
+    raw_statement_csv: document.getElementById("raw_csv").value || null,
+    plan_tier: document.getElementById("plan_tier").value,
+    customer_token: document.getElementById("customer_token").value || null
+  };
+  var res = await fetch("/catalog-review/paid-memo/checkout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) return;
+  var data = await res.json();
+  var bar = document.getElementById("actionBar");
+  var links = document.getElementById("actionLinks");
+  bar.style.display = "flex";
+  document.getElementById("statusSummary").innerHTML =
+    "<strong>" + data.deal_code + "</strong> · Standalone Base: <strong>" + data.teaser_standalone_base_usd +
+    "</strong> · WACC: " + data.teaser_wacc_pct + "% · Autumn Credits Remaining: <strong>" + data.autumn_credits_remaining + "</strong>";
+  if (data.payment_status === "PAID" && data.unlocked_pdf_url) {
+    document.getElementById("deckIframe").src = data.unlocked_html_url;
+    links.innerHTML = '<a class="btn-pdf" href="' + data.unlocked_pdf_url + '">Download 19-Slide PDF</a>';
+  } else {
+    document.getElementById("deckIframe").src = data.locked_preview_url;
+    links.innerHTML = '<a class="btn-stripe" href="' + data.checkout_url + '" target="_blank">Unlock All 19 Slides ($' + data.amount_usd + ')</a>';
+  }
+});
+</script>
+</body>
+</html>
