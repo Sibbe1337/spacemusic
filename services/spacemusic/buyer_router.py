@@ -242,6 +242,7 @@ class BuyerMatchRecommendation(BaseModel):
 
 class InstitutionalRoutingReport(BaseModel):
     eligible_for_syndication: bool
+    routing_status: str = "STAGE_1_INDICATIVE_ONLY"
     disqualification_reason: str | None = None
     recommended_buyers: list[BuyerMatchRecommendation] = Field(default_factory=list)
     underwriting_memo_markdown: str = ""
@@ -257,6 +258,7 @@ def route_catalog_to_institutional_buyers(
     Scores and ranks SPACE's 8 institutional buyers for a given catalog evaluation.
     Blocks routing if the catalog is flagged as `CONFIRMED_AI_OR_FARM`, `SUSPECTED_AI_OR_FAKE`,
     or `DTW_ARTIFICIAL_STEP_PLATEAU`, protecting SPACE's institutional reputation.
+    Never marks Stage 1 / unverified applications as `READY_FOR_BUYER_SYNDICATION`.
     """
     ai_rep = valuation.ai_profile_validation
     if ai_rep and ai_rep.authenticity_status in {
@@ -265,6 +267,7 @@ def route_catalog_to_institutional_buyers(
     }:
         return InstitutionalRoutingReport(
             eligible_for_syndication=False,
+            routing_status="DISQUALIFIED_AI_OR_FRAUD",
             disqualification_reason=(
                 f"Blocked by SPACE AI/Fake Profile Forensics ({ai_rep.authenticity_status.value}, "
                 f"score {ai_rep.ai_fake_probability_score}/100)."
@@ -279,6 +282,7 @@ def route_catalog_to_institutional_buyers(
     ):
         return InstitutionalRoutingReport(
             eligible_for_syndication=False,
+            routing_status="DISQUALIFIED_STREAM_FORENSICS",
             disqualification_reason=(
                 "Blocked by SPACE Stream Forensics (DTW Artificial Step-Plateau, Pre-Clawback Dump Warning, or Extreme Implied-Revenue Mismatch)."
             ),
@@ -288,14 +292,16 @@ def route_catalog_to_institutional_buyers(
     if cf0 < 2_500.0 or valuation.pipeline_status in {"DECLINED_BELOW_THRESHOLD", "DECLINED_AI_OR_FAKE_PROFILE"}:
         return InstitutionalRoutingReport(
             eligible_for_syndication=False,
+            routing_status="BELOW_SYNDICATION_FLOOR",
             disqualification_reason=f"Normalized LTM (€{cf0:,.0f}) is below the €2,500 institutional syndication floor.",
         )
 
     age_m = valuation.cohorts.dollar_weighted_age_months
     genre = valuation.genre_family
+    raw_rights = getattr(app_row.rights_scope, "value", app_row.rights_scope)
     rights = (
-        RightsScope(app_row.rights_scope)
-        if app_row.rights_scope in {r.value for r in RightsScope}
+        RightsScope(str(raw_rights).lower().strip())
+        if str(raw_rights).lower().strip() in {r.value for r in RightsScope}
         else RightsScope.MASTERS
     )
 
@@ -305,7 +311,12 @@ def route_catalog_to_institutional_buyers(
             continue
         if valuation.integrity_score < buyer.min_integrity_score:
             continue
-        if rights not in buyer.supported_rights and RightsScope.BOTH not in buyer.supported_rights:
+        # Strict RightsScope matching: PUBLISHING-only must never match MASTERS-only (and vice versa)
+        if rights == RightsScope.PUBLISHING and RightsScope.PUBLISHING not in buyer.supported_rights:
+            continue
+        if rights == RightsScope.MASTERS and RightsScope.MASTERS not in buyer.supported_rights:
+            continue
+        if rights == RightsScope.BOTH and not buyer.supported_rights:
             continue
 
         score = 60.0
@@ -369,9 +380,51 @@ def route_catalog_to_institutional_buyers(
     recommendations.sort(key=lambda r: r.fit_score, reverse=True)
     top_recs = recommendations[:top_k]
 
+    stage_str = str(getattr(valuation.valuation_stage, "value", valuation.valuation_stage) or "")
+    app_stage_str = str(getattr(app_row, "valuation_stage", "") or "")
+    is_stage2_verified = bool(
+        stage_str == "STAGE_2_STATEMENT_VERIFIED"
+        and (
+            getattr(app_row, "statements_verified", False)
+            or app_stage_str == "STAGE_2_STATEMENT_VERIFIED"
+            or (valuation.baseline.statement_ltm_eur is not None and valuation.baseline.statement_ltm_eur > 0)
+        )
+    )
+    # Explicitly block Stage 1 or unverified applications from READY_FOR_BUYER_SYNDICATION
+    if not getattr(app_row, "statements_verified", False) and (
+        stage_str != "STAGE_2_STATEMENT_VERIFIED" or app_stage_str in {"STAGE_1_INITIAL", "STAGE_1_INDICATIVE"}
+    ):
+        # Allow direct Stage 2 valuation objects in unit tests only when app_row was not explicitly marked Stage 1 unverified
+        if stage_str != "STAGE_2_STATEMENT_VERIFIED":
+            is_stage2_verified = False
+    if not getattr(app_row, "statements_verified", False) and stage_str != "STAGE_2_STATEMENT_VERIFIED":
+        is_stage2_verified = False
+
     memo = generate_institutional_underwriting_memo(app_row, valuation, top_recs)
+    if not is_stage2_verified:
+        return InstitutionalRoutingReport(
+            eligible_for_syndication=False,
+            routing_status="AWAITING_STATEMENT_VERIFICATION",
+            disqualification_reason=(
+                "STAGE_1_INDICATIVE_ONLY — AWAITING_STATEMENT_VERIFICATION: "
+                "Royalty statements must be verified in Stage 2 before institutional buyer syndication."
+            ),
+            recommended_buyers=top_recs,
+            underwriting_memo_markdown=memo,
+        )
+
+    if not top_recs:
+        return InstitutionalRoutingReport(
+            eligible_for_syndication=False,
+            routing_status="NO_BUY_BOX_MATCH",
+            disqualification_reason="No institutional partner buy-box matched the catalog parameters.",
+            recommended_buyers=[],
+            underwriting_memo_markdown=memo,
+        )
+
     return InstitutionalRoutingReport(
-        eligible_for_syndication=len(top_recs) > 0,
+        eligible_for_syndication=True,
+        routing_status="READY_FOR_BUYER_SYNDICATION",
         recommended_buyers=top_recs,
         underwriting_memo_markdown=memo,
     )

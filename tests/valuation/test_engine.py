@@ -1745,7 +1745,7 @@ def test_hmwme_distrokid_amuse_merge_and_jev_frontline_evaluation():
     assert parallel_report.jev_primary_run.answers["seller_multiple_expectation_gap"]["score"] >= 2.5
 
 
-def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
+def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline(monkeypatch, tmp_path):
     """
     Verifies:
     1. `generate_catalog_investment_memo_deck` builds a complete 19-slide 16:9 `CatalogInvestmentMemoDeck`
@@ -1764,7 +1764,17 @@ def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
     import time
     from fastapi.testclient import TestClient
 
+    from services.spacemusic import routes as spacemusic_routes
     from services.spacemusic.main import app
+    from services.spacemusic.paid_memo_service import PaidMemoStore
+
+    secret = "whsec_space_memo_test_fixture_secret"
+    monkeypatch.setenv("STRIPE_MEMO_WEBHOOK_SECRET", secret)
+    monkeypatch.setattr(
+        spacemusic_routes,
+        "_paid_memo_store",
+        PaidMemoStore(db_path=str(tmp_path / "test_paid_memo.sqlite3")),
+    )
 
     client = TestClient(app)
 
@@ -1821,13 +1831,15 @@ def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
                 "object": {
                     "id": order_data["stripe_session_id"],
                     "client_reference_id": order_id,
+                    "payment_status": "paid",
+                    "amount_total": 29900,
+                    "currency": "usd",
                     "metadata": {"order_id": order_id, "application_id": app_id},
                 }
             },
         }
     ).encode("utf-8")
     ts = int(time.time())
-    secret = "whsec_space_memo_default_secret"
     sig = hmac.new(secret.encode("utf-8"), f"{ts}.".encode("utf-8") + webhook_payload, hashlib.sha256).hexdigest()
 
     wh_res = client.post(
@@ -1890,6 +1902,9 @@ def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
                 "object": {
                     "id": desk_order["stripe_session_id"],
                     "client_reference_id": desk_order["order_id"],
+                    "payment_status": "paid",
+                    "amount_total": 49900,
+                    "currency": "usd",
                     "metadata": {
                         "order_id": desk_order["order_id"],
                         "application_id": desk_order["application_id"],
