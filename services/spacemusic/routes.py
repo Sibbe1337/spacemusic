@@ -88,6 +88,10 @@ from .monetization_engine import (
     generate_forensic_audit_certificate,
 )
 from .paid_memo_service import (
+    AUTUMN_FEATURE_MEMO_PDF,
+    AutumnBalanceSnapshot,
+    AutumnCheckRequest,
+    AutumnTrackRequest,
     PaidMemoCheckoutRequest,
     PaidMemoCheckoutResponse,
     PaidMemoStore,
@@ -1134,14 +1138,53 @@ async def post_paid_memo_checkout(req: PaidMemoCheckoutRequest):
     return create_paid_memo_checkout_order(req, store=_paid_memo_store, engine=_engine)
 
 
+@router.post(
+    "/catalog-review/paid-memo/autumn/check",
+    response_model=AutumnBalanceSnapshot,
+)
+async def post_autumn_balance_check(req: AutumnCheckRequest):
+    """
+    Checks whether a `customer_id` has available Autumn `investment_memo_pdf` credits
+    (`POST https://api.useautumn.com/v1/balances.check`).
+    When `send_event=True`, atomically deducts `required_balance` from their balance.
+    """
+    return _paid_memo_store.autumn.check_balance(
+        customer_id=req.customer_id,
+        feature_id=req.feature_id,
+        required_balance=req.required_balance,
+        send_event=req.send_event,
+    )
+
+
+@router.post(
+    "/catalog-review/paid-memo/autumn/track",
+    response_model=AutumnBalanceSnapshot,
+)
+async def post_autumn_usage_track(req: AutumnTrackRequest):
+    """
+    Records metered consumption (`value: 1`) or credit-back (`value: -1`) in Autumn
+    (`POST https://api.useautumn.com/v1/balances.track`).
+    """
+    return _paid_memo_store.autumn.track_usage(
+        customer_id=req.customer_id,
+        feature_id=req.feature_id,
+        value=req.value,
+        idempotency_key=req.idempotency_key,
+        properties=req.properties,
+    )
+
+
 @router.post("/webhooks/stripe-memo")
+@router.post("/webhooks/autumn-memo")
 async def handle_stripe_memo_webhook(
     request: Request,
     stripe_signature: str | None = Header(default=None, alias="Stripe-Signature"),
 ):
     """
-    Stripe webhook receiver (`checkout.session.completed`) that verifies `Stripe-Signature`
-    (`t=<unix>,v1=<hmac_sha256>`) and unlocks the paid 19-slide Investment Memo PDF & HTML.
+    Stripe / Autumn webhook receiver (`checkout.session.completed`) that verifies `Stripe-Signature`
+    (`t=<unix>,v1=<hmac_sha256>`), provisions the customer's Autumn plan credits (`single_memo_299` = 1,
+    `desk_pass_499` = 10), consumes 1 credit for the current order, and unlocks the paid 19-slide
+    Investment Memo PDF & HTML.
     """
     raw_body = await request.body()
     if not verify_stripe_webhook_signature(raw_body, stripe_signature):
@@ -1171,6 +1214,15 @@ async def handle_stripe_memo_webhook(
     if not order:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found")
 
+    if order.payment_status != PaymentStatus.PAID:
+        snap = _paid_memo_store.autumn.provision_plan_credits(
+            customer_id=order.customer_id,
+            plan_tier=order.plan_tier,
+            feature_id=AUTUMN_FEATURE_MEMO_PDF,
+            consume_immediately=1,
+        )
+        order.autumn_credits_remaining = snap.remaining_balance
+
     order.payment_status = PaymentStatus.PAID
     order.paid_at_utc = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     _paid_memo_store.save(order)
@@ -1178,6 +1230,9 @@ async def handle_stripe_memo_webhook(
     return {
         "order_id": order.order_id,
         "application_id": str(order.application_id),
+        "customer_id": order.customer_id,
+        "autumn_plan_id": order.autumn_plan_id,
+        "autumn_credits_remaining": order.autumn_credits_remaining,
         "deal_code": order.deal_code,
         "payment_status": order.payment_status,
         "receipt_token": order.receipt_token,

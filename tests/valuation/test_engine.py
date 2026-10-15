@@ -1861,6 +1861,123 @@ def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
     assert pdf_unlocked.content.startswith(b"%PDF-1.")
     assert len(pdf_unlocked.content) > 5000
 
+    # 6. Verify Autumn (useautumn.com) DESK_PASS_499 ($499/mo, 10 credits) & instant credit unlock
+    desk_checkout = client.post(
+        "/catalog-review/paid-memo/checkout",
+        json={
+            "artist_or_label_name": "Sagos Partner Catalog #1",
+            "catalog_title": "Afro-diaspora Anthology Vol. 1",
+            "contact_email": "info@sagosdistro.com",
+            "declared_ltm_amount": 45000.0,
+            "currency": "USD",
+            "distributor": "Sagos Distro",
+            "plan_tier": "DESK_PASS_499",
+            "raw_statement_csv": csv_rows,
+        },
+    )
+    assert desk_checkout.status_code == 201
+    desk_order = desk_checkout.json()
+    assert desk_order["plan_tier"] == "DESK_PASS_499"
+    assert desk_order["amount_usd"] == 499.0
+    assert desk_order["customer_id"] == "cus_info_sagosdistro.com"
+    assert desk_order["payment_status"] == "PENDING_PAYMENT"
+
+    # Unlock DESK_PASS_499 via /webhooks/autumn-memo -> provisions 10 credits and consumes 1 (9 remaining)
+    desk_wh_payload = json.dumps(
+        {
+            "type": "checkout.session.completed",
+            "data": {
+                "object": {
+                    "id": desk_order["stripe_session_id"],
+                    "client_reference_id": desk_order["order_id"],
+                    "metadata": {
+                        "order_id": desk_order["order_id"],
+                        "application_id": desk_order["application_id"],
+                    },
+                }
+            },
+        }
+    ).encode("utf-8")
+    desk_sig = hmac.new(
+        secret.encode("utf-8"),
+        f"{ts}.".encode("utf-8") + desk_wh_payload,
+        hashlib.sha256,
+    ).hexdigest()
+    desk_wh_res = client.post(
+        "/webhooks/autumn-memo",
+        content=desk_wh_payload,
+        headers={
+            "Content-Type": "application/json",
+            "Stripe-Signature": f"t={ts},v1={desk_sig}",
+        },
+    )
+    assert desk_wh_res.status_code == 200
+    desk_wh_data = desk_wh_res.json()
+    assert desk_wh_data["payment_status"] == "PAID"
+    assert desk_wh_data["autumn_credits_remaining"] == 9
+
+    # Check balance via POST /catalog-review/paid-memo/autumn/check (without deducting)
+    check_res = client.post(
+        "/catalog-review/paid-memo/autumn/check",
+        json={
+            "customer_id": "info@sagosdistro.com",
+            "feature_id": "investment_memo_pdf",
+            "required_balance": 1,
+            "send_event": False,
+        },
+    )
+    assert check_res.status_code == 200
+    check_data = check_res.json()
+    assert check_data["allowed"] is True
+    assert check_data["remaining_balance"] == 9
+    assert check_data["plan_id"] == "desk_pass_499"
+
+    # Second memo for the same Autumn customer_id unlocks IMMEDIATELY using 1 credit (8 remaining)
+    second_memo_res = client.post(
+        "/catalog-review/paid-memo/checkout",
+        json={
+            "artist_or_label_name": "Sagos Partner Catalog #2",
+            "catalog_title": "Kingston & Lagos Sessions",
+            "contact_email": "info@sagosdistro.com",
+            "declared_ltm_amount": 32000.0,
+            "currency": "USD",
+            "distributor": "Sagos Distro",
+            "plan_tier": "SINGLE_MEMO_299",
+            "raw_statement_csv": csv_rows,
+        },
+    )
+    assert second_memo_res.status_code == 201
+    second_order = second_memo_res.json()
+    assert second_order["payment_status"] == "PAID"
+    assert second_order["amount_usd"] == 0.0
+    assert second_order["autumn_credits_remaining"] == 8
+    assert second_order["receipt_token"] is not None
+
+    # 7. Verify Sagos Distro / Solid Gold Global institutional buyer routing for Afro/Caribbean & Hip-Hop/R&B
+    from services.spacemusic.buyer_router import route_catalog_to_institutional_buyers
+    from services.spacemusic.models import CatalogApplication
+
+    afro_inp = CatalogValuationInput(
+        catalog_title="Gold Coast Riddims",
+        artist_or_label_name="Accra & Kingston Collective",
+        distributor_or_admin="DistroKid",
+        declared_ltm_amount=42000.0,
+        declared_currency="EUR",
+        statements_verified=True,
+        genres=["afrobeats", "reggaeton", "caribbean"],
+    )
+    val_engine = SpaceValuationEngine(random_seed=42)
+    afro_val = val_engine.evaluate(afro_inp, reference_date=date(2026, 10, 15))
+    afro_app = CatalogApplication(
+        artist_or_label_name="Accra & Kingston Collective",
+        distributor_or_admin="DistroKid",
+        rights_scope="masters",
+    )
+    routing = route_catalog_to_institutional_buyers(afro_app, afro_val, top_k=10)
+    matched_ids = [m.partner_id for m in routing.recommended_buyers]
+    assert "sagos_distro_solid_gold" in matched_ids
+
+
 
 
 

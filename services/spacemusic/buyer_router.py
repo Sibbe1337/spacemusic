@@ -206,6 +206,26 @@ INSTITUTIONAL_BUY_BOXES: list[InstitutionalPartnerProfile] = [
         target_multiple_range="1.5x – 4.0x LTM distribution transfer advance or catalog acquisition",
         thesis_summary="Strong fit for Latin, Electronic, Afro, and Hip-Hop indie labels/artists open to distribution transfer or buyout.",
     ),
+    InstitutionalPartnerProfile(
+        partner_id="sagos_distro_solid_gold",
+        partner_name="Sagos Distro / Solid Gold Global",
+        deal_type="FULL_OR_TRACK_BUYOUT",
+        decision_makers=["Partnerships & Acquisitions Team (Solid Gold Global Labs / Sagos Distro)"],
+        contact_emails=["info@sagosdistro.com", "info@solidgoldglobal.co.site"],
+        min_ltm_eur=2_500.0,
+        max_ltm_eur=500_000.0,
+        min_age_months=6.0,
+        min_integrity_score=65.0,
+        preferred_genres={
+            GenreFamily.LATIN_AFRO,
+            GenreFamily.HIPHOP_RNB_PHONK,
+            GenreFamily.POP_HIPHOP_RNB,
+            GenreFamily.POP_INDIE,
+        },
+        supported_rights={RightsScope.MASTERS, RightsScope.PUBLISHING, RightsScope.BOTH},
+        target_multiple_range="2.5x – 6.0x LTM (full or partial rights acquisition + international distribution expansion)",
+        thesis_summary="Acquires independent artist, producer, and label catalogs with strong focus on African, Caribbean, Hip-Hop/R&B, and Gospel repertoires.",
+    ),
 ]
 
 
@@ -327,6 +347,9 @@ def route_catalog_to_institutional_buyers(
         elif buyer.partner_id == "symphonic_distribution" and genre in {GenreFamily.LATIN_AFRO, GenreFamily.ELECTRONIC_DANCE}:
             score += 6.0
             reasons.append("Core Latin/Electronic repertoire fit for Symphonic Distribution.")
+        elif buyer.partner_id == "sagos_distro_solid_gold" and genre in {GenreFamily.LATIN_AFRO, GenreFamily.HIPHOP_RNB_PHONK, GenreFamily.POP_HIPHOP_RNB}:
+            score += 7.0
+            reasons.append("Core African/Caribbean/Hip-Hop/R&B repertoire fit for Sagos Distro / Solid Gold Global.")
 
         final_fit = round(min(99.0, max(10.0, score)), 1)
         if final_fit >= 55.0:
