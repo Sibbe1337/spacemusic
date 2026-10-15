@@ -96,6 +96,8 @@ HEADER_ALIASES = {
         "accounting period",
         "transaction month",
         "usage period",
+        "royalty date",
+        "transaction date",
     ],
     "isrc": [
         "isrc",
@@ -204,6 +206,8 @@ HEADER_ALIASES = {
         "estimated revenue (usd)",
         "estimated revenue (eur)",
         "estimated revenue",
+        "total",
+        "amount",
     ],
     "currency": [
         "currency",
@@ -297,6 +301,14 @@ def _normalize_period(raw: str) -> Optional[str]:
         month = MONTH_NAME_MAP.get(m_name) or MONTH_NAME_MAP.get(m_name[:3])
         if month and 1990 <= year <= 2100:
             return f"{year:04d}-{month:02d}"
+    # Match Excel serial date integer (e.g. 46082 -> 2026-03-01 -> 2026-03)
+    if re.match(r"^\d{5}(?:\.0+)?$", s):
+        serial_days = int(float(s))
+        if 30000 <= serial_days <= 60000:
+            from datetime import timedelta
+
+            dt_serial = date(1899, 12, 30) + timedelta(days=serial_days)
+            return f"{dt_serial.year:04d}-{dt_serial.month:02d}"
     return None
 
 
@@ -512,6 +524,11 @@ def _detect_column_mapping(headers: List[str]) -> Tuple[Dict[str, str], str]:
         "recipient share (%)" in lower_headers and "royalty per unit ($ usd)" in lower_headers
     ):
         distributor = "Trap Nation / Label Engine"
+    elif "royalty date" in lower_headers and (
+        ("service" in lower_headers and "split" in lower_headers)
+        or "transaction date" in lower_headers
+    ):
+        distributor = "Amuse"
     elif "asset title" in lower_headers or "royalty period" in lower_headers:
         distributor = "FUGA / Enterprise"
     else:
@@ -583,12 +600,14 @@ def parse_statement_csv(
         sale_month = sale_month or "2026-01"
 
         isrc = (raw_row.get(col_map.get("isrc", ""), "") or "").strip().upper()
-        title = (
+        raw_title = (
             raw_row.get(col_map.get("track_title", ""), "")
             or raw_row.get("Release Name", "")
             or raw_row.get("Product Name", "")
-            or "Untitled Track"
         ).strip()
+        if not isrc and not raw_title:
+            continue
+        title = raw_title or "Untitled Track"
         if isrc.lower() in ("total", "totals", "grand total") or title.lower() in ("total", "totals"):
             continue
         if not isrc:
@@ -1008,9 +1027,9 @@ def _summarize_normalized_rows(
                 if 1960 <= isrc_year <= end_year:
                     if isrc in track_first_month:
                         fm_y, fm_m = map(int, track_first_month[isrc].split("-"))
-                        if isrc_year == fm_y and fm_m < 6:
+                        if isrc_year == fm_y:
                             rel_date = date(isrc_year, fm_m, 1)
-                        elif isrc_year <= fm_y:
+                        elif isrc_year < fm_y:
                             rel_date = date(isrc_year, 6, 15)
                     else:
                         rel_date = date(isrc_year, 6, 15)
@@ -1227,14 +1246,32 @@ def merge_statement_summaries(
         for m in sorted_months
     ]
 
+    has_full_year_source = any(len(s.monthly_history) >= 12 for s in valid)
+    l12_window_set = set(sorted_months[-12:])
+
+    def _is_recent_secondary_distributor(s: ParsedStatementSummary) -> bool:
+        if not has_full_year_source or len(s.monthly_history) >= 12 or len(s.monthly_history) < 3:
+            return False
+        s_months = {pt.period for pt in s.monthly_history}
+        return bool(s_months) and s_months.issubset(l12_window_set)
+
     if same_distributor:
         l12 = sorted_months[-12:]
         ann = 12.0 / max(1, len(l12))
         combined_ltm_eur = round(sum(monthly_rev[m] for m in l12) * ann, 2)
         combined_ltm_streams = int(round(sum(monthly_streams[m] for m in l12) * ann))
     else:
-        combined_ltm_eur = round(sum(s.ltm_net_royalty_eur for s in valid), 2)
-        combined_ltm_streams = sum(s.ltm_streams for s in valid)
+        combined_ltm_eur = round(
+            sum(
+                s.total_net_royalty_eur if _is_recent_secondary_distributor(s) else s.ltm_net_royalty_eur
+                for s in valid
+            ),
+            2,
+        )
+        combined_ltm_streams = sum(
+            s.total_streams if _is_recent_secondary_distributor(s) else s.ltm_streams
+            for s in valid
+        )
         # If all major distributor summaries have >=12 complete months and share >=12 overlapping
         # months, restrict monthly_history to their common overlapping window so earlier single-label
         # months do not create artificial step-jumps when the larger label's export begins.
@@ -1280,15 +1317,17 @@ def merge_statement_summaries(
     # Combine tracks by ISRC (and reconcile synthetic SPACE... ISRCs by normalized title)
     track_map: Dict[str, TrackInput] = {}
     for s in valid:
-        # If merging multiple files from the same distributor, un-annualize per-file track LTM first
+        # If merging multiple files from the same distributor, or if s is a recent secondary distributor
+        # whose months all sit within the trailing 12-month window, un-annualize per-file track LTM first
+        unannualize_tracks = (same_distributor and len(valid) > 1) or _is_recent_secondary_distributor(s)
         rev_scale = (
             (s.total_net_royalty_eur / s.ltm_net_royalty_eur)
-            if (same_distributor and len(valid) > 1 and s.ltm_net_royalty_eur > 0 and s.total_net_royalty_eur > 0)
+            if (unannualize_tracks and s.ltm_net_royalty_eur > 0 and s.total_net_royalty_eur > 0)
             else 1.0
         )
         stream_scale = (
             (s.total_streams / s.ltm_streams)
-            if (same_distributor and len(valid) > 1 and s.ltm_streams > 0 and s.total_streams > 0)
+            if (unannualize_tracks and s.ltm_streams > 0 and s.total_streams > 0)
             else 1.0
         )
         for t in s.tracks:

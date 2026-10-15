@@ -1656,4 +1656,87 @@ def test_tribal_trap_and_trap_nation_parsing_and_parallel_jev_evaluation():
     assert parallel_report.jev_implied_stretch_offer_usd > parallel_report.jev_implied_base_offer_usd
 
 
+def test_hmwme_distrokid_amuse_merge_and_jev_frontline_evaluation():
+    """Verify DistroKid + Amuse statement merge (including Excel serial dates and no false annualization) and parallel JEV evaluation."""
+    from services.spacemusic.inbox_ingestor import parse_multi_attachment_statements
+    from services.valuation.jev_evaluator import run_parallel_dtw_and_jev_evaluation
+
+    dk_lines = [
+        "Reporting Date,Sale Month,Store,Artist,Title,ISRC,UPC,Quantity,Song/Album,Country of Sale,Earnings (USD)"
+    ]
+    dk_months = [
+        "2025-05", "2025-06", "2025-07", "2025-08", "2025-09",
+        "2025-10", "2025-11", "2025-12", "2026-01", "2026-02",
+        "2026-03", "2026-04", "2026-05", "2026-06", "2026-07",
+    ]
+    for idx, sm in enumerate(dk_months):
+        dk_lines.append(
+            f"{sm}-28,{sm},Spotify,HMWME,TE AMO,QT3F22596869,1990001,600000,Song,US,1500.00"
+        )
+        dk_lines.append(
+            f"{sm}-28,{sm},Spotify,HMWME,BLACK FRIDAY,QZZ792544788,1990002,450000,Song,DE,1100.00"
+        )
+
+    # Amuse format with Excel serial numbers for 2026-03..2026-07 (e.g. 46082 = 2026-03-01, 46113 = 2026-04-01, 46143 = 2026-05-01, 46174 = 2026-06-01, 46204 = 2026-07-01)
+    amuse_lines = [
+        "Artist Name,Track Title,ISRC,UPC,Release Title,Store,Country,Royalty Date,Transaction Date,Quantity,Total"
+    ]
+    for serial in (46082, 46113, 46143, 46174, 46204):
+        amuse_lines.append(
+            f"HMWME,FOR YOU,SE6HN2608000,7300349706483,ALWAYS // FOREVER,Spotify,US,{serial},{serial},400000,1000.00"
+        )
+    # Summary trailing line without ISRC/Title should be ignored
+    amuse_lines.append(",,,,,,,,,2000000,5000.00")
+
+    stmt_summary = parse_multi_attachment_statements(
+        [
+            ("hmwme_results7.csv", "\n".join(dk_lines)),
+            ("3439269-amuse.csv", "\n".join(amuse_lines)),
+        ],
+        default_currency="USD",
+    )
+
+    assert "DistroKid" in stmt_summary.detected_distributor
+    assert "Amuse" in stmt_summary.detected_distributor
+    assert len(stmt_summary.tracks) == 3
+    # Verify Amuse 5 months ($5,000 USD = €4,600 EUR) are NOT annualized by 12/5 when merged into DistroKid's 12-month LTM window
+    # DistroKid LTM (12 months * $2,600 = $31,200) + Amuse ($5,000) = $36,200 USD = €33,304 EUR
+    assert abs(stmt_summary.ltm_net_royalty_eur - (36200.0 * 0.92)) < 5.0
+
+    app_input = CatalogValuationInput(
+        catalog_title="HMWME Catalog",
+        artist_or_label_name="HMWME",
+        applicant_name="Zane Wilder",
+        applicant_email="mgmt@hmwme.com",
+        rights_scope=RightsScope.MASTERS,
+        royalty_basis=RoyaltyBasis.NET_PAYABLE,
+        distributor_or_admin=stmt_summary.detected_distributor,
+        ownership_share_pct=100.0,
+        existing_releases_only=True,
+        declared_ltm_amount=40000.0,
+        declared_currency="USD",
+        statements_verified=True,
+        genres=["electronic", "pop"],
+        tracks=stmt_summary.tracks,
+        monthly_history=stmt_summary.monthly_history,
+        dsp_share=stmt_summary.dsp_share,
+        country_share=stmt_summary.country_share,
+    )
+
+    engine = SpaceValuationEngine(random_seed=42)
+    val_report = engine.evaluate(app_input, reference_date=date(2026, 8, 1))
+    assert val_report.integrity_score >= 90.0
+
+    parallel_report = run_parallel_dtw_and_jev_evaluation(
+        app_input=app_input,
+        stmt_summary=stmt_summary,
+        valuation_report=val_report,
+    )
+    assert parallel_report.model_version_agreement_rate == 1.0
+    assert parallel_report.jev_lifecycle_choice == "recent_release_frontloaded_decay"
+    assert parallel_report.jev_bot_fraud_noul < 0.05
+    assert parallel_report.jev_implied_base_offer_usd > 0
+
+
+
 

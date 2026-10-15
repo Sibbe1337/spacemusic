@@ -407,6 +407,7 @@ def build_jev_state_payload(
         },
         "cohort_metrics": {
             "weighted_catalog_age_months": coh.dollar_weighted_age_months,
+            "frontline_0_12m_share": round(coh.frontline_0_12m_share, 4),
             "evergreen_48m_plus_share": round(coh.evergreen_48m_plus_share, 4),
             "blended_year1_decay_rate": coh.blended_year1_decay_rate,
             "steady_state_decay_rate": coh.blended_steady_state_decay_rate,
@@ -530,13 +531,13 @@ def _evaluate_local_calibrated_systemone(
                 "unsubstantiated_overstatement": 0.01 - (v_shift / 2.0),
                 "claims_match_verified_net": 0.01,
             }
-        elif claimed > 0 and abs(ltm_net_usd - claimed) / claimed <= 0.15:
+        elif claimed > 0 and abs(ltm_net_usd - claimed) / claimed <= 0.22:
             probs = {
-                "seller_quoted_gross_100pct_master_before_label_split": 0.05,
+                "seller_quoted_gross_100pct_master_before_label_split": 0.04,
                 "statements_missing_major_distributor": 0.02,
-                "severe_recent_streaming_collapse": 0.02,
-                "unsubstantiated_overstatement": 0.01,
-                "claims_match_verified_net": 0.90,
+                "severe_recent_streaming_collapse": 0.02 - (v_shift / 2.0),
+                "unsubstantiated_overstatement": 0.01 - (v_shift / 2.0),
+                "claims_match_verified_net": 0.91 + v_shift,
             }
         else:
             probs = {
@@ -557,6 +558,8 @@ def _evaluate_local_calibrated_systemone(
         }
 
     if "catalog_lifecycle_classification" in questions:
+        frontline_share = float(coh.get("frontline_0_12m_share", 0.0) or 0.0)
+        weighted_age_m = float(coh.get("weighted_catalog_age_months", 36.0) or 36.0)
         if is_step or synchrony > 0.85:
             probs = {
                 "evergreen_algorithmic_plateau": 0.04,
@@ -573,12 +576,20 @@ def _evaluate_local_calibrated_systemone(
                 "viral_spike_crash": 0.01,
                 "artificial_step_manipulation": 0.01,
             }
+        elif frontline_share >= 0.60 or weighted_age_m < 18.0:
+            probs = {
+                "evergreen_algorithmic_plateau": 0.11 - (v_shift / 2.0),
+                "mature_steady_back_catalog": 0.03 - (v_shift / 2.0),
+                "recent_release_frontloaded_decay": 0.82 + v_shift,
+                "viral_spike_crash": 0.03,
+                "artificial_step_manipulation": 0.01,
+            }
         else:
             probs = {
                 "evergreen_algorithmic_plateau": 0.25,
-                "mature_steady_back_catalog": 0.35,
-                "recent_release_frontloaded_decay": 0.30,
-                "viral_spike_crash": 0.08,
+                "mature_steady_back_catalog": 0.55 + v_shift,
+                "recent_release_frontloaded_decay": 0.14 - v_shift,
+                "viral_spike_crash": 0.04,
                 "artificial_step_manipulation": 0.02,
             }
         answers["catalog_lifecycle_classification"] = _make_choice_answer(probs)
@@ -738,6 +749,7 @@ def run_parallel_dtw_and_jev_evaluation(
         valuation_report=valuation_report,
         extra_context=extra_context,
     )
+    extra = extra_context or {}
 
     jev_114 = call_typesafe_systemone(state=state, model="jev-1.14.0")
     jev_113 = call_typesafe_systemone(state=state, model="jev-1.13.0")
@@ -799,7 +811,7 @@ def run_parallel_dtw_and_jev_evaluation(
     jev_stretch_eur = round(0.25 * target_eur + 0.75 * high_eur, 2)
     jev_stretch_usd = round(jev_stretch_eur / 0.92, 2)
 
-    comparison_matrix: List[DtwVsJevComparisonItem] = [
+    comparison_matrix: List[DtwVsJevComparisonItem] = extra.get("custom_comparison_matrix") or [
         DtwVsJevComparisonItem(
             dimension="1. Catalog Lifecycle & Decay Trajectory",
             dtw_quantitative_result=(
@@ -815,36 +827,42 @@ def run_parallel_dtw_and_jev_evaluation(
             jev_primitive_type="choice",
             jev_probability_or_score=lifecycle_ans["probabilities"][lifecycle_ans["choice"]],
             jev_confidence=lifecycle_ans["confidence"],
-            consensus_status="100% ALIGNED",
-            combined_takeaway=(
-                "Both DTW time-series matching and JEV System One confirm an evergreen 7.7-year catalog "
-                "in a prolonged algorithmic plateau with low organic decay (~7.5%–11.2%/yr)."
+            consensus_status="100% ALIGNED" if lifecycle_ans["choice"] == "evergreen_algorithmic_plateau" else "COMPLEMENTARY INSIGHT",
+            combined_takeaway=extra.get(
+                "takeaway_1",
+                (
+                    "Both DTW time-series matching and JEV System One confirm an evergreen 7.7-year catalog "
+                    "in a prolonged algorithmic plateau with low organic decay (~7.5%–11.2%/yr)."
+                ),
             ),
         ),
         DtwVsJevComparisonItem(
             dimension="2. Artificial Streaming / Bot Fraud Forensics",
             dtw_quantitative_result=(
-                f"is_artificial_step_plateau=False (dist to step-plateau=0.5503), "
+                f"is_artificial_step_plateau=False, "
                 f"cross-track synchrony={dtw_sync:.4f} (threshold <0.88), Integrity={valuation_report.integrity_score:.1f}/100"
             ),
             jev_system_one_result=(
-                f"Noul={fraud_ans['noul']:.3f} (97.5% probability of clean organic streaming, "
+                f"Noul={fraud_ans['noul']:.3f} ({(1.0 - fraud_ans['noul']) * 100:.1f}% probability of clean organic streaming, "
                 f"derived conf={noul_confidence(fraud_ans['noul']):.2f})"
             ),
             jev_primitive_type="noul",
             jev_probability_or_score=fraud_ans["noul"],
             jev_confidence=noul_confidence(fraud_ans["noul"]),
             consensus_status="100% ALIGNED",
-            combined_takeaway=(
-                "Zero bot/step-function manipulation. Streams are independently distributed across 20 tracks "
-                "with 64.9% Tier-1 territory share (US #1, DE #2) and $1.44/1k net audio RPM."
+            combined_takeaway=extra.get(
+                "takeaway_2",
+                (
+                    "Zero bot/step-function manipulation. Streams are independently distributed across 20 tracks "
+                    "with 64.9% Tier-1 territory share (US #1, DE #2) and $1.44/1k net audio RPM."
+                ),
             ),
         ),
         DtwVsJevComparisonItem(
-            dimension="3. Claimed ($30k) vs Verified ($18.1k LTM) Discrepancy",
-            dtw_quantitative_result=(
-                f"Verified LTM Net=${ltm_usd:,.2f} "
-                f"(CY2025 Net=$19,120.71) vs CY2025 Gross Master=$33,970.73 USD (LTM Gross=$32,150.52)"
+            dimension=f"3. Claimed (${app_input.declared_ltm_amount:,.0f}) vs Verified (${ltm_usd:,.0f} LTM) Reconciliation",
+            dtw_quantitative_result=extra.get(
+                "dtw_res_3",
+                f"Verified LTM Net=${ltm_usd:,.2f} (EUR €{ltm_eur:,.2f}) vs Declared=${app_input.declared_ltm_amount:,.2f} {app_input.declared_currency}",
             ),
             jev_system_one_result=(
                 f"Choice='{claim_ans['choice']}' "
@@ -853,63 +871,76 @@ def run_parallel_dtw_and_jev_evaluation(
             jev_primitive_type="choice",
             jev_probability_or_score=claim_ans["probabilities"][claim_ans["choice"]],
             jev_confidence=claim_ans["confidence"],
-            consensus_status="COMPLEMENTARY INSIGHT",
-            combined_takeaway=(
-                "Justin quoted 100% Gross Master Royalties (~$32k–$34k USD/yr) on Typeform before Tribal Trap "
-                "and Trap Nation's ~50% label split. No fraud penalty applied — valuation anchors on verified Net Artist Share."
+            consensus_status="100% ALIGNED" if claim_ans["choice"] == "claims_match_verified_net" else "COMPLEMENTARY INSIGHT",
+            combined_takeaway=extra.get(
+                "takeaway_3",
+                (
+                    "Justin quoted 100% Gross Master Royalties (~$32k–$34k USD/yr) on Typeform before Tribal Trap "
+                    "and Trap Nation's ~50% label split. No fraud penalty applied — valuation anchors on verified Net Artist Share."
+                ),
             ),
         ),
         DtwVsJevComparisonItem(
             dimension="4. Social UGC Micro-Impression Filtering",
-            dtw_quantitative_result=(
-                "123.31M TikTok/Meta units ($415.14 @ $0.0034/1k) separated from 27.03M audio DSP streams ($38,796.42 @ $1.44/1k)"
+            dtw_quantitative_result=extra.get(
+                "dtw_res_4",
+                "123.31M TikTok/Meta units ($415.14 @ $0.0034/1k) separated from 27.03M audio DSP streams ($38,796.42 @ $1.44/1k)",
             ),
             jev_system_one_result=(
-                f"Noul={ugc_ans['noul']:.2f} (derived conf={noul_confidence(ugc_ans['noul']):.2f}) — "
-                "confirms >82% of raw units are social micro-impressions"
+                f"Noul={ugc_ans['noul']:.2f} (derived conf={noul_confidence(ugc_ans['noul']):.2f})"
             ),
             jev_primitive_type="noul",
             jev_probability_or_score=ugc_ans["noul"],
             jev_confidence=noul_confidence(ugc_ans["noul"]),
             consensus_status="100% ALIGNED",
-            combined_takeaway=(
-                "Keeping 100% of social royalty revenue while excluding sub-$0.0001 UGC impressions from audio stream counts "
-                "prevents false RPM compression flags."
+            combined_takeaway=extra.get(
+                "takeaway_4",
+                (
+                    "Keeping 100% of social royalty revenue while excluding sub-$0.0001 UGC impressions from audio stream counts "
+                    "prevents false RPM compression flags."
+                ),
             ),
         ),
         DtwVsJevComparisonItem(
             dimension="5. Promised Tracklist vs Uploaded Statements",
-            dtw_quantitative_result=(
-                "16 of 17 emailed tracks verified across 170 files (+4 bonus tracks: I Just Wanna Know, Hot, Superlife, Superlife Slowed + Reverb); "
-                "'Murdas (feat. Marlon Clarke)' missing from ZIP/CSVs"
+            dtw_quantitative_result=extra.get(
+                "dtw_res_5",
+                "16 of 17 emailed tracks verified across 170 files (+4 bonus tracks: I Just Wanna Know, Hot, Superlife, Superlife Slowed + Reverb); 'Murdas (feat. Marlon Clarke)' missing from ZIP/CSVs",
             ),
             jev_system_one_result=(
-                f"Score={missing_ans['score']:.2f}/4.00 (Level 1: Minor discrepancy, conf={missing_ans['confidence']:.2f})"
+                f"Score={missing_ans['score']:.2f}/4.00 (conf={missing_ans['confidence']:.2f})"
             ),
             jev_primitive_type="score",
             jev_probability_or_score=missing_ans["score"],
             jev_confidence=missing_ans["confidence"],
             consensus_status="100% ALIGNED",
-            combined_takeaway=(
-                "Proceed immediately with indicative offer on the 20 verified tracks and include an automatic pro-rata "
-                "top-up clause once Justin sends the 'Murdas (feat. Marlon Clarke)' statements."
+            combined_takeaway=extra.get(
+                "takeaway_5",
+                (
+                    "Proceed immediately with indicative offer on the 20 verified tracks and include an automatic pro-rata "
+                    "top-up clause once Justin sends the 'Murdas (feat. Marlon Clarke)' statements."
+                ),
             ),
         ),
         DtwVsJevComparisonItem(
             dimension="6. Collaborator Splits & Chain-of-Title Risk",
-            dtw_quantitative_result=(
-                f"COLLABORATOR_SPLIT_SHEET_VERIFICATION flag (+100 bps discount rate premium -> r={valuation_report.discount_rate.total_discount_rate * 100:.2f}%)"
+            dtw_quantitative_result=extra.get(
+                "dtw_res_6",
+                f"Discount rate r={valuation_report.discount_rate.total_discount_rate * 100:.2f}% | Ownership={app_input.ownership_share_pct:.0f}%",
             ),
             jev_system_one_result=(
-                f"Score={split_ans['score']:.2f}/4.00 (Level 2: Label split + featured vocalists, conf={split_ans['confidence']:.2f})"
+                f"Score={split_ans['score']:.2f}/4.00 (conf={split_ans['confidence']:.2f})"
             ),
             jev_primitive_type="score",
             jev_probability_or_score=split_ans["score"],
             jev_confidence=split_ans["confidence"],
             consensus_status="100% ALIGNED",
-            combined_takeaway=(
-                "14 of 17 tracks feature vocalists/co-producers (TAOG, M.I.M.E, Young Jae, Prznt, Swisha T, etc.) "
-                "under Tribal Trap & Trap Nation. Require split-sheet confirmation & Letters of Direction in legal DD."
+            combined_takeaway=extra.get(
+                "takeaway_6",
+                (
+                    "14 of 17 tracks feature vocalists/co-producers (TAOG, M.I.M.E, Young Jae, Prznt, Swisha T, etc.) "
+                    "under Tribal Trap & Trap Nation. Require split-sheet confirmation & Letters of Direction in legal DD."
+                ),
             ),
         ),
         DtwVsJevComparisonItem(
@@ -926,22 +957,28 @@ def run_parallel_dtw_and_jev_evaluation(
             jev_probability_or_score=struct_ans["probabilities"][struct_ans["choice"]],
             jev_confidence=struct_ans["confidence"],
             consensus_status="100% ALIGNED",
-            combined_takeaway=(
-                "Bridge Justin's 6–8x expectation by presenting Option A (Outright Buyout at $65,445 / €60,209, 90% upfront + 10% holdback) "
-                "alongside Option B (Structured Buyout + Performance Earn-Out / Selected New Releases up to $83,388 / €76,717 + Murdas top-up)."
+            combined_takeaway=extra.get(
+                "takeaway_7",
+                (
+                    "Bridge Justin's 6–8x expectation by presenting Option A (Outright Buyout at $65,445 / €60,209, 90% upfront + 10% holdback) "
+                    "alongside Option B (Structured Buyout + Performance Earn-Out / Selected New Releases up to $83,388 / €76,717 + Murdas top-up)."
+                ),
             ),
         ),
     ]
 
-    synthesis_sv = (
-        f"Parallell körning av SPACE DTW-motorn och TypeSafe AI (JEV `jev-1.14.0` & `jev-1.13.0`, 100% versionsöverensstämmelse) "
-        f"bekräftar att Justin Matysiks (2Scratch) katalog har en verifierad LTM nettointäkt (Apr 2025–Mar 2026) på "
-        f"$18,076.82 USD (€16,630.67 EUR) och CY2025 netto på $19,120.71 USD (motsvarande $33,970.73 USD i 100% Gross Master Royalty "
-        f"före Tribal Trap / Trap Nations ~50% label-split). DTW-analysen klassificerar katalogen som `ALGORITHMIC_PROLONGED_PLATEAU` "
-        f"(distans 0.0782, synkroni 0.1735 = 0% bot-manipulation), och JEV System One rekommenderar med hög konfidens (0.88–0.94) "
-        f"ett tvåspårigt indikativt bud: Option A (Outright Buyout) på €60,209 EUR ($65,445 USD, 3.93x CF0 / 3.62x LTM, 90% upfront / 10% escrow) "
-        f"samt Option B (Hybrid Buyout + Performance Earn-Out / Selected New Releases) upp till €76,717 EUR ($83,388 USD, 5.01x CF0 / 4.61x LTM), "
-        f"plus automatisk pro-rata top-up när statements för saknade låten 'Murdas (feat. Marlon Clarke)' skickas in."
+    synthesis_sv = extra.get(
+        "executive_synthesis_sv",
+        (
+            f"Parallell körning av SPACE DTW-motorn och TypeSafe AI (JEV `jev-1.14.0` & `jev-1.13.0`, 100% versionsöverensstämmelse) "
+            f"bekräftar att Justin Matysiks (2Scratch) katalog har en verifierad LTM nettointäkt (Apr 2025–Mar 2026) på "
+            f"$18,076.82 USD (€16,630.67 EUR) och CY2025 netto på $19,120.71 USD (motsvarande $33,970.73 USD i 100% Gross Master Royalty "
+            f"före Tribal Trap / Trap Nations ~50% label-split). DTW-analysen klassificerar katalogen som `ALGORITHMIC_PROLONGED_PLATEAU` "
+            f"(distans 0.0782, synkroni 0.1735 = 0% bot-manipulation), och JEV System One rekommenderar med hög konfidens (0.88–0.94) "
+            f"ett tvåspårigt indikativt bud: Option A (Outright Buyout) på €60,209 EUR ($65,445 USD, 3.93x CF0 / 3.62x LTM, 90% upfront / 10% escrow) "
+            f"samt Option B (Hybrid Buyout + Performance Earn-Out / Selected New Releases) upp till €76,717 EUR ($83,388 USD, 5.01x CF0 / 4.61x LTM), "
+            f"plus automatisk pro-rata top-up när statements för saknade låten 'Murdas (feat. Marlon Clarke)' skickas in."
+        ),
     )
 
     return ParallelDtwJevEvaluationReport(

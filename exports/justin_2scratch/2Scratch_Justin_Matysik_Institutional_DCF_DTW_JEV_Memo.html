@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2Scratch (Justin Matysik) — Institutional DCF, DTW & TypeSafe AI (JEV) Underwriting Memo</title>
+  <style>
+    :root {
+      --bg-page: #0c0e14;
+      --bg-card: #131722;
+      --bg-elevated: #1a2030;
+      --border: #262f45;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-blue: #38bdf8;
+      --accent-green: #22c55e;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.5;
+      padding: 28px 36px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .pill-btn {
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      padding: 6px 13px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover {
+      border-color: var(--accent-blue);
+      color: var(--text-primary);
+    }
+    .pill-btn.active {
+      background: var(--accent-blue);
+      color: #090d16;
+      border-color: var(--accent-blue);
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .tag.green { color: var(--accent-green); border-color: rgba(34, 197, 94, 0.35); background: rgba(34, 197, 94, 0.1); }
+    .tag.blue { color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.1); }
+    .tag.amber { color: var(--accent-amber); border-color: rgba(245, 158, 11, 0.35); background: rgba(245, 158, 11, 0.1); }
+    .stat-value {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 4px 0;
+    }
+    .stat-value.blue { color: var(--accent-blue); }
+    .stat-value.green { color: var(--accent-green); }
+    .stat-value.amber { color: var(--accent-amber); }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .section {
+      margin-bottom: 30px;
+      page-break-inside: avoid;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .callout {
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 4px solid var(--accent-blue);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      color: var(--text-primary);
+    }
+    .callout-title {
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+      font-size: 13.5px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    th {
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-align: left;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(38, 47, 69, 0.6);
+      color: var(--text-primary);
+    }
+    tr:nth-child(even) td {
+      background: rgba(26, 32, 48, 0.35);
+    }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .center { text-align: center; }
+    .kv-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px dashed rgba(38, 47, 69, 0.7);
+      font-size: 12.5px;
+    }
+    .kv-row:last-child { border-bottom: none; }
+    .kv-label { color: var(--text-secondary); }
+    .kv-val { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .bar-label { width: 145px; color: var(--text-secondary); }
+    .bar-track {
+      flex: 1;
+      height: 10px;
+      background: var(--bg-elevated);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--accent-blue);
+      border-radius: 999px;
+    }
+    .bar-fill.green { background: var(--accent-green); }
+    .bar-pct { width: 52px; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .caption { font-size: 11.5px; color: var(--text-muted); margin-top: 6px; }
+    @media print {
+      body {
+        background: #ffffff;
+        color: #0f172a;
+        padding: 12px 18px;
+      }
+      .no-print { display: none !important; }
+      .card, table {
+        background: #ffffff;
+        border-color: #cbd5e1;
+      }
+      th {
+        background: #f1f5f9;
+        color: #334155;
+        border-bottom-color: #cbd5e1;
+      }
+      td {
+        color: #0f172a;
+        border-bottom-color: #e2e8f0;
+      }
+      tr:nth-child(even) td { background: #f8fafc; }
+      h1, h2, h3, .kv-val { color: #0f172a; }
+      .subtitle, .card-header, .stat-label, .kv-label, .bar-label { color: #475569; }
+      .callout {
+        background: #f0f9ff;
+        color: #0f172a;
+        border-color: #bae6fd;
+        border-left: 4px solid #0284c7;
+      }
+      .stat-value.blue { color: #0284c7; }
+      .stat-value.green { color: #16a34a; }
+      .stat-value.amber { color: #d97706; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <div>
+      <span class="brand-badge">SPACE — Institutional Underwriting &amp; DCF Memo</span>
+      <h1>2Scratch (Justin Matysik) — Parallel DTW + TypeSafe AI (JEV) Valuation</h1>
+      <div class="subtitle">
+        170 Statement Files Verified (160 Tribal Trap TSVs + 10 Trap Nation CSVs · 675,942 Rows · May 2024 – Mar 2026 · 20 Master Tracks)
+      </div>
+    </div>
+    <div class="toolbar no-print">
+      <span style="font-size:12px;color:var(--text-secondary);margin-right:4px;">Currency:</span>
+      <button class="pill-btn active" id="btn-usd" onclick="setCurrency('USD')">USD ($)</button>
+      <button class="pill-btn" id="btn-eur" onclick="setCurrency('EUR')">EUR (€)</button>
+      <button class="pill-btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <!-- Top KPI Strip -->
+  <div class="kpi-grid">
+    <div class="card">
+      <div class="card-header">
+        <span>Net Artist Royalties (LTM)</span>
+        <span class="tag blue">LTM Verified</span>
+      </div>
+      <div class="stat-value blue" data-usd="$18,077" data-eur="€16,631">$18,077</div>
+      <div class="stat-label" data-usd="Normalized CF0: $16,646/yr (CY2025 Net: $19,121)" data-eur="Normalized CF0: €15,315/yr (CY2025 Net: €17,591)">
+        Normalized CF0: $16,646/yr (CY2025 Net: $19,121)
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span>100% Gross Master (CY2025)</span>
+        <span class="tag amber">Label 100% Gross</span>
+      </div>
+      <div class="stat-value amber" data-usd="$33,971" data-eur="€31,253">$33,971</div>
+      <div class="stat-label">
+        Explains Seller's $30k Typeform Claim (Before ~50% Label Split)
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span>Option A: Outright Buyout</span>
+        <span class="tag green">3.93x CF0 / 3.62x LTM</span>
+      </div>
+      <div class="stat-value green" data-usd="$65,396" data-eur="€60,165">$65,396</div>
+      <div class="stat-label" data-usd="DTW Target Median (JEV Base: $64,382 · Payback: 4.25 yrs)" data-eur="DTW Target Median (JEV Base: €59,231 · Payback: 4.25 yrs)">
+        DTW Target Median (JEV Base: $64,382 · Payback: 4.25 yrs)
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span>Option B: Catalog + New Music</span>
+        <span class="tag green">4.74x – 5.01x CF0</span>
+      </div>
+      <div class="stat-value green" data-usd="$78,842 – $83,324" data-eur="€72,535 – €76,658">$78,842 – $83,324</div>
+      <div class="stat-label">
+        JEV Stretch + DTW 10Y P90 Corridor + New Releases Tranche
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Key Forensic Discovery: Gross Master vs. Net Artist Share &amp; Missing Track ("Murdas")</div>
+    Justin declared ~$30,000 USD on Typeform. Across all 170 uploaded files, <strong>100% Gross Master Royalties</strong> are
+    <strong>$33,970.73 USD</strong> in CY2025 ($32,150.52 USD LTM), while Justin's ~50% <strong>Net Artist Share</strong> is
+    <strong>$19,120.71 USD</strong> in CY2025 (<strong>$18,076.82 USD</strong> LTM; normalized baseline <strong>CF0 = $16,646.47 USD / €15,314.75 EUR</strong>).
+    In addition, 16 of his 17 listed tracks are verified in the files (+4 unlisted bonus tracks), while <em>"Murdas (feat. Marlon Clarke)"</em>
+    is absent from the ZIP/CSVs and eligible for an automatic pro-rata top-up.
+  </div>
+
+  <!-- SECTION 1: 10-YEAR DCF MODEL & SENSITIVITY -->
+  <div class="section">
+    <div class="section-header">
+      <div>
+        <h2>1. 10-Year Monte Carlo DCF Valuation Model &amp; Partner Sensitivity</h2>
+        <div class="subtitle">
+          10,000 Monte Carlo Trials · Track-by-Track Empirical Bayes Cohort Decay (Year-1 Blended Decay = 11.28%/yr, Steady-State = 7.52%/yr, WACC = 13.18%)
+        </div>
+      </div>
+      <div class="toolbar no-print">
+        <span style="font-size:12px;color:var(--text-secondary);">WACC Selector:</span>
+        <button class="pill-btn wacc-btn" onclick="setWacc(0.10, this)">10.00%</button>
+        <button class="pill-btn wacc-btn" onclick="setWacc(0.115, this)">11.50%</button>
+        <button class="pill-btn wacc-btn active" onclick="setWacc(0.1318, this)">13.18% (Base)</button>
+        <button class="pill-btn wacc-btn" onclick="setWacc(0.15, this)">15.00%</button>
+        <button class="pill-btn wacc-btn" onclick="setWacc(0.17, this)">17.00%</button>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-header"><span>5-Year NPV Matrix (60 Months)</span><span class="tag">WACC 13.18%</span></div>
+        <div class="kv-row"><span class="kv-label">5Y P10 (Conservative Floor):</span><span class="kv-val" data-usd="$39,519 (2.37x CF0)" data-eur="€36,358 (2.37x CF0)">$39,519 (2.37x CF0)</span></div>
+        <div class="kv-row"><span class="kv-label">5Y P50 (Median Base):</span><span class="kv-val" data-usd="$50,006 (3.00x CF0)" data-eur="€46,005 (3.00x CF0)">$50,006 (3.00x CF0)</span></div>
+        <div class="kv-row"><span class="kv-label">5Y P90 (Upside):</span><span class="kv-val" data-usd="$64,303 (3.86x CF0)" data-eur="€59,159 (3.86x CF0)">$64,303 (3.86x CF0)</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span>10-Year NPV Matrix (120 Months)</span><span class="tag">WACC 13.18%</span></div>
+        <div class="kv-row"><span class="kv-label">10Y P10 (Conservative):</span><span class="kv-val" data-usd="$50,756 (3.05x CF0)" data-eur="€46,695 (3.05x CF0)">$50,756 (3.05x CF0)</span></div>
+        <div class="kv-row"><span class="kv-label">10Y P50 (Median Base):</span><span class="kv-val" data-usd="$68,112 (4.09x CF0)" data-eur="€62,663 (4.09x CF0)">$68,112 (4.09x CF0)</span></div>
+        <div class="kv-row"><span class="kv-label">10Y P90 (Ceiling):</span><span class="kv-val" data-usd="$93,566 (5.62x CF0)" data-eur="€86,081 (5.62x CF0)">$93,566 (5.62x CF0)</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span>Underwriting Return Profile</span><span class="tag green">Partner Metrics</span></div>
+        <div class="kv-row"><span class="kv-label">Option A Target (3.93x CF0):</span><span class="kv-val" data-usd="$65,396" data-eur="€60,165">$65,396</span></div>
+        <div class="kv-row"><span class="kv-label">10Y Undiscounted Cash (P50):</span><span class="kv-val" data-usd="$110,778 (1.69x MOIC)" data-eur="€101,916 (1.69x MOIC)">$110,778 (1.69x MOIC)</span></div>
+        <div class="kv-row"><span class="kv-label">Implied Unlevered 10Y IRR:</span><span class="kv-val" style="color:var(--accent-green);">14.2% p.a. (Payback: 4.25 yrs)</span></div>
+      </div>
+    </div>
+
+    <h3 id="dcf-schedule-title">Year-by-Year DCF Cashflow &amp; Present Value Schedule (USD · Discount Rate r = 13.18%)</h3>
+    <table id="dcf-schedule-table">
+      <thead>
+        <tr>
+          <th>Projection Year</th>
+          <th class="num">YoY Decay</th>
+          <th class="num">P10 Cashflow</th>
+          <th class="num">P50 Cashflow (Base)</th>
+          <th class="num">P90 Cashflow</th>
+          <th class="num">Discount Factor</th>
+          <th class="num">PV of P50</th>
+          <th class="num">Cumulative PV</th>
+          <th class="num">Cumulative Cash</th>
+        </tr>
+      </thead>
+      <tbody id="dcf-schedule-tbody"></tbody>
+    </table>
+
+    <div class="grid-2">
+      <div>
+        <h3>WACC / Discount Rate Sensitivity Matrix</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Discount Rate (WACC)</th>
+              <th class="num">5Y P50 NPV</th>
+              <th class="num">5Y Mult</th>
+              <th class="num">10Y P50 NPV</th>
+              <th class="num">10Y Mult</th>
+              <th class="num">Blended Target</th>
+              <th class="num">Target Multiple</th>
+            </tr>
+          </thead>
+          <tbody id="wacc-sensitivity-tbody"></tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Baseline Normalization ($CF_0$) &amp; WACC Build-Up (13.18%)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Model Parameter</th>
+              <th class="num">Value</th>
+              <th>Underwriting Rule / Forensic Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Declared LTM (Seller Typeform)</td>
+              <td class="num" data-usd="$30,000" data-eur="€27,600">$30,000</td>
+              <td>Seller quoted 100% Gross Master before ~50% label split</td>
+            </tr>
+            <tr>
+              <td>Verified LTM Net Artist (Apr 25–Mar 26)</td>
+              <td class="num" data-usd="$18,077" data-eur="€16,631">$18,077</td>
+              <td>60% weight in CF0 baseline (CY2025 Net = $19,121 USD)</td>
+            </tr>
+            <tr>
+              <td>Verified L3M Annualized (Jan–Mar 26)</td>
+              <td class="num" data-usd="$15,693" data-eur="€14,437">$15,693</td>
+              <td>40% momentum weight in CF0 baseline</td>
+            </tr>
+            <tr>
+              <td><strong>Normalized Baseline Cashflow (CF0)</strong></td>
+              <td class="num" data-usd="$16,646" data-eur="€15,315"><strong>$16,646</strong></td>
+              <td>Effective starting cashflow for Year 1 DCF projection</td>
+            </tr>
+            <tr>
+              <td>Base Discount Rate (Master Rights)</td>
+              <td class="num">12.00%</td>
+              <td>Institutional indie master catalog base WACC</td>
+            </tr>
+            <tr>
+              <td>Track HHI Concentration Premium</td>
+              <td class="num">+0.18%</td>
+              <td>HHI = 0.1197 across 20 tracks ('All Night' = 25.36%)</td>
+            </tr>
+            <tr>
+              <td>Collaborator Split Verification Premium</td>
+              <td class="num">+1.00%</td>
+              <td>Featured vocalists (TAOG, M.I.M.E, Prznt, Young Jae)</td>
+            </tr>
+            <tr>
+              <td><strong>Total Risk-Adjusted WACC</strong></td>
+              <td class="num"><strong>13.18%</strong></td>
+              <td>Applied across 60-month &amp; 120-month Monte Carlo DCF</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: HISTORICAL MONTHLY CASHFLOWS & DSP/TERRITORY MIX -->
+  <div class="section">
+    <div class="section-header">
+      <h2>2. Historical Monthly Net Artist Royalties (23 Complete Months: May 2024 – Mar 2026)</h2>
+      <span class="tag blue">Total Verified Net: $39,211.57 USD (€36,074.64 EUR)</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th class="num">Net USD</th>
+          <th class="num">Net EUR</th>
+          <th class="num">Audio Streams</th>
+          <th>Month</th>
+          <th class="num">Net USD</th>
+          <th class="num">Net EUR</th>
+          <th class="num">Audio Streams</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2024-05</td><td class="num">$1,208.74</td><td class="num">€1,112.04</td><td class="num">841,197</td><td>2025-05</td><td class="num">$1,809.05</td><td class="num">€1,664.33</td><td class="num">1,620,767</td></tr>
+        <tr><td>2024-06</td><td class="num">$1,580.73</td><td class="num">€1,454.27</td><td class="num">932,884</td><td>2025-06</td><td class="num">$1,708.73</td><td class="num">€1,572.03</td><td class="num">1,456,492</td></tr>
+        <tr><td>2024-07</td><td class="num">$1,647.01</td><td class="num">€1,515.25</td><td class="num">963,213</td><td>2025-07</td><td class="num">$1,634.17</td><td class="num">€1,503.44</td><td class="num">1,379,816</td></tr>
+        <tr><td>2024-08</td><td class="num">$1,513.44</td><td class="num">€1,392.37</td><td class="num">959,951</td><td>2025-08</td><td class="num">$1,430.21</td><td class="num">€1,315.79</td><td class="num">1,294,123</td></tr>
+        <tr><td>2024-09</td><td class="num">$1,510.16</td><td class="num">€1,389.34</td><td class="num">1,012,436</td><td>2025-09</td><td class="num">$1,429.86</td><td class="num">€1,315.47</td><td class="num">1,182,815</td></tr>
+        <tr><td>2024-10</td><td class="num">$1,597.66</td><td class="num">€1,469.85</td><td class="num">1,052,158</td><td>2025-10</td><td class="num">$1,594.46</td><td class="num">€1,466.90</td><td class="num">1,206,553</td></tr>
+        <tr><td>2024-11</td><td class="num">$1,478.18</td><td class="num">€1,359.93</td><td class="num">985,097</td><td>2025-11</td><td class="num">$1,452.58</td><td class="num">€1,336.37</td><td class="num">1,124,409</td></tr>
+        <tr><td>2024-12</td><td class="num">$1,442.35</td><td class="num">€1,326.96</td><td class="num">996,179</td><td>2025-12</td><td class="num">$1,378.61</td><td class="num">€1,268.32</td><td class="num">1,116,230</td></tr>
+        <tr><td>2025-01</td><td class="num">$1,648.81</td><td class="num">€1,516.91</td><td class="num">1,064,011</td><td>2026-01</td><td class="num">$1,376.60</td><td class="num">€1,266.47</td><td class="num">1,024,096</td></tr>
+        <tr><td>2025-02</td><td class="num">$1,577.86</td><td class="num">€1,451.63</td><td class="num">936,098</td><td>2026-02</td><td class="num">$1,282.91</td><td class="num">€1,180.28</td><td class="num">852,024</td></tr>
+        <tr><td>2025-03</td><td class="num">$1,740.44</td><td class="num">€1,601.21</td><td class="num">1,022,800</td><td>2026-03</td><td class="num">$1,263.71</td><td class="num">€1,162.61</td><td class="num">894,847</td></tr>
+        <tr><td>2025-04</td><td class="num">$1,715.91</td><td class="num">€1,578.64</td><td class="num">1,201,704</td><td><strong>LTM Total</strong></td><td class="num"><strong>$18,076.82</strong></td><td class="num"><strong>€16,630.67</strong></td><td class="num"><strong>14,353,875</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>DSP Revenue Share (% of Verified Net Royalties)</h3>
+        <div class="bar-row"><span class="bar-label">Spotify</span><div class="bar-track"><div class="bar-fill" style="width:55.43%"></div></div><span class="bar-pct">55.4%</span></div>
+        <div class="bar-row"><span class="bar-label">YouTube</span><div class="bar-track"><div class="bar-fill" style="width:30.67%"></div></div><span class="bar-pct">30.7%</span></div>
+        <div class="bar-row"><span class="bar-label">Apple Music</span><div class="bar-track"><div class="bar-fill" style="width:6.45%"></div></div><span class="bar-pct">6.5%</span></div>
+        <div class="bar-row"><span class="bar-label">Amazon Music</span><div class="bar-track"><div class="bar-fill" style="width:2.73%"></div></div><span class="bar-pct">2.7%</span></div>
+        <div class="bar-row"><span class="bar-label">Deezer / TikTok / Other</span><div class="bar-track"><div class="bar-fill" style="width:4.72%"></div></div><span class="bar-pct">4.7%</span></div>
+        <div class="caption">123.31M TikTok &amp; Meta UGC impressions ($415.14 USD @ $0.0034/1k) isolated from 27.03M audio DSP streams ($1.44/1k net audio RPM).</div>
+      </div>
+
+      <div class="card">
+        <h3>Geographic Listenership Share (64.9% Tier-1 Markets)</h3>
+        <div class="bar-row"><span class="bar-label">United States</span><div class="bar-track"><div class="bar-fill green" style="width:23.69%"></div></div><span class="bar-pct">23.7%</span></div>
+        <div class="bar-row"><span class="bar-label">Germany</span><div class="bar-track"><div class="bar-fill green" style="width:14.37%"></div></div><span class="bar-pct">14.4%</span></div>
+        <div class="bar-row"><span class="bar-label">France</span><div class="bar-track"><div class="bar-fill green" style="width:5.29%"></div></div><span class="bar-pct">5.3%</span></div>
+        <div class="bar-row"><span class="bar-label">Poland</span><div class="bar-track"><div class="bar-fill green" style="width:5.10%"></div></div><span class="bar-pct">5.1%</span></div>
+        <div class="bar-row"><span class="bar-label">UK / CA / AU / AT / NL</span><div class="bar-track"><div class="bar-fill green" style="width:16.48%"></div></div><span class="bar-pct">16.5%</span></div>
+        <div class="caption">Integrity Score: 92.0 / 100 · High-bot-risk territory share: 10.68% (&lt;35% threshold) · Cross-track DTW synchrony: 0.1637.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: PARALLEL DTW VS TYPESAFE AI (JEV) -->
+  <div class="section">
+    <div class="section-header">
+      <h2>3. Parallel Underwriting: SPACE DTW Engine vs. TypeSafe AI (JEV System One)</h2>
+      <span class="tag green">100% Model Agreement (jev-1.14.0 vs jev-1.13.0)</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Underwriting Dimension</th>
+          <th>SPACE DTW + Monte Carlo DCF Output</th>
+          <th>TypeSafe AI (JEV System One) Output</th>
+          <th class="center">Consensus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Catalog Lifecycle &amp; Decay</strong></td>
+          <td>ALGORITHMIC_PROLONGED_PLATEAU (dist=0.0782, sim=0.7705; Y1 decay=11.28%/yr, steady=7.52%/yr)</td>
+          <td>Choice: <code>evergreen_algorithmic_plateau</code> (p=0.83, conf=0.79)</td>
+          <td class="center"><span class="tag green">100% ALIGNED</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Bot / Stream-Farm Forensics</strong></td>
+          <td>is_artificial_step_plateau=False (dist=0.5933); cross-track sync=0.1637 (&lt;0.88); Integrity=92.0/100</td>
+          <td>Noul: <code>0.025</code> (97.5% clean organic probability, conf=0.95)</td>
+          <td class="center"><span class="tag green">100% ALIGNED</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Claimed ($30k) vs Verified ($18.1k)</strong></td>
+          <td>Verified LTM Net=$18,076.82 (CY25 Net=$19,120.71) vs CY25 100% Gross Master=$33,970.73 USD</td>
+          <td>Choice: <code>seller_quoted_gross_100pct_master_before_label_split</code> (p=0.92, conf=0.90)</td>
+          <td class="center"><span class="tag blue">COMPLEMENTARY</span></td>
+        </tr>
+        <tr>
+          <td><strong>4. Social UGC Micro-Impressions</strong></td>
+          <td>123.31M TikTok/Meta units ($415.14 @ $0.0034/1k) separated from 27.03M audio streams ($1.44/1k)</td>
+          <td>Noul: <code>0.970</code> (conf=0.94) — &gt;82% of raw units are social UGC impressions</td>
+          <td class="center"><span class="tag green">100% ALIGNED</span></td>
+        </tr>
+        <tr>
+          <td><strong>5. Promised Tracklist Audit</strong></td>
+          <td>16/17 listed tracks verified (+4 bonus tracks in statements); 'Murdas (feat. Marlon Clarke)' missing</td>
+          <td>Score: <code>1.07 / 4.00</code> (Level 1 minor discrepancy, conf=0.88)</td>
+          <td class="center"><span class="tag green">100% ALIGNED</span></td>
+        </tr>
+        <tr>
+          <td><strong>6. Collaborator &amp; Split Risk</strong></td>
+          <td>COLLABORATOR_SPLIT_SHEET_VERIFICATION (+100 bps discount rate -&gt; r=13.18% WACC)</td>
+          <td>Score: <code>2.03 / 4.00</code> (Level 2 label split + featured vocalists, conf=0.88)</td>
+          <td class="center"><span class="tag green">100% ALIGNED</span></td>
+        </tr>
+        <tr>
+          <td><strong>7. Deal Structure &amp; Offer Anchor</strong></td>
+          <td>Option A Target: €60,165 ($65,396, 3.93x CF0) | Option B High: €76,658 ($83,324, 5.01x CF0)</td>
+          <td>Choice: <code>dual_option_outright_90_10_plus_hybrid</code> (conf=0.87) | Base=$64,382, Stretch=$78,842</td>
+          <td class="center"><span class="tag green">100% ALIGNED</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>TypeSafe AI (JEV) 10-Question Primitive Breakdown (<code>jev-1.14.0</code> &amp; <code>jev-1.13.0</code>)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Question ID (JEV_CATALOG_QUESTIONS)</th>
+          <th class="center">Primitive</th>
+          <th>System One Output &amp; Probability / Score</th>
+          <th class="num">Confidence</th>
+          <th class="center">Model Pinning Check</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>catalog_lifecycle_classification</code></td><td class="center">choice</td><td>evergreen_algorithmic_plateau (p=0.83)</td><td class="num">0.7875</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>bot_or_farm_fraud_probability</code></td><td class="center">noul</td><td>0.025 (97.5% clean organic)</td><td class="num">0.9500</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>social_ugc_inflation_detected</code></td><td class="center">noul</td><td>0.970 (123.3M social impressions)</td><td class="num">0.9400</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>gross_vs_net_claim_explanation</code></td><td class="center">choice</td><td>seller_quoted_gross_100pct_master (p=0.92)</td><td class="num">0.8933</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>missing_promised_tracks_materiality</code></td><td class="center">score</td><td>1.07 / 4.00 (Level 1: 1 track missing)</td><td class="num">0.8833</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>collaborator_split_chain_of_title_risk</code></td><td class="center">score</td><td>2.03 / 4.00 (Level 2: vocalists + label split)</td><td class="num">0.8833</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>revenue_concentration_resilience</code></td><td class="center">score</td><td>3.04 / 4.00 (Level 3: HHI 0.1197, 20 tracks)</td><td class="num">0.8667</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>recommended_deal_structure</code></td><td class="center">choice</td><td>dual_option_outright_90_10_plus_hybrid (p=0.90)</td><td class="num">0.8667</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>recommended_valuation_anchor_tier</code></td><td class="center">choice</td><td>target_median_with_structured_upside (p=0.91)</td><td class="num">0.8650</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+        <tr><td><code>ready_for_indicative_offer_and_nda</code></td><td class="center">noul</td><td>0.960 (Ready for Indicative Offer + NDA)</td><td class="num">0.9200</td><td class="center">100% (v1.14 = v1.13)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: TRACK-BY-TRACK AUDIT -->
+  <div class="section">
+    <div class="section-header">
+      <h2>4. Track-by-Track Reconciliation (17 Promised Tracks vs. 20 Tracks in Statements)</h2>
+      <span class="tag">Top Track Share: 25.36% · Top 3 Share: 51.78% · HHI: 0.1197</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="center">#</th>
+          <th>ISRC</th>
+          <th>Track Title</th>
+          <th>Label / Source</th>
+          <th class="num">LTM Net (USD)</th>
+          <th class="num">LTM Net (EUR)</th>
+          <th class="num">LTM Share</th>
+          <th class="num">Empirical Slope</th>
+          <th class="center">Audit Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="center">1</td><td><code>TCADW1888484</code></td><td><strong>All Night (feat. TAOG)</strong></td><td>Tribal Trap</td><td class="num">$4,583.79</td><td class="num">€4,217.09</td><td class="num">25.36%</td><td class="num">-1.97%/yr</td><td class="center"><span class="tag green">Listed (#2)</span></td></tr>
+        <tr><td class="center">2</td><td><code>TCAED1948789</code></td><td><strong>Reminder (feat. Young Jae)</strong></td><td>Tribal Trap</td><td class="num">$2,569.15</td><td class="num">€2,363.62</td><td class="num">14.21%</td><td class="num">+11.12%/yr</td><td class="center"><span class="tag green">Listed (#10)</span></td></tr>
+        <tr><td class="center">3</td><td><code>TCAEB1934662</code></td><td><strong>Loco (feat. TAOG)</strong></td><td>Tribal Trap</td><td class="num">$2,206.89</td><td class="num">€2,030.34</td><td class="num">12.21%</td><td class="num">+1.81%/yr</td><td class="center"><span class="tag green">Listed (#7)</span></td></tr>
+        <tr><td class="center">4</td><td><code>USA2P1841742</code></td><td><strong>Ballin (feat. TAOG)</strong></td><td>Trap Nation</td><td class="num">$1,392.73</td><td class="num">€1,281.31</td><td class="num">7.70%</td><td class="num">+18.84%/yr</td><td class="center"><span class="tag green">Listed (#1)</span></td></tr>
+        <tr><td class="center">5</td><td><code>TCAEF1985108</code></td><td><strong>Mamacita (feat. TAOG)</strong></td><td>Tribal Trap</td><td class="num">$1,228.40</td><td class="num">€1,130.13</td><td class="num">6.80%</td><td class="num">-4.82%/yr</td><td class="center"><span class="tag green">Listed (#13)</span></td></tr>
+        <tr><td class="center">6</td><td><code>TCAEH1964225</code></td><td><strong>Paper</strong></td><td>Tribal Trap</td><td class="num">$1,072.30</td><td class="num">€986.52</td><td class="num">5.93%</td><td class="num">+4.74%/yr</td><td class="center"><span class="tag green">Listed (#16)</span></td></tr>
+        <tr><td class="center">7</td><td><code>TCAEC1988567</code></td><td><strong>Fallen Soul (feat. Swisha T)</strong></td><td>Tribal Trap</td><td class="num">$834.78</td><td class="num">€768.00</td><td class="num">4.62%</td><td class="num">+10.70%/yr</td><td class="center"><span class="tag green">Listed (#9)</span></td></tr>
+        <tr><td class="center">8</td><td><code>TCAEG1975565</code></td><td><strong>Tuyo (feat. Prznt)</strong></td><td>Tribal Trap</td><td class="num">$648.97</td><td class="num">€597.05</td><td class="num">3.59%</td><td class="num">-5.00%/yr</td><td class="center"><span class="tag green">Listed (#14)</span></td></tr>
+        <tr><td class="center">9</td><td><code>TCAEA1990556</code></td><td><strong>Nightmare (feat. M.I.M.E)</strong></td><td>Tribal Trap</td><td class="num">$638.12</td><td class="num">€587.07</td><td class="num">3.53%</td><td class="num">+24.50%/yr</td><td class="center"><span class="tag green">Listed (#6)</span></td></tr>
+        <tr><td class="center">10</td><td><code>TCADX1847885</code></td><td><strong>Through The Night (feat. Yung City)</strong></td><td>Tribal Trap</td><td class="num">$594.65</td><td class="num">€547.08</td><td class="num">3.29%</td><td class="num">+10.10%/yr</td><td class="center"><span class="tag green">Listed (#3)</span></td></tr>
+        <tr><td class="center">11</td><td><code>TCADX1877174</code></td><td><strong>Money (feat. M.I.M.E)</strong></td><td>Tribal Trap</td><td class="num">$582.64</td><td class="num">€536.03</td><td class="num">3.22%</td><td class="num">-5.00%/yr</td><td class="center"><span class="tag green">Listed (#5)</span></td></tr>
+        <tr><td class="center">12</td><td><code>TCAEC1907022</code></td><td><strong>Deja Vu (feat. Prznt)</strong></td><td>Tribal Trap</td><td class="num">$400.61</td><td class="num">€368.56</td><td class="num">2.22%</td><td class="num">+11.68%/yr</td><td class="center"><span class="tag green">Listed (#8)</span></td></tr>
+        <tr><td class="center">13</td><td><code>TCAEC1988887</code></td><td><strong>My Zone</strong></td><td>Tribal Trap</td><td class="num">$392.46</td><td class="num">€361.06</td><td class="num">2.17%</td><td class="num">+4.34%/yr</td><td class="center"><span class="tag green">Listed (#17)</span></td></tr>
+        <tr><td class="center">14</td><td><code>TCAEF1929319</code></td><td><strong>No Mercy (feat. J Swey)</strong></td><td>Tribal Trap</td><td class="num">$351.46</td><td class="num">€323.34</td><td class="num">1.94%</td><td class="num">-1.69%/yr</td><td class="center"><span class="tag green">Listed (#12)</span></td></tr>
+        <tr><td class="center">15</td><td><code>USA2P1828803</code></td><td><strong>I Just Wanna Know</strong></td><td>Trap Nation</td><td class="num">$300.48</td><td class="num">€276.44</td><td class="num">1.66%</td><td class="num">+21.30%/yr</td><td class="center"><span class="tag blue">Bonus (In CSV)</span></td></tr>
+        <tr><td class="center">16</td><td><code>TCAEE1946424</code></td><td><strong>Fake (feat. Leo)</strong></td><td>Tribal Trap</td><td class="num">$140.38</td><td class="num">€129.15</td><td class="num">0.78%</td><td class="num">-5.00%/yr</td><td class="center"><span class="tag green">Listed (#11)</span></td></tr>
+        <tr><td class="center">17</td><td><code>TCAEK1998817</code></td><td><strong>Hot (TAOG, 2Scratch, Hustle)</strong></td><td>Tribal Trap</td><td class="num">$96.46</td><td class="num">€88.74</td><td class="num">0.53%</td><td class="num">+14.64%/yr</td><td class="center"><span class="tag blue">Bonus (In TSV)</span></td></tr>
+        <tr><td class="center">18</td><td><code>TCAEJ1986354</code></td><td><strong>Homies (feat. Young Jae)</strong></td><td>Tribal Trap</td><td class="num">$42.48</td><td class="num">€39.08</td><td class="num">0.24%</td><td class="num">+28.19%/yr</td><td class="center"><span class="tag green">Listed (#15)</span></td></tr>
+        <tr><td class="center">19</td><td><code>TCADZ1837874</code></td><td><strong>Superlife (incl. Slowed + Reverb)</strong></td><td>Tribal Trap</td><td class="num">$0.05</td><td class="num">€0.05</td><td class="num">0.00%</td><td class="num">+25.00%/yr</td><td class="center"><span class="tag blue">Bonus (In TSV)</span></td></tr>
+        <tr><td class="center">20</td><td><code>MISSING</code></td><td><strong>Murdas (feat. Marlon Clarke)</strong></td><td>Not in ZIP/CSV</td><td class="num">$0.00</td><td class="num">€0.00</td><td class="num">0.00%</td><td class="num">N/A</td><td class="center"><span class="tag amber">Missing (#4)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 5: OFFER STRUCTURES & SELLER ASK COMPARISON -->
+  <div class="section">
+    <div class="section-header">
+      <h2>5. Commercial Strategy, Seller Ask Comparison &amp; Indicative Offer Structure</h2>
+      <span class="tag green">Dual-Track Proposal</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Valuation / Ask Scenario</th>
+          <th>Earnings Basis Used</th>
+          <th class="num">Multiple Range</th>
+          <th class="num">Implied Price (USD)</th>
+          <th class="num">Implied Price (EUR)</th>
+          <th>Underwriting Assessment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Seller Ask on Typeform Claim</strong></td>
+          <td>$30,000 USD (100% Gross Master)</td>
+          <td class="num">6.0x – 8.0x</td>
+          <td class="num">$180,000 – $240,000</td>
+          <td class="num">€165,600 – €220,800</td>
+          <td>Based on pre-split label gross ($33.97k CY25); ~50% belongs to Tribal Trap / Trap Nation</td>
+        </tr>
+        <tr>
+          <td><strong>Seller Ask on Verified LTM Net</strong></td>
+          <td>$18,077 USD (Verified LTM Net Artist)</td>
+          <td class="num">6.0x – 8.0x</td>
+          <td class="num">$108,460 – $144,615</td>
+          <td class="num">€99,785 – €133,045</td>
+          <td>Above 10Y P90 DCF ceiling ($93,566 USD) for an unconditional Day-1 buyout</td>
+        </tr>
+        <tr>
+          <td><strong>SPACE Option A (Outright Buyout)</strong></td>
+          <td>$16,646 CF0 ($18,077 LTM Net)</td>
+          <td class="num">3.93x CF0 (3.62x LTM)</td>
+          <td class="num"><strong>$65,396</strong></td>
+          <td class="num"><strong>€60,165</strong></td>
+          <td>90% upfront ($58,857) + 10% 12m escrow ($6,540) + pro-rata top-up for 'Murdas'</td>
+        </tr>
+        <tr>
+          <td><strong>SPACE Option B (Catalog + New Releases)</strong></td>
+          <td>$16,646 CF0 + Earn-Out &amp; New Singles</td>
+          <td class="num">4.74x – 5.01x CF0</td>
+          <td class="num"><strong>$78,842 – $83,324</strong></td>
+          <td class="num"><strong>€72,535 – €76,658</strong></td>
+          <td>Bridges toward Seller's target via 24m earn-out corridor + 2–3 new 2Scratch singles</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const DCF_P50_EUR = [14419.04, 13033.32, 11960.97, 11041.32, 10213.76, 9501.72, 8801.59, 8192.05, 7644.81, 7107.63];
+    const DCF_P10_EUR = [11595.0, 9918.0, 8755.0, 7790.0, 6975.0, 6280.0, 5650.0, 5110.0, 4635.0, 4215.0];
+    const DCF_P90_EUR = [17890.0, 17085.0, 16390.0, 15710.0, 15040.0, 14410.0, 13780.0, 13190.0, 12615.0, 12055.0];
+    const DISCOUNT_RATES = [0.10, 0.115, 0.1318, 0.15, 0.17];
+
+    let currentCurrency = 'USD';
+    let currentWacc = 0.1318;
+
+    function fmt(valEur) {
+      const val = currentCurrency === 'USD' ? valEur / 0.92 : valEur;
+      const sym = currentCurrency === 'USD' ? '$' : '€';
+      return sym + Math.round(val).toLocaleString('en-US');
+    }
+
+    function renderDcfTables() {
+      const tbody = document.getElementById('dcf-schedule-tbody');
+      const title = document.getElementById('dcf-schedule-title');
+      title.textContent = `Year-by-Year DCF Cashflow & Present Value Schedule (${currentCurrency} · Discount Rate r = ${(currentWacc * 100).toFixed(2)}%)`;
+
+      let cumPv = 0;
+      let cumCash = 0;
+      let rowsHtml = '';
+      for (let i = 0; i < 10; i++) {
+        const t = i + 1;
+        const df = 1 / Math.pow(1 + currentWacc, t);
+        const pvEur = DCF_P50_EUR[i] * df;
+        cumPv += pvEur;
+        cumCash += DCF_P50_EUR[i];
+        const decayStr = i === 0
+          ? '-5.85% (vs CF0)'
+          : (((DCF_P50_EUR[i] - DCF_P50_EUR[i - 1]) / DCF_P50_EUR[i - 1]) * 100).toFixed(2) + '%';
+
+        rowsHtml += `<tr>
+          <td><strong>Year ${t} (${2026 + t})</strong></td>
+          <td class="num">${decayStr}</td>
+          <td class="num">${fmt(DCF_P10_EUR[i])}</td>
+          <td class="num"><strong>${fmt(DCF_P50_EUR[i])}</strong></td>
+          <td class="num">${fmt(DCF_P90_EUR[i])}</td>
+          <td class="num">${df.toFixed(4)}</td>
+          <td class="num"><strong>${fmt(pvEur)}</strong></td>
+          <td class="num">${fmt(cumPv)}</td>
+          <td class="num">${fmt(cumCash)}</td>
+        </tr>`;
+      }
+      tbody.innerHTML = rowsHtml;
+
+      const sensBody = document.getElementById('wacc-sensitivity-tbody');
+      let sensHtml = '';
+      const cf0Eur = 15314.75;
+      const ltmEur = 16630.67;
+      for (const r of DISCOUNT_RATES) {
+        let npv5 = 0;
+        let npv10 = 0;
+        for (let i = 0; i < 10; i++) {
+          const pv = DCF_P50_EUR[i] / Math.pow(1 + r, i + 1);
+          if (i < 5) npv5 += pv;
+          npv10 += pv;
+        }
+        const blend = 0.35 * npv5 + 0.65 * npv10;
+        const isBase = Math.abs(r - 0.1318) < 0.0001;
+        sensHtml += `<tr style="${isBase ? 'font-weight:700;background:rgba(34,197,94,0.12);' : ''}">
+          <td>${isBase ? '13.18% (SPACE Base WACC)' : (r * 100).toFixed(2) + '%'}</td>
+          <td class="num">${fmt(npv5)}</td>
+          <td class="num">${(npv5 / cf0Eur).toFixed(2)}x</td>
+          <td class="num">${fmt(npv10)}</td>
+          <td class="num">${(npv10 / cf0Eur).toFixed(2)}x</td>
+          <td class="num">${fmt(blend)}</td>
+          <td class="num">${(blend / cf0Eur).toFixed(2)}x CF0 (${(blend / ltmEur).toFixed(2)}x LTM)</td>
+        </tr>`;
+      }
+      sensBody.innerHTML = sensHtml;
+    }
+
+    function setCurrency(curr) {
+      currentCurrency = curr;
+      document.getElementById('btn-usd').classList.toggle('active', curr === 'USD');
+      document.getElementById('btn-eur').classList.toggle('active', curr === 'EUR');
+      document.querySelectorAll('[data-usd]').forEach(el => {
+        el.textContent = curr === 'USD' ? el.getAttribute('data-usd') : el.getAttribute('data-eur');
+      });
+      renderDcfTables();
+    }
+
+    function setWacc(rate, btnEl) {
+      currentWacc = rate;
+      document.querySelectorAll('.wacc-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderDcfTables();
+    }
+
+    renderDcfTables();
+  </script>
+</body>
+</html>

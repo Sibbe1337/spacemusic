@@ -194,27 +194,40 @@ def combine_csv_statement_texts(file_pairs: Sequence[tuple[str, str]]) -> str:
 
 
 def parse_multi_attachment_statements(
-    file_pairs: Sequence[tuple[str, str]],
+    file_pairs: Sequence[tuple[str, str | bytes]],
     *,
     default_currency: str = "USD",
 ) -> ParsedStatementSummary:
     """
-    Parses one or more extracted statement files (`(filename, csv_text)`).
+    Parses one or more extracted statement files (`(filename, csv_text_or_bytes)`).
+    - Raw `.xlsx` bytes are automatically converted via `convert_xlsx_to_csv_text()`.
     - Files sharing the exact same schema header are grouped and parsed together.
-    - Heterogeneous statement schemas (e.g. a Symphonic `.csv` + a YouTube Studio `.xlsx`)
-      are parsed individually with their respective schema/currency detectors and merged via
-      `merge_statement_summaries()`.
+    - Heterogeneous statement schemas (e.g. a Symphonic `.csv` + a YouTube Studio `.xlsx`,
+      or a DistroKid `.xlsx` + an Amuse `.xlsx`) are parsed individually with their
+      respective schema/currency detectors and merged via `merge_statement_summaries()`.
     """
     if not file_pairs:
         return ParsedStatementSummary(detected_distributor="Empty", row_count=0)
-    if len(file_pairs) == 1:
-        return parse_statement_csv(file_pairs[0][1], default_currency=default_currency)
+
+    normalized_pairs: list[tuple[str, str]] = []
+    for fname, raw_val in file_pairs:
+        if isinstance(raw_val, bytes):
+            if fname.lower().endswith(".xlsx") or raw_val[:4] == b"PK\x03\x04":
+                txt = convert_xlsx_to_csv_text(raw_val, filename=fname)
+            else:
+                txt = raw_val.decode("utf-8-sig", errors="replace")
+        else:
+            txt = raw_val
+        normalized_pairs.append((fname, txt))
+
+    if len(normalized_pairs) == 1:
+        return parse_statement_csv(normalized_pairs[0][1], default_currency=default_currency)
 
     # Group by header line unless the file is a YouTube Studio workbook (which should be parsed individually first so Last 365 vs Lifetime deduplication works cleanly)
     header_groups: dict[str, list[tuple[str, str]]] = {}
     individual_summaries: list[ParsedStatementSummary] = []
 
-    for fname, text in file_pairs:
+    for fname, text in normalized_pairs:
         lines = [ln for ln in text.lstrip("\ufeff").splitlines() if ln.strip()]
         if not lines:
             continue

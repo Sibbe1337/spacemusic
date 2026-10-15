@@ -182,8 +182,13 @@ def evaluate_ai_and_fake_profile(
     all_dates: List[date] = []
     if releases:
         all_dates.extend([r.release_date for r in releases if r.release_date is not None])
-    if track_release_dates:
-        all_dates.extend([d for d in track_release_dates if d is not None])
+    elif track_release_dates:
+        # When only track-level dates are available (from CSV/XLSX statements without explicit
+        # album/single release grouping), filter out synthetic month-start/mid-month placeholder
+        # dates (day == 1 or day == 15) when checking same-day batch dumping so tracks from a
+        # single album (`SE6I32613384`..`SE6I32613392` on `ALWAYS // FOREVER`) or ISRC-year
+        # fallback (`YYYY-06-15`) are not misclassified as 9 separate single releases on the same day.
+        all_dates.extend([d for d in track_release_dates if d is not None and d.day not in (1, 15)])
 
     if all_dates:
         # Focus same-day batch check on recent releases (within last 24 months) so legacy
