@@ -247,6 +247,22 @@ const newSitemapEntries = sitemapUrlsToAdd
 const updatedSitemap = existingSitemap.replace("</urlset>", `${newSitemapEntries}\n</urlset>`);
 await writeFile(path.join(outputDir, "sitemap.xml"), updatedSitemap, "utf8");
 
+const existingRedirects = await readFile(path.join(outputDir, "_redirects"), "utf8");
+const workerProxyRules = [
+  "# Edge Worker API & Webhook Proxy (spacemusic-memo-studio)",
+  "/catalog-review/* https://spacemusic-memo-studio.samplehubkupp.workers.dev/catalog-review/:splat 200",
+  "/api/v1/spacemusic/* https://spacemusic-memo-studio.samplehubkupp.workers.dev/api/v1/spacemusic/:splat 200",
+  "/webhooks/autumn-memo* https://spacemusic-memo-studio.samplehubkupp.workers.dev/webhooks/autumn-memo:splat 200",
+  "/webhooks/stripe-memo* https://spacemusic-memo-studio.samplehubkupp.workers.dev/webhooks/stripe-memo:splat 200",
+].join("\n");
+if (!existingRedirects.includes("spacemusic-memo-studio.samplehubkupp.workers.dev")) {
+  await writeFile(
+    path.join(outputDir, "_redirects"),
+    existingRedirects.trimEnd() + "\n\n" + workerProxyRules + "\n",
+    "utf8",
+  );
+}
+
 // 8. Strip em-dashes from <title> tags across all HTML files in outputDir
 const allHtml = await listHtmlFiles(outputDir);
 let cleanedTitles = 0;

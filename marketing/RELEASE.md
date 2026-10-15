@@ -1,11 +1,11 @@
 # Current Marketing Release
 
-Production: https://spacemusic.io/
+Production: https://e8be09d3.spacemusic-a6n.pages.dev
 
 Public site: https://spacemusic.io/
 
 Cloudflare Pages project `spacemusic`, production branch `main`.
-Cloudflare Worker `spacemusic-memo-studio` routed on `spacemusic.io/valuation-memo*`, `spacemusic.io/catalog-review/paid-memo*`, `spacemusic.io/catalog-review/benchmark*`, and `spacemusic.io/webhooks/*`.
+Cloudflare Worker `spacemusic-memo-studio` (`https://spacemusic-memo-studio.samplehubkupp.workers.dev`, version `774752aa-00b3-4fb2-b48c-b357054a3f42`) routed on `spacemusic.io/valuation-memo*`, `spacemusic.io/catalog-review/paid-memo*`, `spacemusic.io/catalog-review/benchmark*`, and `spacemusic.io/webhooks/*`.
 
 Current verified release directory: `tmp/geo-seo-release-20261014`.
 Committed canonical bundle mirror: `services/spacemusic/seo_static_bundle`.

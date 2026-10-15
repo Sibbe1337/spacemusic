@@ -1,0 +1,44 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://spacemusic.io/sitemap.xml
+
+# IndexNow key (for Bing, Yandex, DuckDuckGo, Seznam, Naver)
+# https://www.indexnow.org/
+# Key: a8f3e1b4d7c2f9e6b1a4d8c3f7e2b5a9

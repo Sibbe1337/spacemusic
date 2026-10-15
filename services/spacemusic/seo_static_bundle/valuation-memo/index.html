@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SPACE Institutional Catalog Valuation Memo Studio | Claude + Autumn Billing + DTW DCF</title>
+<meta name="description" content="Generate a 19-slide 16:9 institutional music catalog valuation memo powered by SPACE 10,000-path Monte Carlo DCF, Dynamic Time Warping (DTW) decay matching, and TypeSafe AI (JEV) forensics.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://spacemusic.io/valuation-memo/">
 <style>
   * { box-sizing: border-box; }
   body {
@@ -177,10 +180,15 @@
     </div>
   </div>
 <script>
+const MEMO_API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") ? "" : "https://spacemusic-memo-studio.samplehubkupp.workers.dev";
+function absMemoUrl(u) {
+  if (!u) return u;
+  return (u.startsWith("/") && MEMO_API_BASE) ? (MEMO_API_BASE + u) : u;
+}
 async function loadAutumnCatalogPlans() {
   var emailVal = document.getElementById("contact_email").value || "";
   var qs = emailVal ? "?customer_id=" + encodeURIComponent(emailVal) : "";
-  var res = await fetch("/catalog-review/paid-memo/autumn/plans" + qs);
+  var res = await fetch(MEMO_API_BASE + "/catalog-review/paid-memo/autumn/plans" + qs);
   if (!res.ok) return;
   var data = await res.json();
   var grid = document.getElementById("autumnPlansGrid");
@@ -198,15 +206,15 @@ loadAutumnCatalogPlans();
   var returnToken = params.get("return_token");
   var sessionId = params.get("session_id") || "";
   if (orderId && returnToken) {
-    var retRes = await fetch("/catalog-review/paid-memo/return?order_id=" + encodeURIComponent(orderId) + "&session_id=" + encodeURIComponent(sessionId) + "&return_token=" + encodeURIComponent(returnToken));
+    var retRes = await fetch(MEMO_API_BASE + "/catalog-review/paid-memo/return?order_id=" + encodeURIComponent(orderId) + "&session_id=" + encodeURIComponent(sessionId) + "&return_token=" + encodeURIComponent(returnToken));
     if (retRes.ok) {
       var retData = await retRes.json();
       var bar = document.getElementById("actionBar");
       var links = document.getElementById("actionLinks");
       bar.style.display = "flex";
       document.getElementById("statusSummary").innerHTML = "<strong>" + retData.order_id + "</strong> · Payment Status: <strong>PAID</strong>";
-      document.getElementById("deckIframe").src = retData.unlocked_html_url;
-      links.innerHTML = '<a class="btn-pdf" href="' + retData.unlocked_pdf_url + '">Download 19-Slide PDF</a>';
+      document.getElementById("deckIframe").src = absMemoUrl(retData.unlocked_html_url);
+      links.innerHTML = '<a class="btn-pdf" href="' + absMemoUrl(retData.unlocked_pdf_url) + '">Download 19-Slide PDF</a>';
     }
   }
 })();
@@ -222,7 +230,7 @@ document.getElementById("memoForm").addEventListener("submit", async function(e)
     plan_tier: document.getElementById("plan_tier").value,
     customer_token: document.getElementById("customer_token").value || null
   };
-  var res = await fetch("/catalog-review/paid-memo/checkout", {
+  var res = await fetch(MEMO_API_BASE + "/catalog-review/paid-memo/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
@@ -236,11 +244,11 @@ document.getElementById("memoForm").addEventListener("submit", async function(e)
     "<strong>" + data.deal_code + "</strong> · Standalone Base: <strong>" + data.teaser_standalone_base_usd +
     "</strong> · WACC: " + data.teaser_wacc_pct + "% · Autumn Credits Remaining: <strong>" + data.autumn_credits_remaining + "</strong>";
   if (data.payment_status === "PAID" && data.unlocked_pdf_url) {
-    document.getElementById("deckIframe").src = data.unlocked_html_url;
-    links.innerHTML = '<a class="btn-pdf" href="' + data.unlocked_pdf_url + '">Download 19-Slide PDF</a>';
+    document.getElementById("deckIframe").src = absMemoUrl(data.unlocked_html_url);
+    links.innerHTML = '<a class="btn-pdf" href="' + absMemoUrl(data.unlocked_pdf_url) + '">Download 19-Slide PDF</a>';
   } else {
-    document.getElementById("deckIframe").src = data.locked_preview_url;
-    links.innerHTML = '<a class="btn-stripe" href="' + data.checkout_url + '" target="_blank">Unlock All 19 Slides ($' + data.amount_usd + ')</a>';
+    document.getElementById("deckIframe").src = absMemoUrl(data.locked_preview_url);
+    links.innerHTML = '<a class="btn-stripe" href="' + absMemoUrl(data.checkout_url) + '" target="_blank">Unlock All 19 Slides ($' + data.amount_usd + ')</a>';
   }
 });
 </script>
