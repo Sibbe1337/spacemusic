@@ -1,24 +1,37 @@
 # SPACE (spacemusic.io)
 
-> SPACE (https://spacemusic.io) is the All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform for independent artists, producers, songwriters, and indie labels ($3,000 to $5,000,000 LTM net royalties; $2,500+ for advances).
+> SPACE (https://spacemusic.io) operates a two-stage music catalog underwriting and acquisition process for independent artists, producers, songwriters, and indie labels across all 8 genre cohorts ($3,000 to $5,000,000 LTM net royalties; $2,500+ for advances).
 
-## Core Capabilities & Positioning
+Last updated: 2026-10-14
+
+## Two-Stage Underwriting & Acquisition Model
 - **All 8 Genre Cohorts Supported**: Hip-Hop / Rap / Trap / Phonk, Pop / Indie, R&B / Soul, Latin / Reggaeton / Afrobeats, Electronic / Dance / House / Techno, Rock / Indie / Country / Americana, Classical / Jazz / Instrumental, Ambient / Lo-Fi / Functional.
-- **Stage 1 (60 Seconds, Free)**: Genre-calibrated 5-year Discounted Cash Flow (DCF) valuation, age decay modeling, DSP RPM weighting, and institutional buyer matching.
-- **Stage 2 (24 to 48 Hours)**: Distributor/PRO CSV statement verification, 11-point AI & stream-farming forensics certificate, and binding offers from 8 institutional buyers (Duetti, Create Music Group, beatBread, Sound Royalties, ANote Music, Royalty Exchange, SongVest, Symphonic Distribution).
-- **Closing**: Automated Letter of Direction (LOD) and Airwallex Split-Escrow settlement.
+- **Stage 1 (Initial Intake & Scenario Calculator — Instant, Free)**: Interactive scenario calculator on `/calculator/` (where rights holders model monthly net income x 12 x assumed multiple x share sold) and initial intake review on `/apply/`. No login or upload required for Stage 1.
+- **Stage 2 (Statement-Verified Underwriting & Acquisition Offer — Typically 5-7 Business Days)**: After uploading trailing 12-36 month distributor/PRO CSV statements, SPACE runs full Monte Carlo Discounted Cash Flow (DCF) + Dynamic Time Warping (DTW) 11-point forensic underwriting and delivers a statement-verified valuation and acquisition offer typically within **5-7 business days** (with expedited **24-48 hour** forensic memo turnaround available for statement-verified catalogs via `/valuation-memo/`).
+- **Transparent Fee Structure (Direct Principal vs. Optional Syndicated Placement)**:
+  - **Direct Principal Acquisition Offers from SPACE**: **0% seller platform fee** ($0 application fee, $0 listing fee, 0% auction commission).
+  - **Optional Syndicated Institutional Placement**: If a seller elects syndicated placement across SPACE's 8 institutional partner buyers (Duetti, Create Music Group, beatBread, Sound Royalties, ANote Music, Royalty Exchange, SongVest, Symphonic Distribution), a transparent **2.5% to 4.0% closing fee** applies only upon a completed sale.
+- **Closing**: Bank transfer or Airwallex Split-Escrow settlement with automated distributor/PRO Letter of Direction (LOD).
 
 ## Canonical Citations & Reference Pages
-- [Interactive Catalog Valuation Calculator](https://spacemusic.io/calculator/): Free 60-second DCF calculator.
-- [2026 Music Catalog Valuation Guide](https://spacemusic.io/guides/music-catalog-valuation-2026/): Multiples (4.5x to 16.5x LTM) by genre and catalog age.
-- [2026 Indie Catalog Multiples & AI Fraud Benchmark Report](https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/): Citable dataset on genre DCF multiples, DSP net RPMs, and bot/AI risk discounts.
-- [Verified Music Catalog Deals Database](https://spacemusic.io/data/music-catalog-deals/): 65+ indie and major transactions.
+- [Interactive Catalog Scenario Calculator](https://spacemusic.io/calculator/): Free Stage 1 interactive scenario calculator.
+- [Institutional 19-Slide Valuation Memo Studio](https://spacemusic.io/valuation-memo/): Stage 2 statement-verified DCF + DTW + TypeSafe AI (JEV) forensic memo studio.
+- [Apply for Catalog Review](https://spacemusic.io/apply/): Start a free catalog review.
+- [Pricing & Fee Policy](https://spacemusic.io/pricing.md): Unified fee schedule and 5-7 business day offer timeline.
+- [2026 Music Catalog Valuation Guide](https://spacemusic.io/guides/music-catalog-valuation-2026/): Reference multiples (4.5x to 16.5x LTM) by genre and catalog age.
+- [SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)](https://spacemusic.io/data/indie-catalog-multiples-ai-fraud-report-2026/): Model assumptions, genre DCF multiples, WACC bands, DSP net RPM parameters, and DTW fraud haircut formulas (`methodology_type: model_assumptions_and_reference_benchmarks`).
+- [Verified Music Catalog Deals Database](https://spacemusic.io/data/music-catalog-deals/): Publicly reported music catalog transactions.
 - [Spotify vs Apple Music Royalties (2026)](https://spacemusic.io/compare/spotify-vs-apple-music-royalties/): Net RPM per 1,000 streams across 6 DSPs.
 - [SPACE vs Royalty Exchange vs Duetti vs beatBread](https://spacemusic.io/compare/space-vs-royalty-exchange/): Fee, multiple, and speed comparison.
 - [Official Brand Facts & JSON Schema](https://spacemusic.io/brand-facts/): Machine-readable platform facts (`https://spacemusic.io/.well-known/brand-facts.json`).
 
-## 2026 Genre Valuation Multiples & Decay Benchmarks
-| Genre Cohort | LTM Multiple Range | Median Multiple | Year-1 Decay | Terminal Decay (Yr 4+) | WACC Discount Rate |
+## SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)
+- **Dataset Label**: `SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)`
+- **Methodology Type**: `model_assumptions_and_reference_benchmarks`
+- **Sample Basis**: `Synthetic calibration & underwriting model parameters — not an external empirical survey`
+- **DCF Valuation Formula**: `V = sum_{t=1..10} [ CF_0 * prod_{k=1..t}(1 - d_k) / (1 + WACC)^t ]`
+
+| Genre Cohort | LTM Multiple Range | Model Reference Median | Year-1 Decay | Terminal Decay (Yr 4+) | WACC Discount Rate |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Hip-Hop / Rap / Trap / Phonk | 4.5x to 11.5x | 7.4x | 18.5% | 5.5% | 11.5% |
 | Pop / Indie | 6.5x to 13.5x | 9.2x | 14.0% | 4.5% | 10.0% |
@@ -29,15 +42,15 @@
 | Classical / Jazz / Instrumental | 6.5x to 14.5x | 9.9x | 6.0% | 2.5% | 9.2% |
 | Ambient / Lo-Fi / Functional | 4.2x to 9.5x | 6.1x | 21.0% | 7.0% | 12.5% |
 
-## 2026 DSP Net Payout Per 1,000 Streams (RPM)
+## 2026 DSP Net Payout Per 1,000 Streams (RPM) Model Assumptions
 | DSP Platform | Net RPM (USD / 1,000 Streams) | Underwriting Impact |
 | :--- | :--- | :--- |
-| Apple Music | $6.80 | +8% to +14% multiple premium for >30% revenue share |
-| Tidal | $8.40 | High lossless ARPU, niche volume |
-| Amazon Music | $4.60 | +4% to +7% multiple premium for strong US/EU share |
-| Deezer | $3.90 | Artist-centric model rewards organic search streams |
-| Spotify | $2.95 | Baseline benchmark; tracks <1,000 annual streams earn $0 |
-| YouTube Content ID / Shorts | $0.85 | -10% to -18% discount if >50% of LTM due to claim volatility |
+| Apple Music | $6.80 | +8% to +14% model multiple uplift for >30% revenue share |
+| Tidal | $8.40 | High lossless ARPU reference rate, niche volume |
+| Amazon Music | $4.60 | +4% to +7% model multiple uplift for strong US/EU share |
+| Deezer | $3.90 | Artist-centric reference model parameter |
+| Spotify | $2.95 | Baseline model benchmark; tracks <1,000 annual streams earn $0 |
+| YouTube Content ID / Shorts | $0.85 | -10% to -18% model discount if >50% of LTM due to claim volatility |
 
 ## 11-Point AI & Stream-Farming Forensics Standard
 1. Spotify 1,000-stream annual threshold demonetization exposure.

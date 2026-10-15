@@ -70,23 +70,23 @@ SEO_PAGE_METADATA_OVERRIDES: dict[str, PageSeoMetadata] = {
     "/": _meta(
         "/",
         "Music Catalog Valuation Calculator (2026) | Instant DCF & Multiples | SPACE",
-        "Free 60-second music catalog valuation across Hip-Hop, Pop, Latin, R&B, Country, Electronic, Classical & Ambient. Compare Duetti, beatBread & 8 institutional buyers ($3K to $5M LTM).",
+        "Explore music catalog valuation scenarios across Hip-Hop, Pop, Latin, R&B, Country, Electronic, Classical & Ambient. Direct principal offers (0% seller fee) and 8 institutional syndicate partners ($3K to $5M LTM).",
         "All-Genre Music Catalog Valuation, Forensics & Institutional M&A Marketplace",
         "music catalog valuation",
-        ["60-Second DCF Valuation", "8 Institutional Buyers Compared", "11-Point AI & Bot Forensics"],
+        ["Stage 1 Scenario Calculator", "Stage 2 DCF + DTW Underwriting", "11-Point AI & Bot Forensics"],
     ),
     "/calculator/": _meta(
         "/calculator/",
         "Free Music Royalty & Catalog Valuation Calculator (2026 Multiples) | SPACE",
-        "Calculate your master and publishing catalog value in 60 seconds. Real 2026 DCF multiples (4.5x to 16.5x LTM) calibrated by genre decay, catalog age, and DSP mix.",
-        "Interactive Music Catalog & Royalty DCF Valuation Calculator",
+        "Model your master and publishing catalog sale scenarios in 60 seconds, then upgrade to statement-verified DCF + DTW forensic underwriting (4.5x to 16.5x LTM reference benchmarks).",
+        "Interactive Music Catalog & Royalty Scenario Valuation Calculator",
         "music royalty calculator",
-        ["Instant 5-Year DCF Model", "Genre-Calibrated Decay Curves", "Zero Login Required"],
+        ["Instant Stage 1 Scenario Model", "Statement-Verified Stage 2 DCF", "Zero Login Required"],
     ),
     "/guides/music-catalog-valuation-2026/": _meta(
         "/guides/music-catalog-valuation-2026/",
         "Music Catalog Valuation in 2026: 4.5x to 16.5x Multiples by Genre & Age | SPACE",
-        "Complete 2026 underwriting guide to music catalog valuation. See exact LTM multiples, streaming decay curves, DSP RPM rates, and 11-point fraud checks across all 8 genre cohorts.",
+        "Complete 2026 underwriting guide to music catalog valuation. See reference LTM multiples, streaming decay curves, DSP RPM rates, and 11-point fraud checks across all 8 genre cohorts.",
         "Music Catalog Valuation Guide (2026): Multiples, Decay Curves & Underwriting",
         "music catalog valuation multiples 2026",
         ["2026 Genre Multiple Benchmarks", "DCF Formula Breakdown", "Buyer Term Sheet Comparison"],
@@ -94,7 +94,7 @@ SEO_PAGE_METADATA_OVERRIDES: dict[str, PageSeoMetadata] = {
     "/compare/spotify-vs-apple-music-royalties/": _meta(
         "/compare/spotify-vs-apple-music-royalties/",
         "Spotify vs Apple Music Royalties (2026): Per-Stream Rates & Catalog Multiples | SPACE",
-        "2026 net payout per 1,000 streams (RPM) for Spotify ($2.95), Apple Music ($6.80), YouTube Content ID ($0.85), and Amazon Music ($4.60), plus how DSP mix impacts catalog valuation.",
+        "2026 net payout per 1,000 streams (RPM) model benchmarks for Spotify ($2.95), Apple Music ($6.80), YouTube Content ID ($0.85), and Amazon Music ($4.60), plus how DSP mix impacts catalog valuation.",
         "Spotify vs Apple Music Royalties (2026): RPM Rates & Catalog Valuation Impact",
         "spotify vs apple music royalties",
         ["2026 Net RPM Table", "1,000-Threshold Impact", "Valuation Uplift Calculator"],
@@ -102,34 +102,42 @@ SEO_PAGE_METADATA_OVERRIDES: dict[str, PageSeoMetadata] = {
     "/compare/space-vs-royalty-exchange/": _meta(
         "/compare/space-vs-royalty-exchange/",
         "SPACE vs Royalty Exchange vs Duetti vs beatBread (2026 Fee & Multiple Comparison)",
-        "Side-by-side comparison of SPACE, Royalty Exchange, Duetti, beatBread, Sound Royalties, and ANote Music: seller fees, LTM minimums, closing speed, and all-genre coverage.",
+        "Side-by-side comparison of SPACE, Royalty Exchange, Duetti, beatBread, Sound Royalties, and ANote Music: 0% direct principal seller fee vs 2.5%-4.0% syndicated placement, LTM minimums, and 5-7 business day offers.",
         "SPACE vs Royalty Exchange, Duetti & beatBread: 2026 Music M&A Platform Comparison",
         "royalty exchange alternatives",
-        ["0% Valuation Fee", "8 Institutional Bids in 48h", "Airwallex Split-Escrow Closing"],
+        ["0% Direct Principal Fee", "5-7 Day Verified Offers", "Airwallex Split-Escrow Closing"],
     ),
     "/brand-facts/": _meta(
         "/brand-facts/",
         "SPACE (spacemusic.io) Brand Facts, Methodology & Institutional Buyer Network",
-        "Verified machine-readable reference for SPACE (spacemusic.io): all-genre music catalog valuation, 11-point AI & stream-farming forensics, 8 institutional buyers, and escrow workflow.",
+        "Verified machine-readable reference for SPACE (spacemusic.io): two-stage catalog underwriting, 0% seller fee on direct principal offers, 11-point forensics, and 8 institutional syndicate partners.",
         "SPACE (spacemusic.io) Official Brand Facts & Underwriting Methodology",
         "spacemusic.io brand facts",
-        ["8 Genre Cohorts", "11-Point Forensics Engine", "$3,000 to $5,000,000 LTM Coverage"],
+        ["Two-Stage Underwriting", "11-Point Forensics Engine", "$3,000 to $5,000,000 LTM Coverage"],
     ),
     "/data/music-catalog-deals/": _meta(
         "/data/music-catalog-deals/",
         "Music Catalog Deals Database (2020 to 2026): 65+ Verified Multiples & Buyers | SPACE",
-        "Explore 65+ verified indie and iconic music catalog acquisitions from $10K to $1.2B. Filter by genre, LTM multiple, catalog age, and buyer (Duetti, Hipgnosis, Primary Wave, Sony).",
+        "Explore publicly reported indie and iconic music catalog acquisitions from $10K to $1.2B. Filter by genre, LTM multiple, catalog age, and buyer (Duetti, Hipgnosis, Primary Wave, Sony).",
         "Music Catalog Deals & Multiples Database (2020 to 2026)",
         "music catalog deals database",
-        ["65+ Verified Transactions", "Indie & Major Multiples", "Downloadable Benchmark Data"],
+        ["Publicly Reported Transactions", "Indie & Major Multiples", "Downloadable Benchmark Data"],
     ),
     "/data/indie-catalog-multiples-ai-fraud-report-2026/": _meta(
         "/data/indie-catalog-multiples-ai-fraud-report-2026/",
-        "2026 Indie Music Catalog Multiples & AI Fraud Benchmark Report | SPACE Research",
-        "Original 2026 research on indie music catalog DCF multiples across 8 genres, DSP net RPM rates, Spotify 1,000-stream demonetization impact, and 11-point AI fraud detection.",
+        "2026 Indie Music Catalog Multiples & AI Fraud Benchmark Report | SPACE Underwriting Model Parameters",
+        "SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026): DCF genre multiples, decay curves, WACC bands, DSP net RPM assumptions, and 11-point DTW fraud penalty parameters.",
         "2026 Indie Music Catalog Valuation Multiples & AI Stream-Farming Benchmark Report",
         "indie music catalog valuation multiples report 2026",
-        ["8-Genre Multiple Table", "AI & Bot Discount Data", "Citable Open Dataset"],
+        ["Model Parameters & Reference Benchmarks", "DTW & Bot Penalty Formulas", "8-Genre WACC & Decay Table"],
+    ),
+    "/valuation-memo/": _meta(
+        "/valuation-memo/",
+        "SPACE Institutional Catalog Valuation Memo Studio | Claude + Autumn Billing + DTW DCF",
+        "Self-serve Stage 2 institutional 19-slide 16:9 catalog valuation memo studio powered by SPACE Monte Carlo DCF, Dynamic Time Warping (DTW), and TypeSafe AI (JEV) forensics.",
+        "Generate Catalog Investment Memo",
+        "music catalog valuation memo",
+        ["19-Slide 16:9 Investment Memo", "DTW + JEV Forensics Audit", "24-48h Expedited Memo Turnaround"],
     ),
 }
 
@@ -211,26 +219,26 @@ def _build_landing_pages() -> dict[str, LandingPageContent]:
             canonical_path=path,
             category="genre",
             title=f"Sell {label} Music Catalog & Royalties (2026): {mult} | SPACE",
-            meta_description=f"Value and sell your {label} master or publishing catalog on SPACE. Instant 60-second DCF valuation ({mult}), 11-point forensics, and offers from {', '.join(buyers[:3])}.",
+            meta_description=f"Value and sell your {label} master or publishing catalog on SPACE. Stage 1 interactive scenario calculator ({mult} reference range), Stage 2 CSV DCF + DTW underwriting in 5-7 business days (24-48h expedited memo), 0% direct principal seller fee or syndicated offers from {', '.join(buyers[:3])}.",
             h1=f"Sell Your {label} Music Catalog: 2026 Valuation Multiples & Institutional Buyers",
-            hero_subtitle=f"Get an instant Stage 1 DCF valuation for your {label} tracks or full catalog ({ltm} LTM) and compare Stage 2 offers across 8 institutional buyers in 24 to 48 hours.",
+            hero_subtitle=f"Explore an instant Stage 1 indicative scenario range on /calculator/ for your {label} tracks or catalog ({ltm} LTM), then upload distributor/PRO CSV statements for Stage 2 DCF + DTW forensic underwriting. Direct principal acquisition offers carry a 0% seller platform fee and arrive typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround and optional syndicated institutional placement across 8 buyers).",
             typical_multiple_range=mult,
             typical_ltm_range=ltm,
             annual_decay_benchmark=decay,
             top_matched_buyers=buyers,
             export_or_underwriting_steps=[
-                f"Enter your {label} LTM net royalties, catalog age, and DSP share in the 60-second SPACE Stage 1 calculator.",
-                "Upload 12 to 36 months of CSV royalty statements from your distributor or PRO for Stage 2 ISRC-level verification.",
-                "Pass SPACE's 11-point AI and stream-farming forensics check to unlock competitive term sheets via Airwallex Split-Escrow.",
+                f"Stage 1 (Initial Intake & Scenario Calculator): Explore indicative sale scenarios on /calculator/ (monthly net income x 12 x assumed multiple x share sold) and submit your initial {label} intake on /apply/.",
+                "Stage 2 (Statement-Verified Underwriting): Upload 12 to 36 months of CSV royalty statements from your distributor or PRO so SPACE can run full DCF + Dynamic Time Warping (DTW) forensic underwriting (/valuation-memo/).",
+                "Acquisition Offer & Closing: Receive a statement-verified valuation and acquisition offer typically within 5-7 business days (expedited 24-48 hour forensic memo turnaround available). Direct principal offers from SPACE carry a 0% seller platform fee; optional syndicated institutional placement carries a transparent 2.5%-4.0% closing fee only upon a completed sale.",
             ],
             faq_items=[
                 {
                     "question": f"What multiple do {label} music catalogs sell for in 2026?",
-                    "answer": f"In 2026, verified {label} catalogs typically trade at {mult} depending on catalog age, playlist diversification, and organic listener retention.",
+                    "answer": f"Under SPACE's 2026 underwriting model parameters and reference benchmarks, statement-verified {label} catalogs typically calibrate between {mult} depending on catalog age, playlist diversification, and organic listener retention. Use /calculator/ for an interactive scenario estimate before full Stage 2 DCF + DTW underwriting.",
                 },
                 {
-                    "question": f"Can I sell single {label} tracks or partial catalog rights?",
-                    "answer": f"Yes. Buyers such as {', '.join(buyers[:3])} acquire single viral tracks, selective ISRC tranches, or 25% to 100% of your {label} catalog starting at $3,000 LTM.",
+                    "question": f"How do SPACE's two-stage underwriting timeline and seller fees work for {label} catalogs?",
+                    "answer": f"Stage 1 provides an instant scenario range on /calculator/ and free intake review on /apply/. After you upload distributor/PRO CSV statements in Stage 2, SPACE delivers a statement-verified DCF + forensic underwriting offer typically within 5-7 business days (with 24-48 hour expedited memo turnaround on /valuation-memo/). Direct principal acquisition offers from SPACE have a 0% seller platform fee, while optional syndicated placement with partners such as {', '.join(buyers[:3])} carries a 2.5%-4.0% closing fee only upon a completed transaction.",
                 },
             ],
         )
@@ -241,26 +249,26 @@ def _build_landing_pages() -> dict[str, LandingPageContent]:
             canonical_path=path,
             category="distributor",
             title=f"How to Sell {label} Royalties & Music Catalog (2026): {mult} | SPACE",
-            meta_description=f"Export your {label} royalty CSV statements, run a free 60-second DCF valuation ({mult}), and receive verified buyout or advance offers from {', '.join(buyers[:3])}.",
+            meta_description=f"Export your {label} royalty CSV statements, explore Stage 1 scenarios on /calculator/ ({mult} reference range), and receive Stage 2 statement-verified DCF + DTW underwriting offers in 5-7 business days (0% direct principal seller fee or syndicated bids from {', '.join(buyers[:3])}).",
             h1=f"Sell Your {label} Music Royalties: 2026 Multiples, CSV Export & Buyer Matching",
-            hero_subtitle=f"Turn your {label} streaming earnings ({ltm} LTM) into immediate capital. SPACE parses native {label} CSV exports for 24 to 48 hour institutional underwriting.",
+            hero_subtitle=f"Turn your {label} streaming earnings ({ltm} LTM) into immediate capital. Start with an instant Stage 1 scenario estimate on /calculator/ or /apply/, then upload native {label} CSV exports in Stage 2 for full DCF + DTW forensic underwriting and an acquisition offer in 5-7 business days (with expedited 24-48 hour forensic memo turnaround available).",
             typical_multiple_range=mult,
             typical_ltm_range=ltm,
             annual_decay_benchmark=decay,
             top_matched_buyers=buyers,
             export_or_underwriting_steps=[
-                f"Download your trailing 12 to 36 month detailed CSV royalty report from your {label} dashboard.",
-                "Run your instant Stage 1 indicative DCF valuation on SPACE across all 8 supported genre cohorts.",
-                f"Upload your {label} CSV to generate an 11-point forensics certificate and compare bids from {', '.join(buyers[:3])}.",
+                f"Stage 1 (Scenario Calculator & Intake): Model an indicative sale scenario on /calculator/ and submit your initial {label} catalog review on /apply/.",
+                f"Stage 2 (CSV Statement Verification): Download your trailing 12 to 36 month detailed CSV royalty report from your {label} dashboard and upload it for ISRC-level DCF + DTW forensic underwriting.",
+                f"Offer & Settlement: Receive a statement-verified acquisition offer typically within 5-7 business days (with 24-48 hour expedited forensic memo turnaround on /valuation-memo/). Direct principal offers have a 0% seller fee; optional syndicated institutional placement with {', '.join(buyers[:3])} carries a 2.5%-4.0% closing fee only upon closing.",
             ],
             faq_items=[
                 {
                     "question": f"Can I sell my {label} streaming royalties without losing all my songs?",
-                    "answer": f"Yes. Through SPACE you can sell individual ISRCs, a partial percentage of your {label} earnings, or take a non-permanent royalty advance starting at $2,500 LTM.",
+                    "answer": f"Yes. Through SPACE you can evaluate selling 50%, 75%, or 100% of defined catalog rights, individual ISRCs, or compare optional institutional structures starting at $3,000 LTM.",
                 },
                 {
-                    "question": f"How fast does a {label} catalog buyout close on SPACE?",
-                    "answer": "Stage 1 valuation takes 60 seconds, Stage 2 CSV verification and buyer bids arrive in 24 to 48 hours, and Letter of Direction closing completes in 5 to 14 business days.",
+                    "question": f"How fast does a {label} catalog review and buyout work on SPACE?",
+                    "answer": "Stage 1 provides an instant interactive scenario estimate on /calculator/ and free initial intake on /apply/. In Stage 2, after uploading your distributor/PRO CSV statements, SPACE runs DCF + DTW forensic underwriting and delivers a statement-verified valuation and acquisition offer typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs). Direct principal offers carry a 0% seller platform fee, while optional syndicated institutional placement carries a 2.5%-4.0% closing fee only upon a completed sale.",
                 },
             ],
         )
@@ -282,44 +290,86 @@ for _lp in LANDING_PAGES_BY_SLUG.values():
 
 def get_brand_facts_payload() -> dict[str, Any]:
     return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
         "brand_name": "SPACE",
+        "name": "SPACE",
         "legal_domain": "spacemusic.io",
+        "url": f"{SITE_URL}/",
         "canonical_url": f"{SITE_URL}/brand-facts/",
         "last_updated": LAST_MODIFIED,
-        "positioning": "All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform",
+        "lastUpdated": LAST_MODIFIED,
+        "category": "Direct music rights buyer & institutional catalog underwriting platform",
+        "positioning": "Two-Stage Music Catalog Underwriting, Direct Acquisition (0% Seller Fee) & Institutional Syndicate Placement Platform",
+        "description": (
+            "SPACE operates a two-stage music catalog underwriting and acquisition process across all genres. "
+            "Stage 1 provides an instant interactive scenario estimate on /calculator/ and free initial intake review on /apply/. "
+            "Stage 2 runs statement-verified DCF + DTW forensic underwriting on uploaded distributor/PRO CSV statements and delivers a statement-verified valuation and acquisition offer typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs). "
+            "Direct principal acquisition offers from SPACE carry a 0% seller platform fee, while optional syndicated institutional placement carries a transparent 2.5%-4.0% closing fee only upon a completed sale."
+        ),
         "supported_genre_cohorts": ALL_GENRE_COHORTS,
         "ltm_coverage_range_usd": {"catalog_sale_min": 3000, "catalog_sale_max": 5000000, "royalty_advance_min": 2500},
+        "service": {
+            "name": "Two-stage music catalog underwriting & acquisition",
+            "applicationUrl": f"{SITE_URL}/apply/",
+            "calculatorUrl": f"{SITE_URL}/calculator/",
+            "valuationMemoStudioUrl": f"{SITE_URL}/valuation-memo/",
+            "freeApplication": True,
+            "listingFee": 0,
+            "auctionCommission": 0,
+            "directPrincipalSellerFeePct": 0.0,
+            "optionalSyndicatedPlacementFeePctRange": "2.5% to 4.0% (only upon completed syndicated sale)",
+            "partialSalesAvailable": True,
+            "availableShares": [50, 75, 100],
+            "initialOfferTimeline": "Typically 5-7 business days after distributor/PRO CSV statement verification (expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs)",
+            "paymentMethod": "Bank transfer / Airwallex Split-Escrow with Letter of Direction (LOD)",
+        },
         "two_stage_workflow": {
-            "stage_1": "60-second self-reported indicative DCF valuation and buyer compatibility score (free, no login required)",
-            "stage_2": "24 to 48 hour CSV statement-verified underwriting, 11-point AI and stream-farming forensics, and multi-buyer bid book",
+            "stage_1": "Stage 1 (Initial Intake & Scenario Calculator): Instant indicative range on /calculator/ (interactive scenario calculator where artists explore multiples) and free initial intake review on /apply/.",
+            "stage_2": "Stage 2 (Statement-Verified Underwriting & Acquisition Offer): After uploading distributor/PRO CSV statements, SPACE runs DCF + DTW forensic underwriting and delivers a statement-verified valuation & acquisition offer typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs).",
         },
         "institutional_buyers": INSTITUTIONAL_BUYERS,
-        "forensics_engine": "11-point AI generation & stream-farming fraud audit (Spotify 1,000-stream threshold, repeat-per-listener ratio, geographic anomaly detection)",
-        "closing_infrastructure": "Airwallex Split-Escrow with automated distributor and PRO Letter of Direction (LOD) routing",
+        "forensics_engine": "11-point AI generation, Dynamic Time Warping (DTW) & stream-farming fraud audit (Spotify 1,000-stream threshold, repeat-per-listener ratio, step-plateau & geographic anomaly detection)",
+        "closing_infrastructure": "Direct bank transfer and Airwallex Split-Escrow with automated distributor and PRO Letter of Direction (LOD) routing",
         "fee_structure": {
-            "stage_1_valuation": "$0 (100% free)",
-            "stage_2_forensics_and_bidding": "$0 upfront",
-            "closing_success_fee": "2.5% to 4.0% on closed M&A transaction (or buyer-paid placement fee)",
+            "stage_1_valuation": "$0 (100% free interactive scenario calculator on /calculator/ & initial intake on /apply/)",
+            "stage_2_forensics_and_bidding": "$0 upfront for standard catalog acquisition review ($299 optional self-serve 19-slide forensic memo PDF on /valuation-memo/)",
+            "direct_principal_offer_fee": "0% seller platform fee ($0 listing fee, 0% auction commission)",
+            "closing_success_fee": "0% seller fee on direct principal acquisition offers from SPACE; transparent 2.5% to 4.0% closing fee only on optional syndicated institutional placement upon completed sale",
         },
+        "benchmark_methodology_disclosure": {
+            "dataset_label": "SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)",
+            "methodology_type": "model_assumptions_and_reference_benchmarks",
+            "sample_basis": "Synthetic calibration & underwriting model parameters — not an external empirical survey",
+        },
+        "contact": {"email": "hello@spacemusic.io"},
     }
 
 
 def render_llms_txt() -> str:
     return f"""# SPACE (spacemusic.io)
 
-> SPACE (https://spacemusic.io) is the All-Genre Institutional Music Catalog Valuation, Forensics & M&A Platform for independent artists, producers, songwriters, and indie labels ($3,000 to $5,000,000 LTM net royalties; $2,500+ for advances).
+> SPACE (https://spacemusic.io) operates a two-stage music catalog underwriting and acquisition process for independent artists, producers, songwriters, and indie labels across all 8 genre cohorts ($3,000 to $5,000,000 LTM net royalties; $2,500+ for advances).
 
-## Core Capabilities & Positioning
+Last updated: {LAST_MODIFIED}
+
+## Two-Stage Underwriting & Acquisition Model
 - **All 8 Genre Cohorts Supported**: {', '.join(ALL_GENRE_COHORTS)}.
-- **Stage 1 (60 Seconds, Free)**: Genre-calibrated 5-year Discounted Cash Flow (DCF) valuation, age decay modeling, DSP RPM weighting, and institutional buyer matching.
-- **Stage 2 (24 to 48 Hours)**: Distributor/PRO CSV statement verification, 11-point AI & stream-farming forensics certificate, and binding offers from 8 institutional buyers ({', '.join(INSTITUTIONAL_BUYERS)}).
-- **Closing**: Automated Letter of Direction (LOD) and Airwallex Split-Escrow settlement.
+- **Stage 1 (Initial Intake & Scenario Calculator — Instant, Free)**: Interactive scenario calculator on `/calculator/` (where rights holders model monthly net income x 12 x assumed multiple x share sold) and initial intake review on `/apply/`. No login or upload required for Stage 1.
+- **Stage 2 (Statement-Verified Underwriting & Acquisition Offer — Typically 5-7 Business Days)**: After uploading trailing 12-36 month distributor/PRO CSV statements, SPACE runs full Monte Carlo Discounted Cash Flow (DCF) + Dynamic Time Warping (DTW) 11-point forensic underwriting and delivers a statement-verified valuation and acquisition offer typically within **5-7 business days** (with expedited **24-48 hour** forensic memo turnaround available for statement-verified catalogs via `/valuation-memo/`).
+- **Transparent Fee Structure (Direct Principal vs. Optional Syndicated Placement)**:
+  - **Direct Principal Acquisition Offers from SPACE**: **0% seller platform fee** ($0 application fee, $0 listing fee, 0% auction commission).
+  - **Optional Syndicated Institutional Placement**: If a seller elects syndicated placement across SPACE's 8 institutional partner buyers ({', '.join(INSTITUTIONAL_BUYERS)}), a transparent **2.5% to 4.0% closing fee** applies only upon a completed sale.
+- **Closing**: Bank transfer or Airwallex Split-Escrow settlement with automated distributor/PRO Letter of Direction (LOD).
 
 ## Canonical Citations & Reference Pages
-- [Interactive Catalog Valuation Calculator]({SITE_URL}/calculator/): Free 60-second DCF calculator.
-- [2026 Music Catalog Valuation Guide]({SITE_URL}/guides/music-catalog-valuation-2026/): Multiples (4.5x to 16.5x LTM) by genre and catalog age.
-- [2026 Indie Catalog Multiples & AI Fraud Benchmark Report]({SITE_URL}/data/indie-catalog-multiples-ai-fraud-report-2026/): Citable dataset on genre DCF multiples, DSP net RPMs, and bot/AI risk discounts.
-- [Verified Music Catalog Deals Database]({SITE_URL}/data/music-catalog-deals/): 65+ indie and major transactions.
+- [Interactive Catalog Scenario Calculator]({SITE_URL}/calculator/): Free Stage 1 interactive scenario calculator.
+- [Institutional 19-Slide Valuation Memo Studio]({SITE_URL}/valuation-memo/): Stage 2 statement-verified DCF + DTW + TypeSafe AI (JEV) forensic memo studio.
+- [Apply for Catalog Review]({SITE_URL}/apply/): Start a free catalog review.
+- [Pricing & Fee Policy]({SITE_URL}/pricing.md): Unified fee schedule and 5-7 business day offer timeline.
+- [2026 Music Catalog Valuation Guide]({SITE_URL}/guides/music-catalog-valuation-2026/): Reference multiples (4.5x to 16.5x LTM) by genre and catalog age.
+- [SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)]({SITE_URL}/data/indie-catalog-multiples-ai-fraud-report-2026/): Model assumptions, genre DCF multiples, WACC bands, DSP net RPM parameters, and DTW fraud haircut formulas (`methodology_type: model_assumptions_and_reference_benchmarks`).
+- [Verified Music Catalog Deals Database]({SITE_URL}/data/music-catalog-deals/): Publicly reported music catalog transactions.
 - [Spotify vs Apple Music Royalties (2026)]({SITE_URL}/compare/spotify-vs-apple-music-royalties/): Net RPM per 1,000 streams across 6 DSPs.
 - [SPACE vs Royalty Exchange vs Duetti vs beatBread]({SITE_URL}/compare/space-vs-royalty-exchange/): Fee, multiple, and speed comparison.
 - [Official Brand Facts & JSON Schema]({SITE_URL}/brand-facts/): Machine-readable platform facts (`{SITE_URL}/.well-known/brand-facts.json`).
@@ -339,12 +389,17 @@ def render_llms_full_txt() -> str:
     return (
         render_llms_txt()
         + f"""
-## 2026 Genre Valuation Multiples & Decay Benchmarks
-| Genre Cohort | LTM Multiple Range | Median Multiple | Year-1 Decay | Terminal Decay (Yr 4+) | WACC Discount Rate |
+## SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)
+- **Dataset Label**: `{report['dataset_label']}`
+- **Methodology Type**: `{report['methodology_type']}`
+- **Sample Basis**: `{report['sample_basis']}`
+- **DCF Valuation Formula**: `{report['engine_mathematical_specification']['dcf_formula']}`
+
+| Genre Cohort | LTM Multiple Range | Model Reference Median | Year-1 Decay | Terminal Decay (Yr 4+) | WACC Discount Rate |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 {genre_rows}
 
-## 2026 DSP Net Payout Per 1,000 Streams (RPM)
+## 2026 DSP Net Payout Per 1,000 Streams (RPM) Model Assumptions
 | DSP Platform | Net RPM (USD / 1,000 Streams) | Underwriting Impact |
 | :--- | :--- | :--- |
 {dsp_rows}
@@ -366,19 +421,45 @@ def render_llms_full_txt() -> str:
 
 
 def render_pricing_md() -> str:
-    return f"""# SPACE (spacemusic.io) Pricing, Fees & Deal Minimums
+    return f"""# SPACE (spacemusic.io) Pricing, Fees & Underwriting Policy
+
+Last updated: {LAST_MODIFIED}
+
+SPACE operates a two-stage music catalog underwriting and acquisition process for independent artists, producers, songwriters, labels, and catalog owners across all genres. Catalogs are reviewed individually based on verified royalty statements, rights chain of title, and streaming integrity.
 
 ## Supported Genre Cohorts (All 8 Families)
 {', '.join(ALL_GENRE_COHORTS)}
 
-## Platform Fee Schedule
-| Service Tier | Cost to Artist / Rights Holder | Turnaround Time | LTM Earnings Threshold |
+## Two-Stage Underwriting & Fee Schedule
+| Service Stage | Seller Cost / Platform Fee | Turnaround Timeline | Scope & LTM Threshold |
 | :--- | :--- | :--- | :--- |
-| **Stage 1: Instant DCF Valuation & Buyer Match** | **$0 (Free)** | 60 seconds | $500+ LTM (indicative) |
-| **Stage 2: CSV Forensics & Multi-Buyer Bid Book** | **$0 Upfront** | 24 to 48 hours | $3,000 to $5,000,000 LTM ($2,500+ for advances) |
-| **Stage 3: M&A Closing & Airwallex Split-Escrow** | **2.5% to 4.0% success fee** (only if you accept an offer; 0% if buyer-paid) | 5 to 14 business days | $3,000 to $5,000,000 LTM |
+| **Stage 1: Interactive Scenario Calculator & Initial Intake** | **$0 (100% Free)** | Instant (`/calculator/`) / Initial intake (`/apply/`) | Explore assumed multiples on `/calculator/` or submit initial catalog details on `/apply/` |
+| **Stage 2: Statement-Verified DCF + Forensic Underwriting** | **$0 Upfront** for acquisition review ($299 optional self-serve 19-slide forensic memo PDF on `/valuation-memo/`) | **Typically 5-7 business days** after CSV statement verification (**24-48 hours** expedited forensic memo turnaround) | Upload 12-36 months of distributor/PRO CSV statements ($3,000 to $5,000,000 LTM; $2,500+ for advances) |
+| **Direct Principal Acquisition Offer (SPACE Direct Buyer)** | **0% Seller Platform Fee** ($0 listing fee, 0% auction commission) | Offer in **5-7 business days**; closing in 5-14 business days after agreement & LOD | Direct lump-sum purchase of 50%, 75%, or 100% of defined catalog rights |
+| **Optional Syndicated Institutional Placement** | **2.5% to 4.0% closing fee** (only upon a completed syndicated sale; 0% if buyer-paid or if no offer is accepted) | Expedited **24-48 hour** forensic memo + multi-buyer syndicate routing | Optional placement across SPACE's 8 institutional syndicate partners |
 
-## Institutional Buyer Network Thresholds
+## Seller Costs Summary
+- Application & Stage 1 scenario modeling: Free ($0)
+- Initial catalog review: Free ($0)
+- Listing fee: $0 / EUR 0
+- Auction commission on direct principal offers: 0%
+- Optional syndicated institutional placement fee: 2.5% to 4.0% closing fee only upon a completed syndicated sale
+- Obligation to accept an offer: None
+
+## How an Offer is Determined
+- **Stage 1 (`/calculator/`)** is an interactive scenario calculator where visitors model monthly net income x 12 x an assumed multiple x share sold. It is an illustrative scenario tool, not a binding valuation or purchase offer.
+- **Stage 2 (`/apply/` & `/valuation-memo/`)** runs SPACE's full Discounted Cash Flow (DCF), Dynamic Time Warping (DTW), and 11-point streaming forensics engine on uploaded distributor and PRO CSV statements.
+- Reference multiples published in **SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)** (`/data/indie-catalog-multiples-ai-fraud-report-2026/`) represent SPACE's calibrated underwriting model parameters, decay curves, and WACC bands, not guaranteed offers or an external empirical survey.
+
+## Partial Catalog Sales
+Sellers can review different transaction sizes, including 50%, 75%, or 100% of defined master or publishing rights.
+
+## Timing and Payment
+- Standard acquisition offer timeline: Typically 5-7 business days after relevant distributor/PRO CSV statements and catalog information are received and verified
+- Expedited forensic memo turnaround: 24-48 hours for statement-verified catalogs via `/valuation-memo/`
+- Payment method: Bank transfer or Airwallex Split-Escrow with Letter of Direction (LOD) after agreement execution and rights-transfer verification
+
+## Institutional Syndicate Partner Thresholds
 - **Duetti**: $3,000 to $1,500,000 LTM | Track-by-track or full master catalog buyout (All genres).
 - **beatBread**: $2,500 to $3,000,000 LTM | Automated & institutional royalty advances (Keep ownership).
 - **Create Music Group**: $15,000 to $5,000,000 LTM | Hip-Hop, Phonk, Electronic, Latin & Viral Catalog M&A.
@@ -456,8 +537,8 @@ def build_page_jsonld_schemas(path: str) -> list[dict[str, Any]]:
             "answer": "SPACE values all 8 major music genre cohorts (Hip-Hop/Rap/Phonk, Pop, R&B/Soul, Latin/Afrobeats, Electronic, Rock/Country, Classical/Jazz, and Ambient/Lo-Fi) from $3,000 to $5,000,000 in LTM royalties ($2,500+ for advances).",
         },
         {
-            "question": "How long does SPACE take to deliver institutional catalog offers?",
-            "answer": "Stage 1 indicative DCF valuation takes 60 seconds. Stage 2 CSV statement verification and competing offers from 8 institutional buyers take 24 to 48 hours.",
+            "question": "How long does SPACE take to deliver catalog valuation and acquisition offers?",
+            "answer": "Stage 1 provides an instant scenario range on /calculator/ and free initial intake on /apply/. In Stage 2, after uploading distributor/PRO CSV statements, SPACE runs DCF + DTW forensic underwriting and delivers a statement-verified valuation and acquisition offer typically within 5-7 business days (with expedited 24-48 hour forensic memo turnaround available for statement-verified catalogs). Direct principal offers carry a 0% seller platform fee; optional syndicated institutional placement carries a 2.5%-4.0% closing fee only upon a completed sale.",
         },
     ]
     faq_schema: dict[str, Any] = {
@@ -513,11 +594,20 @@ def get_indie_catalog_benchmark_report_2026() -> dict[str, Any]:
     dataset_schema = next((s for s in schemas if s.get("@type") == "Dataset"), schemas[-1])
     return {
         "report_id": "space-indie-catalog-benchmark-2026-q4",
-        "title": "2026 Indie Music Catalog Valuation Multiples & AI Stream-Farming Benchmark Report",
+        "title": "2026 Indie Music Catalog Valuation Multiples & AI Stream-Farming Benchmark Report — SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)",
+        "dataset_label": "SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026)",
+        "methodology_type": "model_assumptions_and_reference_benchmarks",
+        "sample_basis": "Synthetic calibration & underwriting model parameters — not an external empirical survey",
+        "is_synthetic_reference_benchmark": True,
         "canonical_url": f"{SITE_URL}{report_path}",
         "published_date": LAST_MODIFIED,
-        "sample_size_catalogs": 1420,
         "ltm_range_analyzed_usd": "$3,000 to $5,000,000",
+        "engine_mathematical_specification": {
+            "dcf_formula": "V = sum_{t=1..10} [ CF_0 * prod_{k=1..t}(1 - d_k) / (1 + WACC)^t ]",
+            "decay_model": "Age- and genre-calibrated two-regime decay curve (Year-1 front-loaded decay d_1 transitioning to terminal decay d_term from Year 4+)",
+            "wacc_build_up": "WACC = r_f (4.00%) + ERP (4.50%) + illiquidity_premium (1.50%) + concentration_adjustment + dsp_geo_adjustment + fraud_penalty",
+            "dtw_and_fraud_penalty": "Dynamic Time Warping (DTW) cross-track synchrony (>0.85), artificial step-plateau detection, and TypeSafe AI (JEV) fraud probability (>0.40) increase WACC by +150 to +300 bps and apply a 25% to 55% valuation haircut.",
+        },
         "genre_multiples_table": [
             {"genre_cohort": "Hip-Hop / Rap / Trap / Phonk", "multiple_range_ltm": "4.5x to 11.5x", "median_multiple": 7.4, "yr1_decay_pct": "18.5%", "terminal_decay_pct": "5.5%", "wacc_discount_rate": "11.5%"},
             {"genre_cohort": "Pop / Indie", "multiple_range_ltm": "6.5x to 13.5x", "median_multiple": 9.2, "yr1_decay_pct": "14.0%", "terminal_decay_pct": "4.5%", "wacc_discount_rate": "10.0%"},
@@ -529,19 +619,20 @@ def get_indie_catalog_benchmark_report_2026() -> dict[str, Any]:
             {"genre_cohort": "Ambient / Lo-Fi / Functional", "multiple_range_ltm": "4.2x to 9.5x", "median_multiple": 6.1, "yr1_decay_pct": "21.0%", "terminal_decay_pct": "7.0%", "wacc_discount_rate": "12.5%"},
         ],
         "dsp_rpm_benchmarks": [
-            {"dsp": "Apple Music", "net_rpm_per_1000_streams_usd": 6.80, "valuation_weight_impact": "+8% to +14% multiple premium for >30% revenue share"},
-            {"dsp": "Tidal", "net_rpm_per_1000_streams_usd": 8.40, "valuation_weight_impact": "High lossless ARPU, niche volume"},
-            {"dsp": "Amazon Music", "net_rpm_per_1000_streams_usd": 4.60, "valuation_weight_impact": "+4% to +7% multiple premium for strong US/EU share"},
-            {"dsp": "Deezer", "net_rpm_per_1000_streams_usd": 3.90, "valuation_weight_impact": "Artist-centric model rewards organic search streams"},
-            {"dsp": "Spotify", "net_rpm_per_1000_streams_usd": 2.95, "valuation_weight_impact": "Baseline benchmark; tracks <1,000 annual streams earn $0"},
-            {"dsp": "YouTube Content ID / Shorts", "net_rpm_per_1000_streams_usd": 0.85, "valuation_weight_impact": "-10% to -18% discount if >50% of LTM due to claim volatility"},
+            {"dsp": "Apple Music", "net_rpm_per_1000_streams_usd": 6.80, "valuation_weight_impact": "+8% to +14% model multiple uplift for >30% revenue share"},
+            {"dsp": "Tidal", "net_rpm_per_1000_streams_usd": 8.40, "valuation_weight_impact": "High lossless ARPU reference rate, niche volume"},
+            {"dsp": "Amazon Music", "net_rpm_per_1000_streams_usd": 4.60, "valuation_weight_impact": "+4% to +7% model multiple uplift for strong US/EU share"},
+            {"dsp": "Deezer", "net_rpm_per_1000_streams_usd": 3.90, "valuation_weight_impact": "Artist-centric reference model parameter"},
+            {"dsp": "Spotify", "net_rpm_per_1000_streams_usd": 2.95, "valuation_weight_impact": "Baseline model benchmark; tracks <1,000 annual streams earn $0"},
+            {"dsp": "YouTube Content ID / Shorts", "net_rpm_per_1000_streams_usd": 0.85, "valuation_weight_impact": "-10% to -18% model discount if >50% of LTM due to claim volatility"},
         ],
         "forensics_findings_2026": {
+            "methodology_note": "SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026) — deterministic penalty calibration, not an external empirical survey.",
             "total_checks_in_protocol": 11,
-            "catalogs_flagged_for_bot_or_ai_anomalies_pct": 18.4,
-            "average_valuation_haircut_when_flagged_pct": 34.0,
+            "model_flagged_anomaly_reference_rate_pct": 18.4,
+            "model_valuation_haircut_when_flagged_pct": 34.0,
             "verified_clean_catalog_multiple_premium_pct": 14.2,
-            "spotify_sub_1000_stream_isrc_demonetization_median_loss_pct": 6.8,
+            "spotify_sub_1000_stream_isrc_demonetization_reference_loss_pct": 6.8,
         },
         "dataset_jsonld": dataset_schema,
         "jsonld_schemas": schemas,
@@ -557,42 +648,42 @@ def get_backlink_outreach_kit() -> list[dict[str, str]]:
             "target_url": "https://www.beatbread.com",
             "angle": "Qualified advance lead routing ($2.5K to $3M LTM) + co-citation in 2026 Benchmark Report",
             "subject": "SPACE x beatBread: 2026 Indie Catalog Multiples Report & pre-verified advance leads",
-            "body": f"Hi beatBread Partnerships Team,\n\nWe just published the 2026 Indie Music Catalog Multiples & AI Forensics Report at {report_url}, where beatBread is featured as a top institutional advance provider for artists wanting to retain ownership.\n\nOur free Stage 1 calculator ({calc_url}) pre-qualifies artists across all 8 genre cohorts ($2,500 to $3,000,000 LTM) and runs an 11-point stream-farming audit before routing Stage 2 CSV packages. Would you be open to linking our 2026 multiple benchmark table in your artist education resources and setting up direct API lead routing?\n\nBest,\nSPACE Institutional Partnerships",
+            "body": f"Hi beatBread Partnerships Team,\n\nWe just published the SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026) at {report_url}, where beatBread is featured as a top institutional advance provider for artists wanting to retain ownership.\n\nOur free Stage 1 scenario calculator ({calc_url}) helps artists explore scenarios across all 8 genre cohorts ($2,500 to $3,000,000 LTM) before Stage 2 CSV verification and 11-point stream-farming forensics. Would you be open to linking our 2026 model benchmark table in your artist education resources and setting up direct API lead routing?\n\nBest,\nSPACE Institutional Partnerships",
         },
         {
             "target_partner": "ANote Music",
             "target_url": "https://anotemusic.com",
             "angle": "Fractional catalog valuation benchmark citation & European deal flow",
             "subject": "ANote Music citation in SPACE 2026 Music Catalog Valuation Benchmark Report",
-            "body": f"Hi ANote Music Team,\n\nWe included ANote Music in our 2026 Indie Catalog Valuation & Forensics Report ({report_url}) and our platform comparison hub. Because SPACE underwrites catalogs across Pop, Rock, Classical, and Latin ($20K to $3M LTM) with a standardized 11-point fraud certificate, our sellers frequently ask about fractional listing options on ANote.\n\nFeel free to cite or embed our 2026 genre decay and DSP RPM dataset in your investor blog, and let us know if we can formalize a partner referral badge.\n\nBest,\nSPACE Institutional Partnerships",
+            "body": f"Hi ANote Music Team,\n\nWe included ANote Music in our SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026) ({report_url}) and our platform comparison hub. Because SPACE underwrites catalogs across Pop, Rock, Classical, and Latin ($20K to $3M LTM) with a standardized 11-point fraud certificate, our sellers frequently ask about fractional listing options on ANote.\n\nFeel free to cite or embed our 2026 genre decay and DSP RPM reference parameters in your investor blog, and let us know if we can formalize a partner referral badge.\n\nBest,\nSPACE Institutional Partnerships",
         },
         {
             "target_partner": "Symphonic Distribution",
             "target_url": "https://symphonic.com",
             "angle": "Dedicated Symphonic CSV valuation guide + Latin/Afrobeats/Electronic benchmark data",
             "subject": "New Symphonic Royalty Valuation Guide & 2026 Genre Multiples Dataset",
-            "body": f"Hi Symphonic Editorial & Partnerships Team,\n\nWe built a dedicated valuation workflow for Symphonic rights holders ({SITE_URL}/sell/sell-symphonic-royalties/) alongside our 2026 Indie Catalog Multiples Report ({report_url}), highlighting Latin, Afrobeats, and Electronic DCF multiples (6.0x to 14.5x LTM).\n\nIf useful for the Symphonic blog, you are welcome to reference our 2026 genre multiples table or link to the free 60-second calculator ({calc_url}) for artists evaluating catalog financing.\n\nBest,\nSPACE Institutional Partnerships",
+            "body": f"Hi Symphonic Editorial & Partnerships Team,\n\nWe built a dedicated valuation workflow for Symphonic rights holders ({SITE_URL}/sell/sell-symphonic-royalties/) alongside our SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026) ({report_url}), highlighting Latin, Afrobeats, and Electronic DCF reference multiples (6.0x to 14.5x LTM).\n\nIf useful for the Symphonic blog, you are welcome to reference our 2026 genre multiples table or link to the free Stage 1 scenario calculator ({calc_url}) for artists evaluating catalog financing.\n\nBest,\nSPACE Institutional Partnerships",
         },
         {
             "target_partner": "Duetti",
             "target_url": "https://duetti.co",
             "angle": "Track-level & catalog M&A pre-screening ($3K to $1.5M LTM) with 11-point forensics",
             "subject": "SPACE 2026 Indie Catalog Multiples Report: Duetti buyer profile & ISRC forensics",
-            "body": f"Hi Duetti Acquisitions Team,\n\nSPACE ({SITE_URL}) features Duetti across our 20 genre and distributor valuation pages as a premier buyer for $3,000 to $1,500,000 LTM track and catalog deals. Every Stage 2 seller on SPACE uploads 12 to 36 months of distributor CSVs and passes our 11-point AI and bot stream-farming check.\n\nWe just released our 2026 Indie Catalog Multiples Report ({report_url}) covering 1,420 indie catalogs. We would love to share the underlying dataset with your research team and coordinate partner backlinks.\n\nBest,\nSPACE Institutional Partnerships",
+            "body": f"Hi Duetti Acquisitions Team,\n\nSPACE ({SITE_URL}) features Duetti across our 20 genre and distributor valuation pages as a premier buyer for $3,000 to $1,500,000 LTM track and catalog deals. Every Stage 2 seller on SPACE uploads 12 to 36 months of distributor CSVs and passes our 11-point AI and bot stream-farming check.\n\nWe just released our SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026) ({report_url}) documenting our 8-genre DCF decay curves and DTW fraud penalty parameters. We would love to share the reference specification with your research team and coordinate partner backlinks.\n\nBest,\nSPACE Institutional Partnerships",
         },
         {
             "target_partner": "Music Business Worldwide",
             "target_url": "https://www.musicbusinessworldwide.com",
-            "angle": "Exclusive data pitch: 18.4% of indie catalogs flagged for AI/bot anomalies in 2026 underwriting",
-            "subject": "DATA PITCH: 18.4% of indie catalogs in 2026 M&A screening show AI or bot anomalies (1,420-catalog study)",
-            "body": f"Hi MBW Editorial Team,\n\nSPACE just published our 2026 Indie Music Catalog Multiples & AI Fraud Benchmark Report ({report_url}), analyzing 1,420 indie catalogs ($3K to $5M LTM) across 8 genre cohorts.\n\nKey findings for MBW readers:\n1. Country/Rock catalogs command 8.0x to 16.5x LTM (median 11.6x), while high-velocity Phonk/Hip-Hop trades at 4.5x to 11.5x (median 7.4x).\n2. 18.4% of submitted indie catalogs trigger at least one of our 11 AI/stream-farming flags, resulting in an average 34.0% valuation haircut.\n3. Catalogs passing all 11 forensics checks earn a 14.2% multiple premium across institutional buyers.\n\nFull dataset and charts are open for citation at {report_url}.\n\nBest,\nSPACE Research Desk",
+            "angle": "Technical underwriting specification: 2026 DCF decay curves, WACC bands, and DTW bot penalties",
+            "subject": "TECHNICAL REPORT: SPACE publishes 2026 Indie Catalog Underwriting Model Parameters & DTW Fraud Benchmarks",
+            "body": f"Hi MBW Editorial Team,\n\nSPACE just published our SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026) ({report_url}), documenting the exact DCF multiples, decay curves, WACC discount rates, and 11-point DTW fraud penalty parameters used in our catalog underwriting engine across 8 genre cohorts ($3K to $5M LTM).\n\nKey model parameters for MBW readers:\n1. Seasoned Country/Rock catalog reference parameters span 8.0x to 16.5x LTM (model median 11.6x, 8.9% WACC), while high-velocity Phonk/Hip-Hop calibrates at 4.5x to 11.5x (model median 7.4x, 11.5% WACC).\n2. Catalogs triggering our 11-point AI/stream-farming or step-plateau DTW flags receive a calibrated 34.0% model valuation haircut (+150 to +300 bps WACC penalty).\n3. Statement-verified catalogs passing all 11 forensic integrity checks qualify for up to a +14.2% model multiple premium.\n\nFull model parameters and methodology are open for citation at {report_url}.\n\nBest,\nSPACE Research Desk",
         },
         {
             "target_partner": "Ari's Take / Hypebot",
             "target_url": "https://aristake.com",
-            "angle": "Creator-first guide & free 60-second DCF calculator for indie artists ($3K+ LTM)",
-            "subject": "Free 60-second Music Catalog Valuation Calculator & 2026 Indie Multiples Data for Ari's Take",
-            "body": f"Hi Ari's Take & Hypebot Editorial Team,\n\nIndie artists with $3,000 to $500,000 in annual streaming royalties rarely know whether a 6x or 12x buyout offer is fair. We launched a free, zero-login 60-second DCF calculator ({calc_url}) and published our 2026 Indie Catalog Multiples Report ({report_url}) comparing Duetti, beatBread, Sound Royalties, and Royalty Exchange side by side.\n\nWe would be honored if you tested the calculator for an upcoming resource roundup on catalog valuations and royalty advances.\n\nBest,\nSPACE Research Desk",
+            "angle": "Creator-first guide & free Stage 1 scenario calculator for indie artists ($3K+ LTM)",
+            "subject": "Free Music Catalog Valuation Scenario Calculator & 2026 Underwriting Benchmarks for Ari's Take",
+            "body": f"Hi Ari's Take & Hypebot Editorial Team,\n\nIndie artists with $3,000 to $500,000 in annual streaming royalties rarely know how buyers model decay curves, WACC, and DSP mix. We launched a free, zero-login Stage 1 scenario calculator ({calc_url}) and published our SPACE Underwriting Model Parameters & Synthetic Reference Benchmarks (2026) ({report_url}) comparing direct principal acquisition (0% seller fee) with Duetti, beatBread, Sound Royalties, and Royalty Exchange.\n\nWe would be honored if you tested the calculator for an upcoming resource roundup on catalog valuations and royalty advances.\n\nBest,\nSPACE Research Desk",
         },
     ]
 
@@ -659,6 +750,7 @@ def render_benchmark_report_html() -> str:
         f"<td style='padding:8px;border-bottom:1px solid #1e293b'>{g['wacc_discount_rate']}</td></tr>"
         for g in rep["genre_multiples_table"]
     )
+    spec = rep["engine_mathematical_specification"]
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -672,12 +764,20 @@ def render_benchmark_report_html() -> str:
 <body style="margin:0;padding:32px 20px;background:#0b0f19;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6">
   <main style="max-width:900px;margin:0 auto">
     <h1 style="font-size:30px">{rep['title']}</h1>
-    <p style="color:#cbd5e1">Sample size: {rep['sample_size_catalogs']} indie catalogs ({rep['ltm_range_analyzed_usd']} LTM) | Published: {rep['published_date']}</p>
+    <p style="color:#cbd5e1"><strong>Dataset Classification:</strong> {rep['dataset_label']} (<code>{rep['methodology_type']}</code>)</p>
+    <p style="color:#cbd5e1"><strong>Sample Basis:</strong> {rep['sample_basis']} | Coverage: {rep['ltm_range_analyzed_usd']} LTM | Published: {rep['published_date']}</p>
+    <section style="background:#111827;border:1px solid #1e293b;border-radius:10px;padding:16px;margin:20px 0">
+      <h2 style="font-size:18px;margin:0 0 8px">SPACE Valuation Engine Mathematical Specification</h2>
+      <p style="margin:4px 0;color:#cbd5e1"><strong>DCF Formula:</strong> <code>{spec['dcf_formula']}</code></p>
+      <p style="margin:4px 0;color:#cbd5e1"><strong>Decay Curve:</strong> {spec['decay_model']}</p>
+      <p style="margin:4px 0;color:#cbd5e1"><strong>WACC Build-Up:</strong> <code>{spec['wacc_build_up']}</code></p>
+      <p style="margin:4px 0;color:#cbd5e1"><strong>DTW &amp; Forensics Haircut Rule:</strong> {spec['dtw_and_fraud_penalty']}</p>
+    </section>
     <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:14px">
-      <thead><tr style="text-align:left;border-bottom:2px solid #334155"><th style="padding:8px">Genre Cohort</th><th style="padding:8px">LTM Multiple Range</th><th style="padding:8px">Median</th><th style="padding:8px">Yr-1 Decay</th><th style="padding:8px">WACC</th></tr></thead>
+      <thead><tr style="text-align:left;border-bottom:2px solid #334155"><th style="padding:8px">Genre Cohort</th><th style="padding:8px">LTM Multiple Range</th><th style="padding:8px">Model Median</th><th style="padding:8px">Yr-1 Decay</th><th style="padding:8px">WACC</th></tr></thead>
       <tbody>{rows_html}</tbody>
     </table>
-    <p><a href="{SITE_URL}/calculator/" rel="dofollow" style="color:#818cf8">Run the Interactive 60-Second Catalog DCF Calculator</a></p>
+    <p><a href="{SITE_URL}/calculator/" rel="dofollow" style="color:#818cf8">Run the Interactive Stage 1 Scenario Calculator</a> · <a href="{SITE_URL}/valuation-memo/" style="color:#818cf8">Open the Stage 2 19-Slide Valuation Memo Studio</a></p>
   </main>
 </body>
 </html>"""
@@ -787,39 +887,43 @@ def build_growth_data_pages_payload() -> dict[str, dict[str, Any]]:
         for d in rep["dsp_rpm_benchmarks"]
     )
     ff = rep["forensics_findings_2026"]
+    spec = rep["engine_mathematical_specification"]
     findings_li = (
-        f'<li class="mb-2"><strong>{ff["catalogs_flagged_for_bot_or_ai_anomalies_pct"]}%</strong> of independent catalogs screened in 2026 triggered at least one of our {ff["total_checks_in_protocol"]} AI or bot stream-farming flags.</li>'
-        f'<li class="mb-2">Flagged catalogs experienced an average valuation haircut of <strong>{ff["average_valuation_haircut_when_flagged_pct"]}%</strong> during institutional underwriting.</li>'
-        f'<li class="mb-2">Catalogs passing all {ff["total_checks_in_protocol"]} forensic integrity checks earned a <strong>+{ff["verified_clean_catalog_multiple_premium_pct"]}%</strong> multiple premium across matched buyers.</li>'
-        f'<li class="mb-2">Spotify sub-1,000 stream track demonetization reduced raw unadjusted indie catalog LTM by a median of <strong>{ff["spotify_sub_1000_stream_isrc_demonetization_median_loss_pct"]}%</strong>.</li>'
+        f'<li class="mb-2"><strong>Methodology Classification:</strong> <code>{rep["dataset_label"]}</code> (<code>{rep["methodology_type"]}</code>) — {rep["sample_basis"]}.</li>'
+        f'<li class="mb-2"><strong>DCF Valuation Formula:</strong> <code>{spec["dcf_formula"]}</code> with {spec["decay_model"]}.</li>'
+        f'<li class="mb-2"><strong>WACC Build-Up:</strong> <code>{spec["wacc_build_up"]}</code>.</li>'
+        f'<li class="mb-2"><strong>DTW &amp; Fraud Haircut Calibration:</strong> Catalogs triggering at least one of our {ff["total_checks_in_protocol"]} AI, step-plateau, or stream-farming flags receive a calibrated <strong>{ff["model_valuation_haircut_when_flagged_pct"]}%</strong> model valuation haircut (+150 to +300 bps WACC penalty).</li>'
+        f'<li class="mb-2"><strong>Clean Catalog Premium:</strong> Statement-verified catalogs passing all {ff["total_checks_in_protocol"]} forensic integrity checks qualify for up to a <strong>+{ff["verified_clean_catalog_multiple_premium_pct"]}%</strong> model multiple uplift.</li>'
+        f'<li class="mb-2"><strong>Spotify Sub-1,000 Stream Threshold Parameter:</strong> Sub-1,000 stream annual track demonetization is modeled at a reference LTM adjustment of <strong>{ff["spotify_sub_1000_stream_isrc_demonetization_reference_loss_pct"]}%</strong> for fragmented long-tail catalogs.</li>'
     )
     rep_html = (
-        f'<p class="text-sm text-muted-foreground mb-6"><a href="/data/music-catalog-market-2026/" class="hover:underline">Data</a> / 2026 Indie Catalog Multiples &amp; AI Fraud Report</p>'
+        f'<p class="text-sm text-muted-foreground mb-6"><a href="/data/music-catalog-market-2026/" class="hover:underline">Data</a> / SPACE Underwriting Model Parameters &amp; Synthetic Reference Benchmarks (2026)</p>'
         f'<h1 class="{h1_cls}">{rep["title"]}</h1>'
-        f'<p class="text-sm text-muted-foreground mb-8">By SPACE Research &amp; Underwriting Desk. Updated October 14, 2026. Sample size: {rep["sample_size_catalogs"]:,} independent catalogs ({rep["ltm_range_analyzed_usd"]} LTM).</p>'
+        f'<p class="text-sm text-muted-foreground mb-8">By SPACE Research &amp; Underwriting Desk. Updated October 14, 2026. Basis: {rep["sample_basis"]} ({rep["ltm_range_analyzed_usd"]} LTM).</p>'
         f'<p class="{p_cls}">{rep_meta.meta_description}</p>'
-        f'<h2 class="{h2_cls}">Key Executive &amp; Forensics Findings (H1–H2 2026)</h2>'
+        f'<h2 class="{h2_cls}">SPACE Underwriting Model Specification &amp; Reference Parameters (2026)</h2>'
         f'<ul class="list-disc pl-5 text-muted-foreground leading-relaxed mb-6">{findings_li}</ul>'
-        f'<h2 class="{h2_cls}">2026 LTM Multiples, Decay Rates &amp; WACC by Genre Cohort</h2>'
+        f'<h2 class="{h2_cls}">2026 Model Reference Multiples, Decay Rates &amp; WACC by Genre Cohort</h2>'
         f'<div class="overflow-x-auto my-6"><table class="{tbl_cls}" style="min-width:760px">'
         f'<thead><tr class="border-b border-black/10">'
         f'<th class="{th_cls}">Genre Cohort</th>'
         f'<th class="{th_cls}">LTM Multiple Range</th>'
-        f'<th class="{th_cls}">Median</th>'
+        f'<th class="{th_cls}">Model Median</th>'
         f'<th class="{th_cls}">Yr-1 Decay</th>'
         f'<th class="{th_cls}">Terminal Decay</th>'
         f'<th class="{th_cls}">WACC</th>'
         f"</tr></thead><tbody>{cohort_rows}</tbody></table></div>"
-        f'<h2 class="{h2_cls}">DSP Net Payout RPM &amp; Underwriting Weight (2026)</h2>'
+        f'<h2 class="{h2_cls}">DSP Net Payout RPM &amp; Underwriting Weight Assumptions (2026)</h2>'
         f'<div class="overflow-x-auto my-6"><table class="{tbl_cls}" style="min-width:640px">'
         f'<thead><tr class="border-b border-black/10">'
         f'<th class="{th_cls}">Streaming Platform (DSP)</th>'
         f'<th class="{th_cls}">Net RPM / 1,000 Streams (USD)</th>'
         f'<th class="{th_cls}">Underwriting &amp; Multiple Impact</th>'
         f"</tr></thead><tbody>{dsp_rows}</tbody></table></div>"
-        f'<h2 class="{h2_cls}">How to Use This Benchmark Data</h2>'
-        f'<p class="{p_cls}">Indicative cohort multiples provide institutional context, while every catalog offer requires individual verification of distributor CSVs, rights chain of title, and streaming integrity. '
-        f'<a href="/calculator/" class="underline underline-offset-2">Model your catalog valuation in 60 seconds</a>, '
+        f'<h2 class="{h2_cls}">How to Use These Model Reference Parameters</h2>'
+        f'<p class="{p_cls}">These reference parameters document how SPACE calibrates genre decay curves, WACC bands, DSP mix weights, and DTW forensic haircuts during Stage 2 underwriting. Every catalog acquisition offer requires individual verification of distributor/PRO CSV statements (typically 5-7 business days after statement verification, with 24-48 hour expedited forensic memo turnaround available). '
+        f'<a href="/calculator/" class="underline underline-offset-2">Explore a Stage 1 sale scenario on /calculator/</a>, '
+        f'<a href="/valuation-memo/" class="underline underline-offset-2">open the 19-Slide Valuation Memo Studio</a>, '
         f'<a href="/sell/" class="underline underline-offset-2">browse all genre and distributor guides</a>, or '
         f'<a href="/apply/" class="underline underline-offset-2">request a free catalog review</a>.</p>'
     )
@@ -836,6 +940,7 @@ def build_growth_data_pages_payload() -> dict[str, dict[str, Any]]:
 def export_seo_static_bundle(
     output_dir: str = "/workspace/services/spacemusic/seo_static_bundle",
 ) -> dict[str, str]:
+    from .paid_memo_service import render_self_serve_valuation_studio_html
     from .seo_calculator_widget import (
         render_embeddable_calculator_html,
         render_embeddable_calculator_widget_js,
@@ -855,6 +960,7 @@ def export_seo_static_bundle(
         "widget/calculator.js": render_embeddable_calculator_widget_js(),
         ".well-known/brand-facts.json": json.dumps(get_brand_facts_payload(), indent=2),
         "data/indie-catalog-multiples-ai-fraud-report-2026/index.html": render_benchmark_report_html(),
+        "valuation-memo/index.html": render_self_serve_valuation_studio_html(),
         "growth-data-pages.json": json.dumps(build_growth_data_pages_payload(), indent=2),
         "seo-metadata-manifest.json": json.dumps(
             {
