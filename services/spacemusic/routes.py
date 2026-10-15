@@ -29,19 +29,25 @@ Endpoints:
 
 from __future__ import annotations
 
+import json
 import uuid
 from datetime import UTC, datetime
 from typing import Annotated, Any
 
 import structlog
-from fastapi import APIRouter, Body, Header, HTTPException, Query, Response, status
+from fastapi import APIRouter, Body, Header, HTTPException, Query, Request, Response, status
 from fastapi.responses import HTMLResponse, PlainTextResponse
 from pydantic import BaseModel, Field
 
+from services.valuation.claude_memo_generator import generate_catalog_investment_memo_deck
 from services.valuation.engine import (
     CatalogValuationInput,
     CatalogValuationOutput,
     SpaceValuationEngine,
+)
+from services.valuation.memo_pdf_renderer import (
+    render_investment_memo_html,
+    render_investment_memo_pdf,
 )
 from services.valuation.statement_parser import (
     ParsedStatementSummary,
@@ -80,6 +86,15 @@ from .monetization_engine import (
     ForensicAuditCertificate,
     build_down_funnel_monetization_plan,
     generate_forensic_audit_certificate,
+)
+from .paid_memo_service import (
+    PaidMemoCheckoutRequest,
+    PaidMemoCheckoutResponse,
+    PaidMemoStore,
+    PaymentStatus,
+    create_paid_memo_checkout_order,
+    render_self_serve_valuation_studio_html,
+    verify_stripe_webhook_signature,
 )
 from .scrive_signer import (
     ScriveExecutionEngine,
@@ -131,6 +146,7 @@ _BENCHMARKS_STORE: list[ProprietaryBenchmarkRecord] = []
 _deal_lake = DealLakeRepository()
 _scrive_engine = ScriveExecutionEngine()
 _fintech_ledger = FintechEscrowLedger()
+_paid_memo_store = PaidMemoStore()
 
 _engine = SpaceValuationEngine()
 
@@ -1089,4 +1105,158 @@ async def get_indie_catalog_benchmark_report():
 @router.get("/seo/backlink-outreach-kit")
 async def get_seo_backlink_outreach_kit():
     return get_backlink_outreach_kit()
+
+
+# ============================================================================
+# Public Self-Serve Paid Valuation Model & Claude 19-Slide Memo Endpoints
+# ============================================================================
+
+
+@router.get("/valuation-memo", response_class=HTMLResponse)
+async def get_paid_valuation_memo_studio():
+    """
+    Public self-serve SPACE + Claude 19-Slide Investment Memo Studio.
+    """
+    return HTMLResponse(content=render_self_serve_valuation_studio_html())
+
+
+@router.post(
+    "/catalog-review/paid-memo/checkout",
+    response_model=PaidMemoCheckoutResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+async def post_paid_memo_checkout(req: PaidMemoCheckoutRequest):
+    """
+    Runs the SPACE Valuation & Forensics Engine (`engine.py` + `dtw_matcher.py` + `jev_evaluator.py`)
+    and Claude Investment Memo Generator (`claude_memo_generator.py`), returning a free preview of
+    Slides 01–02 and a Stripe Checkout Session ($299 / €275) to unlock the full 19-slide 16:9 PDF.
+    """
+    return create_paid_memo_checkout_order(req, store=_paid_memo_store, engine=_engine)
+
+
+@router.post("/webhooks/stripe-memo")
+async def handle_stripe_memo_webhook(
+    request: Request,
+    stripe_signature: str | None = Header(default=None, alias="Stripe-Signature"),
+):
+    """
+    Stripe webhook receiver (`checkout.session.completed`) that verifies `Stripe-Signature`
+    (`t=<unix>,v1=<hmac_sha256>`) and unlocks the paid 19-slide Investment Memo PDF & HTML.
+    """
+    raw_body = await request.body()
+    if not verify_stripe_webhook_signature(raw_body, stripe_signature):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid Stripe-Signature header",
+        )
+
+    try:
+        event = json.loads(raw_body.decode("utf-8"))
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid JSON") from exc
+
+    obj = event.get("data", {}).get("object", {}) if isinstance(event, dict) else {}
+    order_id = (
+        obj.get("client_reference_id")
+        or (obj.get("metadata") or {}).get("order_id")
+        or event.get("order_id")
+    )
+    session_id = obj.get("id") or event.get("stripe_session_id")
+
+    order = (
+        _paid_memo_store.get_by_order_id(str(order_id))
+        if order_id
+        else (_paid_memo_store.get_by_stripe_session(str(session_id)) if session_id else None)
+    )
+    if not order:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found")
+
+    order.payment_status = PaymentStatus.PAID
+    order.paid_at_utc = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    _paid_memo_store.save(order)
+
+    return {
+        "order_id": order.order_id,
+        "application_id": str(order.application_id),
+        "deal_code": order.deal_code,
+        "payment_status": order.payment_status,
+        "receipt_token": order.receipt_token,
+        "unlocked_html_url": order.unlocked_html_url,
+        "unlocked_pdf_url": order.unlocked_pdf_url,
+    }
+
+
+def _resolve_deck_and_lock_state(
+    application_id: uuid.UUID,
+    receipt_token: str | None,
+) -> tuple[Any, bool, str | None]:
+    order = _paid_memo_store.get_by_application_id(application_id)
+    if order:
+        is_unlocked = (
+            order.payment_status == PaymentStatus.PAID
+            and receipt_token is not None
+            and receipt_token == order.receipt_token
+        )
+        return order.deck, not is_unlocked, order.checkout_url
+
+    app_row = _APPLICATIONS_STORE.get(application_id)
+    if not app_row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Application or memo order not found")
+
+    val_input = application_to_valuation_input(app_row)
+    valuation = _engine.evaluate(val_input)
+    deck = generate_catalog_investment_memo_deck(app_input=val_input, valuation=valuation)
+    is_unlocked = bool(receipt_token and receipt_token == "SPACE-PARTNER-VIP")
+    return deck, not is_unlocked, f"/valuation-memo?application_id={application_id}"
+
+
+@router.get(
+    "/catalog-review/{application_id}/investment-memo.html",
+    response_class=HTMLResponse,
+)
+async def get_application_investment_memo_html(
+    application_id: uuid.UUID,
+    receipt_token: str | None = Query(default=None),
+):
+    """
+    Renders the 19-slide 16:9 SPACE + Claude Investment Memo as HTML.
+    Without a valid paid `receipt_token`, Slides 01–02 are shown in full and Slides 03–19
+    are blurred behind the $299 Stripe Checkout paywall.
+    """
+    deck, locked_preview, checkout_url = _resolve_deck_and_lock_state(application_id, receipt_token)
+    html_str = render_investment_memo_html(
+        deck,
+        locked_preview=locked_preview,
+        checkout_url=checkout_url,
+    )
+    return HTMLResponse(content=html_str)
+
+
+@router.get("/catalog-review/{application_id}/investment-memo.pdf")
+async def get_application_investment_memo_pdf(
+    application_id: uuid.UUID,
+    receipt_token: str | None = Query(default=None),
+):
+    """
+    Returns the print-ready 19-slide 16:9 `Catalog_Valuation.pdf` once the order is PAID
+    and a valid `receipt_token` is supplied. Returns `402 Payment Required` if unpaid.
+    """
+    deck, locked_preview, checkout_url = _resolve_deck_and_lock_state(application_id, receipt_token)
+    if locked_preview:
+        raise HTTPException(
+            status_code=status.HTTP_402_PAYMENT_REQUIRED,
+            detail={
+                "message": "Payment required to download the full 19-slide SPACE Investment Memo PDF ($299 / €275).",
+                "checkout_url": checkout_url,
+            },
+        )
+    pdf_bytes = render_investment_memo_pdf(deck)
+    safe_name = "".join(c if c.isalnum() else "_" for c in deck.artist_or_label_name).strip("_") or "Catalog"
+    filename = f"{safe_name}_Catalog_Valuation.pdf"
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
+
 

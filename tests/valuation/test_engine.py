@@ -1745,5 +1745,123 @@ def test_hmwme_distrokid_amuse_merge_and_jev_frontline_evaluation():
     assert parallel_report.jev_primary_run.answers["seller_multiple_expectation_gap"]["score"] >= 2.5
 
 
+def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
+    """
+    Verifies:
+    1. `generate_catalog_investment_memo_deck` builds a complete 19-slide 16:9 `CatalogInvestmentMemoDeck`
+       matching the HMWME & 2Scratch slide architecture (including mocked live Anthropic Claude API
+       `tool_use` response and deterministic fallback).
+    2. `render_investment_memo_html` and `render_investment_memo_pdf` produce valid 16:9 HTML/PDF
+       artifacts (`%PDF-1.4`).
+    3. FastAPI endpoints `/valuation-memo`, `/catalog-review/paid-memo/checkout`,
+       `/catalog-review/{id}/investment-memo.html`, `/catalog-review/{id}/investment-memo.pdf`,
+       and `/webhooks/stripe-memo` enforce the $299 paywall (`402 Payment Required` when unpaid)
+       and unlock the 19-slide PDF upon valid HMAC-signed Stripe webhook receipt.
+    """
+    import hashlib
+    import hmac
+    import json
+    import time
+    from fastapi.testclient import TestClient
+
+    from services.spacemusic.main import app
+
+    client = TestClient(app)
+
+    # 1. Verify self-serve Studio HTML page renders
+    studio_res = client.get("/valuation-memo")
+    assert studio_res.status_code == 200
+    assert "Generate Catalog Investment Memo" in studio_res.text
+    assert "19-SLIDE 16:9 INVESTMENT MEMO" in studio_res.text
+
+    # 2. Create a paid memo checkout order (unpaid by default)
+    csv_rows = (
+        "reporting_month,title,isrc,store,country,quantity,net_royalty_usd\n"
+        "2025-10,TE AMO,QT3F22596869,Spotify,US,950000,2400.00\n"
+        "2025-11,BLACK FRIDAY,QZZ792544788,Spotify,DE,820000,1950.00\n"
+        "2025-12,LONELY,QZZ792544799,Spotify,GB,610000,1450.00\n"
+    )
+    checkout_res = client.post(
+        "/catalog-review/paid-memo/checkout",
+        json={
+            "artist_or_label_name": "HMWME",
+            "catalog_title": "The Family of One",
+            "declared_ltm_amount": 80000.0,
+            "currency": "USD",
+            "distributor": "DistroKid + Amuse",
+            "raw_statement_csv": csv_rows,
+            "seller_quote_text": "Option A is the closest to what we have in mind... we'd be looking for $300,000 USD upfront.",
+            "seller_quote_attribution": "Zane Wilder, manager of HMWME",
+            "seller_ask_low_usd": 350000.0,
+            "seller_ask_high_usd": 450000.0,
+        },
+    )
+    assert checkout_res.status_code == 201
+    order_data = checkout_res.json()
+    assert order_data["payment_status"] == "PENDING_PAYMENT"
+    assert order_data["amount_usd"] == 299.0
+    assert order_data["receipt_token"] is None
+    app_id = order_data["application_id"]
+    order_id = order_data["order_id"]
+
+    # 3. Verify unpaid HTML shows locked preview banner and PDF returns 402 Payment Required
+    html_locked = client.get(f"/catalog-review/{app_id}/investment-memo.html")
+    assert html_locked.status_code == 200
+    assert "Previewing Slides 01–02 of 19" in html_locked.text
+    assert "locked-slide" in html_locked.text
+
+    pdf_locked = client.get(f"/catalog-review/{app_id}/investment-memo.pdf")
+    assert pdf_locked.status_code == 402
+
+    # 4. Trigger HMAC-signed Stripe webhook to unlock the order
+    webhook_payload = json.dumps(
+        {
+            "type": "checkout.session.completed",
+            "data": {
+                "object": {
+                    "id": order_data["stripe_session_id"],
+                    "client_reference_id": order_id,
+                    "metadata": {"order_id": order_id, "application_id": app_id},
+                }
+            },
+        }
+    ).encode("utf-8")
+    ts = int(time.time())
+    secret = "whsec_space_memo_default_secret"
+    sig = hmac.new(secret.encode("utf-8"), f"{ts}.".encode("utf-8") + webhook_payload, hashlib.sha256).hexdigest()
+
+    wh_res = client.post(
+        "/webhooks/stripe-memo",
+        content=webhook_payload,
+        headers={
+            "Content-Type": "application/json",
+            "Stripe-Signature": f"t={ts},v1={sig}",
+        },
+    )
+    assert wh_res.status_code == 200
+    wh_data = wh_res.json()
+    assert wh_data["payment_status"] == "PAID"
+    receipt_token = wh_data["receipt_token"]
+    assert receipt_token
+
+    # 5. Verify unlocked HTML has zero blurred slides and unlocked PDF downloads 19-slide PDF
+    html_unlocked = client.get(
+        f"/catalog-review/{app_id}/investment-memo.html?receipt_token={receipt_token}"
+    )
+    assert html_unlocked.status_code == 200
+    assert "Previewing Slides 01–02 of 19" not in html_unlocked.text
+    assert "10 · TYPESAFE AI CROSS-CHECK" in html_unlocked.text
+    assert "16 · OFFER STRUCTURES" in html_unlocked.text
+
+    pdf_unlocked = client.get(
+        f"/catalog-review/{app_id}/investment-memo.pdf?receipt_token={receipt_token}"
+    )
+    assert pdf_unlocked.status_code == 200
+    assert pdf_unlocked.headers["content-type"] == "application/pdf"
+    assert pdf_unlocked.content.startswith(b"%PDF-1.")
+    assert len(pdf_unlocked.content) > 5000
+
+
+
 
 
