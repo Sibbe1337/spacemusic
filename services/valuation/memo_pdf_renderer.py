@@ -352,6 +352,351 @@ def render_investment_memo_html(
         </div>
         """
 
+    if locked_preview:
+        redacted_slide_specs = [
+            ("03", "02 · THE DATA", "Royalty Statement & Ledger Telemetry"),
+            ("04", "03 · CLAIM CHECK", "Declared vs. Verified Cash Flow Reconciliation"),
+            ("05", "04 · MOMENTUM", "Monthly Royalty Trajectory & Seasonality"),
+            ("06", "05 · THE MODEL", "Weibull Monte Carlo & DTW Architecture"),
+            ("07", "06 · DISCOUNT RATE BUILD-UP", "Risk-Adjusted WACC Decomposition"),
+            ("08", "07 · STANDALONE VALUE", "Standalone Catalog Valuation Corridor"),
+            ("09", "08 · CUMULATIVE NPV BY HORIZON", "Horizon Valuation & Payback Profile"),
+            ("10", "09 · DCF RECONCILIATION", "10-Year DCF Cash Flow Schedule"),
+            ("11", "10 · TYPESAFE AI CROSS-CHECK", "10-Question TypeSafe AI (JEV) Audit"),
+            ("12", "11 · STREAM INTEGRITY", "Streaming Authenticity & Fraud Audit"),
+            ("13", "12 · WHERE THE MONEY COMES FROM", "Platform & Territory Breakdown"),
+            ("14", "13 · TRACK CONCENTRATION", "ISRC Concentration & Top Track Share"),
+            ("15", "14 · THE SELLER'S POSITION", "Commercial Context & Seller Expectations"),
+            ("16", "15 · ASK VS VALUE", "Valuation Corridor vs. Seller Ask"),
+            ("17", "16 · OFFER STRUCTURES", "Institutional Deal Options (A / B / C)"),
+            ("18", "17 · PROPOSED NEXT STEPS", "Risk Matrix & Execution Roadmap"),
+            ("19", "18 · CLOSING", "Institutional Closing & Contacts"),
+        ]
+        cta_href = _esc(checkout_url or "#unlock-checkout")
+        slides_03_to_19_html = "\n".join(
+            f"""<!-- SLIDE {s_num}: {s_tag} (REDACTED) -->
+<section class="slide slide-dark locked-slide" data-slide-number="{s_num}" data-redacted="true">
+  <div>
+    <div class="section-tag mono">{_esc(s_tag)}</div>
+    <h2 class="slide-headline">{_esc(s_title)}</h2>
+  </div>
+  <div class="redacted-placeholder-card" style="border:1px dashed #3A435E; border-radius:8px; padding:32px; background:#12151E; text-align:center; margin:auto 0;">
+    <div class="mono bold accent-orange" style="font-size:13px; letter-spacing:0.08em; margin-bottom:10px;">
+      LOCKED — SERVER ENTITLEMENT REQUIRED TO RENDER SLIDE CONTENT
+    </div>
+    <p style="font-size:14px; color:#9BA3B8; margin:0 0 16px;">
+      Slide {s_num} of 19 ({_esc(s_title)}) has been withheld on the server until a verified payment receipt or Desk Pass entitlement is presented.
+    </p>
+    <a href="{cta_href}" class="paywall-btn" style="display:inline-block;">Unlock Full 19-Slide Memo ($299 / €275)</a>
+  </div>
+  <div class="slide-footer mono">
+    <span>{memo_footer_left} · SERVER-REDACTED PREVIEW</span>
+    <span>{s_num}</span>
+  </div>
+</section>"""
+            for s_num, s_tag, s_title in redacted_slide_specs
+        )
+    else:
+        slides_03_to_19_html = f"""<!-- SLIDE 03: 02 · THE DATA -->
+<section class="slide slide-light">
+  <div>
+    <div class="section-tag mono">02 · THE DATA</div>
+    <h2 class="slide-headline">{_esc(deck.s02_headline)}</h2>
+  </div>
+  <div class="data-split">
+    <div>
+      <div class="giant-number">{_esc(deck.s02_primary_count)}</div>
+      <div class="giant-label">{_esc(deck.s02_primary_label)}</div>
+    </div>
+    <div class="light-cells-grid">{s02_cells_html}</div>
+  </div>
+  <div>
+    <p class="bottom-note">{_esc(deck.s02_bottom_note)}</p>
+    <div class="slide-footer mono">
+      <span>{memo_footer_left}</span>
+      <span>03</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 04: 03 · CLAIM CHECK -->
+<section class="slide slide-dark">
+  <div>
+    <div class="section-tag mono">03 · CLAIM CHECK</div>
+    <h2 class="slide-headline">{_esc(deck.s03_headline)}</h2>
+  </div>
+  <div class="claim-bars-wrap">{s03_bars_html}</div>
+  <div>
+    <p class="bottom-note">{_esc(deck.s03_bottom_note)}</p>
+    <div class="slide-footer mono">
+      <span>{memo_footer_left}</span>
+      <span>04</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 05: 04 · MOMENTUM -->
+<section class="slide slide-light">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+    <div>
+      <div class="section-tag mono">04 · MOMENTUM</div>
+      <h2 class="slide-headline" style="margin-bottom:6px;">{_esc(deck.s04_headline)}</h2>
+    </div>
+    <div class="mono" style="font-size:11px; color:#4A4F5C;">
+      <span style="color:#2356C8;">■</span> LTM window &nbsp;&nbsp;
+      <span style="color:#B8B6AF;">■</span> Before
+    </div>
+  </div>
+  <div class="vchart-area">{s04_bars_html}</div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s04_footer_caption)}</span>
+    <span>05</span>
+  </div>
+</section>
+
+<!-- SLIDE 06: 05 · THE MODEL -->
+<section class="slide slide-dark">
+  <div>
+    <div class="section-tag mono">05 · THE MODEL</div>
+    <h2 class="slide-headline">{_esc(deck.s05_headline)}</h2>
+  </div>
+  <div class="grid-6">{s05_cards_html}</div>
+  <div>
+    <p class="bottom-note">{_esc(deck.s05_bottom_note)}</p>
+    <div class="slide-footer mono">
+      <span>{memo_footer_left}</span>
+      <span>06</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 07: 06 · DISCOUNT RATE BUILD-UP -->
+<section class="slide slide-light">
+  <div>
+    <div class="section-tag mono">06 · DISCOUNT RATE BUILD-UP</div>
+    <h2 class="slide-headline">{_esc(deck.s06_headline)}</h2>
+    <div class="wacc-bar-row">{s06_segs_html}</div>
+    <div class="wacc-total-row">
+      <div class="wacc-total-num">= {deck.s06_total_wacc_pct:.2f}%</div>
+      <div class="bottom-note" style="margin:0;">{_esc(deck.s06_bottom_note)}</div>
+    </div>
+  </div>
+  <div class="slide-footer mono">
+    <span>{memo_footer_left}</span>
+    <span>07</span>
+  </div>
+</section>
+
+<!-- SLIDE 08: 07 · STANDALONE VALUE -->
+<section class="slide slide-dark">
+  <div>
+    <div class="section-tag mono">07 · STANDALONE VALUE</div>
+    <h2 class="slide-headline">{_esc(deck.s07_headline)}</h2>
+  </div>
+  <div class="grid-3">{s07_cards_html}</div>
+  <div>
+    <p class="bottom-note">{_esc(deck.s07_jev_crosscheck_note)}</p>
+    <div class="slide-footer mono">
+      <span>{memo_footer_left}</span>
+      <span>08</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 09: 08 · CUMULATIVE NPV BY HORIZON -->
+<section class="slide slide-dark">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+    <div>
+      <div class="section-tag mono">08 · CUMULATIVE NPV BY HORIZON</div>
+      <h2 class="slide-headline" style="margin-bottom:4px;">{_esc(deck.s08_headline)}</h2>
+    </div>
+    <div class="mono" style="font-size:11px; color:#9BA3B8;">
+      <span style="color:#363C4E;">■</span> P10 &nbsp;
+      <span style="color:#F5F6F8;">■</span> P50 &nbsp;
+      <span style="color:#84B1FF;">■</span> P90
+    </div>
+  </div>
+  <div class="npv-groups-row">{s08_groups_html}</div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s08_footer_caption)}</span>
+    <span>09</span>
+  </div>
+</section>
+
+<!-- SLIDE 10: 09 · DCF RECONCILIATION -->
+<section class="slide slide-light">
+  <div>
+    <div class="section-tag mono">09 · DCF RECONCILIATION</div>
+    <h2 class="slide-headline" style="margin-bottom:10px;">{_esc(deck.s09_headline)}</h2>
+    <table class="recon-table">
+      <thead>
+        <tr>
+          <th>Horizon</th>
+          <th>P10</th>
+          <th>P50</th>
+          <th>P90</th>
+          <th>P50 EUR</th>
+        </tr>
+      </thead>
+      <tbody>{s09_rows_html}</tbody>
+    </table>
+    <div class="pillars-row">{s09_pillars_html}</div>
+  </div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s09_footer_caption)}</span>
+    <span>10</span>
+  </div>
+</section>
+
+<!-- SLIDE 11: 10 · TYPESAFE AI CROSS-CHECK -->
+<section class="slide slide-dark">
+  <div class="jev-top-row">
+    <div>
+      <div class="section-tag mono">10 · TYPESAFE AI CROSS-CHECK</div>
+      <h2 class="slide-headline" style="margin-bottom:8px;">{_esc(deck.s10_headline)}</h2>
+    </div>
+    <div class="jev-pill mono">{_esc(deck.s10_agreement_badge)}</div>
+  </div>
+  <table class="jev-table">
+    <thead>
+      <tr>
+        <th>JEV question</th>
+        <th>Posterior answer</th>
+        <th style="text-align:right;">Confidence</th>
+      </tr>
+    </thead>
+    <tbody>{s10_rows_html}</tbody>
+  </table>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s10_footer_caption)}</span>
+    <span>11</span>
+  </div>
+</section>
+
+<!-- SLIDE 12: 11 · STREAM INTEGRITY -->
+<section class="slide slide-light">
+  <div>
+    <div class="section-tag mono">11 · STREAM INTEGRITY</div>
+    <h2 class="slide-headline">{_esc(deck.s11_headline)}</h2>
+    <div class="integrity-grid">{s11_cards_html}</div>
+  </div>
+  <div>
+    <p class="bottom-note">{_esc(deck.s11_bottom_note)}</p>
+    <div class="slide-footer mono">
+      <span>{memo_footer_left}</span>
+      <span>12</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 13: 12 · WHERE THE MONEY COMES FROM -->
+<section class="slide slide-dark">
+  <div>
+    <div class="section-tag mono">12 · WHERE THE MONEY COMES FROM</div>
+    <h2 class="slide-headline" style="margin-bottom:10px;">{_esc(deck.s12_headline)}</h2>
+  </div>
+  <div class="two-col-charts">
+    <div>
+      <div class="col-subhead mono">BY PLATFORM</div>
+      {s12_plat_html}
+    </div>
+    <div>
+      <div class="col-subhead mono">BY TERRITORY</div>
+      {s12_terr_html}
+    </div>
+  </div>
+  <div>
+    <p class="bottom-note">{_esc(deck.s12_bottom_note)}</p>
+    <div class="slide-footer mono">
+      <span>SPACE · Territory: share of audio streams</span>
+      <span>13</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14: 13 · TRACK CONCENTRATION -->
+<section class="slide slide-light">
+  <div>
+    <div class="section-tag mono">13 · TRACK CONCENTRATION</div>
+    <h2 class="slide-headline" style="margin-bottom:10px;">{_esc(deck.s13_headline)}</h2>
+  </div>
+  <div class="tracks-layout">
+    <div>{s13_tracks_html}</div>
+    <div class="tr-kpis-col">{s13_kpis_html}</div>
+  </div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s13_footer_caption)}</span>
+    <span>14</span>
+  </div>
+</section>
+
+<!-- SLIDE 15: 14 · THE SELLER'S POSITION -->
+<section class="slide slide-blue">
+  <div class="section-tag mono">14 · THE SELLER'S POSITION</div>
+  <div>
+    <blockquote class="quote-block">“{_esc(deck.s14_quote_text)}”</blockquote>
+    <div class="quote-attr">{_esc(deck.s14_attribution)}</div>
+  </div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s14_footer_caption)}</span>
+    <span>15</span>
+  </div>
+</section>
+
+<!-- SLIDE 16: 15 · ASK VS VALUE -->
+<section class="slide slide-light">
+  <div>
+    <div class="section-tag mono">15 · ASK VS VALUE</div>
+    <h2 class="slide-headline" style="margin-bottom:8px;">{_esc(deck.s15_headline)}</h2>
+  </div>
+  <div class="corridors-wrap">{s15_rows_html}</div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s15_footer_caption)}</span>
+    <span>16</span>
+  </div>
+</section>
+
+<!-- SLIDE 17: 16 · OFFER STRUCTURES -->
+<section class="slide slide-dark">
+  <div>
+    <div class="section-tag mono">16 · OFFER STRUCTURES</div>
+    <h2 class="slide-headline" style="margin-bottom:12px;">{_esc(deck.s16_headline)}</h2>
+  </div>
+  <div class="grid-3">{s16_cards_html}</div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s16_fallback_footer)}</span>
+    <span>17</span>
+  </div>
+</section>
+
+<!-- SLIDE 18: 17 · PROPOSED NEXT STEPS -->
+<section class="slide slide-light">
+  <div>
+    <div class="section-tag mono">17 · PROPOSED NEXT STEPS</div>
+    <h2 class="slide-headline">{_esc(deck.s17_headline)}</h2>
+  </div>
+  <div class="steps-grid">{s17_steps_html}</div>
+  <div>
+    <p class="bottom-note">{_esc(deck.s17_bottom_note)}</p>
+    <div class="slide-footer mono">
+      <span>{memo_footer_left}</span>
+      <span>18</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 19: CLOSING QUESTIONS -->
+<section class="slide slide-blue">
+  <div class="cover-brand">SPACE</div>
+  <div>
+    <h2 class="cover-title" style="font-size:68px;">{_esc(deck.s18_headline)}</h2>
+  </div>
+  <div class="slide-footer mono">
+    <span>{_esc(deck.s18_footer)}</span>
+    <span>19</span>
+  </div>
+</section>"""
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -418,10 +763,8 @@ def render_investment_memo_html(
     color: #FFFFFF;
   }}
   .locked-slide {{
-    filter: blur(9px);
     user-select: none;
-    pointer-events: none;
-    opacity: 0.55;
+    opacity: 0.95;
   }}
   .paywall-floating-cta {{
     position: fixed;
@@ -1087,305 +1430,7 @@ def render_investment_memo_html(
   </div>
 </section>
 
-<!-- SLIDE 03: 02 · THE DATA -->
-<section class="slide slide-light {locked_cls}">
-  <div>
-    <div class="section-tag mono">02 · THE DATA</div>
-    <h2 class="slide-headline">{_esc(deck.s02_headline)}</h2>
-  </div>
-  <div class="data-split">
-    <div>
-      <div class="giant-number">{_esc(deck.s02_primary_count)}</div>
-      <div class="giant-label">{_esc(deck.s02_primary_label)}</div>
-    </div>
-    <div class="light-cells-grid">{s02_cells_html}</div>
-  </div>
-  <div>
-    <p class="bottom-note">{_esc(deck.s02_bottom_note)}</p>
-    <div class="slide-footer mono">
-      <span>{memo_footer_left}</span>
-      <span>03</span>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 04: 03 · CLAIM CHECK -->
-<section class="slide slide-dark {locked_cls}">
-  <div>
-    <div class="section-tag mono">03 · CLAIM CHECK</div>
-    <h2 class="slide-headline">{_esc(deck.s03_headline)}</h2>
-  </div>
-  <div class="claim-bars-wrap">{s03_bars_html}</div>
-  <div>
-    <p class="bottom-note">{_esc(deck.s03_bottom_note)}</p>
-    <div class="slide-footer mono">
-      <span>{memo_footer_left}</span>
-      <span>04</span>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 05: 04 · MOMENTUM -->
-<section class="slide slide-light {locked_cls}">
-  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-    <div>
-      <div class="section-tag mono">04 · MOMENTUM</div>
-      <h2 class="slide-headline" style="margin-bottom:6px;">{_esc(deck.s04_headline)}</h2>
-    </div>
-    <div class="mono" style="font-size:11px; color:#4A4F5C;">
-      <span style="color:#2356C8;">■</span> LTM window &nbsp;&nbsp;
-      <span style="color:#B8B6AF;">■</span> Before
-    </div>
-  </div>
-  <div class="vchart-area">{s04_bars_html}</div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s04_footer_caption)}</span>
-    <span>05</span>
-  </div>
-</section>
-
-<!-- SLIDE 06: 05 · THE MODEL -->
-<section class="slide slide-dark {locked_cls}">
-  <div>
-    <div class="section-tag mono">05 · THE MODEL</div>
-    <h2 class="slide-headline">{_esc(deck.s05_headline)}</h2>
-  </div>
-  <div class="grid-6">{s05_cards_html}</div>
-  <div>
-    <p class="bottom-note">{_esc(deck.s05_bottom_note)}</p>
-    <div class="slide-footer mono">
-      <span>{memo_footer_left}</span>
-      <span>06</span>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 07: 06 · DISCOUNT RATE BUILD-UP -->
-<section class="slide slide-light {locked_cls}">
-  <div>
-    <div class="section-tag mono">06 · DISCOUNT RATE BUILD-UP</div>
-    <h2 class="slide-headline">{_esc(deck.s06_headline)}</h2>
-    <div class="wacc-bar-row">{s06_segs_html}</div>
-    <div class="wacc-total-row">
-      <div class="wacc-total-num">= {deck.s06_total_wacc_pct:.2f}%</div>
-      <div class="bottom-note" style="margin:0;">{_esc(deck.s06_bottom_note)}</div>
-    </div>
-  </div>
-  <div class="slide-footer mono">
-    <span>{memo_footer_left}</span>
-    <span>07</span>
-  </div>
-</section>
-
-<!-- SLIDE 08: 07 · STANDALONE VALUE -->
-<section class="slide slide-dark {locked_cls}">
-  <div>
-    <div class="section-tag mono">07 · STANDALONE VALUE</div>
-    <h2 class="slide-headline">{_esc(deck.s07_headline)}</h2>
-  </div>
-  <div class="grid-3">{s07_cards_html}</div>
-  <div>
-    <p class="bottom-note">{_esc(deck.s07_jev_crosscheck_note)}</p>
-    <div class="slide-footer mono">
-      <span>{memo_footer_left}</span>
-      <span>08</span>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 09: 08 · CUMULATIVE NPV BY HORIZON -->
-<section class="slide slide-dark {locked_cls}">
-  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-    <div>
-      <div class="section-tag mono">08 · CUMULATIVE NPV BY HORIZON</div>
-      <h2 class="slide-headline" style="margin-bottom:4px;">{_esc(deck.s08_headline)}</h2>
-    </div>
-    <div class="mono" style="font-size:11px; color:#9BA3B8;">
-      <span style="color:#363C4E;">■</span> P10 &nbsp;
-      <span style="color:#F5F6F8;">■</span> P50 &nbsp;
-      <span style="color:#84B1FF;">■</span> P90
-    </div>
-  </div>
-  <div class="npv-groups-row">{s08_groups_html}</div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s08_footer_caption)}</span>
-    <span>09</span>
-  </div>
-</section>
-
-<!-- SLIDE 10: 09 · DCF RECONCILIATION -->
-<section class="slide slide-light {locked_cls}">
-  <div>
-    <div class="section-tag mono">09 · DCF RECONCILIATION</div>
-    <h2 class="slide-headline" style="margin-bottom:10px;">{_esc(deck.s09_headline)}</h2>
-    <table class="recon-table">
-      <thead>
-        <tr>
-          <th>Horizon</th>
-          <th>P10</th>
-          <th>P50</th>
-          <th>P90</th>
-          <th>P50 EUR</th>
-        </tr>
-      </thead>
-      <tbody>{s09_rows_html}</tbody>
-    </table>
-    <div class="pillars-row">{s09_pillars_html}</div>
-  </div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s09_footer_caption)}</span>
-    <span>10</span>
-  </div>
-</section>
-
-<!-- SLIDE 11: 10 · TYPESAFE AI CROSS-CHECK -->
-<section class="slide slide-dark {locked_cls}">
-  <div class="jev-top-row">
-    <div>
-      <div class="section-tag mono">10 · TYPESAFE AI CROSS-CHECK</div>
-      <h2 class="slide-headline" style="margin-bottom:8px;">{_esc(deck.s10_headline)}</h2>
-    </div>
-    <div class="jev-pill mono">{_esc(deck.s10_agreement_badge)}</div>
-  </div>
-  <table class="jev-table">
-    <thead>
-      <tr>
-        <th>JEV question</th>
-        <th>Posterior answer</th>
-        <th style="text-align:right;">Confidence</th>
-      </tr>
-    </thead>
-    <tbody>{s10_rows_html}</tbody>
-  </table>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s10_footer_caption)}</span>
-    <span>11</span>
-  </div>
-</section>
-
-<!-- SLIDE 12: 11 · STREAM INTEGRITY -->
-<section class="slide slide-light {locked_cls}">
-  <div>
-    <div class="section-tag mono">11 · STREAM INTEGRITY</div>
-    <h2 class="slide-headline">{_esc(deck.s11_headline)}</h2>
-    <div class="integrity-grid">{s11_cards_html}</div>
-  </div>
-  <div>
-    <p class="bottom-note">{_esc(deck.s11_bottom_note)}</p>
-    <div class="slide-footer mono">
-      <span>{memo_footer_left}</span>
-      <span>12</span>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 13: 12 · WHERE THE MONEY COMES FROM -->
-<section class="slide slide-dark {locked_cls}">
-  <div>
-    <div class="section-tag mono">12 · WHERE THE MONEY COMES FROM</div>
-    <h2 class="slide-headline" style="margin-bottom:10px;">{_esc(deck.s12_headline)}</h2>
-  </div>
-  <div class="two-col-charts">
-    <div>
-      <div class="col-subhead mono">BY PLATFORM</div>
-      {s12_plat_html}
-    </div>
-    <div>
-      <div class="col-subhead mono">BY TERRITORY</div>
-      {s12_terr_html}
-    </div>
-  </div>
-  <div>
-    <p class="bottom-note">{_esc(deck.s12_bottom_note)}</p>
-    <div class="slide-footer mono">
-      <span>SPACE · Territory: share of audio streams</span>
-      <span>13</span>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 14: 13 · TRACK CONCENTRATION -->
-<section class="slide slide-light {locked_cls}">
-  <div>
-    <div class="section-tag mono">13 · TRACK CONCENTRATION</div>
-    <h2 class="slide-headline" style="margin-bottom:10px;">{_esc(deck.s13_headline)}</h2>
-  </div>
-  <div class="tracks-layout">
-    <div>{s13_tracks_html}</div>
-    <div class="tr-kpis-col">{s13_kpis_html}</div>
-  </div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s13_footer_caption)}</span>
-    <span>14</span>
-  </div>
-</section>
-
-<!-- SLIDE 15: 14 · THE SELLER'S POSITION -->
-<section class="slide slide-blue {locked_cls}">
-  <div class="section-tag mono">14 · THE SELLER'S POSITION</div>
-  <div>
-    <blockquote class="quote-block">“{_esc(deck.s14_quote_text)}”</blockquote>
-    <div class="quote-attr">{_esc(deck.s14_attribution)}</div>
-  </div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s14_footer_caption)}</span>
-    <span>15</span>
-  </div>
-</section>
-
-<!-- SLIDE 16: 15 · ASK VS VALUE -->
-<section class="slide slide-light {locked_cls}">
-  <div>
-    <div class="section-tag mono">15 · ASK VS VALUE</div>
-    <h2 class="slide-headline" style="margin-bottom:8px;">{_esc(deck.s15_headline)}</h2>
-  </div>
-  <div class="corridors-wrap">{s15_rows_html}</div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s15_footer_caption)}</span>
-    <span>16</span>
-  </div>
-</section>
-
-<!-- SLIDE 17: 16 · OFFER STRUCTURES -->
-<section class="slide slide-dark {locked_cls}">
-  <div>
-    <div class="section-tag mono">16 · OFFER STRUCTURES</div>
-    <h2 class="slide-headline" style="margin-bottom:12px;">{_esc(deck.s16_headline)}</h2>
-  </div>
-  <div class="grid-3">{s16_cards_html}</div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s16_fallback_footer)}</span>
-    <span>17</span>
-  </div>
-</section>
-
-<!-- SLIDE 18: 17 · PROPOSED NEXT STEPS -->
-<section class="slide slide-light {locked_cls}">
-  <div>
-    <div class="section-tag mono">17 · PROPOSED NEXT STEPS</div>
-    <h2 class="slide-headline">{_esc(deck.s17_headline)}</h2>
-  </div>
-  <div class="steps-grid">{s17_steps_html}</div>
-  <div>
-    <p class="bottom-note">{_esc(deck.s17_bottom_note)}</p>
-    <div class="slide-footer mono">
-      <span>{memo_footer_left}</span>
-      <span>18</span>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 19: CLOSING QUESTIONS -->
-<section class="slide slide-blue {locked_cls}">
-  <div class="cover-brand">SPACE</div>
-  <div>
-    <h2 class="cover-title" style="font-size:68px;">{_esc(deck.s18_headline)}</h2>
-  </div>
-  <div class="slide-footer mono">
-    <span>{_esc(deck.s18_footer)}</span>
-    <span>19</span>
-  </div>
-</section>
+{slides_03_to_19_html}
 
 </body>
 </html>

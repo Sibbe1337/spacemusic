@@ -39,6 +39,8 @@ import hmac
 import json
 import os
 import re
+import secrets
+import sqlite3
 import time
 import urllib.error
 import urllib.parse
@@ -46,7 +48,8 @@ import urllib.request
 import uuid
 from datetime import UTC, datetime
 from enum import Enum
-from typing import Any, Dict, Optional
+from pathlib import Path
+from typing import Any, Callable, Dict, Optional
 
 from pydantic import BaseModel, Field
 
@@ -80,12 +83,12 @@ class PaidMemoPlanTier(str, Enum):
 class PaymentStatus(str, Enum):
     PENDING_PAYMENT = "PENDING_PAYMENT"
     PAID = "PAID"
+    REFUNDED = "REFUNDED"
 
 
 class BillingProvider(str, Enum):
     AUTUMN = "AUTUMN"
     STRIPE_DIRECT = "STRIPE_DIRECT"
-    PARTNER_WAIVER = "PARTNER_WAIVER"
 
 
 PLAN_PRICING: Dict[PaidMemoPlanTier, Dict[str, Any]] = {
@@ -107,7 +110,87 @@ PLAN_PRICING: Dict[PaidMemoPlanTier, Dict[str, Any]] = {
     },
 }
 
-VIP_WAIVER_COUPONS = {"SPACE-PARTNER-VIP", "SPACE-INTERNAL-100"}
+
+def _default_sqlite_db_path() -> str:
+    env_path = os.environ.get("SPACE_MEMO_DB_PATH")
+    if env_path and env_path.strip():
+        return env_path.strip()
+    data_dir = Path(os.getcwd()) / "private"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    return str(data_dir / "paid_memo_store.sqlite3")
+
+
+def _resolve_customer_signing_secret(explicit_secret: Optional[str] = None) -> str:
+    for candidate in (
+        explicit_secret,
+        os.environ.get("SPACE_CUSTOMER_TOKEN_SECRET"),
+    ):
+        if candidate and candidate.strip():
+            return candidate.strip()
+    data_dir = Path(os.getcwd()) / "private"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    secret_file = data_dir / "customer_token_secret.key"
+    if secret_file.exists():
+        stored = secret_file.read_text(encoding="utf-8").strip()
+        if stored:
+            return stored
+    generated = secrets.token_hex(32)
+    secret_file.write_text(generated, encoding="utf-8")
+    return generated
+
+
+def issue_customer_token(customer_id: str, secret: Optional[str] = None) -> str:
+    """
+    Issues an HMAC-SHA256 token bound to the canonical `customer_id`.
+    """
+    cid = _canonical_customer_id(customer_id)
+    key = _resolve_customer_signing_secret(secret)
+    mac = hmac.new(key.encode("utf-8"), f"cust:{cid}".encode("utf-8"), hashlib.sha256).hexdigest()
+    return f"ctok_{mac}"
+
+
+def verify_customer_token(
+    customer_id: str,
+    token: Optional[str],
+    secret: Optional[str] = None,
+) -> bool:
+    """
+    Verifies that `token` is a valid HMAC-SHA256 customer token bound to `customer_id`.
+    """
+    if not token or not token.strip() or not customer_id or not customer_id.strip():
+        return False
+    expected = issue_customer_token(customer_id, secret=secret)
+    return hmac.compare_digest(expected, token.strip())
+
+
+def issue_checkout_return_token(
+    order_id: str,
+    customer_id: str,
+    stripe_session_id: str,
+    secret: Optional[str] = None,
+) -> str:
+    """
+    Issues a signed return token bound to `(order_id, customer_id, stripe_session_id)` for
+    the post-checkout return URL exchange.
+    """
+    cid = _canonical_customer_id(customer_id)
+    key = _resolve_customer_signing_secret(secret)
+    msg = f"ret:{order_id}:{cid}:{stripe_session_id}".encode("utf-8")
+    mac = hmac.new(key.encode("utf-8"), msg, hashlib.sha256).hexdigest()
+    return f"rtok_{mac}"
+
+
+def verify_checkout_return_token(
+    order_id: str,
+    customer_id: str,
+    stripe_session_id: str,
+    token: Optional[str],
+    secret: Optional[str] = None,
+) -> bool:
+    if not token or not token.strip():
+        return False
+    expected = issue_checkout_return_token(order_id, customer_id, stripe_session_id, secret=secret)
+    return hmac.compare_digest(expected, token.strip())
 
 
 class AutumnBalanceSnapshot(BaseModel):
@@ -126,6 +209,7 @@ class AutumnCustomerRequest(BaseModel):
     customer_id: str
     name: Optional[str] = None
     email: Optional[str] = None
+    customer_token: Optional[str] = None
     metadata: Dict[str, Any] = Field(default_factory=dict)
 
 
@@ -133,6 +217,7 @@ class AutumnCustomerSnapshot(BaseModel):
     customer_id: str
     name: Optional[str] = None
     email: Optional[str] = None
+    customer_token: Optional[str] = None
     active_plan_ids: list[str] = Field(default_factory=list)
     balances: Dict[str, AutumnBalanceSnapshot] = Field(default_factory=dict)
     execution_mode: str = "LOCAL_LEDGER"
@@ -167,6 +252,7 @@ class AutumnPlansListResponse(BaseModel):
 class AutumnPortalRequest(BaseModel):
     customer_id: str
     return_url: str = "https://spacemusic.io/valuation-memo"
+    customer_token: Optional[str] = None
 
 
 class AutumnPortalResponse(BaseModel):
@@ -180,6 +266,7 @@ class AutumnCheckRequest(BaseModel):
     feature_id: str = AUTUMN_FEATURE_MEMO_PDF
     required_balance: int = Field(default=1, ge=1)
     send_event: bool = False
+    customer_token: Optional[str] = None
 
 
 class AutumnTrackRequest(BaseModel):
@@ -187,12 +274,14 @@ class AutumnTrackRequest(BaseModel):
     feature_id: str = AUTUMN_FEATURE_MEMO_PDF
     value: int = 1
     idempotency_key: Optional[str] = None
+    customer_token: Optional[str] = None
     properties: Dict[str, Any] = Field(default_factory=dict)
 
 
 class PaidMemoCheckoutRequest(BaseModel):
     application_id: Optional[uuid.UUID] = None
     customer_id: Optional[str] = None
+    customer_token: Optional[str] = None
     artist_or_label_name: str = "Independent Artist"
     catalog_title: Optional[str] = None
     contact_name: Optional[str] = None
@@ -218,6 +307,7 @@ class PaidMemoOrder(BaseModel):
     order_id: str
     application_id: uuid.UUID
     customer_id: str
+    customer_token: Optional[str] = None
     deal_code: str
     artist_or_label_name: str
     plan_tier: PaidMemoPlanTier
@@ -226,9 +316,13 @@ class PaidMemoOrder(BaseModel):
     billing_provider: BillingProvider = BillingProvider.AUTUMN
     amount_usd: float
     amount_eur: float
+    amount_cents: int = 29900
+    billing_currency: str = "USD"
     payment_status: PaymentStatus
     stripe_session_id: str
     checkout_url: str
+    checkout_return_token: Optional[str] = None
+    return_url: Optional[str] = None
     receipt_token: str
     locked_preview_url: str
     unlocked_html_url: str
@@ -243,6 +337,7 @@ class PaidMemoCheckoutResponse(BaseModel):
     order_id: str
     application_id: uuid.UUID
     customer_id: str
+    customer_token: str
     deal_code: str
     artist_or_label_name: str
     plan_tier: PaidMemoPlanTier
@@ -251,9 +346,13 @@ class PaidMemoCheckoutResponse(BaseModel):
     billing_provider: BillingProvider = BillingProvider.AUTUMN
     amount_usd: float
     amount_eur: float
+    amount_cents: int = 29900
+    billing_currency: str = "USD"
     payment_status: PaymentStatus
     stripe_session_id: str
     checkout_url: str
+    checkout_return_token: str
+    return_url: str
     locked_preview_url: str
     unlocked_html_url: Optional[str] = None
     unlocked_pdf_url: Optional[str] = None
@@ -307,11 +406,21 @@ class AutumnBillingClient:
         self,
         secret_key: Optional[str] = None,
         base_url: str = AUTUMN_API_BASE_URL,
+        persist_callback: Optional[Callable[[], None]] = None,
     ) -> None:
         self._explicit_secret_key = secret_key
         self.base_url = base_url.rstrip("/")
         self._ledger: Dict[tuple[str, str], Dict[str, Any]] = {}
         self._customers: Dict[str, Dict[str, Any]] = {}
+        self._persist_callback = persist_callback
+
+    def _notify_persisted(self) -> None:
+        if self._persist_callback is not None:
+            self._persist_callback()
+
+    def has_customer(self, customer_id: str) -> bool:
+        cid = _canonical_customer_id(customer_id)
+        return cid in self._customers or any(k[0] == cid for k in self._ledger)
 
     @property
     def secret_key(self) -> Optional[str]:
@@ -438,6 +547,7 @@ class AutumnBillingClient:
                         customer_id=str(body.get("id") or cid),
                         name=body.get("name") or name,
                         email=body.get("email") or email,
+                        customer_token=issue_customer_token(cid),
                         active_plan_ids=active_plans,
                         balances=parsed_balances,
                         execution_mode="LIVE_AUTUMN_API",
@@ -461,6 +571,7 @@ class AutumnBillingClient:
 
         memo_entry = self._get_or_init_entry(cid, AUTUMN_FEATURE_MEMO_PDF)
         rev_entry = self._get_or_init_entry(cid, AUTUMN_FEATURE_INDICATIVE_REVIEW)
+        self._notify_persisted()
         active_plans_local = [AUTUMN_PLAN_FREE_PREVIEW]
         if memo_entry.get("plan_id") and memo_entry["plan_id"] not in active_plans_local:
             active_plans_local.append(str(memo_entry["plan_id"]))
@@ -471,6 +582,7 @@ class AutumnBillingClient:
             customer_id=cid,
             name=self._customers[cid].get("name"),
             email=self._customers[cid].get("email"),
+            customer_token=issue_customer_token(cid),
             active_plan_ids=active_plans_local,
             balances={
                 AUTUMN_FEATURE_INDICATIVE_REVIEW: AutumnBalanceSnapshot(
@@ -516,6 +628,7 @@ class AutumnBillingClient:
         entry["plan_id"] = pricing["autumn_plan_id"]
         if consume_immediately > 0:
             entry["used"] = min(entry["granted"], entry["used"] + consume_immediately)
+        self._notify_persisted()
         remaining = max(0, entry["granted"] - entry["used"])
         return AutumnBalanceSnapshot(
             customer_id=customer_id,
@@ -584,6 +697,7 @@ class AutumnBillingClient:
         if allowed and send_event and not entry["unlimited"]:
             entry["used"] += required_balance
             remaining = max(0, entry["granted"] - entry["used"])
+        self._notify_persisted()
 
         return AutumnBalanceSnapshot(
             customer_id=customer_id,
@@ -650,6 +764,7 @@ class AutumnBillingClient:
 
         entry = self._get_or_init_entry(customer_id, feature_id)
         entry["used"] = max(0, entry["used"] + value)
+        self._notify_persisted()
         remaining = max(0, entry["granted"] - entry["used"])
         return AutumnBalanceSnapshot(
             customer_id=customer_id,
@@ -898,9 +1013,11 @@ class AutumnBillingClient:
         cid = _canonical_customer_id(customer_id)
         pricing = PLAN_PRICING[plan_tier]
         autumn_plan_id = str(pricing["autumn_plan_id"])
+        pre_return_token = issue_checkout_return_token(order_id, cid, order_id)
         success_url = (
             f"https://spacemusic.io/catalog-review/{app_id}/investment-memo.html"
-            f"?order_id={order_id}&customer_id={urllib.parse.quote(cid)}&status=success"
+            f"?order_id={order_id}&customer_id={urllib.parse.quote(cid)}"
+            f"&return_token={urllib.parse.quote(pre_return_token)}&status=success"
         )
         key = self.secret_key
         if key:
@@ -975,29 +1092,160 @@ class AutumnBillingClient:
 
 class PaidMemoStore:
     """
-    In-memory order, deck, and Autumn entitlement store indexed by `order_id`,
-    `application_id`, `stripe_session_id`, and `customer_id`.
+    Persistent SQLite-backed order, deck, and Autumn entitlement store indexed by
+    `order_id`, `application_id`, `stripe_session_id`, and `customer_id`.
     """
 
-    def __init__(self, autumn_client: Optional[AutumnBillingClient] = None) -> None:
+    def __init__(
+        self,
+        autumn_client: Optional[AutumnBillingClient] = None,
+        db_path: Optional[str] = None,
+    ) -> None:
+        self.db_path = db_path or _default_sqlite_db_path()
+        Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)
         self._orders_by_id: Dict[str, PaidMemoOrder] = {}
         self._orders_by_app: Dict[uuid.UUID, PaidMemoOrder] = {}
         self._orders_by_session: Dict[str, PaidMemoOrder] = {}
         self.autumn = autumn_client or AutumnBillingClient()
+        self.autumn._persist_callback = self._persist_autumn_state
+        self._init_db()
+        self._load_all_from_db()
+
+    def _connect(self) -> sqlite3.Connection:
+        conn = sqlite3.connect(self.db_path, timeout=10.0)
+        conn.row_factory = sqlite3.Row
+        return conn
+
+    def _init_db(self) -> None:
+        with self._connect() as conn:
+            conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS memo_orders (
+                    order_id TEXT PRIMARY KEY,
+                    application_id TEXT NOT NULL,
+                    stripe_session_id TEXT NOT NULL,
+                    customer_id TEXT NOT NULL,
+                    order_json TEXT NOT NULL
+                )
+                """
+            )
+            conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS autumn_ledger (
+                    customer_id TEXT NOT NULL,
+                    feature_id TEXT NOT NULL,
+                    entry_json TEXT NOT NULL,
+                    PRIMARY KEY (customer_id, feature_id)
+                )
+                """
+            )
+            conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS autumn_customers (
+                    customer_id TEXT PRIMARY KEY,
+                    customer_json TEXT NOT NULL
+                )
+                """
+            )
+            conn.commit()
+
+    def _load_all_from_db(self) -> None:
+        with self._connect() as conn:
+            for row in conn.execute("SELECT order_json FROM memo_orders"):
+                try:
+                    raw = json.loads(row["order_json"])
+                    order = (
+                        PaidMemoOrder.model_validate(raw)
+                        if hasattr(PaidMemoOrder, "model_validate")
+                        else PaidMemoOrder.parse_obj(raw)
+                    )
+                    self._orders_by_id[order.order_id] = order
+                    self._orders_by_app[order.application_id] = order
+                    self._orders_by_session[order.stripe_session_id] = order
+                except Exception:
+                    continue
+            for row in conn.execute("SELECT customer_id, feature_id, entry_json FROM autumn_ledger"):
+                try:
+                    self.autumn._ledger[(row["customer_id"], row["feature_id"])] = json.loads(row["entry_json"])
+                except Exception:
+                    continue
+            for row in conn.execute("SELECT customer_id, customer_json FROM autumn_customers"):
+                try:
+                    self.autumn._customers[row["customer_id"]] = json.loads(row["customer_json"])
+                except Exception:
+                    continue
+
+    def _persist_autumn_state(self) -> None:
+        with self._connect() as conn:
+            for (cid, fid), entry in list(self.autumn._ledger.items()):
+                conn.execute(
+                    """
+                    INSERT OR REPLACE INTO autumn_ledger (customer_id, feature_id, entry_json)
+                    VALUES (?, ?, ?)
+                    """,
+                    (cid, fid, json.dumps(entry)),
+                )
+            for cid, cdict in list(self.autumn._customers.items()):
+                conn.execute(
+                    """
+                    INSERT OR REPLACE INTO autumn_customers (customer_id, customer_json)
+                    VALUES (?, ?)
+                    """,
+                    (cid, json.dumps(cdict)),
+                )
+            conn.commit()
 
     def save(self, order: PaidMemoOrder) -> None:
         self._orders_by_id[order.order_id] = order
         self._orders_by_app[order.application_id] = order
         self._orders_by_session[order.stripe_session_id] = order
+        order_json = (
+            order.model_dump_json()
+            if hasattr(order, "model_dump_json")
+            else order.json()
+        )
+        with self._connect() as conn:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO memo_orders
+                (order_id, application_id, stripe_session_id, customer_id, order_json)
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (
+                    order.order_id,
+                    str(order.application_id),
+                    order.stripe_session_id,
+                    order.customer_id,
+                    order_json,
+                ),
+            )
+            conn.commit()
+        self._persist_autumn_state()
+
+    def _refresh_from_db_if_needed(self) -> None:
+        self._load_all_from_db()
 
     def get_by_order_id(self, order_id: str) -> Optional[PaidMemoOrder]:
+        self._refresh_from_db_if_needed()
         return self._orders_by_id.get(order_id)
 
     def get_by_application_id(self, app_id: uuid.UUID) -> Optional[PaidMemoOrder]:
+        self._refresh_from_db_if_needed()
         return self._orders_by_app.get(app_id)
 
     def get_by_stripe_session(self, session_id: str) -> Optional[PaidMemoOrder]:
+        self._refresh_from_db_if_needed()
         return self._orders_by_session.get(session_id)
+
+    def refund_order(self, order_id: str) -> PaidMemoOrder:
+        order = self.get_by_order_id(order_id)
+        if not order:
+            raise KeyError(f"Order {order_id} not found")
+        order.payment_status = PaymentStatus.REFUNDED
+        order.receipt_token = f"REVOKED-{uuid.uuid4().hex}"
+        order.checkout_return_token = f"REVOKED-{uuid.uuid4().hex}"
+        self.save(order)
+        return order
 
 
 def _create_stripe_checkout_session(
@@ -1053,6 +1301,22 @@ def _create_stripe_checkout_session(
     return session_id, checkout_url
 
 
+def get_configured_webhook_secret(explicit_secret: Optional[str] = None) -> Optional[str]:
+    """
+    Resolves the configured webhook secret from environment variables or explicit override.
+    Never falls back to a public constant in production code.
+    """
+    for candidate in (
+        explicit_secret,
+        os.environ.get("STRIPE_MEMO_WEBHOOK_SECRET"),
+        os.environ.get("AUTUMN_WEBHOOK_SECRET"),
+        os.environ.get("STRIPE_WEBHOOK_SECRET"),
+    ):
+        if candidate and candidate.strip():
+            return candidate.strip()
+    return None
+
+
 def verify_stripe_webhook_signature(
     raw_body: bytes,
     signature_header: Optional[str],
@@ -1061,13 +1325,10 @@ def verify_stripe_webhook_signature(
 ) -> bool:
     """
     Verifies Stripe / Autumn webhook `Stripe-Signature: t=<timestamp>,v1=<hmac_sha256>` header.
+    Fails closed when no webhook secret is configured.
     """
-    secret = (
-        webhook_secret
-        or os.environ.get("AUTUMN_WEBHOOK_SECRET")
-        or os.environ.get("STRIPE_WEBHOOK_SECRET", "whsec_space_memo_default_secret")
-    )
-    if not signature_header:
+    secret = get_configured_webhook_secret(webhook_secret)
+    if not secret or not signature_header:
         return False
     parts: Dict[str, str] = {}
     for item in signature_header.split(","):
@@ -1087,15 +1348,150 @@ def verify_stripe_webhook_signature(
     return hmac.compare_digest(expected_sig, parts["v1"])
 
 
+ALLOWED_PAID_WEBHOOK_EVENT_TYPES = {
+    "checkout.session.completed",
+    "payment_intent.succeeded",
+    "order.paid",
+    "autumn.order.paid",
+}
+
+
+def validate_and_apply_memo_webhook(
+    raw_body: bytes,
+    signature_header: Optional[str],
+    store: PaidMemoStore,
+    webhook_secret: Optional[str] = None,
+) -> PaidMemoOrder:
+    """
+    Strictly validates and processes a Stripe / Autumn payment webhook:
+      1. Requires a configured webhook secret (never a public fallback).
+      2. Verifies HMAC-SHA256 signature & timestamp freshness.
+      3. Verifies event type is in `ALLOWED_PAID_WEBHOOK_EVENT_TYPES`.
+      4. Verifies `payment_status == "paid"` (rejecting unpaid, expired, no_payment_required, etc.).
+      5. Verifies `order_id` exists AND webhook `session_id` matches `order.stripe_session_id`.
+      6. Verifies `amount_total >= order.amount_cents` (`> 0`) and `currency` matches `order.billing_currency`.
+    """
+    secret = get_configured_webhook_secret(webhook_secret)
+    if not secret:
+        raise RuntimeError("Webhook secret is not configured in environment (STRIPE_MEMO_WEBHOOK_SECRET / AUTUMN_WEBHOOK_SECRET).")
+    if not verify_stripe_webhook_signature(raw_body, signature_header, webhook_secret=secret):
+        raise PermissionError("Invalid Stripe-Signature header or expired timestamp.")
+
+    try:
+        event = json.loads(raw_body.decode("utf-8"))
+    except ValueError as exc:
+        raise ValueError("Invalid JSON webhook payload") from exc
+
+    if not isinstance(event, dict):
+        raise ValueError("Webhook payload must be a JSON object")
+
+    event_type = str(event.get("type") or "").strip()
+    if event_type not in ALLOWED_PAID_WEBHOOK_EVENT_TYPES:
+        raise ValueError(f"Rejected webhook event type '{event_type}': not a completed payment event.")
+
+    obj = event.get("data", {}).get("object", {}) if isinstance(event.get("data"), dict) else {}
+    if not isinstance(obj, dict):
+        obj = {}
+
+    order_id = (
+        obj.get("client_reference_id")
+        or (obj.get("metadata") or {}).get("order_id")
+        or event.get("order_id")
+    )
+    if not order_id:
+        raise ValueError("Missing order_id in webhook payload.")
+
+    order = store.get_by_order_id(str(order_id))
+    if not order:
+        raise LookupError(f"Order '{order_id}' not found.")
+
+    webhook_session_id = str(
+        obj.get("id")
+        or obj.get("checkout_session_id")
+        or event.get("stripe_session_id")
+        or ""
+    ).strip()
+    if not webhook_session_id or webhook_session_id != order.stripe_session_id:
+        raise ValueError(
+            f"Webhook checkout_session_id '{webhook_session_id}' does not match order session '{order.stripe_session_id}'."
+        )
+
+    raw_payment_status = str(
+        obj.get("payment_status")
+        or (obj.get("status") if event_type == "payment_intent.succeeded" else "")
+        or event.get("payment_status")
+        or ""
+    ).lower().strip()
+    if raw_payment_status not in {"paid", "succeeded"}:
+        raise ValueError(
+            f"Webhook payment_status must be 'paid' (got '{raw_payment_status or 'missing'}')."
+        )
+
+    if order.amount_cents <= 0:
+        raise ValueError("Order amount_cents must be greater than zero for webhook unlock.")
+
+    raw_amount = (
+        obj.get("amount_total")
+        if obj.get("amount_total") is not None
+        else (
+            obj.get("amount_received")
+            if obj.get("amount_received") is not None
+            else (
+                obj.get("amount_paid_cents")
+                if obj.get("amount_paid_cents") is not None
+                else event.get("amount_total")
+            )
+        )
+    )
+    if raw_amount is None:
+        raise ValueError("Webhook payload is missing paid amount (amount_total / amount_paid_cents).")
+    try:
+        paid_cents = int(raw_amount)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("Invalid amount_total in webhook payload.") from exc
+
+    if paid_cents < order.amount_cents or paid_cents <= 0:
+        raise ValueError(
+            f"Webhook paid amount ({paid_cents} cents) is less than required order amount ({order.amount_cents} cents)."
+        )
+
+    raw_currency = str(
+        obj.get("currency")
+        or event.get("currency")
+        or ""
+    ).upper().strip()
+    if not raw_currency or raw_currency != order.billing_currency.upper():
+        raise ValueError(
+            f"Webhook currency '{raw_currency or 'missing'}' does not match order currency '{order.billing_currency.upper()}'."
+        )
+
+    if order.payment_status != PaymentStatus.PAID:
+        snap = store.autumn.provision_plan_credits(
+            customer_id=order.customer_id,
+            plan_tier=order.plan_tier,
+            feature_id=AUTUMN_FEATURE_MEMO_PDF,
+            consume_immediately=1,
+        )
+        order.autumn_credits_remaining = snap.remaining_balance
+
+    order.payment_status = PaymentStatus.PAID
+    order.paid_at_utc = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    store.save(order)
+    return order
+
+
 def create_paid_memo_checkout_order(
     req: PaidMemoCheckoutRequest,
     store: PaidMemoStore,
     engine: Optional[SpaceValuationEngine] = None,
+    *,
+    authenticated_customer_token: Optional[str] = None,
 ) -> PaidMemoCheckoutResponse:
     """
     Evaluates the catalog via `SpaceValuationEngine` + `ClaudeMemoGenerator`, checks Autumn
     entitlement balance (`POST /v1/balances.check`), and either:
       1. Atomically deducts 1 credit from the customer's active Autumn `desk_pass_499` / credit balance
+         (ONLY when the caller is authenticated with a valid `customer_token` for `customer_id`)
          and unlocks all 19 slides immediately (`PaymentStatus.PAID`), or
       2. Attaches the requested plan via Autumn (`POST /v1/billing.attach`) and returns the
          Autumn/Stripe `checkout_url` (`PaymentStatus.PENDING_PAYMENT`).
@@ -1103,6 +1499,9 @@ def create_paid_memo_checkout_order(
     eng = engine or SpaceValuationEngine()
     app_id = req.application_id or uuid.uuid4()
     customer_id = _normalize_customer_id(req.customer_id, req.contact_email, req.artist_or_label_name)
+    customer_token = issue_customer_token(customer_id)
+    supplied_token = authenticated_customer_token or req.customer_token
+    caller_authenticated_for_customer = verify_customer_token(customer_id, supplied_token)
 
     scope_map = {
         "masters": RightsScope.MASTERS,
@@ -1164,10 +1563,9 @@ def create_paid_memo_checkout_order(
     )
 
     order_id = f"ORD-{deck.deal_code}-{uuid.uuid4().hex[:6].upper()}"
-    receipt_token = hashlib.sha256(f"{order_id}:{app_id}:{time.time_ns()}".encode()).hexdigest()[:32]
+    receipt_token = hashlib.sha256(f"{order_id}:{app_id}:{secrets.token_hex(16)}".encode()).hexdigest()[:32]
     pricing = PLAN_PRICING[req.plan_tier]
     autumn_plan_id = str(pricing["autumn_plan_id"])
-    is_waived = (req.coupon_code or "").strip().upper() in VIP_WAIVER_COUPONS
     now_iso = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     locked_url = f"/catalog-review/{app_id}/investment-memo.html"
@@ -1182,29 +1580,33 @@ def create_paid_memo_checkout_order(
     )
 
     # 1. Check if customer already has available Autumn `investment_memo_pdf` credits (e.g. Desk Pass)
-    balance_check = store.autumn.check_balance(
-        customer_id=customer_id,
-        feature_id=AUTUMN_FEATURE_MEMO_PDF,
-        required_balance=1,
-        send_event=True,
-    )
+    # Only allow consuming existing customer credits when the caller is authenticated for `customer_id`.
+    if caller_authenticated_for_customer:
+        balance_check = store.autumn.check_balance(
+            customer_id=customer_id,
+            feature_id=AUTUMN_FEATURE_MEMO_PDF,
+            required_balance=1,
+            send_event=True,
+        )
+    else:
+        balance_check = AutumnBalanceSnapshot(
+            customer_id=customer_id,
+            feature_id=AUTUMN_FEATURE_MEMO_PDF,
+            allowed=False,
+            granted_balance=0,
+            used_balance=0,
+            remaining_balance=0,
+        )
 
-    if is_waived:
-        payment_status = PaymentStatus.PAID
-        billing_provider = BillingProvider.PARTNER_WAIVER
-        session_id = f"waived_{order_id}"
-        checkout_url = unlocked_html
-        amount_usd = 0.0
-        amount_eur = 0.0
-        credits_remaining = balance_check.remaining_balance
-    elif balance_check.allowed:
-        # Customer had an active Autumn Desk Pass / credit balance; 1 credit was atomically deducted!
+    if balance_check.allowed and caller_authenticated_for_customer:
+        # Authenticated customer had an active Autumn Desk Pass / credit balance; 1 credit was atomically deducted!
         payment_status = PaymentStatus.PAID
         billing_provider = BillingProvider.AUTUMN
         session_id = f"aut_bal_{order_id}"
         checkout_url = unlocked_html
         amount_usd = 0.0
         amount_eur = 0.0
+        amount_cents = 0
         credits_remaining = balance_check.remaining_balance
     else:
         # 2. Attach plan via Autumn (`POST /v1/billing.attach`) to get Checkout URL
@@ -1218,8 +1620,8 @@ def create_paid_memo_checkout_order(
             customer_name=req.contact_name or req.artist_or_label_name,
             customer_email=req.contact_email,
         )
-        if payment_url is None:
-            # Autumn attached the plan immediately using customer's saved card on file
+        if payment_url is None and caller_authenticated_for_customer:
+            # Autumn attached the plan immediately using authenticated customer's saved card on file
             snap = store.autumn.provision_plan_credits(
                 customer_id=customer_id,
                 plan_tier=req.plan_tier,
@@ -1231,15 +1633,24 @@ def create_paid_memo_checkout_order(
             credits_remaining = snap.remaining_balance
         else:
             payment_status = PaymentStatus.PENDING_PAYMENT
-            checkout_url = payment_url
+            checkout_url = payment_url or f"https://checkout.useautumn.com/c/pay/{session_id}?order_id={order_id}"
             credits_remaining = balance_check.remaining_balance
-        amount_usd = pricing["amount_usd"]
-        amount_eur = pricing["amount_eur"]
+        amount_usd = float(pricing["amount_usd"])
+        amount_eur = float(pricing["amount_eur"])
+        amount_cents = int(pricing["amount_usd_cents"])
+
+    return_token = issue_checkout_return_token(order_id, customer_id, session_id)
+    return_url = (
+        f"/catalog-review/paid-memo/return?order_id={urllib.parse.quote(order_id)}"
+        f"&session_id={urllib.parse.quote(session_id)}"
+        f"&return_token={urllib.parse.quote(return_token)}"
+    )
 
     order = PaidMemoOrder(
         order_id=order_id,
         application_id=app_id,
         customer_id=customer_id,
+        customer_token=customer_token,
         deal_code=deck.deal_code,
         artist_or_label_name=req.artist_or_label_name,
         plan_tier=req.plan_tier,
@@ -1248,9 +1659,13 @@ def create_paid_memo_checkout_order(
         billing_provider=billing_provider,
         amount_usd=amount_usd,
         amount_eur=amount_eur,
+        amount_cents=amount_cents,
+        billing_currency="USD",
         payment_status=payment_status,
         stripe_session_id=session_id,
         checkout_url=checkout_url,
+        checkout_return_token=return_token,
+        return_url=return_url,
         receipt_token=receipt_token,
         locked_preview_url=locked_url,
         unlocked_html_url=unlocked_html,
@@ -1266,6 +1681,7 @@ def create_paid_memo_checkout_order(
         order_id=order.order_id,
         application_id=order.application_id,
         customer_id=order.customer_id,
+        customer_token=customer_token,
         deal_code=order.deal_code,
         artist_or_label_name=order.artist_or_label_name,
         plan_tier=order.plan_tier,
@@ -1274,9 +1690,13 @@ def create_paid_memo_checkout_order(
         billing_provider=order.billing_provider,
         amount_usd=order.amount_usd,
         amount_eur=order.amount_eur,
+        amount_cents=order.amount_cents,
+        billing_currency=order.billing_currency,
         payment_status=order.payment_status,
         stripe_session_id=order.stripe_session_id,
         checkout_url=order.checkout_url,
+        checkout_return_token=return_token,
+        return_url=return_url,
         locked_preview_url=order.locked_preview_url,
         unlocked_html_url=order.unlocked_html_url if order.payment_status == PaymentStatus.PAID else None,
         unlocked_pdf_url=order.unlocked_pdf_url if order.payment_status == PaymentStatus.PAID else None,
@@ -1304,6 +1724,9 @@ def render_self_serve_valuation_studio_html() -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SPACE Institutional Catalog Valuation Memo Studio | Claude + Autumn Billing + DTW DCF</title>
+<meta name="description" content="Generate a 19-slide 16:9 institutional music catalog valuation memo powered by SPACE 10,000-path Monte Carlo DCF, Dynamic Time Warping (DTW) decay matching, and TypeSafe AI (JEV) forensics.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://spacemusic.io/valuation-memo/">
 <style>
   * { box-sizing: border-box; }
   body {
@@ -1453,8 +1876,8 @@ def render_self_serve_valuation_studio_html() -> str:
             <input type="number" id="ltm_amount" value="80000" step="100">
           </div>
           <div>
-            <label>Partner / VIP Code (Optional)</label>
-            <input type="text" id="coupon_code" placeholder="e.g. SPACE-PARTNER-VIP">
+            <label>Customer Session Token (Optional)</label>
+            <input type="text" id="customer_token" placeholder="ctok_... (for existing Desk Pass)">
           </div>
         </div>
         <label>Paste Raw Distributor CSV / TSV Rows (Optional — upgrades to Stage 2 Verified)</label>
@@ -1477,10 +1900,15 @@ def render_self_serve_valuation_studio_html() -> str:
     </div>
   </div>
 <script>
+const MEMO_API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") ? "" : "https://spacemusic-memo-studio.samplehubkupp.workers.dev";
+function absMemoUrl(u) {
+  if (!u) return u;
+  return (u.startsWith("/") && MEMO_API_BASE) ? (MEMO_API_BASE + u) : u;
+}
 async function loadAutumnCatalogPlans() {
   var emailVal = document.getElementById("contact_email").value || "";
   var qs = emailVal ? "?customer_id=" + encodeURIComponent(emailVal) : "";
-  var res = await fetch("/catalog-review/paid-memo/autumn/plans" + qs);
+  var res = await fetch(MEMO_API_BASE + "/catalog-review/paid-memo/autumn/plans" + qs);
   if (!res.ok) return;
   var data = await res.json();
   var grid = document.getElementById("autumnPlansGrid");
@@ -1492,6 +1920,24 @@ async function loadAutumnCatalogPlans() {
   }).join("");
 }
 loadAutumnCatalogPlans();
+(async function checkCheckoutReturnParams() {
+  var params = new URLSearchParams(window.location.search);
+  var orderId = params.get("order_id");
+  var returnToken = params.get("return_token");
+  var sessionId = params.get("session_id") || "";
+  if (orderId && returnToken) {
+    var retRes = await fetch(MEMO_API_BASE + "/catalog-review/paid-memo/return?order_id=" + encodeURIComponent(orderId) + "&session_id=" + encodeURIComponent(sessionId) + "&return_token=" + encodeURIComponent(returnToken));
+    if (retRes.ok) {
+      var retData = await retRes.json();
+      var bar = document.getElementById("actionBar");
+      var links = document.getElementById("actionLinks");
+      bar.style.display = "flex";
+      document.getElementById("statusSummary").innerHTML = "<strong>" + retData.order_id + "</strong> · Payment Status: <strong>PAID</strong>";
+      document.getElementById("deckIframe").src = absMemoUrl(retData.unlocked_html_url);
+      links.innerHTML = '<a class="btn-pdf" href="' + absMemoUrl(retData.unlocked_pdf_url) + '">Download 19-Slide PDF</a>';
+    }
+  }
+})();
 document.getElementById("memoForm").addEventListener("submit", async function(e) {
   e.preventDefault();
   var payload = {
@@ -1502,9 +1948,9 @@ document.getElementById("memoForm").addEventListener("submit", async function(e)
     distributor: document.getElementById("distributor").value,
     raw_statement_csv: document.getElementById("raw_csv").value || null,
     plan_tier: document.getElementById("plan_tier").value,
-    coupon_code: document.getElementById("coupon_code").value || null
+    customer_token: document.getElementById("customer_token").value || null
   };
-  var res = await fetch("/catalog-review/paid-memo/checkout", {
+  var res = await fetch(MEMO_API_BASE + "/catalog-review/paid-memo/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
@@ -1518,11 +1964,11 @@ document.getElementById("memoForm").addEventListener("submit", async function(e)
     "<strong>" + data.deal_code + "</strong> · Standalone Base: <strong>" + data.teaser_standalone_base_usd +
     "</strong> · WACC: " + data.teaser_wacc_pct + "% · Autumn Credits Remaining: <strong>" + data.autumn_credits_remaining + "</strong>";
   if (data.payment_status === "PAID" && data.unlocked_pdf_url) {
-    document.getElementById("deckIframe").src = data.unlocked_html_url;
-    links.innerHTML = '<a class="btn-pdf" href="' + data.unlocked_pdf_url + '">Download 19-Slide PDF</a>';
+    document.getElementById("deckIframe").src = absMemoUrl(data.unlocked_html_url);
+    links.innerHTML = '<a class="btn-pdf" href="' + absMemoUrl(data.unlocked_pdf_url) + '">Download 19-Slide PDF</a>';
   } else {
-    document.getElementById("deckIframe").src = data.locked_preview_url;
-    links.innerHTML = '<a class="btn-stripe" href="' + data.checkout_url + '" target="_blank">Unlock All 19 Slides ($' + data.amount_usd + ')</a>';
+    document.getElementById("deckIframe").src = absMemoUrl(data.locked_preview_url);
+    links.innerHTML = '<a class="btn-stripe" href="' + absMemoUrl(data.checkout_url) + '" target="_blank">Unlock All 19 Slides ($' + data.amount_usd + ')</a>';
   }
 });
 </script>
