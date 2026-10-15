@@ -29,7 +29,6 @@ Endpoints:
 
 from __future__ import annotations
 
-import json
 import uuid
 from datetime import UTC, datetime
 from typing import Annotated, Any
@@ -88,7 +87,6 @@ from .monetization_engine import (
     generate_forensic_audit_certificate,
 )
 from .paid_memo_service import (
-    AUTUMN_FEATURE_MEMO_PDF,
     AutumnBalanceSnapshot,
     AutumnCheckRequest,
     AutumnCustomerRequest,
@@ -103,7 +101,9 @@ from .paid_memo_service import (
     PaymentStatus,
     create_paid_memo_checkout_order,
     render_self_serve_valuation_studio_html,
-    verify_stripe_webhook_signature,
+    validate_and_apply_memo_webhook,
+    verify_checkout_return_token,
+    verify_customer_token,
 )
 from .scrive_signer import (
     ScriveExecutionEngine,
@@ -1121,6 +1121,46 @@ async def get_seo_backlink_outreach_kit():
 # ============================================================================
 
 
+def _extract_caller_customer_token(
+    request: Request,
+    body_token: str | None = None,
+    header_token: str | None = None,
+) -> str | None:
+    if header_token and header_token.strip():
+        return header_token.strip()
+    auth_header = request.headers.get("authorization", "")
+    if auth_header.lower().startswith("bearer "):
+        bearer = auth_header[7:].strip()
+        if bearer:
+            return bearer
+    if body_token and body_token.strip():
+        return body_token.strip()
+    cookie_token = request.cookies.get("space_customer_token")
+    if cookie_token and cookie_token.strip():
+        return cookie_token.strip()
+    return None
+
+
+def _require_customer_auth(
+    customer_id: str,
+    request: Request,
+    body_token: str | None = None,
+    header_token: str | None = None,
+) -> str:
+    token = _extract_caller_customer_token(request, body_token=body_token, header_token=header_token)
+    if not token:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Customer authentication token required (X-Customer-Token header, customer_token, or session cookie).",
+        )
+    if not verify_customer_token(customer_id, token):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Invalid or mismatched customer token for the requested customer_id.",
+        )
+    return token
+
+
 @router.get("/valuation-memo", response_class=HTMLResponse)
 async def get_paid_valuation_memo_studio():
     """
@@ -1134,31 +1174,106 @@ async def get_paid_valuation_memo_studio():
     response_model=PaidMemoCheckoutResponse,
     status_code=status.HTTP_201_CREATED,
 )
-async def post_paid_memo_checkout(req: PaidMemoCheckoutRequest):
+async def post_paid_memo_checkout(
+    req: PaidMemoCheckoutRequest,
+    request: Request,
+    response: Response,
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
     """
     Runs the SPACE Valuation & Forensics Engine (`engine.py` + `dtw_matcher.py` + `jev_evaluator.py`)
     and Claude Investment Memo Generator (`claude_memo_generator.py`), returning a free preview of
     Slides 01–02 and a Stripe Checkout Session ($299 / €275) to unlock the full 19-slide 16:9 PDF.
     """
-    return create_paid_memo_checkout_order(req, store=_paid_memo_store, engine=_engine)
+    caller_token = _extract_caller_customer_token(
+        request,
+        body_token=req.customer_token,
+        header_token=x_customer_token,
+    )
+    checkout_res = create_paid_memo_checkout_order(
+        req,
+        store=_paid_memo_store,
+        engine=_engine,
+        authenticated_customer_token=caller_token,
+    )
+    if checkout_res.customer_token:
+        response.set_cookie(
+            key="space_customer_token",
+            value=checkout_res.customer_token,
+            httponly=True,
+            samesite="lax",
+        )
+    if checkout_res.payment_status == PaymentStatus.PAID and checkout_res.receipt_token:
+        response.set_cookie(
+            key="space_memo_receipt",
+            value=checkout_res.receipt_token,
+            httponly=True,
+            samesite="lax",
+        )
+    return checkout_res
 
 
 @router.post(
     "/catalog-review/paid-memo/autumn/customer",
     response_model=AutumnCustomerSnapshot,
 )
-async def post_autumn_customer_get_or_create(req: AutumnCustomerRequest):
+async def post_autumn_customer_get_or_create(
+    req: AutumnCustomerRequest,
+    request: Request,
+    response: Response,
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
     """
     Creates or retrieves a customer in Autumn (`POST https://api.useautumn.com/v1/customers.get_or_create`),
     auto-enabling the `free_preview` plan (`3` `indicative_catalog_review` credits/mo) and returning
     current plan subscriptions and feature balances.
+    Existing customer profiles require a valid customer token bound to `customer_id`.
     """
-    return _paid_memo_store.autumn.get_or_create_customer(
+    _paid_memo_store._refresh_from_db_if_needed()
+    if _paid_memo_store.autumn.has_customer(req.customer_id):
+        _require_customer_auth(
+            req.customer_id,
+            request,
+            body_token=req.customer_token,
+            header_token=x_customer_token,
+        )
+    snap = _paid_memo_store.autumn.get_or_create_customer(
         customer_id=req.customer_id,
         name=req.name,
         email=req.email,
         metadata=req.metadata,
     )
+    if snap.customer_token:
+        response.set_cookie(
+            key="space_customer_token",
+            value=snap.customer_token,
+            httponly=True,
+            samesite="lax",
+        )
+    return snap
+
+
+@router.get(
+    "/catalog-review/paid-memo/autumn/customer/{customer_id}",
+    response_model=AutumnCustomerSnapshot,
+)
+async def get_autumn_customer_snapshot(
+    customer_id: str,
+    request: Request,
+    customer_token: str | None = Query(default=None),
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
+    """
+    Authenticated read of a customer's Autumn profile and credit balances.
+    """
+    _paid_memo_store._refresh_from_db_if_needed()
+    _require_customer_auth(
+        customer_id,
+        request,
+        body_token=customer_token,
+        header_token=x_customer_token,
+    )
+    return _paid_memo_store.autumn.get_or_create_customer(customer_id=customer_id)
 
 
 @router.get(
@@ -1170,6 +1285,7 @@ async def get_autumn_plans_list(customer_id: str | None = Query(default=None)):
     Lists all Autumn catalog plans (`free_preview`, `desk_pass_499`, `single_memo_299`)
     with per-customer eligibility (`attach_action`) via `POST https://api.useautumn.com/v1/plans.list`.
     """
+    _paid_memo_store._refresh_from_db_if_needed()
     return _paid_memo_store.autumn.list_plans(customer_id=customer_id)
 
 
@@ -1177,11 +1293,22 @@ async def get_autumn_plans_list(customer_id: str | None = Query(default=None)):
     "/catalog-review/paid-memo/autumn/portal",
     response_model=AutumnPortalResponse,
 )
-async def post_autumn_customer_portal(req: AutumnPortalRequest):
+async def post_autumn_customer_portal(
+    req: AutumnPortalRequest,
+    request: Request,
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
     """
-    Opens a Stripe Billing Portal session for a customer via Autumn
+    Opens a Stripe Billing Portal session for an authenticated customer via Autumn
     (`POST https://api.useautumn.com/v1/billing.open_customer_portal`).
     """
+    _paid_memo_store._refresh_from_db_if_needed()
+    _require_customer_auth(
+        req.customer_id,
+        request,
+        body_token=req.customer_token,
+        header_token=x_customer_token,
+    )
     return _paid_memo_store.autumn.open_customer_portal(
         customer_id=req.customer_id,
         return_url=req.return_url,
@@ -1192,12 +1319,23 @@ async def post_autumn_customer_portal(req: AutumnPortalRequest):
     "/catalog-review/paid-memo/autumn/check",
     response_model=AutumnBalanceSnapshot,
 )
-async def post_autumn_balance_check(req: AutumnCheckRequest):
+async def post_autumn_balance_check(
+    req: AutumnCheckRequest,
+    request: Request,
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
     """
-    Checks whether a `customer_id` has available Autumn `investment_memo_pdf` credits
+    Checks whether an authenticated `customer_id` has available Autumn `investment_memo_pdf` credits
     (`POST https://api.useautumn.com/v1/balances.check`).
     When `send_event=True`, atomically deducts `required_balance` from their balance.
     """
+    _paid_memo_store._refresh_from_db_if_needed()
+    _require_customer_auth(
+        req.customer_id,
+        request,
+        body_token=req.customer_token,
+        header_token=x_customer_token,
+    )
     return _paid_memo_store.autumn.check_balance(
         customer_id=req.customer_id,
         feature_id=req.feature_id,
@@ -1210,11 +1348,22 @@ async def post_autumn_balance_check(req: AutumnCheckRequest):
     "/catalog-review/paid-memo/autumn/track",
     response_model=AutumnBalanceSnapshot,
 )
-async def post_autumn_usage_track(req: AutumnTrackRequest):
+async def post_autumn_usage_track(
+    req: AutumnTrackRequest,
+    request: Request,
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
     """
     Records metered consumption (`value: 1`) or credit-back (`value: -1`) in Autumn
-    (`POST https://api.useautumn.com/v1/balances.track`).
+    (`POST https://api.useautumn.com/v1/balances.track`) for an authenticated customer.
     """
+    _paid_memo_store._refresh_from_db_if_needed()
+    _require_customer_auth(
+        req.customer_id,
+        request,
+        body_token=req.customer_token,
+        header_token=x_customer_token,
+    )
     return _paid_memo_store.autumn.track_usage(
         customer_id=req.customer_id,
         feature_id=req.feature_id,
@@ -1231,51 +1380,41 @@ async def handle_stripe_memo_webhook(
     stripe_signature: str | None = Header(default=None, alias="Stripe-Signature"),
 ):
     """
-    Stripe / Autumn webhook receiver (`checkout.session.completed`) that verifies `Stripe-Signature`
-    (`t=<unix>,v1=<hmac_sha256>`), provisions the customer's Autumn plan credits (`single_memo_299` = 1,
-    `desk_pass_499` = 10), consumes 1 credit for the current order, and unlocks the paid 19-slide
-    Investment Memo PDF & HTML.
+    Stripe / Autumn webhook receiver (`checkout.session.completed`) that strictly verifies:
+    - Configured webhook secret (failing closed if missing)
+    - HMAC-SHA256 `Stripe-Signature` and timestamp freshness
+    - Completed payment event type (`checkout.session.completed`, `payment_intent.succeeded`, `order.paid`)
+    - `payment_status == "paid"`
+    - Matching `order_id` and `checkout_session_id`
+    - Paid `amount_total >= order.amount_cents > 0` and matching `currency`
     """
     raw_body = await request.body()
-    if not verify_stripe_webhook_signature(raw_body, stripe_signature):
+    try:
+        order = validate_and_apply_memo_webhook(
+            raw_body=raw_body,
+            signature_header=stripe_signature,
+            store=_paid_memo_store,
+        )
+    except RuntimeError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=str(exc),
+        ) from exc
+    except PermissionError as exc:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Invalid Stripe-Signature header",
-        )
-
-    try:
-        event = json.loads(raw_body.decode("utf-8"))
+            detail=str(exc),
+        ) from exc
+    except LookupError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(exc),
+        ) from exc
     except ValueError as exc:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid JSON") from exc
-
-    obj = event.get("data", {}).get("object", {}) if isinstance(event, dict) else {}
-    order_id = (
-        obj.get("client_reference_id")
-        or (obj.get("metadata") or {}).get("order_id")
-        or event.get("order_id")
-    )
-    session_id = obj.get("id") or event.get("stripe_session_id")
-
-    order = (
-        _paid_memo_store.get_by_order_id(str(order_id))
-        if order_id
-        else (_paid_memo_store.get_by_stripe_session(str(session_id)) if session_id else None)
-    )
-    if not order:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found")
-
-    if order.payment_status != PaymentStatus.PAID:
-        snap = _paid_memo_store.autumn.provision_plan_credits(
-            customer_id=order.customer_id,
-            plan_tier=order.plan_tier,
-            feature_id=AUTUMN_FEATURE_MEMO_PDF,
-            consume_immediately=1,
-        )
-        order.autumn_credits_remaining = snap.remaining_balance
-
-    order.payment_status = PaymentStatus.PAID
-    order.paid_at_utc = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
-    _paid_memo_store.save(order)
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(exc),
+        ) from exc
 
     return {
         "order_id": order.order_id,
@@ -1291,17 +1430,172 @@ async def handle_stripe_memo_webhook(
     }
 
 
+def _resolve_paid_memo_order_or_return(
+    *,
+    order_id: str,
+    session_id: str | None,
+    return_token: str | None,
+    request: Request,
+    response: Response,
+    x_customer_token: str | None,
+) -> dict[str, Any]:
+    if not order_id:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Missing order_id")
+
+    order = _paid_memo_store.get_by_order_id(str(order_id))
+    if not order:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found")
+
+    caller_token = _extract_caller_customer_token(request, header_token=x_customer_token)
+    has_valid_return_token = bool(
+        return_token
+        and (
+            return_token == order.checkout_return_token
+            or verify_checkout_return_token(
+                order.order_id,
+                order.customer_id,
+                session_id or order.stripe_session_id,
+                return_token,
+            )
+        )
+    )
+    has_valid_customer_token = verify_customer_token(order.customer_id, caller_token)
+
+    if not (has_valid_return_token or has_valid_customer_token):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Valid checkout return_token or customer_token is required to inspect order entitlement.",
+        )
+
+    if order.payment_status != PaymentStatus.PAID:
+        raise HTTPException(
+            status_code=status.HTTP_402_PAYMENT_REQUIRED,
+            detail={
+                "message": "Order has not been paid or entitlement was revoked.",
+                "order_id": order.order_id,
+                "application_id": str(order.application_id),
+                "payment_status": order.payment_status,
+                "locked_preview_url": order.locked_preview_url,
+                "checkout_url": order.checkout_url,
+            },
+        )
+
+    response.set_cookie(
+        key="space_memo_receipt",
+        value=order.receipt_token,
+        httponly=True,
+        samesite="lax",
+    )
+    return {
+        "order_id": order.order_id,
+        "application_id": str(order.application_id),
+        "customer_id": order.customer_id,
+        "payment_status": order.payment_status,
+        "receipt_token": order.receipt_token,
+        "unlocked_html_url": order.unlocked_html_url,
+        "unlocked_pdf_url": order.unlocked_pdf_url,
+    }
+
+
+@router.get("/catalog-review/paid-memo/return")
+async def get_paid_memo_return(
+    request: Request,
+    response: Response,
+    order_id: str = Query(...),
+    session_id: str | None = Query(default=None),
+    return_token: str | None = Query(default=None),
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
+    """
+    Post-checkout return verification endpoint.
+    """
+    return _resolve_paid_memo_order_or_return(
+        order_id=order_id,
+        session_id=session_id,
+        return_token=return_token,
+        request=request,
+        response=response,
+        x_customer_token=x_customer_token,
+    )
+
+
+@router.get("/catalog-review/paid-memo/orders/{order_id}")
+async def get_paid_memo_order_status(
+    order_id: str,
+    request: Request,
+    response: Response,
+    session_id: str | None = Query(default=None),
+    return_token: str | None = Query(default=None),
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
+    """
+    Authenticated order status & receipt verification endpoint.
+    """
+    return _resolve_paid_memo_order_or_return(
+        order_id=order_id,
+        session_id=session_id,
+        return_token=return_token,
+        request=request,
+        response=response,
+        x_customer_token=x_customer_token,
+    )
+
+
+class OrderRefundRequest(BaseModel):
+    customer_token: str | None = None
+    reason: str | None = "Customer requested refund"
+
+
+@router.post("/catalog-review/paid-memo/orders/{order_id}/refund")
+async def post_paid_memo_order_refund(
+    order_id: str,
+    request: Request,
+    response: Response,
+    body: OrderRefundRequest | None = Body(default=None),
+    x_customer_token: str | None = Header(default=None, alias="X-Customer-Token"),
+):
+    """
+    Revokes a paid memo order entitlement upon refund and invalidates its `receipt_token`.
+    Requires valid customer authentication for `order.customer_id`.
+    """
+    order = _paid_memo_store.get_by_order_id(order_id)
+    if not order:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found")
+
+    _require_customer_auth(
+        order.customer_id,
+        request,
+        body_token=body.customer_token if body else None,
+        header_token=x_customer_token,
+    )
+    updated = _paid_memo_store.refund_order(order_id)
+    response.delete_cookie("space_memo_receipt")
+    return {
+        "order_id": updated.order_id,
+        "application_id": str(updated.application_id),
+        "customer_id": updated.customer_id,
+        "payment_status": updated.payment_status,
+        "access_revoked": True,
+    }
+
+
 def _resolve_deck_and_lock_state(
     application_id: uuid.UUID,
     receipt_token: str | None,
+    request: Request | None = None,
+    return_token: str | None = None,
 ) -> tuple[Any, bool, str | None]:
     order = _paid_memo_store.get_by_application_id(application_id)
     if order:
-        is_unlocked = (
-            order.payment_status == PaymentStatus.PAID
-            and receipt_token is not None
-            and receipt_token == order.receipt_token
+        cookie_receipt = request.cookies.get("space_memo_receipt") if request else None
+        effective_receipt = receipt_token or cookie_receipt
+        valid_receipt = bool(effective_receipt and effective_receipt == order.receipt_token)
+        valid_return = bool(
+            return_token
+            and order.checkout_return_token
+            and return_token == order.checkout_return_token
         )
+        is_unlocked = order.payment_status == PaymentStatus.PAID and (valid_receipt or valid_return)
         return order.deck, not is_unlocked, order.checkout_url
 
     app_row = _APPLICATIONS_STORE.get(application_id)
@@ -1311,8 +1605,7 @@ def _resolve_deck_and_lock_state(
     val_input = application_to_valuation_input(app_row)
     valuation = _engine.evaluate(val_input)
     deck = generate_catalog_investment_memo_deck(app_input=val_input, valuation=valuation)
-    is_unlocked = bool(receipt_token and receipt_token == "SPACE-PARTNER-VIP")
-    return deck, not is_unlocked, f"/valuation-memo?application_id={application_id}"
+    return deck, True, f"/valuation-memo?application_id={application_id}"
 
 
 @router.get(
@@ -1321,14 +1614,21 @@ def _resolve_deck_and_lock_state(
 )
 async def get_application_investment_memo_html(
     application_id: uuid.UUID,
+    request: Request,
     receipt_token: str | None = Query(default=None),
+    return_token: str | None = Query(default=None),
 ):
     """
     Renders the 19-slide 16:9 SPACE + Claude Investment Memo as HTML.
     Without a valid paid `receipt_token`, Slides 01–02 are shown in full and Slides 03–19
-    are blurred behind the $299 Stripe Checkout paywall.
+    are server-side redacted behind the $299 Stripe Checkout paywall.
     """
-    deck, locked_preview, checkout_url = _resolve_deck_and_lock_state(application_id, receipt_token)
+    deck, locked_preview, checkout_url = _resolve_deck_and_lock_state(
+        application_id,
+        receipt_token,
+        request=request,
+        return_token=return_token,
+    )
     html_str = render_investment_memo_html(
         deck,
         locked_preview=locked_preview,
@@ -1340,13 +1640,20 @@ async def get_application_investment_memo_html(
 @router.get("/catalog-review/{application_id}/investment-memo.pdf")
 async def get_application_investment_memo_pdf(
     application_id: uuid.UUID,
+    request: Request,
     receipt_token: str | None = Query(default=None),
+    return_token: str | None = Query(default=None),
 ):
     """
     Returns the print-ready 19-slide 16:9 `Catalog_Valuation.pdf` once the order is PAID
     and a valid `receipt_token` is supplied. Returns `402 Payment Required` if unpaid.
     """
-    deck, locked_preview, checkout_url = _resolve_deck_and_lock_state(application_id, receipt_token)
+    deck, locked_preview, checkout_url = _resolve_deck_and_lock_state(
+        application_id,
+        receipt_token,
+        request=request,
+        return_token=return_token,
+    )
     if locked_preview:
         raise HTTPException(
             status_code=status.HTTP_402_PAYMENT_REQUIRED,
