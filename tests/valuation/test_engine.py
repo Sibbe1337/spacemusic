@@ -1978,6 +1978,189 @@ def test_claude_19_slide_investment_memo_and_paid_checkout_pipeline():
     assert "sagos_distro_solid_gold" in matched_ids
 
 
+def test_tenet_michel_zitron_publishing_workbook_audit_and_institutional_model():
+    """
+    End-to-end verification of all Caelis / Tenet Institutional Valuation & Multi-Society
+    Publishing Forensics improvements:
+    1. Multi-tab Excel reconstruction of `Michel_Zitron_-_royalty_summary_23-25_rev_92eb.xlsx`
+       (catching 516,680 SEK out-of-window 2022/2020 rows, 'Reload /Free Love)' typo, 48 STIM 2022 zero rows,
+       and 21% prior sale / H2 2025 BMG LOD double-deduction risk).
+    2. 5-Pillar Rights-Type Cash Flow Decomposition (Streaming +4.8% CAGR, Synch Fortnite spike normalization,
+       Live +2.0%, Radio -2.0%, Other -2.0%).
+    3. Market-Relative Streaming Alpha (US/DE/UK) & Spotify Discovery Mode uplift detector.
+    4. 10-Year + Evergreen Gordon Growth Terminal Value DCF (WACC 9.0%, PGR 1.5% -> ~34.6m SEK for 50% = 13.8x 2026E)
+       plus 2D WACC x PGR and Growth Delta x PGR sensitivity matrices.
+    5. Leveraged Buyout (LBO) & Portfolio Roll-Up Multiple Expansion (14x -> 14x standalone 10.0% IRR / 1.6x MOIC
+       vs. 14x -> 16x scaled portfolio 13.4% IRR / 1.9x MOIC, Net Debt/EBITDA deleveraging 5.6x -> 1.4x).
+    6. Institutional Valuation Football Field across L3Y Avg. and 2026E multiples.
+    7. Cross-Society Collection Leakage Detector (BMG UK streaming mechanicals drop-off & US Live gap).
+    8. SpaceValuationEngine integration for Evergreen Terminal Value, Portfolio Roll-Up IRR, and Publishing
+       Chain-of-Title flags (ROFR, 2042 Reversion Cliff, Prior 21% Minority Sale, Spotify Discovery Mode).
+    """
+    from pathlib import Path
+    from fastapi.testclient import TestClient
+    from services.spacemusic.main import app
+    from services.valuation.tenet_institutional_model import (
+        build_tenet_institutional_valuation_package,
+    )
+
+    fixture_xlsx = Path(__file__).resolve().parents[1] / "fixtures" / "michel_zitron_royalty_summary_23_25.xlsx"
+    assert fixture_xlsx.exists(), f"Missing fixture {fixture_xlsx}"
+
+    pkg = build_tenet_institutional_valuation_package(xlsx_path=str(fixture_xlsx))
+
+    # 1. Workbook Audit & Reconstruction
+    wb = pkg.workbook_audit
+    assert wb is not None
+    assert abs(wb.seller_reported_gross_total_sek - 5567645.0) < 1.0
+    assert abs(wb.seller_reported_net_79pct_sek - 4398439.55) < 1.0
+    assert abs(wb.seller_reported_3yr_avg_sek - 1466146.52) < 1.0
+    assert abs(wb.seller_implied_valuation_sek - 17593758.20) < 1.0
+
+    # Out-of-window rows (12/2022 BMG = 513,510 SEK + II/2020 Kobalt = 3,170 SEK = 516,680 SEK)
+    assert abs(wb.excluded_2022_prior_period_sek - 516680.0) < 1.0
+    assert wb.lod_double_deduction_avoided_sek > 70000.0
+    assert abs(wb.reconstructed_2023_2025_gross_sek - 5050965.0) < 1.0
+
+    issue_codes = {i.code for i in wb.audit_findings}
+    assert "OUT_OF_WINDOW_PRIOR_YEAR_INCLUSION" in issue_codes
+    assert "SUMIF_WILDCARD_OR_PUNCTUATION_MISMATCH" in issue_codes
+    assert "PRE_COLLECTION_ZERO_ROW_DILUTION" in issue_codes
+    assert "NAIVE_BLANKET_OWNERSHIP_MULTIPLIER_VS_LOD" in issue_codes
+
+    # 2. Rights-Type Cash Flow Decomposition (Slide 8-9)
+    rt = pkg.business_plan
+    assert abs(rt.cagr_26_31e_streaming_pct - 4.8) <= 0.15
+    assert abs(rt.cagr_26_31e_total_pct - 2.5) <= 0.15
+    assert rt.normalized_synch_baseline_sekk == 245.0
+    assert rt.one_off_2024_synch_spike_sekk == 442.0  # 687k 2024 Fortnite spike - 245k normal
+    y_2026 = next(r for r in rt.years if r.year == 2026)
+    y_2031 = next(r for r in rt.years if r.year == 2031)
+    assert abs(y_2026.total_income_sekk - 4998.0) < 2.0
+    assert abs(y_2031.total_income_sekk - 5657.0) < 2.0
+
+    # 3. Market-Relative Alpha & Discovery Mode
+    alpha = pkg.market_alpha
+    assert alpha.us_market_relative_alpha_pct > 0
+    assert alpha.de_market_relative_alpha_pct > 0
+    assert len(alpha.discovery_mode_windows_detected) >= 2
+    assert alpha.discovery_mode_estimated_uplift_pct > 0
+
+    # 4. Evergreen DCF & 2D Sensitivity Matrices (Slide 10)
+    dcf = pkg.evergreen_dcf
+    assert abs(dcf.fair_value_50pct_sekm - 34.6) <= 0.2
+    assert abs(dcf.implied_2026e_multiple_midpoint - 13.8) <= 0.2
+    assert abs(dcf.implied_l3y_avg_multiple_midpoint - 14.4) <= 0.2
+    assert len(dcf.wacc_vs_pgr_matrix) == 25
+    mid_cell = next(
+        c for c in dcf.wacc_vs_pgr_matrix if abs(c.row_value - 1.5) < 0.01 and abs(c.col_value - 9.0) < 0.01
+    )
+    assert mid_cell.enterprise_value_m == 34.6
+    assert mid_cell.implied_2026e_multiple == 13.8
+
+    # 5. LBO & Portfolio Roll-Up Multiple Expansion (Slide 11)
+    lbo = pkg.lbo_returns
+    assert lbo.ltv_pct == 40.0
+    assert lbo.cost_of_debt_pct == 7.5
+    assert lbo.deleveraging_profile[0].net_debt_to_ebitda == 5.6
+    assert lbo.deleveraging_profile[-1].net_debt_to_ebitda == 1.4
+    assert lbo.base_standalone_irr_pct == 10.0
+    assert lbo.base_standalone_moic == 1.6
+    assert abs(lbo.portfolio_rollup_irr_pct - 13.4) <= 0.15
+    assert lbo.portfolio_rollup_moic == 1.9
+    assert abs(lbo.multiple_expansion_irr_uplift_bps - 340) <= 15
+
+    # 6. Football Field (Slide 12)
+    assert len(pkg.football_field) == 4
+    ff_methods = {b.methodology for b in pkg.football_field}
+    assert "Discounted Cash Flow" in ff_methods
+    assert "Leveraged Buy-Out (Portfolio Roll-Up Exit)" in ff_methods
+
+    # 7. Cross-Society Leakage Detector (Slides 6 & 14-16)
+    leakage_ids = {a.anomaly_id for a in pkg.collection_anomalies}
+    assert "ANOMALY_I_UK_BMG_MECHANICALS" in leakage_ids
+    assert "ANOMALY_II_US_LIVE_PERFORMANCE" in leakage_ids
+    assert "ANOMALY_III_STIM_2023_FOREIGN_UNDERCOLLECTION" in leakage_ids
+
+    # 8. SpaceValuationEngine integration for Evergreen Publishing Catalog with ROFR, 2042 Reversion & 21% Prior Sale
+    engine = SpaceValuationEngine(random_seed=42)
+    zitron_inp = CatalogValuationInput(
+        catalog_title="Michel Zitron & John Martin Songbook (50% Stake)",
+        artist_or_label_name="Michel Zitron & John Martin",
+        rights_scope=RightsScope.PUBLISHING,
+        distributor_or_admin="BMG Rights Management / Kobalt / STIM",
+        declared_ltm_amount=220000.0,
+        declared_currency="EUR",
+        ownership_share_pct=100.0,
+        statements_verified=True,
+        genres=["electronic", "pop"],
+        notes=(
+            "Co-publishing agreement with Lateral includes a Right of First Refusal (ROFR) on John's catalog. "
+            "Contractual reversion in 2042 on Michel's catalog. "
+            "21% of Michel's rights previously sold (STIM paid manually, BMG paid via direct LOD since H2 2025). "
+            "Spotify Discovery Mode used in algorithmic radio/autoplay during 2023-2024 and 2026."
+        ),
+        top_tracks=[
+            TrackInput(
+                title="Don't You Worry Child",
+                release_date=date(2012, 9, 14),
+                ltm_streams=155_000_000,
+                ltm_royalties_eur=136_000.0,
+            ),
+            TrackInput(
+                title="Save the World",
+                release_date=date(2011, 5, 13),
+                ltm_streams=36_000_000,
+                ltm_royalties_eur=31_000.0,
+            ),
+            TrackInput(
+                title="Reload (Free Love)",
+                release_date=date(2013, 5, 10),
+                ltm_streams=32_000_000,
+                ltm_royalties_eur=24_000.0,
+            ),
+            TrackInput(
+                title="Red Lights",
+                release_date=date(2014, 2, 21),
+                ltm_streams=28_000_000,
+                ltm_royalties_eur=18_000.0,
+            ),
+            TrackInput(
+                title="Fade into Darkness",
+                release_date=date(2011, 7, 16),
+                ltm_streams=16_000_000,
+                ltm_royalties_eur=11_000.0,
+            ),
+        ],
+    )
+    zitron_val = engine.evaluate(zitron_inp, reference_date=date(2026, 10, 15))
+    assert zitron_val.evergreen_terminal_value_p50_eur > 0
+    assert zitron_val.npv_10y_plus_terminal_p50_eur > zitron_val.npv_10y_p50_eur
+    assert zitron_val.implied_portfolio_rollup_16x_exit_irr_pct is not None
+    assert zitron_val.implied_standalone_12x_exit_irr_pct is not None
+    assert zitron_val.implied_portfolio_rollup_16x_exit_irr_pct > zitron_val.implied_standalone_12x_exit_irr_pct
+
+    assert zitron_val.chain_of_title is not None
+    assert zitron_val.chain_of_title.rofr_or_matching_right_detected is True
+    assert zitron_val.chain_of_title.reversion_year_detected == 2042
+    assert zitron_val.chain_of_title.prior_minority_sale_detected is True
+
+    flag_codes = {rf.code for rf in zitron_val.risk_flags}
+    assert "CO_PUB_ROFR_OR_MATCHING_RIGHT" in flag_codes
+    assert "CONTRACTUAL_REVERSION_CLIFF" in flag_codes
+    assert "PRIOR_MINORITY_INCOME_ASSIGNMENT" in flag_codes
+    assert "SPOTIFY_DISCOVERY_MODE_DEPENDENCY" in flag_codes
+
+    # 9. Verify API endpoint GET /catalog-review/benchmarks/tenet-zitron-package
+    client = TestClient(app)
+    res = client.get("/catalog-review/benchmarks/tenet-zitron-package")
+    assert res.status_code == 200
+    body = res.json()
+    assert body["evergreen_dcf"]["fair_value_50pct_sekm"] == 34.6
+    assert body["workbook_audit"]["excluded_2022_prior_period_sek"] == 516680.0
+
+
+
 
 
 

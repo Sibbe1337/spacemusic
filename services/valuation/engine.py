@@ -265,6 +265,12 @@ class CatalogValuationOutput(BaseModel):
     npv_10y_p50_eur: float
     npv_10y_p90_eur: float
 
+    # Evergreen Gordon Growth Terminal Value & Full Perpetuity DCF (for mature catalogs >=84m age or Publishing)
+    evergreen_terminal_value_p50_eur: float = 0.0
+    npv_10y_plus_terminal_p50_eur: float = 0.0
+    implied_portfolio_rollup_16x_exit_irr_pct: Optional[float] = None
+    implied_standalone_12x_exit_irr_pct: Optional[float] = None
+
     # Selected Offer Range (cents & EUR for Offer model compatibility)
     price_low_eur: float
     price_median_eur: float
@@ -1105,6 +1111,47 @@ class SpaceValuationEngine:
                     discount_rate_bps_impact=100,
                 )
             )
+        if title_report.rofr_or_matching_right_detected:
+            risk_flags.append(
+                RiskFlag(
+                    code="CO_PUB_ROFR_OR_MATCHING_RIGHT",
+                    severity=RiskSeverity.HIGH,
+                    title="Co-Publishing / Management ROFR or Matching Right Consent Required",
+                    description="Catalog subject to co-publisher or management Right of First Refusal (ROFR) / matching right (e.g., Lateral / BMG / Kobalt co-pub agreement). Waiver required prior to closing.",
+                    discount_rate_bps_impact=150,
+                )
+            )
+        if title_report.reversion_year_detected is not None:
+            years_to_reversion = max(1, title_report.reversion_year_detected - ref_date.year)
+            risk_flags.append(
+                RiskFlag(
+                    code="CONTRACTUAL_REVERSION_CLIFF",
+                    severity=RiskSeverity.HIGH if years_to_reversion <= 15 else RiskSeverity.MEDIUM,
+                    title=f"Contractual or Statutory Reversion Cliff ({title_report.reversion_year_detected})",
+                    description=f"Rights revert to original writers/grantors in {title_report.reversion_year_detected} (~{years_to_reversion} years). Terminal value must be capped or negotiated for buyout.",
+                    discount_rate_bps_impact=150 if years_to_reversion <= 15 else 100,
+                )
+            )
+        if title_report.prior_minority_sale_detected:
+            risk_flags.append(
+                RiskFlag(
+                    code="PRIOR_MINORITY_INCOME_ASSIGNMENT",
+                    severity=RiskSeverity.MEDIUM,
+                    title="Prior Minority Stake Assignment / Mixed LOD & PRO Pass-Through",
+                    description="Portion of writer/publisher share previously assigned (e.g., 21% prior sale). Requires society-by-society reconciliation between direct Letter of Direction (LOD) and manual PRO pass-through to avoid double deduction.",
+                    discount_rate_bps_impact=100,
+                )
+            )
+        if "discovery mode" in (inp.notes or "").lower():
+            risk_flags.append(
+                RiskFlag(
+                    code="SPOTIFY_DISCOVERY_MODE_DEPENDENCY",
+                    severity=RiskSeverity.MEDIUM,
+                    title="Spotify Discovery Mode Algorithmic Uplift Dependency (~30% Royalty Haircut)",
+                    description="Catalog utilizes Spotify Discovery Mode in algorithmic contexts (Autoplay/Radio/Mixes), trading a ~30% recording royalty commission for volume uplift.",
+                    discount_rate_bps_impact=125,
+                )
+            )
 
         dollar_weighted_age_months = float(
             sum(a * w for a, w in zip(track_ages_months, track_weights))
@@ -1273,6 +1320,58 @@ class SpaceValuationEngine:
         mult_med = round(price_median_eur / denom, 2) if effective_cf0_eur > 0 else 0.0
         mult_high = round(price_high_eur / denom, 2) if effective_cf0_eur > 0 else 0.0
 
+        # Evergreen Gordon Growth Terminal Value & Portfolio Roll-Up IRR (Caelis/Tenet Model)
+        # For mature evergreen catalogs (dollar_weighted_age >= 48m) or publishing catalogs,
+        # compute the discounted Year-10 Gordon Growth Terminal Value at PGR = 1.5%
+        evergreen_tv_p50 = 0.0
+        if (
+            effective_cf0_eur > 0
+            and len(yearly_cfs_p50) >= 10
+            and (
+                dollar_weighted_age_months >= 48.0
+                or inp.rights_scope in {RightsScope.PUBLISHING, RightsScope.BOTH}
+            )
+        ):
+            pgr = 0.015
+            # If a contractual reversion cliff occurs within 15 years, cap terminal value proportionally
+            reversion_cap_factor = 1.0
+            if title_report.reversion_year_detected is not None:
+                rem_after_10y = max(0, title_report.reversion_year_detected - (ref_date.year + 10))
+                reversion_cap_factor = min(1.0, rem_after_10y / 25.0)
+            y10_cf = float(yearly_cfs_p50[-1])
+            spread = max(0.035, total_discount_rate - pgr)
+            undiscounted_tv = (y10_cf * (1.0 + pgr)) / spread
+            evergreen_tv_p50 = round(
+                (undiscounted_tv / ((1.0 + total_discount_rate) ** 10)) * reversion_cap_factor,
+                2,
+            )
+        npv_10y_plus_tv_p50 = round(npv_10y_p50 + evergreen_tv_p50, 2)
+
+        # LBO & Portfolio Roll-Up Multiple Expansion IRR (5-year hold, 40% LTV @ 7.5% CoD)
+        standalone_12x_irr_pct: Optional[float] = None
+        rollup_16x_irr_pct: Optional[float] = None
+        if effective_cf0_eur > 0 and price_median_eur > 0 and len(yearly_cfs_p50) >= 5:
+            entry_ev = price_median_eur * 1.02  # incl. 2% transaction fees
+            debt_init = price_median_eur * 0.40
+            eq_init = max(1.0, entry_ev - debt_init)
+            debt_rem = debt_init
+            extra_cash = 0.0
+            for y_idx in range(5):
+                cf_y = float(yearly_cfs_p50[y_idx])
+                interest_y = debt_rem * 0.075
+                fcf_y = cf_y - interest_y
+                if fcf_y >= 0:
+                    paydown = min(debt_rem, fcf_y)
+                    debt_rem -= paydown
+                    extra_cash += fcf_y - paydown
+                else:
+                    debt_rem += abs(fcf_y)
+            y5_cf = float(yearly_cfs_p50[4])
+            eq_exit_12x = max(0.0, y5_cf * 12.0 - debt_rem + extra_cash)
+            eq_exit_16x = max(0.0, y5_cf * 16.0 - debt_rem + extra_cash)
+            standalone_12x_irr_pct = round(((eq_exit_12x / eq_init) ** (1.0 / 5.0) - 1.0) * 100.0, 2)
+            rollup_16x_irr_pct = round(((eq_exit_16x / eq_init) ** (1.0 / 5.0) - 1.0) * 100.0, 2)
+
         # Deal Structure (Upfront vs 12m Holdback)
         deal_structure = self._build_deal_structure(
             offer_median_eur=price_median_eur,
@@ -1324,6 +1423,10 @@ class SpaceValuationEngine:
             npv_10y_p10_eur=round(npv_10y_p10, 2),
             npv_10y_p50_eur=round(npv_10y_p50, 2),
             npv_10y_p90_eur=round(npv_10y_p90, 2),
+            evergreen_terminal_value_p50_eur=evergreen_tv_p50,
+            npv_10y_plus_terminal_p50_eur=npv_10y_plus_tv_p50,
+            implied_portfolio_rollup_16x_exit_irr_pct=rollup_16x_irr_pct,
+            implied_standalone_12x_exit_irr_pct=standalone_12x_irr_pct,
             price_low_eur=price_low_eur,
             price_median_eur=price_median_eur,
             price_high_eur=price_high_eur,

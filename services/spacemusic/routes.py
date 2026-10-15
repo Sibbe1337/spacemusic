@@ -1315,3 +1315,32 @@ async def get_application_investment_memo_pdf(
     )
 
 
+@router.get("/catalog-review/benchmarks/tenet-zitron-package")
+async def get_tenet_zitron_institutional_benchmark_package():
+    """
+    Returns the complete Caelis / Tenet Institutional Valuation & Multi-Society Publishing
+    Forensics Package (Michel Zitron & John Martin Songbooks: Swedish House Mafia's
+    'Don't You Worry Child', 'Save the World', 'Reload', Avicii's 'Fade into Darkness',
+    Tiësto's 'Red Lights'), including:
+    1. Multi-tab STIM / BMG / Kobalt workbook audit & reconstruction (catching 2022/2020
+       out-of-window SUMIF inclusion, 'Reload /Free Love)' punctuation bug, 48 STIM 2022 zero rows,
+       and 21% prior sale / H2 2025 BMG LOD carve-out).
+    2. 5-Pillar Rights-Type Cash Flow Decomposition (Streaming, Synch, Live, Radio, Other).
+    3. Market-Relative Streaming Alpha & Spotify Discovery Mode uplift detector.
+    4. 10Y + Evergreen Gordon Growth Terminal Value DCF & 2D WACC x PGR sensitivity matrices.
+    5. Leveraged Buyout (LBO) & Portfolio Roll-Up Multiple Expansion (14x -> 16x) returns.
+    6. Institutional Valuation Football Field (L3Y Avg. vs. 2026E multiples).
+    7. Cross-Society Collection Leakage & Under-Collection Detector (UK BMG Mechanicals & US Live).
+    """
+    from pathlib import Path
+    from services.valuation.tenet_institutional_model import (
+        build_tenet_institutional_valuation_package,
+    )
+
+    fixture_path = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "michel_zitron_royalty_summary_23_25.xlsx"
+    xlsx_path = str(fixture_path) if fixture_path.exists() else None
+    pkg = build_tenet_institutional_valuation_package(xlsx_path=xlsx_path)
+    return pkg.model_dump()
+
+
+

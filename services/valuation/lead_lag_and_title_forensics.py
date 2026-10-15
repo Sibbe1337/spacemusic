@@ -106,6 +106,9 @@ class ChainOfTitleAuditReport(BaseModel):
     distinct_plines_detected: List[str] = Field(default_factory=list)
     distributor_hopping_detected: bool = False
     unrecouped_advance_risk: bool = False
+    rofr_or_matching_right_detected: bool = False
+    reversion_year_detected: Optional[int] = None
+    prior_minority_sale_detected: bool = False
     collaborator_tracks_detected: List[str] = Field(default_factory=list)
     estimated_featured_track_share: float = 0.0
     required_closing_documents: List[str] = Field(default_factory=list)
@@ -330,9 +333,73 @@ def evaluate_chain_of_title(
             f"({', '.join(distinct_plines[:4])}) — verify 100% chain of title across all entities."
         )
 
-    if unrecouped_risk:
+    # 4. Publishing / Co-Pub Contractual Clauses (Caelis/Tenet Slide 4):
+    #    - ROFR (Right of First Refusal) / Matching Right / Third-Party Consent
+    #    - Reversion Year Cliff (e.g., "reversion in 2042" or US 35-year statutory termination §203)
+    #    - Prior Minority Income Sale / Manual Pass-Through vs. Direct LOD
+    rofr_detected = any(
+        kw in notes_lower
+        for kw in ["rofr", "right of first refusal", "matching right", "needs consent", "lateral", "co-pub consent"]
+    )
+    if rofr_detected:
+        bps += 125
+        findings.append(
+            "Co-Publisher ROFR / Matching Right / Consent Requirement Detected: Underlying co-publishing or "
+            "management agreement requires third-party consent and grants a Right of First Refusal (ROFR) or "
+            "matching right on the writer/co-pub share."
+        )
+        closing_docs.append(
+            "Executed Co-Publisher / Manager Consent & Waiver of Right of First Refusal (ROFR) / Matching Right"
+        )
+
+    reversion_year: Optional[int] = None
+    rev_match = re.search(r"reversion\s+(?:in\s+)?(20[3-9]\d)", notes_lower)
+    if rev_match:
+        reversion_year = int(rev_match.group(1))
+    elif "statutory termination" in notes_lower or "section 203" in notes_lower or "35-year" in notes_lower:
+        reversion_year = ref_date.year + 15
+
+    if reversion_year is not None:
+        bps += 100
+        findings.append(
+            f"Contractual Rights Reversion Cliff Detected ({reversion_year}): Co-publishing or administration rights "
+            f"are subject to potential reversion in {reversion_year} — confirm whether reversion applies to a third-party buyer."
+        )
+        closing_docs.append(
+            f"Legal Opinion / Publisher Estoppel Confirming Post-{reversion_year} Reversion Non-Applicability or Tail Assignment"
+        )
+
+    prior_minority_sale = any(
+        kw in notes_lower
+        for kw in [
+            "already sold",
+            "income sale",
+            "passed on manually",
+            "outside interest",
+            "21%",
+            "prior buyer",
+        ]
+    )
+    if prior_minority_sale:
+        bps += 75
+        findings.append(
+            "Prior Minority Income Assignment / Split-LOD Routing Detected: A percentage of writer/publisher income "
+            "was previously sold to a third party (partially paid via direct publisher LOD and partially passed on "
+            "manually from PRO collections) — require underlying sale agreement and society-level LOD reconciliation."
+        )
+        closing_docs.append(
+            "Copy of Prior Minority Income Sale Agreement & Irrevocable PRO/Publisher Split-Payment Escrow Instructions"
+        )
+
+    if unrecouped_risk or rofr_detected:
         status = ChainOfTitleStatus.ENCUMBRANCE_OR_HOPPING_ALERT
-    elif collab_tracks or len(distinct_plines) >= 4 or declared_ownership_pct < 100.0:
+    elif (
+        collab_tracks
+        or len(distinct_plines) >= 4
+        or declared_ownership_pct < 100.0
+        or reversion_year is not None
+        or prior_minority_sale
+    ):
         status = ChainOfTitleStatus.SPLIT_VERIFICATION_REQUIRED
     else:
         status = ChainOfTitleStatus.CLEAN_SINGLE_OWNER
@@ -342,6 +409,9 @@ def evaluate_chain_of_title(
         distinct_plines_detected=distinct_plines,
         distributor_hopping_detected=distributor_hopping,
         unrecouped_advance_risk=unrecouped_risk,
+        rofr_or_matching_right_detected=rofr_detected,
+        reversion_year_detected=reversion_year,
+        prior_minority_sale_detected=prior_minority_sale,
         collaborator_tracks_detected=collab_tracks,
         estimated_featured_track_share=round(collab_share, 4),
         required_closing_documents=closing_docs,
