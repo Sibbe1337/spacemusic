@@ -1,4 +1,9 @@
 {
+  "fixture_provenance": {
+    "is_synthetic_illustrative_fixture": true,
+    "fixture_scope": "illustrative_case_study_benchmark_fixture",
+    "notice": "Synthetic/illustrative underwriting benchmark fixture for repository regression testing — not a public offering."
+  },
   "statement_summary": {
     "detected_distributor": "Tribal Trap / LabelWorx + Trap Nation / Label Engine",
     "row_count": 675942,
