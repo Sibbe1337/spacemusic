@@ -1,0 +1,22 @@
+{
+  "name": "spacemusic-memo-studio",
+  "main": "worker.mjs",
+  "account_id": "420086457a566181f87bab202f320739",
+  "compatibility_date": "2026-09-15",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "spacemusic.io/valuation-memo*", "zone_name": "spacemusic.io" },
+    { "pattern": "spacemusic.io/catalog-review/paid-memo*", "zone_name": "spacemusic.io" },
+    { "pattern": "spacemusic.io/catalog-review/benchmark*", "zone_name": "spacemusic.io" },
+    { "pattern": "spacemusic.io/catalog-review/*", "zone_name": "spacemusic.io" },
+    { "pattern": "spacemusic.io/api/v1/spacemusic/*", "zone_name": "spacemusic.io" },
+    { "pattern": "spacemusic.io/webhooks/autumn-memo*", "zone_name": "spacemusic.io" },
+    { "pattern": "spacemusic.io/webhooks/stripe-memo*", "zone_name": "spacemusic.io" }
+  ],
+  "vars": {
+    "SITE_URL": "https://spacemusic.io",
+    "AUTUMN_API_BASE_URL": "https://api.useautumn.com/v1",
+    "AUTUMN_WORKSPACE_ID": "workspace_93879100"
+  },
+  "observability": { "enabled": true, "head_sampling_rate": 1 }
+}
