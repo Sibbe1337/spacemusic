@@ -306,6 +306,37 @@ for (const rel of allHtml) {
   }
 }
 
+// 10. Update privacy page SEO title (expand to 53 characters for keyword coverage)
+const privacyPageTitle = "Privacy Policy: Music Catalog Data Protection";
+const privacyFullTitle = `${privacyPageTitle} | SPACE`;
+const privacyHtmlPath = path.join(outputDir, "privacy/index.html");
+try {
+  let privacyHtml = await readFile(privacyHtmlPath, "utf8");
+  privacyHtml = privacyHtml
+    .replace(/<title>Privacy Policy[^<]*<\/title>/, `<title>${privacyFullTitle}</title>`)
+    .replace(/(<meta[^>]+property="og:title"[^>]+content=")Privacy Policy[^"]*(")/g, `$1${privacyFullTitle}$2`)
+    .replace(/(<meta[^>]+content=")Privacy Policy[^"]*("[^>]+property="og:title")/g, `$1${privacyFullTitle}$2`)
+    .replace(/(<meta[^>]+name="twitter:title"[^>]+content=")Privacy Policy[^"]*(")/g, `$1${privacyFullTitle}$2`)
+    .replace(/(<meta[^>]+content=")Privacy Policy[^"]*("[^>]+name="twitter:title")/g, `$1${privacyFullTitle}$2`);
+  await writeFile(privacyHtmlPath, privacyHtml, "utf8");
+} catch (e) {
+  if (e.code !== "ENOENT") throw e;
+}
+const privacyJsName = "PrivacyPage-typeform-18a2f3fdfec1-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js";
+const privacyJsPath = path.join(outputDir, "assets", privacyJsName);
+try {
+  const privacyJs = await readFile(privacyJsPath, "utf8");
+  const privacyJsPatched = privacyJs.replace(
+    `title:${JSON.stringify("Privacy Policy")}`,
+    `title:${JSON.stringify(privacyPageTitle)}`,
+  );
+  if (privacyJsPatched !== privacyJs) {
+    await writeFile(privacyJsPath, privacyJsPatched, "utf8");
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") throw e;
+}
+
 const totalSitemapLocs = [...updatedSitemap.matchAll(/<loc>/g)].length;
 console.log(
   JSON.stringify(
