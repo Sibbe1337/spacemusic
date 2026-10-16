@@ -68,7 +68,7 @@ await writeFile(gdPath, nextGdCode, "utf8");
 // 2. Register the 21 new routes in assets/index-serp-6e4dfbec5abf.js
 const indexJsPath = path.join(outputDir, "assets/index-serp-6e4dfbec5abf.js");
 const indexJs = await readFile(indexJsPath, "utf8");
-const routeAnchor = 'e.jsx(t,{path:"/data/music-catalog-deals",element:e.jsx(__GD,{})}),';
+const routeAnchor = 'e.jsx(t,{path:"/data/music-catalog-deals",element:e.jsx(__GD,{})}),'; 
 assert(indexJs.includes(routeAnchor), "Could not locate /data/music-catalog-deals route anchor in index-serp module");
 const extraRoutes = Object.keys(newPages)
   .map((p) => `e.jsx(t,{path:"${p.replace(/\/$/, "")}",element:e.jsx(__GD,{})}),`)
@@ -265,14 +265,39 @@ if (!existingRedirects.includes("spacemusic-memo-studio.samplehubkupp.workers.de
 
 // 8. Strip em-dashes from <title> tags across all HTML files in outputDir
 const allHtml = await listHtmlFiles(outputDir);
+
+// 9. Update about page H1 to include primary keyword "About SPACE"
+const aboutH1Old = "We buy music catalogs that others overlook.";
+const aboutH1New = "About SPACE \u2014 Music Rights, Simplified";
+const aboutHtmlPath = path.join(outputDir, "about/index.html");
+try {
+  const aboutHtml = await readFile(aboutHtmlPath, "utf8");
+  assert(aboutHtml.includes(aboutH1Old), `About page H1 not found: ${aboutH1Old}`);
+  await writeFile(aboutHtmlPath, aboutHtml.replace(aboutH1Old, aboutH1New), "utf8");
+} catch (e) {
+  if (e.code !== "ENOENT") throw e;
+}
+const aboutJsName = "AboutPage-DsfQzfae-journey-396b323aebc9-review-51e10d24b4de-growth-52842f5a03ff-quietseo-fd17485db4c3-links-0798455b493c-brand-ba3115eb02ed.js";
+const aboutJsPath = path.join(outputDir, "assets", aboutJsName);
+try {
+  const aboutJs = await readFile(aboutJsPath, "utf8");
+  const aboutJsPatched = aboutJs.replace(
+    JSON.stringify(aboutH1Old),
+    JSON.stringify(aboutH1New),
+  );
+  assert(aboutJsPatched !== aboutJs, `About page H1 string not found in ${aboutJsName}`);
+  await writeFile(aboutJsPath, aboutJsPatched, "utf8");
+} catch (e) {
+  if (e.code !== "ENOENT") throw e;
+}
 let cleanedTitles = 0;
 for (const rel of allHtml) {
   const fullPath = path.join(outputDir, rel);
   const html = await readFile(fullPath, "utf8");
   const nextHtml = html.replace(/<title>([\s\S]*?)<\/title>/i, (m, inner) => {
-    if (inner.includes("—") || inner.includes("--")) {
+    if (inner.includes("\u2014") || inner.includes("--")) {
       cleanedTitles++;
-      return `<title>${inner.replace(/\s*—\s*/g, " | ").replace(/\s*--\s*/g, " | ")}</title>`;
+      return `<title>${inner.replace(/\s*\u2014\s*/g, " | ").replace(/\s*--\s*/g, " | ")}</title>`;
     }
     return m;
   });
