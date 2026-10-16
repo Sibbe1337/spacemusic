@@ -11,6 +11,46 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who should use a SPACE valuation memo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SPACE memos are designed for independent artists with meaningful catalog earnings, music managers preparing a catalog for sale or financing, label A&R teams evaluating acquisition targets, and royalty-advance lenders needing an independent valuation to underwrite a deal. If you are entering a negotiation where the catalog's value is in dispute or simply unknown, a SPACE memo gives you an institutional-grade anchor point supported by auditable methodology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to generate a memo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The engine typically completes within two to four minutes for a standard catalog submission. If you upload raw distributor CSV data, the JEV forensics pass adds additional processing time but significantly upgrades the quality and defensibility of the final output from Stage 1 (declared figures) to Stage 2 (verified figures). The finished PDF and interactive HTML deck are delivered immediately on payment confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What distributor data formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SPACE accepts raw CSV or TSV export rows from all major distributors including DistroKid, TuneCore, Amuse, CD Baby, AWAL, and Stem. The expected columns are reporting month, title, ISRC, store, country, quantity, and net royalty in USD. You can paste rows directly into the form. If your distributor uses a different column order or format, the JEV parser will attempt to normalise it automatically and flag any rows it cannot map."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in a SPACE Institutional Catalog valuation memo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A SPACE valuation memo includes an executive summary with standalone base valuation and WACC, a revenue waterfall by store and territory, a 10,000-path Monte Carlo DCF model, DTW decay matching against comparable catalogs, JEV forensics on distributor data, sensitivity tables across bear/base/bull scenarios, comparables analysis, a risk register, and a full appendix with ISRC-level data and methodology notes — all in a 19-slide 16:9 PDF."
+      }
+    }
+  ]
+}
+</script>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -246,10 +286,17 @@
           <li><strong>DTW Decay Matching</strong> — Dynamic Time Warping comparison against comparable catalogs to validate trajectory assumptions</li>
           <li><strong>JEV Forensics Report</strong> — TypeSafe AI anomaly detection on raw distributor CSV data to flag irregularities</li>
           <li><strong>Sensitivity Tables</strong> — valuation under bear, base, and bull scenarios across discount rates and growth assumptions</li>
-          <li><strong>Comparables Analysis</strong> — recent arm’s-length catalog transactions benchmarked against this catalog’s metrics</li>
+          <li><strong>Comparables Analysis</strong> — recent arm's-length catalog transactions benchmarked against this catalog's metrics</li>
           <li><strong>Risk Register</strong> — distributor concentration, catalog age, streaming platform dependency, and licensing exposure</li>
           <li><strong>Appendix</strong> — raw data tables, ISRC-level stream counts, and methodology notes for due diligence</li>
         </ul>
+      </section>
+
+      <section aria-labelledby="get-started-heading">
+        <h2 id="get-started-heading">How to Get Started</h2>
+        <p>
+          Getting your SPACE valuation memo is straightforward. Enter your artist or label name, catalog title, primary distributor, and your trailing twelve-month (LTM) net royalty figure in the form above. For a faster, more defensible result, paste your raw distributor CSV rows — the JEV forensics engine will verify the data and upgrade your memo from Stage 1 (declared) to Stage 2 (verified). Choose the Single Memo plan at $299 for a one-time valuation, or the Desk Pass at $499/month if you evaluate multiple catalogs. After payment, your 19-slide PDF and interactive HTML deck are available immediately.
+        </p>
       </section>
 
       <section aria-labelledby="faq-heading">
@@ -258,7 +305,7 @@
         <div class="faq-item">
           <h3>Who should use a SPACE valuation memo?</h3>
           <p>
-            SPACE memos are designed for independent artists with meaningful catalog earnings, music managers preparing a catalog for sale or financing, label A&amp;R teams evaluating acquisition targets, and royalty-advance lenders needing an independent valuation to underwrite a deal. If you are entering a negotiation where the catalog’s value is in dispute or simply unknown, a SPACE memo gives you an institutional-grade anchor point supported by auditable methodology.
+            SPACE memos are designed for independent artists with meaningful catalog earnings, music managers preparing a catalog for sale or financing, label A&amp;R teams evaluating acquisition targets, and royalty-advance lenders needing an independent valuation to underwrite a deal. If you are entering a negotiation where the catalog's value is in dispute or simply unknown, a SPACE memo gives you an institutional-grade anchor point supported by auditable methodology.
           </p>
         </div>
 
