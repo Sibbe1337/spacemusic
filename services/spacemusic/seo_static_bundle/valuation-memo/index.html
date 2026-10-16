@@ -115,6 +115,47 @@
   }
   .plan-card strong { font-size: 13px; color: #84B1FF; display: block; margin-bottom: 4px; }
   .plan-price { font-size: 16px; font-weight: 800; color: #FFFFFF; margin: 6px 0; }
+  .content-sections {
+    max-width: 1180px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+  }
+  .content-sections h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    color: #F5F6F8;
+    letter-spacing: -0.01em;
+  }
+  .content-sections h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 24px 0 6px;
+    color: #D4DAE8;
+  }
+  .content-sections p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #9BA3B8;
+    margin: 0 0 14px;
+  }
+  .content-sections ul {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #9BA3B8;
+    padding-left: 20px;
+    margin: 0 0 14px;
+  }
+  .content-sections ul li { margin-bottom: 6px; }
+  .faq-item { margin-bottom: 20px; }
+  .methodology-note {
+    background: #141720;
+    border: 1px solid #252A3A;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 12px;
+  }
+  .methodology-note p { margin: 0; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -122,63 +163,126 @@
     <div class="brand">SPACE</div>
     <div class="badge">CLAUDE + AUTUMN BILLING · 19-SLIDE 16:9 INVESTMENT MEMO</div>
   </div>
-  <div class="container">
-    <div class="panel">
-      <h1>Generate Catalog Investment Memo</h1>
-      <p class="lead">
-        Run our 10,000-path Monte Carlo DCF, Dynamic Time Warping (DTW), and TypeSafe AI (JEV)
-        forensics engine. Preview Slides 01–02 free, or unlock the full 19-slide 16:9 PDF via Autumn + Stripe ($299 single memo or $499/mo Desk Pass).
-      </p>
-      <form id="memoForm">
-        <div class="row-2">
-          <div>
-            <label>Artist or Label Name</label>
-            <input type="text" id="artist_name" value="HMWME" required>
+  <main>
+    <div class="container">
+      <div class="panel">
+        <h1>Generate Catalog Investment Memo</h1>
+        <p class="lead">
+          Run our 10,000-path Monte Carlo DCF, Dynamic Time Warping (DTW), and TypeSafe AI (JEV)
+          forensics engine. Preview Slides 01–02 free, or unlock the full 19-slide 16:9 PDF via Autumn + Stripe ($299 single memo or $499/mo Desk Pass).
+        </p>
+        <form id="memoForm">
+          <div class="row-2">
+            <div>
+              <label>Artist or Label Name</label>
+              <input type="text" id="artist_name" value="HMWME" required>
+            </div>
+            <div>
+              <label>Catalog Title</label>
+              <input type="text" id="catalog_title" value="The Family of One">
+            </div>
           </div>
-          <div>
-            <label>Catalog Title</label>
-            <input type="text" id="catalog_title" value="The Family of One">
+          <div class="row-2">
+            <div>
+              <label>Customer Email / Autumn ID</label>
+              <input type="email" id="contact_email" placeholder="mgmt@hmwme.com">
+            </div>
+            <div>
+              <label>Primary Distributor</label>
+              <input type="text" id="distributor" value="DistroKid + Amuse">
+            </div>
           </div>
-        </div>
-        <div class="row-2">
-          <div>
-            <label>Customer Email / Autumn ID</label>
-            <input type="email" id="contact_email" placeholder="mgmt@hmwme.com">
+          <div class="row-2">
+            <div>
+              <label>Claimed / Trailing LTM ($ USD)</label>
+              <input type="number" id="ltm_amount" value="80000" step="100">
+            </div>
+            <div>
+              <label>Customer Session Token (Optional)</label>
+              <input type="text" id="customer_token" placeholder="ctok_... (for existing Desk Pass)">
+            </div>
           </div>
-          <div>
-            <label>Primary Distributor</label>
-            <input type="text" id="distributor" value="DistroKid + Amuse">
-          </div>
-        </div>
-        <div class="row-2">
-          <div>
-            <label>Claimed / Trailing LTM ($ USD)</label>
-            <input type="number" id="ltm_amount" value="80000" step="100">
-          </div>
-          <div>
-            <label>Customer Session Token (Optional)</label>
-            <input type="text" id="customer_token" placeholder="ctok_... (for existing Desk Pass)">
-          </div>
-        </div>
-        <label>Paste Raw Distributor CSV / TSV Rows (Optional — upgrades to Stage 2 Verified)</label>
-        <textarea id="raw_csv" rows="4" placeholder="reporting_month,title,isrc,store,country,quantity,net_royalty_usd..."></textarea>
-        <label>Autumn Plan (`billing.attach` / `balances.check`)</label>
-        <select id="plan_tier">
-          <option value="SINGLE_MEMO_299">single_memo_299 — Single 19-Slide Memo PDF ($299 / €275)</option>
-          <option value="DESK_PASS_499">desk_pass_499 — Label / Manager Desk Pass (10 Memos/mo · $499/mo)</option>
-        </select>
-        <button type="submit" class="btn-primary">Run Engine &amp; Build 19-Slide Memo</button>
-      </form>
-    </div>
-    <div>
-      <div id="autumnPlansGrid" class="plans-grid"></div>
-      <div id="actionBar" class="action-bar">
-        <div id="statusSummary" style="font-size: 13px;"></div>
-        <div class="action-links" id="actionLinks"></div>
+          <label>Paste Raw Distributor CSV / TSV Rows (Optional — upgrades to Stage 2 Verified)</label>
+          <textarea id="raw_csv" rows="4" placeholder="reporting_month,title,isrc,store,country,quantity,net_royalty_usd..."></textarea>
+          <label>Autumn Plan (`billing.attach` / `balances.check`)</label>
+          <select id="plan_tier">
+            <option value="SINGLE_MEMO_299">single_memo_299 — Single 19-Slide Memo PDF ($299 / €275)</option>
+            <option value="DESK_PASS_499">desk_pass_499 — Label / Manager Desk Pass (10 Memos/mo · $499/mo)</option>
+          </select>
+          <button type="submit" class="btn-primary">Run Engine &amp; Build 19-Slide Memo</button>
+        </form>
       </div>
-      <iframe id="deckIframe" class="preview-frame" title="SPACE 19-Slide Investment Memo Preview"></iframe>
+      <div>
+        <div id="autumnPlansGrid" class="plans-grid"></div>
+        <div id="actionBar" class="action-bar">
+          <div id="statusSummary" style="font-size: 13px;"></div>
+          <div class="action-links" id="actionLinks"></div>
+        </div>
+        <iframe id="deckIframe" class="preview-frame" title="SPACE 19-Slide Investment Memo Preview"></iframe>
+      </div>
     </div>
-  </div>
+
+    <article class="content-sections">
+      <section aria-labelledby="what-is-heading">
+        <h2 id="what-is-heading">What Is a Music Catalog Valuation Memo?</h2>
+        <p>
+          A music catalog valuation memo is a formal investment-grade document that establishes the fair market value of a recorded music or publishing catalog. It is the primary deliverable used by artists, label executives, managers, and institutional buyers when negotiating catalog acquisitions, royalty-backed financing, or estate planning. Unlike a simple earnings multiple, a rigorous valuation memo accounts for streaming decay curves, territory-level performance, distributor concentration risk, and forward revenue scenarios under different market conditions.
+        </p>
+        <p>
+          SPACE produces 19-slide 16:9 institutional memos powered by a 10,000-path Monte Carlo discounted cash flow (DCF) engine, Dynamic Time Warping (DTW) decay matching against a library of comparable catalog trajectories, and TypeSafe AI (JEV) forensic verification of distributor statement data. The result is a credible, audit-ready document that meets the standards expected by music investment funds, private equity buyers, and royalty-advance lenders.
+        </p>
+      </section>
+
+      <section aria-labelledby="includes-heading">
+        <h2 id="includes-heading">What the 19-Slide Memo Includes</h2>
+        <ul>
+          <li><strong>Executive Summary</strong> — deal code, standalone base valuation, WACC, and key risk flags at a glance</li>
+          <li><strong>Revenue Waterfall</strong> — LTM net royalty breakdown by store, territory, and format (streams, downloads, sync)</li>
+          <li><strong>DCF Model (10,000 paths)</strong> — Monte Carlo simulation with configurable decay assumptions and confidence intervals</li>
+          <li><strong>DTW Decay Matching</strong> — Dynamic Time Warping comparison against comparable catalogs to validate trajectory assumptions</li>
+          <li><strong>JEV Forensics Report</strong> — TypeSafe AI anomaly detection on raw distributor CSV data to flag irregularities</li>
+          <li><strong>Sensitivity Tables</strong> — valuation under bear, base, and bull scenarios across discount rates and growth assumptions</li>
+          <li><strong>Comparables Analysis</strong> — recent arm’s-length catalog transactions benchmarked against this catalog’s metrics</li>
+          <li><strong>Risk Register</strong> — distributor concentration, catalog age, streaming platform dependency, and licensing exposure</li>
+          <li><strong>Appendix</strong> — raw data tables, ISRC-level stream counts, and methodology notes for due diligence</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>Who should use a SPACE valuation memo?</h3>
+          <p>
+            SPACE memos are designed for independent artists with meaningful catalog earnings, music managers preparing a catalog for sale or financing, label A&amp;R teams evaluating acquisition targets, and royalty-advance lenders needing an independent valuation to underwrite a deal. If you are entering a negotiation where the catalog’s value is in dispute or simply unknown, a SPACE memo gives you an institutional-grade anchor point supported by auditable methodology.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How long does it take to generate a memo?</h3>
+          <p>
+            The engine typically completes within two to four minutes for a standard catalog submission. If you upload raw distributor CSV data, the JEV forensics pass adds additional processing time but significantly upgrades the quality and defensibility of the final output from Stage 1 (declared figures) to Stage 2 (verified figures). The finished PDF and interactive HTML deck are delivered immediately on payment confirmation.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What distributor data formats are supported?</h3>
+          <p>
+            SPACE accepts raw CSV or TSV export rows from all major distributors including DistroKid, TuneCore, Amuse, CD Baby, AWAL, and Stem. The expected columns are reporting month, title, ISRC, store, country, quantity, and net royalty in USD. You can paste rows directly into the form above. If your distributor uses a different column order or format, the JEV parser will attempt to normalise it automatically and flag any rows it cannot map.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="methodology-heading">
+        <h2 id="methodology-heading">Methodology &amp; Trust</h2>
+        <div class="methodology-note">
+          <p>
+            SPACE valuation memos use a fully transparent, reproducible methodology. The Monte Carlo DCF engine runs 10,000 stochastic revenue paths using configurable WACC inputs (typically 12–18% for independent catalogs) and streaming decay rates derived from Dynamic Time Warping against a proprietary database of comparable catalog trajectories. All assumptions are disclosed in the memo appendix so that buyers, sellers, and their advisors can stress-test the model independently. The JEV forensics layer applies TypeSafe AI to raw distributor statements to detect anomalies, flag potential data issues, and confirm the integrity of the LTM revenue figures before they enter the DCF. SPACE does not provide investment advice; the memo is a valuation analysis tool intended to inform negotiations and due diligence.
+          </p>
+        </div>
+      </section>
+    </article>
+  </main>
 <script>
 const MEMO_API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") ? "" : "https://spacemusic-memo-studio.samplehubkupp.workers.dev";
 function absMemoUrl(u) {
