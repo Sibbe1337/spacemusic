@@ -59,7 +59,7 @@ body:has(#space-growth-home) nav.fixed .bg-cream { background:white; }
 #space-growth-home .quiet-comparison .text-brand { color:#292929; }
 #space-growth-home .quiet-comparison .type-small { font-size:13px; }
 #space-growth-home .quiet-process h2 { margin-bottom:60px; }
-#space-growth-home .quiet-process .grid>div>p:first-child { font-size:13px; font-weight:400; letter-spacing:0; color:#777; margin-bottom:24px; }
+#space-growth-home .quiet-process .grid>div>p:first-child { font-size:13px; font-weight:400; letter-spacing:0; color:#767676; margin-bottom:24px; }
 #space-growth-home .quiet-process .grid>div>p:last-child { font-weight:400; font-size:14px; }
 #space-growth-home .quiet-process .text-center.mt-10 { margin-top:44px; }
 #space-growth-home .quiet-genres { padding:100px 0 90px; scroll-margin-top:100px; }
