@@ -125,7 +125,7 @@ for(const g of groups)for(const [url] of g.items)assert(publicPaths.includes(new
 const resourceBody=`<header class="space-library-intro"><p class="space-library-eyebrow">SPACE resources</p><h1>${escape(resourceTitle)}</h1><p>Find a clear next step for your catalog. Start with a guide, prepare for a review, or compare your options.</p><nav aria-label="On this page" class="space-library-jump">${groups.map(g=>`<a href="#${g.id}">${escape(g.title)}</a>`).join('')}</nav></header>`+groups.map(g=>`<section id="${g.id}" aria-labelledby="${g.id}-title" class="space-library-section"><h2 id="${g.id}-title">${escape(g.title)}</h2><p>${escape(g.intro)}</p><ul class="space-library-list">${g.items.map(([url,label])=>`<li><a href="${escape(url)}"><span>${escape(label)}</span><span aria-hidden="true">&#8599;</span></a></li>`).join('')}</ul></section>`).join('');
 const schema={'@context':'https://schema.org','@type':'CollectionPage',name:resourceTitle,description:resourceDescription,url:'https://spacemusic.io/blog/'};
 const breadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://spacemusic.io/'},{'@type':'ListItem',position:2,name:'Resources',item:'https://spacemusic.io/blog/'}]};
-const resourcesCode=`import{e}from"./vendor-DhPEFgb5.js";import{N}from"./${navbar}";import{F}from"./${footer}";import{S}from"./SEOHead-C4J8_WVH.js";export default function Resources(){return e.jsxs("div",{children:[e.jsx(S,{title:${JSON.stringify(resourceTitle+' | SPACE')},description:${JSON.stringify(resourceDescription)},canonical:"/blog/",type:"website",schema:${JSON.stringify([schema,breadcrumb])}}),e.jsx(N,{}),e.jsx("main",{id:"space-resource-library",className:"space-library",dangerouslySetInnerHTML:{__html:${JSON.stringify(resourceBody)}}}),e.jsx(F,{})]})}`;
+const resourcesCode=`import{e}from"./vendor-DhPEFgb5.js";import{N}from"./${navbar}";import{F}from"./${footer}";import{S}from"./SEOHead-C4J8_WVH.js";export default function Resources(){return e.jsxs("div",{children:[e.jsx(S,{title:${JSON.stringify(resourceTitle+' | SPACE')},description:${JSON.stringify(resourceDescription)},canonical:"/blog/",type:"website",schema:${JSON.stringify([schema,breadcrumb])}}),e.jsx(N,{}),e.jsx("main",{id:"space-resource-library",className:"space-library",dangerouslySetInnerHTML:{__html:${JSON.stringify(resourceBody)}}}),e.jsx(F,{})]})}}`;
 codes.set(resourcesName,resourcesCode);
 code=codes.get(entry);
 code=once(code,'e.jsx(t,{path:"/blog/:slug",',`e.jsx(t,{path:"/blog",element:e.jsx(__spaceResources,{})}),e.jsx(t,{path:"/blog/:slug",`);
@@ -145,7 +145,7 @@ export const resolveLink=createLinkResolver(${JSON.stringify(publicPaths)});
 export const Link=React.forwardRef(function InternalLink({to,reloadDocument,...props},ref){
  let next=to;
  if(typeof to==="string")next=resolveLink(to);
- else if(to?.pathname?.startsWith("/")){const resolved=new URL(resolveLink(to.pathname+(to.search||"")+(to.hash||"")),"https://spacemusic.io");next={...to,pathname:resolved.pathname,search:resolved.search,hash:resolved.hash};}
+ else if(to?.pathname?.startsWith("/")){const resolved=new URL(resolveLink(to.pathname+(to.search||"")+(to.hash||"")),'https://spacemusic.io');next={...to,pathname:resolved.pathname,search:resolved.search,hash:resolved.hash};}
  const pathname=typeof next==="string"?next.split(/[?#]/)[0]:next?.pathname;
  const fragment=typeof next==="string"?next.includes("#"):!!next?.hash;
  return e.jsx(RouterLink,{...props,to:next,ref,reloadDocument:reloadDocument||fragment||pathname==="/apply/"||/\\.(md|txt)$/.test(pathname||"")});
@@ -212,11 +212,11 @@ const header=root.querySelector('nav'),foot=root.querySelector('footer');assert(
 root.replaceChildren(header,foot);
 const main=d.createElement('main');main.id='space-resource-library';main.className='space-library';main.innerHTML=resourceBody;root.insertBefore(main,foot);
 d.title=resourceTitle+' | SPACE';
-for(const sel of ['meta[name="description"]','meta[property="og:description"]','meta[name="twitter:description"]']){const n=d.querySelector(sel);if(n)n.content=resourceDescription;}
-for(const sel of ['meta[property="og:title"]','meta[name="twitter:title"]']){const n=d.querySelector(sel);if(n)n.content=d.title;}
-d.querySelector('link[rel="canonical"]').href='https://spacemusic.io/blog/';
-for(const sel of ['meta[property="og:url"]','meta[name="twitter:url"]']){const n=d.querySelector(sel);if(n)n.content='https://spacemusic.io/blog/';}
-d.querySelector('meta[property="og:type"]').content='website';
+for(const sel of ['meta[name="description"]','meta[property="og:description"]','meta[name="twitter:description"]']){const ns=[...d.querySelectorAll(sel)];if(ns[0])ns[0].content=resourceDescription;ns.slice(1).forEach(n=>n.remove());}
+for(const sel of ['meta[property="og:title"]','meta[name="twitter:title"]']){const ns=[...d.querySelectorAll(sel)];if(ns[0])ns[0].content=d.title;ns.slice(1).forEach(n=>n.remove());}
+{const ns=[...d.querySelectorAll('link[rel="canonical"]')];if(ns[0])ns[0].href='https://spacemusic.io/blog/';ns.slice(1).forEach(n=>n.remove());}
+for(const sel of ['meta[property="og:url"]','meta[name="twitter:url"]']){const ns=[...d.querySelectorAll(sel)];if(ns[0])ns[0].content='https://spacemusic.io/blog/';ns.slice(1).forEach(n=>n.remove());}
+{const ns=[...d.querySelectorAll('meta[property="og:type"]')];if(ns[0])ns[0].content='website';ns.slice(1).forEach(n=>n.remove());}
 d.querySelectorAll('script[type="application/ld+json"]').forEach(n=>n.remove());
 for(const [index,data] of [schema,breadcrumb].entries()){const script=d.createElement('script');script.type='application/ld+json';script.id=`seo-schema-${index}`;script.setAttribute('data-rh','true');script.textContent=JSON.stringify(data);d.head.append(script);}
 updateChrome(d,'/blog/');
